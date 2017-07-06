@@ -85,7 +85,7 @@ h1.post-title a{
 }
 
 pre code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: 'Inconsolata', Monaco, Consolas, Menlo, monospace;
 }
 
 /* Responsive video? */
