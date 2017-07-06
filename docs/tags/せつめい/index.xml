@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>せつめい on Kujira, Civ4 Mod Blog</title>
-    <link>/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/</link>
+    <link>https://gforestshade.github.io/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/</link>
     <description>Recent content in せつめい on Kujira, Civ4 Mod Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
     <lastBuildDate>Mon, 03 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gforestshade.github.io/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>はじめてのCvEventManager.py 1</title>
-      <link>/kujira/post/getstarted1/</link>
+      <link>https://gforestshade.github.io/kujira/post/getstarted1/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/post/getstarted1/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/getstarted1/</guid>
       <description>CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、 独自のEventManagerに変えてしまった方が後々よいです。 さっ</description>
     </item>
     
     <item>
       <title>第２章</title>
-      <link>/kujira/post/nifanimation/</link>
+      <link>https://gforestshade.github.io/kujira/post/nifanimation/</link>
       <pubDate>Mon, 15 May 2017 12:00:00 +0900</pubDate>
       
-      <guid>/kujira/post/nifanimation/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/nifanimation/</guid>
       <description>この文章について これは何か Civ4上で動くユニットをちょっと作ってみようかと思った筆者の悪戦苦闘の記録第２章 Civ4のModdingをやった</description>
     </item>
     
     <item>
       <title>第１章</title>
-      <link>/kujira/post/mmd_to_nif/</link>
+      <link>https://gforestshade.github.io/kujira/post/mmd_to_nif/</link>
       <pubDate>Sun, 14 May 2017 12:00:00 +0900</pubDate>
       
-      <guid>/kujira/post/mmd_to_nif/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/mmd_to_nif/</guid>
       <description>この文章について これは何か MMDモデルをシド星にユニットとして召喚してみる civ4のModdingをやったことある人向け Blender・3D</description>
     </item>
     

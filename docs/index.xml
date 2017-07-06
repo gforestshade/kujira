@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kujira, Civ4 Mod Blog</title>
-    <link>/kujira/</link>
+    <link>https://gforestshade.github.io/kujira/</link>
     <description>Recent content on Kujira, Civ4 Mod Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
     <lastBuildDate>Mon, 03 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/kujira/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gforestshade.github.io/kujira/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>はじめてのCvEventManager.py 1</title>
-      <link>/kujira/post/getstarted1/</link>
+      <link>https://gforestshade.github.io/kujira/post/getstarted1/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/post/getstarted1/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/getstarted1/</guid>
       <description>CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、 独自のEventManagerに変えてしまった方が後々よいです。 さっ</description>
     </item>
     
     <item>
       <title>第２章</title>
-      <link>/kujira/post/nifanimation/</link>
+      <link>https://gforestshade.github.io/kujira/post/nifanimation/</link>
       <pubDate>Mon, 15 May 2017 12:00:00 +0900</pubDate>
       
-      <guid>/kujira/post/nifanimation/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/nifanimation/</guid>
       <description>この文章について これは何か Civ4上で動くユニットをちょっと作ってみようかと思った筆者の悪戦苦闘の記録第２章 Civ4のModdingをやった</description>
     </item>
     
     <item>
       <title>第１章</title>
-      <link>/kujira/post/mmd_to_nif/</link>
+      <link>https://gforestshade.github.io/kujira/post/mmd_to_nif/</link>
       <pubDate>Sun, 14 May 2017 12:00:00 +0900</pubDate>
       
-      <guid>/kujira/post/mmd_to_nif/</guid>
+      <guid>https://gforestshade.github.io/kujira/post/mmd_to_nif/</guid>
       <description>この文章について これは何か MMDモデルをシド星にユニットとして召喚してみる civ4のModdingをやったことある人向け Blender・3D</description>
     </item>
     
     <item>
       <title>Disclaimer</title>
-      <link>/kujira/page/disclaimer/</link>
+      <link>https://gforestshade.github.io/kujira/page/disclaimer/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/disclaimer/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/disclaimer/</guid>
       <description>Disclaimer  Your disclaimer text here NOTE:Some information in this website might be copied from other websites. If you see something is your copyright or something should not belong here, please feel free to contact me. I will remove necessary parts.     </description>
     </item>
     
     <item>
       <title>License</title>
-      <link>/kujira/page/license/</link>
+      <link>https://gforestshade.github.io/kujira/page/license/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/license/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/license/</guid>
       <description>LICENSE  Unless otherwise mentioned code from this blog can used as per MIT or Apache 2.0 license.     </description>
     </item>
     
     <item>
       <title>About Hugo</title>
-      <link>/kujira/page/about-me/</link>
+      <link>https://gforestshade.github.io/kujira/page/about-me/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/about-me/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/about-me/</guid>
       <description>You can see my custom about-me page here
 Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:

@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Kujira, Civ4 Mod Blog</title>
-    <link>/kujira/page/</link>
+    <link>https://gforestshade.github.io/kujira/page/</link>
     <description>Recent content in Pages on Kujira, Civ4 Mod Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
     <lastBuildDate>Thu, 01 Oct 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/kujira/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gforestshade.github.io/kujira/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Disclaimer</title>
-      <link>/kujira/page/disclaimer/</link>
+      <link>https://gforestshade.github.io/kujira/page/disclaimer/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/disclaimer/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/disclaimer/</guid>
       <description>Disclaimer  Your disclaimer text here NOTE:Some information in this website might be copied from other websites. If you see something is your copyright or something should not belong here, please feel free to contact me. I will remove necessary parts.     </description>
     </item>
     
     <item>
       <title>License</title>
-      <link>/kujira/page/license/</link>
+      <link>https://gforestshade.github.io/kujira/page/license/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/license/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/license/</guid>
       <description>LICENSE  Unless otherwise mentioned code from this blog can used as per MIT or Apache 2.0 license.     </description>
     </item>
     
     <item>
       <title>About Hugo</title>
-      <link>/kujira/page/about-me/</link>
+      <link>https://gforestshade.github.io/kujira/page/about-me/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/kujira/page/about-me/</guid>
+      <guid>https://gforestshade.github.io/kujira/page/about-me/</guid>
       <description>You can see my custom about-me page here
 Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
