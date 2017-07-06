@@ -374,3 +374,4 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 起動してみて...
 {{<img src="/img/library.png" width="800" height="460">}}
 動きました！
+
