@@ -6,10 +6,19 @@ banner = "/green1024x200.png"
 tags = ["はじめてのCvEventManager.py", "せつめい"]
 +++
 
+# はじめに
+## これは何か
 これは、
 「PythonによるModding、やってみたいけどどこから手を付けたら...」
-という声にお応えして、`CvEventManager.py`を編集してちょっと面白いことをやってみようという企画です。
+という声にお応えして、CvEventManager.pyを編集してちょっと面白いXMLだけではできないことをやってみようという企画です。
+XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。
+<!-- ここにWikiの「はじめてのMOD作り」をいれたみ。 -->
 
+## これは何でないか
+これは、技術的な解説、PythonによるModdingに親しむ、という視点での説明に偏重しています。
+あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードはあまりないかもしれません。
+
+# CivilizationIV.ini
 早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
 PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。
 
@@ -29,6 +38,7 @@ OverwriteLogs = 1
 
 とりあえずこの３つを`0`から`1`に変えておきましょう。
 
+# CvEventInterface.py
 さて、`CvEventManager.py`...といいたいところなのですが、後々のことまで考えると、
 `CvEventManager.py` を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、
 独自のEventManagerに変えてしまった方がよいです。
@@ -121,6 +131,7 @@ def beginEvent(context, argsList=-1):
 
 こうしてみました。`KujiraEventManager`というモジュール(あるいは`KujiraEventManager.py`というファイル)にある`MyEventManager`クラスを指定しています。
 
+## 本命をつくる
 まだ指定した先である`KujiraEventManager.py`というファイルがないので、自分でつくります。
 ``` plain
 └─kujira
@@ -151,7 +162,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 こうしてみました。元のCvEventManagerを継承して、onGameStartメソッドをオーバーライドします。
 気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。
 
->
+<!--
 Civ4のプログラムはゲームの処理中のとある時点でグローバル関数のonEvent()を呼び出します。
 onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEvent()はargsListに渡ってきた
 「どんなイベントか」の情報を解釈してon\*\*\*\*\*\*()にさらに振り分けます。
@@ -159,7 +170,19 @@ onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEven
 かわりにそちらが呼ばれることになります。そのインスタンスを派生クラスのものにしておけば、
 hundleEvent()から振り分けられた各イベントハンドラをオーバーライドすることによって、
 各タイミングでの処理ができるようになります。
+-->
 
+## ためす
+MODをロードして起動してみましょう。
+...シド星に降り立ってみても、とくにバニラとなにも変わっていません。
+それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。
+それを確認するには、(ゲームをいちど始めたうえで、)
+`Documents\My Games\Beyond the Sword(J)\Logs`にある`PythonDbg.log`を開いてみます。
+...下に下にスクロールしていくと...
+{{<img src="/img/pyprint.png" width="573" height="428">}}
+ありました。ちゃんと動いているようです！
+
+# 結局、何ができるのか？
 ともかく、特定のタイミングに割って入って、処理を書くことができるわけですが、
 そうなってくると気になるのが
 
@@ -175,6 +198,7 @@ hundleEvent()から振り分けられた各イベントハンドラをオーバ�
 [1]: http://modiki.civfanatics.com/index.php?title=CvEventManager
 [2]: http://civ4bug.sourceforge.net/PythonAPI/index.html
 
+# 結局こつこつとやっていくしかない
 というわけで、`KujiraEventManager.py`を...
 
 ``` python
@@ -194,6 +218,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 こうしてみました。
 
+## くわしく
 捕まえるイベントを、onCityBuiltにしています。
 ``` python
 >>>>>>
@@ -210,7 +235,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 + Parameters: self, argsList(city)
 + Description: Called when a player builds a city
 
-とあります。ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。
+とあります。「都市を建てたとき」というイベントのようですね。
+ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。
 ターン開始時なら、誰のターン開始時で、いま何ターン目なのか、
 プロジェクトが完成したなら、どの都市で、何のプロジェクトが完成したのか、
 ユニットが倒されたなら、それはどのユニットで、またどのユニットに倒されたのか、
@@ -223,6 +249,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 つまりぜんぶまとめて、『都市が建設されたとき、その都市の人口を4にするMOD』ができたことになるはずです。
 
+## ためす
 フォルダ構成がこうなっていることを確認して...
 ``` plain
 └─kujira
@@ -238,7 +265,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 {{<img src="/img/kujira_population_4.png" width="800" height="460">}}
 うまくいきました！
 
+# もう少し進める
 もう一歩進んで、『都市が建設されたとき、その都市に図書館を建設するMOD』を目指してみましょう。
+
+## 図書館を建設する、とは
 さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。
 探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、
 civfanaticsで漁るのもよいでしょう。英語でよろしければ、[一覧][2]を載せてくれているWebページもあります。
@@ -285,6 +315,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 こうなります。
 
+## まちがえた？
 さてこれで起動してみて都市を覗いてみても、図書館は建っていないようです。
 どこかでミスっているのでしょうか。エラーを起こしたなら起こしたでどの行で起こしたかの場所を知りたいものです。
 このようなとき`Documents\My Games\Beyond the Sword(J)\Logs`にある`PythonErr.log`が助けになってくれます。
@@ -339,6 +370,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ```
 
+## ためす
 起動してみて...
 {{<img src="/img/library.png" width="800" height="460">}}
 動きました！

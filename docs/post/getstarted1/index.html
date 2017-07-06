@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 3982
+    "wordCount": 4093
   }
 </script>
 
@@ -136,8 +136,8 @@
     <time datetime="2017-07-03">3 Jul, 2017</time>
 
     
-    &middot; 8 Minute Read
-    &middot; 3982 Words
+    &middot; 9 Minute Read
+    &middot; 4093 Words
   </div>
 
   
@@ -164,9 +164,24 @@
 </div>
 
       <div class="content">
-  <p>これは、<br />
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<h2 id="これは何か">これは何か</h2>
+
+<p>これは、<br />
 「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br />
-という声にお応えして、<code>CvEventManager.py</code>を編集してちょっと面白いことをやってみようという企画です。</p>
+という声にお応えして、CvEventManager.pyを編集してちょっと面白いXMLだけではできないことをやってみようという企画です。<br />
+XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。<br />
+<!-- ここにWikiの「はじめてのMOD作り」をいれたみ。 --></p>
+
+<h2 id="これは何でないか">これは何でないか</h2>
+
+<p>これは、技術的な解説、PythonによるModdingに親しむ、という視点での説明に偏重しています。<br />
+あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードはあまりないかもしれません。</p>
+
+<h1 id="civilizationiv-ini">CivilizationIV.ini</h1>
 
 <p>早速その<code>CvEventManager.py</code>がどこにあるのか&hellip;を見ていく前に、<br />
 PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。</p>
@@ -185,6 +200,8 @@ OverwriteLogs = 1
 </code></pre>
 
 <p>とりあえずこの３つを<code>0</code>から<code>1</code>に変えておきましょう。</p>
+
+<h1 id="cveventinterface-py">CvEventInterface.py</h1>
 
 <p>さて、<code>CvEventManager.py</code>&hellip;といいたいところなのですが、後々のことまで考えると、<br />
 <code>CvEventManager.py</code> を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、<br />
@@ -277,6 +294,8 @@ def beginEvent(context, argsList=-1):
 
 <p>こうしてみました。<code>KujiraEventManager</code>というモジュール(あるいは<code>KujiraEventManager.py</code>というファイル)にある<code>MyEventManager</code>クラスを指定しています。</p>
 
+<h2 id="本命をつくる">本命をつくる</h2>
+
 <p>まだ指定した先である<code>KujiraEventManager.py</code>というファイルがないので、自分でつくります。</p>
 
 <pre><code class="language-plain">└─kujira
@@ -306,15 +325,29 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <p>こうしてみました。元のCvEventManagerを継承して、onGameStartメソッドをオーバーライドします。<br />
 気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。</p>
 
-<blockquote>
-<p>Civ4のプログラムはゲームの処理中のとある時点でグローバル関数のonEvent()を呼び出します。<br />
-onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEvent()はargsListに渡ってきた<br />
-「どんなイベントか」の情報を解釈してon******()にさらに振り分けます。<br />
-ここでhundleEvent()を呼び出すレシーバのCvEventManagerのインスタンスをすり替えておくと、<br />
-かわりにそちらが呼ばれることになります。そのインスタンスを派生クラスのものにしておけば、<br />
-hundleEvent()から振り分けられた各イベントハンドラをオーバーライドすることによって、<br />
-各タイミングでの処理ができるようになります。</p>
-</blockquote>
+<!--
+Civ4のプログラムはゲームの処理中のとある時点でグローバル関数のonEvent()を呼び出します。
+onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEvent()はargsListに渡ってきた
+「どんなイベントか」の情報を解釈してon\*\*\*\*\*\*()にさらに振り分けます。
+ここでhundleEvent()を呼び出すレシーバのCvEventManagerのインスタンスをすり替えておくと、
+かわりにそちらが呼ばれることになります。そのインスタンスを派生クラスのものにしておけば、
+hundleEvent()から振り分けられた各イベントハンドラをオーバーライドすることによって、
+各タイミングでの処理ができるようになります。
+-->
+
+<h2 id="ためす">ためす</h2>
+
+<p>MODをロードして起動してみましょう。<br />
+&hellip;シド星に降り立ってみても、とくにバニラとなにも変わっていません。<br />
+それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。<br />
+それを確認するには、(ゲームをいちど始めたうえで、)<br />
+<code>Documents\My Games\Beyond the Sword(J)\Logs</code>にある<code>PythonDbg.log</code>を開いてみます。<br />
+&hellip;下に下にスクロールしていくと&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/pyprint.png"><img src="https://gforestshade.github.io/kujira/img/pyprint.png"  width="573" height="428" /></a>
+<br />
+ありました。ちゃんと動いているようです！</p>
+
+<h1 id="結局-何ができるのか">結局、何ができるのか？</h1>
 
 <p>ともかく、特定のタイミングに割って入って、処理を書くことができるわけですが、<br />
 そうなってくると気になるのが</p>
@@ -330,6 +363,8 @@ hundleEvent()から振り分けられた各イベントハンドラをオーバ�
 どういうことができるかについては、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">さらにたくさんあります。</a><br />
 すべてを覚える必要はもちろんありません。わかりやすいような処理から始めて、<br />
 自分の手で書いていくことを通して、少しずつ理解していくのがよいです。</p>
+
+<h1 id="結局こつこつとやっていくしかない">結局こつこつとやっていくしかない</h1>
 
 <p>というわけで、<code>KujiraEventManager.py</code>を&hellip;</p>
 
@@ -348,6 +383,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </code></pre>
 
 <p>こうしてみました。</p>
+
+<h2 id="くわしく">くわしく</h2>
 
 <p>捕まえるイベントを、onCityBuiltにしています。</p>
 
@@ -368,7 +405,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <br /></li>
 </ul>
 
-<p>とあります。ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br />
+<p>とあります。「都市を建てたとき」というイベントのようですね。<br />
+ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br />
 ターン開始時なら、誰のターン開始時で、いま何ターン目なのか、<br />
 プロジェクトが完成したなら、どの都市で、何のプロジェクトが完成したのか、<br />
 ユニットが倒されたなら、それはどのユニットで、またどのユニットに倒されたのか、<br />
@@ -380,6 +418,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 そこで、<code>pCity.setPopulation(4)</code>として、都市の人口を4にセットしています。</p>
 
 <p>つまりぜんぶまとめて、『都市が建設されたとき、その都市の人口を4にするMOD』ができたことになるはずです。</p>
+
+<h2 id="ためす-1">ためす</h2>
 
 <p>フォルダ構成がこうなっていることを確認して&hellip;</p>
 
@@ -397,8 +437,13 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <br />
 うまくいきました！</p>
 
-<p>もう一歩進んで、『都市が建設されたとき、その都市に図書館を建設するMOD』を目指してみましょう。<br />
-さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。<br />
+<h1 id="もう少し進める">もう少し進める</h1>
+
+<p>もう一歩進んで、『都市が建設されたとき、その都市に図書館を建設するMOD』を目指してみましょう。</p>
+
+<h2 id="図書館を建設する-とは">図書館を建設する、とは</h2>
+
+<p>さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。<br />
 探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、<br />
 civfanaticsで漁るのもよいでしょう。英語でよろしければ、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">一覧</a>を載せてくれているWebページもあります。</p>
 
@@ -443,6 +488,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </code></pre>
 
 <p>こうなります。</p>
+
+<h2 id="まちがえた">まちがえた？</h2>
 
 <p>さてこれで起動してみて都市を覗いてみても、図書館は建っていないようです。<br />
 どこかでミスっているのでしょうか。エラーを起こしたなら起こしたでどの行で起こしたかの場所を知りたいものです。<br />
@@ -495,6 +542,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         pCity.setNumRealBuilding(iLib, 1)
 
 </code></pre>
+
+<h2 id="ためす-2">ためす</h2>
 
 <p>起動してみて&hellip;<br />
 <a href="https://gforestshade.github.io/kujira/img/library.png"><img src="https://gforestshade.github.io/kujira/img/library.png"  width="800" height="460" /></a>
