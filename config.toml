@@ -1,6 +1,6 @@
-baseurl = "/"
+baseurl = "/kujira/"
 languageCode = "en"
-title = "Hugo Themes"
+title = "Kujira, Civ4 Mod Blog"
 author = "gforest_shade"
 copyright = "Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0"
 canonifyurls = true
