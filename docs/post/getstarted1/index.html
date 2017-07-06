@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 3385
+    "wordCount": 3982
   }
 </script>
 
@@ -136,8 +136,8 @@
     <time datetime="2017-07-03">3 Jul, 2017</time>
 
     
-    &middot; 7 Minute Read
-    &middot; 3385 Words
+    &middot; 8 Minute Read
+    &middot; 3982 Words
   </div>
 
   
@@ -164,8 +164,31 @@
 </div>
 
       <div class="content">
-  <p>CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、<br />
-独自のEventManagerに変えてしまった方が後々よいです。</p>
+  <p>これは、<br />
+「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br />
+という声にお応えして、<code>CvEventManager.py</code>を編集してちょっと面白いことをやってみようという企画です。</p>
+
+<p>早速その<code>CvEventManager.py</code>がどこにあるのか&hellip;を見ていく前に、<br />
+PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。</p>
+
+<pre><code class="language-ini">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+; Enable the logging system
+; Documents\My Games\Beyond the Sword(J)\Logs
+LoggingEnabled = 1
+
+; Enable synchronization logging
+SynchLog = 1
+
+; Overwrite old network and message logs
+OverwriteLogs = 1
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</code></pre>
+
+<p>とりあえずこの３つを<code>0</code>から<code>1</code>に変えておきましょう。</p>
+
+<p>さて、<code>CvEventManager.py</code>&hellip;といいたいところなのですが、後々のことまで考えると、<br />
+<code>CvEventManager.py</code> を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、<br />
+独自のEventManagerに変えてしまった方がよいです。</p>
 
 <p>さっそくBtSの元ファイル<br />
 <code>C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py</code><br />
@@ -207,14 +230,65 @@ def beginEvent(context, argsList=-1):
 </code></pre>
 
 <p>これを<strong>ディレクトリ配列ごと</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
-MODのほうにもEntryPoint\ ディレクトリを作って、そこにコピーします。</p>
+新しく作ったMODフォルダにAssets\Python\EntryPoints\ ディレクトリを作って、そこにコピーします。</p>
 
-<pre><code class="language-c">EntryPoint\CvEventInterface.py
+<pre><code class="language-plain">└─kujira
+    └─Assets
+        └─Python
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<p>コピーした<code>CvEventInterface.py</code>の中身をすこし編集して&hellip;</p>
+
+<pre><code class="language-python"># Sid Meier's Civilization 4
+# Copyright Firaxis Games 2005
+#
+# CvEventInterface.py
+#
+# These functions are App Entry Points from C++
+# WARNING: These function names should not be changed
+# WARNING: These functions can not be placed into a class
+#
+# No other modules should import this
+#
+import CvUtil
+# import CvEventManager
+import KujiraEventManager
+from CvPythonExtensions import *
+
+# normalEventManager = CvEventManager.CvEventManager()
+myEventManager = KujiraEventManager.MyEventManager()
+
+def getEventManager():
+    return myEventManager
+
+def onEvent(argsList):
+    'Called when a game event happens - return 1 if the event was consumed'
+    return getEventManager().handleEvent(argsList)
+
+def applyEvent(argsList):
+    context, playerID, netUserData, popupReturn = argsList
+    return getEventManager().applyEvent(argsList)
+
+def beginEvent(context, argsList=-1):
+    return getEventManager().beginEvent(context, argsList)
 </code></pre>
 
 <p>こうしてみました。<code>KujiraEventManager</code>というモジュール(あるいは<code>KujiraEventManager.py</code>というファイル)にある<code>MyEventManager</code>クラスを指定しています。</p>
 
-<p>まだ指定した先である<code>KujiraEventManager.py</code>というファイルがないので、自分でつくります。中身は…</p>
+<p>まだ指定した先である<code>KujiraEventManager.py</code>というファイルがないので、自分でつくります。</p>
+
+<pre><code class="language-plain">└─kujira
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<p>中身は…</p>
 
 <pre><code class="language-python">import CvEventManager
 import CvUtil

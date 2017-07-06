@@ -18,7 +18,7 @@
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/getstarted1/</guid>
-      <description>CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、 独自のEventManagerに変えてしまった方が後々よいです。 さっ</description>
+      <description>これは、 「PythonによるModding、やってみたいけどどこから手を付けたら&amp;hellip;」 という声にお応えして、CvEventMan</description>
     </item>
     
     <item>

@@ -6,8 +6,32 @@ banner = "/green1024x200.png"
 tags = ["はじめてのCvEventManager.py", "せつめい"]
 +++
 
-CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、
-独自のEventManagerに変えてしまった方が後々よいです。
+これは、
+「PythonによるModding、やってみたいけどどこから手を付けたら...」
+という声にお応えして、`CvEventManager.py`を編集してちょっと面白いことをやってみようという企画です。
+
+早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
+PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。
+
+``` ini
+<<<<<<<<
+; Enable the logging system
+; Documents\My Games\Beyond the Sword(J)\Logs
+LoggingEnabled = 1
+
+; Enable synchronization logging
+SynchLog = 1
+
+; Overwrite old network and message logs
+OverwriteLogs = 1
+>>>>>>>>
+```
+
+とりあえずこの３つを`0`から`1`に変えておきましょう。
+
+さて、`CvEventManager.py`...といいたいところなのですが、後々のことまで考えると、
+`CvEventManager.py` を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、
+独自のEventManagerに変えてしまった方がよいです。
 
 さっそくBtSの元ファイル
 `C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py`
@@ -50,15 +74,65 @@ def beginEvent(context, argsList=-1):
 ```
 
 これを**ディレクトリ配列ごと**コピーしてきて編集すると、該当ファイルが差し変わるのでした。
-MODのほうにもEntryPoint\ ディレクトリを作って、そこにコピーします。
+新しく作ったMODフォルダにAssets\Python\EntryPoints\ ディレクトリを作って、そこにコピーします。
+``` plain
+└─kujira
+    └─Assets
+        └─Python
+            └─Entrypoints
+                 └─CvEventInterface.py
+```
+コピーした`CvEventInterface.py`の中身をすこし編集して...
 
-``` c
-EntryPoint\CvEventInterface.py
+``` python
+# Sid Meier's Civilization 4
+# Copyright Firaxis Games 2005
+#
+# CvEventInterface.py
+#
+# These functions are App Entry Points from C++
+# WARNING: These function names should not be changed
+# WARNING: These functions can not be placed into a class
+#
+# No other modules should import this
+#
+import CvUtil
+# import CvEventManager
+import KujiraEventManager
+from CvPythonExtensions import *
+
+# normalEventManager = CvEventManager.CvEventManager()
+myEventManager = KujiraEventManager.MyEventManager()
+
+def getEventManager():
+	return myEventManager
+
+def onEvent(argsList):
+	'Called when a game event happens - return 1 if the event was consumed'
+	return getEventManager().handleEvent(argsList)
+
+def applyEvent(argsList):
+	context, playerID, netUserData, popupReturn = argsList
+	return getEventManager().applyEvent(argsList)
+
+def beginEvent(context, argsList=-1):
+	return getEventManager().beginEvent(context, argsList)
 ```
 
 こうしてみました。`KujiraEventManager`というモジュール(あるいは`KujiraEventManager.py`というファイル)にある`MyEventManager`クラスを指定しています。
 
-まだ指定した先である`KujiraEventManager.py`というファイルがないので、自分でつくります。中身は…
+まだ指定した先である`KujiraEventManager.py`というファイルがないので、自分でつくります。
+``` plain
+└─kujira
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+```
+
+中身は…
 
 ``` python
 import CvEventManager
