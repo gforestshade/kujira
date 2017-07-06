@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/getstarted1/</loc>
+    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/nifanimation/</loc>
+    <lastmod>2017-05-15T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/mmd_to_nif/</loc>
+    <lastmod>2017-05-14T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/disclaimer/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/license/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/about-me/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mmd_to_civ4/</loc>
+    <lastmod>2017-05-15T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/page/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-05-15T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/</loc>
+    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEcveventmanager.py/</loc>
+    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

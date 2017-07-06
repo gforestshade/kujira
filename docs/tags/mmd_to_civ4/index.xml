@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mmd_to_civ4 on Hugo Themes</title>
+    <link>/tags/mmd_to_civ4/</link>
+    <description>Recent content in Mmd_to_civ4 on Hugo Themes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
+    <lastBuildDate>Mon, 15 May 2017 12:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/mmd_to_civ4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>第２章</title>
+      <link>/post/nifanimation/</link>
+      <pubDate>Mon, 15 May 2017 12:00:00 +0900</pubDate>
+      
+      <guid>/post/nifanimation/</guid>
+      <description>この文章について これは何か Civ4上で動くユニットをちょっと作ってみようかと思った筆者の悪戦苦闘の記録第２章 Civ4のModdingをやった</description>
+    </item>
+    
+    <item>
+      <title>第１章</title>
+      <link>/post/mmd_to_nif/</link>
+      <pubDate>Sun, 14 May 2017 12:00:00 +0900</pubDate>
+      
+      <guid>/post/mmd_to_nif/</guid>
+      <description>この文章について これは何か MMDモデルをシド星にユニットとして召喚してみる civ4のModdingをやったことある人向け Blender・3D</description>
+    </item>
+    
+  </channel>
+</rss>

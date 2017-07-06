@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>はじめてのcveventmanager.Py on Hugo Themes</title>
+    <link>/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEcveventmanager.py/</link>
+    <description>Recent content in はじめてのcveventmanager.Py on Hugo Themes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
+    <lastBuildDate>Mon, 03 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEcveventmanager.py/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>はじめてのCvEventManager.py 1</title>
+      <link>/post/getstarted1/</link>
+      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getstarted1/</guid>
+      <description>CvEventManager.py を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、 独自のEventManagerに変えてしまった方が後々よいです。 さっ</description>
+    </item>
+    
+  </channel>
+</rss>
