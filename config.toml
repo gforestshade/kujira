@@ -2,7 +2,7 @@ baseurl = "https://gforestshade.github.io/kujira/"
 languageCode = "en"
 title = "Kujira, Civ4 Mod Blog"
 author = "gforest_shade"
-copyright = "Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0"
+copyright = "gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)"
 canonifyurls = true
 paginate = 5
 hasCJKLanguage = true
@@ -26,19 +26,6 @@ googleAnalytics = ""
     weight = -100
     identifier = "categories"
     url = "/categories/"
-
-[[menu.main]]
-    name = "ABOUT ME"
-    pre = "<i class='fa fa-info-circle'></i>"
-    weight = -90
-    identifier = "about-me"
-    url = "/page/about-me"
-
-[[menu.footer]]
-    name = "DISCLAIMER"
-    weight = -110
-    identifier = "disclaimer"
-    url = "/page/disclaimer/"
 
 [[menu.footer]]
     name = "LICENSE"

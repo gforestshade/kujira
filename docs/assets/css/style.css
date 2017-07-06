@@ -69,7 +69,6 @@ h1.post-title a{
   display: table;
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
   ;
 }
 .post-meta-item {
@@ -133,7 +132,6 @@ iframe {
   content: ")";
 }
 .category-list-item > a {
-  text-transform: uppercase;
 }
 .widget a {
   text-decoration: none;
@@ -215,7 +213,6 @@ iframe {
 }
 #recent-post li .item-inner a, #recent-post li .item-inner .item-category {
   font-size: 0.8rem;
-  text-transform: uppercase;
   margin: 0px;
 }
 #recent-post li .item-inner a a, #recent-post li .item-inner .item-category a, #recent-post li .item-inner a .fa, #recent-post li .item-inner .item-category .fa {

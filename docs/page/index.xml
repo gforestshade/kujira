@@ -6,11 +6,20 @@
     <description>Recent content in Pages on Kujira, Civ4 Mod Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0</copyright>
-    <lastBuildDate>Thu, 01 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
+    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/page/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>License</title>
+      <link>https://gforestshade.github.io/kujira/page/license/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/page/license/</guid>
+      <description>About License 本文の内容は特記のない限りCC BY 4.0 国際 ライセンス に従って利用ができます。 コード片は特記のない限りMIT Licence(下記)に従っての利</description>
+    </item>
     
     <item>
       <title>Disclaimer</title>
@@ -19,15 +28,6 @@
       
       <guid>https://gforestshade.github.io/kujira/page/disclaimer/</guid>
       <description>Disclaimer  Your disclaimer text here NOTE:Some information in this website might be copied from other websites. If you see something is your copyright or something should not belong here, please feel free to contact me. I will remove necessary parts.     </description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>https://gforestshade.github.io/kujira/page/license/</link>
-      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/page/license/</guid>
-      <description>LICENSE  Unless otherwise mentioned code from this blog can used as per MIT or Apache 2.0 license.     </description>
     </item>
     
     <item>
