@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>はじめてのCvEventManager.py 2</title>
+      <link>https://gforestshade.github.io/kujira/post/getstarted2/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/getstarted2/</guid>
+      <description>はじめに その１のつづき 条件分岐を使ってみる 準備 前回のkujiraMODをフォルダごとコピーしてリネーム、kujira_ifというMODを作り</description>
+    </item>
     
     <item>
       <title>License</title>

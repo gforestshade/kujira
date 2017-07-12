@@ -32,6 +32,11 @@ html {
   border-left: 6px solid #a9855a;
 }
 
+strong {
+  font-weight: bold;
+  color: #660000;  
+}
+
 .footer {
   position: absolute;
   bottom: 0;
