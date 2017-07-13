@@ -4,7 +4,7 @@ draft = false
 title = "はじめてのCvEventManager.py 3"
 banner = "/green1024x200.png"
 tags = ["はじめてのCvEventManager.py", "せつめい"]
-
+comment = true
 +++
 
 # はじめに
