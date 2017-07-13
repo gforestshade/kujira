@@ -10,7 +10,7 @@ publishDir = "docs"
 
 theme = "hugo-bootstrap"
 
-disqusShortname = ""
+disqusShortname = "kujira"
 googleAnalytics = ""
 
 [[menu.main]]
