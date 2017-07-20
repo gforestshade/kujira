@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-13",
     "description": "",
-    "wordCount": 21
+    "wordCount": 3893
   }
 </script>
 
@@ -129,8 +129,8 @@
     <time datetime="2017-07-13">13 Jul, 2017</time>
 
     
-    &middot; 1 Minute Read
-    &middot; 21 Words
+    &middot; 8 Minute Read
+    &middot; 3893 Words
   </div>
 
   
@@ -170,8 +170,300 @@
 
 <ul>
 <li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a>のつづき<br /></li>
-<li>条件分岐を使ってみる<br /></li>
+<li>条件分岐をもう少し使ってみる<br /></li>
+<li>関数について<br />
+<br /></li>
 </ul>
+
+<h1 id="準備">準備</h1>
+
+<p>Pythonそのものの文法を確かめるのにいちいちCiv4を起動するのでは面倒なので、<br />
+小さなPythonプログラムを試せる環境を用意しましょう。<br />
+あなたのコンピュータにPythonをインストールしてもよいですし、<br />
+現代ではオンライン上で小さなプログラムを試せるサイトもいろいろあるので、<br />
+利用させてもらってもよいでしょう。<br />
+この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br />
+コード作成画面に入ったら、左上(緑)の言語選択ボタンから<code>Python2</code>を選択し、</p>
+
+<pre><code class="language-python">print 1129
+</code></pre>
+
+<p>と入力して、「実行」ボタンを押します。<br />
+「出力」のところに<code>1129</code>と出ていればOKです。<br />
+<a href="https://gforestshade.github.io/kujira/img/paiza_0.png"><img src="https://gforestshade.github.io/kujira/img/paiza_0.png"    /></a>
+</p>
+
+<h2 id="ちょっとあそぶ">ちょっとあそぶ</h2>
+
+<p>小さいプログラムを書いて遊んでみましょう。</p>
+
+<pre><code class="language-python">a = 5
+b = 2
+if a &gt; 3:
+    b = a * a - 5
+print b
+</code></pre>
+
+<p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br />
+予想ができたら、実行してみます。合っていたでしょうか。違っていたでしょうか。</p>
+
+<h2 id="関数">関数</h2>
+
+<p>Pythonでは、ブロックが上から下に順番に実行されるのは先述の通りですが、<br />
+処理をまとめておく方法もあります。</p>
+
+<pre><code class="language-python">def doOreore():
+    print &quot;oreore,&quot;
+    print &quot;oredayo.&quot;
+
+doOreore()
+</code></pre>
+
+<p><code>def 関数名():</code>とその直下の「ブロック」が「関数」として「定義」されます。<br />
+あとで<code>関数名()</code>とすると関数を「呼び出し」ます。<br />
+関数名は(かぶらない限り)自由につけて構いませんが、その処理のまとまりは要するに全体で何をするものなのか、<br />
+動詞っぽいものをつけておく例が多いようです。</p>
+
+<p>関数の旨みのひとつは一度定義すれば何度呼び出しても構わないことにあります。</p>
+
+<pre><code class="language-python">def doOreore2():
+    print &quot;oreore,&quot;
+    print &quot;oredayo.&quot;
+
+doOreore2()
+doOreore2()
+doOreore2()
+doOreore2()
+doOreore2()
+</code></pre>
+
+<p>とすると、ひたすら5回もオレオレ詐欺を仕掛けてくるプログラムができるのです。</p>
+
+<h2 id="引数">引数</h2>
+
+<p>関数のさらに強力なところは、値を外から中に持ち込めるところにあります。</p>
+
+<pre><code class="language-python">def doOreore3(son):
+    print &quot;oreore,&quot;
+    print &quot;oredayo.&quot;
+    print son
+    print &quot;dayo.&quot;
+    print 
+
+doOreore3(&quot;takashi&quot;)
+doOreore3(&quot;yuta&quot;)
+doOreore3(&quot;jiro&quot;)
+doOreore3(&quot;kazuma&quot;)
+</code></pre>
+
+<p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br />
+定義の時点では変数で記述しておいて、呼び出し時に実際の値を&rdquo;渡し&rdquo;ています。<br />
+受け渡しを担当している<code>son</code>のことを「引数」(ひきすう)あるいは「仮引数」(かりひきすう)と呼びます。<br />
+息子の名前だけが違ってあとはほとんど同じ内容をしゃべっていますが、<br />
+ほとんど同じな部分をいちいちコピペすることなくほかのおうちに移れるようになっています。<br />
+&ldquo;処理のまとまりに名前が付けられる&rdquo;という点も強力で、<br />
+実際に実行されているのはただのprint文20回分、なのですが、名前があることで<br />
+&ldquo;オレオレ詐欺を4回している&rdquo;ということが明確になっています。</p>
+
+<p>そういえば、第１回で出てきた<code>pCity.setPopulation(4)</code>と今回の<code>doOreore3(&quot;takashi&quot;)</code>がすこし似ていますね。<br />
+そうです。<code>pCity.setPopulation(4)</code>も関数呼び出しです。<br />
+引数に<code>4</code>を渡して呼び出しているのですね。<br />
+市民を再配置したり、制覇条件を更新したり&hellip;とめんどくさい内部処理をすべて請け負って<br />
+&ldquo;要するに何をするのか&rdquo;わかりやすい名前がついていることで、<br />
+やりたいことを素直に記述することに専念できるのです。</p>
+
+<h2 id="戻り値">戻り値</h2>
+
+<p>関数は、呼び出した側に値を投げ返すこともできます。</p>
+
+<pre><code class="language-python">def three():
+    return 3
+
+a = three() * 4
+print a
+</code></pre>
+
+<p>関数内で<code>return 値</code>にたどり着くと、<strong><em>その関数の処理を中断して</em></strong>自分を呼び出したところまで戻ってきます。<br />
+その際、<code>関数名()</code>という呼び出し文字列全体がその<code>値</code>で置き換わります。<br />
+この場合の表記法は数式の関数表記法に倣っていますので、数式をご存知の方は馴染みやすいかもしれません。<br />
+このとき投げ返す値のことを「戻り値」と呼びます。<br />
+呼び出した側は、投げ返されてきた戻り値をさらに何かに活用することができます。</p>
+
+<p>引数を使って戻り値を計算することもできます。</p>
+
+<pre><code class="language-python">def square(x):
+    return x * x
+
+a = square(5)
+print a
+</code></pre>
+
+<p>(実行してみながらついてきてくださいね)<br />
+より数学の関数に近い感じになりました。</p>
+
+<p>ずっとお世話になっている<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>はこのタイプの関数です。<br />
+XMLキーの文字列を引数に渡して、それに対応するIDという数値が戻り値として投げ返されるのですね。<br />
+わたしたちはその戻り値を変数に代入したり、直接別の関数の引数として渡したりしていました。</p>
+
+<h1 id="やっとこmod">やっとこMOD</h1>
+
+<p>前回の<code>kujira_if</code>MODをフォルダごとコピーしてリネーム、<code>kujira_def</code>というMODを作ります。</p>
+
+<pre><code class="language-plain">└─kujira_def
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
+
+<p>前回は『都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD』を作りました。</p>
+
+<ul>
+<li>都市が建設されたとき<br /></li>
+<li>その都市の所有者の所属する文明がマリならば<br /></li>
+<li>その都市に図書館を建設する<br />
+<br /></li>
+</ul>
+
+<p>に分けられて、それらは個別に別の条件/処理に変えてしまうことができるのでした。<br />
+今回は少し難しくして、『都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成する』MODを目指します。</p>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<p>というわけで&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+def createUnit(pPlayer, unit, x, y):
+    pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onCityBuilt(self, argsList):
+        'Called when a player builds a city'
+        super(self.__class__, self).onCityBuilt(argsList)
+        ##########
+        pCity = argsList[0]
+        pPlayer = gc.getPlayer( pCity.getOwner() )
+        if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
+            archerUnit = gc.getInfoTypeForString('UNIT_ARCHER')
+            x = pCity.getX()
+            y = pCity.getY()
+            createUnit(pPlayer, archerUnit, x, y)
+            createUnit(pPlayer, archerUnit, x, y)
+            createUnit(pPlayer, archerUnit, x, y)
+</code></pre>
+
+<p>こうしてみました。</p>
+
+<h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
+
+<p><code>gc.getInfoTypeForString('TRAIT_PROTECTIVE')</code>とすると防衛志向のIDが戻るのでした。<br />
+<code>iProtec = gc.getInfoTypeForString('TRAIT_PROTECTIVE')</code>のように変数に代入しておくこともできますし、<br />
+<code>pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') )</code><br />
+のように直接引数として渡すこともできます。<br />
+下の２つのプログラムは同じ動作をします。</p>
+
+<pre><code class="language-python">if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
+    'something'
+</code></pre>
+
+<pre><code class="language-python">iProtective = gc.getInfoTypeForString('TRAIT_PROTECTIVE')
+if pPlayer.hasTrait(iProtective):
+    'something'
+</code></pre>
+
+<h2 id="弓兵を作成する">弓兵を作成する</h2>
+
+<p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからinitUnitを探すと、こうなっています。</p>
+
+<pre><code class="language-plain">CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
+ 
+CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
+</code></pre>
+
+<p>前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。<br />
+引数をひとつひとつ読んでいきましょう。</p>
+
+<dl>
+<dt>UnitType iIndex<br /></dt>
+<dd>UnitのTypeとあるのでユニットIDですね。作りたいユニットのXMLキーを<code>gc.getInfoTypeForString()</code>して<br />
+ここに指定すればよさそうです。<br />
+<br /></dd>
+<dt>INT iX<br /></dt>
+<dd>INTとあるので数値だということはわかりますが&hellip;Xというのはx座標でしょうか。<br />
+これはPlayerに対する操作なのでした。Playerは都市と違い<br />
+シド星上に特定の位置を占めているわけではありませんから、<br />
+そのユニットがどこに降り立つのか教えてあげないといけないのですね。<br />
+<br /></dd>
+<dt>INT iY<br /></dt>
+<dd>同じくy座標です。今回は都市と同じタイル状に生成されてほしいので、PCityの座標を取得する方法を探して<br />
+取得した座標をそのまま(同じ数値として)指定したらよさそうですね。<br />
+<br /></dd>
+<dt>UnitAIType eUnitAI<br /></dt>
+<dd>UnitAIのTypeなのでユニットAIのIDですね(そのまま)。下の行の注釈に<br />
+「どんなときでも<code>UnitAITypes.NO_UNITAI</code>を使ってね」<br />
+とあるので<code>UnitAITypes.NO_UNITAI</code>を指定しておきましょう。<br />
+<br /></dd>
+<dt>DirectionType eFacingDirection<br /></dt>
+<dd>FacingなDirectionですから&rdquo;向いている方向&rdquo;でしょうか。&hellip;ユニットの向いている方向ですね(そのまま)。<br />
+DirectionTypeとあるのでこれまた数値指定ですが、&rdquo;南&rdquo;を表す数値がもう代入されている変数があるので<br />
+利用させてもらいましょう。<code>DirectionTypes.DIRECTION_SOUTH</code>です。<br />
+<br /></dd>
+</dl>
+
+<h2 id="自分で関数を定義する">自分で関数を定義する</h2>
+
+<p><code>pPlayer.initUnit()</code>を呼び出すだけの関数<code>createUnit()</code>を定義してみましょう&hellip;</p>
+
+<pre><code class="language-python">def createUnit(pPlayer, unit, x, y):
+    pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+</code></pre>
+
+<p>こうしてみました。<br />
+どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br />
+別の言い方をすれば、ここではそれらを決めずに、呼び出す側が決める、ということです。</p>
+
+<p>呼び出し側は、例えばこうなります。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+archerUnit = gc.getInfoTypeForString('UNIT_ARCHER')
+x = pCity.getX()
+y = pCity.getY()
+createUnit(pPlayer, archerUnit, x, y)
+createUnit(pPlayer, archerUnit, x, y)
+createUnit(pPlayer, archerUnit, x, y)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>さて、すこし想像力が必要かもしれません。<br />
+前半3行では弓兵のユニットID、都市のx座標、都市のy座標を変数に代入していますね。<br />
+それらの「値」をいまさっき「定義」した関数に引数として渡しています。<br />
+そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br />
+に相当する「値」が入った状態で<code>createUnit()</code>(を定義したところの)のブロックが実行されます。<br />
+<code>Player.initUnit()</code>を呼び出して&hellip;都市と同じタイル上に弓兵が生成されますね。<br />
+<code>createUnit()</code>を3回同じ引数で呼び出していますから、処理も3回実行され、弓兵が3体できるはずです。</p>
+
+<h2 id="ためす">ためす</h2>
+
+<p><a href="https://gforestshade.github.io/kujira/img/kujira_def_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_def_10.png"  width="800" height="460" /></a>
+<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_def_11.png"><img src="https://gforestshade.github.io/kujira/img/kujira_def_11.png"  width="800" height="460" /></a>
+<br />
+できました！</p>
+
+<p>余談ですが、このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、<br />
+防衛志向でない指導者には弓が来ないことをちゃんと確認したほうがよいと思います。<br />
+防衛志向のみならず金融/哲学に弓が来てしまったら、それはおそらくバグです。<br />
+『防衛志向かどうか』の判定がうまくいっていないことを疑う必要があるかもしれません。</p>
 
 </div>
 
