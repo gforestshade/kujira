@@ -23,7 +23,7 @@ html {
   padding: .5em .75em;
   background-color: #f6f6f6;
   border-bottom: 3px solid #aa9966;
-  margin: 1em 20% 2em 0;
+  margin: 1em 0 2em 0;
 }
 
 .content>h2 {
@@ -32,9 +32,26 @@ html {
   border-left: 6px solid #a9855a;
 }
 
-strong {
+.content img {
+  max-width: 95%;
+  height: auto;
+}
+
+.content strong {
   font-weight: bold;
   color: #660000;  
+}
+
+.content table, .content th, .content td {
+  border: 2px black solid;
+}
+
+.content table {
+  margin: 1em;
+}
+
+.content th, .content td {
+  padding: 2px;
 }
 
 .footer {

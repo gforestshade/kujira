@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>はじめてのCvEventManager.py 4  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="はじめてのCvEventManager.py, せつめい, ">
+
+
+<meta property="og:title" content="はじめてのCvEventManager.py 4  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted4/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-07-26T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-07-26T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="はじめてのCvEventManager.py">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="はじめてのCvEventManager.py 4" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted4/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "はじめてのCvEventManager.py 4",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-07-26",
+    "description": "",
+    "wordCount": 4355
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/getstarted4/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/getstarted4/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">はじめてのCvEventManager.py 4
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-07-26">26 Jul, 2017</time>
+
+    
+    &middot; 9 Minute Read
+    &middot; 4355 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのCvEventManager.py</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/getstarted4/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき<br /></li>
+<li>その３でMODひとつしか作れなかったので応用編の別立て<br />
+<br /></li>
+</ul>
+
+<h1 id="もう少し先へ">もう少し先へ</h1>
+
+<p>前半戦たるその３では『都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD』を作りました。少し拡張してみましょう。</p>
+
+<p>『弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい』</p>
+
+<p>と思ったとします。が、少々厄介です。<br />
+というのも、『時代に合わせた防衛ユニット』という表現があいまいなのです。<br />
+これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。</p>
+
+<h2 id="例えば">例えば</h2>
+
+<ul>
+<li>なにもなければ弓兵が3体出る<br /></li>
+<li>封建制と弓術を取得済みなら長弓兵が3体出る<br /></li>
+<li>鉄道を取得済みなら機関銃兵が3体出る<br /></li>
+<li>ロボット工学とライフリングを取得済みなら機械化歩兵が3体出る<br />
+<br /></li>
+</ul>
+
+<p>このように、まず条件を具体的に書きだします。<br />
+すこしプログラムっぽくなってきましたが、<br />
+これをそのままif文で並べても以下の理由によりまだうまくいきません。</p>
+
+<ul>
+<li>封建制と弓術と鉄道をどれも取得済みのとき、２つの条件を同時に満たしてしまい、両方が3体出てしまう<br /></li>
+<li>弓兵の出る条件である『ほかの条件をどれも満たさないなら』は今知っているif文では書けない<br />
+<br /></li>
+</ul>
+
+<h1 id="そして今日の理論編">そして今日の理論編</h1>
+
+<h2 id="elifとelse">elifとelse</h2>
+
+<p>if文には条件を満たす場合と満たさない場合、両方の処理を書くことができます。</p>
+
+<pre><code class="language-python">if 条件:
+    条件を満たす場合の処理
+else:
+    条件を満たさない場合の処理
+</code></pre>
+
+<p>また、複数の条件をつなげて書くこともできます。</p>
+
+<pre><code class="language-python">if 条件１:
+    条件１を満たす場合の処理
+elif 条件２:
+    条件１は満たさないが条件２を満たす場合の処理
+elif 条件３:
+    条件１も条件２も満たさないが条件３を満たす場合の処理
+else:
+    条件１も条件２も条件３も満たさない場合の処理
+</code></pre>
+
+<h2 id="真と偽">真と偽</h2>
+
+<p>if文は条件式が「真」と解釈される場合にブロックを実行し、「偽」と解釈される場合にはelseのブロックを実行します。<br />
+pythonにおいて「真」と解釈されるものは以下の通りです。</p>
+
+<ul>
+<li>「True」<br /></li>
+<li>その他「偽」と解釈されるもの以外全部<br />
+<br /></li>
+</ul>
+
+<p>&ldquo;えっ&rdquo;と思われた方もいるかもしれませんが、その方が早いのです。<br />
+では肝心の「偽」と解釈されるものは以下の通りです。</p>
+
+<ul>
+<li>「False」<br /></li>
+<li>数値の0<br /></li>
+<li>空の文字列&rdquo;&rdquo;<br /></li>
+<li>空のタプル()・空のリスト[]・空のディクショナリ{}<br /></li>
+<li>「None」<br />
+<br /></li>
+</ul>
+
+<p>知らない用語がいろいろ出てきましたが、とりあえず今回は<code>True</code>(真)と<code>False</code>(偽)について知っておけばよいです。<br />
+<code>==</code>, <code>&lt;</code>, <code>&gt;</code>といった左辺と右辺を比較する「演算子」は、比較した結果により<code>True</code>か<code>False</code>のどちらかに&rdquo;なります&rdquo;。<br />
+<code>3 == 3</code>は<code>True</code>ですし、<code>3 == 5</code>は<code>False</code>です。<br />
+(覚えていますか？<code>==</code>は左辺と右辺が等しいかどうかを比較してくれるのでした。)<br />
+このあたりは、関数の呼び出し文字列が「戻り値」で置き換えられていたのと似ています。<br />
+理論編はただ読んでいてもなかなか頭に入りません。実際に少し書いてみましょう。Python2の実行環境で&hellip;</p>
+
+<pre><code class="language-python">print &quot;==&quot;
+print 3 == 3
+print 3 == 5
+print 
+
+print &quot;!=&quot;
+print 3 != 3
+print 3 != 5
+print
+
+print &quot;&lt;&quot;
+print 3 &lt; 3
+print 3 &lt; 5
+print
+
+print &quot;&gt;&quot;
+pritn 3 &gt; 3
+print 3 &gt; 5
+print
+
+print &quot;&lt;=&quot;
+print 3 &lt;= 3
+print 3 &lt;= 5
+print
+
+print &quot;&gt;=&quot;
+pritn 3 &gt;= 3
+print 3 &gt;= 5
+print
+</code></pre>
+
+<p>どういう出力になるか書きながら予想して、それから実行してみましょう。<br />
+どうでしょうか。比較が正しいか正しくないかによって<code>True</code>か<code>False</code>に&rdquo;なって&rdquo;いることがわかると思います。</p>
+
+<p>(あまり実用上の意味はありませんが)if文に<code>True</code>や<code>False</code>を直接書くこともできます。</p>
+
+<pre><code class="language-python">if True:
+    print &quot;jikkou sareru kana?&quot;
+
+if False:
+    print &quot;sarenai kana?&quot;
+
+</code></pre>
+
+<p>予想して、実行してみましょう。</p>
+
+<p><code>True</code>も<code>False</code>も値なので、それら自体を変数に代入してしまうこともできます。</p>
+
+<pre><code class="language-python">a = True
+if a:
+    print &quot;always jikkou sareru YO!&quot;
+else:
+    print &quot;never jikkou sarenai kamo&quot;
+</code></pre>
+
+<p>予想して、実行してみましょう。</p>
+
+<h2 id="andとor">andとor</h2>
+
+<p>もう少しだけ我慢しておつきあいください。<br />
+例えば『<code>a</code>も<code>b</code>も3以上ならば』と書きたいときはどうすればよいでしょうか。<br />
+少し解体して、<code>a&gt;=3</code>と<code>b&gt;=3</code>の「両方が<code>True</code>のときに限り<code>True</code>になる」表現が必要になります。<br />
+つまり、それが、<code>and</code>です。書いてみましょう。</p>
+
+<pre><code class="language-python">a = 8
+b = 3
+
+if a &gt;= 3 and b &gt;= 3:
+    print &quot;hyoji sareru kana?&quot;
+
+if a &gt; 3 and b &gt; 3:
+    print &quot;koreha dou kana?&quot;
+
+</code></pre>
+
+<p>予想して、実行してみてください。</p>
+
+<p>対になる「どちらかが<code>True</code>なら<code>True</code>、どちらも<code>False</code>のときのみ<code>False</code>」もあります。<code>or</code>です。</p>
+
+<pre><code class="language-python">a = 8
+b = 3
+
+if a &gt;= 3 and b &gt;= 3:
+    print &quot;dou kana?&quot;
+
+if a &gt; 3 and b &gt; 3:
+    print &quot;kou kana?&quot;
+
+if a &gt; 9 and b &gt; 9:
+    print &quot;kou kamo&quot;
+</code></pre>
+
+<p>表で見る <code>and</code>と<code>or</code></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">a and b</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">True</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">True</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">False</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">a or b</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">True</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">True</td>
+<td align="center">False</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">False</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="とことこmod">とことこMOD</h1>
+
+<h2 id="条件の優先度を考える">条件の優先度を考える</h2>
+
+<p>さて、&rdquo;複数条件を満たしたときに優先されてほしい順&rdquo;に条件を並び替えましょう。</p>
+
+<ul>
+<li>なにもなければ弓兵が3体出る<br /></li>
+<li>封建制と弓術を取得済みなら長弓兵が3体出る<br /></li>
+<li>鉄道を取得済みなら機関銃兵が3体出る<br /></li>
+<li>ロボット工学とライフリングを取得済みなら機械化歩兵が3体出る<br />
+<br /></li>
+</ul>
+
+<p>の例だと、機械化歩兵→機関銃兵→長弓兵の順ですね。機関銃兵が出る条件と長弓兵が出る条件を<br />
+両方満たしたときには機関銃兵が優先されてほしいですし、<br />
+機関銃兵が出る条件を満たしてなくて、長弓兵が出る条件は満たしているときに限り、<br />
+長弓兵が出てほしいのです。</p>
+
+<pre><code class="language-python">if ロボット工学を取得済み and ライフリングを取得済み:
+    機械化歩兵
+elif 鉄道を取得済み: #上は満たさず鉄道があるなら
+    機関銃兵
+elif 封建制を取得済み and 弓術を取得済み: #上のいずれも満たさず封建弓術があるなら
+    長弓兵
+else: #上のいずれでもないなら
+    弓兵
+</code></pre>
+
+<p>『両方を取得済み』をどう書くかの知識も利用して、なんとなくこんな感じになることがわかります。</p>
+
+<h2 id="技術は誰のものか">技術は誰のものか</h2>
+
+<p>技術はPlayerが研究するわけですから取得済みの技術のリストもPlayerの元にある&hellip;わけではありません。<br />
+そもそも実際のゲームでも、取得済み技術のリストはPlayerの占有財産ではありません。<br />
+そう、チーム全体で共有しているのです。それはTeamの持ち物です。<br />
+(通常のシングルプレイでは、Pleyer１人だけがメンバーのTeamが仮想的につくられています)<br />
+PythonでのMOD開発ではプログラムを記述するので、コンピュータが迷わないようにはっきりきっかり記述しなければなりません。<br />
+PlayerとTeamのような通常の一人プレイではあまり意識しないような細かい違いであっても重要になってきます。<br />
+細かい仕様に一喜一憂するのもMOD開発の楽しみのひとつだと思って、ゆるゆるいきましょう。</p>
+
+<p>さて、そうなればPlayerが属するTeamを取得しましょう。<br />
+<code>iTeam = pPlayer.getTeam()</code>です。&hellip;はい、これの戻り値は例によってチームIDです。<br />
+チーム本体<!-- インスタンス -->を<code>gc</code>から取ってきましょう。 <code>pTeam = gc.getTeam(iTeam)</code>です。<br />
+もちろん、直接<code>gc.getTeam( pPlayer.getTeam() )</code>としてもよいでしょう。</p>
+
+<p>そして技術を持っているか判定です。<br />
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyTeamをクリックしてTechで探すと&hellip;</p>
+
+<pre><code class="language-plain">BOOL isHasTech (TechType iIndex)
+bool (TechID) - has the team researched techID
+</code></pre>
+
+<p>それっぽいのがありました。<br />
+だいぶ知識も蓄えたので、だんだん読めるようになってきました。</p>
+
+<pre><code class="language-plain">戻り値の種類 関数名(引数の種類 仮引数名)
+BOOL isHasTech (TechType iIndex)
+</code></pre>
+
+<!-- 私は型についてちゃんと説明する驚くべき方法を発見したが、それを記すには余白が狭すぎる -->
+
+<p>上の行はこう読みます。<br />
+(下の行は説明ですが、あったりなかったりで当てにならないことも多いので&hellip;)<br />
+BOOLとあるのは要するに戻り値として<code>True</code>か<code>False</code>を返すよ、の意です。<br />
+TechType、すなわち技術IDを引数として渡せば、持ってるなら<code>True</code>、持ってないなら<code>False</code>を戻り値として返すよ、というわけですね。<br />
+こうして<code>isHasTech</code>という名前から機能を推測したりできるのも、関数の強みなのでした。<br />
+この場合、動作を表す一般動詞(～する)ではなく、状態を表すbe動詞(～である)で始まっているので、<br />
+『～であるか？』という疑問形になっていてその情報を取得するのだろうということが戻り値BOOLとの合わせ技でわかってきます。<br />
+ほかにもCiv4の関数名はcan(～できるか？)で始まっている関数も戻り値BOOLであることが多いようですし、<br />
+Yes/Noで答えられない戻り値はget(取得する)で始まっていることが多いようです。<br />
+<code>pCity.getPlayer()</code>や<code>pPlayer.getTeam()</code>などがまさにその例ですね。</p>
+
+<p><strong><em>名前は大事です。</em></strong></p>
+
+<p>ともあれ、<code>pTeam.isHasTech( gc.getInfoTypeForString('TECH_ARCHERY') )</code>のようにすれば<br />
+(XMLキーを渡すと対応する数値が返る関数を介して<code>isHasTech()</code>に渡していますね)<br />
+<code>True</code>か<code>False</code>かが返ってきますから、if文なりで分岐させればよいことがわかりました。</p>
+
+<h2 id="共通な部分をまとめる">共通な部分をまとめる</h2>
+
+<p>今回のMODでは、出るのはどの兵種であっても3体です。<br />
+3体出す部分を共通化してしまって、</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+# 変数unitにユニットIDをどうにかして代入しておく
+createUnit(pPlayer, unit, x, y)
+createUnit(pPlayer, unit, x, y)
+createUnit(pPlayer, unit, x, y)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>としてしまいましょう。<br />
+さらに言えば、unitには『Playerの(技術)状況に合わせた防衛ユニットのIDを取得して』それを代入するのですから、<br />
+<strong><em>まとめて言い表せる処理のかたまりにはわかりやすい名前を付けて関数にしましょう。</em></strong></p>
+
+<pre><code class="language-python">def getDefensiveUnitType(pPlayer):
+    pTeam = gc.getTeam( pPlayer.getTeam() )
+    t = gc.getInfoTypeForString
+    
+    if pTeam.isHasTech( t('TECH_ROBOTICS') ) and pTeam.isHasTech( t('TECH_RIFLING') ):
+        return t('UNIT_MECHANIZED_INFANTRY')
+    elif pTeam.isHasTech( t('TECH_RAILROAD') ):
+        return t('UNIT_MACHINE_GUN')
+    elif pTeam.isHasTech( t('TECH_FEUDALISM') ) and pTeam.isHasTech( t('TECH_ARCHERY') ):
+        return t('UNIT_LONGBOWMAN')
+    else:
+        return t('UNIT_ARCHER')
+
+</code></pre>
+
+<p>関数の定義方法は覚えていましたか？<br />
+pPlayerの状況に左右される情報を使いたいので、どのpPlayerかを呼び出し側に指定してもらうことにします。<br />
+指定するのは呼び出し側なので、定義側では引数をつくるだけです。<br />
+PlayerからチームID経由でpTeamを取得して&hellip;<br />
+<code>t = gc.getInfoTypeForString</code>で関数に別名をつけています。<br />
+せっかくちゃんとした名前がついている関数があるのにそれを勝手に縮めてしまうなんて本来は重大な反逆行為ですが、<br />
+<code>if pTeam.isHasTech( gc.getInfoTypeForString('TECH_ROBOTICS') ) and pTeam.isHasTech( gc.getInfoTypeForString('TECH_RIFLING') ):</code><br />
+のように多くの環境で折り返されて２行に渡ってしまい、ものすごく読み辛くなってしまうので<br />
+(折り返さない環境であっても見切れてしまって読み辛いことには変わりないので)<br />
+涙をのんでここで短縮しています。<br />
+<!-- まあでも実際、gc.getInfoTypeForString()は呼び出す頻度のわりに長すぎる気はする --></p>
+
+<p>if-elif-elseの中で、ユニットIDを<code>return</code>で返しています。<br />
+この戻り値を<code>unit = getDefensiveUnitType(pPlayer)</code>として<code>unit</code>に代入して、<br />
+<code>createUnit(pPlayer, unit, x, y)</code>につなげていきます。</p>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<p>お待たせしました。全体像です。</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+def createUnit(pPlayer, unit, x, y):
+    pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+def getDefensiveUnitType(pPlayer):
+    pTeam = gc.getTeam( pPlayer.getTeam() )
+    t = gc.getInfoTypeForString
+    
+    if pTeam.isHasTech( t('TECH_ROBOTICS') ) and pTeam.isHasTech( t('TECH_RIFLING') ):
+        return t('UNIT_MECHANIZED_INFANTRY')
+    elif pTeam.isHasTech( t('TECH_RAILROAD') ):
+        return t('UNIT_MACHINE_GUN')
+    elif pTeam.isHasTech( t('TECH_FEUDALISM') ) and pTeam.isHasTech( t('TECH_ARCHERY') ):
+        return t('UNIT_LONGBOWMAN')
+    else:
+        return t('UNIT_ARCHER')
+
+    
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onCityBuilt(self, argsList):
+        'Called when a player builds a city'
+        super(self.__class__, self).onCityBuilt(argsList)
+        ##########
+        pCity = argsList[0]
+        pPlayer = gc.getPlayer( pCity.getOwner() )
+
+        if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
+            unit = getDefensiveUnitType(pPlayer)
+            x = pCity.getX()
+            y = pCity.getY()
+            
+            createUnit(pPlayer, unit, x, y)
+            createUnit(pPlayer, unit, x, y)
+            createUnit(pPlayer, unit, x, y)
+
+</code></pre>
+
+<!-- 次回こそはループやるから！ほかにもいろいろと不完全なので、こんなところを読んでいる暇な人は粗探ししてみるのも一興。 -->
+
+<h2 id="ためす">ためす</h2>
+
+<p><a href="https://gforestshade.github.io/kujira/img/kujira_def_21.png"><img src="https://gforestshade.github.io/kujira/img/kujira_def_21.png"  width="800" height="460" /></a>
+<br />
+封建制取得後の都市建設ではちゃんと長弓兵が出ているようです。</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted3/" title="はじめてのCvEventManager.py 3 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+          return;
+
+        var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+        dsq.src = '//kujira.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted4/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 4" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted4/" class="title">はじめてのCvEventManager.py 4</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted3/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 3" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted3/" class="title">はじめてのCvEventManager.py 3</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted2/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 2" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted2/" class="title">はじめてのCvEventManager.py 2</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted1/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 1" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted1/" class="title">はじめてのCvEventManager.py 1</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/nifanimation/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="第２章" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/nifanimation/" class="title">第２章</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">6</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+
