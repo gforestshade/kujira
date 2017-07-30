@@ -1,10 +1,9 @@
 +++
-date = "2017-07-29"
+date = "2017-07-30"
 draft = false
 title = "はじめてのCvEventManager.py 5"
 banner = "/green1024x200.png"
 tags = ["はじめてのCvEventManager.py", "せつめい"]
-comment = true
 +++
 
 # はじめに

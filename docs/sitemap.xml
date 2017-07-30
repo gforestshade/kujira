@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gforestshade.github.io/kujira/post/getstarted/</loc>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gforestshade.github.io/kujira/post/getstarted5/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -59,7 +64,7 @@
   
   <url>
     <loc>https://gforestshade.github.io/kujira/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -77,7 +82,7 @@
   
   <url>
     <loc>https://gforestshade.github.io/kujira/post/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,13 +94,19 @@
   
   <url>
     <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gforestshade.github.io/kujira/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEcveventmanager.py/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E7%9B%AE%E6%AC%A1/</loc>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
