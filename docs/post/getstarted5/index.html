@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>はじめてのCvEventManager.py 5  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="はじめてのCvEventManager.py, せつめい, ">
+
+
+<meta property="og:title" content="はじめてのCvEventManager.py 5  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted5/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-07-29T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-07-29T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="はじめてのCvEventManager.py">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="はじめてのCvEventManager.py 5" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted5/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "はじめてのCvEventManager.py 5",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-07-29",
+    "description": "",
+    "wordCount": 3193
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/getstarted5/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/getstarted5/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">はじめてのCvEventManager.py 5
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-07-29">29 Jul, 2017</time>
+
+    
+    &middot; 7 Minute Read
+    &middot; 3193 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのCvEventManager.py</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/getstarted5/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき<br /></li>
+<li>リストと繰り返し<br /></li>
+<li>他のイベント<br />
+<br /></li>
+</ul>
+
+<h1 id="今日のmod">今日のMOD</h1>
+
+<h2 id="準備">準備</h2>
+
+<p>例によって<code>kujira_for</code>というMODを作ります。</p>
+
+<pre><code class="language-plain">└─kujira_for
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h2 id="構想">構想</h2>
+
+<p>『建造物が建設されたとき、その建造物がダンならば、都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与える』MODを作りましょう。<br />
+捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。<br />
+バニラの建造物によくある『この都市で生産されたユニットに教練Ⅰと教練Ⅱ』との違いに注意してください。<br />
+今作ろうとしているのはダンが建設完了したその瞬間に都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
+
+<h2 id="建造物が建設されたとき">建造物が建設されたとき</h2>
+
+<p>KujiraEventManager.pyを&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onBuildingBuilt(self, argsList):
+        'Called when a building is built'
+        super(self.__class__, self).onBuildingBuilt(argsList)
+        ##########
+        CvUtil.pyPrint(&quot;onBuildingBuilt: called&quot;)
+</code></pre>
+
+<p>このようにしてみました。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+def onBuildingBuilt(self, argsList):
+    'Called when a building is built'
+    super(self.__class__, self).onBuildingBuilt(argsList)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>onCityBuilt</code>だったところを<code>onBuildingBuilt</code>に変えています。</p>
+
+<p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントのリスト</a>からonBuildingBuiltを探すと、</p>
+
+<pre><code class="language-plain">Function: def onBuildingBuilt()
+Parameters: self, argsList (pCity, iBuildingType)
+Description: Called when a building is built
+</code></pre>
+
+<p>となっています。<br />
+argsListに2つの値が入っているようです。例えば、</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity = argsList[0]
+iBuildingType = argsList[1]
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>などとして取り出すことができます。今回はこの<code>[0]</code>とか<code>[1]</code>とかいう書き方について。</p>
+
+<h1 id="今日の理論編">今日の理論編</h1>
+
+<p>Python実行環境を用意しましょう。</p>
+
+<h2 id="リスト">リスト</h2>
+
+<p>「リスト」とは、要素を順番に並べたもののことです。次のようにして作成します。</p>
+
+<pre><code class="language-python">a = [2, 3, 5, 7, 11]
+</code></pre>
+
+<p>それぞれの要素は<code>0番目</code>・<code>1番目</code>・<code>2番目</code>……と順番が割り当てられていて、<code>a[2]</code>として2番目を取り出すことができます。<br />
+試してみましょう。</p>
+
+<pre><code class="language-python">a = [2, 3, 5, 7, 11]
+print a[0]
+print a[1]
+print a[2]
+print a[3]
+print a[4]
+</code></pre>
+
+<p>何が出力されるでしょうか。予想して、実行してみましょう。<br />
+この番号の部分を「インデックス」(index)と呼びます。</p>
+
+<p>「インデックス」は数値ですが、&rdquo;整数を表すなにか&rdquo;であれば整数そのものである必要はありません。</p>
+
+<pre><code class="language-python">def f(x):
+    return x*x
+
+a = [13, 17, 23, 29, 31, 37]
+b = 5
+print a[1]    # 数値
+print a[b]    # 数値入り変数
+print a[f(2)] # 関数の戻り値
+</code></pre>
+
+<p>頑張って予想しましょう。<br />
+<code>a = [13, 17, 23, 29, 31, 37]</code>とあることから、<br />
+- 0番目: 13<br />
+- 1番目: 17<br />
+- 2番目: 23<br />
+- 3番目: 29<br />
+- 4番目: 31<br />
+- 5番目: 37<br />
+となっています(番号は0から始まるのでした)。</p>
+
+<p><code>a[1]</code>は直接1番目を参照していますから<code>17</code>ですね。<br />
+<code>b</code>は<code>5</code>ですから、<code>a[b]</code>はaの5番目を指すはずです。<code>37</code>ですね。<br />
+<code>f(2)</code>は何でしょうか。関数の定義の部分に戻ってみると、引数の<code>x</code>を<code>x*x</code>にして返しているようです。<br />
+いま、引数に<code>2</code>を渡していますから2*2で<code>4</code>ですね。呼び出した部分がそのまま戻り値である<code>4</code>に置き換わるのでしたから<code>a[4]</code>となり、<code>31</code>になります。<br />
+さて予想もできたところで本当にそうなるか実行してみましょう。</p>
+
+<p>要素数が十分小さいなら、左辺を<code>,</code>で区切って順番に全て取り出すこともできます。<br />
+<!-- シーケンス型(正確に言えばiteratableな型)のunpack。概念は難しいがイディオムとして便利なのでここで紹介。 --></p>
+
+<pre><code class="language-python">a = [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;]
+e, f, g = a
+print e
+print f
+print g
+</code></pre>
+
+<p>予想して、実行してみましょう。</p>
+
+<h2 id="繰り返し">繰り返し</h2>
+
+<p>どうせ全要素printするのなら、『リストの各要素に対して、』という表現があれば便利です。<br />
+というわけで、for文がそれにあたります。<br />
+例えばこのように書きます。</p>
+
+<pre><code class="language-python">fib = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+for i in fib:
+    print i
+</code></pre>
+
+<p><code>fib</code>の要素を1つずつ取り出して<code>i</code>に代入しつつ、中のブロックを実行します。<br />
+ブロックを実行し終わったらまた次の要素を<code>i</code>に代入して、中のブロックを実行します。<br />
+これを、リストの要素が尽きるまで&rdquo;繰り返し&rdquo;ます。</p>
+
+<p>リストの内容分繰り返したいのではなく、ただ単に10回繰り返したいときもあるでしょう。<br />
+10個の要素を持ったリストを手作りすればよいのですが、めんどくさいですし、<br />
+数え間違いなどが起こってもいやですので、<code>range()</code>という関数を使います。<br />
+これは、0から指定した数字未満のリストを作って返してくれます。<br />
+動作を見てみましょう。</p>
+
+<pre><code class="language-python">print range(15)
+</code></pre>
+
+<p>中の数字をいろいろいじっていろいろ実行してみるとよいでしょう。なるほどなるほどー。</p>
+
+<p>これを使って、このように書けます。</p>
+
+<pre><code class="language-python">for i in range(10):
+    print i, &quot;banme&quot;
+</code></pre>
+
+<p><code>range()</code>の動作をいろいろ試した方なら、予想できるかもしれません。<br />
+予想してから、実行してみましょう。</p>
+
+<p>for文を学んだことで、例えばもし、『タイル上のユニット数を取得する関数』と、『i番目のユニットを取得する関数』があったなら、<br />
+このように書けるはずです。</p>
+
+<pre><code class="language-python">nUnits = ユニット数を取得
+for i in range(nUnits):
+    pUnit = ユニット取得(i)
+    pUnit.いろいろ...
+</code></pre>
+
+<p><code>nUnits</code>回だけブロックを繰り返しますから、タイル上の全ユニットになにかしていることになるはずです。<br />
+夢が広がりますね。</p>
+
+<h1 id="modへ戻る">MODへ戻る</h1>
+
+<h2 id="onbuildingbuilt">onBuildingBuilt</h2>
+
+<p>というわけで、<code>onBuildingBuilt()</code>の<code>##########</code>より下を&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+##########
+pCity, iBuildingType = argsList
+
+if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+    plot = pCity.plot()
+
+    for i in range( plot.getNumUnits() ):
+        pUnit = plot.getUnit(i)
+        pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)
+        pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL2'), True)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>こうしてみました。<br />
+全体像だけ見てみると、インデントが入れ子になっていることが分かります。<br />
+for文も文ですから、if文のブロックの一員にすることができて、しかしfor文自身のブロックはそれとは区別しなければなりませんから<br />
+さらに空白文字を足さなければならないのですね。</p>
+
+<p>さて、<code>argsList</code>が何だったかというと、<code>onBuildingBuilt()</code>においては<code>[pCity,iBuildingType]</code>という「リスト」なのでした。<br />
+<!-- 本当はリストじゃなくてタプルかもしれない。多分リスト。どのみちシーケンス型なので書き方には影響はない。 --><br />
+ので&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity = argsList[0]
+iBuildingType = argsList[1]
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>あるいは</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity, iBuildingType = argsList
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>として取り出すことができるのでした。</p>
+
+<p><code>iBuildingType</code>は今まさに建ったその建造物のTypeを表しているので、それがダンかどうかは&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>こうすればよいですね。<br />
+(gc.getInfoTypeForString()の働きは大丈夫ですね？XMLキーをIDに直す関数なのでした)</p>
+
+<p>さて、ゲーム中、各タイルの状況は刻々と変わります。(上に乗っているユニットや、建っている改善や、道が引かれているか、鉄道はどうか、etc&hellip;)<br />
+なのでこれにも例によって新しい名前があります。「Plot」(地点)です。<br />
+「Terrain」(地形)や「Improvement」(改善)といったものが「Plot」の制御下にあるほか、<br />
+「Unit」や「City」は自分がどこにあるかの情報を「Plot」でもっています。<br />
+たとえば<code>PCity.plot()</code>として<code>pCity</code>の「plot」を取得できます。</p>
+
+<p>そして、<code>plot</code>上にあるユニットの数は<code>plot.getNumUnits()</code>、<code>plot</code>上の<code>i</code>番目のユニットは<code>plot.getUnit(i)</code>で取得できます。<br />
+<code>pUnit = plot.getUnit(i)</code>と受けてあげることで各「Unit」に操作ができるようになります。</p>
+
+<p>今回は昇進を与えたいのでしたから、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyUnitからPromotionで探すと&hellip;</p>
+
+<pre><code class="language-plain">VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
+void (int (PromotionTypes) eIndex, bool bNewValue)
+</code></pre>
+
+<p>結構たくさんヒットしましたが、『昇進を無償で与える』に該当しそうなのはこれでしょうか。<br />
+PromotionType eIndex は例によって昇進IDなのでいいとして、もうひとつBOOL bNewValueという引数をとっています。<br />
+これは昇進を持っている状況を<code>True</code>、持っていない状況を<code>False</code>とみなしているのですね。<br />
+つまり『昇進を持つようにする』と『昇進の所持状況を<code>True</code>にする』を同一視しているのです。</p>
+
+<p>ここまでわかれば教練Ⅰを持たせられます。<br />
+<code>pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)</code>ですね。</p>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<p>全体で&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onBuildingBuilt(self, argsList):
+        'Called when a building is built'
+        super(self.__class__, self).onBuildingBuilt(argsList)
+        ##########
+        pCity, iBuildingType = argsList
+
+        if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+            plot = pCity.plot()
+
+            for i in range( plot.getNumUnits() ):
+                pUnit = plot.getUnit(i)
+                pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)
+                pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL2'), True)
+
+</code></pre>
+
+<p>こうなります。</p>
+
+<h2 id="ためす">ためす</h2>
+
+<p>起動して、ユニットを貯めて、ダンを建てて&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_for_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_for_10.png"    /></a>
+<br />
+できました！</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted4/" title="はじめてのCvEventManager.py 4 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+          return;
+
+        var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+        dsq.src = '//kujira.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted5/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 5" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted5/" class="title">はじめてのCvEventManager.py 5</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted4/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 4" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted4/" class="title">はじめてのCvEventManager.py 4</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted3/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 3" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted3/" class="title">はじめてのCvEventManager.py 3</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted2/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 2" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted2/" class="title">はじめてのCvEventManager.py 2</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted1/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 1" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted1/" class="title">はじめてのCvEventManager.py 1</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">5</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+
