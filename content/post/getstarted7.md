@@ -8,7 +8,7 @@ tags = ["はじめてのCvEventManager.py", "せつめい"]
 
 [api]: http://civ4bug.sourceforge.net/PythonAPI/index.html
 
-- [その６]({{<ref "getstarted5.md">}})のつづき
+- [その６]({{<ref "getstarted6.md">}})のつづき
 - XMLとPythonの合わせ技・Python編
 
 # Python
@@ -22,7 +22,7 @@ tags = ["はじめてのCvEventManager.py", "せつめい"]
 ## 都市圏とは
 {{<img src="/img/kujira_fert_city_area.png" width="300" height="300">}}
 このように図を使えばなんとなくわかるのですが、
-『こっからここまで』というのをちゃんとした言葉で、ひいてはプログラムで表現できないとMODとしては動いてくれません。
+『ここからここまで』というのをちゃんとした言葉で、ひいてはプログラムで表現できないとMODとしては動いてくれません。
 
 まず、それは「Plot」の「リスト」と考えることができます。
 
@@ -54,7 +54,7 @@ tags = ["はじめてのCvEventManager.py", "せつめい"]
 
 + 都市直下の「Plot」
 
-これら21個の「Plot」それぞれについて、「Terrain」(地形)をGlass(草原)に変更することが今回の目標です。
+これら21個の「Plot」それぞれについて、「Terrain」(地形)をGrass(草原)に変更することが今回の目標です。
 
 ## Plotの座標
 マップ上のPlotは、マップの左下隅を(0,0)として、そこから何歩分進めばそのPlotに到達するか、という数字で表すことができます。
