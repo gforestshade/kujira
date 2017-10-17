@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>それからのPython 1  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="それからのPython, せつめい, ">
+
+
+<meta property="og:title" content="それからのPython 1  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy1/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-10-17T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-10-17T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="それからのPython">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="それからのPython 1" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy1/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "それからのPython 1",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-10-17",
+    "description": "",
+    "wordCount": 3595
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy1/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/secondpy1/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">それからのPython 1
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-17">17 Oct, 2017</time>
+
+    
+    &middot; 8 Minute Read
+    &middot; 3595 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy1/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<h2 id="これは何か">これは何か</h2>
+
+<p>これは、<br />
+「はじめてのCvEventManager.py」シリーズの続きです。<br />
+もうちょっとPythonの書き方について勉強して、より思い通りに記述できるようになろう、というのが大きな目的です。</p>
+
+<h2 id="これは何でないか">これは何でないか</h2>
+
+<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br />
+また、「はじめてのCvEventManager.py」程度のMOD制作経験を前提としています。<br />
+コピペですぐ動くコードはあまりないかもしれません。</p>
+
+<h1 id="準備">準備</h1>
+
+<p>最小構成からスタートしましょう。</p>
+
+<h2 id="civilizationiv-ini">CivilizationIV.ini</h2>
+
+<pre><code class="language-ini">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+; Enable the logging system
+; Documents\My Games\Beyond the Sword(J)\Logs
+LoggingEnabled = 1
+
+; Enable synchronization logging
+SynchLog = 1
+
+; Overwrite old network and message logs
+OverwriteLogs = 1
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</code></pre>
+
+<p>ログファイルが出力されるようにしておきます。</p>
+
+<h2 id="フォルダ構成">フォルダ構成</h2>
+
+<pre><code class="language-plain">└─kujira_var
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h2 id="cveventinterface-py">CvEventInterface.py</h2>
+
+<pre><code class="language-python"># Sid Meier's Civilization 4
+# Copyright Firaxis Games 2005
+#
+# CvEventInterface.py
+#
+# These functions are App Entry Points from C++
+# WARNING: These function names should not be changed
+# WARNING: These functions can not be placed into a class
+#
+# No other modules should import this
+#
+import CvUtil
+# import CvEventManager
+import KujiraEventManager
+from CvPythonExtensions import *
+
+# normalEventManager = CvEventManager.CvEventManager()
+myEventManager = KujiraEventManager.MyEventManager()
+
+def getEventManager():
+	return myEventManager
+
+def onEvent(argsList):
+	'Called when a game event happens - return 1 if the event was consumed'
+	return getEventManager().handleEvent(argsList)
+
+def applyEvent(argsList):
+	context, playerID, netUserData, popupReturn = argsList
+	return getEventManager().applyEvent(argsList)
+
+def beginEvent(context, argsList=-1):
+	return getEventManager().beginEvent(context, argsList)
+</code></pre>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+        # ログファイルに出力する
+        CvUtil.pyPrint(&quot;Hello, Python!&quot;)
+</code></pre>
+
+<h2 id="ためす">ためす</h2>
+
+<p>実行してゲームを開始し(開始さえすればそのあとすぐに終了して構いません)、<br />
+PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the Sword(J)\Logs にあります)に<br />
+ちゃんと出力されているか確認しましょう。<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_var_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_10.png"    /></a>
+<br />
+いいですね。</p>
+
+<h1 id="変数">変数</h1>
+
+<p>いきなりですが、ちょっと変えてゲームを開始してみましょう。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        a = &quot;Hello, Python!&quot;
+        CvUtil.pyPrint(a)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>さっきと同じく、PythonDbg.logに<code>PY:Hello, Python!</code>と出力されています。</p>
+
+<p>このように、プログラムではデータに名前を付けてとっておいて、後からその名前で中のデータを参照できるのですが、<br />
+そのうちの<code>a</code>を「変数」、その中に納まっているデータを「値」と呼びます。<br />
+そして<code>a = &quot;Hello, Python!&quot;</code>のように、<code>変数名 = 値</code>の形になっている「文」を代入と呼びます。<br />
+この場合「<code>a</code>という名前の変数に<code>&quot;Hello, Python!&quot;</code>という値を代入している」ということになります。</p>
+
+<p>代入でない場所に書かれている変数は中身の値を表します。<br />
+いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、<code>CvUtil.pyPrint(a)</code>は<code>CvUtil.pyPrint(&quot;Hello, Python!&quot;)</code>と同じ意味を表すことになります。</p>
+
+<h2 id="型">型</h2>
+
+<p>「値」にはデータの性質によって種類があります。<br />
+たとえば&hellip;</p>
+
+<ul>
+<li>数値型 <code>a = 123</code><br /></li>
+<li>文字列型 <code>a = &quot;123&quot;</code><br /></li>
+<li>リスト型 <code>a = [1,2,3]</code><br /></li>
+<li>ブール型 <code>a = True</code><br />
+<br /></li>
+</ul>
+
+<p>&hellip;などなど、いろいろあります。</p>
+
+<h2 id="型の一致">型の一致</h2>
+
+<p>「型」の話で大事なのは、<strong><em>種類があっていないと関数は基本的に失敗する</em></strong>ということです。</p>
+
+<p>試してみましょう。文字列型の代わりに数値型を使って<code>CvUtil.pyPrint(a)</code>してみます。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        a = 1234
+        CvUtil.pyPrint(a) # 数値型で呼び出す
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>これでゲームを開始してみてください。</p>
+
+<p>PythonDbg.logをいくら眺めてみても、「1234」が出力されている様子はありません。<br />
+かわりにPythonErr.logを見てみると、&rdquo;KujiraEventManager&rdquo;の12行目、<br />
+すなわち<code>CvUtil.pyPrint(a)</code>と呼び出したところで<br />
+エラーになってしまっていることがわかります。</p>
+
+<p>かわりにこうすべきです。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        a = &quot;1234&quot;
+        CvUtil.pyPrint(a) # 数値型で呼び出す
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>ゲームを開始して、どういう動作になるか自分で確かめてみましょう。</p>
+
+<h2 id="例外もある">例外もある</h2>
+
+<p>先に<strong><em>基本的に</em></strong>と書いたのは、まれに融通が利く場面もあるからです。<br />
+その筆頭がprint文です。どんな型の変数を指定しても、ある程度はいい感じに出力してくれます。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        var1 = 1234
+        var2 = &quot;1234&quot;
+        var3 = [1,2,3,4]
+        print var1
+        print var2
+        print var3
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>ゲームを開始して、どういう動作になるか確かめましょう。</p>
+
+<h2 id="でも基本はだめ">でも基本はだめ</h2>
+
+<p>しかし、融通が利くことはまれです。<br />
+基本的には型があっていないとだめです。<br />
+例えば、同じようなプログラムでも、片方はOKでもう片方はエラーです。数値型同士でないと自由に計算はできません。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        tokugawa = 12
+        saradin = 34
+        answer = tokugawa * saradin
+        print answer
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        ragunaru = &quot;12&quot;
+        monte = &quot;34&quot;
+        answer = ragunaru * monte
+        print answer
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>どちらがエラーになるか、予想して確かめましょう。(エラーになったことを確認するにはどうすればよいでしょうか？)</p>
+
+<p>あるいは、ややこしいことに、同じ書き方でも動作が違ってくるような場合もあります。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        tokugawa = 12
+        saradin = 34
+        answer = tokugawa + saradin
+        print answer
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        ragunaru = &quot;12&quot;
+        monte = &quot;34&quot;
+        answer = ragunaru + monte
+        print answer
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>どちらもエラーにはなりません。両方実行してみて、出力結果を見比べ、どうなっているか考えてみましょう。</p>
+
+<p>そして、違う型同士の値を足し算することはできません。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        pakaru = &quot;12&quot;
+        ramusesu = 34
+        answer = pakaru + ramusesu # エラー！
+        print answer
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>エラーになることを確かめてみましょう。</p>
+
+<h1 id="文字列と-数値と">文字列と、数値と。</h1>
+
+<p>でも、作っているMODによっては、数値型で計算した後、計算結果を文字列に混ぜて表示したいこともあるかもしれません。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        message1 = &quot;ato &quot;
+        turnleft = 10 - 2  # 全部で10ターンあるうちの2ターン消化した
+        message2 = &quot; ta-n desu!&quot;
+        
+        # &quot;ato 8 ta-n desu!&quot;という文字列の値をつくりたい！
+        message = message1 + turnleft + message2 # でも型があってないからエラー。
+        print message
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>文字列を足し算して連結しようとしたところで、<code>turnleft</code>の値が数値型のため失敗してしまいます。<br />
+そこで、文字列型へと変換してあげましょう。<code>str()</code>という関数があり、<br />
+引数を文字列型に変換したものを返してくれます。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        message1 = &quot;ato &quot;
+        turnleft = 10 - 2  # 全部で10ターンあるうちの2ターン消化した
+        message2 = &quot; ta-n desu!&quot;
+        
+        # &quot;ato 8 ta-n desu!&quot;という文字列の値をつくりたい！
+        message = message1 + str(turnleft) + message2 # 文字列型の値に変換してから足し算。
+        print message
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>起動して、PythonDbg.logに<code>ato 8 ta-n desu!</code>と書き込まれていることを確認しましょう。</p>
+
+<h2 id="文字列を表示する">文字列を表示する</h2>
+
+<p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。<br />
+<code>CyInterface().addImmediateMessage(表示したい文字列の値, &quot;&quot;)</code>です。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        message1 = &quot;ato &quot;
+        turnleft = 10 - 2
+        message2 = &quot; ta-n desu!&quot;
+        
+        message = message1 + str(turnleft) + message2
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>ゲームを開始して&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_var_20.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_20.png"    /></a>
+<br />
+いいですね！</p>
+
+<h2 id="フォーマット文字列">フォーマット文字列</h2>
+
+<p>足し算で連結する方法がうまくいきましたが、やや見づらいですしわかりづらいです。<br />
+&ldquo;ato (turnleftの値) ta-n desu!&ldquo;みたいにかけたらいいのに&hellip;<br />
+というわけで、フォーマット文字列という機能がそれを実現してくれます。<br />
+<code>%d</code>と<code>%</code>を使って<code>message = &quot;ato %d ta-n desu!&quot; % turnleft</code>のように書くと、<br />
+<code>%d</code>のある位置に数値型の変数、つまり<code>turnleft</code>の値が文字列の一部として埋め込まれます。</p>
+
+<p>これを用いると、前後の文字列を一旦ためておく必要もなくなり、次のようにすっきりします。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        # ログファイルに出力する
+        turnleft = 10 - 2
+        message = &quot;ato %d ta-n desu!&quot; % turnleft
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<h2 id="文字列と-数値と-それから日本語と">文字列と、数値と、それから日本語と</h2>
+
+<p>ここまでわかると、どうせなら「あと8ターンです！」と日本語で表示したくなるのですが、<br />
+今までの方法をそのまま流用してもうまくいきません。<br />
+それもそのはず、日本語の文字列は型が違うのです。<br />
+日本語の文字列はUnicode文字列型という型になり、<code>u&quot;日本語&quot;</code>と書きます。<br />
+ただひとつ注意点があり、この書き方でソースコード中に日本語を書き込むとき、<br />
+「その.pyファイルはどの文字コードで保存されているか」を1行目に明示的に示す必要があります。<br />
+普通にしていればおそらくshift_jisという文字コードになりますから、<br />
+(もちろん、わかっている方で、euc_jpやutf-8をお使いの方は読み替えてください)<br />
+1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。<br />
+そのうえで、フォーマット文字列の仕組みを使い、<br />
+<code>message = u&quot;あと%dターンです！&quot; % turnleft</code>とすればよいです。</p>
+
+<p>ファイル全体で&hellip;</p>
+
+<pre><code># -*- coding: shift_jis -*-
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+        # ログファイルに出力する
+        turnleft = 10 - 2
+        
+        message = u&quot;あと%dターンです！&quot; % turnleft
+        print message
+        
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+</code></pre>
+
+<p>こうなります。<br />
+このコードではUnicode文字列に対してprint文を使っていますが、その場合もよしなにやってくれて<br />
+正しくPythonDbg.logに日本語が書き込まれるので、覗いてみてください。</p>
+
+<p>さて、ゲームを開始して&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_var_21.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_21.png"    /></a>
+<br />
+できました！</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted/" title="はじめてのCvEventManager.py 目次 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 1" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="title">それからのPython 1</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 目次" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted/" class="title">はじめてのCvEventManager.py 目次</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted7/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 7" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted7/" class="title">はじめてのCvEventManager.py 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted6/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 6" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted6/" class="title">はじめてのCvEventManager.py 6</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted5/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 5" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted5/" class="title">はじめてのCvEventManager.py 5</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
+        それからのpython
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
+        目次
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+
