@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Tue, 17 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>それからのPython 2</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy2/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy2/</guid>
+      <description>はじめに その１のつづき いろいろ表示してみる -4000年 gc.getGame().getGameTurnYear()により現在の年を取得します</description>
+    </item>
     
     <item>
       <title>それからのPython 1</title>
