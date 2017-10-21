@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Thu, 19 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>それからのPython 3</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy3/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy3/</guid>
+      <description>はじめに その２のつづき クラス 準備 kujira_classというMODを新しく作ります。 フォルダ構成 └─kujira_class └─Asset</description>
+    </item>
+    
+    <item>
       <title>それからのPython 2</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy2/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy2/</guid>
       <description>はじめに その１のつづき いろいろ表示してみる -4000年 gc.getGame().getGameTurnYear()により現在の年を取得します</description>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>それからのPython 3  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="それからのPython, せつめい, ">
+
+
+<meta property="og:title" content="それからのPython 3  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy3/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-10-21T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-10-21T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="それからのPython">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="それからのPython 3" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy3/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "それからのPython 3",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-10-21",
+    "description": "",
+    "wordCount": 3159
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy3/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/secondpy3/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">それからのPython 3
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-21">21 Oct, 2017</time>
+
+    
+    &middot; 7 Minute Read
+    &middot; 3159 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy3/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき<br /></li>
+<li>クラス<br />
+<br /></li>
+</ul>
+
+<h1 id="準備">準備</h1>
+
+<p>kujira_classというMODを新しく作ります。</p>
+
+<h2 id="フォルダ構成">フォルダ構成</h2>
+
+<pre><code class="language-plain">└─kujira_class
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<p>これもリセットしておきます。</p>
+
+<pre><code>from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class Hito:
+    def getAge(self):
+        return 18
+    
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+</code></pre>
+
+<h1 id="型を作る">型を作る</h1>
+
+<p>今日は「型」を新しく自作します。<br />
+まずその部分のコードを見てみましょう&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+class Hito:
+    def getAge(self):
+        return 18
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>これはHito型という型そのものの定義です。<br />
+実際に使うところも見てみましょう&hellip;</p>
+
+<pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+a = Hito()
+age = a.getAge()
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>２つとも代入文ですね。<br />
+<code>a = Hito()</code>でHito型の値を作り<code>a</code>に代入しています。<br />
+<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<br />
+<code>getAge()</code>を呼び出しています。<br />
+<code>getAge()</code>はreturn文で<code>18</code>を返しますから、<br />
+<code>age</code>には<code>18</code>が代入されます。</p>
+
+<p>変数の中身は直接見ることはできません。<br />
+文字列に埋め込んで、表示してみましょう&hellip;</p>
+
+<pre><code>from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class Hito:
+    def getAge(self):
+        return 18
+    
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+
+        a = Hito()
+        age = a.getAge()
+        
+        message = &quot;age=%d&quot; % age
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+
+</code></pre>
+
+<p><a href="https://gforestshade.github.io/kujira/img/kujira_class_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_10.png"    /></a>
+<br />
+いいですね！</p>
+
+<h1 id="クラス">クラス</h1>
+
+<p>今使ったのは「クラス」という仕組みです。<br />
+<code>class クラス名:</code>とすると、直後の「ブロック」の内容が「クラス」として定義されます。<br />
+クラス名は同時に型名にもなっていて、あとで<code>クラス名()</code>とするとその型の値を生成することができます。<br />
+クラス型の値ひとつひとつを特に「インスタンス」と呼びます。<br />
+クラス→型、インスタンス→値、と対応しています。ついてきていますか？</p>
+
+<p>クラス定義に戻りまして、ブロックには関数の定義が並びます。<br />
+大体普通の関数と同じなのですが、<code>def getAge(self):</code>の行を見ると、<br />
+第1引数が<code>self</code>になっていることが見て取れます。<br />
+この<code>self</code>の中身が、実はインスタンスになっています。</p>
+
+<p>&hellip;&hellip;どういうことでしょうか？<br />
+少し上で『<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<code>getAge()</code>を呼び出しています。』と説明をしました。<br />
+意味合い的には「<code>a</code>の年齢を取得する」になるわけです。<br />
+なので、<code>getAge()</code>を処理するにあたって自分の持ち主たるインスタンス<code>a</code>の情報を利用できるように、<br />
+<code>self</code>に<code>a</code>が代入された状態で<code>getAge()</code>が呼び出されるわけです。</p>
+
+<p>クラス定義ブロックの中にある関数のことを特に「メソッド」とよびます。<br />
+普通にメソッドを定義するとインスタンスの所有物としてのメソッドになり、<br />
+そのようなメソッドを「インスタンスメソッド」と呼びます。<br />
+<code>インスタンス.インスタンスメソッド名(追加の引数)</code>とすることでインスタンスメソッドを呼び出すことができます。<br />
+インスタンスメソッドの第1引数<code>self</code>はインスタンスだというのは書いた通りですが、<br />
+ただのインスタンスではなく「この関数を呼び出した所有者たる」インスタンスなので、<br />
+特に「レシーバ」と呼ぶこともあります。</p>
+
+<p>そして、civ4MODのやりたいことのほとんどが<br />
+このインスタンスメソッドの仕組みにより行われます。たとえば、</p>
+
+<ul>
+<li>都市<code>pCity</code>の人口を4にする<br /></li>
+<li>プレイヤー<code>pPlayer</code>の文明IDを取得する<br /></li>
+<li>ユニット<code>pUnit</code>に昇進<code>e</code>を持たせる<br />
+<br /></li>
+</ul>
+
+<p>これらはそれぞれ、</p>
+
+<ul>
+<li><code>pCity.setPopulation(4)</code><br /></li>
+<li><code>pPlayer.getCivilizationType()</code><br /></li>
+<li><code>pUnit.setHasPromotion(e, True)</code><br />
+<br /></li>
+</ul>
+
+<p>このようなインスタンスメソッドの呼び出しになるわけです。</p>
+
+<h1 id="インスタンス変数">インスタンス変数</h1>
+
+<p>Hito型に戻りましょう。<br />
+Hitoクラスのインスタンスメソッド<code>getAge()</code>は、今のことろ<br />
+レシーバの<code>self</code>を無視して、常に<code>18</code>を返しています。<br />
+これではやや味気ないので、インスタンスの情報から年齢を読み取って<br />
+返すようにしてみましょう。このようにします。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+     def getAge(self):
+         return self.age
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>インスタンスの所有するメソッドがインスタンスメソッドだったように、<br />
+インスタンスの所有する変数を「インスタンス変数」と呼びます。<br />
+<code>インスタンス.インスタンス変数名</code>で代入したり参照したりできます。<br />
+ここでは「インスタンス<code>self</code>の変数<code>age</code>」の値を戻り値として返しています。</p>
+
+<p><code>self.age</code>にはまだ値がありません。<br />
+そのまま読み出そうとするとエラーになってしまいますから、<br />
+代入して設定するためのメソッドを新しく作ります。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+     def setAge(self, age):
+         self.age = age
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>self</code>はレシーバです。そのほかに、<code>age</code>という引数をとって、<br />
+それを「<code>self</code>の<code>age</code>」に代入します。<br />
+<code>a</code>の<code>setAge()</code>を呼び出すには<code>a.setAge(25)</code>のようにします。<br />
+レシーバは自動的に設定されますので、それ以外の引数を指定しましょう。</p>
+
+<p>ここまでをまとめてプログラムしてみましょう&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class Hito:
+    def getAge(self):
+        return self.age
+    
+    def setAge(self, age):
+        self.age = age
+        
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+
+        # aさんをつくる
+        a = Hito()
+
+        # aさんを25歳にする
+        a.setAge(25)
+
+        # aさんの年齢を聞いてageに代入する
+        age = a.getAge()
+        
+        message = &quot;age=%d&quot; % age
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+</code></pre>
+
+<p>ゲームを開始して&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_class_11.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_11.png"    /></a>
+<br />
+できているようです。</p>
+
+<h1 id="自己紹介させる">自己紹介させる</h1>
+
+<p>インスタンス変数やインスタンスメソッドは同じ要領でいくつでも作ることができます。<br />
+Hito型に名前を持たせてみましょう。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def getName(self):
+        return self.name
+    
+    def setName(self, name):
+        self.name = name
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>これで、<code>a.setName(&quot;Warrior&quot;)</code>や<code>a.getName()</code>などとできるようになりました。<br />
+もうすこし複雑な例として、名前と年齢から自己紹介っぽい文字列を作るメソッドを見てみましょう。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def getSelfIntro(self):
+        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
+        return s
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>これらを使って&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class Hito:
+    def getAge(self):
+        return self.age
+    
+    def setAge(self, age):
+        self.age = age
+
+    def getName(self):
+        return self.name
+    
+    def setName(self, name):
+        self.name = name
+
+    def getSelfIntro(self):
+        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
+        return s
+        
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+
+        # aさんをつくる
+        a = Hito()
+
+        # aさんを25歳にする
+        a.setAge(25)
+
+        # aさんをジョンにする
+        age = a.setName(&quot;John&quot;)
+
+        # 自己紹介を表示
+        message = a.getSelfIntro()
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+</code></pre>
+
+<p>こんな感じでしょうか。<br />
+ゲームを開始して&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_class_12.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_12.png"    /></a>
+<br />
+いいですね！</p>
+
+<h1 id="コンストラクタ">コンストラクタ</h1>
+
+<p>いまのHito型は、年齢と名前をまず設定しないといけません。<br />
+設定しないまま年齢を取得しようとしたり自己紹介を生成しようとすれば<br />
+「値がないのに取り出そうとした」のエラーになってしまいます。<br />
+どうせ必ず設定しなければいけないのなら、最初にHito型のインスタンスを作るときに<br />
+<code>a = Hito(&quot;Emily&quot;, 35)</code>みたいにできれば忘れることもなく安心なような気がします。<br />
+それを実現するには、<code>__init__()</code>( 前と後ろにアンダーバー(_)2つずつ )というメソッドを定義します。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>そうすると、<code>a = Hito(&quot;Emily&quot;, 35)</code>と書けるようになり、<br />
+逆に<code>a = Hito()</code>とは書けなくなります。<br />
+インスタンスを作るときに呼び出されるメソッドを「コンストラクタ」と呼び、<br />
+コンストラクタが要求している(<code>self</code>以外の)引数をすべて与えないと<br />
+インスタンスを作ることができなくなります。<br />
+この仕組みによって、インスタンスにとって必須なインスタンス変数を<br />
+設定し忘れるエラーを<strong><em>未然に防げる</em></strong>ため、べんりです。</p>
+
+<h1 id="ふえるインスタンス">ふえるインスタンス</h1>
+
+<p>インスタンスは1つであるとは限りません。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        a = Hito(&quot;John&quot;, 25)
+        b = Hito(&quot;Emily&quot;, 35)
+        c = Hito(&quot;Montezuma&quot;, 7)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>むしろこのようにどんどん作っていく方が便利に使えます。<br />
+同じクラス(型)から異なる複数のインスタンス(値)が作れるので、<br />
+都市型のインスタンス、ユニット型のインスタンス、プレイヤー型のインスタンス<br />
+などなどに応用が利くのですね。</p>
+
+<p>Hito型のインスタンスも3人ほど作って、それぞれに自己紹介させてみましょう&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class Hito:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    def getAge(self):
+        return self.age
+    
+    def setAge(self, age):
+        self.age = age
+
+    def getName(self):
+        return self.name
+    
+    def setName(self, name):
+        self.name = name
+
+    def getSelfIntro(self):
+        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
+        return s
+        
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+
+        a = Hito(&quot;John&quot;, 25)
+        b = Hito(&quot;Emily&quot;, 35)
+        c = Hito(&quot;Montezuma&quot;, 7)
+
+        messageA = a.getSelfIntro()
+        CyInterface().addImmediateMessage(messageA, &quot;&quot;)
+        messageB = b.getSelfIntro()
+        CyInterface().addImmediateMessage(messageB, &quot;&quot;)
+        messageC = c.getSelfIntro()
+        CyInterface().addImmediateMessage(messageC, &quot;&quot;)
+</code></pre>
+
+<p>ゲームを起動して&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_class_13.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_13.png"    /></a>
+<br />
+できました！</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy2/" title="それからのPython 2 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy3/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 3" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy3/" class="title">それからのPython 3</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy2/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 2" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy2/" class="title">それからのPython 2</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 1" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="title">それからのPython 1</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 目次" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted/" class="title">はじめてのCvEventManager.py 目次</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted7/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 7" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted7/" class="title">はじめてのCvEventManager.py 7</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">12</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
+        それからのpython
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
+        目次
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+

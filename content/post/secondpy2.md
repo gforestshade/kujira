@@ -1,5 +1,5 @@
 +++
-date = "2017-10-19"
+date = "2017-10-20"
 draft = false
 title = "それからのPython 2"
 banner = "/green1024x200.png"
@@ -331,3 +331,77 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 起動して何回かターンを進めて...
 {{<img src="/img/kujira_var_35.png">}}
 できました！
+
+# アイサツ
+タイミングの問題で「ようこそ！」を外さざるを得なかったのが少し心残りです。
+もうひとつ`%s`をふやして、頭にあいさつを付けられるようにしてみましょう。
+そのあいさつの文字列はどこから取るのかというと...
+関数の外から指定してもらうようにしてみましょう。
+引数の仕組みを使って次のようにできます。
+```
+def showGameTurnYear(prefix):
+    '''現在年を上に表示する'''
+
+    year = gc.getGame().getGameTurnYear()
+    if year >= 0:
+        ce = u"紀元後"
+    else:
+        ce = u"紀元前"
+        year = -year
+        
+    message = u"%s現在%s%d年です。" % (prefix, ce, year)
+    
+    CyInterface().addImmediateMessage(message, "")
+```
+
+呼び出し側も書いていきますが、どうせなので引数を違えてゲーム開始時とターン処理開始時の
+両方から呼び出してみましょう...
+```
+# -*- coding: shift_jis -*-
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+def showGameTurnYear(prefix):
+    '''現在年を上に表示する'''
+
+    year = gc.getGame().getGameTurnYear()
+    if year >= 0:
+        ce = u"紀元後"
+    else:
+        ce = u"紀元前"
+        year = -year
+        
+    message = u"%s現在%s%d年です。" % (prefix, ce, year)
+    
+    CyInterface().addImmediateMessage(message, "")
+
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onGameStart(self, argsList):
+        'Called at the start of the game'
+        super(self.__class__, self).onGameStart(argsList)
+        ##########
+
+        showGameTurnYear(u"ようこそ！")
+
+    def onBeginPlayerTurn(self, argsList):
+        'Called at the beginning of a players turn'
+        super(self.__class__, self).onBeginPlayerTurn(argsList)
+        ##########
+        iGameTurn, iPlayer = argsList
+        pPlayer = gc.getPlayer(iPlayer)
+
+        # 人間のターンなら
+        if pPlayer.isHuman():
+            showGameTurnYear(u"処理中...")
+```
+
+ターンを進めて...
+{{<img src="/img/kujira_var_36.png">}}
+{{<img src="/img/kujira_var_37.png">}}
+うまくいきました。
+処理中であることを明示したことでほんの少し違和感対策ができました。<!-- せやろか -->
