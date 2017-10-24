@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>それからのPython 4  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="それからのPython, せつめい, ">
+
+
+<meta property="og:title" content="それからのPython 4  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy4/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-10-23T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-10-23T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="それからのPython">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="それからのPython 4" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy4/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "それからのPython 4",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-10-23",
+    "description": "",
+    "wordCount": 4249
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy4/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/secondpy4/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">それからのPython 4
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-23">23 Oct, 2017</time>
+
+    
+    &middot; 9 Minute Read
+    &middot; 4249 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy4/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき<br /></li>
+<li>クラス巡り<br />
+<br /></li>
+</ul>
+
+<h1 id="提供されているクラスを探訪してみる">提供されているクラスを探訪してみる</h1>
+
+<p>新しいクラスをつくる体験をしたところで、<br />
+既存のクラスを使ってみる体験もしてみます。<br />
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、<br />
+すすめていきましょう。</p>
+
+<p>左上フレームにリストされているのが、クラス名(型名)です。<br />
+ためしにCyCityをクリックしてみましょう。<br />
+すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br />
+CyCity型のメソッドだけでもずいぶん数があります。<br />
+流し読みしつつ、気になったのを見ていきましょう。</p>
+
+<p>なお、色付き文字になっているのは「型」です。例えば、<br />
+BOOL - ブール型(真と偽の2択)<br />
+INT - 数値型<br />
+VOID - なし(戻り値を返さないもの)<br />
+茶色 - なにかのID(基本的なふるまいはINTと同じ)<br />
+緑色 - クラス型<br />
+こんな具合です。</p>
+
+<p>筆者が気になったのは、まずこれ。</p>
+
+<pre><code>19. INT calculateDistanceMaintenance ()
+</code></pre>
+
+<p>距離維持費を計算して返してくれるインスタンスメソッドですね。<br />
+最初に書いてあるINTが戻り値の型を表します。この場合は数値型です。<br />
+追加の引数がないメソッドは<code>c = pCity.calculateDistanceMaintenance()</code>のように<br />
+都市のインスタンスさえ用意できれば簡単に呼び出せるので練習台によいですね。</p>
+
+<p>次はこれ。</p>
+
+<pre><code>47. VOID changeExtraHappiness (INT iChange)
+48. VOID changeExtraHealth (INT iChange)
+</code></pre>
+
+<p>幸福や衛生を<code>iChange</code>ぶんだけ変えてしまうメソッドです。<br />
+「やったー！」や「文明により」で追加される幸福や衛生がこれに当たります。<br />
+<code>pCity.changeExtraHealth(3)</code>とすれば衛生+3にできますね。<br />
+数値型の引数をひとつだけ取るメソッドも練習台にはよいです。</p>
+
+<p>どんどんいきましょう。</p>
+
+<pre><code>50. VOID changeFood (INT iChange)
+63. VOID changeProduction (INT iChange)
+</code></pre>
+
+<p>食料やハンマーのたまり具合を直接増減させてしまいます。</p>
+
+<h2 id="commerceとyield">CommerceとYield</h2>
+
+<p>と、ここで、少し用語の説明をしましょう。<br />
+CommerceとYieldについてです。</p>
+
+<p>YieldとはFood(パン)・Production(ハンマー)・Commerce(コイン)の総称です。<br />
+内部ではこれらをひとまとめで扱い、個々の出力はYieldIDによって区別します。<br />
+たとえばバニラでは、Yield0番がFood・Yield1番がProduction・Yield2番がCommerceになっています。<br />
+何が何番なのかは<code>YieldTypes.YIELD_FOOD</code>などとしても求められるので、<br />
+実際にMODを作る際はそちらを使うほうがよいでしょう。</p>
+
+<p>CommerceとはGold(ゴールド)・Research(ビーカー)・Culture(文化)・Espionage(スパイポイント)の総称です。<br />
+Commerce(コイン)と英名がまったく同じなので紛らわしいことこの上ないですが、とにかくそうなっています。<br />
+コインをスライダーによって振り分けるこの4つの出力を<br />
+内部ではひとまとめで扱い、個々の出力はCommerceIDによって区別します。<br />
+たとえばバニラでは、Commerce0番がGold・Commerce1番がResearch・Commerce2番がCulture・Commerce3番がEspionageになっています。<br />
+何が何番なのかは<code>CommerceTypes.COMMERCE_ESPIONAGE</code>などとしても求められるので、<br />
+実際にMODを作る際はそちらを使うほうがよいでしょう。<br />
+(もちろん、スパイなしのオプションを入れると、Commerce3番は全く出なくなり、<br />
+Commerce2番に振り分けられます。MODでもスパイなしオプションに対応する場合は<br />
+考慮しなければならないため、いちおう覚えておきましょう。)</p>
+
+<p>したがって、CyCity型のインスタンスメソッドでも、</p>
+
+<pre><code>139. INT getCommerceRate (CommerceType eIndex)
+</code></pre>
+
+<p>都市のインスタンスから毎ターン何ビーカー出ているか求めたいと思ったとき、<br />
+<code>iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)</code>とする必要があります。<br />
+なお、ここでのRateはPer Turn(ターンごと)のRateです。スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。<br />
+さらに、図書館などの効果であるビーカー+25%のパーセントはCommerceRateModifierです。</p>
+
+<pre><code>140. INT getCommerceRateModifier (CommerceType eIndex)
+</code></pre>
+
+<p>こちらにより、都市合計で+何%の修正があるか取得できます。</p>
+
+<h2 id="id">ID</h2>
+
+<p>なにかのIDの指定を引数で要求してくるメソッドは他にも、</p>
+
+<pre><code>229. INT getNumBuilding (BuildingType iIndex)
+</code></pre>
+
+<p>指定した建造物IDに対応した建造物が都市内にいくつ建っているか<br />
+(といっても通常0か1ですが)を取得してくるメソッドもあります。</p>
+
+<p>建造物IDは<code>gc.getInfoTypeForString(XMLキーの文字列)</code>とすることで求められます。<br />
+<code>if pCity.getNumBuilding( gc.getInfoTypeForString('BUILDING_LIBRARY') ) &gt; 0:</code><br />
+などとすれば、都市インスタンスに図書館が建っているかどうかを判定できます。</p>
+
+<p>IDを要求するのではなく、戻り値として返してくれるメソッドもあります。</p>
+
+<pre><code>243. PlayerType getOwner ()
+</code></pre>
+
+<p>都市の所有者のPlayerIDを返してくれます。</p>
+
+<h1 id="インスタンス">インスタンス</h1>
+
+<p>ところで、便利なメソッドがたくさんあるのはいいのですが、肝心のインスタンスは<br />
+どこから取得すればよいのでしょうか。<br />
+方法は大きく分けて2つあります。</p>
+
+<ul>
+<li>関数の引数として渡ってきたものを利用する<br /></li>
+<li>CyGlobalContext型のメソッドにIDを渡して取得する<br />
+<br /></li>
+</ul>
+
+<h2 id="関数の引数として渡ってきたものを利用する">関数の引数として渡ってきたものを利用する</h2>
+
+<p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントリスト</a>を見てみましょう。<br />
+たとえば、「建造物が都市で作成されたとき」を表すイベント、<br />
+<code>def onUnitBuilt()</code>を見てみます。<br />
+このイベントの主たる注目点は「どの都市で？」「どのユニットが？」作成されたのか、ということですが、<br />
+それらの情報は<code>argsList</code>にリストにされて送られてきています。<br />
+<a href="https://gforestshade.github.io/kujira/img/event_onunitbuilt.png"><img src="https://gforestshade.github.io/kujira/img/event_onunitbuilt.png"    /></a>
+<br />
+表を見ると、<code>argsList</code>の中身は<code>city, unit, player</code>の3つだと書いてあります。</p>
+
+<p>なので、このようにしてみます。</p>
+
+<pre><code class="language-python">    def onUnitBuilt(self, argsList):
+        'Called when a unit is built in a city'
+        super(self.__class__, self).onUnitBuilt(argsList)
+        pCity, pUnit = argsList
+        ##########
+</code></pre>
+
+<p><code>pCity, pUnit, pPlayer = argsList</code>で<code>argsList</code>の中身を3つに分けて代入しています。<br />
+ここで代入した変数<code>pCity</code>の中身が「ユニットを作った都市」を表すインスタンスになっています。<br />
+例えばつづけて<code>cityname = pCity.getName()</code>と書けば、<br />
+ユニットが作成されるたび、その都市の名前が<code>cityname</code>に代入されるようになります。</p>
+
+<p>どうせなので作成されたユニットのインスタンスからも名前を取得してみましょう。<br />
+<code>unitname = pUnit.getName()</code>です。</p>
+
+<p>さらにさらにどうせですから<code>u&quot;%sで%sがつくられました。&quot; % (cityname, unitname)</code><br />
+というフォーマット文字列を作って表示してみましょう&hellip;</p>
+
+<pre><code># -*- coding: shift_jis -*-
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onUnitBuilt(self, argsList):
+        'Called when a unit is built in a city'
+        super(self.__class__, self).onUnitBuilt(argsList)
+        pCity, pUnit, pPlayer = argsList
+        ##########
+        cityname = pCity.getName()
+        unitname = pUnit.getName()
+
+        message = u&quot;%sで%sがつくられました。&quot; % (cityname, unitname)
+        CyInterface().addImmediateMessage(message, &quot;&quot;)
+
+</code></pre>
+
+<p>が、ターンを進めてみても、メッセージが現れず、うまくいきません。<br />
+PythonErr.logをみると、13行目で&rdquo;more than 2 values to unpack.&ldquo;というエラーになっています。<br />
+『リストの中身が2個しかないから(3個の変数には)代入できないよ＞＜』ということです。<br />
+表を何度見ても3個なのですが&hellip;&hellip;ここは表の方が間違っていたということでしょう。<br />
+<code>pPlayer</code>を諦めて、<code>pCity, pUnit = argsList</code>と書き直します。</p>
+
+<p>しばらくプレイして、ユニット作成報告を楽しみましょう。</p>
+
+<p>しばらく眺めていると、他国のユニットも流れてくることが分かります。<br />
+<code>onUnitBuilt()</code>は「ユニットが都市で作成されたとき」はいつでも呼び出され、<br />
+それが人間プレイヤーの配下であるかどうかはとくに区別されないことがわかります。</p>
+
+<h1 id="cyglobalcontext型のメソッドにidを渡して取得する">CyGlobalContext型のメソッドにIDを渡して取得する</h1>
+
+<p>CyCity型のメソッド<code>getOwner()</code>で返ってくるのはPlayerIDでした。</p>
+
+<pre><code class="language-python">iPlayer = pCity.getOwner()
+</code></pre>
+
+<p>このIDを持っていったらCyPlayer型のインスタンスを返してくれる関数があったらいいのに&hellip;<br />
+と思うところですが、それはCyGlobalContext型のインスタンスメソッドとして用意されています。</p>
+
+<pre><code>208. CyPlayer getPlayer (INT idx)
+</code></pre>
+
+<p>まずCyGlobalContext型のインスタンスを作って、</p>
+
+<pre><code class="language-python">gc = CyGlobalContext()
+</code></pre>
+
+<p>インスタンスメソッド<code>getPlayer()</code>を呼び出します。</p>
+
+<pre><code class="language-python">pPlayer = gc.getPlayer(iPlayer)
+</code></pre>
+
+<p>そうすると、この返ってきた<code>pPlayer</code>はCyPlayer型のインスタンスです。</p>
+
+<p>CyGlobalContext型のインスタンスはひとつあれば十分なので、<br />
+ファイル冒頭に<code>gc = CyGlobalContext()</code>として作ってしまって、<br />
+以後<code>gc</code>を使いまわすようにしているMODが多いようです。</p>
+
+<p>CyPlayerのインスタンスメソッドでできることは本当に多岐にわたっていて、<br />
+とてもここでは説明しつくせない量ですので各自<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>を見ていただくことにして、</p>
+
+<p>今回は例として「奴隷制」の社会制度を採用しているときにだけユニット作成報告が上がるようにしてみましょう。<br />
+奴隷制のXMLキーは<code>&quot;CIVIC_SLAVERY&quot;</code>ですから、<br />
+<code>gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)</code>でCivicIDを取得できます。<br />
+そのCivicIDと、先に手に入れたCyPlayer型のインスタンスを使って、</p>
+
+<pre><code>328. BOOL isCivic (CivicType eCivic)
+</code></pre>
+
+<p>これを呼び出します。</p>
+
+<p>全部で&hellip;</p>
+
+<pre><code># -*- coding: shift_jis -*-
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onUnitBuilt(self, argsList):
+        'Called when a unit is built in a city'
+        super(self.__class__, self).onUnitBuilt(argsList)
+        pCity, pUnit = argsList
+        ##########
+
+        iPlayer = pCity.getOwner()
+        pPlayer = gc.getPlayer(iPlayer)
+        eMan = gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)
+        
+        if pPlayer.isCivic(eMan):
+            cityname = pCity.getName()
+            unitname = pUnit.getName()
+
+            message = u&quot;奴隷制を採用する%sで%sがつくられました。&quot; % (cityname, unitname)
+            CyInterface().addImmediateMessage(message, &quot;&quot;)
+</code></pre>
+
+<p>こうなります。</p>
+
+<p><code>pCity</code>が人間プレイヤーの都市とは限らないことに注意してください。<br />
+したがって<code>pCity.getOwner()</code>で取得したPlayerIDも「そのユニットを作ったPlayer」であって、<br />
+必ずしも人間プレイヤーではありません。<br />
+そのPlayerのインスタンスが<code>pPlayer</code>になるので、それを使って<code>pPlayer.isCivic(eMan)</code>と判定すると<br />
+「ユニットを作ったPlayerが奴隷制を採用しているなら」を判定していることになります。</p>
+
+<p>それを踏まえて眺めていると&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_class_20.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_20.png"    /></a>
+<br />
+奴隷制を採用している文明だけダダ漏れになっています。いいですね。</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy3/" title="それからのPython 3 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy4/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 4" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy4/" class="title">それからのPython 4</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy3/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 3" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy3/" class="title">それからのPython 3</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy2/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 2" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy2/" class="title">それからのPython 2</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 1" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="title">それからのPython 1</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="はじめてのCvEventManager.py 目次" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/getstarted/" class="title">はじめてのCvEventManager.py 目次</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">13</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
+        それからのpython
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
+        目次
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+
