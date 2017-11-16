@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>About Hugo  &middot; Kujira, Civ4 Mod Blog</title>
+  <title>付録：getUnitList()  &middot; Kujira, Civ4 Mod Blog</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -11,29 +11,35 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="">
+<meta name="keywords" content="付録, せつめい, ">
 
 
-<meta property="og:title" content="About Hugo  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:title" content="付録：getUnitList()  &middot; Kujira, Civ4 Mod Blog ">
 <meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
-<meta property="og:url" content="https://gforestshade.github.io/kujira/page/about-me/" />
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/readgetunitlist/" />
 <meta property="og:locale" content="en">
 
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2014-04-09T00:00:00Z" />
-<meta property="og:article:modified_time" content="2014-04-09T00:00:00Z" />
+<meta property="og:article:published_time" content="2017-11-16T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-11-16T00:00:00Z" />
 
+  
+    
+<meta property="og:article:tag" content="付録">
+    
+<meta property="og:article:tag" content="せつめい">
+    
   
 
   
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="About Hugo" />
+<meta name="twitter:title" content="付録：getUnitList()" />
 <meta name="twitter:description" content="" />
-<meta name="twitter:url" content="https://gforestshade.github.io/kujira/page/about-me/" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/readgetunitlist/" />
 <meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
   
 
@@ -41,20 +47,20 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "About Hugo",
+    "headline": "付録：getUnitList()",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
-    "datePublished": "2014-04-09",
+    "datePublished": "2017-11-16",
     "description": "",
-    "wordCount": 91
+    "wordCount": 2003
   }
 </script>
 
 
 
-<link rel="canonical" href="https://gforestshade.github.io/kujira/page/about-me/" />
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/readgetunitlist/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
@@ -105,42 +111,243 @@
 <div class="container p-a-0">
   <div class="row m-l-0 m-r-0">
     <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/readgetunitlist/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">付録：getUnitList()
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-11-16">16 Nov, 2017</time>
+
+    
+    &middot; 4 Minute Read
+    &middot; 2003 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/readgetunitlist/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
       <div class="content">
   
 
-<p>You can see my custom about-me page <a href="http://mmrath.com/page/about-me/">here</a></p>
-
-<p>Hugo is a static site engine written in Go.</p>
-
-<p>It makes use of a variety of open source projects including:</p>
+<h1 id="はじめに">はじめに</h1>
 
 <ul>
-<li><a href="https://github.com/spf13/cobra">Cobra</a><br /></li>
-<li><a href="https://github.com/spf13/viper">Viper</a><br /></li>
-<li><a href="https://github.com/spf13/jWalterWeatherman">J Walter Weatherman</a><br /></li>
-<li><a href="https://github.com/spf13/cast">Cast</a><br />
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">それからのPython その６</a>の付録<br /></li>
+<li>全ユニットを列挙するには<br />
 <br /></li>
 </ul>
 
-<p>Learn more and contribute on <a href="https://github.com/spf13">GitHub</a>.</p>
+<h1 id="読む">読む</h1>
 
-<h2 id="setup">Setup</h2>
+<p>早速 <code>(略)\Beyond the Sword(J)\Assets\Python\Pyhelpers.py</code>を開いて、<br />
+<code>getUnitList()</code>というメソッドを見ていきます&hellip;</p>
 
-<p>Some fun facts about <a href="http://gohugo.io/">Hugo</a>:</p>
+<pre><code class="language-python">## Sid Meier's Civilization 4
+## Copyright Firaxis Games 2005
+from CvPythonExtensions import *
+#import Info as PyInfo
+import CvUtil
+gc = CyGlobalContext()
+
+class PyPlayer:
+	# ...(中略)...
+	
+	def getUnitList(self):
+		' UnitList - All of the players alive units '
+		lUnit = []
+		(loopUnit, iter) = self.player.firstUnit(false)
+		while( loopUnit ):
+			if ( not loopUnit.isDead() ): #is the unit alive and valid?
+				lUnit.append(loopUnit) #add unit instance to list
+			(loopUnit, iter) = self.player.nextUnit(iter, false)
+		return lUnit
+</code></pre>
+
+<p>最初に空のリストを作って、<code>lUnit = []</code><br />
+最後にそのリストを返しています。<code>return lUnit</code><br />
+その間に、変数<code>lUnit</code>に<code>CyUnit</code>のインスタンスを詰め込んでいきます。</p>
+
+<p>まず<code>CyPlayer</code>のメソッド<code>firstUnit()</code>を呼び出しています。</p>
+
+<pre><code>109. TUPLE firstUnit (BOOL bRev)
+</code></pre>
+
+<p>引数のBoolは「逆順に調べるか？」を表します。<br />
+ここに<code>True</code>を指定すると逆順に調べることになりますが、<br />
+ここでは<code>false</code>で順に調べています。</p>
+
+<p>このメソッドが返すのは、「最初のユニットの<code>CyUnit</code>インスタンス」と「イテレータ」の<br />
+２つが入った「タプル」です。</p>
+
+<h2 id="タプル">タプル</h2>
+
+<p>「タプル」はリストとすごく似ていますが、１点、<br />
+タプルの中身は代入によっては変更できない、ということが異なります。</p>
+
+<pre><code class="language-python">listA = [1,5,3] # リスト変数
+tupleB = (1,5,3) # タプル変数
+
+listA[1] = 2 # 1番目を指定して書き換えができる
+# tupleB[1] = 2 # タプルではできない、エラー
+
+print listA
+print tupleB
+
+ai, aj, ak = listA # ばらして代入できる
+bi, bj, bk = tupleB # タプルでもできる(タプルの中身を変更しているわけではないのでOK)
+
+print &quot;ai = %d, aj = %d, ak = %d&quot; % (ai, aj, ak) # フォーマット文字列の変数指定にタプルが利用できる
+print &quot;bi = %d, bj = %d, bk = %d&quot; % (bi, bj, bk) # (bi, bj, bk)は新しく作ったタプルでありもとのタプルとは別物であることに注意
+</code></pre>
+
+<p><code>PyPlayer.getUnitList()</code>の定義に目を戻すと、<br />
+<code>(loopUnit, iter) = self.player.firstUnit(false)</code>とばらして代入しています。<br />
+これで<code>loopUnit</code>は最初のユニットのインスタンス、<br />
+<code>iter</code>は「イテレータ」という謎の存在が入っていることになります。</p>
+
+<h1 id="while文">while文</h1>
+
+<p>while文は繰り返しの一種です。</p>
+
+<pre><code class="language-python">while (条件式):
+    (ブロック)
+</code></pre>
+
+<p>で「条件式が真の間」ブロックを何度でも繰り返し実行します。<br />
+当然そのままだといつまでも繰り返しが終わらないので(無限ループと呼びます)、<br />
+ブロック中で条件式に使っている変数を変更する必要があります。</p>
+
+<p>例えば:</p>
+
+<pre><code class="language-python">a = 10
+while a &gt; 0:
+    print &quot;a = %d&quot; % a
+    a = a - 1 # aを1減らす。これがあることでそのうち条件を満たさなくなる
+</code></pre>
+
+<p><code>PyPlayer.getUnitList()</code>の定義では、<br />
+<code>while( loopUnit ):</code>となっています。<br />
+変数をそのまま突っ込むことで、<code>loopUnit</code>が</p>
 
 <ul>
-<li>Built in <a href="http://golang.org/">Go</a><br /></li>
-<li>Loosely inspired by <a href="http://jekyllrb.com/">Jekyll</a><br /></li>
-<li>Primarily developed by <a href="http://spf13.com/">spf13</a> on the train while commuting to and from Manhattan.<br /></li>
-<li>Coded in <a href="http://vim.org">Vim</a> using <a href="http://vim.spf13.com/">spf13-vim</a><br />
+<li><code>False</code><br /></li>
+<li>数値の<code>0</code><br /></li>
+<li>空の文字列<code>&quot;&quot;</code><br /></li>
+<li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code><br /></li>
+<li><code>None</code><br />
 <br /></li>
 </ul>
 
-<p>Have questions or suggestions? Feel free to <a href="https://github.com/spf13/hugo/issues/new">open an issue on GitHub</a> or <a href="https://twitter.com/spf13">ask me on Twitter</a>.</p>
+<p>のどれかに該当するまでブロックを繰り返すことになります。<br />
+条件式において「偽」以外はすべて「真」でしたから、<br />
+これらのどれにも該当しない値を取る間は「真」になりますね。</p>
 
-<p>Thanks for reading!</p>
+<p>whileブロックの中を見ていきます。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+		while( loopUnit ):
+			if ( not loopUnit.isDead() ): #is the unit alive and valid?
+				lUnit.append(loopUnit) #add unit instance to list
+			(loopUnit, iter) = self.player.nextUnit(iter, false)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>if( not loopUnit.isDead() ):</code>とあります。<br />
+<code>not</code>は<code>True</code>と<code>False</code>を逆にするのでした。<br />
+「「<code>loopUnit</code>が致死ダメージを負っているなら」の逆ならば」なので、<br />
+「<code>loopUnit</code>が致死ダメージを負っていないなら」になります。<br />
+もしそうならば、<code>lUnit.append(loopUnit)</code>で<br />
+インスタンス<code>loopUnit</code>をリスト<code>lUnit</code>に追加しています。</p>
+
+<p>ここまで、<code>loopUnit</code>は最初のユニットのインスタンスでした。<br />
+ここで、<code>loopUnit</code>が次のユニットのインスタンスになってくれたら、<br />
+繰り返しによって『もう一度<code>loopUnit</code>の生死判定→生きてたら追加→次のユニットへ』<br />
+をずーっと繰り返していけば生きているユニットを全員リストに追加することができそうです。<br />
+その『次のユニットを取得する』をやっているのが、<br />
+<code>(loopUnit, iter) = self.player.nextUnit(iter, false)</code><br />
+です。やっていることはつまり「イテレータ」を渡して、(falseは逆順にしないという意味でした)<br />
+「次のユニット」と「更新された新しいイテレータ」を受け取るということです。<br />
+おおざっぱに、「イテレータ」というのは、<br />
+「いま何番目くらいのユニットを数えていたか覚えておいてくれるもの」<br />
+という認識でいいでしょう。<br />
+次のユニットを取得すると同時にイテレータの持つ位置情報も更新することで<br />
+次に呼び出したときにはさらにその次のユニットが取得できるのですね。</p>
+
+<p>最終的に、<code>nextUnit()</code>はユニットを最後まで数え終わると<br />
+次のユニットとして<code>None</code>を返します。<code>loopUnit</code>の中身が<code>None</code>になりますから、<br />
+<code>while( loopUnit ):</code>を満たさなくなってループが終了します。</p>
+
+<p><code>CyPlayer</code>のメソッドだけから全ユニットのリストを取得するのは<br />
+このようにすこし難しいですが、処理をまとめて提供してくれる便利クラスも<br />
+同時に提供されているので、ありがたく使わせてもらいましょう。</p>
 
 </div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy5/" title="それからのPython 5 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/secondpy6/" title="それからのPython 6" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
 
     </div>
       <div class="col-xs-12 col-md-3">
