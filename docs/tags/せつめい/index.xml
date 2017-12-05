@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>それからのPython 8</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy8/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy8/</guid>
+      <description>はじめに その７のつづき 続・継承について 今回は理論回です。この回に出てくるコードはすべてMODではなく ただのPythonプログラムになっていま</description>
+    </item>
     
     <item>
       <title>それからのPython 7</title>
