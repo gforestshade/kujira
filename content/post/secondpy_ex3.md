@@ -1,14 +1,14 @@
 +++
 date = "2017-12-05"
-draft = false
-title = "それからのPython 8"
+draft = true
+title = "付録：継承２"
 banner = "/green1024x200.png"
-tags = ["それからのPython", "せつめい"]
+tags = ["付録", "せつめい"]
 +++
 
 # はじめに
 
-- [その７]({{<ref "secondpy7.md">}})のつづき
+- [付録：継承１]({{<ref "secondpy_ex2.md">}})のつづき
 - 続・継承について
 - 今回は理論回です。この回に出てくるコードはすべてMODではなく
 ただのPythonプログラムになっていますので、[paiza.io](https://paiza.io/ja)などでためしましょう。

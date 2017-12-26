@@ -1,5 +1,5 @@
 +++
-date = "2017-12-04"
+date = "2017-12-26"
 draft = false
 title = "それからのPython 7"
 banner = "/green1024x200.png"
@@ -9,509 +9,562 @@ tags = ["それからのPython", "せつめい"]
 # はじめに
 
 - [その６]({{<ref "secondpy6.md">}})のつづき
-- 継承について
-- 今回は理論回です。この回に出てくるコードはすべてMODではなく
+- オブジェクト
+- リスト操作
+- 簡単なスペルの仕組みをつくってみる
+- この回に出てくるコードのいくつかはMODではなく
 ただのPythonプログラムになっていますので、[paiza.io](https://paiza.io/ja)などでためしましょう。
 (Python2を選ぶことを忘れずに。)
 
-# クラスの継承
-「継承」(inheritance)という仕組みを使って、
-既存のクラスを拡張したクラスを新しく作ることができます。
+# 設計しよう
+実際のMODの例として、簡単なスペルをつくっていきたいと思います。
+簡単のために、以下の仕様でつくることにします。
 
-とても簡単なクラスから始めましょう...
-``` python
-class A:
-    def methodA():
-        return "This is methodA()."
-```
+- スペルと昇進を1対1で対応させる
+- 発動条件は昇進を取得したとき一回きりとする
+- スペル昇進を取れるのは火器ユニットとする
+- 具体的なスペル効果は以下の3種類とする
+- 湧き水：砂漠が平原に変化する
+- 毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える
+- 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPが60%を切ることはないようにする
 
-...というクラスがあったとき、"`A`をもとにした新しいクラス`B`"を
-`class クラス名(もとにするクラス名):`のようにして作ることができます...
-
-``` python
-class A:
-    def methodA():
-        return "This is methodA()."
-
-class B(A):
-    def methodB():
-        return "This is methodB()."
-
-
-a = A() # Aのインスタンスa
-s = a.methodA() # Aのインスタンスメソッドを呼び出せる
-print s
-
-b = B() # Bのインスタンスb
-s = b.methodB() # Bのインスタンスメソッドを呼び出せる
-print s
-s = b.methodA() # Aのインスタンスメソッドも呼び出せる！
-print s
-
-```
-
-「継承」において、もとになったクラスを「基底クラス」(super class)、
-基底クラスを受け継いで新しく作ったクラスを「派生クラス」(derived class)または「サブクラス」(subclass)と呼びます。
-
-派生クラスは基底クラスに定義されているものをすべてそのまま受け継ぎます。
-上の例で、`B`のインスタンス`b`を使って`b.methodA()`を呼び出していますが、
-`B`は`A`のメソッドを受け継いでいるので、`methodA()`と`methodB()`が両方とも存在することになります。
-
-# 使ってみる
-
-実際に継承の機能を使ってみましょう。
-まずとにかくもとになる基底クラスが必要です。
-RPGのキャラをモチーフにしたクラスから始めてみましょう...
+# プログラムリスト
+先に全容を見ておきましょう。
+このようなプログラムを作っていきます...
 ``` python
 # -*- coding: utf-8 -*-
 
-class Unit:
-    """RPGのキャラっぽいなにか"""
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+import PyHelpers
+
+gc = CyGlobalContext()
+git = gc.getInfoTypeForString
+
+
+### 関数
+########################
+
+def isValidPlot(x, y):
+    """ラップを考慮して、有効な座標であるか判定する"""
+    pMap = gc.getMap()
+
+    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
+    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
+    return bx and by
+
+def getRangePlotList(center, i_range, include_center):
+    """
+    中心から周囲nタイルのCyPlotのリストを返す
+    center - 中心タイル
+    i_range - 範囲
+    include_center - Trueならリストに中心タイルを含める
+    """
+
+    pMap = gc.getMap()
+    result = []
     
-    def __init__(self, hp, attack, defence):
-        """初期化時にHP,攻撃力,防御力を設定する"""
-        self.hp = hp
-        self.attack = attack
-        self.defence = defence
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+            x = xx + center.getX()
+            y = yy + center.getY()
+            
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
 
-    def getStatus(self):
-        """ステータス画面的なもの"""
-        return "HP: %d | Atk %d | Def %d" % (self.hp, self.attack, self.defence)
+            result.append( pMap.plot(x,y) )
 
-    def dealDamage(self, damage):
-        """
-        ダメージを受ける
-        damage - 受けるダメージ
-        """
+    return result
 
-        # 実際のダメージは防御力のぶんだけ減算される
-        # ただし1を下限とする
-        damage = max(damage - self.defence, 1)
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
 
-        # HPからダメージを減らす
-        self.hp -= damage
 
-    def isDead(self):
-        """自分はもう死んでいる、かどうか"""
-        return self.hp <= 0
+### スペル情報クラスとスペル用基底クラス
+########################
 
-    def attackTo(self, enemy):
-        """
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
-
-        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.attack)
-
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
-
-        # 相手が死んでいないなら反撃を受ける
-        # 相手の攻撃力ぶんだけ自分にダメージを与える
-        self.dealDamage(enemy.attack)
-
-        # この時点で自分が死んでしまったら負け
-        if self.isDead():
-            return -2
-
-        # 自分も相手も死ななかったら引き分け判定
-        return 0
-
-
-# ここからメインの処理
-
-a = Unit(20,10,3)
-b = Unit(20,8,4)
-
-for i in range(5):
-    print a.attackTo(b)
-    print "a | %s" % a.getStatus()
-    print "b | %s" % b.getStatus()
-    print
-        
-```
-
-## 説明文
-各メソッドを見ていきましょう...
-``` python
->>>>>>>>>>
-class Unit:
-    """RPGのキャラっぽいなにか"""
-<<<<<<<<<<
-```
-...の前に、見慣れない表記が出てきています。
-クラスや関数の冒頭にある、`"""ダブルクオーテーション3つで囲まれた文字列"""`は、
-そのクラスやその関数の説明だとみなされます。
-そのクラスやその関数が何をするものなのか、わかりやすい名前をつけるのが一番ですが、
-やはり日本語で説明するほうがなにかとよいです。
-
-特に関数では、引数や戻り値があります。
-それぞれの引数が何を表すのか(呼び出す際にどういう値を指定してほしいのか)、
-どういう戻り値を返しうるのか、などは
-名前だけでは十分に表しきれませんので、***日本語で説明を加えるべきです。***
-``` python
->>>>>>>>>>
-    def attackTo(self, enemy):
-        """
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-<<<<<<<<<<
-```
-
-## メソッド巡り
-こんどこそ各メソッドを見ていきましょう。
-
-``` python
->>>>>>>>>>
-    def __init__(self, hp, attack, defence):
-        """初期化時にHP,攻撃力,防御力を設定する"""
-        self.hp = hp
-        self.attack = attack
-        self.defence = defence
-<<<<<<<<<<
-```
-コンストラクタです。説明文の通りですね。
-
-
-``` python
->>>>>>>>>>
-    def getStatus(self):
-        """ステータス画面的なもの"""
-        return "HP: %d | Atk %d | Def %d" % (self.hp, self.attack, self.defence)
-<<<<<<<<<<
-```
-現在のステータスを画面に出力する方法が欲しかったので、
-(何もしなければ変数の中身の値は見えません！)
-フォーマット文字列を使ってステータス画面っぽい文字列を生成して返しています。
-
-``` python
->>>>>>>>>>
-    def dealDamage(self, damage):
-        """
-        ダメージを受ける
-        damage - 受けるダメージ
-        """
-
-        # 実際のダメージは防御力のぶんだけ減算される
-        # ただし1を下限とする
-        damage = max(damage - self.defence, 1)
-
-        # HPからダメージを減らす
-        self.hp -= damage
-<<<<<<<<<<
-```
-ダメージを受けます。
-
-`max()`関数は、与えられた引数の中で最も大きい数を返す関数です。
-このことは、下限を設定することに応用できます。
-たとえば、片方の引数を`3`に、もう片方の引数をいろいろ変えて最も大きい数を暗算してみましょう。
-
-- `max(6,3)` -> `6`
-- `max(5,3)` -> `5`
-- `max(4,3)` -> `4`
-- `max(3,3)` -> `3`
-- `max(2,3)` -> `3`
-- `max(1,3)` -> `3`
-
-変化する部分が`3`より大きいうちはそのままになり、
-しかも`3`よりは下がらないことがわかります。
-
-ここでは、`damage = max(damage - self.defence, 1)`としています。
-自分の防御力のぶんだけダメージから引き(コンストラクタでインスタンス変数として設定していました)、
-ただし下限を`1`として、`damage`に再代入しています(変数の今の値を加工して、同じ変数に再び代入することができるのでしたね)。
-
-ところで、"変数から数字を引いて同じ変数に再代入する"操作はよく使います。
-なので、専用の書き方があります。次の行の`self.hp -= damage`がそれです。
-"`self.hp`から`damage`を引いて`self.hp`に再代入する"、
-すなわち"`self.hp`の値を`damage`だけ減らす"ためにこの書き方を使うことができます。
-
-この書き方は減算だけでなく加減乗除それぞれに用意されています。
-
-- `a += 3` : `a`に`3`を足す
-- `a -= 3` : `a`から`3`を引く
-- `a *= 3` : `a`に`3`を掛ける
-- `a /= 3` : `a`から`3`を割る
-
-``` python
->>>>>>>>>>
-    def isDead(self):
-        """自分はもう死んでいる、かどうか"""
-        return self.hp <= 0
-<<<<<<<<<<
-```
-自分が死んでいるかどうかを判定します。
-(短いメソッドですが、あとでこれが活躍します)
-
-``` python
-    def attackTo(self, enemy):
-        """
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
-
-        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.attack)
-
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
-
-        # 相手が死んでいないなら反撃を受ける
-        # 相手の攻撃力ぶんだけ自分にダメージを与える
-        self.dealDamage(enemy.attack)
-
-        # この時点で自分が死んでしまったら負け
-        if self.isDead():
-            return -2
-
-        # 自分も相手も死ななかったら引き分け判定
-        return 0
-```
-他の`Unit`に攻撃を仕掛けます。
-`Unit`のインスタンスに属するメソッドでありながら、
-"他の`Unit`インスタンス"を引数に取っていることがポイントです。
-そうすることで操作できる`Unit`インスタンスが 自分:`self`と相手:`enemy` で
-2つになり、戦闘を実現できるようになります。
-
-`enemy`の`isDead()`や`enemy`の`dealDamage()`を呼び出して
-処理をしているところもポイントです。
-「`enemy`にあなたは死んでいますか、と聞く」・「`enemy`にお願いしてダメージを受けてもらう」
-というイメージでしょうか。
-`enemy`の内部状態のことは`enemy`自身が一番知っているはずですから、
-`enemy`の状態に関することは`enemy`にお願いする、
-またそうできるように最初から`Unit`のインスタンスメソッドを作っておく、ことが大事です。
-
-さらにメインプログラムが続いています...
-``` python
->>>>>>>>>>
-a = Unit(20,10,3)
-b = Unit(20,8,4)
-
-for i in range(5):
-    print a.attackTo(b)
-    print "a | %s" % a.getStatus()
-    print "b | %s" % b.getStatus()
-    print
-
-<<<<<<<<<<
-```
-
-`Unit`のインスタンスを2つ作り、
-「`a`から`b`に攻撃してステータス画面を表示する」のを5回繰り返しています。
-
-各自実行してみましょう。
-4回目の攻撃で`a`が`b`を削り切って勝っていることが確認できると思います。
-
-
-# 魔法を使いたい
-
-殴り合うのもよいですが、やはり魔法での攻撃もしてみたいところです。
-「魔法攻撃は攻撃力ではなく魔法攻撃力を用いて計算し、
-反撃を受けないが、魔法が使えるのは魔法使いだけ」
-というのを目指しましょう。
-
-従来の`Unit`の機能に加えて、魔法攻撃ができる新しいクラスをつくります。
-「継承」の出番です。
-
-``` python
->>>>>>>>>>
-class Wizard(Unit):
-    """魔法使い"""
-
-    def magicalAttackTo(self, enemy):
-        """
-        別のUnitインスタンスに魔法攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
-
-        # 魔法攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.magic_attack)
-
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
-
-        # 魔法なので反撃なし、死ななかったら引き分け判定
-        return 0
-        
-<<<<<<<<<<
-```
-
-...これが`Wizard`クラスの定義のすべてです。
-`Unit`クラスを継承して`Wizard`クラスをつくり、魔法攻撃用のメソッドを1つ追加しています。
-`Unit`クラスを継承しているので、`Unit`クラスに定義されていたもの――`self.hp`,`self.attack`,`self.defence`,`self.isDead()`,`self.dealDamage()`,などなど――がすべて`Wizard`クラスに引き継がれています。
-追加分だけを書けばよい、ということになります。
-
-`Unit`クラスはそこにそのまま存在していることにも注意してください。
-引き続き`Unit`のインスタンスは作成することができ、戦闘をさせることもできつつ、
-`Wizard`のインスタンスも新しく作成できるのです。
-
-さらに、`Wizard`は`Unit`から***すべてを***引き継いでいるので、
-`Unit`で出来たことは`Wizard`でもできます。
-`Wizard`のインスタンス`a`と`b`に拳で殴り合わせる(`a.attackTo(b)`)ことも可能です。
-`attackTo()`を処理するためには`self`と`enemy`の双方に
-変数`attack`,メソッド`isDead()`,メソッド`dealDamage()`
-がなければなりませんが、`Wizard`インスタンスにもそれらは存在していますから、
-(なぜなら***すべてを***引き継いでいるから、記述していないのに！)
-問題なく`attackTo()`を呼び出すことができます。
-
-さらにいえば、`Wizard`から`Unit`に`attackTo()`することも、
-まったく同じ理屈で可能です。
-`Wizard`から`Unit`へは魔法攻撃、`Unit`から`Wizard`へは通常攻撃、を
-1セットにして繰り返すメインプログラムにしてみましょう。
-こうなります...
-
-``` python
->>>>>>>>>>
-a = Unit(20,10,3)
-b = Wizard(12,3,3)
-b.magic_attack = 13
-
-for i in range(5):
-    print b.magicalAttackTo(a)
-    print a.attackTo(b)
-    print "a | %s" % a.getStatus()
-    print "b | %s" % b.getStatus()
-    print
-<<<<<<<<<<
-```
-
-プログラム全体は次のようになります。
-各自実行してみましょう...
-``` python
-# -*- coding: utf-8 -*-
-
-class Unit:
-    """RPGのキャラっぽいなにか"""
+class SpellInfo:
     
-    def __init__(self, hp, attack, defence):
-        """初期化時にHP,攻撃力,防御力を設定する"""
-        self.hp = hp
-        self.attack = attack
-        self.defence = defence
-
-    def getStatus(self):
-        """ステータス画面的なもの"""
-        return "HP: %d | Atk %d | Def %d" % (self.hp, self.attack, self.defence)
-
-    def dealDamage(self, damage):
-        """
-        ダメージを受ける
-        damage - 受けるダメージ
-        """
-
-        # 実際のダメージは防御力のぶんだけ減算される
-        # ただし1を下限とする
-        damage = max(damage - self.defence, 1)
-
-        # HPからダメージを減らす
-        self.hp -= damage
-
-    def isDead(self):
-        """自分はもう死んでいる、かどうか"""
-        return self.hp <= 0
-
-    def attackTo(self, enemy):
-        """
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
-
-        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.attack)
-
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
-
-        # 相手が死んでいないなら反撃を受ける
-        # 相手の攻撃力ぶんだけ自分にダメージを与える
-        self.dealDamage(enemy.attack)
-
-        # この時点で自分が死んでしまったら負け
-        if self.isDead():
-            return -2
-
-        # 自分も相手も死ななかったら引き分け判定
-        return 0
-
-
-class Wizard(Unit):
-    """魔法使い"""
-
-    def magicalAttackTo(self, enemy):
-        """
-        別のUnitインスタンスに魔法攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        """
-
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
-
-        # 魔法攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.magic_attack)
-
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
-
-        # 魔法なので反撃なし、死ななかったら引き分け判定
-        return 0
+    def __init__(self, name, spell_class):
+        self.name = name
+        self.spell_class = spell_class
         
+    def getName(self):
+        return self.name
 
-a = Unit(20,10,3)
-b = Wizard(12,3,3)
-b.magic_attack = 13
+    def getPromotionName(self):
+        return "PROMOTION_" + self.getName()
 
-for i in range(5):
-    print b.magicalAttackTo(a)
-    print a.attackTo(b)
-    print "a | %s" % a.getStatus()
-    print "b | %s" % b.getStatus()
-    print
+    def getSpellClass(self):
+        return self.spell_class
+
+    spells = []
+
+class Spell:
     
+    def __init__(self, caster):
+        self.caster = caster
+    
+    def cast(self):
+        pass
+
+    def selectREUnits(self, i_range):
+        """
+        範囲内の全敵対ユニットのリストを返す
+        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        """
+        imyTeam = self.caster.getTeam()
+        myTeam = gc.getTeam(imyTeam)
+        range_plots = getRangePlotList(self.caster, i_range, False)
+
+        re_units = []
+        for plot in range_plots:
+            re_units += filter(
+                lambda pUnit: myTeam.isAtWar(pUnit.getTeam()),
+                getPlotUnits(plot) )
+
+        return re_units
+
+
+### 具体的なスペル
+########################
+
+class SpellPoison(Spell):
+    """毒散布"""
+    
+    def cast(self):
+        """
+        周囲1マスの敵対ユニットに『毒』を与える
+        """
+
+        POISONED = git("PROMOTION_POISONED")
+        units = self.selectREUnits(1)
+        for unit in units:
+            unit.setHasPromotion(POISONED, True)
+
+# スペル一覧に追加
+SpellInfo.spells.append(SpellInfo("SPELL_POISON", SpellPoison))
+
+class SpellFire(Spell):
+    """火炎幕"""
+    
+    def cast(self):
+        """
+        周囲1マスの敵対ユニットに20%のダメージを与える
+        """
+
+        caster_owner = self.caster.getOwner()
+        units = self.selectREUnits(1)
+        for unit in units:
+            unit.changeDamage(20, caster_owner)
+
+SpellInfo.spells.append(SpellInfo("SPELL_FIRE", SpellFire))
+
+
+### EventManager
+########################
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onUnitPromoted(self, argsList):
+        'Called when a unit is promoted'
+        super(self.__class__, self).onUnitPromoted(argsList)
+        pUnit, iPromotion = argsList
+        ##########
+
+        for spellinfo in SpellInfo.spells:
+            iSpellPromo = git(spellinfo.getPromotionName())
+            if iPromotion == iSpellPromo:
+                SpellClass = spellinfo.getSpellClass()
+                spell = SpellClass(pUnit)
+                spell.cast()
 ```
-...2ターン目で戦闘終了していることが確認できると思います。
 
 
+# オブジェクト
+Pythonでは、ほとんどすべてのものが「オブジェクト」の値として変数に代入ができます。
+その力は、関数やクラスにも及びます。
+例えば、`git = gc.getInfoTypeForString`という文は、
+`gc.getInfoTypeForString`という関数を変数に代入しています。
+(関数呼び出しを表す`()`をつけずに関数名だけを書いていることに注意してください)
+
+関数を変数に代入するとはどういうことなのでしょうか？
+Pythonでは、変数や関数の名前は実体につけられたラベルのようなものだと考えます。
+実体としてのオブジェクトはそのあたりに漂っていて、名前をつけることで
+実体にアクセスすることができるようになります。
+代入文というのは、その名前をつける行為に相当します。
+まだ名前がないオブジェクトに対しては命名、(`a=42`)
+もう名前があるオブジェクトに対しては別名をつけることに相当します。(`a=b`)
+
+`git = gc.getInfoTypeForString`によって`git`は関数の別名になります。
+あとで`git("PROMOTION_POISONED")`などとして「呼び出す」ことができます。
+(関数オブジェクトに、呼び出しを表す`()`をつければ関数の呼び出しになります)
+
+あるいは、型もオブジェクトです。
+クラス名がクラスオブジェクトを指し示しています。
+
+``` python
+class A
+  def f(self):
+    return 0
+
+# クラスオブジェクトの別名
+class_a = A
+
+# クラスオブジェクトの別名からインスタンス化
+a = class_a()
+
+# 関数オブジェクトの別名
+method_f = a.f
+
+# 別名から関数を呼び出す
+print method_f()
+```
+
+上の例で、`a`は`A`のインスタンスになっています。
+別名を経由してインスタンス化していますが、指している実体は`A`に変わりないので、
+`A`のインスタンスができます。
+
+この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、
+「関数のリスト」や「型のリスト」をつくることができます。
+リスト内の関数を順番に呼び出すとかリスト内の型のインスタンスをつくるとかいうことが可能になります。
+
+# 関数
+
+最初の方は関数です...
+``` python
+def isValidPlot(x, y):
+    """ラップを考慮して、有効な座標であるか判定する"""
+    pMap = gc.getMap()
+
+    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
+    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
+    return bx and by
+```
+座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。
+この関数は[はじめての・その７]({{<ref "getstarted7.md">}})で作ったものと同じものです。
+「周囲nマス」を表現するためにはいつでも必要になる関数なので、使いまわしましょう。
+
+
+つぎは実際に周囲nタイルのCyPlotインスタンスを求めます...
+``` python
+def getRangePlotList(center, i_range, include_center):
+    """
+    中心から周囲nタイルのCyPlotのリストを返す
+    center - 中心タイル
+    i_range - 範囲
+    include_center - Trueならリストに中心タイルを含める
+    """
+
+    pMap = gc.getMap()
+    result = []
+    
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+            x = xx + center.getX()
+            y = yy + center.getY()
+            
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
+
+            result.append( pMap.plot(x,y) )
+
+    return result
+```
+
+## 多重ループ・ブロックのネスト
+
+目新しいのはこの部分です。
+``` python
+>>>>>>>>>>
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+<<<<<<<<<<
+```
+for文の中にさらにfor文が2重になって入っています。
+ループ処理が2重になっているので「2重ループ」と呼びます。
+
+`i_range`が変数なので少しわかりにくいですね。
+`i_range = 1`だと仮定して書き直してみましょう。
+``` python
+    for xx in range(-1, 2):
+        for yy in range(-1, 2):
+```
+`range(-1, 2)`は-1 <= x < 2の範囲にある整数を順番に並べたリストを返します。
+つまり`[-1,0,1]`になります。(`2`を含まないことに注意してください。)
+さらに処理の流れをばらして図解すると、こうなります。
+
+{{<img src="/img/sentence_for.png">}}
+
+こうして得た`xx`と`yy`で中身の処理をします。
+まずはこのような計算をします。
+``` python
+>>>>>>>>>>
+            x = xx + center.getX()
+            y = yy + center.getY()
+<<<<<<<<<<
+```
+中心座標からx方向に`xx`, y方向に`yy`ずらした座標を求めています。
+これが`xx`について`-1,0,1` と`yy`について`-1,0,1` で合計で9回繰り返されますので、
+中心から周囲1マスの座標がそれぞれ計算できます。
+
+まだこの時点では座標の数字を計算しただけです。
+そこに本当にタイルがあるかどうかはまだわかりません。
+マップ端などの場合はそれ以上進めないこともあるのでした。
+そのような範囲外の座標を使ってCyPlotインスタンスをつくろうとしても、
+そんなマスはないので作成できません。
+
+なので、まずはマップの範囲に収まっているか判定します。
+``` python
+>>>>>>>>>>
+            if not isValidPlot(x,y):
+                continue
+<<<<<<<<<<
+```
+`not`を使って結果を反転させています。
+`(x,y)`がマップ範囲内ではないとき、`continue`という文を実行します。
+
+`continue`は最も内側のforループの次の繰り返しまで飛ぶ命令です。
+
+{{<img src="/img/sentence_continue.png">}}
+
+このとき、現在の繰り返しの残りの処理は飛ばされます。
+処理をする前に前提条件をチェックして、満たさない場合はさっさと次に行く、
+のような書き方ができます。
+
+実は、`continue`を使わなくても、if文だけで前提条件をチェックすることはできます。
+``` python
+        # if文だけで
+        for i in list:
+                if 前提条件:
+                        if 前提条件2:
+                                if 前提条件3:
+                                        処理...
+                                        処理...
+                                        処理...
+                                        ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+        
+        # continueで
+        for i in list:
+                if not 前提条件:
+                        continue
+                if not 前提条件2:
+                        continue
+                if not 前提条件3:
+                        continue
+            
+                処理...
+                処理...
+                処理...
+                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+```
+
+が、見てわかるように、if文だけで制御すると前提条件があればあるほど
+インデントが右へ右へと深くなっていきます。
+コードが画面右からはみ出してしまい、読みにくくなるリスクも高くなってしまいます。
+
+for文の中のif文の中のif文の中の...という入れ子構造を「ネスト」と呼びますが、
+一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。
+なので、できるなら`continue`や`return`といった
+残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、
+など、深くなり過ぎないように努力すべきです。
+
+というわけで、マップ内にあるかの確認と、ついでに中心座標を含めるかどうかの判定を
+ここでやっています。
+``` python
+>>>>>>>>>>
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
+<<<<<<<<<<
+```
+
+前提条件をクリアしたら、座標の数字からCyPlotのインスタンスをつくり、
+リスト型の変数`result`に追加しています。
+``` python
+>>>>>>>>>>
+            result.append( pMap.plot(x,y) )
+<<<<<<<<<<
+```
+
+これで、周囲1マスのCyPlotインスタンスのリストを得ることができました。
+
+# リスト内包表記
+
+Plot上には複数のユニットが存在できます。
+Plot上にいる全ユニットのCyUnitインスタンスのリストを取得したくなります。
+このようにします。
+``` python
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+```
+Pythonでは「リストを作る」ことに特別な記法が用意されていて、
+このように短く書くことができるようになっています。
+
+素のPythonプログラムで、書き方を見ていきましょう。
+「リストを加工して新しくリストをつくる」ときはこのようにするのでした。
+``` python
+# 元のリスト
+list1 = range(10)
+# 加工後のリスト(の入れ物)
+list2 = []
+
+# 元リストの各要素について
+for i in list1:
+    # 2で割り切れるならば
+    if i % 2 == 0:
+        # 3倍して
+        a = i * 3
+        # 追加する
+        list2.append(a)
+
+print list2 # [0, 6, 12, 18, 24]
+```
+
+これを、このように縮めることができます。
+``` python
+# 元のリスト
+list1 = range(10)
+# 2で割り切れる要素を選んで3倍して新しいリストをつくる
+list2 = [i * 3 for i in list1 if i % 2 == 0]
+
+print list2 # [0, 6, 12, 18, 24]
+```
+上のループを１行にくっつけたような形をしています。
+この書き方をPythonの「リスト内包表記」(List Comprehension)と呼びます。
+これで、どちらも全く同じ処理になっています。
+実行してみて、`[0, 6, 12, 18, 24]`が出力されるかどうか、試してみましょう。
+(これらは素のPythonプログラムです。MODではないので、しかるべきところで実行しましょう。)
+
+条件式の部分は、必要なければ書かなくても構いません。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# 長い版
+##########
+list2 = []
+
+for i in list1:
+    # 3倍して
+    a = i * 3
+    # 追加する
+    list2.append(a)
+
+print list2
+
+# リスト内包表記版
+##########
+list3 = [i * 3 for i in list1]
+
+print list3
+
+```
+実行して、どちらも同じリストが出力されることを確かめましょう。
+「各要素を3倍する」という目的が、リスト内包表記版ではより分かりやすくなっています。
+
+逆に3倍する処理の方を削って、条件式は復活させてみましょう。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# 長い版
+##########
+list2 = []
+
+for i in list1:
+    if i % 2 == 0:
+        list2.append(i)
+
+print list2
+
+# リスト内包表記版
+##########
+list3 = [i for i in list1 if i % 2 == 0]
+
+print list3
+
+```
+どちらも同じリストが出力されるはずです。実行して確かめましょう。
+
+リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。
+`[]`を`()`にしてみましょう。
+{{<img src="/img/generator_expression.png">}}
+`[0, 2, 4, 6, 8]`......ではなく、よくわからないものが出力されました。
+これは「ジェネレーターオブジェクト」(Generator Object)というもので、
+それを生成した、内包表記を`()`で囲んだものを「ジェネレーター式」(Generator Expression)と呼びます。
+
+ジェネレーター式によってつくられたジェネレーターオブジェクトは、
+いってみればリストを加工するレシピを予約したもの、です。
+このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、
+リストではないので、直接出力しようとしても
+それがGenerator Objectであることしかわかりません。
+
+実際に料理をするには、for文を使います。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# ジェネレーター式
+##########
+list2 = (i for i in list1 if i % 2 == 0)
+
+print list2
+
+# ジェネレーターから1要素ずつ取り出して、list3に追加する
+list3 = []
+for i in list2:
+    list3.append(i)
+
+print list3
+
+```
+
+リスト内包表記もforを使っていますので、後半をリスト内包表記で書き直すこともできます。
+
+``` python
+# 元のリスト
+list1 = range(10)
+
+# ジェネレーター式
+##########
+list2 = (i for i in list1 if i % 2 == 0)
+
+print list2
+
+# ジェネレーターから1要素ずつ取り出して、list3に追加する
+list3 = [i for i in list2]
+
+print list3
+
+```
+それぞれ実行してみて動作を確かめましょう。
+どのみちリストをつくるときはさらにfor文で回すことがほとんどですから、
+`list2`を直接出力しようとしない限りジェネレーターと本物のリストは
+大体区別せずに同じような感じで扱うことができます。
+
+というわけで、冒頭の関数はジェネレーター式を利用していました。
+``` python
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+```
+
+わかりにくいですか？
+インデントをいつものPython風につけてみると少しわかりやすいかもしれません。
+``` python
+for i in range(plot.getNumUnits()):
+    plot.getUnit(i)
+```
+
+`i`番目のユニットを、そのプロットにいるユニットの数だけ取得していますね。
+
+[その８につづく]({{ref "secondpy8.py"}})

@@ -7,27 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>それからのPython 8</title>
-      <link>https://gforestshade.github.io/kujira/post/secondpy8/</link>
-      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/secondpy8/</guid>
-      <description>はじめに その７のつづき 続・継承について 今回は理論回です。この回に出てくるコードはすべてMODではなく ただのPythonプログラムになっていま</description>
-    </item>
-    
-    <item>
       <title>それからのPython 7</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy7/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy7/</guid>
-      <description>はじめに その６のつづき 継承について 今回は理論回です。この回に出てくるコードはすべてMODではなく ただのPythonプログラムになっていますの</description>
+      <description>はじめに その６のつづき オブジェクト リスト操作 簡単なスペルの仕組みをつくってみる この回に出てくるコードのいくつかはMODではなく ただのPyth</description>
     </item>
     
     <item>
