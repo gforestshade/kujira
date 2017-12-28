@@ -26,7 +26,8 @@ tags = ["それからのPython", "せつめい"]
 - 具体的なスペル効果は以下の3種類とする
 - 湧き水：砂漠が平原に変化する
 - 毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える
-- 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPが60%を切ることはないようにする
+- 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPの60%を切ることはないようにする
+- 湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする
 
 # プログラムリスト
 先に全容を見ておきましょう。
@@ -90,42 +91,48 @@ def getPlotUnits(plot):
 class SpellInfo:
     
     def __init__(self, name, spell_class):
-        self.name = name
-        self.spell_class = spell_class
+        self._name = name
+        self._spell_class = spell_class
         
     def getName(self):
-        return self.name
+        return self._name
 
     def getPromotionName(self):
         return "PROMOTION_" + self.getName()
 
     def getSpellClass(self):
-        return self.spell_class
+        return self._spell_class
 
     spells = []
 
 class Spell:
     
     def __init__(self, caster):
-        self.caster = caster
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
     
     def cast(self):
-        pass
+        """スペル処理を呼び出し、成功したらエフェクトも出す"""
+        r = self.execute()
 
-    def selectREUnits(self, i_range):
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+
+    def selectEnemyUnits(self, i_range):
         """
         範囲内の全敵対ユニットのリストを返す
         i_range - self.casterを中心として周囲i_rangeマスを範囲とする
         """
-        imyTeam = self.caster.getTeam()
-        myTeam = gc.getTeam(imyTeam)
-        range_plots = getRangePlotList(self.caster, i_range, False)
-
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
         re_units = []
         for plot in range_plots:
-            re_units += filter(
-                lambda pUnit: myTeam.isAtWar(pUnit.getTeam()),
-                getPlotUnits(plot) )
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
 
         return re_units
 
@@ -133,34 +140,67 @@ class Spell:
 ### 具体的なスペル
 ########################
 
+class SpellWater(Spell):
+    """湧き水"""
+    
+    def execute(self):
+        """
+        直下のタイルが自チームの砂漠なら平原に変化させる
+        """
+
+        caster_plot = self._caster.plot()
+        DESERT = git("TERRAIN_DESERT")
+        PLAINS = git("TERRAIN_PLAINS")
+        
+        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
+            caster_plot.setTerrainType(PLAINS, True, True)
+            return True
+            
+
+# スペル一覧に追加
+SpellInfo.spells.append(SpellInfo("SPELL_WATER", SpellWater))
+
+
 class SpellPoison(Spell):
     """毒散布"""
     
-    def cast(self):
+    def execute(self):
         """
         周囲1マスの敵対ユニットに『毒』を与える
         """
 
         POISONED = git("PROMOTION_POISONED")
-        units = self.selectREUnits(1)
+        units = self.selectEnemyUnits(1)
         for unit in units:
             unit.setHasPromotion(POISONED, True)
 
-# スペル一覧に追加
+        return True
+
 SpellInfo.spells.append(SpellInfo("SPELL_POISON", SpellPoison))
+
 
 class SpellFire(Spell):
     """火炎幕"""
     
-    def cast(self):
+    def execute(self):
         """
-        周囲1マスの敵対ユニットに20%のダメージを与える
+        周囲1マスの敵対ユニットに10%のダメージを与える
+        最大40%まで
         """
 
-        caster_owner = self.caster.getOwner()
-        units = self.selectREUnits(1)
+        i_damage = 10
+        max_damage = 40
+        caster_owner = self._caster.getOwner()
+        units = self.selectEnemyUnits(1)
+        
         for unit in units:
-            unit.changeDamage(20, caster_owner)
+            if unit.getDamage() >= max_damage:
+                continue
+            
+            damage = min(unit.getDamage() + i_damage, max_damage)
+            unit.setDamage(damage, caster_owner)
+
+        return True
 
 SpellInfo.spells.append(SpellInfo("SPELL_FIRE", SpellFire))
 

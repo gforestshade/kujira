@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-26",
     "description": "",
-    "wordCount": 5405
+    "wordCount": 5636
   }
 </script>
 
@@ -129,8 +129,8 @@
     <time datetime="2017-12-26">26 Dec, 2017</time>
 
     
-    &middot; 11 Minute Read
-    &middot; 5405 Words
+    &middot; 12 Minute Read
+    &middot; 5636 Words
   </div>
 
   
@@ -191,7 +191,8 @@
 <li>具体的なスペル効果は以下の3種類とする<br /></li>
 <li>湧き水：砂漠が平原に変化する<br /></li>
 <li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
-<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPが60%を切ることはないようにする<br />
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
+<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
 <br /></li>
 </ul>
 
@@ -258,42 +259,48 @@ def getPlotUnits(plot):
 class SpellInfo:
     
     def __init__(self, name, spell_class):
-        self.name = name
-        self.spell_class = spell_class
+        self._name = name
+        self._spell_class = spell_class
         
     def getName(self):
-        return self.name
+        return self._name
 
     def getPromotionName(self):
         return &quot;PROMOTION_&quot; + self.getName()
 
     def getSpellClass(self):
-        return self.spell_class
+        return self._spell_class
 
     spells = []
 
 class Spell:
     
     def __init__(self, caster):
-        self.caster = caster
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
     
     def cast(self):
-        pass
+        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
+        r = self.execute()
 
-    def selectREUnits(self, i_range):
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+
+    def selectEnemyUnits(self, i_range):
         &quot;&quot;&quot;
         範囲内の全敵対ユニットのリストを返す
         i_range - self.casterを中心として周囲i_rangeマスを範囲とする
         &quot;&quot;&quot;
-        imyTeam = self.caster.getTeam()
-        myTeam = gc.getTeam(imyTeam)
-        range_plots = getRangePlotList(self.caster, i_range, False)
-
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
         re_units = []
         for plot in range_plots:
-            re_units += filter(
-                lambda pUnit: myTeam.isAtWar(pUnit.getTeam()),
-                getPlotUnits(plot) )
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
 
         return re_units
 
@@ -301,34 +308,67 @@ class Spell:
 ### 具体的なスペル
 ########################
 
+class SpellWater(Spell):
+    &quot;&quot;&quot;湧き水&quot;&quot;&quot;
+    
+    def execute(self):
+        &quot;&quot;&quot;
+        直下のタイルが自チームの砂漠なら平原に変化させる
+        &quot;&quot;&quot;
+
+        caster_plot = self._caster.plot()
+        DESERT = git(&quot;TERRAIN_DESERT&quot;)
+        PLAINS = git(&quot;TERRAIN_PLAINS&quot;)
+        
+        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
+            caster_plot.setTerrainType(PLAINS, True, True)
+            return True
+            
+
+# スペル一覧に追加
+SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))
+
+
 class SpellPoison(Spell):
     &quot;&quot;&quot;毒散布&quot;&quot;&quot;
     
-    def cast(self):
+    def execute(self):
         &quot;&quot;&quot;
         周囲1マスの敵対ユニットに『毒』を与える
         &quot;&quot;&quot;
 
         POISONED = git(&quot;PROMOTION_POISONED&quot;)
-        units = self.selectREUnits(1)
+        units = self.selectEnemyUnits(1)
         for unit in units:
             unit.setHasPromotion(POISONED, True)
 
-# スペル一覧に追加
+        return True
+
 SpellInfo.spells.append(SpellInfo(&quot;SPELL_POISON&quot;, SpellPoison))
+
 
 class SpellFire(Spell):
     &quot;&quot;&quot;火炎幕&quot;&quot;&quot;
     
-    def cast(self):
+    def execute(self):
         &quot;&quot;&quot;
-        周囲1マスの敵対ユニットに20%のダメージを与える
+        周囲1マスの敵対ユニットに10%のダメージを与える
+        最大40%まで
         &quot;&quot;&quot;
 
-        caster_owner = self.caster.getOwner()
-        units = self.selectREUnits(1)
+        i_damage = 10
+        max_damage = 40
+        caster_owner = self._caster.getOwner()
+        units = self.selectEnemyUnits(1)
+        
         for unit in units:
-            unit.changeDamage(20, caster_owner)
+            if unit.getDamage() &gt;= max_damage:
+                continue
+            
+            damage = min(unit.getDamage() + i_damage, max_damage)
+            unit.setDamage(damage, caster_owner)
+
+        return True
 
 SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
 
@@ -763,6 +803,12 @@ print list3
         
 
         
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/secondpy8/" title="それからのPython 8" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
         </ul> </nav>
       
     
@@ -780,6 +826,22 @@ print list3
   <div class="card-text">
     <div class="widget">
       <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 8" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
         
         <li>
           <div class="item-thumbnail bg-inverse">
@@ -845,22 +907,6 @@ print list3
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy4/" class="thumbnail">
-              
-                  
-                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
-                    alt="それからのPython 4" class="thumbnail-image"></span>
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy4/" class="title">それからのPython 4</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -889,12 +935,12 @@ print list3
         
           <li>
             <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
-            <span class="category-list-count">17</span>
+            <span class="category-list-count">18</span>
           </li>
         
           <li>
             <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
-            <span class="category-list-count">7</span>
+            <span class="category-list-count">8</span>
           </li>
         
           <li>

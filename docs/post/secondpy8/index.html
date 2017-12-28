@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>それからのPython 8  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="それからのPython, せつめい, ">
+
+
+<meta property="og:title" content="それからのPython 8  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy8/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-12-28T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-12-28T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="それからのPython">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="それからのPython 8" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy8/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "それからのPython 8",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-12-28",
+    "description": "",
+    "wordCount": 4037
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy8/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://gforestshade.github.io/kujira/post/secondpy8/" itemprop="url">
+    
+      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title">それからのPython 8
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-28">28 Dec, 2017</time>
+
+    
+    &middot; 9 Minute Read
+    &middot; 4037 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy8/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる・後編<br /></li>
+<li>クラスを活用する<br />
+<br /></li>
+</ul>
+
+<h1 id="スペル情報クラス">スペル情報クラス</h1>
+
+<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br />
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。</p>
+
+<pre><code class="language-python">class SpellInfo:
+    
+    def __init__(self, name, spell_class):
+        self._name = name
+        self._spell_class = spell_class
+        
+    def getName(self):
+        return self._name
+
+    def getPromotionName(self):
+        return &quot;PROMOTION_&quot; + self.getName()
+
+    def getSpellClass(self):
+        return self._spell_class
+
+    spells = []
+
+</code></pre>
+
+<p>&hellip;のですが、今回は設計を簡単にしたので、<br />
+登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。<br />
+コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。<br />
+そして、<code>getName()</code>や<code>getSpellClass()</code>でそれらを取得できるようにしています。<br />
+<code>setName()</code>や<code>setSpellClass()</code>を作っていないことに注意してください。<br />
+名前やクラスオブジェクトは取得できるだけで、設定はできません。<br />
+これは「Info」を表すクラスであって、ゲーム中に変更されることはないからです。</p>
+
+<p>なお、ここでいう「名前」とは、内部処理に使う名前を指します。<br />
+具体的には、<code>SPELL_WATER</code>や<code>SPELL_POISON</code>といったXMLキーのようなものです。<br />
+今回は発動条件に昇進を使うため、<br />
+<code>SPELL_WATER</code>を発動させる昇進名は<code>PROMOTION_SPELL_WATER</code>、<br />
+<code>SPELL_POISON</code>を発動させる昇進名は<code>PROMOTION_SPELL_POISON</code>、<br />
+のように定めることにします。<br />
+自分のスペル名に<code>PROMOTION_</code>をつけた文字列を返す、<br />
+<code>getPromotionName()</code>というインスタンスメソッドもつくっておきます。</p>
+
+<p>インスタンス変数の名前に<code>self._name</code>・<code>self._spell_class</code>のように<br />
+<code>_</code>をつけています。<code>_</code>1つで始まるインスタンス変数は、慣習として、<br />
+「どうか外部からいじらないでね」という意味を持ちます。<br />
+名前やクラスオブジェクトが知らないうちに変わってほしくはありませんので、<br />
+<code>_</code>をつけています。<br />
+(外部からの参照禁止を強制する効果はありません。あくまで慣習によるお願いです。)</p>
+
+<p>このクラスは「型」ですから、SpellInfo型の変数をつくることができます。<br />
+そのインスタンス1つが、スペル1種類を表します。<br />
+今回はスペルの種類は3つですから、3つのSpellInfoインスタンスをつくることになります。</p>
+
+<p>そして、最後に<code>spell = []</code>という文が書いてあります。<br />
+これは代入文ですが、<code>self</code>がついていません。<br />
+クラス内・メソッド外に記述されている、このような変数を<br />
+「クラス変数」(Class Variable)と呼びます。<br />
+クラス変数の所属する先は、インスタンスではなくクラス全体になります。<br />
+このことは、すべてのインスタンス(今回は3つのインスタンス)で値が共有される、<br />
+ということを意味します。<br />
+<code>self</code>がついているインスタンス変数はインスタンスごとに値が違っていましたから、<br />
+この点がインスタンス変数との違いになります。</p>
+
+<p>今回は、このクラス変数<code>SpellInfo.spells</code>に3つのインスタンスをすべて登録します。<br />
+(これも後述します)</p>
+
+<h1 id="スペル用基底クラス">スペル用基底クラス</h1>
+
+<p>では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。<br />
+まず、すべてのスペルで共通となる部分です。</p>
+
+<pre><code class="language-python">class Spell:
+    
+    def __init__(self, caster):
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
+    
+    def cast(self):
+        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
+        r = self.execute()
+
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+
+    def selectEnemyUnits(self, i_range):
+        &quot;&quot;&quot;
+        範囲内の全敵対ユニットのリストを返す
+        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        &quot;&quot;&quot;
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
+        re_units = []
+        for plot in range_plots:
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
+
+        return re_units
+
+</code></pre>
+
+<p>スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を<br />
+インスタンス変数として保持します。<br />
+この&rdquo;詠唱者&rdquo;はゲーム中にいくらでも変わりうる、<br />
+あるいは複数存在しうるものですから、<br />
+(自分のユニットが発動したスペルとAIのユニットが発動したスペルは別にしたいですよね？)<br />
+Infoに入れることはできません。ここで保持します。</p>
+
+<p>その詠唱者インスタンスを利用して、スペルを実行します。<br />
+今回は設計を簡単にしたためやりませんが、<br />
+スペルに実行条件を付けて、スペル発動ボタンを非表示にしたり暗転表示にしたり<br />
+したい場合なども詠唱者の情報を利用するでしょうから、<br />
+(詠唱者が都市上にいるときだけ使えるスペルをつくりたい？<br />
+詠唱者がどのPlotにいるか、そのPlotに都市があるかの判定が必要ですね)<br />
+このクラスのメソッドとして書くことになるでしょう。</p>
+
+<p>ともあれ、今回このクラスにはスペルを実際に詠唱する<code>cast()</code>と、<br />
+いろんなスペルで共同利用するためのメソッドが定義されます。<br />
+(今回は毒でも炎でも使う「1マス圏内にいる敵ユニットを列挙する」<br />
+メソッドを定義しています)</p>
+
+<p>メソッドを順番に見ていきましょう。まずは<code>__init__()</code>です。</p>
+
+<pre><code class="language-python">    def __init__(self, caster):
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
+    
+</code></pre>
+
+<p>詠唱者を引数に取ってインスタンス変数に代入するほか、<br />
+そのユニットが所属しているチームのCyTeamインスタンスも<br />
+インスタンス変数としてつくっています。<br />
+これはあとで戦争相手のユニットを識別したり、<br />
+自領土であるかどうかを調べたりするのに使います。<br />
+なにかと使い道が多いので、いちいちその場でつくるよりは、<br />
+ここで最初に作っておいて使いまわしする作戦です。<br />
+ほかにも、ほとんどのスペルで必要になるような値があるなら、<br />
+ここで設定することになるでしょう。</p>
+
+<p><code>cast()</code>です。スペル処理の本体になります。</p>
+
+<pre><code class="language-python">    def cast(self):
+        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
+        r = self.execute()
+
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+</code></pre>
+
+<p><code>execute()</code>という謎のインスタンスメソッドを呼び出しています。<br />
+これは、スペルごとに異なる部分をギリギリまで狭くして、<br />
+共通処理で済ませようとする工夫です。<br />
+どこまでが共通で、どこからが個別なのか切り分けるのは、<br />
+バグの少ないプログラムを書く上では重要になってきます。</p>
+
+<p>ここでは、本当に個別の処理の部分だけをあとで個別に<code>execute()</code>という<br />
+メソッドとして書くことで、共通な部分――スペル発動のエフェクトなど――<br />
+を共通としてまとめておくことを意図しています。<br />
+こうして外側をしっかり書いておくことで、<br />
+実際のスペル処理を書くことに集中できるようになります。</p>
+
+<p>あるいは、共通処理に追加したくなったときにも拡張が簡単になります。<br />
+スペル発動後移動を強制終了したいとか、特定の昇進をつけたいとか、<br />
+そういった場合にまとまっていれば1か所の追加で済みますが、<br />
+共通で同じ処理だからといって安易にコピペしていると<br />
+スペル3個でもう3か所、スペルを増やしていって100種類くらいになってから<br />
+仕様変更したくなってしまった場合は&hellip;&hellip;？<br />
+最悪の場合すべてを書き直す羽目になってしまうかもしれません。<br />
+<strong><em>事前の準備が大切なのです。</em></strong></p>
+
+<p><code>execute()</code>は成功で真、失敗で偽を返すようにするので、<br />
+成功したら<code>EFFECT_PING</code>というアニメーションを詠唱者と同じ画面座標で再生します。<br />
+これはチーム戦などで座標をチームメイトに伝えるときのアニメーションを流用しています。<br />
+今回はやりませんが、発動成功したときに上にメッセージを出したい、というときも<br />
+ここに書くことになるでしょう。</p>
+
+<p><code>isEnemy()</code>です。ユニットの引数を1つ取り、<br />
+そのユニットの所属と詠唱者の文明とが戦争状態にあるかを判定します。</p>
+
+<pre><code class="language-python">    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+</code></pre>
+
+<p>外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。</p>
+
+<p><code>selectEnemyUnits()</code>です。範囲内にいる敵対ユニットを集めてリストにして返します。<br />
+攻撃系のスペルではよく使うので、共通処理に入れておきます。</p>
+
+<pre><code class="language-python">    def selectEnemyUnits(self, i_range):
+        &quot;&quot;&quot;
+        範囲内の全敵対ユニットのリストを返す
+        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        &quot;&quot;&quot;
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
+        re_units = []
+        for plot in range_plots:
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
+
+        return re_units
+
+</code></pre>
+
+<p><code>range_plots = getRangePlotList(self._caster, i_range, False)</code><br />
+まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。<br />
+詠唱者を中心に、周囲<code>i_range</code>マス、詠唱者自身のマスは含めません。</p>
+
+<p><code>range_plots</code>の中の各Plotに対して、<br />
+<code>re_units += filter(self.isEnemy, getPlotUnits(plot))</code><br />
+という文を実行しています。</p>
+
+<p>2つのリストを<code>+</code>すると、そのリストが1つに連結された新しいリストを得ます。<br />
+あるリストに別のリストを<code>+=</code>すると、そのリストの末尾に別のリストの内容がくっつきます。<br />
+メソッド全体の目的と、ここがfor文の中でPlotを列挙中であることを考えると、<br />
+右辺の<code>filter(self.isEnemy, getPlotUnits(plot))</code>は<br />
+「<code>plot</code>の上にいる敵対ユニットのリスト」になっているはずです。<br />
+それを後ろにどんどん連結していけば範囲内の全敵対ユニットを求めたことになりますね。</p>
+
+<p>さて、この<code>filter()</code>という関数は、リストを加工する関数です。<br />
+第１引数に条件、第２引数にリストを入れると、<br />
+条件を満たした要素だけを残した新しいリストを得ます。<br />
+第２引数として指定している<code>getPlotUnits(plot)</code>というのは<br />
+さっきつくった関数で<code>plot</code>上にいる全ユニットのリスト<br />
+&hellip;ではなくジェネレーターを得るのでした。<br />
+ただ直接出力しようとしない限りだいたい扱いは同じでしたので、<br />
+ここにジェネレータを指定します。</p>
+
+<p>条件は、関数で指定します。<br />
+<code>self.isEnemy</code>という関数オブジェクトです。呼び出しのための<code>()</code>をまだつけていません。<br />
+<code>filter()</code>関数の中で、関数オブジェクトが呼び出され、要素を残すかどうか判定がされます。<br />
+結局、<code>isEnemy()</code>――詠唱者と敵対しているかどうか――を満たすユニットのみが残され、<br />
+<code>re_units</code>に連結されていきます。</p>
+
+<p><a href="{{ref &quot;secondpy9.py&quot;}}">その９につづく</a></p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" title="それからのPython 7 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 8" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 7" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 6" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/readgetunitlist/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="付録：getUnitList()" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/readgetunitlist/" class="title">付録：getUnitList()</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy5/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    alt="それからのPython 5" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy5/" class="title">それからのPython 5</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">18</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
+        mmd_to_civ4
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
+        せつめい
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
+        それからのpython
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
+        はじめてのcveventmanager.py
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2" class="badge badge-primary">
+        付録
+        </a>
+    
+        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
+        目次
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+
+
+  </body>
+</html>
+
