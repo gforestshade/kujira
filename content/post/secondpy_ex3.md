@@ -1,6 +1,6 @@
 +++
 date = "2017-12-05"
-draft = true
+draft = false
 title = "付録：継承２"
 banner = "/green1024x200.png"
 tags = ["付録", "せつめい"]

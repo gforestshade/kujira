@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/tags/%E4%BB%98%E9%8C%B2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>付録：継承２</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy_ex3/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy_ex3/</guid>
+      <description>はじめに 付録：継承１のつづき 続・継承について 今回は理論回です。この回に出てくるコードはすべてMODではなく ただのPythonプログラムになっ</description>
+    </item>
+    
+    <item>
+      <title>付録：継承１</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy_ex2/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy_ex2/</guid>
+      <description>はじめに 継承について 今回は理論回です。この回に出てくるコードはすべてMODではなく ただのPythonプログラムになっていますので、paiza</description>
+    </item>
     
     <item>
       <title>付録：getUnitList()</title>
