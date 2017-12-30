@@ -7,27 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 12:03:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>それからのPython 9</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy9/</link>
+      <pubDate>Sat, 30 Dec 2017 12:03:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy9/</guid>
+      <description>はじめに その８のつづき 簡単なスペルの仕組みをつくってみる ４部作のうちの３回目・Python共通編 クラスを活用する スペル情報クラス スペル情報ク</description>
+    </item>
+    
+    <item>
       <title>それからのPython 8</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy8/</link>
-      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Dec 2017 12:02:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy8/</guid>
-      <description>はじめに その７のつづき 簡単なスペルの仕組みをつくってみる・後編 クラスを活用する スペル情報クラス スペル情報クラスです。BuildingInfo</description>
+      <description>はじめに その７のつづき 簡単なスペルの仕組みをつくってみる ４部作のうちの２回目・Python準備編 オブジェクト リスト操作 Pythonファイル P</description>
     </item>
     
     <item>
       <title>それからのPython 7</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy7/</link>
-      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Dec 2017 12:01:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy7/</guid>
-      <description>はじめに その６のつづき オブジェクト リスト操作 簡単なスペルの仕組みをつくってみる この回に出てくるコードのいくつかはMODではなく ただのPyth</description>
+      <description>はじめに その６のつづき 簡単なスペルの仕組みをつくってみる ４部作のうちの１回目・XML編 設計しよう 実際のMODの例として、簡単なスペルをつくっ</description>
     </item>
     
     <item>

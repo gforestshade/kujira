@@ -1,5 +1,5 @@
 +++
-date = "2017-12-28"
+date = "2017-12-30T12:02:00"
 draft = false
 title = "それからのPython 8"
 banner = "/green1024x200.png"
@@ -9,14 +9,93 @@ tags = ["それからのPython", "せつめい"]
 # はじめに
 
 - [その７]({{<ref "secondpy7.md">}})のつづき
-- 簡単なスペルの仕組みをつくってみる・後編
-- クラスを活用する
+- 簡単なスペルの仕組みをつくってみる
+- ４部作のうちの２回目・Python準備編
+- オブジェクト
+- リスト操作
 
-# スペル情報クラス
+# Pythonファイル
+Python側のファイル構成はいつもの感じです。
+EntryPoints\\CvEventInterface.pyはいずれかのKujira MODから使いまわします。
+忘れてしまった方は[こちら](/src/prefab/CvEventInterface.py)にも置いてあります。
 
-スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、
-このクラスを通してスペルのいろいろな情報を取得することができるようにします。
+``` plain
+└─kujira_promospell
+    └─Assets
+        ├─Python
+        │  ├─KujiraEventManager.py
+        │  │
+        │  └─Entrypoints
+        │      └─CvEventInterface.py
+        │
+        └─XML
+            ├─Text
+            │  └─Text_Kujira.xml
+            │
+            └─Units
+                └─CIV4PromotionInfos.xml
+```
+
+
+# プログラムリスト
+先にKujiraEventManager.pyの全容を見ておきましょう。
+このようなプログラムを作っていきます...
 ``` python
+# -*- coding: utf-8 -*-
+
+from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+import PyHelpers
+
+gc = CyGlobalContext()
+git = gc.getInfoTypeForString
+
+
+### 関数
+########################
+
+def isValidPlot(x, y):
+    """ラップを考慮して、有効な座標であるか判定する"""
+    pMap = gc.getMap()
+
+    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
+    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
+    return bx and by
+
+def getRangePlotList(center, i_range, include_center):
+    """
+    中心から周囲nタイルのCyPlotのリストを返す
+    center - 中心タイル
+    i_range - 範囲
+    include_center - Trueならリストに中心タイルを含める
+    """
+
+    pMap = gc.getMap()
+    result = []
+    
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+            x = xx + center.getX()
+            y = yy + center.getY()
+            
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
+
+            result.append( pMap.plot(x,y) )
+
+    return result
+
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+
+
+### スペル情報クラスとスペル用基底クラス
+########################
+
 class SpellInfo:
     
     def __init__(self, name, spell_class):
@@ -34,52 +113,6 @@ class SpellInfo:
 
     spells = []
 
-```
-...のですが、今回は設計を簡単にしたので、
-登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。
-コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。
-そして、`getName()`や`getSpellClass()`でそれらを取得できるようにしています。
-`setName()`や`setSpellClass()`を作っていないことに注意してください。
-名前やクラスオブジェクトは取得できるだけで、設定はできません。
-これは「Info」を表すクラスであって、ゲーム中に変更されることはないからです。
-
-なお、ここでいう「名前」とは、内部処理に使う名前を指します。
-具体的には、`SPELL_WATER`や`SPELL_POISON`といったXMLキーのようなものです。
-今回は発動条件に昇進を使うため、
-`SPELL_WATER`を発動させる昇進名は`PROMOTION_SPELL_WATER`、
-`SPELL_POISON`を発動させる昇進名は`PROMOTION_SPELL_POISON`、
-のように定めることにします。
-自分のスペル名に`PROMOTION_`をつけた文字列を返す、
-`getPromotionName()`というインスタンスメソッドもつくっておきます。
-
-インスタンス変数の名前に`self._name`・`self._spell_class`のように
-`_`をつけています。`_`1つで始まるインスタンス変数は、慣習として、
-「どうか外部からいじらないでね」という意味を持ちます。
-名前やクラスオブジェクトが知らないうちに変わってほしくはありませんので、
-`_`をつけています。
-(外部からの参照禁止を強制する効果はありません。あくまで慣習によるお願いです。)
-
-このクラスは「型」ですから、SpellInfo型の変数をつくることができます。
-そのインスタンス1つが、スペル1種類を表します。
-今回はスペルの種類は3つですから、3つのSpellInfoインスタンスをつくることになります。
-
-そして、最後に`spell = []`という文が書いてあります。
-これは代入文ですが、`self`がついていません。
-クラス内・メソッド外に記述されている、このような変数を
-「クラス変数」(Class Variable)と呼びます。
-クラス変数の所属する先は、インスタンスではなくクラス全体になります。
-このことは、すべてのインスタンス(今回は3つのインスタンス)で値が共有される、
-ということを意味します。
-`self`がついているインスタンス変数はインスタンスごとに値が違っていましたから、
-この点がインスタンス変数との違いになります。
-
-今回は、このクラス変数`SpellInfo.spells`に3つのインスタンスをすべて登録します。
-(これも後述します)
-
-# スペル用基底クラス
-では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。
-まず、すべてのスペルで共通となる部分です。
-``` python
 class Spell:
     
     def __init__(self, caster):
@@ -111,140 +144,475 @@ class Spell:
 
         return re_units
 
-```
 
-スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を
-インスタンス変数として保持します。
-この"詠唱者"はゲーム中にいくらでも変わりうる、
-あるいは複数存在しうるものですから、
-(自分のユニットが発動したスペルとAIのユニットが発動したスペルは別にしたいですよね？)
-Infoに入れることはできません。ここで保持します。
+### 具体的なスペル
+########################
 
-その詠唱者インスタンスを利用して、スペルを実行します。
-今回は設計を簡単にしたためやりませんが、
-スペルに実行条件を付けて、スペル発動ボタンを非表示にしたり暗転表示にしたり
-したい場合なども詠唱者の情報を利用するでしょうから、
-(詠唱者が都市上にいるときだけ使えるスペルをつくりたい？
-詠唱者がどのPlotにいるか、そのPlotに都市があるかの判定が必要ですね)
-このクラスのメソッドとして書くことになるでしょう。
-
-ともあれ、今回このクラスにはスペルを実際に詠唱する`cast()`と、
-いろんなスペルで共同利用するためのメソッドが定義されます。
-(今回は毒でも炎でも使う「1マス圏内にいる敵ユニットを列挙する」
-メソッドを定義しています)
-
-メソッドを順番に見ていきましょう。まずは`__init__()`です。
-``` python
-    def __init__(self, caster):
-        self._caster = caster
-        self._myTeam = gc.getTeam(caster.getTeam())
+class SpellWater(Spell):
+    """湧き水"""
     
-```
-
-詠唱者を引数に取ってインスタンス変数に代入するほか、
-そのユニットが所属しているチームのCyTeamインスタンスも
-インスタンス変数としてつくっています。
-これはあとで戦争相手のユニットを識別したり、
-自領土であるかどうかを調べたりするのに使います。
-なにかと使い道が多いので、いちいちその場でつくるよりは、
-ここで最初に作っておいて使いまわしする作戦です。
-ほかにも、ほとんどのスペルで必要になるような値があるなら、
-ここで設定することになるでしょう。
-
-`cast()`です。スペル処理の本体になります。
-``` python
-    def cast(self):
-        """スペル処理を呼び出し、成功したらエフェクトも出す"""
-        r = self.execute()
-
-        if r:
-            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
-            point = self._caster.plot().getPoint()
-            CyEngine().triggerEffect(EFFECT, point)
-
-```
-
-`execute()`という謎のインスタンスメソッドを呼び出しています。
-これは、スペルごとに異なる部分をギリギリまで狭くして、
-共通処理で済ませようとする工夫です。
-どこまでが共通で、どこからが個別なのか切り分けるのは、
-バグの少ないプログラムを書く上では重要になってきます。
-
-ここでは、本当に個別の処理の部分だけをあとで個別に`execute()`という
-メソッドとして書くことで、共通な部分――スペル発動のエフェクトなど――
-を共通としてまとめておくことを意図しています。
-こうして外側をしっかり書いておくことで、
-実際のスペル処理を書くことに集中できるようになります。
-
-あるいは、共通処理に追加したくなったときにも拡張が簡単になります。
-スペル発動後移動を強制終了したいとか、特定の昇進をつけたいとか、
-そういった場合にまとまっていれば1か所の追加で済みますが、
-共通で同じ処理だからといって安易にコピペしていると
-スペル3個でもう3か所、スペルを増やしていって100種類くらいになってから
-仕様変更したくなってしまった場合は......？
-最悪の場合すべてを書き直す羽目になってしまうかもしれません。
-***事前の準備が大切なのです。***
-
-`execute()`は成功で真、失敗で偽を返すようにするので、
-成功したら`EFFECT_PING`というアニメーションを詠唱者と同じ画面座標で再生します。
-これはチーム戦などで座標をチームメイトに伝えるときのアニメーションを流用しています。
-今回はやりませんが、発動成功したときに上にメッセージを出したい、というときも
-ここに書くことになるでしょう。
-
-`isEnemy()`です。ユニットの引数を1つ取り、
-そのユニットの所属と詠唱者の文明とが戦争状態にあるかを判定します。
-``` python
-    def isEnemy(self, pUnit):
-        return self._myTeam.isAtWar(pUnit.getTeam())
-```
-外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。
-
-`selectEnemyUnits()`です。範囲内にいる敵対ユニットを集めてリストにして返します。
-攻撃系のスペルではよく使うので、共通処理に入れておきます。
-``` python
-    def selectEnemyUnits(self, i_range):
+    def execute(self):
         """
-        範囲内の全敵対ユニットのリストを返す
-        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        直下のタイルが自チームの砂漠なら平原に変化させる
         """
-        range_plots = getRangePlotList(self._caster, i_range, False)
+
+        caster_plot = self._caster.plot()
+        DESERT = git("TERRAIN_DESERT")
+        PLAINS = git("TERRAIN_PLAINS")
         
-        re_units = []
-        for plot in range_plots:
-            re_units += filter(self.isEnemy, getPlotUnits(plot))
+        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
+            caster_plot.setTerrainType(PLAINS, True, True)
+            return True
+            
 
-        return re_units
+# スペル一覧に追加
+SpellInfo.spells.append(SpellInfo("SPELL_WATER", SpellWater))
+
+
+class SpellPoison(Spell):
+    """毒散布"""
+    
+    def execute(self):
+        """
+        周囲1マスの敵対ユニットに『毒』を与える
+        """
+
+        POISONED = git("PROMOTION_POISONED")
+        units = self.selectEnemyUnits(1)
+        for unit in units:
+            unit.setHasPromotion(POISONED, True)
+
+        return True
+
+SpellInfo.spells.append(SpellInfo("SPELL_POISON", SpellPoison))
+
+
+class SpellFire(Spell):
+    """火炎幕"""
+    
+    def execute(self):
+        """
+        周囲1マスの敵対ユニットに10%のダメージを与える
+        最大40%まで
+        """
+
+        i_damage = 10
+        max_damage = 40
+        caster_owner = self._caster.getOwner()
+        units = self.selectEnemyUnits(1)
+        
+        for unit in units:
+            if unit.getDamage() >= max_damage:
+                continue
+            
+            damage = min(unit.getDamage() + i_damage, max_damage)
+            unit.setDamage(damage, caster_owner)
+
+        return True
+
+SpellInfo.spells.append(SpellInfo("SPELL_FIRE", SpellFire))
+
+
+### EventManager
+########################
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onUnitPromoted(self, argsList):
+        'Called when a unit is promoted'
+        super(self.__class__, self).onUnitPromoted(argsList)
+        pUnit, iPromotion = argsList
+        ##########
+
+        for spellinfo in SpellInfo.spells:
+            iSpellPromo = git(spellinfo.getPromotionName())
+            if iPromotion == iSpellPromo:
+                SpellClass = spellinfo.getSpellClass()
+                spell = SpellClass(pUnit)
+                spell.cast()
+```
+
+
+# オブジェクト
+Pythonでは、ほとんどすべてのものが「オブジェクト」の値として変数に代入ができます。
+その力は、関数やクラスにも及びます。
+例えば、`git = gc.getInfoTypeForString`という文は、
+`gc.getInfoTypeForString`という関数を変数に代入しています。
+(関数呼び出しを表す`()`をつけずに関数名だけを書いていることに注意してください)
+
+関数を変数に代入するとはどういうことなのでしょうか？
+Pythonでは、変数や関数の名前は実体につけられたラベルのようなものだと考えます。
+実体としてのオブジェクトはそのあたりに漂っていて、名前をつけることで
+実体にアクセスすることができるようになります。
+代入文というのは、その名前をつける行為に相当します。
+まだ名前がないオブジェクトに対しては命名、(`a=42`)
+もう名前があるオブジェクトに対しては別名をつけることに相当します。(`a=b`)
+
+`git = gc.getInfoTypeForString`によって`git`は関数の別名になります。
+あとで`git("PROMOTION_POISONED")`などとして「呼び出す」ことができます。
+(関数オブジェクトに、呼び出しを表す`()`をつければ関数の呼び出しになります)
+
+あるいは、型もオブジェクトです。
+クラス名がクラスオブジェクトを指し示しています。
+
+``` python
+class A
+  def f(self):
+    return 0
+
+# クラスオブジェクトの別名
+class_a = A
+
+# クラスオブジェクトの別名からインスタンス化
+a = class_a()
+
+# 関数オブジェクトの別名
+method_f = a.f
+
+# 別名から関数を呼び出す
+print method_f()
+```
+
+上の例で、`a`は`A`のインスタンスになっています。
+別名を経由してインスタンス化していますが、指している実体は`A`に変わりないので、
+`A`のインスタンスができます。
+
+この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、
+「関数のリスト」や「型のリスト」をつくることができます。
+リスト内の関数を順番に呼び出すとかリスト内の型のインスタンスをつくるとかいうことが可能になります。
+
+# 関数
+
+最初の方は関数です...
+``` python
+def isValidPlot(x, y):
+    """ラップを考慮して、有効な座標であるか判定する"""
+    pMap = gc.getMap()
+
+    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
+    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
+    return bx and by
+```
+座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。
+この関数は[はじめての・その７]({{<ref "getstarted7.md">}}#座標の有効性を判定する)で作ったものと同じものです。
+「周囲nマス」を表現するためにはいつでも必要になる関数なので、使いまわしましょう。
+
+
+つぎは実際に周囲nタイルのCyPlotインスタンスを求めます...
+``` python
+def getRangePlotList(center, i_range, include_center):
+    """
+    中心から周囲nタイルのCyPlotのリストを返す
+    center - 中心タイル
+    i_range - 範囲
+    include_center - Trueならリストに中心タイルを含める
+    """
+
+    pMap = gc.getMap()
+    result = []
+    
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+            x = xx + center.getX()
+            y = yy + center.getY()
+            
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
+
+            result.append( pMap.plot(x,y) )
+
+    return result
+```
+
+## 多重ループ・ブロックのネスト
+
+目新しいのはこの部分です。
+``` python
+>>>>>>>>>>
+    for xx in range(-i_range, i_range+1):
+        for yy in range(-i_range, i_range+1):
+<<<<<<<<<<
+```
+for文の中にさらにfor文が2重になって入っています。
+ループ処理が2重になっているので「2重ループ」と呼びます。
+
+`i_range`が変数なので少しわかりにくいですね。
+`i_range = 1`だと仮定して書き直してみましょう。
+``` python
+    for xx in range(-1, 2):
+        for yy in range(-1, 2):
+```
+`range(-1, 2)`は-1 <= x < 2の範囲にある整数を順番に並べたリストを返します。
+つまり`[-1,0,1]`になります。(`2`を含まないことに注意してください。)
+さらに処理の流れをばらして図解すると、こうなります。
+
+{{<img src="/img/sentence_for.png">}}
+
+こうして得た`xx`と`yy`で中身の処理をします。
+まずはこのような計算をします。
+``` python
+>>>>>>>>>>
+            x = xx + center.getX()
+            y = yy + center.getY()
+<<<<<<<<<<
+```
+中心座標からx方向に`xx`, y方向に`yy`ずらした座標を求めています。
+これが`xx`について`-1,0,1` と`yy`について`-1,0,1` で合計で9回繰り返されますので、
+中心から周囲1マスの座標がそれぞれ計算できます。
+
+まだこの時点では座標の数字を計算しただけです。
+そこに本当にタイルがあるかどうかはまだわかりません。
+マップ端などの場合はそれ以上進めないこともあるのでした。
+そのような範囲外の座標を使ってCyPlotインスタンスをつくろうとしても、
+そんなマスはないので作成できません。
+
+なので、まずはマップの範囲に収まっているか判定します。
+``` python
+>>>>>>>>>>
+            if not isValidPlot(x,y):
+                continue
+<<<<<<<<<<
+```
+`not`を使って結果を反転させています。
+`(x,y)`がマップ範囲内ではないとき、`continue`という文を実行します。
+
+`continue`は最も内側のforループの次の繰り返しまで飛ぶ命令です。
+
+{{<img src="/img/sentence_continue.png">}}
+
+このとき、現在の繰り返しの残りの処理は飛ばされます。
+処理をする前に前提条件をチェックして、満たさない場合はさっさと次に行く、
+のような書き方ができます。
+
+実は、`continue`を使わなくても、if文だけで前提条件をチェックすることはできます。
+``` python
+        # if文だけで
+        for i in list:
+                if 前提条件:
+                        if 前提条件2:
+                                if 前提条件3:
+                                        処理...
+                                        処理...
+                                        処理...
+                                        ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+        
+        # continueで
+        for i in list:
+                if not 前提条件:
+                        continue
+                if not 前提条件2:
+                        continue
+                if not 前提条件3:
+                        continue
+            
+                処理...
+                処理...
+                処理...
+                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+```
+
+が、見てわかるように、if文だけで制御すると前提条件があればあるほど
+インデントが右へ右へと深くなっていきます。
+コードが画面右からはみ出してしまい、読みにくくなるリスクも高くなってしまいます。
+
+for文の中のif文の中のif文の中の...という入れ子構造を「ネスト」と呼びますが、
+一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。
+なので、できるなら`continue`や`return`といった
+残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、
+など、深くなり過ぎないように努力すべきです。
+
+というわけで、マップ内にあるかの確認と、ついでに中心座標を含めるかどうかの判定を
+ここでやっています。
+``` python
+>>>>>>>>>>
+            if not isValidPlot(x,y):
+                continue
+            if (xx == 0 and yy == 0) and not include_center:
+                continue
+<<<<<<<<<<
+```
+
+前提条件をクリアしたら、座標の数字からCyPlotのインスタンスをつくり、
+リスト型の変数`result`に追加しています。
+``` python
+>>>>>>>>>>
+            result.append( pMap.plot(x,y) )
+<<<<<<<<<<
+```
+
+これで、周囲1マスのCyPlotインスタンスのリストを得ることができました。
+
+# リスト内包表記
+
+Plot上には複数のユニットが存在できます。
+Plot上にいる全ユニットのCyUnitインスタンスのリストを取得したくなります。
+このようにします。
+``` python
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+```
+Pythonでは「リストを作る」ことに特別な記法が用意されていて、
+このように短く書くことができるようになっています。
+
+素のPythonプログラムで、書き方を見ていきましょう。
+「リストを加工して新しくリストをつくる」ときはこのようにするのでした。
+``` python
+# 元のリスト
+list1 = range(10)
+# 加工後のリスト(の入れ物)
+list2 = []
+
+# 元リストの各要素について
+for i in list1:
+    # 2で割り切れるならば
+    if i % 2 == 0:
+        # 3倍して
+        a = i * 3
+        # 追加する
+        list2.append(a)
+
+print list2 # [0, 6, 12, 18, 24]
+```
+
+これを、このように縮めることができます。
+``` python
+# 元のリスト
+list1 = range(10)
+# 2で割り切れる要素を選んで3倍して新しいリストをつくる
+list2 = [i * 3 for i in list1 if i % 2 == 0]
+
+print list2 # [0, 6, 12, 18, 24]
+```
+上のループを１行にくっつけたような形をしています。
+この書き方をPythonの「リスト内包表記」(List Comprehension)と呼びます。
+これで、どちらも全く同じ処理になっています。
+実行してみて、`[0, 6, 12, 18, 24]`が出力されるかどうか、試してみましょう。
+(これらは素のPythonプログラムです。MODではないので、しかるべきところで実行しましょう。)
+
+条件式の部分は、必要なければ書かなくても構いません。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# 長い版
+##########
+list2 = []
+
+for i in list1:
+    # 3倍して
+    a = i * 3
+    # 追加する
+    list2.append(a)
+
+print list2
+
+# リスト内包表記版
+##########
+list3 = [i * 3 for i in list1]
+
+print list3
+
+```
+実行して、どちらも同じリストが出力されることを確かめましょう。
+「各要素を3倍する」という目的が、リスト内包表記版ではより分かりやすくなっています。
+
+逆に3倍する処理の方を削って、条件式は復活させてみましょう。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# 長い版
+##########
+list2 = []
+
+for i in list1:
+    if i % 2 == 0:
+        list2.append(i)
+
+print list2
+
+# リスト内包表記版
+##########
+list3 = [i for i in list1 if i % 2 == 0]
+
+print list3
+
+```
+どちらも同じリストが出力されるはずです。実行して確かめましょう。
+
+リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。
+`[]`を`()`にしてみましょう。
+{{<img src="/img/generator_expression.png">}}
+`[0, 2, 4, 6, 8]`......ではなく、よくわからないものが出力されました。
+これは「ジェネレーターオブジェクト」(Generator Object)というもので、
+それを生成した、内包表記を`()`で囲んだものを「ジェネレーター式」(Generator Expression)と呼びます。
+
+ジェネレーター式によってつくられたジェネレーターオブジェクトは、
+いってみればリストを加工するレシピを予約したもの、です。
+このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、
+リストではないので、直接出力しようとしても
+それがGenerator Objectであることしかわかりません。
+
+実際に料理をするには、for文を使います。
+``` python
+# 元のリスト
+list1 = range(10)
+
+# ジェネレーター式
+##########
+list2 = (i for i in list1 if i % 2 == 0)
+
+print list2
+
+# ジェネレーターから1要素ずつ取り出して、list3に追加する
+list3 = []
+for i in list2:
+    list3.append(i)
+
+print list3
 
 ```
 
-`range_plots = getRangePlotList(self._caster, i_range, False)`
-まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。
-詠唱者を中心に、周囲`i_range`マス、詠唱者自身のマスは含めません。
+リスト内包表記もforを使っていますので、後半をリスト内包表記で書き直すこともできます。
 
-`range_plots`の中の各Plotに対して、
-`re_units += filter(self.isEnemy, getPlotUnits(plot))`
-という文を実行しています。
+``` python
+# 元のリスト
+list1 = range(10)
 
-2つのリストを`+`すると、そのリストが1つに連結された新しいリストを得ます。
-あるリストに別のリストを`+=`すると、そのリストの末尾に別のリストの内容がくっつきます。
-メソッド全体の目的と、ここがfor文の中でPlotを列挙中であることを考えると、
-右辺の`filter(self.isEnemy, getPlotUnits(plot))`は
-「`plot`の上にいる敵対ユニットのリスト」になっているはずです。
-それを後ろにどんどん連結していけば範囲内の全敵対ユニットを求めたことになりますね。
+# ジェネレーター式
+##########
+list2 = (i for i in list1 if i % 2 == 0)
 
-さて、この`filter()`という関数は、リストを加工する関数です。
-第１引数に条件、第２引数にリストを入れると、
-条件を満たした要素だけを残した新しいリストを得ます。
-第２引数として指定している`getPlotUnits(plot)`というのは
-さっきつくった関数で`plot`上にいる全ユニットのリスト
-...ではなくジェネレーターを得るのでした。
-ただ直接出力しようとしない限りだいたい扱いは同じでしたので、
-ここにジェネレータを指定します。
+print list2
 
-条件は、関数で指定します。
-`self.isEnemy`という関数オブジェクトです。呼び出しのための`()`をまだつけていません。
-`filter()`関数の中で、関数オブジェクトが呼び出され、要素を残すかどうか判定がされます。
-結局、`isEnemy()`――詠唱者と敵対しているかどうか――を満たすユニットのみが残され、
-`re_units`に連結されていきます。
+# ジェネレーターから1要素ずつ取り出して、list3に追加する
+list3 = [i for i in list2]
 
-[その９につづく]({{ref "secondpy9.py"}})
+print list3
+
+```
+それぞれ実行してみて動作を確かめましょう。
+どのみちリストをつくるときはさらにfor文で回すことがほとんどですから、
+`list2`を直接出力しようとしない限りジェネレーターと本物のリストは
+大体区別せずに同じような感じで扱うことができます。
+
+というわけで、冒頭の関数はジェネレーター式を利用していました。
+``` python
+def getPlotUnits(plot):
+    """plot上にいる全ユニットのジェネレータを返す"""
+    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+```
+
+わかりにくいですか？
+インデントをいつものPython風につけてみると少しわかりやすいかもしれません。
+``` python
+for i in range(plot.getNumUnits()):
+    plot.getUnit(i)
+```
+
+`i`番目のユニットを、そのプロットにいるユニットの数だけ取得していますね。
+
+[その９につづく]({{<ref "secondpy9.md">}})

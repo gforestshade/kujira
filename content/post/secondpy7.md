@@ -1,5 +1,5 @@
 +++
-date = "2017-12-26"
+date = "2017-12-30T12:01:00"
 draft = false
 title = "それからのPython 7"
 banner = "/green1024x200.png"
@@ -9,12 +9,8 @@ tags = ["それからのPython", "せつめい"]
 # はじめに
 
 - [その６]({{<ref "secondpy6.md">}})のつづき
-- オブジェクト
-- リスト操作
 - 簡単なスペルの仕組みをつくってみる
-- この回に出てくるコードのいくつかはMODではなく
-ただのPythonプログラムになっていますので、[paiza.io](https://paiza.io/ja)などでためしましょう。
-(Python2を選ぶことを忘れずに。)
+- ４部作のうちの１回目・XML編
 
 # 設計しよう
 実際のMODの例として、簡単なスペルをつくっていきたいと思います。
@@ -29,582 +25,546 @@ tags = ["それからのPython", "せつめい"]
 - 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPの60%を切ることはないようにする
 - 湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする
 
-# プログラムリスト
-先に全容を見ておきましょう。
-このようなプログラムを作っていきます...
-``` python
-# -*- coding: utf-8 -*-
+# 新しい昇進を作る
+「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、
+毒散布で付与する用の「毒」の昇進をXMLで追加していきます。
+編集するのは Assets\\XML\\Units\\CIV4PromotionInfos.xml です。
 
-from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
-import PyHelpers
+元のファイルはパッケージ日本語版の場合
+C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Units\\Civ4PromotionInfos.xml
+にあります。
+今回のMOD名は kujira_promospell にするので、
+フォルダ階層を作ってxmlファイルをコピーし、下のようにします。
 
-gc = CyGlobalContext()
-git = gc.getInfoTypeForString
-
-
-### 関数
-########################
-
-def isValidPlot(x, y):
-    """ラップを考慮して、有効な座標であるか判定する"""
-    pMap = gc.getMap()
-
-    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
-    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
-    return bx and by
-
-def getRangePlotList(center, i_range, include_center):
-    """
-    中心から周囲nタイルのCyPlotのリストを返す
-    center - 中心タイル
-    i_range - 範囲
-    include_center - Trueならリストに中心タイルを含める
-    """
-
-    pMap = gc.getMap()
-    result = []
-    
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-            x = xx + center.getX()
-            y = yy + center.getY()
-            
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
-
-            result.append( pMap.plot(x,y) )
-
-    return result
-
-def getPlotUnits(plot):
-    """plot上にいる全ユニットのジェネレータを返す"""
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
-
-
-### スペル情報クラスとスペル用基底クラス
-########################
-
-class SpellInfo:
-    
-    def __init__(self, name, spell_class):
-        self._name = name
-        self._spell_class = spell_class
-        
-    def getName(self):
-        return self._name
-
-    def getPromotionName(self):
-        return "PROMOTION_" + self.getName()
-
-    def getSpellClass(self):
-        return self._spell_class
-
-    spells = []
-
-class Spell:
-    
-    def __init__(self, caster):
-        self._caster = caster
-        self._myTeam = gc.getTeam(caster.getTeam())
-    
-    def cast(self):
-        """スペル処理を呼び出し、成功したらエフェクトも出す"""
-        r = self.execute()
-
-        if r:
-            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
-            point = self._caster.plot().getPoint()
-            CyEngine().triggerEffect(EFFECT, point)
-
-    def isEnemy(self, pUnit):
-        return self._myTeam.isAtWar(pUnit.getTeam())
-
-    def selectEnemyUnits(self, i_range):
-        """
-        範囲内の全敵対ユニットのリストを返す
-        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
-        """
-        range_plots = getRangePlotList(self._caster, i_range, False)
-        
-        re_units = []
-        for plot in range_plots:
-            re_units += filter(self.isEnemy, getPlotUnits(plot))
-
-        return re_units
-
-
-### 具体的なスペル
-########################
-
-class SpellWater(Spell):
-    """湧き水"""
-    
-    def execute(self):
-        """
-        直下のタイルが自チームの砂漠なら平原に変化させる
-        """
-
-        caster_plot = self._caster.plot()
-        DESERT = git("TERRAIN_DESERT")
-        PLAINS = git("TERRAIN_PLAINS")
-        
-        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
-            caster_plot.setTerrainType(PLAINS, True, True)
-            return True
-            
-
-# スペル一覧に追加
-SpellInfo.spells.append(SpellInfo("SPELL_WATER", SpellWater))
-
-
-class SpellPoison(Spell):
-    """毒散布"""
-    
-    def execute(self):
-        """
-        周囲1マスの敵対ユニットに『毒』を与える
-        """
-
-        POISONED = git("PROMOTION_POISONED")
-        units = self.selectEnemyUnits(1)
-        for unit in units:
-            unit.setHasPromotion(POISONED, True)
-
-        return True
-
-SpellInfo.spells.append(SpellInfo("SPELL_POISON", SpellPoison))
-
-
-class SpellFire(Spell):
-    """火炎幕"""
-    
-    def execute(self):
-        """
-        周囲1マスの敵対ユニットに10%のダメージを与える
-        最大40%まで
-        """
-
-        i_damage = 10
-        max_damage = 40
-        caster_owner = self._caster.getOwner()
-        units = self.selectEnemyUnits(1)
-        
-        for unit in units:
-            if unit.getDamage() >= max_damage:
-                continue
-            
-            damage = min(unit.getDamage() + i_damage, max_damage)
-            unit.setDamage(damage, caster_owner)
-
-        return True
-
-SpellInfo.spells.append(SpellInfo("SPELL_FIRE", SpellFire))
-
-
-### EventManager
-########################
-
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onUnitPromoted(self, argsList):
-        'Called when a unit is promoted'
-        super(self.__class__, self).onUnitPromoted(argsList)
-        pUnit, iPromotion = argsList
-        ##########
-
-        for spellinfo in SpellInfo.spells:
-            iSpellPromo = git(spellinfo.getPromotionName())
-            if iPromotion == iSpellPromo:
-                SpellClass = spellinfo.getSpellClass()
-                spell = SpellClass(pUnit)
-                spell.cast()
+``` plain
+└─kujira_promospell
+    └─Assets
+        └─XML
+            └─Units
+                 └─CIV4PromotionInfos.xml
 ```
 
+CIV4PromotionInfos.xmlの中身を編集していきます。
+\<PromotionInfo\>から\</PromotionInfo\>までの100行弱が昇進1つ分になっています。
+ものすごくたくさん設定項目がありますが、
+今回は「それ自体は全く何の効果もない」昇進をつくります。
+それでもまだ１から作成するのは分量的に大変ですので、
+戦闘術Ⅰ:"PROMOTION_COMBAT1"をベースにして、戦闘力+10%を取り除く方法を採ります。
 
-# オブジェクト
-Pythonでは、ほとんどすべてのものが「オブジェクト」の値として変数に代入ができます。
-その力は、関数やクラスにも及びます。
-例えば、`git = gc.getInfoTypeForString`という文は、
-`gc.getInfoTypeForString`という関数を変数に代入しています。
-(関数呼び出しを表す`()`をつけずに関数名だけを書いていることに注意してください)
+ここからここまでを選択・コピーして...
+{{<img src="/img/promospell_editpromotion1.png" width="400" height="1600">}}
 
-関数を変数に代入するとはどういうことなのでしょうか？
-Pythonでは、変数や関数の名前は実体につけられたラベルのようなものだと考えます。
-実体としてのオブジェクトはそのあたりに漂っていて、名前をつけることで
-実体にアクセスすることができるようになります。
-代入文というのは、その名前をつける行為に相当します。
-まだ名前がないオブジェクトに対しては命名、(`a=42`)
-もう名前があるオブジェクトに対しては別名をつけることに相当します。(`a=b`)
+一番下に貼り付けます。
+{{<img src="/img/promospell_editpromotion2.png" width="400" height="700">}}
 
-`git = gc.getInfoTypeForString`によって`git`は関数の別名になります。
-あとで`git("PROMOTION_POISONED")`などとして「呼び出す」ことができます。
-(関数オブジェクトに、呼び出しを表す`()`をつければ関数の呼び出しになります)
+こうなります。
+{{<img src="/img/promospell_editpromotion3.png" width="400" height="700">}}
 
-あるいは、型もオブジェクトです。
-クラス名がクラスオブジェクトを指し示しています。
+テキストエディタでXMLを編集する場合、適宜空行をつくっても構いません。
+むしろ空行があるほうが、オリジナルとMODの境目が分かりやすくなってよいでしょう。
 
-``` python
-class A
-  def f(self):
-    return 0
+## 湧き水
 
-# クラスオブジェクトの別名
-class_a = A
+\<Type\>と\<Discription\>を湧き水用のキーに変更します。
+``` xml
+			<Type>PROMOTION_SPELL_WATER</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_WATER</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_WATER_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
+```
+ついでに\<Help\>というタグを新しくつくっています。
+このタグがあると、自動生成された説明文に追加の説明をつけることができます。
+(ここではキーをつくるだけです。あとでText\フォルダに文章を書き込みます)
 
-# クラスオブジェクトの別名からインスタンス化
-a = class_a()
+----
 
-# 関数オブジェクトの別名
-method_f = a.f
+さらについでに、\<Sound\>をAS2D_POSITIVE_DINKに変更します。
+昇進を取ったときの音を変更することで、スペルの発動音のかわりにします。
 
-# 別名から関数を呼び出す
-print method_f()
+\<iCombatPercent\>を0にして、戦闘力+10%をなかったことにします。
+``` xml
+			<iCombatPercent>0</iCombatPercent>
 ```
 
-上の例で、`a`は`A`のインスタンスになっています。
-別名を経由してインスタンス化していますが、指している実体は`A`に変わりないので、
-`A`のインスタンスができます。
+----
 
-この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、
-「関数のリスト」や「型のリスト」をつくることができます。
-リスト内の関数を順番に呼び出すとかリスト内の型のインスタンスをつくるとかいうことが可能になります。
-
-# 関数
-
-最初の方は関数です...
-``` python
-def isValidPlot(x, y):
-    """ラップを考慮して、有効な座標であるか判定する"""
-    pMap = gc.getMap()
-
-    bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
-    by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
-    return bx and by
-```
-座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。
-この関数は[はじめての・その７]({{<ref "getstarted7.md">}})で作ったものと同じものです。
-「周囲nマス」を表現するためにはいつでも必要になる関数なので、使いまわしましょう。
-
-
-つぎは実際に周囲nタイルのCyPlotインスタンスを求めます...
-``` python
-def getRangePlotList(center, i_range, include_center):
-    """
-    中心から周囲nタイルのCyPlotのリストを返す
-    center - 中心タイル
-    i_range - 範囲
-    include_center - Trueならリストに中心タイルを含める
-    """
-
-    pMap = gc.getMap()
-    result = []
-    
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-            x = xx + center.getX()
-            y = yy + center.getY()
-            
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
-
-            result.append( pMap.plot(x,y) )
-
-    return result
+この昇進を火器ユニット専用にします。
+\<UnitCombats\>から\</UnitCombats\>までの38行分を消去して、
+かわりに下記のように火器ユニットのみにします。
+``` xml
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
 ```
 
-## 多重ループ・ブロックのネスト
+----
 
-目新しいのはこの部分です。
-``` python
->>>>>>>>>>
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-<<<<<<<<<<
-```
-for文の中にさらにfor文が2重になって入っています。
-ループ処理が2重になっているので「2重ループ」と呼びます。
+このままでは
+昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、
+預言者のボタン画像に変更します。
+``` xml
 
-`i_range`が変数なので少しわかりにくいですね。
-`i_range = 1`だと仮定して書き直してみましょう。
-``` python
-    for xx in range(-1, 2):
-        for yy in range(-1, 2):
-```
-`range(-1, 2)`は-1 <= x < 2の範囲にある整数を順番に並べたリストを返します。
-つまり`[-1,0,1]`になります。(`2`を含まないことに注意してください。)
-さらに処理の流れをばらして図解すると、こうなります。
-
-{{<img src="/img/sentence_for.png">}}
-
-こうして得た`xx`と`yy`で中身の処理をします。
-まずはこのような計算をします。
-``` python
->>>>>>>>>>
-            x = xx + center.getX()
-            y = yy + center.getY()
-<<<<<<<<<<
-```
-中心座標からx方向に`xx`, y方向に`yy`ずらした座標を求めています。
-これが`xx`について`-1,0,1` と`yy`について`-1,0,1` で合計で9回繰り返されますので、
-中心から周囲1マスの座標がそれぞれ計算できます。
-
-まだこの時点では座標の数字を計算しただけです。
-そこに本当にタイルがあるかどうかはまだわかりません。
-マップ端などの場合はそれ以上進めないこともあるのでした。
-そのような範囲外の座標を使ってCyPlotインスタンスをつくろうとしても、
-そんなマスはないので作成できません。
-
-なので、まずはマップの範囲に収まっているか判定します。
-``` python
->>>>>>>>>>
-            if not isValidPlot(x,y):
-                continue
-<<<<<<<<<<
-```
-`not`を使って結果を反転させています。
-`(x,y)`がマップ範囲内ではないとき、`continue`という文を実行します。
-
-`continue`は最も内側のforループの次の繰り返しまで飛ぶ命令です。
-
-{{<img src="/img/sentence_continue.png">}}
-
-このとき、現在の繰り返しの残りの処理は飛ばされます。
-処理をする前に前提条件をチェックして、満たさない場合はさっさと次に行く、
-のような書き方ができます。
-
-実は、`continue`を使わなくても、if文だけで前提条件をチェックすることはできます。
-``` python
-        # if文だけで
-        for i in list:
-                if 前提条件:
-                        if 前提条件2:
-                                if 前提条件3:
-                                        処理...
-                                        処理...
-                                        処理...
-                                        ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
-        
-        # continueで
-        for i in list:
-                if not 前提条件:
-                        continue
-                if not 前提条件2:
-                        continue
-                if not 前提条件3:
-                        continue
-            
-                処理...
-                処理...
-                処理...
-                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
-```
-
-が、見てわかるように、if文だけで制御すると前提条件があればあるほど
-インデントが右へ右へと深くなっていきます。
-コードが画面右からはみ出してしまい、読みにくくなるリスクも高くなってしまいます。
-
-for文の中のif文の中のif文の中の...という入れ子構造を「ネスト」と呼びますが、
-一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。
-なので、できるなら`continue`や`return`といった
-残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、
-など、深くなり過ぎないように努力すべきです。
-
-というわけで、マップ内にあるかの確認と、ついでに中心座標を含めるかどうかの判定を
-ここでやっています。
-``` python
->>>>>>>>>>
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
-<<<<<<<<<<
-```
-
-前提条件をクリアしたら、座標の数字からCyPlotのインスタンスをつくり、
-リスト型の変数`result`に追加しています。
-``` python
->>>>>>>>>>
-            result.append( pMap.plot(x,y) )
-<<<<<<<<<<
-```
-
-これで、周囲1マスのCyPlotインスタンスのリストを得ることができました。
-
-# リスト内包表記
-
-Plot上には複数のユニットが存在できます。
-Plot上にいる全ユニットのCyUnitインスタンスのリストを取得したくなります。
-このようにします。
-``` python
-def getPlotUnits(plot):
-    """plot上にいる全ユニットのジェネレータを返す"""
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
-```
-Pythonでは「リストを作る」ことに特別な記法が用意されていて、
-このように短く書くことができるようになっています。
-
-素のPythonプログラムで、書き方を見ていきましょう。
-「リストを加工して新しくリストをつくる」ときはこのようにするのでした。
-``` python
-# 元のリスト
-list1 = range(10)
-# 加工後のリスト(の入れ物)
-list2 = []
-
-# 元リストの各要素について
-for i in list1:
-    # 2で割り切れるならば
-    if i % 2 == 0:
-        # 3倍して
-        a = i * 3
-        # 追加する
-        list2.append(a)
-
-print list2 # [0, 6, 12, 18, 24]
-```
-
-これを、このように縮めることができます。
-``` python
-# 元のリスト
-list1 = range(10)
-# 2で割り切れる要素を選んで3倍して新しいリストをつくる
-list2 = [i * 3 for i in list1 if i % 2 == 0]
-
-print list2 # [0, 6, 12, 18, 24]
-```
-上のループを１行にくっつけたような形をしています。
-この書き方をPythonの「リスト内包表記」(List Comprehension)と呼びます。
-これで、どちらも全く同じ処理になっています。
-実行してみて、`[0, 6, 12, 18, 24]`が出力されるかどうか、試してみましょう。
-(これらは素のPythonプログラムです。MODではないので、しかるべきところで実行しましょう。)
-
-条件式の部分は、必要なければ書かなくても構いません。
-``` python
-# 元のリスト
-list1 = range(10)
-
-# 長い版
-##########
-list2 = []
-
-for i in list1:
-    # 3倍して
-    a = i * 3
-    # 追加する
-    list2.append(a)
-
-print list2
-
-# リスト内包表記版
-##########
-list3 = [i * 3 for i in list1]
-
-print list3
+			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
 
 ```
-実行して、どちらも同じリストが出力されることを確かめましょう。
-「各要素を3倍する」という目的が、リスト内包表記版ではより分かりやすくなっています。
+これで湧き水発動用の何もしない昇進は完成です。
 
-逆に3倍する処理の方を削って、条件式は復活させてみましょう。
-``` python
-# 元のリスト
-list1 = range(10)
+## 毒散布・火炎幕
 
-# 長い版
-##########
-list2 = []
+この湧き水昇進をもう2つコピペして3つの何もしない昇進をつくりましょう。
+2番目と3番目をそれぞれ毒散布と火炎幕にします。
 
-for i in list1:
-    if i % 2 == 0:
-        list2.append(i)
+----
 
-print list2
-
-# リスト内包表記版
-##########
-list3 = [i for i in list1 if i % 2 == 0]
-
-print list3
-
-```
-どちらも同じリストが出力されるはずです。実行して確かめましょう。
-
-リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。
-`[]`を`()`にしてみましょう。
-{{<img src="/img/generator_expression.png">}}
-`[0, 2, 4, 6, 8]`......ではなく、よくわからないものが出力されました。
-これは「ジェネレーターオブジェクト」(Generator Object)というもので、
-それを生成した、内包表記を`()`で囲んだものを「ジェネレーター式」(Generator Expression)と呼びます。
-
-ジェネレーター式によってつくられたジェネレーターオブジェクトは、
-いってみればリストを加工するレシピを予約したもの、です。
-このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、
-リストではないので、直接出力しようとしても
-それがGenerator Objectであることしかわかりません。
-
-実際に料理をするには、for文を使います。
-``` python
-# 元のリスト
-list1 = range(10)
-
-# ジェネレーター式
-##########
-list2 = (i for i in list1 if i % 2 == 0)
-
-print list2
-
-# ジェネレーターから1要素ずつ取り出して、list3に追加する
-list3 = []
-for i in list2:
-    list3.append(i)
-
-print list3
-
+2番目のかたまりの\<Type\>\<Discription\>\<Help\>を毒散布用にします。
+WATERをPOISONに変えています。
+``` xml
+			<Type>PROMOTION_SPELL_POISON</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_POISON</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_POISON_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
 ```
 
-リスト内包表記もforを使っていますので、後半をリスト内包表記で書き直すこともできます。
+----
 
-``` python
-# 元のリスト
-list1 = range(10)
-
-# ジェネレーター式
-##########
-list2 = (i for i in list1 if i % 2 == 0)
-
-print list2
-
-# ジェネレーターから1要素ずつ取り出して、list3に追加する
-list3 = [i for i in list2]
-
-print list3
-
-```
-それぞれ実行してみて動作を確かめましょう。
-どのみちリストをつくるときはさらにfor文で回すことがほとんどですから、
-`list2`を直接出力しようとしない限りジェネレーターと本物のリストは
-大体区別せずに同じような感じで扱うことができます。
-
-というわけで、冒頭の関数はジェネレーター式を利用していました。
-``` python
-def getPlotUnits(plot):
-    """plot上にいる全ユニットのジェネレータを返す"""
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+3番目のかたまりの\<Type\>\<Discription\>\<Help\>を火炎幕用にします。
+WATERをFIREに変えています。
+``` xml
+			<Type>PROMOTION_SPELL_FIRE</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_FIRE</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_FIRE_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
 ```
 
-わかりにくいですか？
-インデントをいつものPython風につけてみると少しわかりやすいかもしれません。
-``` python
-for i in range(plot.getNumUnits()):
-    plot.getUnit(i)
+## 毒
+
+毒散布によって相手に付与される「毒」の昇進も忘れずつくります。
+何もしない3つの昇進のいずれかをもう1つコピペして、
+\<Type\>と\<Description\>を変更し、***\<Help\>を消します。***
+``` xml
+			<Type>PROMOTION_POISONED</Type>
+			<Description>TXT_KEY_PROMOTION_POISONED</Description>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
 ```
 
-`i`番目のユニットを、そのプロットにいるユニットの数だけ取得していますね。
+----
 
-[その８につづく]({{ref "secondpy8.py"}})
+「毒」には実際に戦闘力-20%の効果を持たせますから、
+自動生成された説明文で十分だからです。
+早速戦闘力-20%にします。
+``` xml
+			<iCombatPercent>-20</iCombatPercent>
+```
+
+----
+
+この昇進を経験値で取得できないようにします。
+方法はいろいろありますが、今回は\<UnitCombats\>を空にして、
+昇進を取得できるユニット戦闘タイプをなくしてしまいます。
+\<UnitCombats\>から\</UnitCombats\>までを消去して、
+かわりに下のように入力します。
+```
+			<UnitCombats />
+```
+これはXMLの空タグといって、中身が空だということを表します。
+
+----
+
+これで、毒ができました。
+全部でどんな感じになったかは長いので章末に移動しました。[おまけ](#おまけ)をご覧ください。
+
+この時点でとりあえず火器ユニットが発動用昇進を取得できるようになっているはずです。
+ゲームを起動して適当な火器ユニットをワールドビルダーで作成し、経験値を与えて、
+取得できるかどうか試してみましょう。
+この時点でゲームの起動に失敗したり、発動用昇進が表示されなかったり、
+逆に毒が表示されたりしてしまう場合にはCIV4PromotionInfos.xmlの
+記述が間違っています。もう一度見直してみましょう。
+
+# Text
+
+動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが
+そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。
+
+Assets\\XML\\Text\\Text_Kujira.xml を作成します。
+``` plain
+└─kujira_promospell
+    └─Assets
+        └─XML
+            ├─Units
+            │   └─CIV4PromotionInfos.xml
+            │
+            └─Text
+                 └─Text_Kujira.xml
+```
+
+Text_Kujira.xmlの中身はこのようにします。
+``` xml
+<?xml version="1.0" encoding="shift_jis"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_WATER</Tag>
+    <English>Spring Water</English>
+    <French>湧き水</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>湧き水</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_WATER_HELP</Tag>
+    <English>[ICON_BULLET]Change this tile into Plains if it is Desart</English>
+    <French>[ICON_BULLET]自領土の砂漠で発動すると平原に変化する</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>[ICON_BULLET]自領土の砂漠で発動すると平原に変化する</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_POISON</Tag>
+    <English>Spray Poison</English>
+    <French>毒散布</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>毒散布</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_POISON_HELP</Tag>
+    <English>[ICON_BULLET]Give a promotion "Poisioned" to enemy units around a tile</English>
+    <French>[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_FIRE</Tag>
+    <English>Fire Curten</English>
+    <French>火炎幕</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>火炎幕</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_SPELL_FIRE_HELP</Tag>
+    <English>[ICON_BULLET]Inflict 20% damage to enemy units around a tile</English>
+    <French>[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える</Japanese>
+  </TEXT>
+  
+  <TEXT>
+    <Tag>TXT_KEY_PROMOTION_POISONED</Tag>
+    <English>Poisoned</English>
+    <French>毒</French>
+    <German />
+    <Italian />
+    <Spanish />
+    <Japanese>毒</Japanese>
+  </TEXT>
+  
+</Civ4GameText>
+```
+
+\<Japanese\>タグで日本語パッケージ版、
+\<French\>タグでSteam版＋日本語化パッチ、
+その他の言語タグで各言語版で表示されるようになります。
+
+これで、「それっぽいことが書いてあるけれど、実際には何もしない昇進」が3つと、
+戦闘力-20%の効果を持つ昇進ができました。
+
+ゲームを起動して、説明文が表示されるか確かめましょう。
+「毒」は取得する方法がまだないので、それ以外の3つに対して確かめます。
+
+{{<img src="/img/promospell_test1.png">}}
+いいですね！
+
+[その８につづく]({{<ref "secondpy8.md">}})
+
+# おまけ
+## CIV4PromotionInfos.xmlの追加分の全文
+
+``` xml
+		<PromotionInfo>
+			<Type>PROMOTION_SPELL_WATER</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_WATER</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_WATER_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
+			<LayerAnimationPath>NONE</LayerAnimationPath>
+			<PromotionPrereq>NONE</PromotionPrereq>
+			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
+			<PromotionPrereqOr2>NONE</PromotionPrereqOr2>
+			<TechPrereq>NONE</TechPrereq>
+			<StateReligionPrereq>NONE</StateReligionPrereq>
+			<bLeader>0</bLeader>
+			<bBlitz>0</bBlitz>
+			<bAmphib>0</bAmphib>
+			<bRiver>0</bRiver>
+			<bEnemyRoute>0</bEnemyRoute>
+			<bAlwaysHeal>0</bAlwaysHeal>
+			<bHillsDoubleMove>0</bHillsDoubleMove>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
+			<iVisibilityChange>0</iVisibilityChange>
+			<iMovesChange>0</iMovesChange>
+			<iMoveDiscountChange>0</iMoveDiscountChange>
+			<iAirRangeChange>0</iAirRangeChange>
+			<iInterceptChange>0</iInterceptChange>
+			<iEvasionChange>0</iEvasionChange>
+			<iWithdrawalChange>0</iWithdrawalChange>
+			<iCargoChange>0</iCargoChange>
+			<iCollateralDamageChange>0</iCollateralDamageChange>
+			<iBombardRateChange>0</iBombardRateChange>
+			<iFirstStrikesChange>0</iFirstStrikesChange>
+			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<iEnemyHealChange>0</iEnemyHealChange>
+			<iNeutralHealChange>0</iNeutralHealChange>
+			<iFriendlyHealChange>0</iFriendlyHealChange>
+			<iSameTileHealChange>0</iSameTileHealChange>
+			<iAdjacentTileHealChange>0</iAdjacentTileHealChange>
+			<iCombatPercent>0</iCombatPercent>
+			<iCityAttack>0</iCityAttack>
+			<iCityDefense>0</iCityDefense>
+			<iHillsAttack>0</iHillsAttack>
+			<iHillsDefense>0</iHillsDefense>
+			<iKamikazePercent>0</iKamikazePercent>
+			<iRevoltProtection>0</iRevoltProtection>
+			<iCollateralDamageProtection>0</iCollateralDamageProtection>
+			<iPillageChange>0</iPillageChange>
+			<iUpgradeDiscount>0</iUpgradeDiscount>
+			<iExperiencePercent>0</iExperiencePercent>
+			<TerrainAttacks/>
+			<TerrainDefenses/>
+			<FeatureAttacks/>
+			<FeatureDefenses/>
+			<UnitCombatMods/>
+			<DomainMods/>
+			<TerrainDoubleMoves/>
+			<FeatureDoubleMoves/>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
+		</PromotionInfo>
+
+		<PromotionInfo>
+			<Type>PROMOTION_SPELL_POISON</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_POISON</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_POISON_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
+			<LayerAnimationPath>NONE</LayerAnimationPath>
+			<PromotionPrereq>NONE</PromotionPrereq>
+			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
+			<PromotionPrereqOr2>NONE</PromotionPrereqOr2>
+			<TechPrereq>NONE</TechPrereq>
+			<StateReligionPrereq>NONE</StateReligionPrereq>
+			<bLeader>0</bLeader>
+			<bBlitz>0</bBlitz>
+			<bAmphib>0</bAmphib>
+			<bRiver>0</bRiver>
+			<bEnemyRoute>0</bEnemyRoute>
+			<bAlwaysHeal>0</bAlwaysHeal>
+			<bHillsDoubleMove>0</bHillsDoubleMove>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
+			<iVisibilityChange>0</iVisibilityChange>
+			<iMovesChange>0</iMovesChange>
+			<iMoveDiscountChange>0</iMoveDiscountChange>
+			<iAirRangeChange>0</iAirRangeChange>
+			<iInterceptChange>0</iInterceptChange>
+			<iEvasionChange>0</iEvasionChange>
+			<iWithdrawalChange>0</iWithdrawalChange>
+			<iCargoChange>0</iCargoChange>
+			<iCollateralDamageChange>0</iCollateralDamageChange>
+			<iBombardRateChange>0</iBombardRateChange>
+			<iFirstStrikesChange>0</iFirstStrikesChange>
+			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<iEnemyHealChange>0</iEnemyHealChange>
+			<iNeutralHealChange>0</iNeutralHealChange>
+			<iFriendlyHealChange>0</iFriendlyHealChange>
+			<iSameTileHealChange>0</iSameTileHealChange>
+			<iAdjacentTileHealChange>0</iAdjacentTileHealChange>
+			<iCombatPercent>0</iCombatPercent>
+			<iCityAttack>0</iCityAttack>
+			<iCityDefense>0</iCityDefense>
+			<iHillsAttack>0</iHillsAttack>
+			<iHillsDefense>0</iHillsDefense>
+			<iKamikazePercent>0</iKamikazePercent>
+			<iRevoltProtection>0</iRevoltProtection>
+			<iCollateralDamageProtection>0</iCollateralDamageProtection>
+			<iPillageChange>0</iPillageChange>
+			<iUpgradeDiscount>0</iUpgradeDiscount>
+			<iExperiencePercent>0</iExperiencePercent>
+			<TerrainAttacks/>
+			<TerrainDefenses/>
+			<FeatureAttacks/>
+			<FeatureDefenses/>
+			<UnitCombatMods/>
+			<DomainMods/>
+			<TerrainDoubleMoves/>
+			<FeatureDoubleMoves/>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
+		</PromotionInfo>
+		
+		<PromotionInfo>
+			<Type>PROMOTION_SPELL_FIRE</Type>
+			<Description>TXT_KEY_PROMOTION_SPELL_FIRE</Description>
+			<Help>TXT_KEY_PROMOTION_SPELL_FIRE_HELP</Help>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
+			<LayerAnimationPath>NONE</LayerAnimationPath>
+			<PromotionPrereq>NONE</PromotionPrereq>
+			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
+			<PromotionPrereqOr2>NONE</PromotionPrereqOr2>
+			<TechPrereq>NONE</TechPrereq>
+			<StateReligionPrereq>NONE</StateReligionPrereq>
+			<bLeader>0</bLeader>
+			<bBlitz>0</bBlitz>
+			<bAmphib>0</bAmphib>
+			<bRiver>0</bRiver>
+			<bEnemyRoute>0</bEnemyRoute>
+			<bAlwaysHeal>0</bAlwaysHeal>
+			<bHillsDoubleMove>0</bHillsDoubleMove>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
+			<iVisibilityChange>0</iVisibilityChange>
+			<iMovesChange>0</iMovesChange>
+			<iMoveDiscountChange>0</iMoveDiscountChange>
+			<iAirRangeChange>0</iAirRangeChange>
+			<iInterceptChange>0</iInterceptChange>
+			<iEvasionChange>0</iEvasionChange>
+			<iWithdrawalChange>0</iWithdrawalChange>
+			<iCargoChange>0</iCargoChange>
+			<iCollateralDamageChange>0</iCollateralDamageChange>
+			<iBombardRateChange>0</iBombardRateChange>
+			<iFirstStrikesChange>0</iFirstStrikesChange>
+			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<iEnemyHealChange>0</iEnemyHealChange>
+			<iNeutralHealChange>0</iNeutralHealChange>
+			<iFriendlyHealChange>0</iFriendlyHealChange>
+			<iSameTileHealChange>0</iSameTileHealChange>
+			<iAdjacentTileHealChange>0</iAdjacentTileHealChange>
+			<iCombatPercent>0</iCombatPercent>
+			<iCityAttack>0</iCityAttack>
+			<iCityDefense>0</iCityDefense>
+			<iHillsAttack>0</iHillsAttack>
+			<iHillsDefense>0</iHillsDefense>
+			<iKamikazePercent>0</iKamikazePercent>
+			<iRevoltProtection>0</iRevoltProtection>
+			<iCollateralDamageProtection>0</iCollateralDamageProtection>
+			<iPillageChange>0</iPillageChange>
+			<iUpgradeDiscount>0</iUpgradeDiscount>
+			<iExperiencePercent>0</iExperiencePercent>
+			<TerrainAttacks/>
+			<TerrainDefenses/>
+			<FeatureAttacks/>
+			<FeatureDefenses/>
+			<UnitCombatMods/>
+			<DomainMods/>
+			<TerrainDoubleMoves/>
+			<FeatureDoubleMoves/>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
+		</PromotionInfo>
+
+		<PromotionInfo>
+			<Type>PROMOTION_POISONED</Type>
+			<Description>TXT_KEY_PROMOTION_POISONED</Description>
+			<Sound>AS2D_POSITIVE_DINK</Sound>
+			<LayerAnimationPath>NONE</LayerAnimationPath>
+			<PromotionPrereq>NONE</PromotionPrereq>
+			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
+			<PromotionPrereqOr2>NONE</PromotionPrereqOr2>
+			<TechPrereq>NONE</TechPrereq>
+			<StateReligionPrereq>NONE</StateReligionPrereq>
+			<bLeader>0</bLeader>
+			<bBlitz>0</bBlitz>
+			<bAmphib>0</bAmphib>
+			<bRiver>0</bRiver>
+			<bEnemyRoute>0</bEnemyRoute>
+			<bAlwaysHeal>0</bAlwaysHeal>
+			<bHillsDoubleMove>0</bHillsDoubleMove>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
+			<iVisibilityChange>0</iVisibilityChange>
+			<iMovesChange>0</iMovesChange>
+			<iMoveDiscountChange>0</iMoveDiscountChange>
+			<iAirRangeChange>0</iAirRangeChange>
+			<iInterceptChange>0</iInterceptChange>
+			<iEvasionChange>0</iEvasionChange>
+			<iWithdrawalChange>0</iWithdrawalChange>
+			<iCargoChange>0</iCargoChange>
+			<iCollateralDamageChange>0</iCollateralDamageChange>
+			<iBombardRateChange>0</iBombardRateChange>
+			<iFirstStrikesChange>0</iFirstStrikesChange>
+			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<iEnemyHealChange>0</iEnemyHealChange>
+			<iNeutralHealChange>0</iNeutralHealChange>
+			<iFriendlyHealChange>0</iFriendlyHealChange>
+			<iSameTileHealChange>0</iSameTileHealChange>
+			<iAdjacentTileHealChange>0</iAdjacentTileHealChange>
+			<iCombatPercent>-20</iCombatPercent>
+			<iCityAttack>0</iCityAttack>
+			<iCityDefense>0</iCityDefense>
+			<iHillsAttack>0</iHillsAttack>
+			<iHillsDefense>0</iHillsDefense>
+			<iKamikazePercent>0</iKamikazePercent>
+			<iRevoltProtection>0</iRevoltProtection>
+			<iCollateralDamageProtection>0</iCollateralDamageProtection>
+			<iPillageChange>0</iPillageChange>
+			<iUpgradeDiscount>0</iUpgradeDiscount>
+			<iExperiencePercent>0</iExperiencePercent>
+			<TerrainAttacks/>
+			<TerrainDefenses/>
+			<FeatureAttacks/>
+			<FeatureDefenses/>
+			<UnitCombatMods/>
+			<DomainMods/>
+			<TerrainDoubleMoves/>
+			<FeatureDoubleMoves/>
+			<UnitCombats />
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
+		</PromotionInfo>
+```

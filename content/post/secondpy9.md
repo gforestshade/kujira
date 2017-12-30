@@ -1,6 +1,6 @@
 +++
-date = "2017-12-29"
-draft = true
+date = "2017-12-30T12:03:00"
+draft = false
 title = "それからのPython 9"
 banner = "/green1024x200.png"
 tags = ["それからのPython", "せつめい"]
@@ -9,224 +9,243 @@ tags = ["それからのPython", "せつめい"]
 # はじめに
 
 - [その８]({{<ref "secondpy8.md">}})のつづき
-- 簡単なスペルの仕組みをつくってみる・後編
-- ついに各スペルの実装へ
+- 簡単なスペルの仕組みをつくってみる
+- ４部作のうちの３回目・Python共通編
+- クラスを活用する
 
-# 湧き水
+# スペル情報クラス
 
-お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。
-```
-class SpellWater(Spell):
-    """湧き水"""
+スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。
+``` python
+class SpellInfo:
     
-    def execute(self):
-        """
-        直下のタイルが自チームの砂漠なら平原に変化させる
-        """
-
-        caster_plot = self._caster.plot()
-        DESERT = git("TERRAIN_DESERT")
-        PLAINS = git("TERRAIN_PLAINS")
+    def __init__(self, name, spell_class):
+        self._name = name
+        self._spell_class = spell_class
         
-        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
-            caster_plot.setTerrainType(PLAINS, True, True)
-            return True
-            
+    def getName(self):
+        return self._name
 
-# スペル一覧に追加
-SpellInfo.spells.append(SpellInfo("SPELL_WATER", SpellWater))
+    def getPromotionName(self):
+        return "PROMOTION_" + self.getName()
+
+    def getSpellClass(self):
+        return self._spell_class
+
+    spells = []
+
+```
+...のですが、今回は設計を簡単にしたので、
+登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。
+コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。
+そして、`getName()`や`getSpellClass()`でそれらを取得できるようにしています。
+`setName()`や`setSpellClass()`を作っていないことに注意してください。
+名前やクラスオブジェクトは取得できるだけで、設定はできません。
+これは「Info」を表すクラスであって、ゲーム中に変更されることはないからです。
+
+なお、ここでいう「名前」とは、内部処理に使う名前を指します。
+具体的には、`SPELL_WATER`や`SPELL_POISON`といったXMLキーのようなものです。
+今回は発動条件に昇進を使うため、
+`SPELL_WATER`を発動させる昇進名は`PROMOTION_SPELL_WATER`、
+`SPELL_POISON`を発動させる昇進名は`PROMOTION_SPELL_POISON`、
+のように定めることにします。
+自分のスペル名に`PROMOTION_`をつけた文字列を返す、
+`getPromotionName()`というインスタンスメソッドもつくっておきます。
+
+インスタンス変数の名前に`self._name`・`self._spell_class`のように
+`_`をつけています。`_`1つで始まるインスタンス変数は、慣習として、
+「どうか外部からいじらないでね」という意味を持ちます。
+名前やクラスオブジェクトが知らないうちに変わってほしくはありませんので、
+`_`をつけています。
+(外部からの参照禁止を強制する効果はありません。あくまで慣習によるお願いです。)
+
+このクラスは「型」ですから、SpellInfo型の変数をつくることができます。
+そのインスタンス1つが、スペル1種類を表します。
+今回はスペルの種類は3つですから、3つのSpellInfoインスタンスをつくることになります。
+
+そして、最後に`spell = []`という文が書いてあります。
+これは代入文ですが、`self`がついていません。
+クラス内・メソッド外に記述されている、このような変数を
+「クラス変数」(Class Variable)と呼びます。
+クラス変数の所属する先は、インスタンスではなくクラス全体になります。
+このことは、すべてのインスタンス(今回は3つのインスタンス)で値が共有される、
+ということを意味します。
+`self`がついているインスタンス変数はインスタンスごとに値が違っていましたから、
+この点がインスタンス変数との違いになります。
+
+今回は、このクラス変数`SpellInfo.spells`に3つのインスタンスをすべて登録します。
+(これも後述します)
+
+# スペル用基底クラス
+では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。
+まず、すべてのスペルで共通となる部分です。
+``` python
+class Spell:
+    
+    def __init__(self, caster):
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
+    
+    def cast(self):
+        """スペル処理を呼び出し、成功したらエフェクトも出す"""
+        r = self.execute()
+
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+
+    def selectEnemyUnits(self, i_range):
+        """
+        範囲内の全敵対ユニットのリストを返す
+        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        """
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
+        re_units = []
+        for plot in range_plots:
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
+
+        return re_units
+
 ```
 
-`class SpellWater(Spell):`で、Spellというクラスをベースにして
-SpellWaterというクラスをつくっています。
-これは継承という仕組みを用いています。
-継承について詳しく知りたい方は、[付録]({{<ref "secondpy_ex2.md">}})を参照してください。
-ざっくりいうと、さきほどの共通処理に加えて、
-いまから個別処理を書きますよ、と宣言しています。
+スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を
+インスタンス変数として保持します。
+この"詠唱者"はゲーム中にいくらでも変わりうる、
+あるいは複数存在しうるものですから、
+(自分のユニットが発動したスペルとAIのユニットが発動したスペルは別にしたいですよね？)
+Infoに入れることはできません。ここで保持します。
 
-先ほど空呼びしていた`execute()`を実際に書いています。
+その詠唱者インスタンスを利用して、スペルを実行します。
+今回は設計を簡単にしたためやりませんが、
+スペルに実行条件を付けて、スペル発動ボタンを非表示にしたり暗転表示にしたり
+したい場合なども詠唱者の情報を利用するでしょうから、
+(詠唱者が都市上にいるときだけ使えるスペルをつくりたい？
+詠唱者がどのPlotにいるか、そのPlotに都市があるかの判定が必要ですね)
+このクラスのメソッドとして書くことになるでしょう。
 
-`caster_plot.getTeam() == self._caster.getTeam()`で
-詠唱者がいま立っているPlotのチームと、詠唱者自身の所属チームを比較しています。
-右辺はわかりやすいと思いますが、
-左辺は「詠唱者がいま立っているタイルは誰の領土か」ということを表しています。
-左辺のチームと右辺のチームが同じであるということは、
-「詠唱者がいま立っているタイルは詠唱者自身の所属チームの領土である」、
-つまり「詠唱者は自領土のタイルの上にいる」ということを表します。
+ともあれ、今回このクラスにはスペルを実際に詠唱する`cast()`と、
+いろんなスペルで共同利用するためのメソッドが定義されます。
+(今回は毒でも炎でも使う「1マス圏内にいる敵ユニットを列挙する」
+メソッドを定義しています)
 
-`caster_plot.getTerrainType() == DESERT`で
-さらにそのタイルの地形idと砂漠のidとを比較しています。
-「そのタイルが砂漠である」ことを表していますね。
+メソッドを順番に見ていきましょう。まずは`__init__()`です。
+``` python
+    def __init__(self, caster):
+        self._caster = caster
+        self._myTeam = gc.getTeam(caster.getTeam())
+    
+```
 
-`and`でその両方を満たすならば、
-`caster_plot.setTerrainType(PLAINS, True, True)`
-地形を平原のidに設定します。
-そしてこの場合、スペルは成功したことになりますから、
-`return True`で、共通処理の方に「エフェクト再生してもいいよ」と伝えます。
+詠唱者を引数に取ってインスタンス変数に代入するほか、
+そのユニットが所属しているチームのCyTeamインスタンスも
+インスタンス変数としてつくっています。
+これはあとで戦争相手のユニットを識別したり、
+自領土であるかどうかを調べたりするのに使います。
+なにかと使い道が多いので、いちいちその場でつくるよりは、
+ここで最初に作っておいて使いまわしする作戦です。
+ほかにも、ほとんどのスペルで必要になるような値があるなら、
+ここで設定することになるでしょう。
 
-両方を満たすというわけではない場合、
-そのまま`return`を迎えないままでメソッドが終了しています。
-こういった場合、戻り値として`None`という値が呼び出し元に帰ります。
-これは偽扱いになりますので、それを受け取った`cast()`はエフェクトを再生しません。
-ただ、昇進を取ったことをなかったことにするわけではないので、
-ただの無駄撃ちになります。これは設計のときに定めた通りです。
+`cast()`です。スペル処理の本体になります。
+``` python
+    def cast(self):
+        """スペル処理を呼び出し、成功したらエフェクトも出す"""
+        r = self.execute()
 
-そして最後に***クラス外で***、
-`SpellInfo.spells.append(SpellInfo("SPELL_WATER", SpellWater))`
+        if r:
+            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
+            point = self._caster.plot().getPoint()
+            CyEngine().triggerEffect(EFFECT, point)
+
+```
+
+`execute()`という謎のインスタンスメソッドを呼び出しています。
+これは、スペルごとに異なる部分をギリギリまで狭くして、
+共通処理で済ませようとする工夫です。
+どこまでが共通で、どこからが個別なのか切り分けるのは、
+バグの少ないプログラムを書く上では重要になってきます。
+
+ここでは、本当に個別の処理の部分だけをあとで個別に`execute()`という
+メソッドとして書くことで、共通な部分――スペル発動のエフェクトなど――
+を共通としてまとめておくことを意図しています。
+こうして外側をしっかり書いておくことで、
+実際のスペル処理を書くことに集中できるようになります。
+
+あるいは、共通処理に追加したくなったときにも拡張が簡単になります。
+スペル発動後移動を強制終了したいとか、特定の昇進をつけたいとか、
+そういった場合にまとまっていれば1か所の追加で済みますが、
+共通で同じ処理だからといって安易にコピペしていると
+スペル3個でもう3か所、スペルを増やしていって100種類くらいになってから
+仕様変更したくなってしまった場合は......？
+最悪の場合すべてを書き直す羽目になってしまうかもしれません。
+***事前の準備が大切なのです。***
+
+`execute()`は成功で真、失敗で偽を返すようにするので、
+成功したら`EFFECT_PING`というアニメーションを詠唱者と同じ画面座標で再生します。
+これはチーム戦などで座標をチームメイトに伝えるときのアニメーションを流用しています。
+今回はやりませんが、発動成功したときに上にメッセージを出したい、というときも
+ここに書くことになるでしょう。
+
+`isEnemy()`です。ユニットの引数を1つ取り、
+そのユニットの所属と詠唱者の文明とが戦争状態にあるかを判定します。
+``` python
+    def isEnemy(self, pUnit):
+        return self._myTeam.isAtWar(pUnit.getTeam())
+```
+外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。
+
+`selectEnemyUnits()`です。範囲内にいる敵対ユニットを集めてリストにして返します。
+攻撃系のスペルではよく使うので、共通処理に入れておきます。
+``` python
+    def selectEnemyUnits(self, i_range):
+        """
+        範囲内の全敵対ユニットのリストを返す
+        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+        """
+        range_plots = getRangePlotList(self._caster, i_range, False)
+        
+        re_units = []
+        for plot in range_plots:
+            re_units += filter(self.isEnemy, getPlotUnits(plot))
+
+        return re_units
+
+```
+
+`range_plots = getRangePlotList(self._caster, i_range, False)`
+まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。
+詠唱者を中心に、周囲`i_range`マス、詠唱者自身のマスは含めません。
+
+`range_plots`の中の各Plotに対して、
+`re_units += filter(self.isEnemy, getPlotUnits(plot))`
 という文を実行しています。
-まず`SpellInfo("SPELL_WATER", SpellWater)`の部分で
-SpellInfoインスタンスを作成しています。
-SpellInfoインスタンスは「名前」と「クラスオブジェクト」を保持するのでした。
-`"SPELL_WATER"`と`SpellWater`クラスをここで指定しています。
-このSpellInfoインスタンスを、`SpellInfo.spells`というリストに
-(クラス変数なのでした)`append()`しています。
-これで、気分としては「"SPELL_WATER"という名前で、
-SpellWaterクラスに個別処理が書いてある、そういうスペルがあるよ」
-と登録したような感じになります。
 
-クラス外にこの処理を書くことにより、
-処理はこのファイル(KujiraEventManager.py)が最初に読み込まれたとき
-(おそらくCiv4の起動時)に実行されます。
-Infoに登録する情報を名前とクラスだけに絞ったのもこのためです。
-ゲームが始まっていなくてもInfoだけは読み込まれるようになります。
-今回はやりませんが、スペルの情報もCivilipediaに載せたいと思ったときに
-このことが重要になってきます。
-Civilipediaはゲームの状況とは関係なく開けるからです。
+2つのリストを`+`すると、そのリストが1つに連結された新しいリストを得ます。
+あるリストに別のリストを`+=`すると、そのリストの末尾に別のリストの内容がくっつきます。
+メソッド全体の目的と、ここがfor文の中でPlotを列挙中であることを考えると、
+右辺の`filter(self.isEnemy, getPlotUnits(plot))`は
+「`plot`の上にいる敵対ユニットのリスト」になっているはずです。
+それを後ろにどんどん連結していけば範囲内の全敵対ユニットを求めたことになりますね。
 
-これで、湧き水の処理とスペル一覧への登録ができました。
+さて、この`filter()`という関数は、リストを加工する関数です。
+第１引数に条件、第２引数にリストを入れると、
+条件を満たした要素だけを残した新しいリストを得ます。
+第２引数として指定している`getPlotUnits(plot)`というのは
+さっきつくった関数で`plot`上にいる全ユニットのリスト
+...ではなくジェネレーターを得るのでした。
+ただ直接出力しようとしない限りだいたい扱いは同じでしたので、
+ここにジェネレータを指定します。
 
-# 毒散布
-土台をある程度ちゃんと書いたおかげで、
-コピペは最小限で済ませつつ、スペルを増やせるようになっています。
-毒散布を見てみましょう。
+条件は、関数で指定します。
+`self.isEnemy`という関数オブジェクトです。呼び出しのための`()`をまだつけていません。
+`filter()`関数の中で、関数オブジェクトが呼び出され、要素を残すかどうか判定がされます。
+結局、`isEnemy()`――詠唱者と敵対しているかどうか――を満たすユニットのみが残され、
+`re_units`に連結されていきます。
 
-``` python
-class SpellPoison(Spell):
-    """毒散布"""
-    
-    def execute(self):
-        """
-        周囲1マスの敵対ユニットに『毒』を与える
-        """
-
-        POISONED = git("PROMOTION_POISONED")
-        units = self.selectEnemyUnits(1)
-        for unit in units:
-            unit.setHasPromotion(POISONED, True)
-
-        return True
-
-SpellInfo.spells.append(SpellInfo("SPELL_POISON", SpellPoison))
-
-```
-
-湧き水と同様、Spellを継承して`execute()`の中に個別処理を書いていきます。
-共通処理に書いてあるので、`units = self.selectEnemyUnits(1)`とするだけで
-1マス圏内にいる敵対ユニットのリストが取れてきます。
-(よく使う共通処理に名前が付けられる、一度書けば呼び出すだけでいい、
-など、関数の利点なのでした)
-
-ですから、あとは`units`の中の各ユニットに対して
-`unit.setHasPromotion(POISONED, True)`で昇進を付与するだけです。
-
-ところで、`POISONED = git("PROMOTION_POISONED")`としたことで
-`POISONED`の値は"PROMOTION_POISONED"の昇進idになっていますが、
-そもそも私たちは"PROMOTION_POISONED"という独自昇進をまだ作っていません。
-あとでXMLに追加しますので、知らない昇進が出てきてもとりあえず
-気にしないでおきましょう。
-
-そしてスペル一覧に登録します。名前は"SPELL_POISON"にしましょう。
-
-# 火炎幕
-どんどん追加していきます。火炎幕です。
-``` python
-class SpellFire(Spell):
-    """火炎幕"""
-    
-    def execute(self):
-        """
-        周囲1マスの敵対ユニットに10%のダメージを与える
-        最大40%まで
-        """
-
-        i_damage = 10
-        max_damage = 40
-        caster_owner = self._caster.getOwner()
-        units = self.selectEnemyUnits(1)
-        
-        for unit in units:
-            if unit.getDamage() >= max_damage:
-                continue
-            
-            damage = min(unit.getDamage() + i_damage, max_damage)
-            unit.setDamage(damage, caster_owner)
-
-        return True
-
-SpellInfo.spells.append(SpellInfo("SPELL_FIRE", SpellFire))
-
-```
-
-さっきと対象は同じで周囲１マスの敵対ユニットです。
-今度は昇進付与ではなく`unit.setDamage(damage, caster_owner)`としています。
-
-これは文字通りダメージ値を上書きさせるメソッドです。
-全てのユニットは(戦闘力とは別に)HPを持っていて、
-最大HPは戦闘力にかかわらず100です。
-そしてHPが100から減っているユニットは
-、その割合に応じて戦闘力にペナルティを受けます。
-例えば歩兵(戦闘力20)のHPが40にまで減っているとき、
-その状態での戦闘力は 20 * 0.40 = 8 という計算になります。
-
-しかし、Civ4内部表現ではHPという形ではなく、「ダメージ値」で表されています。
-といっても難しいものではなく、「ダメージ値」は
-100からどれくらいHPが減っているかを表す値です。
-ダメージ値が10のときは残りHP9割、ダメージ値が50のときは残りHP5割、
-ダメージ値が100に達するとHPがなくなってユニットは撃破された扱いになります。
-
-今回はHPが6割を切らないようにしたいので、
-そもそも現在のダメージ値が40以上になっているユニットは`continue`で飛ばします。
-その上で、現在ダメージ値に10を足したものを新しいダメージ値として上書きしたいのですが、
-このときも40を超えないように注意する必要があります。
-現在ダメージ値は状況によっては35や39かもしれないからです。
-そこで`min()`関数を使って40が上限になるように新しいダメージ値を得ます。
-(`min()`関数による上限設定については、付録に詳しいです)
-そうして求めた値`damage`でダメージ値を上書きします。
-
-`setDamage()`には第１引数に新しいダメージ値、
-第２引数に「誰によるダメージか」をプレイヤーidで指定しなければなりません。
-あらかじめ詠唱者のオーナーのプレイヤーidを
-`caster_owner`に代入しておいて、それを指定しています。
-
-忘れずにスペル一覧に登録します。名前は"SPELL_FIRE"にしましょう。
-
-# 昇進を取得したとき
-ここまでの壮大な前振りを経て、ついにスペルを発動させる部分です。
-昇進を取得したときのイベントを捕まえて、
-適切なクラスの`cast()`メソッドを呼び出します。見てみましょう。
-
-``` python
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onUnitPromoted(self, argsList):
-        'Called when a unit is promoted'
-        super(self.__class__, self).onUnitPromoted(argsList)
-        pUnit, iPromotion = argsList
-        ##########
-
-        for spellinfo in SpellInfo.spells:
-            iSpellPromo = git(spellinfo.getPromotionName())
-            if iPromotion == iSpellPromo:
-                SpellClass = spellinfo.getSpellClass()
-                spell = SpellClass(pUnit)
-                spell.cast()
-
-```
-
-`onUnitPromoted()`メソッドをオーバーライドします。
-引数情報は`pUnit`が昇進を取得したユニットのインスタンス、
-`iPromotion`が取得された昇進のidです。
-
-そして、スペル一覧`SpellInfo.spells`をfor文で各要素巡回します。
-ここにはスペル1種類につき1つのSpellInfoインスタンスが登録されているのでした。
-つまり、`spellinfo.getPromotionName()`とすることで回している各要素の
+[その１０につづく]({{<ref "secondpy10.md">}})
