@@ -1,6 +1,6 @@
 +++
 date = "2017-12-30T12:04:00"
-draft = true
+draft = false
 title = "それからのPython 10"
 banner = "/green1024x200.png"
 tags = ["それからのPython", "せつめい"]

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sat, 30 Dec 2017 12:03:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>それからのPython 10</title>
+      <link>https://gforestshade.github.io/kujira/post/secondpy10/</link>
+      <pubDate>Sat, 30 Dec 2017 12:04:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/secondpy10/</guid>
+      <description>はじめに その９のつづき 簡単なスペルの仕組みをつくってみる ４部作のうちの４回目 ついに各スペルの実装へ 湧き水 お待たせしました！個別のスペル処理で</description>
+    </item>
     
     <item>
       <title>それからのPython 9</title>
