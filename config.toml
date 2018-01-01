@@ -11,7 +11,7 @@ publishDir = "docs"
 theme = "hugo-bootstrap"
 
 disqusShortname = "kujira"
-googleAnalytics = ""
+googleAnalytics = "UA-111798374-1"
 
 [[menu.main]]
     name = "TAGS"
