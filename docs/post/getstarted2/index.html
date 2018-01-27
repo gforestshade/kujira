@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>はじめてのCvEventManager.py 2  &middot; Kujira, Civ4 Mod Blog</title>
+  <title>はじめてのPythonMOD 2  &middot; Kujira, Civ4 Mod Blog</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -11,10 +11,10 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="はじめてのCvEventManager.py, せつめい, ">
+<meta name="keywords" content="はじめてのPythonMOD, せつめい, ">
 
 
-<meta property="og:title" content="はじめてのCvEventManager.py 2  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:title" content="はじめてのPythonMOD 2  &middot; Kujira, Civ4 Mod Blog ">
 <meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
 <meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted2/" />
 <meta property="og:locale" content="en">
@@ -27,7 +27,7 @@
 
   
     
-<meta property="og:article:tag" content="はじめてのCvEventManager.py">
+<meta property="og:article:tag" content="はじめてのPythonMOD">
     
 <meta property="og:article:tag" content="せつめい">
     
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="はじめてのCvEventManager.py 2" />
+<meta name="twitter:title" content="はじめてのPythonMOD 2" />
 <meta name="twitter:description" content="" />
 <meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted2/" />
 <meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
@@ -47,14 +47,14 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "はじめてのCvEventManager.py 2",
+    "headline": "はじめてのPythonMOD 2",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2017-07-12",
     "description": "",
-    "wordCount": 3924
+    "wordCount": 3884
   }
 </script>
 
@@ -103,6 +103,13 @@
           </a>
         </li>
         
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
       </ul>
     </div>
   </div>
@@ -115,12 +122,12 @@
   
 <a href="https://gforestshade.github.io/kujira/post/getstarted2/" itemprop="url">
     
-      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+      <img src="https://gforestshade.github.io/kujira/photo_yellow1024x200.jpg" class="img-fluid" alt="Generic responsive image">
     
 </a>
 
 
-  <h1 class="post-title">はじめてのCvEventManager.py 2
+  <h1 class="post-title">はじめてのPythonMOD 2
 </h1>
 
   <div class="post-meta">
@@ -130,7 +137,7 @@
 
     
     &middot; 8 Minute Read
-    &middot; 3924 Words
+    &middot; 3884 Words
   </div>
 
   
@@ -141,7 +148,7 @@
         <div class="post-meta-item">
           <i class="fa fa-tags"></i>
           
-          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのCvEventManager.py</a>
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
           &middot;
           
           <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
@@ -187,19 +194,28 @@
                  └─CvEventInterface.py
 </code></pre>
 
+<p>このようにフォルダごとコピーすることで、<br />
+あるMODをもとにした派生MODを作成することができます。</p>
+
 <h1 id="選り好みする図書館">選り好みする図書館</h1>
 
-<p>前回は『都市が建設されたとき、その都市に図書館を建設するMOD』をつくりました。<br />
-しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、などを区別せず、全都市に無差別に図書館を建設します。<br />
+<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br />
+しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br />
+などを区別せず、全都市に無差別に図書館を建設します。<br />
 それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br />
-これだと創造志向があまりにもかわいそうですし、せめて自動建設は首都だけにして少しマイルドにできないでしょうか。</p>
+これだと創造志向があまりにもかわいそうですし、<br />
+せめて自動建設は首都だけにして少しマイルドにできないでしょうか。</p>
 
-<p>この制限を考慮に入れて、『都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD』をつくっていきます。</p>
+<p>この制限を考慮に入れて、<br />
+《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br />
+をつくっていきます。</p>
 
-<h2 id="文">文</h2>
+<h1 id="文">文</h1>
 
-<p>Pythonのプログラムは1行で1つの処理を表すことになっています。そのひとつひとつの処理を「文」(statement)と呼びます。<br />
-基本的に１行で文になるので、<code>pCity = argsList[0]</code>や<code>iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')</code>も文です。<br />
+<p>Pythonのプログラムは1行で1つの処理を表すことになっています。<br />
+そのひとつひとつの処理を「文」(statement)と呼びます。<br />
+基本的に１行で文になるので、<code>pCity = argsList[0]</code>や<br />
+<code>iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')</code>も文です。<br />
 複数の処理を記述するときは、上から順番に文を並べます。</p>
 
 <pre><code class="language-python">a = 4       # aを4にする
@@ -222,7 +238,7 @@ print c     # cの値を出力する
 </code></pre>
 
 <p>条件を満たした場合に限り、&rdquo;中身&rdquo;が上から順番に実行されます。<br />
-この&rdquo;中身&rdquo;のことを「ブロック」(block)と呼びます。</p>
+この&rdquo;中身&rdquo;のことを<strong>ブロック</strong>(block)と呼びます。</p>
 
 <pre><code class="language-python">a = 2           # aを4にする
 b = 3           # bを8にする
@@ -235,18 +251,26 @@ print c         # cの値を出力する
 # 6が出力される
 </code></pre>
 
-<p>if文は自分のブロックを含めて大きいひとつの「文」です。他の文と混ぜることができ、順番通りに実行されます。<br />
-どこからどこまでが「ブロック」なのかは、「空白文字」を使って&rdquo;字下げ&rdquo;(indent)することで表します。<br />
-書き出しが揃えられている行どうしが同じブロックとして認識されます。<br />
-ブロック内の文どうしで揃ってさえいればいいので、何文字分インデントすればいいのかというと、<br />
-Pythonのルールとしては何文字分でも構いません。<br />
-ただ、基本的には自分ルールで何文字分インデントするかあらかじめ決めておくのがよいでしょう。<br />
-Kujiraでは半角スペース4つで統一しています。<br />
-空白文字として認識されるのは半角スペースまたはタブ文字です。全角スペースではだめなことにだけ注意しておきましょう。</p>
+<p>if文は自分のブロックを含めて大きいひとつの<strong>文</strong>です。<br />
+他の文と混ぜることができ、順番通りに実行されます。</p>
 
-<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+<p>どこからどこまでが<strong>ブロック</strong>なのかは、<br />
+<strong>空白文字</strong>を使って<strong>字下げ</strong>(indent)することで表します。<br />
+書き出しが揃えられている行どうしが同じブロックとして認識されます。</p>
 
-<p>というわけで&hellip;</p>
+<p>ブロック内の文どうしで揃ってさえいればいいので、<br />
+Pythonのルールとしては何文字分字下げしても構いません。<br />
+ただ、基本的には自分ルールで何文字分インデントするか<br />
+あらかじめ決めておくのがよいでしょう。<br />
+「半角スペース4つ」が一般的に推奨されており、<br />
+Kujiraでも半角スペース4つで統一しています。</p>
+
+<p>なお、<strong>空白文字</strong>として認識されるのは半角スペースまたはタブ文字です。<br />
+全角スペースではだめなことにだけ注意しておきましょう。</p>
+
+<h1 id="kujiraeventmanager-py">KujiraEventManager.py</h1>
+
+<p>というわけで、<code>KujiraEventManager.py</code>をこうしてみました&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -267,7 +291,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 </code></pre>
 
-<p>こうしてみました。</p>
+<p>前回から変わったのはこの部分ですね。</p>
 
 <pre><code class="language-python">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
         if pCity.isCapital():
@@ -276,13 +300,14 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 </code></pre>
 
-<p>前回から変わったのはこの部分ですね。<br />
-<code>BUILDING_LIBRARY</code>の内部数値を取得して/それを建設する という処理をまるごとブロックにして、<br />
-<code>pCity.isCapital()</code>(pCityは首都か？)の答えが「はい」であるときに限り、実行されるようにしています。</p>
+<p><code>BUILDING_LIBRARY</code>の内部数値を取得して/それを建設する<br />
+という処理をまるごとブロックにして、<br />
+<code>pCity.isCapital()</code>(pCityは首都か？)の答えが「はい」であるときに限り、<br />
+実行されるようにしています。</p>
 
 <h2 id="ためす">ためす</h2>
 
-<p>これで『都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD』になったはずです。</p>
+<p>これで《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》になったはずです。</p>
 
 <p><a href="https://gforestshade.github.io/kujira/img/kujira_if_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_if_10.png"  width="800" height="460" /></a>
 <br />
@@ -292,21 +317,21 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h1 id="もう少し進める">もう少し進める</h1>
 
-<p>これまでは図書館は公平に与えられてきましたが、対象を限定するこの力を使えばちょっとずるしたバージョンもつくれます。<br />
-『都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD』を目指してみましょう。</p>
+<p>これまでは図書館は公平に与えられてきましたが、<br />
+対象を限定するこの力を使えばちょっとずるしたバージョンもつくれます。<br />
+《都市が建設されたとき、その都市の所有者の文明がマリならば、その都市に図書館を建設するMOD》<br />
+を目指してみましょう。</p>
 
-<h2 id="その都市の所有者の所属する文明がマリならば">その都市の所有者の所属する文明がマリならば</h2>
+<h2 id="その都市の所有者">その都市の所有者</h2>
 
-<p>「それがマリの都市ならば」でいいのに、なんだか迂遠な言い方になっていると感じた方もいらっしゃるかもしれません。<br />
-これはCiv4の内部データ的に「指導者が都市を所有している」「指導者は文明に属している」になっていることに由来しています。<br />
-指導者←都市 に逆引きの後 指導者→文明 をすることは可能でも、<br />
-一足飛びに 都市→文明 とすることはできない、ということですね。</p>
+<p><strong>Player</strong>という概念があります。<br />
+これは、<strong><em>実際にシド星に登場している</em></strong>指導者ひとりひとりのことです。<br />
+このとき、操作しているのが<strong><em>人間であるかAIであるかは問いません。</em></strong><br />
+もちろん、<strong>Player</strong>の状態(ビーカーはどれだけ出ているか・国庫はどれくらいあるか・どんな技術を持っているか・などなど他にもたくさん)は<br />
+ターンごとに刻々と変わっていきます。こういった変わっていくものにも干渉できるというのが<br />
+XMLではできないPythonでのMODの楽しみのひとつです。</p>
 
-<p>より正確には、Playerという概念があります。これは、<strong>実際にシド星に登場している</strong>指導者ひとりひとりのことです。<br />
-このとき、操作しているのが<strong>人間であるかAIであるかは問いません。</strong><br />
-もちろん、Playerの状態(ビーカーはどれだけ出ているか・国庫はどれくらいあるか・どんな技術を持っているか・などなど他にもたくさん)はターンごとに刻々と変わっていきます。こういった変わっていくものにも干渉できるというのがXMLではできないPythonでのMODの楽しみのひとつです。</p>
-
-<h2 id="指導者-都市">指導者←都市</h2>
+<h2 id="所有者-都市">所有者←都市</h2>
 
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyCityをクリックしてから&rdquo;player&rdquo;で検索すると&hellip;</p>
 
@@ -314,16 +339,19 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </code></pre>
 
 <p>それっぽいのがありました。<br />
-<code>PlayerType</code>とあるので、<code>ip = pCity.getOwner()</code>とすると<code>ip</code>にはPlayerを表す数値が入るのでしょう。<br />
-(覚えていますか？Typeとあるときは数値を表すのでした)<br />
-私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいのでPlayer本体が欲しいです。<br />
+<code>PlayerType</code>とあるので、<code>ip = pCity.getOwner()</code>とすると<br />
+<code>ip</code>にはPlayerを表す数値が入るのでしょう。<br />
+(覚えていますか？Typeとあるときはその種類に対応する数値を表すのでした)<br />
+私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので<br />
+Player本体が欲しいです。<br />
 そこで、<code>pPlayer = gc.getPlayer(ip)</code>とすると、pPlayerにPlayer本体がぎゅっと入ります。</p>
 
 <pre><code class="language-python">ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
 </code></pre>
 
-<p><code>pCity.getOwner()</code>で取れた数値をいったん<code>ip</code>に代入していますが、直接その番号をgc.getPlayer()することもできます。<br />
+<p><code>pCity.getOwner()</code>で取れた数値をいったん<code>ip</code>に代入していますが、<br />
+直接その番号を<code>gc.getPlayer()</code>することもできます。<br />
 そうすると、</p>
 
 <pre><code class="language-python">pPlayer = gc.getPlayer( pCity.getOwner() )
@@ -331,26 +359,39 @@ pPlayer = gc.getPlayer(ip)
 
 <p>こうなります。</p>
 
-<h2 id="指導者-文明">指導者→文明</h2>
+<h2 id="所有者-文明">所有者→文明</h2>
 
 <p>あらためて<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyPlayerの中から&rdquo;Civilization&rdquo;で探すと&hellip;</p>
 
 <pre><code class="language-plain">CivilizationType getCivilizationType ()
 </code></pre>
 
-<p>ありました。これで<code>ic = pPlayer.getCivilizationType()</code>とすれば、<code>ic</code>に文明の数値が代入できるのですが、<br />
-ここでいう「文明」とはマリとは何か、カルタゴとは何か、という定義です。<br />
-MODではXMLであってもPythonであっても、そのような定義を「Info」と呼びます。<br />
-「文明」は「Player」や「都市」とちがい、ゲーム中に状態が変化したりはしません。<br />
-(私たちがプレイしてるときによく言う&rdquo;プレイヤー文明&rdquo;や&rdquo;AI文明&rdquo;という概念はここでは「Player」になることに注意してください。)<br />
-都市の出力や建造物なんかはどんどん増えていきますが、ゲーム中にマリの指導者が突然徳川家康になったりマリのUBがヒッポドロームになったりはしません。<br />
-もしそうなるようなMODを(XMLで)作るのだとしても、マリのUBが最初からヒッポドロームになるのであって、マリのUBがゲームの途中でヒッポドロームに変わるのではないはずです。<br />
-ですから、この数値によって取得できるのは「文明のInfo」、すなわち<code>CivilizationInfo</code>です。<br />
-(ここでいうCivilizationInfoというのはXML編集した時の&lt;CivilizationInfo&gt;タグと同じものです！世界がつながってきました。)<br />
-というわけで<code>civinfo = gc.getCivilizationInfo(ic)</code>としてpPlayerが所属している文明のInfoになったはずです。</p>
+<p>ありました。これで<code>ic = pPlayer.getCivilizationType()</code>とすれば、<br />
+<code>ic</code>に文明の種類に対応する数値が代入できるのですが、<br />
+ここでいう「文明の種類」とはマリとは何か、カルタゴとは何か、という定義です。<br />
+MODではXMLであってもPythonであっても、そのような定義を<strong>Info</strong>と呼びます。</p>
 
-<p>長かった道のりもそろそろ終わり、知りたいのはその「文明」がマリかどうか、なのでした。<br />
-<code>civinfo.getType()</code>として&lt;Type&gt;タグが<code>CIVILIZATION_MALI</code>になっているかどうかで判断しましょう。</p>
+<p><strong>文明</strong>は<strong>Player</strong>や<strong>都市</strong>とちがい、ゲーム中に状態が変化したりはしません。<br />
+(私たちがプレイしてるときによく言う「プレイヤー文明」や「AI文明」という概念は<br />
+ここでは<strong>Player</strong>になることに注意してください。)<br />
+都市の出力や建造物なんかはどんどん増えていきますが、<br />
+ゲーム中にマリの指導者が突然徳川家康になったり<br />
+マリのUBがヒッポドロームになったりはしません。<br />
+もしそうなるようなMODを(XMLで)作るのだとしても、<br />
+マリのUBが最初からヒッポドロームになるのであって、<br />
+マリのUBがゲームの途中でヒッポドロームに変わるのではないはずです。</p>
+
+<p>ですから、この数値によって取得できるのは「文明のInfo」、<br />
+すなわち<code>CivilizationInfo</code>です。<br />
+(ここでいうCivilizationInfoというのはXML編集した時の<br />
+&lt;CivilizationInfo&gt;タグと同じものです！世界がつながってきました。)<br />
+というわけで<code>civinfo = gc.getCivilizationInfo(ic)</code>として<br />
+<code>pPlayer</code>が所属している文明の<strong>Info</strong>になったはずです。</p>
+
+<p>長かった道のりもそろそろ終わり、<br />
+知りたいのはその文明がマリかどうか、なのでした。<br />
+<code>civinfo.getType()</code>として&lt;Type&gt;タグが<code>CIVILIZATION_MALI</code>になっているかどうかで<br />
+判断しましょう。</p>
 
 <pre><code class="language-python">ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
@@ -361,28 +402,32 @@ if civinfo.getType() == 'CIVILIZATION_MALI':
 </code></pre>
 
 <p>まとめてこうなります。<br />
-Pythonを含め、多くのプログラミング言語では<code>=</code>は右辺を左辺に代入する機能しかありません。<br />
+Pythonを含め、多くのプログラミング言語では<br />
+<code>=</code>は右辺を左辺に代入する機能しかありません。<br />
 「等しいかどうかの比較」には<code>==</code>を使います。</p>
 
 <h2 id="あるいは">あるいは</h2>
 
-<p>CyCity-&gt;PlayerType-&gt;CyPlayer-&gt;CivilizatonType-&gt;CivilizationInfo-&gt;XMLキー<br />
-と一直線につないでいってXML_KEYで比較する方法を見てきましたが、<br />
+<p>CyCity-&gt;PlayerType-&gt;CyPlayer-&gt;CivilizatonType-&gt;CivilizationInfo-&gt;キー<br />
+と一直線につないでいってキーで比較する方法を見てきましたが、<br />
 マリのXMLキー<code>CIVILIZATION_MALI</code>からマリを表す数値はたしか<br />
 <code>gc.getInfoTypeForString('CIVILIZATION_MALI')</code>で取得できたはず、<br />
-という発想を試すこともできます。その場合</p>
+数値同士が等しいかどうかで判断してはどうか？<br />
+という発想を試すこともできます。その場合こうなります&hellip;</p>
 
-<pre><code class="language-python">pPlayer = gc.getPlayer( pCity.getOwner() )
-if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
+<pre><code class="language-python">if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
     # 図書館を建設する
 </code></pre>
 
-<p>となります。if文の条件式の左辺はpPlayerの文明ID、右辺はマリの文明IDになっていますから、<br />
+<p>if文の条件式の左辺はpCityから直接文明IDを取得しています。<br />
+じつはこのような方法もあったのでした。<br />
+右辺はマリの文明IDになっていますから、<br />
 もしこれらが等しければpPlayerはマリ所属のはずです。</p>
 
 <h2 id="くみこむ">くみこむ</h2>
 
-<p>どちらの書き方でも意味は同じなのですが、筆者は&rdquo;あるいは&rdquo;の方がすきなので、その方式を<code>KujiraEventManager.py</code>の<code>onCityBuilt()</code>に組み込むと、</p>
+<p>どちらの書き方でも意味は同じなのですが、後者の方が短くすっきり書けるので、<br />
+その方式を<code>KujiraEventManager.py</code>の<code>onCityBuilt()</code>に組み込むと、</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -397,8 +442,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         super(self.__class__, self).onCityBuilt(argsList)
         ##########
         pCity = argsList[0]
-        pPlayer = gc.getPlayer( pCity.getOwner() )
-        if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
+        if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
             iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')
             pCity.setNumRealBuilding(iLib, 1)
 
@@ -417,6 +461,10 @@ AIマリの都市には最初から図書館が建っていて、<br />
 
 <p>動きました！</p>
 
+<p>今回は結局<strong>Player</strong>も<strong>Info</strong>も使わずに書ける例も紹介してしまいましたが、<br />
+どちらの概念も<strong><em>極めて重要</em></strong>なので、ぜひ使わなかった方でも書いて試してみてください。<br />
+後の理解度が違ってくるはずです。</p>
+
 </div>
 
       <footer>
@@ -426,7 +474,7 @@ AIマリの都市には最初から図書館が建っていて、<br />
         <nav><ul class="pagination">
         
             <li class="page-item">
-              <a href="https://gforestshade.github.io/kujira/post/getstarted1/" title="はじめてのCvEventManager.py 1 " class="page-link">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted1/" title="はじめてのPythonMOD 1 " class="page-link">
                 <span aria-hidden="true">&larr;</span>Previous
               </a>
             </li>
@@ -434,7 +482,7 @@ AIマリの都市には最初から図書館が建っていて、<br />
 
         
           <li class="page-item">
-            <a href="https://gforestshade.github.io/kujira/post/getstarted3/" title="はじめてのCvEventManager.py 3" class="page-link">
+            <a href="https://gforestshade.github.io/kujira/post/getstarted3/" title="はじめてのPythonMOD 3" class="page-link">
                 Next <span aria-hidden="true">&rarr;</span>
             </a>
           </li>
@@ -456,6 +504,22 @@ AIマリの都市には最初から図書館が建っていて、<br />
   <div class="card-text">
     <div class="widget">
       <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//kujira_paleblue1024x200.png)"
+                    alt="はじめに" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
         
         <li>
           <div class="item-thumbnail bg-inverse">
@@ -521,22 +585,6 @@ AIマリの都市には最初から図書館が建っていて、<br />
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
-              
-                  
-                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
-                    alt="付録：継承２" class="thumbnail-image"></span>
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -574,8 +622,13 @@ AIマリの都市には最初から図書館が建っていて、<br />
           </li>
         
           <li>
-            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
-            <span class="category-list-count">8</span>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
           </li>
         
           <li>
@@ -597,41 +650,6 @@ AIマリの都市には最初から図書館が建っていて、<br />
 
 
   
-
-
-<div class="card card-block">
-  <h4 class="card-title">TAG CLOUD</h4>
-  <p class="card-text">
-    
-        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
-        mmd_to_civ4
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
-        せつめい
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
-        それからのpython
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
-        はじめてのcveventmanager.py
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2" class="badge badge-primary">
-        付録
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
-        目次
-        </a>
-    
-  </p>
-</div>
-
-
-
 
 </div>
 

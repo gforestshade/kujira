@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>はじめに</title>
+      <link>https://gforestshade.github.io/kujira/post/hajimeni/</link>
+      <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/hajimeni/</guid>
+      <description>このサイトは、Civ4のMOD開発情報を発信していくブログです。 主に、いままで日本語情報が少なかったPython、SDK、グラフィック、サウ</description>
+    </item>
     
     <item>
       <title>それからのPython 10</title>
@@ -126,20 +135,11 @@
       <pubDate>Tue, 17 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy1/</guid>
-      <description>はじめに これは何か これは、 「はじめてのCvEventManager.py」シリーズの続きです。 もうちょっとPythonの書き方について勉強し</description>
+      <description>はじめに これは何か これは、 「はじめてのPythonMOD」シリーズの続きです。 もうちょっとPythonの書き方について勉強して、より思い通り</description>
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 目次</title>
-      <link>https://gforestshade.github.io/kujira/post/getstarted/</link>
-      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/getstarted/</guid>
-      <description>その１ その２ その３ その４ その５ その６ その７ 誤字・脱字の指摘、感想、マサカリなど、お気軽にコメントしていってください。</description>
-    </item>
-    
-    <item>
-      <title>はじめてのCvEventManager.py 7</title>
+      <title>はじめてのPythonMOD 7</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted7/</link>
       <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -148,7 +148,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 6</title>
+      <title>はじめてのPythonMOD 6</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted6/</link>
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -157,7 +157,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 5</title>
+      <title>はじめてのPythonMOD 5</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted5/</link>
       <pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate>
       
@@ -166,7 +166,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 4</title>
+      <title>はじめてのPythonMOD 4</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted4/</link>
       <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
       
@@ -175,7 +175,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 3</title>
+      <title>はじめてのPythonMOD 3</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted3/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
       
@@ -184,7 +184,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 2</title>
+      <title>はじめてのPythonMOD 2</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted2/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
@@ -193,7 +193,7 @@
     </item>
     
     <item>
-      <title>はじめてのCvEventManager.py 1</title>
+      <title>はじめてのPythonMOD 1</title>
       <link>https://gforestshade.github.io/kujira/post/getstarted1/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       

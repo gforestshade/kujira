@@ -1,10 +1,11 @@
 baseurl = "https://gforestshade.github.io/kujira/"
 languageCode = "en"
 title = "Kujira, Civ4 Mod Blog"
+description = "このサイトは、Civ4のMOD開発情報を発信していくブログです。"
 author = "gforest_shade"
 copyright = "gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)"
 canonifyurls = true
-paginate = 5
+paginate = 20
 hasCJKLanguage = true
 publishDir = "docs"
 
@@ -27,6 +28,13 @@ googleAnalytics = "UA-111798374-1"
     identifier = "categories"
     url = "/categories/"
 
+[[menu.main]]
+    name = "LICENSE"
+    pre = "<i class='fa fa-file'></i>"
+    weight = -100
+    identifier = "licence1"
+    url = "/page/license/"
+
 [[menu.footer]]
     name = "LICENSE"
     weight = -120
@@ -37,7 +45,7 @@ googleAnalytics = "UA-111798374-1"
     recent_articles = true
     categories = true
     tags = true
-    tag_cloud = true
+    tag_cloud = false
 
 [blackfriday]
     extensions = ["hardLineBreak"]

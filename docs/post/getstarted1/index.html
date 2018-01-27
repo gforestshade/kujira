@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>はじめてのCvEventManager.py 1  &middot; Kujira, Civ4 Mod Blog</title>
+  <title>はじめてのPythonMOD 1  &middot; Kujira, Civ4 Mod Blog</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -11,10 +11,10 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="はじめてのCvEventManager.py, せつめい, ">
+<meta name="keywords" content="はじめてのPythonMOD, せつめい, ">
 
 
-<meta property="og:title" content="はじめてのCvEventManager.py 1  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:title" content="はじめてのPythonMOD 1  &middot; Kujira, Civ4 Mod Blog ">
 <meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
 <meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted1/" />
 <meta property="og:locale" content="en">
@@ -27,7 +27,7 @@
 
   
     
-<meta property="og:article:tag" content="はじめてのCvEventManager.py">
+<meta property="og:article:tag" content="はじめてのPythonMOD">
     
 <meta property="og:article:tag" content="せつめい">
     
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="はじめてのCvEventManager.py 1" />
+<meta name="twitter:title" content="はじめてのPythonMOD 1" />
 <meta name="twitter:description" content="" />
 <meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted1/" />
 <meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
@@ -47,14 +47,14 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "はじめてのCvEventManager.py 1",
+    "headline": "はじめてのPythonMOD 1",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 4093
+    "wordCount": 4325
   }
 </script>
 
@@ -103,6 +103,13 @@
           </a>
         </li>
         
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
       </ul>
     </div>
   </div>
@@ -115,12 +122,12 @@
   
 <a href="https://gforestshade.github.io/kujira/post/getstarted1/" itemprop="url">
     
-      <img src="https://gforestshade.github.io/kujira//green1024x200.png" class="img-fluid" alt="Generic responsive image">
+      <img src="https://gforestshade.github.io/kujira//photo_yellow1024x200.jpg" class="img-fluid" alt="Generic responsive image">
     
 </a>
 
 
-  <h1 class="post-title">はじめてのCvEventManager.py 1
+  <h1 class="post-title">はじめてのPythonMOD 1
 </h1>
 
   <div class="post-meta">
@@ -130,7 +137,7 @@
 
     
     &middot; 9 Minute Read
-    &middot; 4093 Words
+    &middot; 4325 Words
   </div>
 
   
@@ -141,7 +148,7 @@
         <div class="post-meta-item">
           <i class="fa fa-tags"></i>
           
-          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのCvEventManager.py</a>
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
           &middot;
           
           <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
@@ -172,14 +179,16 @@
 
 <p>これは、<br />
 「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br />
-という声にお応えして、CvEventManager.pyを編集してXMLだけではできないちょっと面白いことをやってみようという企画です。<br />
-XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。<br />
-<!-- ここにWikiの「はじめてのMOD作り」をいれたみ。 --></p>
+という声にお応えして、CvEventManager.pyを編集して<br />
+XMLだけではできないちょっと面白いことをやってみようという企画です。<br />
+XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。</p>
 
 <h2 id="これは何でないか">これは何でないか</h2>
 
-<p>これは、技術的な解説、PythonによるModdingに親しむ、という視点での説明に偏重しています。<br />
-あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードはあまりないかもしれません。</p>
+<p>これは、技術的な解説、PythonによるModdingに親しむ、<br />
+という視点での説明に偏重しています。<br />
+あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは<br />
+あまりないかもしれません。</p>
 
 <h1 id="civilizationiv-ini">CivilizationIV.ini</h1>
 
@@ -204,14 +213,24 @@ OverwriteLogs = 1
 <h1 id="cveventinterface-py">CvEventInterface.py</h1>
 
 <p>さて、<code>CvEventManager.py</code>&hellip;といいたいところなのですが、後々のことまで考えると、<br />
-<code>CvEventManager.py</code> を直接編集するのではなく、それを呼び出しているファイルにさかのぼって、<br />
-独自のEventManagerに変えてしまった方がよいです。</p>
+<code>CvEventManager.py</code> を直接編集するのではなく、<br />
+それを呼び出しているファイルにさかのぼって、<br />
+独自のEventManagerに変えてしまった方がよいです。<br />
+そこで、<code>CvEventManagerInterface.py</code>を編集します。</p>
 
-<p>さっそくBtSの元ファイル<br />
-<code>C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py</code><br />
-…はなかったので<br />
-<code>C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py</code><br />
-をみると、こうなっていました。</p>
+<p>さっそくBtSの元ファイル</p>
+
+<pre><code class="language-plain">C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\
+Assets\Python\EntryPoints\CvEventManagerInterface.py
+</code></pre>
+
+<p>…はなかったので</p>
+
+<pre><code class="language-plain">C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\
+Assets\Python\EntryPoints\CvEventInterface.py
+</code></pre>
+
+<p>をみると、こうなっていました。</p>
 
 <pre><code class="language-python"># Sid Meier's Civilization 4
 # Copyright Firaxis Games 2005
@@ -246,7 +265,7 @@ def beginEvent(context, argsList=-1):
 
 </code></pre>
 
-<p>これを<strong>ディレクトリ配列ごと</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
+<p>これを<strong>ディレクトリ階層ごと</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
 新しく作ったMODフォルダにAssets\Python\EntryPoints\ ディレクトリを作って、そこにコピーします。</p>
 
 <pre><code class="language-plain">└─kujira
@@ -256,7 +275,7 @@ def beginEvent(context, argsList=-1):
                  └─CvEventInterface.py
 </code></pre>
 
-<p>コピーした<code>CvEventInterface.py</code>の中身をすこし編集して&hellip;</p>
+<p>コピーした<code>CvEventInterface.py</code>の中身をすこし編集します&hellip;</p>
 
 <pre><code class="language-python"># Sid Meier's Civilization 4
 # Copyright Firaxis Games 2005
@@ -270,14 +289,17 @@ def beginEvent(context, argsList=-1):
 # No other modules should import this
 #
 import CvUtil
+# ここと
 # import CvEventManager
 import KujiraEventManager
 from CvPythonExtensions import *
 
+# ここ
 # normalEventManager = CvEventManager.CvEventManager()
 myEventManager = KujiraEventManager.MyEventManager()
 
 def getEventManager():
+    # ここも
     return myEventManager
 
 def onEvent(argsList):
@@ -292,7 +314,10 @@ def beginEvent(context, argsList=-1):
     return getEventManager().beginEvent(context, argsList)
 </code></pre>
 
-<p>こうしてみました。<code>KujiraEventManager</code>というモジュール(あるいは<code>KujiraEventManager.py</code>というファイル)にある<code>MyEventManager</code>クラスを指定しています。</p>
+<!-- `KujiraEventManager`というモジュール(あるいは`KujiraEventManager.py`というファイル)にある`MyEventManager`クラスを指定しています。 -->
+
+<p><code>CvEventManager.py</code>というファイルから<br />
+<code>KujiraEventManager.py</code>というファイルに指定を変えています。</p>
 
 <h2 id="本命をつくる">本命をつくる</h2>
 
@@ -307,7 +332,7 @@ def beginEvent(context, argsList=-1):
                  └─CvEventInterface.py
 </code></pre>
 
-<p>中身は…</p>
+<p><code>KujiraEventManager.py</code>の中身はこのようにします&hellip;</p>
 
 <pre><code class="language-python">import CvEventManager
 import CvUtil
@@ -322,10 +347,11 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         CvUtil.pyPrint(&quot;Hello, Python!&quot;)
 </code></pre>
 
-<p>こうしてみました。元のCvEventManagerを継承して、onGameStartメソッドをオーバーライドします。<br />
-気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。</p>
-
 <!--
+こうしてみました。元のCvEventManagerを継承して、
+onGameStartメソッドをオーバーライドします。
+気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。
+
 Civ4のプログラムはゲームの処理中のとある時点でグローバル関数のonEvent()を呼び出します。
 onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEvent()はargsListに渡ってきた
 「どんなイベントか」の情報を解釈してon\*\*\*\*\*\*()にさらに振り分けます。
@@ -338,11 +364,14 @@ hundleEvent()から振り分けられた各イベントハンドラをオーバ�
 <h2 id="ためす">ためす</h2>
 
 <p>MODをロードして起動してみましょう。<br />
-&hellip;シド星に降り立ってみても、とくにバニラとなにも変わっていません。<br />
+&hellip;&hellip;&hellip;&hellip;シド星に降り立ってみても、とくにバニラとなにも変わっていません。<br />
 それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。<br />
 それを確認するには、(ゲームをいちど始めたうえで、)<br />
-<code>Documents\My Games\Beyond the Sword(J)\Logs</code>にある<code>PythonDbg.log</code>を開いてみます。<br />
-&hellip;下に下にスクロールしていくと&hellip;<br />
+Documents\My Games\Beyond the Sword(J)\Logsにある<code>PythonDbg.log</code>を開いてみます。<br />
+(ファイルがありませんか？見るフォルダが間違っているか、<br />
+冒頭のini編集ができていない可能性があります。確認してみましょう。)</p>
+
+<p>下に下にスクロールしていくと&hellip;<br />
 <a href="https://gforestshade.github.io/kujira/img/pyprint.png"><img src="https://gforestshade.github.io/kujira/img/pyprint.png"  width="573" height="428" /></a>
 <br />
 ありました。ちゃんと動いているようです！</p>
@@ -366,7 +395,7 @@ hundleEvent()から振り分けられた各イベントハンドラをオーバ�
 
 <h1 id="結局こつこつとやっていくしかない">結局こつこつとやっていくしかない</h1>
 
-<p>というわけで、<code>KujiraEventManager.py</code>を&hellip;</p>
+<p>というわけで、<code>KujiraEventManager.py</code>をこのように変えてみます&hellip;</p>
 
 <pre><code class="language-python">import CvEventManager
 import CvUtil
@@ -382,8 +411,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 </code></pre>
 
-<p>こうしてみました。</p>
-
 <h2 id="くわしく">くわしく</h2>
 
 <p>捕まえるイベントを、onCityBuiltにしています。</p>
@@ -395,7 +422,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 &lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>独自処理部分では、まず<code>pCity = argsList[0]</code>としてイベントに付随してくる情報を取得しています。<br />
+<p>独自処理部分では、まず<code>pCity = argsList[0]</code>として<br />
+イベントに付随してくる情報を取得しています。<br />
 <a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベント一覧</a>からdef onCityBuiltをさがしてみると、</p>
 
 <ul>
@@ -406,18 +434,24 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </ul>
 
 <p>とあります。「都市を建てたとき」というイベントのようですね。<br />
-ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br />
-ターン開始時なら、誰のターン開始時で、いま何ターン目なのか、<br />
-プロジェクトが完成したなら、どの都市で、何のプロジェクトが完成したのか、<br />
-ユニットが倒されたなら、それはどのユニットで、またどのユニットに倒されたのか、<br />
-等等、そのイベントに関する情報が一緒に送られてくるので、Pythonではそれらを利用することができます。</p>
+つまり都市を建てたときに割り込んで何らかのプログラム的処理をしますよ、<br />
+という意味になります。</p>
+
+<p>ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br />
+「ターン開始時」なら、誰のターン開始時で、いま何ターン目なのか、<br />
+「プロジェクトが完成したとき」なら、どの都市で、何のプロジェクトが完成したのか、<br />
+「ユニットが倒されたとき」なら、それはどのユニットで、またどのユニットに倒されたのか、<br />
+等等、そのイベントに関する情報が一緒に送られてくるので、<br />
+Pythonではそれらを利用することができます。</p>
 
 <p><code>pCity = argsList[0]</code>に戻ると、argsListの0番目(プログラミング言語では、順番を0番目・1番目・2番目&hellip;と数えます)にcityが入っているはずなので、それをpCityに取り出しています。<br />
-この<code>pCity</code>はイメージとしてはいま立ったばかりの都市そのものがぎゅっと詰まっているイメージで、<br />
-<code>pCity.操作()</code>とすることで都市に操作を加えることもできます。<br />
+この<code>pCity</code>はイメージとしてはいま立ったばかりの都市そのものが<br />
+ぎゅっと詰まっているイメージで、<br />
+<code>pCity.情報()</code>とすることで都市の情報を取得したり、<br />
+<code>pCity.操作()</code>とすることで都市に操作を加えたりできます。<br />
 そこで、<code>pCity.setPopulation(4)</code>として、都市の人口を4にセットしています。</p>
 
-<p>つまりぜんぶまとめて、『都市が建設されたとき、その都市の人口を4にするMOD』ができたことになるはずです。</p>
+<p>つまりぜんぶまとめて、《都市が建設されたとき、その都市の人口を4にするMOD》ができたことになるはずです。</p>
 
 <h2 id="ためす-1">ためす</h2>
 
@@ -439,7 +473,7 @@ ParametersのargsListのカッコ内にあるのがイベントについてく�
 
 <h1 id="もう少し進める">もう少し進める</h1>
 
-<p>もう一歩進んで、『都市が建設されたとき、その都市に図書館を建設するMOD』を目指してみましょう。</p>
+<p>もう一歩進んで、《都市が建設されたとき、その都市に図書館を建設するMOD》を目指してみましょう。</p>
 
 <h2 id="図書館を建設する-とは">図書館を建設する、とは</h2>
 
@@ -456,17 +490,24 @@ setで始まるCyCityのメソッドの中からBuildingも含んでいるもの
 (BuildingID, iNum) - Sets number of buildings in this city of BuildingID type</p>
 </blockquote>
 
-<p>建物の種類と、数値を指定して、その建物の数をその数値にするメソッドのようです。<br />
-数は1でよいのでしょうが、肝心の建物の種類をどうやって指定するか学ばないといけないようです。<br />
-<code>BuildingType iIndex</code>とあります。<br />
+<p>建物の種類と、数値を指定して、その建物の数を設定する操作のようです。<br />
+数は1でよいのでしょうが、肝心の建物の種類を<br />
+どうやって指定するか学ばないといけないようです。</p>
+
+<p>そこで、<code>BuildingType iIndex</code>とあるところに注目します。<br />
 iはXMLの編集でおなじみのように数値を表します。<br />
 ですから、ここには図書館を表す数値を指定しなければなりません。<br />
 が、そんな数値はもちろん知りません。そこで調べて&hellip;くるのではなく、<br />
 そこはPython自身に計算してもらえばよいのです。</p>
 
-<p>まず、図書館を表すキーを用意しましょう。(これはどうにかして調べてください。XML編集をしていた方なら、さほど難しくないと思います)<br />
-調べたところ、<code>BUILDING_LIBRARY</code>でした。そして<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>とすると、数値を取得できます。<br />
-<code>gc</code>を使うのには少し準備がいるので、それも含めた<code>KujiraEventManager.py</code>のリストは</p>
+<p>まず、図書館を表す「キー」を用意しましょう。<br />
+(これはどうにかして調べてください。<br />
+XML編集をしていた方なら、さほど難しくないと思います)<br />
+調べたところ、<code>BUILDING_LIBRARY</code>でした。<br />
+そこで<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>とすると、<br />
+図書館を表す数値を取得できます。<br />
+<code>gc</code>を使うのには少し準備がいるので、<br />
+それも含めた<code>KujiraEventManager.py</code>のリストはこうなります&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -487,15 +528,19 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 # Something is wrong!
 </code></pre>
 
-<p>こうなります。</p>
-
 <h2 id="まちがえた">まちがえた？</h2>
 
-<p>さてこれで起動してみて都市を覗いてみても、図書館は建っていないようです。<br />
-どこかでミスっているのでしょうか。エラーを起こしたなら起こしたでどの行で起こしたかの場所を知りたいものです。<br />
-このようなとき<code>Documents\My Games\Beyond the Sword(J)\Logs</code>にある<code>PythonErr.log</code>が助けになってくれます。</p>
+<p>さてこれで起動してみます。</p>
 
-<pre><code class="language-c">Traceback (most recent call last):
+<p>&hellip;&hellip;&hellip;しかし都市を覗いてみても、図書館は建っていないようです。</p>
+
+<p>どこかでミスっているのでしょうか。エラーを起こしたなら起こしたで<br />
+どの行で起こしたかの場所を知りたいものです。<br />
+このようなときDocuments\My Games\Beyond the Sword(J)\Logsにある<br />
+<code>PythonErr.log</code>が助けになってくれます。</p>
+
+<blockquote>
+<pre><code class="language-txt">Traceback (most recent call last):
 
   File &quot;CvEventInterface&quot;, line 25, in onEvent
 
@@ -506,24 +551,29 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 AttributeError: 'CyGlobalContext' object has no attribute 'getInfoTypeString'
 ERR: Python function onEvent failed, module CvEventInterface
 </code></pre>
+</blockquote>
 
 <p>エラーが起こっていました。<br />
 ファイル名と行番号が並んでいるうちの一番下、この例では<br />
-<code>File &quot;KujiraEventManager&quot;, line 14, in onCityBuilt</code>がエラーを起こした場所を示します。</p>
+<code>File &quot;KujiraEventManager&quot;, line 14, in onCityBuilt</code>が<br />
+エラーを起こした場所を示してくれています。</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         iLib = gc.getInfoTypeString('BUILDING_LIBRARY')
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>この行ですね。お使いのテキストエディタで行番号の表示ができるのであれば、すぐ見つかると思います。<br />
+<p>この行ですね。お使いのテキストエディタで行番号の表示ができるのであれば、<br />
+すぐ見つかると思います。<br />
 エラー内容はこうです。<br />
 <code>AttributeError: 'CyGlobalContext' object has no attribute 'getInfoTypeString'</code><br />
-『CyGlobalContextのオブジェクトにgetInfoTypeStringなんて属性ないやで』<br />
-objectやattributeという単語の意味がいまの時点でわからなくとも、<br />
-getInfoTypeStringっていう名前のものがない(探すのに失敗している)ということはなんとなく感じ取れます。<br />
+「CyGlobalContextのオブジェクトにgetInfoTypeStringなんて属性ないやで」</p>
+
+<p>objectやattributeという単語の意味がいまの時点でわからなくとも、<br />
+getInfoTypeStringっていう名前のものがない(探すのに失敗している)<br />
+ということはなんとなく感じ取れます。<br />
 そして、よくよく見直すと、たしかにgetInfoTypeStringって名前は間違いで、<br />
-getInfoTypeForStringが正しいことが分かりました。直しましょう。</p>
+getInfoTypeForStringが正しいことが分かりました。直しましょう&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -567,7 +617,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
         
           <li class="page-item">
-            <a href="https://gforestshade.github.io/kujira/post/getstarted2/" title="はじめてのCvEventManager.py 2" class="page-link">
+            <a href="https://gforestshade.github.io/kujira/post/getstarted2/" title="はじめてのPythonMOD 2" class="page-link">
                 Next <span aria-hidden="true">&rarr;</span>
             </a>
           </li>
@@ -589,6 +639,22 @@ class MyEventManager(CvEventManager.CvEventManager, object):
   <div class="card-text">
     <div class="widget">
       <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                  <span style="background-image:url(https://gforestshade.github.io/kujira//kujira_paleblue1024x200.png)"
+                    alt="はじめに" class="thumbnail-image"></span>
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
         
         <li>
           <div class="item-thumbnail bg-inverse">
@@ -654,22 +720,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
-              
-                  
-                  <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
-                    alt="付録：継承２" class="thumbnail-image"></span>
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -707,8 +757,13 @@ class MyEventManager(CvEventManager.CvEventManager, object):
           </li>
         
           <li>
-            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py">はじめてのcveventmanager.py</a>
-            <span class="category-list-count">8</span>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
           </li>
         
           <li>
@@ -730,41 +785,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 
   
-
-
-<div class="card card-block">
-  <h4 class="card-title">TAG CLOUD</h4>
-  <p class="card-text">
-    
-        <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4" class="badge badge-primary">
-        mmd_to_civ4
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84" class="badge badge-primary">
-        せつめい
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython" class="badge badge-primary">
-        それからのpython
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aecveventmanager.py" class="badge badge-primary">
-        はじめてのcveventmanager.py
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2" class="badge badge-primary">
-        付録
-        </a>
-    
-        <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1" class="badge badge-primary">
-        目次
-        </a>
-    
-  </p>
-</div>
-
-
-
 
 </div>
 

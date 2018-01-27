@@ -1,9 +1,9 @@
 +++
 date = "2017-08-07"
 draft = false
-title = "はじめてのCvEventManager.py 7"
-banner = "/green1024x200.png"
-tags = ["はじめてのCvEventManager.py", "せつめい"]
+title = "はじめてのPythonMOD 7"
+banner = "/photo_yellow1024x200.jpg"
+tags = ["はじめてのPythonMOD", "せつめい"]
 +++
 
 [api]: http://civ4bug.sourceforge.net/PythonAPI/index.html

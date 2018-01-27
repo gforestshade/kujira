@@ -1,9 +1,9 @@
 +++
 date = "2017-08-06"
 draft = false
-title = "はじめてのCvEventManager.py 6"
-banner = "/green1024x200.png"
-tags = ["はじめてのCvEventManager.py", "せつめい"]
+title = "はじめてのPythonMOD 6"
+banner = "/photo_yellow1024x200.jpg"
+tags = ["はじめてのPythonMOD", "せつめい"]
 +++
 
 # はじめに
