@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-13",
     "description": "",
-    "wordCount": 3864
+    "wordCount": 4106
   }
 </script>
 
@@ -136,8 +136,8 @@
     <time datetime="2017-07-13">13 Jul, 2017</time>
 
     
-    &middot; 8 Minute Read
-    &middot; 3864 Words
+    &middot; 9 Minute Read
+    &middot; 4106 Words
   </div>
 
   
@@ -199,7 +199,12 @@
 <a href="https://gforestshade.github.io/kujira/img/paiza_0.png"><img src="https://gforestshade.github.io/kujira/img/paiza_0.png"    /></a>
 </p>
 
-<h2 id="ちょっとあそぶ">ちょっとあそぶ</h2>
+<h1 id="もしくは">もしくは</h1>
+
+<p>埋め込みを置いておくので、ご利用ください。<br />
+<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe></p>
+
+<h1 id="ちょっとあそぶ">ちょっとあそぶ</h1>
 
 <p>小さいプログラムを書いて遊んでみましょう。</p>
 
@@ -213,7 +218,7 @@ print b
 <p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br />
 予想ができたら、実行してみます。合っていたでしょうか。違っていたでしょうか。</p>
 
-<h2 id="関数">関数</h2>
+<h1 id="関数">関数</h1>
 
 <p>Pythonでは、ブロックが上から下に順番に実行されるのは先述の通りですが、<br />
 処理をまとめておく方法もあります。</p>
@@ -225,9 +230,10 @@ print b
 doOreore()
 </code></pre>
 
-<p><code>def 関数名():</code>とその直下の「ブロック」が「関数」として「定義」されます。<br />
+<p><code>def 関数名():</code>とその直下の<strong>ブロック</strong>が<strong>関数</strong>として<strong>定義</strong>されます。<br />
 あとで<code>関数名()</code>とすると関数を「呼び出し」ます。<br />
-関数名は(かぶらない限り)自由につけて構いませんが、その処理のまとまりは要するに全体で何をするものなのか、<br />
+関数名は(かぶらない限り)自由につけて構いませんが、<br />
+その処理のまとまりは要するに全体で何をするものなのか、<br />
 動詞っぽいものをつけておく例が多いようです。</p>
 
 <p>関数の旨みのひとつは一度定義すれば何度呼び出しても構わないことにあります。</p>
@@ -264,19 +270,25 @@ doOreore3(&quot;kazuma&quot;)
 
 <p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br />
 定義の時点では変数で記述しておいて、呼び出し時に実際の値を&rdquo;渡し&rdquo;ています。<br />
-受け渡しを担当している<code>son</code>のことを「引数」(ひきすう)あるいは「仮引数」(かりひきすう)と呼びます。<br />
-息子の名前だけが違ってあとはほとんど同じ内容をしゃべっていますが、<br />
-ほとんど同じな部分をいちいちコピペすることなくほかのおうちに移れるようになっています。<br />
-&ldquo;処理のまとまりに名前が付けられる&rdquo;という点も強力で、<br />
-実際に実行されているのはただのprint文20回分、なのですが、名前があることで<br />
-&ldquo;オレオレ詐欺を4回している&rdquo;ということが明確になっています。</p>
+受け渡しを担当している<code>son</code>のことを<br />
+<strong>引数</strong>(ひきすう)あるいは<strong>仮引数</strong>(かりひきすう)と呼びます。</p>
 
-<p>そういえば、第１回で出てきた<code>pCity.setPopulation(4)</code>と今回の<code>doOreore3(&quot;takashi&quot;)</code>がすこし似ていますね。<br />
-そうです。<code>pCity.setPopulation(4)</code>も関数呼び出しです。<br />
-引数に<code>4</code>を渡して呼び出しているのですね。<br />
-市民を再配置したり、制覇条件を更新したり&hellip;とめんどくさい内部処理をすべて請け負って<br />
-&ldquo;要するに何をするのか&rdquo;わかりやすい名前がついていることで、<br />
-やりたいことを素直に記述することに専念できるのです。</p>
+<p>息子の名前だけが違ってあとはほとんど同じ内容をしゃべっていますが、<br />
+ほとんど同じな部分をいちいちコピペすることなくほかのお宅に移れるようになっています。</p>
+
+<p>「処理のまとまりに名前が付けられる」という点も強力で、<br />
+実際に実行されているのはただのprint文20回分、なのですが、名前があることで<br />
+「オレオレ詐欺を4回している」ということが明確になっています。</p>
+
+<p>そういえば、第１回で出てきた<code>pCity.setPopulation(4)</code>と<br />
+今回の<code>doOreore3(&quot;takashi&quot;)</code>がすこし似ていますね。</p>
+
+<p>そうです。<code>pCity.setPopulation(4)</code>も関数呼び出しです。<br />
+引数に<code>4</code>を渡して呼び出しているのですね。</p>
+
+<p>市民を再配置したり、制覇条件を更新したり&hellip;とめんどくさい内部処理をすべて請け負って<br />
+「要するに何をするのか」わかりやすい名前がついていることで、<br />
+関数を使う側はやりたいことを素直に記述することに専念できるのです。</p>
 
 <h2 id="戻り値">戻り値</h2>
 
@@ -289,10 +301,12 @@ a = three() * 4
 print a
 </code></pre>
 
-<p>関数内で<code>return 値</code>にたどり着くと、<strong><em>その関数の処理を中断して</em></strong>自分を呼び出したところまで戻ってきます。<br />
+<p>関数内で<code>return 値</code>にたどり着くと、<strong><em>その関数の処理を中断して</em></strong>、<br />
+自分を呼び出したところまで戻ってきます。<br />
 その際、<code>関数名()</code>という呼び出し文字列全体がその<code>値</code>で置き換わります。<br />
-この場合の表記法は数式の関数表記法に倣っていますので、数式をご存知の方は馴染みやすいかもしれません。<br />
-このとき投げ返す値のことを「戻り値」と呼びます。<br />
+この場合の表記法は数式の関数表記法にならっていますので、<br />
+数式をご存知の方は馴染みやすいかもしれません。<br />
+このとき投げ返す値のことを<strong>戻り値</strong>と呼びます。<br />
 呼び出した側は、投げ返されてきた戻り値をさらに何かに活用することができます。</p>
 
 <p>引数を使って戻り値を計算することもできます。</p>
@@ -308,8 +322,10 @@ print a
 より数学の関数に近い感じになりました。</p>
 
 <p>ずっとお世話になっている<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>はこのタイプの関数です。<br />
-XMLキーの文字列を引数に渡して、それに対応するIDという数値が戻り値として投げ返されるのですね。<br />
-わたしたちはその戻り値を変数に代入したり、直接別の関数の引数として渡したりしていました。</p>
+キーの文字列を引数に渡して、<br />
+それに対応するIDという数値が戻り値として投げ返されるのですね。<br />
+わたしたちはその戻り値を変数に代入したり、<br />
+直接別の関数の引数として渡したりしていました。</p>
 
 <h1 id="やっとこmod">やっとこMOD</h1>
 
@@ -326,7 +342,8 @@ XMLキーの文字列を引数に渡して、それに対応するIDという数
 
 <h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
 
-<p>前回は『都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD』を作りました。</p>
+<p>前回は『都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD』を作りました。<br />
+その際、要素をこのように分割しました。</p>
 
 <ul>
 <li>都市が建設されたとき<br /></li>
@@ -335,12 +352,13 @@ XMLキーの文字列を引数に渡して、それに対応するIDという数
 <br /></li>
 </ul>
 
-<p>に分けられて、それらは個別に別の条件/処理に変えてしまうことができるのでした。<br />
-今回は少し難しくして、『都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成する』MODを目指します。</p>
+<p>今回は少し難しくして、<br />
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br />
+を目指します。</p>
 
 <h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
 
-<p>というわけで&hellip;</p>
+<p>というわけで、全体としてこのようなものを目指します&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -368,15 +386,34 @@ class MyEventManager(CvEventManager.CvEventManager, object):
             createUnit(pPlayer, archerUnit, x, y)
 </code></pre>
 
-<p>こうしてみました。</p>
-
 <h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
 
-<p><code>gc.getInfoTypeForString('TRAIT_PROTECTIVE')</code>とすると防衛志向のIDが戻るのでした。<br />
-<code>iProtec = gc.getInfoTypeForString('TRAIT_PROTECTIVE')</code>のように変数に代入しておくこともできますし、<br />
-<code>pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') )</code><br />
-のように直接引数として渡すこともできます。<br />
-下の２つのプログラムは同じ動作をします。</p>
+<p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからtraitを探すと、こうなっています。</p>
+
+<pre><code class="language-plain">318. BOOL hasTrait (TraitType iIndex)
+bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.
+</code></pre>
+
+<p>つまり、<code>pPlayer.hasTrait(志向の種類ID)</code>とすると、<br />
+<strong>Player</strong>がその<strong>志向</strong>を持っているかどうか調べられそうです。</p>
+
+<p>防衛志向の<strong>キー</strong>を調べると<code>TRAIT_PROTECTIVE</code>であることが分かりました。<br />
+↓とすると防衛志向のIDが戻るのでした。</p>
+
+<pre><code>gc.getInfoTypeForString('TRAIT_PROTECTIVE')
+</code></pre>
+
+<p>↓のように変数に代入しておくこともできますし、</p>
+
+<pre><code>iProtec = gc.getInfoTypeForString('TRAIT_PROTECTIVE')
+</code></pre>
+
+<p>↓のように直接引数として渡すこともできます。</p>
+
+<pre><code>pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') )
+</code></pre>
+
+<p>↓下の２つのプログラムは同じ動作をします。</p>
 
 <pre><code class="language-python">if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
     'something'
@@ -391,9 +428,8 @@ if pPlayer.hasTrait(iProtective):
 
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからinitUnitを探すと、こうなっています。</p>
 
-<pre><code class="language-plain">CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
- 
-CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
+<pre><code class="language-plain">321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
+ CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
 </code></pre>
 
 <p>前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。<br />
@@ -401,30 +437,41 @@ CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Uni
 
 <dl>
 <dt>UnitType iIndex<br /></dt>
-<dd>UnitのTypeとあるのでユニットIDですね。作りたいユニットのXMLキーを<code>gc.getInfoTypeForString()</code>して<br />
+<dd>UnitのTypeとあるのでユニットの種類IDですね。<br />
+作りたいユニットのXMLキーを<code>gc.getInfoTypeForString()</code>して<br />
 ここに指定すればよさそうです。<br />
 <br /></dd>
 <dt>INT iX<br /></dt>
-<dd>INTとあるので数値だということはわかりますが&hellip;Xというのはx座標でしょうか。<br />
+<dd>iとあるので数値だということはわかりますが&hellip;Xというのはx座標でしょうか。<br />
 これはPlayerに対する操作なのでした。Playerは都市と違い<br />
 シド星上に特定の位置を占めているわけではありませんから、<br />
 そのユニットがどこに降り立つのか教えてあげないといけないのですね。<br />
 <br /></dd>
 <dt>INT iY<br /></dt>
-<dd>同じくy座標です。今回は都市と同じタイル状に生成されてほしいので、PCityの座標を取得する方法を探して<br />
+<dd>同じくy座標です。今回は都市と同じタイル状に生成されてほしいので、<br />
+<code>PCity</code>の座標を取得する方法を探して<br />
 取得した座標をそのまま(同じ数値として)指定したらよさそうですね。<br />
 <br /></dd>
 <dt>UnitAIType eUnitAI<br /></dt>
-<dd>UnitAIのTypeなのでユニットAIのIDですね(そのまま)。下の行の注釈に<br />
+<dd>UnitAIのTypeなのでユニットAIの種類IDですね(そのまま)。下の行の注釈に<br />
 「どんなときでも<code>UnitAITypes.NO_UNITAI</code>を使ってね」<br />
 とあるので<code>UnitAITypes.NO_UNITAI</code>を指定しておきましょう。<br />
 <br /></dd>
 <dt>DirectionType eFacingDirection<br /></dt>
-<dd>FacingなDirectionですから&rdquo;向いている方向&rdquo;でしょうか。&hellip;ユニットの向いている方向ですね(そのまま)。<br />
-DirectionTypeとあるのでこれまた数値指定ですが、&rdquo;南&rdquo;を表す数値がもう代入されている変数があるので<br />
-利用させてもらいましょう。<code>DirectionTypes.DIRECTION_SOUTH</code>です。<br />
+<dd>FacingなDirectionですから「向いている方向」でしょうか。<br />
+&hellip;&hellip;&hellip;&hellip;ユニットの向いている方向ですね(そのまま)。<br />
+DirectionTypeとあるのでこれまた数値指定ですが、<br />
+<a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンスページ</a>上でDirectionTypeのリンクをクリックすると、<br />
+どのようなキーと数値の対応になっているかの一覧が表示されます。<br />
+今回はとくに方向を気にしないので、<br />
+<code>DirectionTypes.NO_DIRECTION</code>を指定しましょう。<br />
 <br /></dd>
 </dl>
+
+<p>なお、<code>UnitAITypes.NO_UNITAI</code>や<code>DirectionTypes.NO_DIRECTION</code>は<br />
+<strong>関数</strong>ではなく<strong>変数</strong>です。わざわざキーから変換しなくても、<br />
+それに対応する数値があらかじめ代入されて提供されています。<br />
+ありがたく利用しましょう。</p>
 
 <h2 id="自分で関数を定義する">自分で関数を定義する</h2>
 
@@ -434,11 +481,10 @@ DirectionTypeとあるのでこれまた数値指定ですが、&rdquo;南&rdquo
     pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 </code></pre>
 
-<p>こうしてみました。<br />
-どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br />
+<p>どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br />
 別の言い方をすれば、ここではそれらを決めずに、呼び出す側が決める、ということです。</p>
 
-<p>呼び出し側は、例えばこうなります。</p>
+<p>呼び出し側は、例えばこうなります&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 archerUnit = gc.getInfoTypeForString('UNIT_ARCHER')
@@ -451,12 +497,19 @@ createUnit(pPlayer, archerUnit, x, y)
 </code></pre>
 
 <p>さて、すこし想像力が必要かもしれません。<br />
-前半3行では弓兵のユニットID、都市のx座標、都市のy座標を変数に代入していますね。<br />
-それらの「値」をいまさっき「定義」した関数に引数として渡しています。<br />
-そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br />
-に相当する「値」が入った状態で<code>createUnit()</code>(を定義したところの)のブロックが実行されます。<br />
-<code>Player.initUnit()</code>を呼び出して&hellip;都市と同じタイル上に弓兵が生成されますね。<br />
-<code>createUnit()</code>を3回同じ引数で呼び出していますから、処理も3回実行され、弓兵が3体できるはずです。</p>
+前半3行では弓兵のユニット種ID、都市のx座標、都市のy座標を変数に代入していますね。<br />
+それらの<strong>値</strong>をいまさっき<strong>定義</strong>した関数に引数として渡しています。</p>
+
+<p>そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br />
+に相当する<strong>値</strong>が入った状態で<code>createUnit()</code>(を定義したところ)の<br />
+<strong>ブロック</strong>が実行されます。</p>
+
+<p><code>createUnit()</code>の中身に戻ってみてみると、<br />
+<strong>ブロック</strong>中では<code>Player.initUnit()</code>を呼び出していて、<br />
+都市と同じタイル上に弓兵が生成されますね。</p>
+
+<p><code>createUnit()</code>を3回同じ引数で呼び出していますから、<br />
+処理も3回実行され、弓兵が3体できるはずです。</p>
 
 <h2 id="ためす">ためす</h2>
 
@@ -466,7 +519,9 @@ createUnit(pPlayer, archerUnit, x, y)
 <br />
 できました！</p>
 
-<p>余談ですが、このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、<br />
+<h2 id="余談">余談</h2>
+
+<p>このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、<br />
 防衛志向でない指導者には弓が来ないことをちゃんと確認したほうがよいと思います。<br />
 防衛志向のみならず金融/哲学に弓が来てしまったら、それはおそらくバグです。<br />
 『防衛志向かどうか』の判定がうまくいっていないことを疑う必要があるかもしれません。</p>

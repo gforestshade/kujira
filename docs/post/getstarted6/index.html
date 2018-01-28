@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-08-06",
     "description": "",
-    "wordCount": 2911
+    "wordCount": 3003
   }
 </script>
 
@@ -137,7 +137,7 @@
 
     
     &middot; 6 Minute Read
-    &middot; 2911 Words
+    &middot; 3003 Words
   </div>
 
   
@@ -184,7 +184,8 @@
 
 <h1 id="構想">構想</h1>
 
-<p>これまでは変更してばかりでした。Pythonでしかできない効果を持った新しい建造物を作りましょう！<br />
+<p>これまでは既存の動作を変更してばかりでした。<br />
+Pythonでしかできない効果を持った新しい建造物を作りましょう！<br />
 とりあえず&rdquo;いつもの&rdquo;を作ります。</p>
 
 <pre><code class="language-plain">└─kujira_fert
@@ -223,18 +224,32 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
 <h2 id="ちょっとだけxmlの話">ちょっとだけXMLの話</h2>
 
 <p><a href="https://civ4-wiki.club/index.php?MOD%2F%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%2F%E3%82%AD%E3%83%BC%E4%B8%80%E8%A6%A7">キー一覧</a>を見ていただくとわかりやすいのですが、<br />
-建造物の種類一つ一つにBuildingType、UBどうしをひとまとめにしたものにBuildingClassTypeが割り当てられています。<br />
-例えばストーンヘンジで各都市に無償で供給されるのは、正確には『&rsquo;BUILDING_OBELISK&rsquo;という建造物』ではなく、<br />
-『&rsquo;BUILDINGCLASS_OBELISK&rsquo;に属する建造物のうち文明にあったもの』であるのでした。</p>
+建造物の種類一つ一つに<strong>BuildingType</strong>、<br />
+UBどうしをひとまとめにしたものに<strong>BuildingClassType</strong>が割り当てられています。<br />
+例えばストーンヘンジで各都市に無償で供給されるのは、<br />
+正確には「BUILDING_OBELISKという建造物」ではなく、<br />
+「BUILDINGCLASS_OBELISKに属する建造物のうち、その文明に合ったもの」なのです。<br />
+(ですから、例えばアメリカ先住民がストヘンを建てると<br />
+ちゃんとトーテムポールが配置されるのですね)</p>
 
-<p>UBが存在しない建造物であっても自分一人をメンバーとしたBuildingClassが必ずあります。<br />
-というより、Buildingを作るときに所属先であるBuildingClassを自己申告するタグがあり、それは省略できないのでした。<br />
-なのでオレオレ建造物を追加するときはそのBuildingひとつだけを含む予定のBuildingClassと<br />
-そのBuildingClassに所属するBuilding本体とを一緒に作ってあげなければならないのでした。</p>
+<p>UBが存在しない建造物であっても自分一人をメンバーとした<strong>BuildingClass</strong>が必ずあります。<br />
+というより、<strong>Building</strong>を作るときに所属先である<strong>BuildingClass</strong>を自己申告するタグがあり、<br />
+それは省略できません。<br />
+なのでオレオレ建造物を追加するときは、<br />
+(その<strong>Building</strong>ひとつだけを含む予定の)<strong>BuildingClass</strong>と、<br />
+(その<strong>BuildingClass</strong>に所属する)<strong>Building</strong>本体とを<br />
+一緒に作ってあげなければいけません。</p>
 
 <h2 id="civ4buildingclassinfos-xml">CIV4BuildingClassInfos.xml</h2>
 
-<p>というわけで<code>CIV4BuildingClassInfos.xml</code>には</p>
+<p>というわけで<code>CIV4BuildingClassInfos.xml</code>の</p>
+
+<p>↓ここに</p>
+
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_00.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_00.png"  width="400" height="800" /></a>
+
+
+<p>↓こんな感じのを追加しておきます。</p>
 
 <pre><code class="language-xml">		&lt;BuildingClassInfo&gt;
 			&lt;Type&gt;BUILDINGCLASS_FERTILIZE_SHRINE&lt;/Type&gt;
@@ -250,11 +265,23 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
 		&lt;/BuildingClassInfo&gt;
 </code></pre>
 
-<p>こんな感じのを追加しておいて、</p>
-
 <h2 id="civ4buildinginfos-xml">CIV4BuildingInfos.xml</h2>
 
 <p><code>CIV4BuildingInfos.xml</code>はタグが多すぎて１からでは無理なのでBUILDING_RECYCLING_CENTERを元に改変することにして、</p>
+
+<p>↓ここから<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_01.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_01.png"  width="400" height="1600" /></a>
+<br />
+↑ここまでを</p>
+
+<p>↓ここに貼り付けます。</p>
+
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_02.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_02.png"  width="400" height="800" /></a>
+
+
+<p><br><br></p>
+
+<p>そのあと、貼り付けた部分の一部を修正していきます。</p>
 
 <pre><code class="language-xml">			&lt;BuildingClass&gt;BUILDINGCLASS_FERTILIZE_SHRINE&lt;/BuildingClass&gt;
 			&lt;Type&gt;BUILDING_FERTILIZE_SHRINE&lt;/Type&gt;
@@ -264,38 +291,40 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
 			&lt;Strategy&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_STRATEGY&lt;/Strategy&gt;
 </code></pre>
 
-<p><code>&lt;BuildingClass&gt;</code>と<code>&lt;Type&gt;</code>を指定、それから各種テキストキーをそれっぽい名前にしておいて、</p>
+<p>↑<code>&lt;BuildingClass&gt;</code>と<code>&lt;Type&gt;</code>を指定、それから各種テキストキーをそれっぽい名前にしておいて、</p>
 
 <pre><code class="language-xml">			&lt;Help&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_HELP&lt;/Help&gt;
 </code></pre>
 
-<p><code>&lt;Help&gt;</code>というタグを追加しておきます。</p>
+<p>↑<code>&lt;Help&gt;</code>というタグを追加しておきます。</p>
 
 <pre><code class="language-xml">			&lt;PrereqTech&gt;TECH_BIOLOGY&lt;/PrereqTech&gt;
 </code></pre>
 
-<p>解禁技術を生物学にして、</p>
+<p>↑解禁技術を生物学にして、</p>
 
 <pre><code class="language-xml">			&lt;iCost&gt;10&lt;/iCost&gt;
 </code></pre>
 
-<p>(開発中の一時的な措置として)ハンマーを軽くしておいて、</p>
+<p>↑(開発中の一時的な措置として)ハンマーを軽くしておいて、</p>
 
 <pre><code class="language-xml">			&lt;bBuildingOnlyHealthy&gt;0&lt;/bBuildingOnlyHealthy&gt;
 </code></pre>
 
-<p>人口からの不衛生なしを解除して、</p>
+<p>↑人口からの不衛生なしを解除して、</p>
 
 <pre><code class="language-xml">			&lt;iHappiness&gt;-10&lt;/iHappiness&gt;
 </code></pre>
 
-<p>不幸+10にしてみました。</p>
+<p>↑不幸+10にしてみました。</p>
 
 <p>全部でどんな感じになったかは長いので章末に移動しました。<a href="#おまけ">おまけ</a>をご覧ください。</p>
 
 <p>この時点で生物学解禁の不幸を+10生む建造物ができているはずです。<br />
-ゲームを起動して、シヴィロペディアを見るなり、WBで生物学を取って建ててみるなりしてみましょう。<br />
-もちろん、まだテキストキーの内容を定義していませんので、生の<code>TXT_KEY_...</code>が出てきますが、<br />
+ゲームを起動して、シヴィロペディアを見るなり、<br />
+WBで生物学を取って建ててみるなりしてみましょう。<br />
+もちろん、まだテキストキーの内容を定義していませんので、<br />
+生の<code>TXT_KEY_...</code>が出てきますが、<br />
 定義していない以上当然のことなので、気にしないことにしましょう。</p>
 
 <h2 id="text">Text</h2>
@@ -321,7 +350,7 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
                 └─Text_Kujira.xml
 </code></pre>
 
-<p><code>Text_Kujira.xml</code>の中身は&hellip;</p>
+<p><code>Text_Kujira.xml</code>の中身はこのようにします&hellip;</p>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;Shift_JIS&quot;?&gt;
 &lt;Civ4GameText xmlns=&quot;http://www.firaxis.com&quot;&gt;
@@ -372,11 +401,15 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
 <h2 id="ためす-is-大事">ためす is 大事</h2>
 
 <p>こうして一歩進むごとにいちいち動作確認するのは重要です。<br />
-もしPythonをいじっていない今の状態でエラーが出るのなら、XMLにまずいところがあるはずです。<br />
-もし一度目のお願いに従って動作確認をしていただいていて、その時点では正しく動いていたなら、<br />
+もしPythonをいじっていない今の状態でエラーが出るのなら、<br />
+XMLにまずいところがあるはずです。<br />
+もし一度目のお願いに従って動作確認をしていただいていて、<br />
+その時点では正しく動いていたなら、<br />
 いまいじった<code>Text_Kujira.xml</code>が必ずおかしいということになるはずです。<br />
-動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は無制限に広くなっていき、<br />
-最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、なんてことになることもあります。<br />
+動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は<br />
+無制限に広くなっていき、<br />
+最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、<br />
+なんてことになることもあります。<br />
 <strong><em>ためす is 大事。</em></strong></p>
 
 <h1 id="つづく">つづく</h1>

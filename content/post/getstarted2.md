@@ -166,7 +166,7 @@ PlayerType getOwner()
 (覚えていますか？Typeとあるときはその種類に対応する数値を表すのでした)
 私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので
 Player本体が欲しいです。
-そこで、`pPlayer = gc.getPlayer(ip)`とすると、pPlayerにPlayer本体がぎゅっと入ります。
+そこで、`pPlayer = gc.getPlayer(ip)`とすると、`pPlayer`にPlayer本体がぎゅっと入ります。
 ``` python
 ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
@@ -208,8 +208,8 @@ MODではXMLであってもPythonであっても、そのような定義を**Inf
 
 長かった道のりもそろそろ終わり、
 知りたいのはその文明がマリかどうか、なのでした。
-`civinfo.getType()`として\<Type\>タグが`CIVILIZATION_MALI`になっているかどうかで
-判断しましょう。
+`civinfo.getType()`として\<Type\>タグが
+`CIVILIZATION_MALI`になっているかどうかで判断しましょう。
 ``` python
 ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
@@ -237,7 +237,7 @@ if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
 if文の条件式の左辺はpCityから直接文明IDを取得しています。
 じつはこのような方法もあったのでした。
 右辺はマリの文明IDになっていますから、
-もしこれらが等しければpPlayerはマリ所属のはずです。
+もしこれらが等しければ`pCity`はマリ所属のはずです。
 
 ## くみこむ
 どちらの書き方でも意味は同じなのですが、後者の方が短くすっきり書けるので、
@@ -271,6 +271,7 @@ AIマリの都市には最初から図書館が建っていて、
 
 動きました！
 
+## 余談
 今回は結局**Player**も**Info**も使わずに書ける例も紹介してしまいましたが、
 どちらの概念も***極めて重要***なので、ぜひ使わなかった方でも書いて試してみてください。
 後の理解度が違ってくるはずです。

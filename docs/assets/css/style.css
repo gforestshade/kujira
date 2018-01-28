@@ -37,9 +37,14 @@ html {
   height: auto;
 }
 
-.content strong {
+.content strong em{
   font-weight: bold;
   color: #660000;  
+}
+
+.content strong{
+  font-weight: bold;
+  color: #000066;  
 }
 
 .content blockquote {

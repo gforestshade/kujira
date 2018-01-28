@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-30",
     "description": "",
-    "wordCount": 3203
+    "wordCount": 3298
   }
 </script>
 
@@ -137,7 +137,7 @@
 
     
     &middot; 7 Minute Read
-    &middot; 3203 Words
+    &middot; 3298 Words
   </div>
 
   
@@ -186,7 +186,8 @@
 
 <h2 id="準備">準備</h2>
 
-<p>例によって<code>kujira_for</code>というMODを作ります。</p>
+<p>例によって<code>kujira_for</code>というMODを作ります。<br />
+<code>kujira_if</code>をフォルダごとコピーして、フォルダ名をリネームしましょう。</p>
 
 <pre><code class="language-plain">└─kujira_for
     └─Assets
@@ -199,14 +200,20 @@
 
 <h2 id="構想">構想</h2>
 
-<p>『建造物が建設されたとき、その建造物がダンならば、都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与える』MODを作りましょう。<br />
-捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。<br />
-バニラの建造物によくある『この都市で生産されたユニットに教練Ⅰと教練Ⅱ』との違いに注意してください。<br />
-今作ろうとしているのはダンが建設完了したその瞬間に都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
+<p>《建造物が建設されたとき、その建造物がダンならば、<br />
+　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br />
+を作りましょう。<br />
+捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。</p>
+
+<p>バニラの建造物によくある<br />
+「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br />
+との違いに注意してください。<br />
+今作ろうとしているのはダンが建設完了したその瞬間に<br />
+都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
 
 <h2 id="建造物が建設されたとき">建造物が建設されたとき</h2>
 
-<p>KujiraEventManager.pyを&hellip;</p>
+<p>KujiraEventManager.pyをこのようにします&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -223,7 +230,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         CvUtil.pyPrint(&quot;onBuildingBuilt: called&quot;)
 </code></pre>
 
-<p>このようにしてみました。</p>
+<p>前回からの変更点はこの部分です&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 def onBuildingBuilt(self, argsList):
@@ -236,10 +243,12 @@ def onBuildingBuilt(self, argsList):
 
 <p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントのリスト</a>からonBuildingBuiltを探すと、</p>
 
+<blockquote>
 <pre><code class="language-plain">Function: def onBuildingBuilt()
 Parameters: self, argsList (pCity, iBuildingType)
 Description: Called when a building is built
 </code></pre>
+</blockquote>
 
 <p>となっています。<br />
 argsListに2つの値が入っているようです。例えば、</p>
@@ -254,16 +263,19 @@ iBuildingType = argsList[1]
 
 <h1 id="今日の理論編">今日の理論編</h1>
 
-<p>Python実行環境を用意しましょう。</p>
+<p>Python実行環境を用意しましょう。<br />
+一応埋め込みも置いておきます。<br />
+<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe></p>
 
 <h2 id="リスト">リスト</h2>
 
-<p>「リスト」とは、「要素」を順番に並べたもののことです。次のようにして作成します。</p>
+<p><strong>リスト</strong>とは、<strong>要素</strong>を順番に並べたもののことです。次のようにして作成します。</p>
 
 <pre><code class="language-python">a = [2, 3, 5, 7, 11]
 </code></pre>
 
-<p>それぞれの「要素」は<code>0番目</code>・<code>1番目</code>・<code>2番目</code>……と順番が割り当てられていて、<code>a[2]</code>として2番目を取り出すことができます。<br />
+<p>それぞれの<strong>要素</strong>は<strong>0番目</strong>・<strong>1番目</strong>・<strong>2番目</strong>&hellip;&hellip;と順番が割り当てられていて、<br />
+<code>a[2]</code>として<strong>2番目</strong>を取り出すことができます。<br />
 試してみましょう。</p>
 
 <pre><code class="language-python">a = [2, 3, 5, 7, 11]
@@ -275,9 +287,10 @@ print a[4]
 </code></pre>
 
 <p>何が出力されるでしょうか。予想して、実行してみましょう。<br />
-この番号の部分を「インデックス」(index)と呼びます。</p>
+この番号の部分を<strong>インデックス</strong>(index)と呼びます。</p>
 
-<p>「インデックス」は数値ですが、&rdquo;整数を表すなにか&rdquo;であれば整数そのものである必要はありません。</p>
+<p><strong>インデックス</strong>は数値ですが、「整数を表すなにか」であれば<br />
+整数そのものである必要はありません。</p>
 
 <pre><code class="language-python">def f(x):
     return x*x
@@ -290,23 +303,32 @@ print a[f(2)] # 関数の戻り値
 </code></pre>
 
 <p>頑張って予想しましょう。<br />
-<code>a = [13, 17, 23, 29, 31, 37]</code>とあることから、<br />
-- 0番目: 13<br />
-- 1番目: 17<br />
-- 2番目: 23<br />
-- 3番目: 29<br />
-- 4番目: 31<br />
-- 5番目: 37<br />
-となっています(番号は0から始まるのでした)。</p>
+<code>a = [13, 17, 23, 29, 31, 37]</code>とあることから、</p>
+
+<ul>
+<li>0番目: 13<br /></li>
+<li>1番目: 17<br /></li>
+<li>2番目: 23<br /></li>
+<li>3番目: 29<br /></li>
+<li>4番目: 31<br /></li>
+<li>5番目: 37<br />
+<br /></li>
+</ul>
+
+<p>となっています(番号は0から始まるのでした)。</p>
 
 <p><code>a[1]</code>は直接1番目の要素を参照していますから<code>17</code>ですね。<br />
-<code>b</code>は<code>5</code>ですから、<code>a[b]</code>はaの5番目の要素を指すはずです。<code>37</code>ですね。<br />
-<code>f(2)</code>は何でしょうか。関数の定義の部分に戻ってみると、引数の<code>x</code>を<code>x*x</code>にして返しているようです。<br />
-いま、引数に<code>2</code>を渡していますから2*2で<code>4</code>ですね。呼び出した部分がそのまま戻り値である<code>4</code>に置き換わるのでしたから<code>a[4]</code>となり、<code>31</code>になります。<br />
+<code>b</code>は<code>5</code>ですから、<code>a[b]</code>はaの5番目の要素を指すはずです。<code>37</code>ですね。</p>
+
+<p><code>f(2)</code>は何でしょうか。関数の定義の部分に戻ってみると、<br />
+引数の<code>x</code>を<code>x*x</code>にして返しているようです。<br />
+いま、引数に<code>2</code>を渡していますから2*2で<code>4</code>ですね。<br />
+呼び出した部分がそのまま戻り値である<code>4</code>に置き換わるのでしたから<br />
+<code>a[4]</code>となり、<code>31</code>になります。<br />
 さて予想もできたところで本当にそうなるか実行してみましょう。</p>
 
-<p>要素数が十分小さいなら、左辺を<code>,</code>で区切って順番に全て取り出すこともできます。<br />
-<!-- シーケンス型(正確に言えばiteratableな型)のunpack。概念は難しいがイディオムとして便利なのでここで紹介。 --></p>
+<p>要素数が十分少ないなら、左辺を<code>,</code>で区切って順番に全て取り出すこともできます。<br />
+<!-- シーケンス型(正確に言えばiterableな型)のunpack。概念は難しいがイディオムとして便利なのでここで紹介。 --></p>
 
 <pre><code class="language-python">a = [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;]
 e, f, g = a
@@ -319,8 +341,8 @@ print g
 
 <h2 id="繰り返し">繰り返し</h2>
 
-<p>どうせ全要素printするのなら、『リストの各要素に対して、』という表現があれば便利です。<br />
-というわけで、for文がそれにあたります。<br />
+<p>どうせ全要素printするのなら、「リストの各要素に対して、」という表現があれば便利です。<br />
+というわけで、<strong>for文</strong>がそれにあたります。<br />
 例えばこのように書きます。</p>
 
 <pre><code class="language-python">fib = [1, 1, 2, 3, 5, 8, 13, 21, 34]
@@ -330,18 +352,20 @@ for i in fib:
 
 <p><code>fib</code>の要素を1つずつ取り出して<code>i</code>に代入しつつ、中のブロックを実行します。<br />
 ブロックを実行し終わったらまた次の要素を<code>i</code>に代入して、中のブロックを実行します。<br />
-これを、リストの要素が尽きるまで&rdquo;繰り返し&rdquo;ます。</p>
+これを、リストの要素が尽きるまで&rdquo;繰り返し&rdquo;ます。<br />
+上のプログラムを実行して動作を確かめてみましょう。</p>
 
 <p>リストの内容分繰り返したいのではなく、ただ単に10回繰り返したいときもあるでしょう。<br />
 10個の要素を持ったリストを手作りすればよいのですが、めんどくさいですし、<br />
 数え間違いなどが起こってもいやですので、<code>range()</code>という関数を使います。<br />
-これは、0から指定した数字未満のリストを作って返してくれます。<br />
+これは、0以上n未満の整数のリストを作って返してくれます。<br />
 動作を見てみましょう。</p>
 
 <pre><code class="language-python">print range(15)
 </code></pre>
 
-<p>中の数字をいろいろいじっていろいろ実行してみるとよいでしょう。なるほどなるほどー。</p>
+<p>中の数字をいろいろいじっていろいろ実行してみるとよいでしょう。<br />
+(なるほどなるほどー。)</p>
 
 <p>これを使って、このように書けます。</p>
 
@@ -352,7 +376,9 @@ for i in fib:
 <p><code>range()</code>の動作をいろいろ試した方なら、予想できるかもしれません。<br />
 予想してから、実行してみましょう。</p>
 
-<p>for文を学んだことで、例えばもし、『タイル上のユニット数を取得する関数』と、『i番目のユニットを取得する関数』があったなら、<br />
+<p>for文を学んだことで、例えばもし、<br />
+「タイル上のユニット数を取得する関数」と、<br />
+「i番目のユニットを取得する関数」があったなら、<br />
 このように書けるはずです。</p>
 
 <pre><code class="language-python">nUnits = ユニット数を取得
@@ -361,14 +387,15 @@ for i in range(nUnits):
     pUnit.いろいろ...
 </code></pre>
 
-<p><code>nUnits</code>回だけブロックを繰り返しますから、タイル上の全ユニットになにかしていることになるはずです。<br />
+<p><code>nUnits</code>回だけブロックを繰り返しますから、<br />
+タイル上の全ユニットになにかしていることになるはずです。<br />
 夢が広がりますね。</p>
 
 <h1 id="modへ戻る">MODへ戻る</h1>
 
 <h2 id="onbuildingbuilt">onBuildingBuilt</h2>
 
-<p>というわけで、<code>onBuildingBuilt()</code>の<code>##########</code>より下を&hellip;</p>
+<p>というわけで、<code>onBuildingBuilt()</code>の<code>##########</code>より下をこうしてみました&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 ##########
@@ -384,14 +411,15 @@ if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>こうしてみました。<br />
-全体像だけ見てみると、インデントが入れ子になっていることが分かります。<br />
-for文も文ですから、if文のブロックの一員にすることができて、しかしfor文自身のブロックはそれとは区別しなければなりませんから<br />
+<p>全体像だけ見てみると、インデントが入れ子になっていることが分かります。<br />
+for文も文ですから、if文のブロックの一員にすることができて、<br />
+しかしfor文自身の中身ブロックはそれとは区別しなければなりませんから<br />
 さらに空白文字を足さなければならないのですね。</p>
 
-<p>さて、<code>argsList</code>が何だったかというと、<code>onBuildingBuilt()</code>においては<code>[pCity,iBuildingType]</code>という「リスト」なのでした。<br />
+<p>さて、<code>argsList</code>が何だったかというと、<code>onBuildingBuilt()</code>においては<br />
+<code>[pCity,iBuildingType]</code>という<strong>リスト</strong>なのでした。<br />
 <!-- 本当はリストじゃなくてタプルかもしれない。多分リスト。どのみちシーケンス型なので書き方には影響はない。 --><br />
-ので&hellip;</p>
+ので、このようにして取り出すことが<a href="#リスト">できるのでした</a>&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 pCity = argsList[0]
@@ -406,44 +434,50 @@ pCity, iBuildingType = argsList
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>として取り出すことができるのでした。</p>
-
-<p><code>iBuildingType</code>は今まさに建ったその建造物のTypeを表しているので、それがダンかどうかは&hellip;</p>
+<p><code>iBuildingType</code>は今まさに建ったその建造物のTypeを表しているので、<br />
+それがダンかどうかはこのようにすればわかります&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>こうすればよいですね。<br />
-(gc.getInfoTypeForString()の働きは大丈夫ですね？XMLキーをIDに直す関数なのでした)</p>
+<p>(<code>gc.getInfoTypeForString()</code>の働きは大丈夫ですね？キーを対応する種類IDに直す関数なのでした)</p>
 
-<p>さて、ゲーム中、各タイルの状況は刻々と変わります。(上に乗っているユニットや、建っている改善や、道が引かれているか、鉄道はどうか、etc&hellip;)<br />
-なのでこれにも例によって新しい名前があります。「Plot」(地点)です。<br />
-「Terrain」(地形)や「Improvement」(改善)といったものが「Plot」の制御下にあるほか、<br />
-「Unit」や「City」は自分がどこにあるかの情報を「Plot」でもっています。<br />
-たとえば<code>PCity.plot()</code>として<code>pCity</code>の「plot」を取得できます。</p>
+<p>さて、ゲーム中、各タイルの状況は刻々と変わります。<br />
+(上に乗っているユニットや、建っている改善や、道が引かれているか、鉄道はどうか、etc&hellip;)<br />
+なのでこれにも例によって新しい名前があります。<strong>Plot</strong>(地点)です。<br />
+<strong>Terrain</strong>(地形)や<strong>Improvement</strong>(改善)といったものが<strong>Plot</strong>の制御下にあるほか、<br />
+<strong>Unit</strong>や<strong>City</strong>は自分がどこにあるかの情報を<strong>Plot</strong>でもっています。<br />
+たとえば<code>PCity.plot()</code>として<code>pCity</code>の<strong>Plot</strong>を取得できます。</p>
 
-<p>そして、<code>plot</code>上にあるユニットの数は<code>plot.getNumUnits()</code>、<code>plot</code>上の<code>i</code>番目のユニットは<code>plot.getUnit(i)</code>で取得できます。<br />
-<code>pUnit = plot.getUnit(i)</code>と受けてあげることで各「Unit」に操作ができるようになります。</p>
+<p>そして、<code>plot</code>上にあるユニットの数は<code>plot.getNumUnits()</code>、<br />
+<code>plot</code>上の<code>i</code>番目のユニットは<code>plot.getUnit(i)</code>で取得できます。<br />
+<code>pUnit = plot.getUnit(i)</code>と受けてあげることで<br />
+各<strong>Unit</strong>に操作ができるようになります。</p>
 
-<p>今回は昇進を与えたいのでしたから、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyUnitからPromotionで探すと&hellip;</p>
+<p>今回は昇進を与えたいのでしたから、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyUnitからpromotionで探すと&hellip;</p>
 
+<blockquote>
 <pre><code class="language-plain">VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
 void (int (PromotionTypes) eIndex, bool bNewValue)
 </code></pre>
+</blockquote>
 
-<p>結構たくさんヒットしましたが、『昇進を無償で与える』に該当しそうなのはこれでしょうか。<br />
-PromotionType eIndex は例によって昇進IDなのでいいとして、もうひとつBOOL bNewValueという引数をとっています。<br />
-これは昇進を持っている状況を<code>True</code>、持っていない状況を<code>False</code>とみなしているのですね。<br />
-つまり『昇進を持つようにする』と『昇進の所持状況を<code>True</code>にする』を同一視しているのです。</p>
+<p>結構たくさんヒットしましたが、「昇進を無償で与える」に該当しそうなのはこれでしょうか。<br />
+PromotionType eIndex は例によって昇進の種類IDなのでいいとして、<br />
+もうひとつBOOL bNewValueという引数をとっています。<br />
+これは昇進を持っている状況を<code>True</code>、持っていない状況を<code>False</code>とみなしているのですね。</p>
+
+<p>つまり「昇進を持つようにする」と「昇進の所持状況を<code>True</code>にする」を同一視しているのです。<br />
+もちろん逆に「昇進を剥奪する」と「昇進の所持状況を<code>False</code>にする」が同一視されるわけです。</p>
 
 <p>ここまでわかれば教練Ⅰを持たせられます。<br />
 <code>pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)</code>ですね。</p>
 
 <h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
 
-<p>全体で&hellip;</p>
+<p>全体でこうなります&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -468,8 +502,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                 pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL2'), True)
 
 </code></pre>
-
-<p>こうなります。</p>
 
 <h2 id="ためす">ためす</h2>
 

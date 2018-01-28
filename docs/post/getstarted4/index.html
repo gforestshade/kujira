@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-26",
     "description": "",
-    "wordCount": 4359
+    "wordCount": 4366
   }
 </script>
 
@@ -137,7 +137,7 @@
 
     
     &middot; 9 Minute Read
-    &middot; 4359 Words
+    &middot; 4366 Words
   </div>
 
   
@@ -183,12 +183,14 @@
 
 <h1 id="もう少し先へ">もう少し先へ</h1>
 
-<p>前半戦たるその３では『都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD』を作りました。少し拡張してみましょう。</p>
+<p>前半戦たるその３では<br />
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br />
+を作りました。少し拡張してみましょう。</p>
 
-<p>『弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい』</p>
+<p>「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」</p>
 
 <p>と思ったとします。が、少々厄介です。<br />
-というのも、『時代に合わせた防衛ユニット』という表現があいまいなのです。<br />
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。<br />
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。</p>
 
 <h2 id="例えば">例えば</h2>
@@ -206,12 +208,16 @@
 これをそのままif文で並べても以下の理由によりまだうまくいきません。</p>
 
 <ul>
-<li>封建制と弓術と鉄道をどれも取得済みのとき、２つの条件を同時に満たしてしまい、両方が3体出てしまう<br /></li>
-<li>弓兵の出る条件である『ほかの条件をどれも満たさないなら』は今知っているif文では書けない<br />
+<li>封建制と弓術と鉄道をどれも取得済みのとき、<br />
+２つの条件を同時に満たしてしまい、両方が3体出てしまう<br /></li>
+<li>弓兵の出る条件である「ほかの条件をどれも満たさないなら」は<br />
+今知っているif文では書けない<br />
 <br /></li>
 </ul>
 
 <h1 id="そして今日の理論編">そして今日の理論編</h1>
+
+<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
 
 <h2 id="elifとelse">elifとelse</h2>
 
@@ -237,33 +243,38 @@ else:
 
 <h2 id="真と偽">真と偽</h2>
 
-<p>if文は条件式が「真」と解釈される場合にブロックを実行し、「偽」と解釈される場合にはelseのブロックを実行します。<br />
-pythonにおいて「真」と解釈されるものは以下の通りです。</p>
+<p>if文は条件式が<strong>真</strong>と解釈される場合にブロックを実行し、<strong>偽</strong>と解釈される場合にはelseのブロックを実行します。<br />
+pythonにおいて<strong>真</strong>と解釈されるものは以下の通りです。</p>
 
 <ul>
-<li>「True」<br /></li>
-<li>その他「偽」と解釈されるもの以外全部<br />
+<li><code>True</code><br /></li>
+<li>その他<strong>偽</strong>と解釈されるもの以外全部<br />
 <br /></li>
 </ul>
 
-<p>&ldquo;えっ&rdquo;と思われた方もいるかもしれませんが、その方が早いのです。<br />
-では肝心の「偽」と解釈されるものは以下の通りです。</p>
+<p>「えっ」と思われた方もいるかもしれませんが、そういうものなのです。<br />
+では肝心の<strong>偽</strong>と解釈されるものは以下の通りです。</p>
 
 <ul>
-<li>「False」<br /></li>
-<li>数値の0<br /></li>
-<li>空の文字列&rdquo;&rdquo;<br /></li>
-<li>空のタプル()・空のリスト[]・空のディクショナリ{}<br /></li>
-<li>「None」<br />
+<li><code>False</code><br /></li>
+<li>数値の<code>0</code><br /></li>
+<li>空の文字列<code>&quot;&quot;</code><br /></li>
+<li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code><br /></li>
+<li><code>None</code><br />
 <br /></li>
 </ul>
 
-<p>知らない用語がいろいろ出てきましたが、とりあえず今回は<code>True</code>(真)と<code>False</code>(偽)について知っておけばよいです。<br />
-<code>==</code>, <code>&lt;</code>, <code>&gt;</code>といった左辺と右辺を比較する「演算子」は、比較した結果により<code>True</code>か<code>False</code>のどちらかに&rdquo;置き換えられます&rdquo;。<br />
+<p>知らない用語がいろいろ出てきましたが、<br />
+とりあえず今回は<code>True</code>(<strong>真</strong>)と<code>False</code>(<strong>偽</strong>)について知っておけばよいです。</p>
+
+<p><code>==</code>, <code>&lt;</code>, <code>&gt;</code>といった左辺と右辺を比較する<strong>演算子</strong>は、<br />
+比較した結果により<code>True</code>か<code>False</code>のどちらかに「置き換えられます」。<br />
 <code>3 == 3</code>は<code>True</code>ですし、<code>3 == 5</code>は<code>False</code>です。<br />
-(覚えていますか？<code>==</code>は左辺と右辺が等しいかどうかを比較してくれるのでした。)<br />
-このあたりは、関数の呼び出し文字列が「戻り値」で置き換えられていたのと似ています。<br />
-理論編はただ読んでいてもなかなか頭に入りません。実際に少し書いてみましょう。Python2の実行環境で&hellip;</p>
+(覚えていますか？<code>==</code>は左辺と右辺が等しいかどうかを比較してくれるのでした。)</p>
+
+<p>このあたりは、関数の呼び出し文字列が「戻り値」で置き換えられていたのと似ています。<br />
+理論編はただ読んでいてもなかなか頭に入りません。実際に少し書いてみましょう。<br />
+Python2の実行環境で&hellip;</p>
 
 <pre><code class="language-python">print &quot;==&quot;
 print 3 == 3
@@ -297,7 +308,8 @@ print
 </code></pre>
 
 <p>どういう出力になるか書きながら予想して、それから実行してみましょう。<br />
-どうでしょうか。比較が正しいか正しくないかによって<code>True</code>か<code>False</code>に&rdquo;なって&rdquo;いることがわかると思います。</p>
+どうでしょうか。比較が正しいか正しくないかによって<br />
+<code>True</code>か<code>False</code>に「なって」いることがわかると思います。</p>
 
 <p>(あまり実用上の意味はありませんが)if文に<code>True</code>や<code>False</code>を直接書くこともできます。</p>
 
@@ -315,9 +327,9 @@ if False:
 
 <pre><code class="language-python">a = True
 if a:
-    print &quot;always jikkou sareru YO!&quot;
+    print &quot;itsumo jikkou sareru YO!&quot;
 else:
-    print &quot;never jikkou sarenai kamo&quot;
+    print &quot;zettai jikkou sarenai kamo&quot;
 </code></pre>
 
 <p>予想して、実行してみましょう。</p>
@@ -325,7 +337,7 @@ else:
 <h2 id="andとor">andとor</h2>
 
 <p>もう少しだけ我慢しておつきあいください。<br />
-例えば『<code>a</code>も<code>b</code>も3以上ならば』と書きたいときはどうすればよいでしょうか。<br />
+例えば「<code>a</code>も<code>b</code>も3以上ならば」と書きたいときはどうすればよいでしょうか。<br />
 少し解体して、<code>a&gt;=3</code>と<code>b&gt;=3</code>の「両方が<code>True</code>のときに限り<code>True</code>になる」表現が必要になります。<br />
 つまり、それが、<code>and</code>です。書いてみましょう。</p>
 
@@ -342,7 +354,8 @@ if a &gt; 3 and b &gt; 3:
 
 <p>予想して、実行してみてください。</p>
 
-<p>対になる「どちらかが<code>True</code>なら<code>True</code>、どちらも<code>False</code>のときのみ<code>False</code>」もあります。<code>or</code>です。</p>
+<p>対になる「どちらかが<code>True</code>なら<code>True</code>、どちらも<code>False</code>のときのみ<code>False</code>」もあります。<br />
+<code>or</code>です。</p>
 
 <pre><code class="language-python">a = 8
 b = 3
@@ -362,35 +375,35 @@ if a &gt; 9 and b &gt; 9:
 <table>
 <thead>
 <tr>
-<th align="center">a</th>
-<th align="center">b</th>
+<th align="center">&nbsp;&nbsp; a &nbsp;&nbsp;</th>
+<th align="center">&nbsp;&nbsp; b &nbsp;&nbsp;</th>
 <th align="center">a and b</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="center">True</td>
+<td align="center">〇</td>
+<td align="center">〇</td>
+<td align="center">〇</td>
 </tr>
 
 <tr>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="center">False</td>
+<td align="center">〇</td>
+<td align="center">×</td>
+<td align="center">×</td>
 </tr>
 
 <tr>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="center">False</td>
+<td align="center">×</td>
+<td align="center">〇</td>
+<td align="center">×</td>
 </tr>
 
 <tr>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="center">False</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
 </tr>
 </tbody>
 </table>
@@ -398,35 +411,35 @@ if a &gt; 9 and b &gt; 9:
 <table>
 <thead>
 <tr>
-<th align="center">a</th>
-<th align="center">b</th>
+<th align="center">&nbsp;&nbsp; a &nbsp;&nbsp;</th>
+<th align="center">&nbsp;&nbsp; b &nbsp;&nbsp;</th>
 <th align="center">a or b</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="center">True</td>
+<td align="center">〇</td>
+<td align="center">〇</td>
+<td align="center">〇</td>
 </tr>
 
 <tr>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="center">True</td>
+<td align="center">〇</td>
+<td align="center">×</td>
+<td align="center">〇</td>
 </tr>
 
 <tr>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="center">True</td>
+<td align="center">×</td>
+<td align="center">〇</td>
+<td align="center">〇</td>
 </tr>
 
 <tr>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="center">False</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +448,7 @@ if a &gt; 9 and b &gt; 9:
 
 <h2 id="条件の優先度を考える">条件の優先度を考える</h2>
 
-<p>さて、&rdquo;複数条件を満たしたときに優先されてほしい順&rdquo;に条件を並び替えましょう。</p>
+<p>さて、「複数条件を満たしたときに優先されてほしい順」に条件を並び替えましょう。</p>
 
 <ul>
 <li>なにもなければ弓兵が3体出る<br /></li>
@@ -445,7 +458,9 @@ if a &gt; 9 and b &gt; 9:
 <br /></li>
 </ul>
 
-<p>の例だと、機械化歩兵→機関銃兵→長弓兵の順ですね。機関銃兵が出る条件と長弓兵が出る条件を<br />
+<p>の例ですと、まるっと逆にして<br />
+機械化歩兵→機関銃兵→長弓兵の順にしましょう。<br />
+機関銃兵が出る条件と長弓兵が出る条件を<br />
 両方満たしたときには機関銃兵が優先されてほしいですし、<br />
 機関銃兵が出る条件を満たしてなくて、長弓兵が出る条件は満たしているときに限り、<br />
 長弓兵が出てほしいのです。</p>
@@ -460,47 +475,64 @@ else: #上のいずれでもないなら
     弓兵
 </code></pre>
 
-<p>『両方を取得済み』をどう書くかの知識も利用して、なんとなくこんな感じになることがわかります。</p>
+<p>「両方を取得済み」をどう書くかの知識も利用して、<br />
+こんな感じになることがわかります。</p>
 
 <h2 id="技術は誰のものか">技術は誰のものか</h2>
 
-<p>技術はPlayerが研究するわけですから取得済みの技術のリストもPlayerの元にある&hellip;わけではありません。<br />
+<p>技術はPlayerが研究するわけですから取得済みの技術のリストもPlayerの元にある<br />
+&hellip;&hellip;&hellip;&hellip;わけではありません。<br />
 そもそも実際のゲームでも、取得済み技術のリストはPlayerの占有財産ではありません。<br />
 そう、チーム全体で共有しているのです。それはTeamの持ち物です。<br />
-(通常のシングルプレイでは、Pleyer１人だけがメンバーのTeamが仮想的につくられています)<br />
-PythonでのMOD開発ではプログラムを記述するので、コンピュータが迷わないようにはっきりきっかり記述しなければなりません。<br />
+(通常のシングルプレイでは、Pleyer１人だけがメンバーのTeamが仮想的につくられています)</p>
+
+<p>PythonでのMOD開発ではプログラムを記述するので、<br />
+コンピュータが迷わないようにはっきりきっかり記述しなければなりません。<br />
 PlayerとTeamのような通常の一人プレイではあまり意識しないような細かい違いであっても重要になってきます。<br />
 細かい仕様に一喜一憂するのもMOD開発の楽しみのひとつだと思って、ゆるゆるいきましょう。</p>
 
 <p>さて、そうなればPlayerが属するTeamを取得しましょう。<br />
-<code>iTeam = pPlayer.getTeam()</code>です。&hellip;はい、これの戻り値は例によってチームIDです。<br />
+<code>iTeam = pPlayer.getTeam()</code>です。これの戻り値は例によってチームIDです。<br />
 チーム本体<!-- インスタンス -->を<code>gc</code>から取ってきましょう。 <code>pTeam = gc.getTeam(iTeam)</code>です。<br />
 もちろん、直接<code>gc.getTeam( pPlayer.getTeam() )</code>としてもよいでしょう。</p>
+
+<h2 id="関数の名前">関数の名前</h2>
 
 <p>そして技術を持っているか判定です。<br />
 <a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyTeamをクリックしてTechで探すと&hellip;</p>
 
+<blockquote>
 <pre><code class="language-plain">BOOL isHasTech (TechType iIndex)
 bool (TechID) - has the team researched techID
 </code></pre>
+</blockquote>
 
 <p>それっぽいのがありました。<br />
 だいぶ知識も蓄えたので、だんだん読めるようになってきました。</p>
 
-<pre><code class="language-plain">戻り値の種類 関数名(引数の種類 仮引数名)
-BOOL isHasTech (TechType iIndex)
+<blockquote>
+<pre><code class="language-plain">BOOL isHasTech (TechType iIndex)
+戻り値の種類 関数名(引数の種類 仮引数名)
 </code></pre>
+</blockquote>
 
 <!-- 私は型についてちゃんと説明する驚くべき方法を発見したが、それを記すには余白が狭すぎる -->
 
 <p>上の行はこう読みます。<br />
-(下の行は説明ですが、あったりなかったりで当てにならないことも多いので&hellip;)<br />
-BOOLとあるのは要するに戻り値として<code>True</code>か<code>False</code>を返すよ、の意です。<br />
-TechType、すなわち技術IDを引数として渡せば、持ってるなら<code>True</code>、持ってないなら<code>False</code>を戻り値として返すよ、というわけですね。<br />
-こうして<code>isHasTech</code>という名前から機能を推測したりできるのも、関数の強みなのでした。<br />
-この場合、動作を表す一般動詞(～する)ではなく、状態を表すbe動詞(～である)で始まっているので、<br />
-『～であるか？』という疑問形になっていてその情報を取得するのだろうということが戻り値BOOLとの合わせ技でわかってきます。<br />
-ほかにもCiv4の関数名はcan(～できるか？)で始まっている関数も戻り値BOOLであることが多いようですし、<br />
+(下の行は説明ですが、あったりなかったりで当てにならないことも多いので&hellip;)</p>
+
+<p>BOOLとあるのは要するに戻り値として<code>True</code>か<code>False</code>を返すよ、の意です。<br />
+TechType、すなわち技術の種類IDを引数として渡せば、<br />
+持ってるなら<code>True</code>、持ってないなら<code>False</code>を戻り値として返すよ、というわけですね。</p>
+
+<p>こうして<code>isHasTech</code>という名前から機能を推測したりできるのも、関数の強みなのでした。<br />
+この場合、動作を表す一般動詞(～する)ではなく、<br />
+状態を表すbe動詞(～である)で始まっているので、<br />
+「～であるか？」という疑問形になっていてその情報を取得するのだろう<br />
+ということが戻り値BOOLとの合わせ技でわかってきます。</p>
+
+<p>ほかにもCiv4の関数名はcan(～できるか？)で始まっている関数も<br />
+戻り値BOOLであることが多いようですし、<br />
 Yes/Noで答えられない戻り値はget(取得する)で始まっていることが多いようです。<br />
 <code>pCity.getPlayer()</code>や<code>pPlayer.getTeam()</code>などがまさにその例ですね。</p>
 
@@ -513,7 +545,7 @@ Yes/Noで答えられない戻り値はget(取得する)で始まっているこ
 <h2 id="共通な部分をまとめる">共通な部分をまとめる</h2>
 
 <p>今回のMODでは、出るのはどの兵種であっても3体です。<br />
-3体出す部分を共通化してしまって、</p>
+3体出す部分を共通化してしまって、こうしてしまいましょう&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 # 変数unitにユニットIDをどうにかして代入しておく
@@ -523,9 +555,12 @@ createUnit(pPlayer, unit, x, y)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>としてしまいましょう。<br />
-さらに言えば、unitには『Playerの(技術)状況に合わせた防衛ユニットのIDを取得して』それを代入するのですから、<br />
+<p>さらに言えば、<code>unit</code>には<br />
+「Playerの(技術)状況に合わせた防衛ユニットの種類IDを取得して」<br />
+それを代入するのですから、<br />
 <strong><em>まとめて言い表せる処理のかたまりにはわかりやすい名前を付けて関数にしましょう。</em></strong></p>
+
+<p>このようにします&hellip;</p>
 
 <pre><code class="language-python">def getDefensiveUnitType(pPlayer):
     pTeam = gc.getTeam( pPlayer.getTeam() )
@@ -542,19 +577,22 @@ createUnit(pPlayer, unit, x, y)
 
 </code></pre>
 
-<p>関数の定義方法は覚えていましたか？<br />
-pPlayerの状況に左右される情報を使いたいので、どのpPlayerかを呼び出し側に指定してもらうことにします。<br />
-指定するのは呼び出し側なので、定義側では引数をつくるだけです。<br />
-PlayerからチームID経由でpTeamを取得して&hellip;<br />
+<p><a href="https://gforestshade.github.io/kujira/post/getstarted3/#関数">関数の定義方法</a>は覚えていましたか？<br />
+<code>pPlayer</code>の状況に左右される情報を使いたいので、<br />
+どの<code>pPlayer</code>かを呼び出し側に指定してもらうことにします。<br />
+指定するのは呼び出し側なので、定義側では引数をつくるだけです。</p>
+
+<p>PlayerからチームID経由で<code>pTeam</code>を取得して&hellip;<br />
 <code>t = gc.getInfoTypeForString</code>で関数に別名をつけています。<br />
-せっかくちゃんとした名前がついている関数があるのにそれを勝手に縮めてしまうなんて本来は重大な反逆行為ですが、<br />
+せっかくちゃんとした名前がついている関数があるのに<br />
+それを勝手に縮めてしまうなんて本来は重大な反逆行為ですが、<br />
 <code>if pTeam.isHasTech( gc.getInfoTypeForString('TECH_ROBOTICS') ) and pTeam.isHasTech( gc.getInfoTypeForString('TECH_RIFLING') ):</code><br />
 のように多くの環境で折り返されて２行に渡ってしまい、ものすごく読み辛くなってしまうので<br />
 (折り返さない環境であっても見切れてしまって読み辛いことには変わりないので)<br />
 涙をのんでここで短縮しています。<br />
 <!-- まあでも実際、gc.getInfoTypeForString()は呼び出す頻度のわりに長すぎる気はする --></p>
 
-<p>if-elif-elseの中で、ユニットIDを<code>return</code>で返しています。<br />
+<p>if-elif-elseの中で、ユニットの種類IDを<code>return</code>で返しています。<br />
 この戻り値を<code>unit = getDefensiveUnitType(pPlayer)</code>として<code>unit</code>に代入して、<br />
 <code>createUnit(pPlayer, unit, x, y)</code>につなげていきます。</p>
 
@@ -605,7 +643,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 </code></pre>
 
-<!-- いろいろとまずいところがある。こんなところを読んでいる暇な人は粗探ししてみるのも一興。 -->
+<!-- いろいろとまずいところがあります。こんなところを読んでいる暇な人は粗探ししてみるのも一興。 -->
 
 <h2 id="ためす">ためす</h2>
 

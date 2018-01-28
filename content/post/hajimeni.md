@@ -22,18 +22,25 @@ PythonでもMODやりたいけどどこからはじめたらいいかよくわ�
 という方はここから読むことをお勧めします。
 
 ## 第１期シリーズ・はじめてのPythonMOD
+順番に読んでいけばPythonMODに入門できる、そんな内容を目指しました。
 
 - [その１]({{<ref "getstarted1.md">}})
 PythonでMOD作成する準備 ～ 図書館自動建設
 - [その２]({{<ref "getstarted2.md">}})
-えこひいき図書館　首都だけ・マリだけ
+えこひいき図書館・首都だけ/マリだけ・if文・Player・CivilizationInfo
 - [その３]({{<ref "getstarted3.md">}})
+防衛志向・ユニット生成・関数の使い方/作り方
 - [その４]({{<ref "getstarted4.md">}})
+取得済み技術・and/or/else
 - [その５]({{<ref "getstarted5.md">}})
+ダン強化・都市上にいる全ユニットに昇進・for文
 - [その６]({{<ref "getstarted6.md">}})
+XMLで新しい建造物を作る
 - [その７]({{<ref "getstarted7.md">}})
+草原化・マップのラップ・Map・Plot・リストとforの応用
 
 ## 第２期シリーズ・それからのPython
+もっと欲張りたい人のための、中級編です。
 
 - [その１]({{<ref "secondpy1.md">}})
 - [その２]({{<ref "secondpy2.md">}})

@@ -344,7 +344,7 @@ XMLではできないPythonでのMODの楽しみのひとつです。</p>
 (覚えていますか？Typeとあるときはその種類に対応する数値を表すのでした)<br />
 私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので<br />
 Player本体が欲しいです。<br />
-そこで、<code>pPlayer = gc.getPlayer(ip)</code>とすると、pPlayerにPlayer本体がぎゅっと入ります。</p>
+そこで、<code>pPlayer = gc.getPlayer(ip)</code>とすると、<code>pPlayer</code>にPlayer本体がぎゅっと入ります。</p>
 
 <pre><code class="language-python">ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
@@ -390,8 +390,8 @@ MODではXMLであってもPythonであっても、そのような定義を<stro
 
 <p>長かった道のりもそろそろ終わり、<br />
 知りたいのはその文明がマリかどうか、なのでした。<br />
-<code>civinfo.getType()</code>として&lt;Type&gt;タグが<code>CIVILIZATION_MALI</code>になっているかどうかで<br />
-判断しましょう。</p>
+<code>civinfo.getType()</code>として&lt;Type&gt;タグが<br />
+<code>CIVILIZATION_MALI</code>になっているかどうかで判断しましょう。</p>
 
 <pre><code class="language-python">ip = pCity.getOwner()
 pPlayer = gc.getPlayer(ip)
@@ -422,7 +422,7 @@ Pythonを含め、多くのプログラミング言語では<br />
 <p>if文の条件式の左辺はpCityから直接文明IDを取得しています。<br />
 じつはこのような方法もあったのでした。<br />
 右辺はマリの文明IDになっていますから、<br />
-もしこれらが等しければpPlayerはマリ所属のはずです。</p>
+もしこれらが等しければ<code>pCity</code>はマリ所属のはずです。</p>
 
 <h2 id="くみこむ">くみこむ</h2>
 
@@ -460,6 +460,8 @@ AIマリの都市には最初から図書館が建っていて、<br />
 ケルトの都市にはありません。</p>
 
 <p>動きました！</p>
+
+<h2 id="余談">余談</h2>
 
 <p>今回は結局<strong>Player</strong>も<strong>Info</strong>も使わずに書ける例も紹介してしまいましたが、<br />
 どちらの概念も<strong><em>極めて重要</em></strong>なので、ぜひ使わなかった方でも書いて試してみてください。<br />

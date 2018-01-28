@@ -1,5 +1,6 @@
 +++
 date = "2017-08-06"
+lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 6"
 banner = "/photo_yellow1024x200.jpg"
@@ -13,7 +14,8 @@ tags = ["はじめてのPythonMOD", "せつめい"]
 - あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません
 
 # 構想
-これまでは変更してばかりでした。Pythonでしかできない効果を持った新しい建造物を作りましょう！
+これまでは既存の動作を変更してばかりでした。
+Pythonでしかできない効果を持った新しい建造物を作りましょう！
 とりあえず"いつもの"を作ります。
 ``` plain
 └─kujira_fert
@@ -50,17 +52,30 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword
 
 ## ちょっとだけXMLの話
 [キー一覧](https://civ4-wiki.club/index.php?MOD%2F%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%2F%E3%82%AD%E3%83%BC%E4%B8%80%E8%A6%A7)を見ていただくとわかりやすいのですが、
-建造物の種類一つ一つにBuildingType、UBどうしをひとまとめにしたものにBuildingClassTypeが割り当てられています。
-例えばストーンヘンジで各都市に無償で供給されるのは、正確には『'BUILDING_OBELISK'という建造物』ではなく、
-『'BUILDINGCLASS_OBELISK'に属する建造物のうち文明にあったもの』であるのでした。
+建造物の種類一つ一つに**BuildingType**、
+UBどうしをひとまとめにしたものに**BuildingClassType**が割り当てられています。
+例えばストーンヘンジで各都市に無償で供給されるのは、
+正確には「BUILDING\_OBELISKという建造物」ではなく、
+「BUILDINGCLASS\_OBELISKに属する建造物のうち、その文明に合ったもの」なのです。
+(ですから、例えばアメリカ先住民がストヘンを建てると
+ちゃんとトーテムポールが配置されるのですね)
 
-UBが存在しない建造物であっても自分一人をメンバーとしたBuildingClassが必ずあります。
-というより、Buildingを作るときに所属先であるBuildingClassを自己申告するタグがあり、それは省略できないのでした。
-なのでオレオレ建造物を追加するときはそのBuildingひとつだけを含む予定のBuildingClassと
-そのBuildingClassに所属するBuilding本体とを一緒に作ってあげなければならないのでした。
+UBが存在しない建造物であっても自分一人をメンバーとした**BuildingClass**が必ずあります。
+というより、**Building**を作るときに所属先である**BuildingClass**を自己申告するタグがあり、
+それは省略できません。
+なのでオレオレ建造物を追加するときは、
+(その**Building**ひとつだけを含む予定の)**BuildingClass**と、
+(その**BuildingClass**に所属する)**Building**本体とを
+一緒に作ってあげなければいけません。
 
 ## CIV4BuildingClassInfos.xml
-というわけで`CIV4BuildingClassInfos.xml`には
+というわけで`CIV4BuildingClassInfos.xml`の
+
+↓ここに
+
+{{<img src="/img/kujira_fert_00.png" width="400" height="800">}}
+
+↓こんな感じのを追加しておきます。
 ``` xml
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_FERTILIZE_SHRINE</Type>
@@ -75,11 +90,22 @@ UBが存在しない建造物であっても自分一人をメンバーとした
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 ```
-こんな感じのを追加しておいて、
 
 ## CIV4BuildingInfos.xml
 
 `CIV4BuildingInfos.xml`はタグが多すぎて１からでは無理なのでBUILDING\_RECYCLING\_CENTERを元に改変することにして、
+
+↓ここから
+{{<img src="/img/kujira_fert_01.png" width="400" height="1600">}}
+↑ここまでを
+
+↓ここに貼り付けます。
+
+{{<img src="/img/kujira_fert_02.png" width="400" height="800">}}
+
+<br><br>
+
+そのあと、貼り付けた部分の一部を修正していきます。
 ``` xml
 			<BuildingClass>BUILDINGCLASS_FERTILIZE_SHRINE</BuildingClass>
 			<Type>BUILDING_FERTILIZE_SHRINE</Type>
@@ -88,38 +114,40 @@ UBが存在しない建造物であっても自分一人をメンバーとした
 			<Civilopedia>TXT_KEY_BUILDING_FERTILIZE_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_FERTILIZE_SHRINE_STRATEGY</Strategy>
 ```
-`<BuildingClass>`と`<Type>`を指定、それから各種テキストキーをそれっぽい名前にしておいて、
+↑`<BuildingClass>`と`<Type>`を指定、それから各種テキストキーをそれっぽい名前にしておいて、
 
 ``` xml
 			<Help>TXT_KEY_BUILDING_FERTILIZE_SHRINE_HELP</Help>
 ```
-`<Help>`というタグを追加しておきます。
+↑`<Help>`というタグを追加しておきます。
 
 ``` xml
 			<PrereqTech>TECH_BIOLOGY</PrereqTech>
 ```
-解禁技術を生物学にして、
+↑解禁技術を生物学にして、
 
 ``` xml
 			<iCost>10</iCost>
 ```
-(開発中の一時的な措置として)ハンマーを軽くしておいて、
+↑(開発中の一時的な措置として)ハンマーを軽くしておいて、
 
 ``` xml
 			<bBuildingOnlyHealthy>0</bBuildingOnlyHealthy>
 ```
-人口からの不衛生なしを解除して、
+↑人口からの不衛生なしを解除して、
 
 ``` xml
 			<iHappiness>-10</iHappiness>
 ```
-不幸+10にしてみました。
+↑不幸+10にしてみました。
 
 全部でどんな感じになったかは長いので章末に移動しました。[おまけ](#おまけ)をご覧ください。
 
 この時点で生物学解禁の不幸を+10生む建造物ができているはずです。
-ゲームを起動して、シヴィロペディアを見るなり、WBで生物学を取って建ててみるなりしてみましょう。
-もちろん、まだテキストキーの内容を定義していませんので、生の`TXT_KEY_...`が出てきますが、
+ゲームを起動して、シヴィロペディアを見るなり、
+WBで生物学を取って建ててみるなりしてみましょう。
+もちろん、まだテキストキーの内容を定義していませんので、
+生の`TXT_KEY_...`が出てきますが、
 定義していない以上当然のことなので、気にしないことにしましょう。
 
 ## Text
@@ -145,7 +173,7 @@ XML\\Text\\ に適当な名前のファイルを作ります。
 ```
 
 
-`Text_Kujira.xml`の中身は...
+`Text_Kujira.xml`の中身はこのようにします...
 ``` xml
 <?xml version="1.0" encoding="Shift_JIS"?>
 <Civ4GameText xmlns="http://www.firaxis.com">
@@ -194,11 +222,15 @@ XML\\Text\\ に適当な名前のファイルを作ります。
 
 ## ためす is 大事
 こうして一歩進むごとにいちいち動作確認するのは重要です。
-もしPythonをいじっていない今の状態でエラーが出るのなら、XMLにまずいところがあるはずです。
-もし一度目のお願いに従って動作確認をしていただいていて、その時点では正しく動いていたなら、
+もしPythonをいじっていない今の状態でエラーが出るのなら、
+XMLにまずいところがあるはずです。
+もし一度目のお願いに従って動作確認をしていただいていて、
+その時点では正しく動いていたなら、
 いまいじった`Text_Kujira.xml`が必ずおかしいということになるはずです。
-動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は無制限に広くなっていき、
-最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、なんてことになることもあります。
+動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は
+無制限に広くなっていき、
+最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、
+なんてことになることもあります。
 ***ためす is 大事。***
 
 # つづく
