@@ -266,7 +266,7 @@ Civ4ArtDefines_Unit.xmlの ART_DEF_UNIT_LION(ライオン以外の挙動は未�
 Art/Units/alicia/alicia2.nifに変えると・・・
 (ちょっと大きいですが)MMDモデルがライオンとしてシド星に現れました(画像略)！Enjoy!
 
-[第２章へ→](nifanimation.html)
+[第２章へ→]({{<ref "nifanimation.md">}})
 
 # エラー出るんだけど
 ここにあるエラーは手順を飛ばしてエラーになる場合なので、たぶん直せばうまくいきます。
