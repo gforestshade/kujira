@@ -49,17 +49,22 @@ googleAnalytics = "UA-111798374-1"
 
 [[params.banners]]
     name = "kujira_paleblue"
-    path = "/kujira_paleblue1024x200.png"
+    path = "/banner/kujira_paleblue1024x200.png"
     license = "いらすとや"
 
 [[params.banners]]
     name = "photo_yellow"
-    path = "/photo_yellow1024x200.jpg"
+    path = "/banner/photo_yellow1_1024x200.jpg"
     license = "['Choice' by Seán Mackey](https://www.flickr.com/photos/132803717@N02/27004253005/) (トリミング) under a [Creative Commons Attribution 2.0](https://creativecommons.org/licenses/by/2.0/deed.ja)."
 
 [[params.banners]]
+    name = "photo_pink1"
+    path = "/banner/photo_pink1_1024x200.png"
+    license = "['I love nature and nature loves me .....' by CLAUDIA DEA](https://www.flickr.com/photos/135366503@N05/31176873090/) (トリミング) under a [Creative Commons Attribution 2.0](https://creativecommons.org/licenses/by/2.0/deed.ja)."
+
+[[params.banners]]
     name = "green"
-    path = "/green1024x200.png"
+    path = "/banner/green1024x200.png"
 
 [blackfriday]
     extensions = ["hardLineBreak"]

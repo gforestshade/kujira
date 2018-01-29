@@ -43,6 +43,7 @@ XMLで新しい建造物を作る
 もっと欲張りたい人のための、中級編です。
 
 - [その１]({{<ref "secondpy1.md">}})
+ゲーム画面にメッセージ表示・変数と値・型・Unicode文字列
 - [その２]({{<ref "secondpy2.md">}})
 - [その３]({{<ref "secondpy3.md">}})
 - [その４]({{<ref "secondpy4.md">}})

@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-21",
     "description": "",
-    "wordCount": 3159
+    "wordCount": 3216
   }
 </script>
 
@@ -129,9 +129,13 @@
     
       
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -147,7 +151,7 @@
 
     
     &middot; 7 Minute Read
-    &middot; 3159 Words
+    &middot; 3216 Words
   </div>
 
   
@@ -230,7 +234,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h1 id="型を作る">型を作る</h1>
 
-<p>今日は「型」を新しく自作します。<br />
+<p>今日は<strong>型</strong>を新しく自作します。<br />
 まずその部分のコードを見てみましょう&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
@@ -240,7 +244,7 @@ class Hito:
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>これはHito型という型そのものの定義です。<br />
+<p>これはHito型という型の定義です。<br />
 実際に使うところも見てみましょう&hellip;</p>
 
 <pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
@@ -251,10 +255,8 @@ age = a.getAge()
 
 <p>２つとも代入文ですね。<br />
 <code>a = Hito()</code>でHito型の値を作り<code>a</code>に代入しています。<br />
-<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<br />
-<code>getAge()</code>を呼び出しています。<br />
-<code>getAge()</code>はreturn文で<code>18</code>を返しますから、<br />
-<code>age</code>には<code>18</code>が代入されます。</p>
+<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<code>getAge()</code>を呼び出しています。<br />
+<code>getAge()</code>はreturn文で<code>18</code>を返しますから、<code>age</code>には<code>18</code>が代入されます。</p>
 
 <p>変数の中身は直接見ることはできません。<br />
 文字列に埋め込んで、表示してみましょう&hellip;</p>
@@ -290,10 +292,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h1 id="クラス">クラス</h1>
 
-<p>今使ったのは「クラス」という仕組みです。<br />
-<code>class クラス名:</code>とすると、直後の「ブロック」の内容が「クラス」として定義されます。<br />
+<p>今使ったのは<strong>クラス</strong>という仕組みです。<br />
+<code>class クラス名:</code>とすると、直後の<strong>ブロック</strong>の内容が<strong>クラス</strong>として定義されます。<br />
 クラス名は同時に型名にもなっていて、あとで<code>クラス名()</code>とするとその型の値を生成することができます。<br />
-クラス型の値ひとつひとつを特に「インスタンス」と呼びます。<br />
+クラス型の値ひとつひとつを特に<strong>インスタンス</strong>と呼びます。<br />
 クラス→型、インスタンス→値、と対応しています。ついてきていますか？</p>
 
 <p>クラス定義に戻りまして、ブロックには関数の定義が並びます。<br />
@@ -301,19 +303,22 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 第1引数が<code>self</code>になっていることが見て取れます。<br />
 この<code>self</code>の中身が、実はインスタンスになっています。</p>
 
-<p>&hellip;&hellip;どういうことでしょうか？<br />
-少し上で『<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<code>getAge()</code>を呼び出しています。』と説明をしました。<br />
+<p>&hellip;&hellip;&hellip;&hellip;どういうことでしょうか？<br />
+少し上で「<code>age = a.getAge()</code>では『Hito型の変数<code>a</code>の』関数である<code>getAge()</code>を呼び出しています。」と説明をしました。<br />
 意味合い的には「<code>a</code>の年齢を取得する」になるわけです。<br />
-なので、<code>getAge()</code>を処理するにあたって自分の持ち主たるインスタンス<code>a</code>の情報を利用できるように、<br />
-<code>self</code>に<code>a</code>が代入された状態で<code>getAge()</code>が呼び出されるわけです。</p>
+なので、<code>getAge()</code>を処理するにあたって「自分は誰なのか？」に当たる情報、<br />
+自分の持ち主たるインスタンス<code>a</code>の情報を利用できるように、<br />
+<code>self</code>に<code>a</code>が代入された状態で<code>getAge()</code>が呼び出されるわけです。<br />
+(わかりずらいでしょうか&hellip;わからなくてもとりあえず読み進めてください)</p>
 
-<p>クラス定義ブロックの中にある関数のことを特に「メソッド」とよびます。<br />
-普通にメソッドを定義するとインスタンスの所有物としてのメソッドになり、<br />
-そのようなメソッドを「インスタンスメソッド」と呼びます。<br />
-<code>インスタンス.インスタンスメソッド名(追加の引数)</code>とすることでインスタンスメソッドを呼び出すことができます。<br />
+<p>クラス定義ブロックの中にある関数のことを特に<strong>メソッド</strong>とよびます。<br />
+普通にメソッドを定義するとインスタンスの所有物になり、<br />
+そのようなメソッドを<strong>インスタンスメソッド</strong>と呼びます。<br />
+<code>インスタンス.インスタンスメソッド名(追加の引数)</code>とすることで<br />
+インスタンスメソッドを呼び出すことができます。<br />
 インスタンスメソッドの第1引数<code>self</code>はインスタンスだというのは書いた通りですが、<br />
 ただのインスタンスではなく「この関数を呼び出した所有者たる」インスタンスなので、<br />
-特に「レシーバ」と呼ぶこともあります。</p>
+特に<strong>レシーバ</strong>と呼ぶこともあります。</p>
 
 <p>そして、civ4MODのやりたいことのほとんどが<br />
 このインスタンスメソッドの仕組みにより行われます。たとえば、</p>
@@ -351,7 +356,7 @@ Hitoクラスのインスタンスメソッド<code>getAge()</code>は、今の�
 </code></pre>
 
 <p>インスタンスの所有するメソッドがインスタンスメソッドだったように、<br />
-インスタンスの所有する変数を「インスタンス変数」と呼びます。<br />
+インスタンスの所有する変数を<strong>インスタンス変数</strong>と呼びます。<br />
 <code>インスタンス.インスタンス変数名</code>で代入したり参照したりできます。<br />
 ここでは「インスタンス<code>self</code>の変数<code>age</code>」の値を戻り値として返しています。</p>
 
@@ -368,7 +373,8 @@ Hitoクラスのインスタンスメソッド<code>getAge()</code>は、今の�
 <p><code>self</code>はレシーバです。そのほかに、<code>age</code>という引数をとって、<br />
 それを「<code>self</code>の<code>age</code>」に代入します。<br />
 <code>a</code>の<code>setAge()</code>を呼び出すには<code>a.setAge(25)</code>のようにします。<br />
-レシーバは自動的に設定されますので、それ以外の引数を指定しましょう。</p>
+呼び出すときにはレシーバ<code>self</code>は自動的に設定されますので、<br />
+<code>self</code>以外の引数を指定しましょう。</p>
 
 <p>ここまでをまとめてプログラムしてみましょう&hellip;</p>
 
@@ -503,11 +509,13 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </code></pre>
 
 <p>そうすると、<code>a = Hito(&quot;Emily&quot;, 35)</code>と書けるようになり、<br />
-逆に<code>a = Hito()</code>とは書けなくなります。<br />
-インスタンスを作るときに呼び出されるメソッドを「コンストラクタ」と呼び、<br />
+逆に<code>a = Hito()</code>とは書けなくなります。</p>
+
+<p>インスタンスを作るときに呼び出されるメソッドを<strong>コンストラクタ</strong>と呼び、<br />
 コンストラクタが要求している(<code>self</code>以外の)引数をすべて与えないと<br />
-インスタンスを作ることができなくなります。<br />
-この仕組みによって、インスタンスにとって必須なインスタンス変数を<br />
+インスタンスを作ることができなくなります。</p>
+
+<p>この仕組みによって、インスタンスにとって必須なインスタンス変数を<br />
 設定し忘れるエラーを<strong><em>未然に防げる</em></strong>ため、べんりです。</p>
 
 <h1 id="ふえるインスタンス">ふえるインスタンス</h1>
@@ -628,8 +636,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                     
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//kujira_paleblue1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
                           alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                       
@@ -658,7 +668,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
                       
                     
@@ -684,7 +696,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
                       
                     
@@ -710,7 +724,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
                       
                     
@@ -736,7 +752,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
                       
                     
@@ -762,7 +780,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承２" class="thumbnail-image"></span>
                       
                     
@@ -788,7 +808,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承１" class="thumbnail-image"></span>
                       
                     
@@ -814,7 +836,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
                       
                     

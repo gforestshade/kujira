@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-17",
     "description": "",
-    "wordCount": 3592
+    "wordCount": 3675
   }
 </script>
 
@@ -129,9 +129,13 @@
     
       
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -147,7 +151,7 @@
 
     
     &middot; 8 Minute Read
-    &middot; 3592 Words
+    &middot; 3675 Words
   </div>
 
   
@@ -189,7 +193,8 @@
 
 <p>これは、<br />
 「はじめてのPythonMOD」シリーズの続きです。<br />
-もうちょっとPythonの書き方について勉強して、より思い通りに記述できるようになろう、というのが大きな目的です。</p>
+もうちょっとPythonの書き方について勉強して、<br />
+より思い通りに記述できるようになろう、というのが大きな目的です。</p>
 
 <h2 id="これは何でないか">これは何でないか</h2>
 
@@ -303,17 +308,19 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 
 <p>さっきと同じく、PythonDbg.logに<code>PY:Hello, Python!</code>と出力されています。</p>
 
-<p>このように、プログラムではデータに名前を付けてとっておいて、後からその名前で中のデータを参照できるのですが、<br />
-そのうちの<code>a</code>を「変数」、その中に納まっているデータを「値」と呼びます。<br />
-そして<code>a = &quot;Hello, Python!&quot;</code>のように、<code>変数名 = 値</code>の形になっている「文」を代入と呼びます。<br />
+<p>このように、プログラムではデータに名前を付けてとっておいて、<br />
+後からその名前で中のデータを参照できるのですが、<br />
+そのうちの<code>a</code>を<strong>変数</strong>、その中に納まっているデータを<strong>値</strong>と呼びます。<br />
+そして<code>a = &quot;Hello, Python!&quot;</code>のように、<code>変数名 = 値</code>の形になっている<strong>文</strong>を<strong>代入</strong>と呼びます。<br />
 この場合「<code>a</code>という名前の変数に<code>&quot;Hello, Python!&quot;</code>という値を代入している」ということになります。</p>
 
-<p>代入でない場所に書かれている変数は中身の値を表します。<br />
-いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、<code>CvUtil.pyPrint(a)</code>は<code>CvUtil.pyPrint(&quot;Hello, Python!&quot;)</code>と同じ意味を表すことになります。</p>
+<p>代入以外の場所に書かれている変数は中身の値を表します。<br />
+いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、<br />
+<code>CvUtil.pyPrint(a)</code>は<code>CvUtil.pyPrint(&quot;Hello, Python!&quot;)</code>と同じ意味を表すことになります。</p>
 
 <h2 id="型">型</h2>
 
-<p>「値」にはデータの性質によって種類があります。<br />
+<p><strong>値</strong>にはデータの性質によって種類があります。<br />
 たとえば&hellip;</p>
 
 <ul>
@@ -324,11 +331,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 <br /></li>
 </ul>
 
-<p>&hellip;などなど、いろいろあります。</p>
+<p>&hellip;&hellip;&hellip;&hellip;などなど、いろいろあります。</p>
 
 <h2 id="型の一致">型の一致</h2>
 
-<p>「型」の話で大事なのは、<strong><em>種類があっていないと関数は基本的に失敗する</em></strong>ということです。</p>
+<p><strong>型</strong>の話で大事なのは、<strong><em>型の種類があっていないと関数は基本的に失敗する</em></strong>ということです。</p>
 
 <p>試してみましょう。文字列型の代わりに数値型を使って<code>CvUtil.pyPrint(a)</code>してみます。</p>
 
@@ -379,7 +386,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 
 <p>しかし、融通が利くことはまれです。<br />
 基本的には型があっていないとだめです。<br />
-例えば、同じようなプログラムでも、片方はOKでもう片方はエラーです。数値型同士でないと自由に計算はできません。</p>
+例えば、同じようなプログラムでも、片方はOKでもう片方はエラーです。</p>
+
+<p>数値型同士でないと自由に計算はできません。<br />
+どちらがエラーになるか、予想して確かめましょう。<br />
+(エラーになったことを確認するにはどうすればよかったでしょうか？)</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
@@ -399,9 +410,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>どちらがエラーになるか、予想して確かめましょう。(エラーになったことを確認するにはどうすればよいでしょうか？)</p>
+<p><br></p>
 
-<p>あるいは、ややこしいことに、同じ書き方でも動作が違ってくるような場合もあります。</p>
+<p>あるいは、ややこしいことに、同じ書き方でも動作が違ってくるような場合もあります。<br />
+下の2つはどちらもエラーにはなりません。<br />
+両方実行してみて、出力結果を見比べ、どうなっているか考えてみましょう。</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
@@ -421,9 +434,10 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>どちらもエラーにはなりません。両方実行してみて、出力結果を見比べ、どうなっているか考えてみましょう。</p>
+<p><br></p>
 
-<p>そして、違う型同士の値を足し算することはできません。</p>
+<p>そして、違う型同士の値を足し算することはできません。<br />
+エラーになることを確かめてみましょう。</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
@@ -434,11 +448,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>エラーになることを確かめてみましょう。</p>
-
 <h1 id="文字列と-数値と">文字列と、数値と。</h1>
 
-<p>でも、作っているMODによっては、数値型で計算した後、計算結果を文字列に混ぜて表示したいこともあるかもしれません。</p>
+<p>でも、作っているMODによっては、数値型で計算した後、<br />
+計算結果を文字列に混ぜて表示したいこともあるかもしれません。<br />
+そこでこのようにしてしましたが、うまくいきません&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
@@ -470,7 +484,7 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 
 <p>起動して、PythonDbg.logに<code>ato 8 ta-n desu!</code>と書き込まれていることを確認しましょう。</p>
 
-<h2 id="文字列を表示する">文字列を表示する</h2>
+<h1 id="ゲーム画面に表示してみる">ゲーム画面に表示してみる</h1>
 
 <p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。<br />
 <code>CyInterface().addImmediateMessage(表示したい文字列の値, &quot;&quot;)</code>です。</p>
@@ -491,11 +505,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 <br />
 いいですね！</p>
 
-<h2 id="フォーマット文字列">フォーマット文字列</h2>
+<h1 id="フォーマット文字列">フォーマット文字列</h1>
 
 <p>足し算で連結する方法がうまくいきましたが、ややコードが見づらいですしわかりづらいです。<br />
-&ldquo;ato (turnleftの値) ta-n desu!&ldquo;みたいにかけたらいいのに&hellip;<br />
-というわけで、フォーマット文字列という機能がそれを実現してくれます。<br />
+&ldquo;ato (turnleftの値) ta-n desu!&ldquo;みたいにかけたらいいのに&hellip;&hellip;&hellip;&hellip;<br />
+というわけで、<strong>フォーマット文字列</strong>という機能がそれを実現してくれます。<br />
 <code>%d</code>と<code>%</code>を使って<code>message = &quot;ato %d ta-n desu!&quot; % turnleft</code>のように書くと、<br />
 <code>%d</code>のある位置に数値型の変数、つまり<code>turnleft</code>の値が文字列の一部として埋め込まれます。</p>
 
@@ -509,18 +523,20 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<h2 id="文字列と-数値と-それから日本語と">文字列と、数値と、それから日本語と</h2>
+<h1 id="文字列と-数値と-それから日本語と">文字列と、数値と、それから日本語と</h1>
 
 <p>ここまでわかると、どうせなら「あと8ターンです！」と日本語で表示したくなるのですが、<br />
 今までの方法をそのまま流用してもうまくいきません。<br />
-それもそのはず、日本語の文字列は型が違うのです。<br />
-日本語の文字列はUnicode文字列型という型になり、<code>u&quot;日本語&quot;</code>と書きます。<br />
+それもそのはず、日本語の文字列は型が違うのです。</p>
+
+<p>日本語の文字列は<strong>Unicode文字列型</strong>という型になり、<code>u&quot;日本語&quot;</code>と書きます。<br />
 ただひとつ注意点があり、この書き方でソースコード中に日本語を書き込むとき、<br />
 「その.pyファイルはどの文字コードで保存されているか」を1行目に明示的に示す必要があります。<br />
 普通にしていればおそらくshift_jisという文字コードになりますから、<br />
 (もちろん、わかっている方で、euc_jpやutf-8をお使いの方は読み替えてください)<br />
-1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。<br />
-そのうえで、フォーマット文字列の仕組みを使い、<br />
+1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。</p>
+
+<p>そのうえで、フォーマット文字列の仕組みを使い、<br />
 <code>message = u&quot;あと%dターンです！&quot; % turnleft</code>とすればよいです。</p>
 
 <p>ファイル全体で&hellip;</p>
@@ -603,8 +619,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                     
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//kujira_paleblue1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
                           alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                       
@@ -633,7 +651,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
                       
                     
@@ -659,7 +679,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
                       
                     
@@ -685,7 +707,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
                       
                     
@@ -711,7 +735,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
                       
                     
@@ -737,7 +763,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承２" class="thumbnail-image"></span>
                       
                     
@@ -763,7 +791,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承１" class="thumbnail-image"></span>
                       
                     
@@ -789,7 +819,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
                       
                     

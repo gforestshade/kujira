@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-20",
     "description": "",
-    "wordCount": 5055
+    "wordCount": 5083
   }
 </script>
 
@@ -129,9 +129,13 @@
     
       
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -147,7 +151,7 @@
 
     
     &middot; 11 Minute Read
-    &middot; 5055 Words
+    &middot; 5083 Words
   </div>
 
   
@@ -197,7 +201,7 @@
 これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで<br />
 Unicode文字列を作り、表示してあげます。</p>
 
-<p>コードは&hellip;</p>
+<p>コードはこうなります&hellip;</p>
 
 <pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
@@ -220,17 +224,15 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 </code></pre>
 
-<p>こうなりますね。</p>
-
 <p>ゲーム開始してみましょう。<br />
 <a href="https://gforestshade.github.io/kujira/img/kujira_var_30.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_30.png"    /></a>
 </p>
 
 <h1 id="紀元前-4000年">紀元前-4000年</h1>
 
-<p>うまく表示されました&hellip;が、&rdquo;紀元前&rdquo;がマイナスとして表現されてしまっていますね。<br />
+<p>うまく表示されました&hellip;が、「紀元前」がマイナスとして表現されてしまっていますね。<br />
 もちろん、<code>year</code>は数値型であり、数値以外のデータを含むことはできませんから、<br />
-これでよいのですが&hellip;贅沢を言うなら、ちゃんと&rdquo;紀元前&rdquo;と表示されてほしいところです。<br />
+これでよいのですが&hellip;&hellip;&hellip;&hellip;贅沢を言うなら、ちゃんと「紀元前」と表示されてほしいところです。<br />
 さらにわがままを言うなら、プラスなら紀元後、マイナスなら紀元前、がついてくれると<br />
 なおうれしいです。if文を使って書いてみましょう。</p>
 
@@ -253,7 +255,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 実際に埋め込みたい値を<code>%</code>の後ろに指定しますが、<br />
 2つ以上ある場合は<code>()</code>でくくる必要があります。<br />
 ここでは文字列として<code>ce</code>の値、数値として<code>year</code>の値を指定しています。<br />
-で、変数<code>ce</code>がどこから来ているのかというと、上のif文で「yearの値が0以上」かそうでないかで異なる値を代入していることが分かります。</p>
+で、変数<code>ce</code>がどこから来ているのかというと、<br />
+上のif文で「yearの値が0以上」かそうでないかで異なる値を代入していることが分かります。</p>
 
 <p>処理の流れはこうなります。</p>
 
@@ -268,14 +271,14 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <br /></li>
 </ul>
 
-<p>結果、呼び出した関数により画面上にメッセージが表示される&hellip;はずです。<br />
+<p>結果、呼び出した関数により画面上にメッセージが表示される&hellip;&hellip;&hellip;&hellip;はずです。<br />
 やってみましょう。<br />
 <a href="https://gforestshade.github.io/kujira/img/kujira_var_31.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_31.png"    /></a>
 </p>
 
 <h1 id="紀元前4000年">紀元前4000年</h1>
 
-<p>&ldquo;紀元前&rdquo;を表示することには成功しました。<br />
+<p>「紀元前」を表示することには成功しました。<br />
 が、結局<code>year</code>は<code>-4000</code>のままなので、<br />
 それがそのまま表示されてしまっていることが不満です。<br />
 <code>year</code>の値を<code>-4000</code>から<code>4000</code>へと変えたいです。<br />
@@ -288,12 +291,12 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 </code></pre>
 
 <p>実は、変数は何回でも上書き代入ができます。<br />
-その上書きする値を計算するために、自分自身の元の中身を使うことができます。</p>
+その上書きする値を計算するために、<strong><em>自分自身の元の中身を使うことができます</em></strong>。</p>
 
 <p>それを踏まえると、これも代入文(<code>変数名 = 値</code>)であることがわかります。<br />
 <code>=</code>の左には<code>year</code>という変数名が書いてありますし、<br />
-<code>=</code>の右には <code>-(yearの中身の値)</code>の計算結果という値が書いてあります。<br />
-ですからこの「文」は、「<code>-year</code>という値を<code>year</code>に代入する」と読みます。</p>
+<code>=</code>の右には 「<code>-(yearの中身の値)</code>の計算結果」という値が書いてあります。<br />
+ですからこの<strong>文</strong>は、「<code>-year</code>という値を<code>year</code>に代入する」と読みます。</p>
 
 <p>ところで、<code>-year</code>とはなにを計算しているのでしょうか。<br />
 これは見た目通り「<code>year</code>にマイナスをつけた数」を計算しています。<br />
@@ -301,10 +304,11 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 その場合も、数学でいうところの「-(-4000)」を計算します。<br />
 この数式の答えは+4000ですから、<code>-year</code>の計算結果は+4000を表すことになります。</p>
 
-<p>これでマイナスを取ることができます&hellip;が、マイナスを取りたいのは<code>year</code>が元からマイナスだった時だけです。<br />
+<p>これでマイナスを取ることができます&hellip;&hellip;&hellip;&hellip;.が、<br />
+マイナスを取りたいのは<code>year</code>が元からマイナスだった時だけです。<br />
 したがって「yearが0以上でないとき」に実行されるelseブロックにだけこの文を書きます。</p>
 
-<p>全部で&hellip;</p>
+<p>全部でこうなります&hellip;</p>
 
 <pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
@@ -332,8 +336,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         CyInterface().addImmediateMessage(message, &quot;&quot;)
 </code></pre>
 
-<p>こうなります。</p>
-
 <p>さんざん長々と説明しましたが、1行しか変わっていません。(どこかはわかりますね？)<br />
 どこが変わったのかわかったら、ゲームを開始してみましょう。<br />
 <a href="https://gforestshade.github.io/kujira/img/kujira_var_32.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_32.png"    /></a>
@@ -343,8 +345,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <h1 id="showgameturnyear">showGameTurnYear()</h1>
 
 <p>「現在年を上に表示する」というひとつの機能のかたまりが完成しました。<br />
-名前をつけておきます。表示する、ですから<br />
-<code>showGameTurnYear()</code>にしましょう。</p>
+機能のかたまりができたので、名前をつけておきます。<br />
+「表示する」ですから<code>showGameTurnYear()</code>にしましょう。</p>
 
 <pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 def showGameTurnYear():
@@ -395,7 +397,7 @@ def showGameTurnYear():
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onBeginPlayerTurn(self, argsList):
-        'Called at the beginning of a player's turn'
+        'Called at the beginning of a players turn'
         super(self.__class__, self).onBeginPlayerTurn(argsList)
         ##########
         # 単に呼び出す
@@ -414,13 +416,16 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h2 id="一般化">一般化</h2>
 
-<p>実は、ゲーム開始時、<code>year = -4000</code>だと先入観がある時点では、<br />
+<p>実は、ゲーム開始時のことしか考えないなら、<br />
+<code>year = -4000</code>に決まっていますから、<br />
 「マイナスを取って紀元前をつける」だけでも良かったはずです。<br />
-わざわざif文まで使って紀元後のことを考えるよりは、短く書けたことでしょう。<br />
-が、実際には<code>gc.getGame().getGameTurnYear()</code>の戻り値は<br />
-ゲームの進行状況によって変わるのであって、マイナスかプラスかは一概にはわからないはずです。<br />
-そこで、あえて最初から状況を決めつけないコードを書こうとしました。<br />
-この考え方を&rdquo;一般化&rdquo;あるいは&rdquo;抽象化&rdquo;と呼びます。<br />
+わざわざif文まで使って紀元後のことを考えるよりは、短く書けたことでしょう。</p>
+
+<p>が、実際には<code>gc.getGame().getGameTurnYear()</code>の戻り値は<br />
+ゲームの進行状況によって変わるのであって、マイナスかプラスかは一概にはわからないはずです。</p>
+
+<p>そこで、あえて最初から状況を決めつけないコードを書こうとしました。<br />
+この考え方を<strong>一般化</strong>あるいは<strong>抽象化</strong>と呼びます。<br />
 変数や関数の力を借りて一般化する、あるいは一般化されたコードを読み解く、<br />
 ことで複雑な動作でも把握しやすくすることができるのです。</p>
 
@@ -430,12 +435,13 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 さらに私たちは、年代を表示したければいつでもまた別の場所で<code>showGameTurnYear()</code>と書くだけで<br />
 年代を表示させることができる便利な道具を手に入れたことにもなります。<br />
 確かにコードのかたまりを丸ごとコピペすることで同じ恩恵を受けることはできます、が<br />
-関数では&rdquo;集中・集約&rdquo;されているという非常に大きな利点があります。</p>
+関数では「集中・集約」されているという非常に大きな利点があります。</p>
 
 <p>たとえばいろんなタイミングで年代を表示してみて参考にしていたとして、さらに<br />
 「上に表示されるのはうるさい、ログファイルに書き込んで後から見られたらいいや」<br />
-と思ったとすると、やることは<code>CyInterface().addImmediateMessage(message, &quot;&quot;)</code>を<br />
-<code>print message</code>に変えることです。</p>
+と思ったとしても、<br />
+<code>CyInterface().addImmediateMessage(message, &quot;&quot;)</code>が書いてある<strong><em>一か所だけ</em></strong>を<br />
+<code>print message</code>に変えに変えれば済みます。</p>
 
 <pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         year = gc.getGame().getGameTurnYear()
@@ -451,17 +457,18 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>関数では各地から同じコードを呼び出していますから、関数の中身を変えれば終わりです。</p>
+<p>関数にまとめておいたことで、各地から同じ場所のコードを呼び出していますから、<br />
+関数の中身を変えれば終わりです。</p>
 
 <p>では、このかたまりごと各地にコピペしたとしたらどうでしょうか。<br />
 途端にコピペした箇所すべてを探し出して修正しなければならなくなってしまいます。<br />
 修正量はコピペした回数に比例して跳ね上がってしまいますし、<br />
 そもそもどこにコピペしたのかを一生懸命全箇所思い出す必要があります。<br />
-もし、そのつらい修正作業の途中でミスタイプしてしまって新たなバグを仕込んでしまったら&hellip;<br />
+もし、そのつらい修正作業の途中でミスタイプしてしまって新たなバグを仕込んでしまったら&hellip;&hellip;&hellip;&hellip;<br />
 いろいろと困ってしまいます。</p>
 
 <p>そもそも、<br />
-別の場所で同じ動作をするときはコピペせずに同じ関数を呼び出し、<br />
+「別の場所で同じ動作をする」ときはコピペせずに関数を呼び出し、<br />
 関数の中を変えることによって全箇所でちゃんと挙動が変わってくれる、<br />
 まさにそのしくみによってCiv4のMODは動いています。<br />
 ターン開始時にCiv4のプログラムが毎回律義に<code>onBeginPlayerTurn()</code>を<br />
@@ -542,7 +549,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 もうひとつ<code>%s</code>をふやして、頭にあいさつを付けられるようにしてみましょう。<br />
 そのあいさつの文字列はどこから取るのかというと&hellip;<br />
 関数の外から指定してもらうようにしてみましょう。<br />
-引数の仕組みを使って次のようにできます。</p>
+引数の仕組みを使って次のようにできます&hellip;</p>
 
 <pre><code>def showGameTurnYear(prefix):
     '''現在年を上に表示する'''
@@ -662,8 +669,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                     
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//kujira_paleblue1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
                           alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                       
@@ -692,7 +701,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
                       
                     
@@ -718,7 +729,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
                       
                     
@@ -744,7 +757,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
                       
                     
@@ -770,7 +785,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
                       
                     
@@ -796,7 +813,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承２" class="thumbnail-image"></span>
                       
                     
@@ -822,7 +841,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="付録：継承１" class="thumbnail-image"></span>
                       
                     
@@ -848,7 +869,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//green1024x200.png)"
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
                       
                     
