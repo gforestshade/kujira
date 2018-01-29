@@ -37,6 +37,11 @@ html {
   height: auto;
 }
 
+.banner-license {
+  text-align: right;
+  font-size: smaller;
+}
+
 .content strong em{
   font-weight: bold;
   color: #660000;  

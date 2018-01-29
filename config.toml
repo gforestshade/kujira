@@ -1,7 +1,7 @@
 baseurl = "https://gforestshade.github.io/kujira/"
 languageCode = "en"
 title = "Kujira, Civ4 Mod Blog"
-description = "‚±‚ÌƒTƒCƒg‚ÍACiv4‚ÌMODŠJ”­î•ñ‚ğ”­M‚µ‚Ä‚¢‚­ƒuƒƒO‚Å‚·B"
+description = "ã“ã®ã‚µã‚¤ãƒˆã¯ã€Civ4ã®MODé–‹ç™ºæƒ…å ±ã‚’ç™ºä¿¡ã—ã¦ã„ããƒ–ãƒ­ã‚°ã§ã™ã€‚"
 author = "gforest_shade"
 copyright = "gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)"
 canonifyurls = true
@@ -46,6 +46,20 @@ googleAnalytics = "UA-111798374-1"
     categories = true
     tags = true
     tag_cloud = false
+
+[[params.banners]]
+    name = "kujira_paleblue"
+    path = "/kujira_paleblue1024x200.png"
+    license = "ã„ã‚‰ã™ã¨ã‚„"
+
+[[params.banners]]
+    name = "photo_yellow"
+    path = "/photo_yellow1024x200.jpg"
+    license = "['Choice' by SeÃ¡n Mackey](https://www.flickr.com/photos/132803717@N02/27004253005/) (ãƒˆãƒªãƒŸãƒ³ã‚°) under a [Creative Commons Attribution 2.0](https://creativecommons.org/licenses/by/2.0/deed.ja)."
+
+[[params.banners]]
+    name = "green"
+    path = "/green1024x200.png"
 
 [blackfriday]
     extensions = ["hardLineBreak"]

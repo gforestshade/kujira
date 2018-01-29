@@ -3,7 +3,7 @@ date = "2017-10-17"
 lastmod = "2018-01-28"
 draft = false
 title = "それからのPython 1"
-banner = "/green1024x200.png"
+banner = "green"
 tags = ["それからのPython", "せつめい"]
 +++
 

@@ -2,7 +2,7 @@
 date = "2017-05-14T12:00:00+09:00"
 draft = false
 title = "第１章"
-banner = "/green1024x200.png"
+banner = "green"
 tags = ["MMD_to_CIV4", "せつめい"]
 +++
 # この文章について

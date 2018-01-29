@@ -3,7 +3,7 @@ date = "2017-07-26"
 lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 4"
-banner = "/photo_yellow1024x200.jpg"
+banner = "photo_yellow"
 tags = ["はじめてのPythonMOD", "せつめい"]
 +++
 

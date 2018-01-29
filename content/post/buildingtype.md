@@ -2,7 +2,7 @@
 date = "2017-12-20"
 draft = true
 title = "コラム：BuildingType"
-banner = "/green1024x200.png"
+banner = "green"
 tags = ["コラム"]
 +++
 

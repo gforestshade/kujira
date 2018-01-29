@@ -2,7 +2,7 @@
 date = "2017-10-20"
 draft = false
 title = "それからのPython 2"
-banner = "/green1024x200.png"
+banner = "green"
 tags = ["それからのPython", "せつめい"]
 +++
 

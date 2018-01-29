@@ -2,7 +2,7 @@
 date = "2018-01-27"
 draft = false
 title = "はじめに"
-banner = "/kujira_paleblue1024x200.png"
+banner = "kujira_paleblue"
 tags = ["はじめに", "目次"]
 comment = true
 weight = 99

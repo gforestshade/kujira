@@ -2,7 +2,7 @@
 date = "2017-11-16"
 draft = false
 title = "付録：getUnitList()"
-banner = "/green1024x200.png"
+banner = "green"
 tags = ["付録", "せつめい"]
 +++
 
