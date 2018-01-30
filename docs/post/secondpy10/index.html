@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 4151
+    "wordCount": 4201
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -149,7 +151,7 @@
 
     
     &middot; 9 Minute Read
-    &middot; 4151 Words
+    &middot; 4201 Words
   </div>
 
   
@@ -252,7 +254,7 @@ SpellWaterというクラスをつくっています。<br />
 こういった場合、戻り値として<code>None</code>という値が呼び出し元に帰ります。<br />
 これは偽扱いになりますので、それを受け取った<code>cast()</code>はエフェクトを再生しません。<br />
 ただ、昇進を取ったことをなかったことにするわけではないので、<br />
-ただの無駄撃ちになります。これは設計のときに定めた通りです。</p>
+ただの無駄撃ちになります。これは<a href="https://gforestshade.github.io/kujira/post/secondpy7/#設計しよう">設計</a>のときに定めた通りです。</p>
 
 <p>そして最後に<strong><em>クラス外で</em></strong>、<br />
 <code>SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))</code><br />
@@ -260,8 +262,9 @@ SpellWaterというクラスをつくっています。<br />
 まず<code>SpellInfo(&quot;SPELL_WATER&quot;, SpellWater)</code>の部分で<br />
 SpellInfoインスタンスを作成しています。<br />
 SpellInfoインスタンスは「名前」と「クラスオブジェクト」を保持するのでした。<br />
-<code>&quot;SPELL_WATER&quot;</code>と<code>SpellWater</code>クラスをここで指定しています。<br />
-このSpellInfoインスタンスを、<code>SpellInfo.spells</code>というリストに<br />
+<code>&quot;SPELL_WATER&quot;</code>と<code>SpellWater</code>クラスをここで指定しています。</p>
+
+<p>このSpellInfoインスタンスを、<code>SpellInfo.spells</code>というリストに<br />
 (クラス変数なのでした)<code>append()</code>しています。<br />
 これで、気分としては「&rdquo;SPELL_WATER&rdquo;という名前で、<br />
 SpellWaterクラスに個別処理が書いてある、そういうスペルがあるよ」<br />
@@ -272,7 +275,7 @@ SpellWaterクラスに個別処理が書いてある、そういうスペルが�
 (おそらくCiv4の起動時)に実行されます。<br />
 Infoに登録する情報を名前とクラスだけに絞ったのもこのためです。<br />
 ゲームが始まっていなくてもInfoだけは読み込まれるようになります。<br />
-今回はやりませんが、スペルの情報もCivilipediaに載せたいと思ったときに<br />
+今回はやりませんが、スペルの情報もCivilopediaに載せたいと思ったときに<br />
 このことが重要になってきます。<br />
 Civilipediaはゲームの状況とは関係なく開けるからです。</p>
 
@@ -306,8 +309,7 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_POISON&quot;, SpellPoison))
 <p>湧き水と同様、Spellを継承して<code>execute()</code>の中に個別処理を書いていきます。<br />
 共通処理に書いてあるので、<code>units = self.selectEnemyUnits(1)</code>とするだけで<br />
 1マス圏内にいる敵対ユニットのリストが取れてきます。<br />
-(よく使う共通処理に名前が付けられる、一度書けば呼び出すだけでいい、<br />
-など、関数の利点なのでした)</p>
+(よく使う共通処理に名前が付けられる、一度書けば呼び出すだけでいい、など、関数の利点なのでした)</p>
 
 <p>ですから、あとは<code>units</code>の中の各ユニットに対して<br />
 <code>unit.setHasPromotion(POISONED, True)</code>で昇進を付与するだけです。<br />
@@ -363,10 +365,11 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
 <p>しかし、Civ4内部表現ではHPという形ではなく、「ダメージ値」で表されています。<br />
 といっても難しいものではなく、「ダメージ値」は<br />
 100からどれくらいHPが減っているかを表す値です。<br />
-ダメージ値が10のときは残りHP9割、ダメージ値が50のときは残りHP5割、<br />
+ダメージ値が10のときは残りHP90、ダメージ値が50のときは残りHP50、<br />
 ダメージ値が100に達するとHPがなくなってユニットは撃破された扱いになります。</p>
 
 <p>今回はHPが6割を切らないようにしたいので、<br />
+ダメージ値が40を超えないように、40を超える値でダメージ値を上書きしてしまわないようにします。<br />
 そもそも現在のダメージ値が40以上になっているユニットは<code>continue</code>で飛ばします。<br />
 その上で、現在ダメージ値に10を足したものを新しいダメージ値として上書きしたいのですが、<br />
 このときも40を超えないように注意する必要があります。<br />
@@ -415,7 +418,7 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
 ここにはスペル1種類につき1つのSpellInfoインスタンスが登録されているのでした。<br />
 つまり、<code>spellinfo</code>はなんらかのスペルのSpellInfoで、<br />
 <code>spellinfo.getPromotionName()</code>とすれば<br />
-そのスペルの名前から生成した昇進名が得られることになります。<br />
+そのスペルの(名前から生成した)昇進名が得られることになります。<br />
 それをさらに<code>gc.getInfoTypeForString()</code>に通せば<br />
 スペルに対応する昇進idが得られます。</p>
 
@@ -524,10 +527,10 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -552,10 +555,10 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -580,10 +583,10 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -608,10 +611,10 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -692,10 +695,10 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

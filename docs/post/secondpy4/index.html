@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-23",
     "description": "",
-    "wordCount": 4249
+    "wordCount": 4302
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -149,7 +151,7 @@
 
     
     &middot; 9 Minute Read
-    &middot; 4249 Words
+    &middot; 4302 Words
   </div>
 
   
@@ -197,8 +199,7 @@
 
 <p>新しいクラスをつくる体験をしたところで、<br />
 既存のクラスを使ってみる体験もしてみます。<br />
-<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、<br />
-すすめていきましょう。</p>
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、すすめていきましょう。</p>
 
 <p>左上フレームにリストされているのが、クラス名(型名)です。<br />
 ためしにCyCityをクリックしてみましょう。<br />
@@ -206,7 +207,7 @@
 CyCity型のメソッドだけでもずいぶん数があります。<br />
 流し読みしつつ、気になったのを見ていきましょう。</p>
 
-<p>なお、色付き文字になっているのは「型」です。例えば、<br />
+<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br />
 BOOL - ブール型(真と偽の2択)<br />
 INT - 数値型<br />
 VOID - なし(戻り値を返さないもの)<br />
@@ -214,85 +215,114 @@ VOID - なし(戻り値を返さないもの)<br />
 緑色 - クラス型<br />
 こんな具合です。</p>
 
+<hr />
+
 <p>筆者が気になったのは、まずこれ。</p>
 
-<pre><code>19. INT calculateDistanceMaintenance ()
+<blockquote>
+<pre><code class="language-plain">19. INT calculateDistanceMaintenance ()
 </code></pre>
+</blockquote>
 
 <p>距離維持費を計算して返してくれるインスタンスメソッドですね。<br />
 最初に書いてあるINTが戻り値の型を表します。この場合は数値型です。<br />
 追加の引数がないメソッドは<code>c = pCity.calculateDistanceMaintenance()</code>のように<br />
 都市のインスタンスさえ用意できれば簡単に呼び出せるので練習台によいですね。</p>
 
+<hr />
+
 <p>次はこれ。</p>
 
-<pre><code>47. VOID changeExtraHappiness (INT iChange)
+<blockquote>
+<pre><code class="language-plain">47. VOID changeExtraHappiness (INT iChange)
 48. VOID changeExtraHealth (INT iChange)
 </code></pre>
+</blockquote>
 
 <p>幸福や衛生を<code>iChange</code>ぶんだけ変えてしまうメソッドです。<br />
 「やったー！」や「文明により」で追加される幸福や衛生がこれに当たります。<br />
 <code>pCity.changeExtraHealth(3)</code>とすれば衛生+3にできますね。<br />
 数値型の引数をひとつだけ取るメソッドも練習台にはよいです。</p>
 
+<hr />
+
 <p>どんどんいきましょう。</p>
 
-<pre><code>50. VOID changeFood (INT iChange)
+<blockquote>
+<pre><code class="language-plain">50. VOID changeFood (INT iChange)
 63. VOID changeProduction (INT iChange)
 </code></pre>
+</blockquote>
 
 <p>食料やハンマーのたまり具合を直接増減させてしまいます。</p>
+
+<hr />
 
 <h2 id="commerceとyield">CommerceとYield</h2>
 
 <p>と、ここで、少し用語の説明をしましょう。<br />
-CommerceとYieldについてです。</p>
+<strong>Commerce</strong>と<strong>Yield</strong>についてです。</p>
 
-<p>YieldとはFood(パン)・Production(ハンマー)・Commerce(コイン)の総称です。<br />
-内部ではこれらをひとまとめで扱い、個々の出力はYieldIDによって区別します。<br />
-たとえばバニラでは、Yield0番がFood・Yield1番がProduction・Yield2番がCommerceになっています。<br />
+<p><strong>Yield</strong>とは<strong>Food</strong>(パン)・<strong>Production</strong>(ハンマー)・<strong>Commerce</strong>(コイン)の総称です。<br />
+内部ではこれらをひとまとめで扱い、個々の出力は<strong>YieldID</strong>によって区別します。<br />
+たとえばバニラでは、Yield0番が<strong>Food</strong>・Yield1番が<strong>Production</strong>・Yield2番が<strong>Commerce</strong>になっています。<br />
 何が何番なのかは<code>YieldTypes.YIELD_FOOD</code>などとしても求められるので、<br />
 実際にMODを作る際はそちらを使うほうがよいでしょう。</p>
 
-<p>CommerceとはGold(ゴールド)・Research(ビーカー)・Culture(文化)・Espionage(スパイポイント)の総称です。<br />
-Commerce(コイン)と英名がまったく同じなので紛らわしいことこの上ないですが、とにかくそうなっています。<br />
+<p><strong>Commerce</strong>とは<strong>Gold</strong>(ゴールド)・<strong>Research</strong>(ビーカー)・<strong>Culture</strong>(文化)・<strong>Espionage</strong>(スパイポイント)の総称です。<br />
+<strong>Commerce</strong>(コイン)と英名がまったく同じなのでものずごく紛らわしいですが、とにかくそうなっています。<br />
 コインをスライダーによって振り分けるこの4つの出力を<br />
-内部ではひとまとめで扱い、個々の出力はCommerceIDによって区別します。<br />
-たとえばバニラでは、Commerce0番がGold・Commerce1番がResearch・Commerce2番がCulture・Commerce3番がEspionageになっています。<br />
+内部ではひとまとめで扱い、個々の出力は<strong>CommerceID</strong>によって区別します。<br />
+たとえばバニラでは、Commerce0番が<strong>Gold</strong>・Commerce1番が<strong>Research</strong>・Commerce2番が<strong>Culture</strong>・Commerce3番が<strong>Espionage</strong>になっています。<br />
 何が何番なのかは<code>CommerceTypes.COMMERCE_ESPIONAGE</code>などとしても求められるので、<br />
 実際にMODを作る際はそちらを使うほうがよいでしょう。<br />
 (もちろん、スパイなしのオプションを入れると、Commerce3番は全く出なくなり、<br />
 Commerce2番に振り分けられます。MODでもスパイなしオプションに対応する場合は<br />
 考慮しなければならないため、いちおう覚えておきましょう。)</p>
 
-<p>したがって、CyCity型のインスタンスメソッドでも、</p>
+<hr />
 
-<pre><code>139. INT getCommerceRate (CommerceType eIndex)
+<p>したがって、CyCity型のインスタンスメソッドでも、<br />
+都市のインスタンスから毎ターン何ビーカー出ているか求めたいと思ったとき、</p>
+
+<blockquote>
+<pre><code class="language-plain">139. INT getCommerceRate (CommerceType eIndex)
 </code></pre>
+</blockquote>
 
-<p>都市のインスタンスから毎ターン何ビーカー出ているか求めたいと思ったとき、<br />
-<code>iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)</code>とする必要があります。<br />
-なお、ここでのRateはPer Turn(ターンごと)のRateです。スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。<br />
-さらに、図書館などの効果であるビーカー+25%のパーセントはCommerceRateModifierです。</p>
+<p><code>iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)</code>とする必要があります。<br />
+なお、ここでのRateはPer Turn(ターンごと)のRateです。<br />
+スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。</p>
 
-<pre><code>140. INT getCommerceRateModifier (CommerceType eIndex)
+<hr />
+
+<p>さらに、図書館などの効果でよくある「ビーカー+25%」のパーセントはCommerceRateModifierです。</p>
+
+<blockquote>
+<pre><code class="language-plain">140. INT getCommerceRateModifier (CommerceType eIndex)
 </code></pre>
+</blockquote>
 
-<p>こちらにより、都市合計で+何%の修正があるか取得できます。</p>
+<p>こちらにより、その都市に合計で+何%の修正があるか取得できます。</p>
+
+<hr />
 
 <h2 id="id">ID</h2>
 
-<p>なにかのIDの指定を引数で要求してくるメソッドは他にも、</p>
+<p>なにかのIDの指定を引数で要求してくるメソッドは他にもたくさんあります。<br />
+たとえば建造物種IDでいえば、</p>
 
 <pre><code>229. INT getNumBuilding (BuildingType iIndex)
 </code></pre>
 
-<p>指定した建造物IDに対応した建造物が都市内にいくつ建っているか<br />
-(といっても通常0か1ですが)を取得してくるメソッドもあります。</p>
+<p>これは指定した建造物種IDに対応した建造物が都市内にいくつ建っているか<br />
+(といっても通常0か1ですが)を取得してくるメソッドです。</p>
 
-<p>建造物IDは<code>gc.getInfoTypeForString(XMLキーの文字列)</code>とすることで求められます。<br />
+<p>建造物種IDは<code>gc.getInfoTypeForString(XMLキーの文字列)</code>とすることで求められます。<br />
 <code>if pCity.getNumBuilding( gc.getInfoTypeForString('BUILDING_LIBRARY') ) &gt; 0:</code><br />
 などとすれば、都市インスタンスに図書館が建っているかどうかを判定できます。</p>
+
+<hr />
 
 <p>IDを要求するのではなく、戻り値として返してくれるメソッドもあります。</p>
 
@@ -301,7 +331,7 @@ Commerce2番に振り分けられます。MODでもスパイなしオプショ�
 
 <p>都市の所有者のPlayerIDを返してくれます。</p>
 
-<h1 id="インスタンス">インスタンス</h1>
+<h1 id="あなたのインスタンスはどこから">あなたのインスタンスはどこから？</h1>
 
 <p>ところで、便利なメソッドがたくさんあるのはいいのですが、肝心のインスタンスは<br />
 どこから取得すればよいのでしょうか。<br />
@@ -329,7 +359,7 @@ Commerce2番に振り分けられます。MODでもスパイなしオプショ�
 <pre><code class="language-python">    def onUnitBuilt(self, argsList):
         'Called when a unit is built in a city'
         super(self.__class__, self).onUnitBuilt(argsList)
-        pCity, pUnit = argsList
+        pCity, pUnit、pPlayer = argsList
         ##########
 </code></pre>
 
@@ -388,8 +418,10 @@ PythonErr.logをみると、13行目で&rdquo;more than 2 values to unpack.&ldqu
 <p>このIDを持っていったらCyPlayer型のインスタンスを返してくれる関数があったらいいのに&hellip;<br />
 と思うところですが、それはCyGlobalContext型のインスタンスメソッドとして用意されています。</p>
 
-<pre><code>208. CyPlayer getPlayer (INT idx)
+<blockquote>
+<pre><code class="language-plain">208. CyPlayer getPlayer (INT idx)
 </code></pre>
+</blockquote>
 
 <p>まずCyGlobalContext型のインスタンスを作って、</p>
 
@@ -410,17 +442,20 @@ PythonErr.logをみると、13行目で&rdquo;more than 2 values to unpack.&ldqu
 <p>CyPlayerのインスタンスメソッドでできることは本当に多岐にわたっていて、<br />
 とてもここでは説明しつくせない量ですので各自<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>を見ていただくことにして、</p>
 
-<p>今回は例として「奴隷制」の社会制度を採用しているときにだけユニット作成報告が上がるようにしてみましょう。<br />
+<p>今回は例として「奴隷制」の社会制度を採用しているときにだけ<br />
+ユニット作成報告が上がるようにしてみましょう。<br />
 奴隷制のXMLキーは<code>&quot;CIVIC_SLAVERY&quot;</code>ですから、<br />
-<code>gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)</code>でCivicIDを取得できます。<br />
-そのCivicIDと、先に手に入れたCyPlayer型のインスタンスを使って、</p>
-
-<pre><code>328. BOOL isCivic (CivicType eCivic)
-</code></pre>
+<code>gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)</code>でCivicTypeを取得できます。<br />
+そのCivicTypeと、先に手に入れたCyPlayer型のインスタンスを使って、</p>
 
 <p>これを呼び出します。</p>
 
-<p>全部で&hellip;</p>
+<blockquote>
+<pre><code class="language-plain">328. BOOL isCivic (CivicType eCivic)
+</code></pre>
+</blockquote>
+
+<p>全部でこうなります&hellip;</p>
 
 <pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
@@ -448,8 +483,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
             message = u&quot;奴隷制を採用する%sで%sがつくられました。&quot; % (cityname, unitname)
             CyInterface().addImmediateMessage(message, &quot;&quot;)
 </code></pre>
-
-<p>こうなります。</p>
 
 <p><code>pCity</code>が人間プレイヤーの都市とは限らないことに注意してください。<br />
 したがって<code>pCity.getOwner()</code>で取得したPlayerIDも「そのユニットを作ったPlayer」であって、<br />
@@ -543,10 +576,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -571,10 +604,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -599,10 +632,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -627,10 +660,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -711,10 +744,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

@@ -23,7 +23,9 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 
 # CivilizationIV.ini
 早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
-PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。
+PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。[^1]
+
+[^1]: Windows10,パッケージ版の場合"ドキュメント\\My Games\\Beyond the Sword(J)"<br>Steam版の場合"ドキュメント\\My Games\\Beyond the Sword"にあります
 
 ``` ini
 <<<<<<<<
@@ -58,7 +60,10 @@ Assets\Python\EntryPoints\CvEventManagerInterface.py
 C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\
 Assets\Python\EntryPoints\CvEventInterface.py
 ```
-をみると、こうなっていました。
+[^2]をみると、こうなっていました。
+
+[^2]: パッケージ版の場合。Steam版の場合は"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py"
+
 
 ``` python
 # Sid Meier's Civilization 4
@@ -95,7 +100,13 @@ def beginEvent(context, argsList=-1):
 ```
 
 これを**ディレクトリ階層ごと**コピーしてきて編集すると、該当ファイルが差し変わるのでした。
-新しく作ったMODフォルダにAssets\Python\EntryPoints\ ディレクトリを作って、そこにコピーします。
+MODフォルダに新しくkujira\\Assets\\Python\\EntryPoints\\ フォルダを作って、そこにコピーします。
+
+MOD開発中に使用するMODフォルダはユーザーの"Documents"にある方をおすすめします。
+パッケージ版の場合"ドキュメント\\My Games\\Beyond the Sword (J)\\Mods"
+Steam版の場合"ドキュメント\\My Games\\Beyond the Sword\\Mods"
+です。
+
 ``` plain
 └─kujira
     └─Assets
@@ -209,13 +220,13 @@ Documents\My Games\Beyond the Sword(J)\Logsにある`PythonDbg.log`を開いて�
 + 何ができるのか？
 
 ということですね。
-まずどういうタイミングがあるかですが、[たくさんあります。][1]
-どういうことができるかについては、[さらにたくさんあります。][2]
+まずどういうタイミングがあるかですが、[たくさんあります。][a]
+どういうことができるかについては、[さらにたくさんあります。][b]
 すべてを覚える必要はもちろんありません。わかりやすいような処理から始めて、
 自分の手で書いていくことを通して、少しずつ理解していくのがよいです。
 
-[1]: http://modiki.civfanatics.com/index.php?title=CvEventManager
-[2]: http://civ4bug.sourceforge.net/PythonAPI/index.html
+[a]: http://modiki.civfanatics.com/index.php?title=CvEventManager
+[b]: http://civ4bug.sourceforge.net/PythonAPI/index.html
 
 # 結局こつこつとやっていくしかない
 というわけで、`KujiraEventManager.py`をこのように変えてみます...
@@ -247,7 +258,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 独自処理部分では、まず`pCity = argsList[0]`として
 イベントに付随してくる情報を取得しています。
-[イベント一覧][1]からdef onCityBuiltをさがしてみると、
+[イベント一覧][b]からdef onCityBuiltをさがしてみると、
 
 + Function: def onCityBuilt()
 + Parameters: self, argsList(city)
@@ -295,7 +306,7 @@ Pythonではそれらを利用することができます。
 ## 図書館を建設する、とは
 さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。
 探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、
-civfanaticsで漁るのもよいでしょう。英語でよろしければ、[一覧][2]を載せてくれているWebページもあります。
+civfanaticsで漁るのもよいでしょう。英語でよろしければ、[一覧][b]を載せてくれているWebページもあります。
 
 都市に建物を与えるのですからgetというよりsetですね...
 setで始まるCyCityのメソッドの中からBuildingも含んでいるものを探していくと...

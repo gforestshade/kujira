@@ -1,8 +1,9 @@
 +++
 date = "2017-12-30T12:01:00"
+lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 7"
-banner = "green"
+banner = "photo_pink1"
 tags = ["それからのPython", "せつめい"]
 +++
 
@@ -22,18 +23,22 @@ tags = ["それからのPython", "せつめい"]
 - 具体的なスペル効果は以下の3種類とする
 - 湧き水：砂漠が平原に変化する
 - 毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える
-- 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPの60%を切ることはないようにする
+- 火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える
+ただしこれによって最大HPの60%を切ることはないようにする
 - 湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする
 
 # 新しい昇進を作る
 「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、
 毒散布で付与する用の「毒」の昇進をXMLで追加していきます。
-編集するのは Assets\\XML\\Units\\CIV4PromotionInfos.xml です。
+編集するのは "Assets\\XML\\Units\\CIV4PromotionInfos.xml" です。
 
 元のファイルはパッケージ日本語版の場合
-C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Units\\Civ4PromotionInfos.xml
-にあります。
-今回のMOD名は kujira_promospell にするので、
+"C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Units\\Civ4PromotionInfos.xml"
+にあります。[^1]
+
+[^1]: Steam版の場合 "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\XML\\Units\\Civ4PromotionInfos.xml"
+
+今回のMOD名は`kujira_promospell`にするので、
 フォルダ階層を作ってxmlファイルをコピーし、下のようにします。
 
 ``` plain
@@ -51,13 +56,14 @@ CIV4PromotionInfos.xmlの中身を編集していきます。
 それでもまだ１から作成するのは分量的に大変ですので、
 戦闘術Ⅰ:"PROMOTION_COMBAT1"をベースにして、戦闘力+10%を取り除く方法を採ります。
 
-ここからここまでを選択・コピーして...
+↓ここから
 {{<img src="/img/promospell_editpromotion1.png" width="400" height="1600">}}
+↑ここまでを選択・コピーして...
 
-一番下に貼り付けます。
+↓一番下に貼り付けます。
 {{<img src="/img/promospell_editpromotion2.png" width="400" height="700">}}
 
-こうなります。
+↓こうなります。
 {{<img src="/img/promospell_editpromotion3.png" width="400" height="700">}}
 
 テキストエディタでXMLを編集する場合、適宜空行をつくっても構いません。
@@ -78,7 +84,7 @@ CIV4PromotionInfos.xmlの中身を編集していきます。
 
 ----
 
-さらについでに、\<Sound\>をAS2D_POSITIVE_DINKに変更します。
+さらについでに、\<Sound\>をAS2D\_POSITIVE\_DINKに変更します。
 昇進を取ったときの音を変更することで、スペルの発動音のかわりにします。
 
 \<iCombatPercent\>を0にして、戦闘力+10%をなかったことにします。
@@ -185,7 +191,7 @@ WATERをFIREに変えています。
 
 # Text
 
-動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが
+動作テストしたとき、TXT\_KEY\_PROMOTION\_SPELL\_WATERなどのキーが
 そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。
 
 Assets\\XML\\Text\\Text_Kujira.xml を作成します。

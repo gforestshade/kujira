@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 3745
+    "wordCount": 3786
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -149,7 +151,7 @@
 
     
     &middot; 8 Minute Read
-    &middot; 3745 Words
+    &middot; 3786 Words
   </div>
 
   
@@ -206,7 +208,8 @@
 <li>具体的なスペル効果は以下の3種類とする<br /></li>
 <li>湧き水：砂漠が平原に変化する<br /></li>
 <li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
-<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える、ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br />
+ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
 <li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
 <br /></li>
 </ul>
@@ -215,12 +218,13 @@
 
 <p>「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、<br />
 毒散布で付与する用の「毒」の昇進をXMLで追加していきます。<br />
-編集するのは Assets\XML\Units\CIV4PromotionInfos.xml です。</p>
+編集するのは &ldquo;Assets\XML\Units\CIV4PromotionInfos.xml&rdquo; です。</p>
 
 <p>元のファイルはパッケージ日本語版の場合<br />
-C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml<br />
-にあります。<br />
-今回のMOD名は kujira_promospell にするので、<br />
+&ldquo;C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
+にあります。<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></p>
+
+<p>今回のMOD名は<code>kujira_promospell</code>にするので、<br />
 フォルダ階層を作ってxmlファイルをコピーし、下のようにします。</p>
 
 <pre><code class="language-plain">└─kujira_promospell
@@ -237,15 +241,16 @@ C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the
 それでもまだ１から作成するのは分量的に大変ですので、<br />
 戦闘術Ⅰ:&ldquo;PROMOTION_COMBAT1&rdquo;をベースにして、戦闘力+10%を取り除く方法を採ります。</p>
 
-<p>ここからここまでを選択・コピーして&hellip;<br />
+<p>↓ここから<br />
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"  width="400" height="1600" /></a>
-</p>
+<br />
+↑ここまでを選択・コピーして&hellip;</p>
 
-<p>一番下に貼り付けます。<br />
+<p>↓一番下に貼り付けます。<br />
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"  width="400" height="700" /></a>
 </p>
 
-<p>こうなります。<br />
+<p>↓こうなります。<br />
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"  width="400" height="700" /></a>
 </p>
 
@@ -761,6 +766,15 @@ WATERをFIREに変えています。</p>
 			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
 		&lt;/PromotionInfo&gt;
 </code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Steam版の場合 &ldquo;C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
 </div>
 
@@ -843,10 +857,10 @@ WATERをFIREに変えています。</p>
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -871,10 +885,10 @@ WATERをFIREに変えています。</p>
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -899,10 +913,10 @@ WATERをFIREに変えています。</p>
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -927,10 +941,10 @@ WATERをFIREに変えています。</p>
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -1011,10 +1025,10 @@ WATERをFIREに変えています。</p>
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

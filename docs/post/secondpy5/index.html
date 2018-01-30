@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-11-04",
     "description": "",
-    "wordCount": 4099
+    "wordCount": 4383
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -149,7 +151,7 @@
 
     
     &middot; 9 Minute Read
-    &middot; 4099 Words
+    &middot; 4383 Words
   </div>
 
   
@@ -189,7 +191,8 @@
 
 <ul>
 <li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき<br /></li>
-<li>もっとクラスをつかう<br />
+<li>もっとクラスをつかう<br /></li>
+<li>変数のスコープ<br />
 <br /></li>
 </ul>
 
@@ -198,8 +201,9 @@
 <p>インスタンス変数にクラス型の変数を使う例を見てみましょう。</p>
 
 <p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br />
-それを用いて『建造された都市で生産されたユニットだけでなく、<br />
-その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字』<br />
+それを用いて<br />
+《建造された都市で生産されたユニットだけでなく、<br />
+その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br />
 をつくることです。</p>
 
 <pre><code class="language-python">class KujiraBuilding:
@@ -212,40 +216,41 @@
 </code></pre>
 
 <p>クラス<code>KujiraBuilding</code>を作り、コンストラクタ<code>__init__()</code>で<br />
-<code>CyCity</code>型のインスタンス<code>pCity</code>と<code>CyPlot</code>型のインスタンス<code>pPlot</code>を<br />
-インスタンス変数として<code>self</code>の中に保持します。<br />
-ついでに赤十字の建造物IDと衛生兵Ⅰの昇進IDも<br />
+「<code>CyCity</code>型のインスタンス<code>pCity</code>」と「<code>CyPlot</code>型のインスタンス<code>pPlot</code>」を<br />
+インスタンス変数として<code>self</code>の中に保持します。</p>
+
+<p>ついでに赤十字の建造物種IDと衛生兵Ⅰの昇進種IDも<br />
 数値型のインスタンス変数として保持しておきます。</p>
 
 <h1 id="即時的効果と継続的効果">即時的効果と継続的効果</h1>
 
 <p>これは筆者の造語なのですが、Pythonで実現できる類の効果はタイミングによって<br />
-即時的効果と継続的効果に分類されます。<br />
-例えば同じ『衛生兵Ⅰを付与する』という効果にしても、<br />
+<strong>即時的効果</strong>と<strong>継続的効果</strong>に分類されます。<br />
+例えば同じ「衛生兵Ⅰを付与する」という効果にしても、<br />
 発動するタイミングによって、</p>
 
-<p>『プロジェクトAが完成したとき自文明の全ユニットに』<br />
+<p>「プロジェクトAが完成したとき自文明の全ユニットに」<br />
 でしたら一回ぽんと発生して終わりですし、<br />
 (この類の効果はプロジェクトに多いです)</p>
 
-<p>『建造物Bが建っている都市にユニットが駐留したとき』<br />
+<p>「建造物Bが建っている都市にユニットが駐留したとき」<br />
 ならば建造物Bが建ってから何らかの理由で壊されるまでずっと<br />
 効果が発生し続けることになります。<br />
 (この類の効果は建造物に多いです)</p>
 
 <p>という違いが生じてきます。<br />
-&hellip;なのですが、実のところPythonで『ずっと』を表現する手段はありません。<br />
+&hellip;&hellip;&hellip;&hellip;なのですが、実のところPythonで「ずっと」を表現する手段はありません。<br />
 継続的効果を作りたい場合であっても、<br />
 どうにかして即時的効果に読み替える必要が出てきます。</p>
 
-<p>そこで役に立つことがあるのが、『ターン処理開始時に』というタイミングです。<br />
-少しゆるい言葉で言うなら、『～を毎ターン行う』ということです。<br />
-毎ターン毎回即時的効果のチェックをするなら継続してるっぽく見えるだろう、<br />
+<p>そこで役に立つことがあるのが、「ターン処理開始時に」というタイミングです。<br />
+少しゆるい言葉で言うなら、「～を毎ターン行う」ということです。<br />
+毎ターン、毎回、同じ即時的効果が発生するなら継続してるっぽく見えるだろう、<br />
 ということですね。</p>
 
 <p>つまりたとえば、<br />
-『ターン処理開始時に、各都市を調べ、その都市に赤十字があるならば、<br />
-その都市が建っている地点の、その地点にいる各ユニットに、衛生兵Ⅰを持たせる』<br />
+《ターン処理開始時に、各都市を調べ、その都市に赤十字があるならば、<br />
+その都市が建っている地点の、その地点にいる各ユニットに、衛生兵Ⅰを持たせる》<br />
 とすることで、継続的効果っぽく見せることが可能になるのです。</p>
 
 <h1 id="毎ターン各都市で">毎ターン各都市で</h1>
@@ -263,8 +268,8 @@
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p><code>argsList</code>の0番目はいま注目すべき都市のインスタンス、<br />
-1番目はいま誰のターン処理中かのプレイヤーIDです。</p>
+<p><code>argsList</code>の0番目<code>pCity</code>はいま注目すべき都市のインスタンス、<br />
+1番目<code>iPlayer</code>はいま誰のターン処理中かのプレイヤーIDです。</p>
 
 <p>このメソッド中で、<code>KujiraBuilding</code>クラスを使ってみることにしましょう&hellip;</p>
 
@@ -299,15 +304,19 @@ KujiraBuildingの定義の中に戻って書いていきましょう&hellip;</p>
 <p><code>self.pCity</code>, <code>self.pPlot</code>, <code>self.iBuilding</code>, <code>self.iPromotion</code>の<br />
 4つのインスタンス変数を使っています。<br />
 それぞれの中身の値がなんだったか忘れてしまった方は<br />
-コンストラクタのところまで戻って復習しておきましょう。</p>
+<a href="#インスタンスの中のインスタンス">コンストラクタのところ</a>まで戻って復習しておきましょう。</p>
 
-<p>まず『その都市に赤十字があるならば』ですね。<br />
+<h2 id="赤十字があるならば">赤十字があるならば</h2>
+
+<p>まず「その都市に赤十字があるならば」ですね。<br />
 <code>CyCity</code>のインスタンスメソッドにお願いして調べてもらいます。</p>
 
-<pre><code>229. INT getNumBuilding (BuildingType iIndex)
+<blockquote>
+<pre><code class="language-plain">229. INT getNumBuilding (BuildingType iIndex)
 </code></pre>
+</blockquote>
 
-<p>指定した建造物IDが自身のインスタンスにいくつあるか数値で返します。<br />
+<p>指定した建造物種IDが自身のインスタンスにいくつあるか数値で返します。<br />
 たとえば赤十字があるかどうか調べたいときには次のようにします。</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
@@ -315,7 +324,8 @@ KujiraBuildingの定義の中に戻って書いていきましょう&hellip;</p>
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
 
-<p>(難しいですか？<code>self.pCity</code>が都市のインスタンス、<code>self.iBuilding</code>が建造物IDだったことを思い出してくださいね。)</p>
+<p>(難しいですか？<code>self.pCity</code>が都市のインスタンス、<br />
+<code>self.iBuilding</code>が建造物IDだったことを思い出してくださいね。)</p>
 
 <p>勘がよい方は<code>self.pCity.getNumBuilding(self.iBuilding)</code><br />
 の戻り値の数値を何とも比較していないことにお気づきになるかもしれません。<br />
@@ -323,39 +333,45 @@ KujiraBuildingの定義の中に戻って書いていきましょう&hellip;</p>
 <code>if self.pCity.getNumBuilding(self.iBuilding) == 1:</code><br />
 としてもかまわないのですが、<br />
 if文にはTrueでもFalseでもない値を入れてもいい感じに判定してくれる機能があります。<br />
-その基準はこうです。(<a href="https://gforestshade.github.io/kujira/post/getstarted4/">はじめての その4</a>から転載)</p>
+その基準はこうです。(<a href="https://gforestshade.github.io/kujira/post/getstarted4/#真と偽">はじめての その4</a>から転載)</p>
 
-<p>if文において「真」と解釈されるもの</p>
+<blockquote>
+<p>if文において<strong>真</strong>と解釈されるもの</p>
 
 <ul>
 <li><code>True</code><br /></li>
-<li>その他「偽」と解釈されるもの以外全部<br />
+<li>その他<strong>偽</strong>と解釈されるもの以外全部<br />
+<br />
 <br /></li>
 </ul>
 
-<p>「偽」と解釈されるもの</p>
+<p><strong>偽</strong>と解釈されるもの</p>
 
 <ul>
 <li><code>False</code><br /></li>
 <li>数値の<code>0</code><br /></li>
 <li>空の文字列<code>&quot;&quot;</code><br /></li>
 <li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code><br /></li>
-<li><code>None</code><br />
-<br /></li>
+<li><code>None</code><br /></li>
 </ul>
+</blockquote>
 
-<p><code>0</code>が「偽」の仲間になっているところがポイントです。<br />
-「真」の条件より、<code>0</code>以外の数値はif文においては「真」扱いになります。</p>
+<p><code>0</code>が<strong>偽</strong>の仲間になっているところがポイントです。<br />
+<strong>真</strong>の条件より、<code>0</code>以外の数値はif文においては<strong>真</strong>扱いになります。</p>
 
 <p>建造物数が0なら、「ない」と判定されて正しいですし、<br />
 建造物数が1なら(もしくは2以上だったとしても！)「ある」と判定されて正しいですね。</p>
 
-<p>次は『その地点にある全ユニットに対し』です。<br />
+<h2 id="その地点にある全ユニットに対し">その地点にある全ユニットに対し</h2>
+
+<p>次は「その地点にある全ユニットに対し」です。<br />
 <code>CyPlot</code>のインスタンスメソッド2つの合わせ技で実現します。</p>
 
-<pre><code>56. INT getNumUnits ()
+<blockquote>
+<pre><code class="language-plain">56. INT getNumUnits ()
 81. CyUnit getUnit (INT iIndex)
 </code></pre>
+</blockquote>
 
 <p>「CyPlotのインスタンスが表している地点」にいる<code>i</code>番目のユニットは<br />
 <code>pPlot.getUnit(i)</code>で取得できます。<br />
@@ -376,18 +392,19 @@ if文にはTrueでもFalseでもない値を入れてもいい感じに判定し
 <p>得られたユニットのインスタンス<code>pUnit</code>をつかって、昇進をつけましょう。<br />
 CyUnitのインスタンスメソッドからそれっぽいのを探します。</p>
 
-<pre><code>292. VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
+<blockquote>
+<pre><code class="language-plain">292. VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
 </code></pre>
+</blockquote>
 
-<p>そのインスタンスの昇進ID<code>eIndex</code>の取得状況を<code>nNewValue</code>に書き換えます。<br />
-つまり『持たせる』というよりは『持っているかどうか、のデータをTrue(そうです)に書き換える』のですね。</p>
+<p>そのインスタンスの、昇進ID<code>eIndex</code>の取得状況を<code>nNewValue</code>に書き換えます。<br />
+つまり「持たせる」というよりは「持っているかどうか、のデータをTrue(そうです)に書き換える」のですね。<br />
+こうしましょう&hellip;</p>
 
 <pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
                 pUnit.setHasPromotion(self.iPromotion, True)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre>
-
-<p>&hellip;とすればよいでしょう。</p>
 
 <h1 id="ためす">ためす</h1>
 
@@ -424,18 +441,22 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         kuBuil.giveUnitsPromotion()
 </code></pre>
 
-<p><a href="https://gforestshade.github.io/kujira/post/getstarted5/">はじめての その5</a>で書いたMODとタイミングが違うだけで<br />
-効果はほとんど同じですが、効果の処理のほとんどが<br />
-自作クラスのインスタンスメソッドに分離されていることが見た目からもわかります。</p>
+<p>じつは<a href="https://gforestshade.github.io/kujira/post/getstarted5/#KujiraEventManager.py">はじめての その5</a>で書いたMODと<br />
+タイミングが違うだけで効果はほとんど同じですが、<br />
+二つ並べて比較してみてみると、<br />
+効果の処理のほとんどが自作クラスのインスタンスメソッドに<br />
+分離されていることが見た目からもわかります。</p>
 
 <h1 id="変数のスコープ">変数のスコープ</h1>
 
-<p>変数には、「変数がつくられた関数内でしか使えない」という制限があります。<br />
-変数が使える範囲を、その変数の「スコープ」と呼びます。</p>
+<p>ところで、変数には「変数がつくられた関数内でしか使えない」という制限があります。<br />
+変数が使える範囲を、その変数の<strong>スコープ</strong>と呼びます。</p>
 
 <h2 id="普通の変数">普通の変数</h2>
 
-<p>通常の変数のスコープは、その関数内です。</p>
+<p>通常の変数のスコープは、その関数内です。<br />
+さきほどのプログラムに<code>makeI()</code>と<code>useI()</code>という2つのメソッドを<br />
+新しく作って動作を確かめてみます&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -478,32 +499,36 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         kuBuil = KujiraBuilding(pCity, pCity.plot())
         kuBuil.giveUnitsPromotion()
 
-        kuBuil.makeI()
-        result = kuBuil.useI()
+        kuBuil.makeI() # makeI()を呼び出す
+        result = kuBuil.useI() # useI()を呼び出して値を取得しようとする
 </code></pre>
+
+<p>コメントにあるように、これはエラーになります。<br />
+(本当にエラーになるでしょうか？どうやって確かめればよいのでしたか？)</p>
 
 <p>不便に思えますが、悪いことばかりではありません。<br />
 関数をまたぐと消えてしまうということはむしろ、<br />
 「『この名前の変数はどこかで使ってたっけ、上書きしても大丈夫かな&hellip;』と考える必要がなくなる」<br />
-ということでもあるからです。<br />
-特にこのことは、関数が100を超えるような中規模以上のMODで<br />
-プログラムのすべてを頭の中に収めることができなくなってくる規模になってから<br />
-大変違いが生じてくるので、できれば最初のうちから<br />
-<strong><em>それでも関数は分割する</em></strong>ようにしておくのがよいです。</p>
+ということでもあるからです。</p>
+
+<p>特にこのことは、関数が100を超えるような中規模以上のMODで<br />
+プログラムのすべてを頭の中に収めることができなくなってくる、<br />
+そういう規模になると、ものすごく違いが生じてくるので、できれば最初のうちから<br />
+<strong><em>いくらめんどくさくても関数は分割する</em></strong>ようにしておくのがよいです。</p>
 
 <p>MODのすべてを自分が書いているわけではない場合にも<br />
 スコープがあることは利点になります。<br />
 関数さえまたいでいれば、変数の名前をうっかり被らせてしまい、<br />
 値を勝手に変更して元の部分の動作をおかしくしてしまう危険がゼロになるからです。<br />
 MODMODを開発するようなとき、<br />
-この種のバグは<strong><em>ものすごく見つけづらい</em></strong>ので、<br />
+この種のバグは<strong><em>ものすごく、ものすごく見つけづらい</em></strong>ので、<br />
 発生する心配自体がないというのは心強いですね。</p>
 
 <h2 id="インスタンス変数">インスタンス変数</h2>
 
-<p>それでも、この値は保存しておかないと困る！という需要にお応えするのが<br />
-インスタンス変数です。<br />
-インスタンス変数のスコープはそのクラス内に拡大されます。</p>
+<p>それでも、この値は保存しておかないと、消えたら困る！<br />
+という需要にお応えするのが<strong>インスタンス変数</strong>です。<br />
+<strong>インスタンス変数</strong>の<strong>スコープ</strong>はそのクラス内に拡大されます。</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -547,6 +572,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
         kuBuil.makeI()
         result = kuBuil.useI() # 35が返ってくる
+        print result
 </code></pre>
 
 <p>インスタンス変数はインスタンスに紐づいている変数なので、<br />
@@ -558,8 +584,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h2 id="グローバル変数">グローバル変数</h2>
 
-<p>一応、スコープがファイル内全体になる変数も存在して、「グローバル変数」と呼びます。<br />
-クラス定義や関数定義などのさらに外に記述してある代入文がグローバル変数の定義になり、<br />
+<p>一応、スコープがファイル内全体になる変数も存在して、<strong>グローバル変数</strong>と呼びます。<br />
+クラス定義や関数定義などのさらに外に記述してある代入文が<strong>グローバル変数</strong>の定義になり、<br />
 上の例では<code>gc = CyGlobalContext()</code>がそれにあたります。<br />
 確かに、ファイル内のどこからでも<code>CyGlobalContext</code>型のインスタンス<code>gc</code>を使用できていましたね。</p>
 
@@ -651,10 +677,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -679,10 +705,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -707,10 +733,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -735,10 +761,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -819,10 +845,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

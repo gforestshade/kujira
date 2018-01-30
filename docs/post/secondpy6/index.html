@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-11-17",
     "description": "",
-    "wordCount": 4415
+    "wordCount": 4544
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -148,8 +150,8 @@
     <time datetime="2017-11-17">17 Nov, 2017</time>
 
     
-    &middot; 9 Minute Read
-    &middot; 4415 Words
+    &middot; 10 Minute Read
+    &middot; 4544 Words
   </div>
 
   
@@ -202,7 +204,7 @@
 
 <h2 id="pyhelpers-py">Pyhelpers.py</h2>
 
-<p>早速 <code>(略)\Beyond the Sword(J)\Assets\Python\Pyhelpers.py</code>を開いてみましょう。<br />
+<p>早速 &ldquo;(BtSのインストールフォルダ)\Assets\Python\Pyhelpers.py&rdquo;を開いてみましょう。<br />
 BtSのAssetsに元からあるファイルですね。<br />
 開いたウィンドウを横において読み進めてください。</p>
 
@@ -283,7 +285,7 @@ class PyPlayer:
 		return self.player.getName()
 </code></pre>
 
-<p>生存しているか、IDの取得、名前の取得のメソッドです。<br />
+<p>それぞれ、生存しているか、IDの取得、名前の取得のメソッドです。<br />
 いずれも、<code>CyPlayer</code>型にある同名のメソッドに丸投げしてしまって、<br />
 その値をそのまま返しています。<br />
 よく見ると、<code>PyPlayer</code>クラスのメソッドはほとんどがこの形です。<br />
@@ -311,12 +313,14 @@ class PyPlayer:
 			return True
 </code></pre>
 
-<p><code>CyPlayer</code>にはない便利メソッドをこうして定義しています。<br />
-本来<code>isHasTech()</code>は<code>CyTeam</code>にしかありませんが(技術はプレイヤー個人のものではなくチームの共有財産なのでした。)<br />
+<p><code>CyPlayer</code>にはない便利メソッドをこうして定義しています。</p>
+
+<p>本来<code>isHasTech()</code>は<code>CyTeam</code>にしかありませんが<br />
+(技術はプレイヤー個人のものではなくチームの共有財産なのでした。)<br />
 所属チームを調べて、そのチームのインスタンスにお願いして技術を持っているか調べてもらう、<br />
 までの処理をメソッドの中に閉じ込めて便利に使えるようにしています。<br />
 (関数の数ある利点の一つが処理のかたまりにわかりやすい名前を付けられることでしたね。)<br />
-こうすることで、『<code>iTech</code>を研究済みかどうか調べる』のが簡単にできるようになっています。</p>
+こうすることで、「<code>iTech</code>を研究済みかどうか調べる」のが簡単にできるようになっています。</p>
 
 <p>ところで、<code>self.getTeam()</code>がインスタンスであるかのように<code>isHasTech()</code>を呼び出していますが、<br />
 たしか<code>CyPlayer</code>の<code>getTeam()</code>の戻り値はチームIDだったような気がします。<br />
@@ -348,21 +352,23 @@ class PyPlayer:
 		return gc.getTeam( self.getTeamID() )
 </code></pre>
 
-<p><code>gc.getTeam()</code>が出てきました。このメソッドの戻り値は<code>CyTeam</code>ですから、<br />
+<p>2つメソッドが見えます。下のメソッドに注目すると、<br />
+<code>gc.getTeam()</code>が出てきました。このメソッドの戻り値は<code>CyTeam</code>ですから、<br />
 <code>PyPlayer</code>の<code>getTeam()</code>は所属チームのIDではなくインスタンスを返します。<br />
-実際その方が便利ですね。<br />
-が、引数のチームIDのところに<code>self.getTeamID()</code>という<br />
+実際その方が便利ですね。</p>
+
+<p>が、引数のチームIDのところに<code>self.getTeamID()</code>という<br />
 さらなるメソッド呼び出しが入っています。<br />
 名前からしてチームIDを取得するのだろうとすぐわかりますが、<br />
 読む練習のため一応さらに見てみましょう&hellip;</p>
 
-<p>&hellip;すぐ上にありました。<br />
+<p>&hellip;&hellip;&hellip;&hellip;すぐ上にありました。<br />
 <code>CyPlayer</code>型のインスタンス<code>self.player</code>がやっと出てきました。<br />
 <code>CyPlayer</code>の<code>getTeam()</code>はチームIDを返しますから、これでうまくいっています。</p>
 
 <h2 id="getresearchedtechlist-self">getResearchedTechList(self):</h2>
 
-<p><code>hasResearchedTech()</code>『この技術をすでに研究したか？』をさらに呼び出しているメソッドもあります&hellip;</p>
+<p><code>hasResearchedTech()</code>「この技術をすでに研究したか？」をさらに呼び出しているメソッドもあります&hellip;</p>
 
 <pre><code class="language-python">## Sid Meier's Civilization 4
 ## Copyright Firaxis Games 2005
@@ -383,7 +389,7 @@ class PyPlayer:
 		return lTechs
 </code></pre>
 
-<p><code>getResearchedTechList()</code>『そのプレイヤーが研究済みの技術のリストを取得する』です。<br />
+<p><code>getResearchedTechList()</code>「そのプレイヤーが研究済みの全技術のリストを取得する」です。<br />
 for文の回数のところに(<code>range()</code>でリスト化しているので、中身は回数だとわかります)、<br />
 <code>gc.getNumTechInfos()</code>という見慣れないメソッドがあります。<br />
 技術のInfoの数、すなわち全技術を順番に並べたときの総数です。</p>
@@ -403,13 +409,13 @@ Civ4ではIDは0からの連番になっているので、これでうまくい�
 お疲れさまでした、研究した技術のリストを取得するメソッドができました。</p>
 
 <p>技術に限らず、条件を満たしたもののリストをつくりたい、と思ったときは、<br />
-『対象すべてを用意して→for文で1個ずつ取り出し→その1個について条件を判定して→Trueなら結果用リストに追加する』<br />
+「対象すべてを用意して→for文で1個ずつ取り出し→各要素ついて条件を判定して→Trueなら結果用リストに追加する」<br />
 ことで得ることができます。<br />
 (<a href="https://gforestshade.github.io/kujira/post/getstarted7/">はじめての その７</a>で似た題材を扱いました。今の視点で復習すると新しい発見があるかも？)</p>
 
 <h2 id="getunitlist-self">getUnitList(self):</h2>
 
-<p>PyPlayer型のメソッドには『そのプレイヤーに属する全○○のリスト』のたぐいが<br />
+<p><code>PyPlayer</code>型のメソッドには「そのプレイヤーに属する全○○のリスト」のたぐいが<br />
 それなりに用意されていて、こういったものもあります&hellip;</p>
 
 <pre><code class="language-python">## Sid Meier's Civilization 4
@@ -433,7 +439,7 @@ class PyPlayer:
 		return lUnit
 </code></pre>
 
-<p>『そのプレイヤーに属する全ユニットのリスト』です。<br />
+<p>「そのプレイヤーに属する全ユニットのリスト」です。<br />
 CyPlayerのインスタンスからユニットのリストを取り出す方法は(見てわかる通り)すこし難しいので、<br />
 まとめてメソッドにしてあるのは心強いですね。<br />
 中身の解説はすこし長くなってしまうので、<a href="https://gforestshade.github.io/kujira/post/readgetunitlist/">付録</a>としてまとめました。</p>
@@ -441,7 +447,8 @@ CyPlayerのインスタンスからユニットのリストを取り出す方法
 <h1 id="つかう">つかう</h1>
 
 <p>自軍の全ユニットに対して何かすることが可能になりました。<br />
-『チチェン・イッツァ完成時、自軍の全ユニットを首都に集める』MODを作ってみましょう。</p>
+《チチェン・イッツァ完成時、自軍の全ユニットを首都に集めるMOD》<br />
+を作ってみましょう。</p>
 
 <p>いつものようにはじめて&hellip;</p>
 
@@ -482,7 +489,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 </code></pre>
 
-<p>&hellip;つくりたかったのですが、これではうまくいきません。<br />
+<p>&hellip;&hellip;&hellip;&hellip;つくりたかったのですが、これではうまくいきません。<br />
 <code>PyPlayer</code>クラスを提供しているのが、Civ4本体ではなく、<br />
 AssetsフォルダにあるPythonファイルだからです。</p>
 
@@ -492,19 +499,20 @@ AssetsフォルダにあるPythonファイルだからです。</p>
 
 <h2 id="モジュール">モジュール</h2>
 
-<p>Pythonではファイル全体が１つの「モジュール」とみなされ、<br />
-ファイル名の拡張子を除いた部分が自動的に「モジュール名」として命名されます。<br />
+<p>Pythonではファイル全体が１つの<strong>モジュール</strong>とみなされ、<br />
+ファイル名の拡張子を除いた部分が自動的に<strong>モジュール名</strong>として命名されます。<br />
 Pythonで他のファイルのクラスや関数を使いたいときは、<br />
-このモジュール名を指定してまず読み込む必要があります。</p>
+この<strong>モジュール名</strong>を指定してまず読み込む必要があります。</p>
 
-<p>ファイル冒頭に<code>import ほにゃほにゃ</code>が並んでいるところに</p>
+<p>ファイル冒頭に<code>import ほにゃほにゃ</code>が並んでいるところに、<br />
+こうやって足してあげます&hellip;</p>
 
 <pre><code class="language-python">import (モジュール名)
 </code></pre>
 
-<p>と足します。<br />
-もうすでに書いてあるimport文がいくつか見えると思いますが、それらも実はモジュールの読み込み指定です。<br />
-同じフォルダか、あるいは元のBtsのAssets\Pythonに必ず同じ名前の<code>(モジュール名).py</code>のファイルがありますので、<br />
+<p>もうすでに書いてあるimport文がいくつか見えると思いますが、それらも実はモジュールの読み込み指定です。<br />
+同じフォルダか、あるいは元のBtsのAssets\Pythonに必ず同じ名前の<br />
+<code>(モジュール名).py</code>のファイルがありますので、<br />
 覗いてみるのもよいでしょう。</p>
 
 <p>モジュールは自分でつくることもできます。<br />
@@ -532,17 +540,17 @@ Pythonで他のファイルのクラスや関数を使いたいときは、<br /
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 </code></pre>
 
-<p>&hellip;これでもまだうまくいきません。<br />
+<p>&hellip;&hellip;&hellip;&hellip;これでもまだうまくいきません。<br />
 実際に使うところで、モジュール名とクラス名を<strong><em>両方</em></strong>明示するする必要があります。<br />
-すなわち、</p>
+すなわち、このようにします&hellip;</p>
 
 <pre><code class="language-python">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
             pyPlayer = PyHelpers.PyPlayer(pCity.getOwner())
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 </code></pre>
 
-<p>このようにします。<br />
-不便に思えますが、このことは「モジュールをまたげば同じクラス名を使っても混ざらない」<br />
+<p>不便に思えますが、このことは<br />
+「モジュールをまたげば同じクラス名を使っても混ざらない」<br />
 ということを意味します。<br />
 変数のスコープで述べたように、気にしなければならない範囲が狭まるので、<br />
 うっかり被らせてしまうことがなくなる利点でもあるのです。</p>
@@ -568,7 +576,7 @@ Pythonで他のファイルのクラスや関数を使いたいときは、<br /
 
 <h1 id="ためす">ためす</h1>
 
-<p>ぜんぶで&hellip;</p>
+<p>ぜんぶでこうなりました&hellip;</p>
 
 <pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
@@ -593,8 +601,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
             for pUnit in pyPlayer.getUnitList():
                 pUnit.setXY(toX, toY, False, True, True)
 </code></pre>
-
-<p>こうなりました。</p>
 
 <p><a href="https://gforestshade.github.io/kujira/img/kujira_class_30.png"><img src="https://gforestshade.github.io/kujira/img/kujira_class_30.png"    /></a>
 <br />
@@ -681,10 +687,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -709,10 +715,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -737,10 +743,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -765,10 +771,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -849,10 +855,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 5581
+    "wordCount": 5623
   }
 </script>
 
@@ -128,12 +128,14 @@
       
     
       
-    
-      
           <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
           </a>
           
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
       
     
   
@@ -149,7 +151,7 @@
 
     
     &middot; 12 Minute Read
-    &middot; 5581 Words
+    &middot; 5623 Words
   </div>
 
   
@@ -416,7 +418,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <h1 id="オブジェクト">オブジェクト</h1>
 
-<p>Pythonでは、ほとんどすべてのものが「オブジェクト」の値として変数に代入ができます。<br />
+<p>Pythonでは、ほとんどすべてのものが<strong>オブジェクト</strong>の値として変数に代入ができます。<br />
 その力は、関数やクラスにも及びます。<br />
 例えば、<code>git = gc.getInfoTypeForString</code>という文は、<br />
 <code>gc.getInfoTypeForString</code>という関数を変数に代入しています。<br />
@@ -437,7 +439,7 @@ Pythonでは、変数や関数の名前は実体につけられたラベルの�
 <p>あるいは、型もオブジェクトです。<br />
 クラス名がクラスオブジェクトを指し示しています。</p>
 
-<pre><code class="language-python">class A
+<pre><code class="language-python">class A:
   def f(self):
     return 0
 
@@ -455,16 +457,17 @@ print method_f()
 </code></pre>
 
 <p>上の例で、<code>a</code>は<code>A</code>のインスタンスになっています。<br />
-別名を経由してインスタンス化していますが、指している実体は<code>A</code>に変わりないので、<br />
-<code>A</code>のインスタンスができます。</p>
+別名<code>class_a</code>を経由してインスタンス化していますが、<br />
+指している実体は<code>A</code>に変わりないので、<code>A</code>のインスタンスができます。</p>
 
 <p>この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、<br />
 「関数のリスト」や「型のリスト」をつくることができます。<br />
-リスト内の関数を順番に呼び出すとかリスト内の型のインスタンスをつくるとかいうことが可能になります。</p>
+リスト内の関数を順番に呼び出すとか型のリストから1つずつインスタンスをつくるとかいうことが可能になります。</p>
 
 <h1 id="関数">関数</h1>
 
-<p>最初の方は関数です&hellip;</p>
+<p>じっさいにプログラムリストを読み解いていきます。<br />
+最初の方は関数です&hellip;</p>
 
 <pre><code class="language-python">def isValidPlot(x, y):
     &quot;&quot;&quot;ラップを考慮して、有効な座標であるか判定する&quot;&quot;&quot;
@@ -518,7 +521,7 @@ print method_f()
 </code></pre>
 
 <p>for文の中にさらにfor文が2重になって入っています。<br />
-ループ処理が2重になっているので「2重ループ」と呼びます。</p>
+ループ処理が2重になっているので<strong>2重ループ</strong>と呼びます。</p>
 
 <p><code>i_range</code>が変数なので少しわかりにくいですね。<br />
 <code>i_range = 1</code>だと仮定して書き直してみましょう。</p>
@@ -580,10 +583,11 @@ print method_f()
                 if 前提条件:
                         if 前提条件2:
                                 if 前提条件3:
-                                        処理...
-                                        処理...
-                                        処理...
-                                        ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+                                        if 前提条件4:
+                                                処理...
+                                                処理...
+                                                処理...
+                                                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
         
         # continueで
         for i in list:
@@ -592,6 +596,8 @@ print method_f()
                 if not 前提条件2:
                         continue
                 if not 前提条件3:
+                        continue
+                if not 前提条件4:
                         continue
             
                 処理...
@@ -604,7 +610,7 @@ print method_f()
 インデントが右へ右へと深くなっていきます。<br />
 コードが画面右からはみ出してしまい、読みにくくなるリスクも高くなってしまいます。</p>
 
-<p>for文の中のif文の中のif文の中の&hellip;という入れ子構造を「ネスト」と呼びますが、<br />
+<p>for文の中のif文の中のif文の中の&hellip;という入れ子構造を<strong>ネスト</strong>と呼びますが、<br />
 一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。<br />
 なので、できるなら<code>continue</code>や<code>return</code>といった<br />
 残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、<br />
@@ -736,17 +742,18 @@ print list3
 
 <p>リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。<br />
 <code>[]</code>を<code>()</code>にしてみましょう。<br />
-<a href="https://gforestshade.github.io/kujira/img/generator_expression.png"><img src="https://gforestshade.github.io/kujira/img/generator_expression.png"    /></a>
-<br />
+<iframe src="https://paiza.io/projects/e/5fwoF0-xkGsu-ZdCYlQqdA?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe><br />
+<!-- <a href="https://gforestshade.github.io/kujira/img/generator_expression.png"><img src="https://gforestshade.github.io/kujira/img/generator_expression.png"    /></a>
+ --><br />
 <code>[0, 2, 4, 6, 8]</code>&hellip;&hellip;ではなく、よくわからないものが出力されました。<br />
-これは「ジェネレーターオブジェクト」(Generator Object)というもので、<br />
-それを生成した、内包表記を<code>()</code>で囲んだものを「ジェネレーター式」(Generator Expression)と呼びます。</p>
+これは<strong>ジェネレーターオブジェクト</strong>(Generator Object)というもので、<br />
+それを生成した、内包表記を<code>()</code>で囲んだものを<strong>ジェネレーター式</strong>(Generator Expression)と呼びます。</p>
 
-<p>ジェネレーター式によってつくられたジェネレーターオブジェクトは、<br />
+<p><strong>ジェネレーター式</strong>によってつくられた<strong>ジェネレーターオブジェクト</strong>は、<br />
 いってみればリストを加工するレシピを予約したもの、です。<br />
 このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、<br />
 リストではないので、直接出力しようとしても<br />
-それがGenerator Objectであることしかわかりません。</p>
+それが<strong>Generator Object</strong>であることしかわかりません。</p>
 
 <p>実際に料理をするには、for文を使います。</p>
 
@@ -890,10 +897,10 @@ print list3
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -918,10 +925,10 @@ print list3
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -946,10 +953,10 @@ print list3
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -974,10 +981,10 @@ print list3
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -1058,10 +1065,10 @@ print list3
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   

@@ -1,8 +1,9 @@
 +++
 date = "2017-10-23"
+lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 4"
-banner = "green"
+banner = "photo_pink1"
 tags = ["それからのPython", "せつめい"]
 +++
 
@@ -14,8 +15,7 @@ tags = ["それからのPython", "せつめい"]
 # 提供されているクラスを探訪してみる
 新しいクラスをつくる体験をしたところで、
 既存のクラスを使ってみる体験もしてみます。
-[APIリファレンス](http://civ4bug.sourceforge.net/PythonAPI/index.html)を見ながら、
-すすめていきましょう。
+[APIリファレンス](http://civ4bug.sourceforge.net/PythonAPI/index.html)を見ながら、すすめていきましょう。
 
 左上フレームにリストされているのが、クラス名(型名)です。
 ためしにCyCityをクリックしてみましょう。
@@ -23,7 +23,7 @@ tags = ["それからのPython", "せつめい"]
 CyCity型のメソッドだけでもずいぶん数があります。
 流し読みしつつ、気になったのを見ていきましょう。
 
-なお、色付き文字になっているのは「型」です。例えば、
+なお、色付き文字になっているのは**型**です。例えば、
 BOOL - ブール型(真と偽の2択)
 INT - 数値型
 VOID - なし(戻り値を返さないもの)
@@ -31,84 +31,117 @@ VOID - なし(戻り値を返さないもの)
 緑色 - クラス型
 こんな具合です。
 
+---
+
 筆者が気になったのは、まずこれ。
 
-    19. INT calculateDistanceMaintenance ()
+>
+``` plain
+19. INT calculateDistanceMaintenance ()
+```
 
 距離維持費を計算して返してくれるインスタンスメソッドですね。
 最初に書いてあるINTが戻り値の型を表します。この場合は数値型です。
 追加の引数がないメソッドは`c = pCity.calculateDistanceMaintenance()`のように
 都市のインスタンスさえ用意できれば簡単に呼び出せるので練習台によいですね。
 
+---
 
 次はこれ。
 
-    47. VOID changeExtraHappiness (INT iChange)
-    48. VOID changeExtraHealth (INT iChange)
+>
+``` plain
+47. VOID changeExtraHappiness (INT iChange)
+48. VOID changeExtraHealth (INT iChange)
+```
+
 幸福や衛生を`iChange`ぶんだけ変えてしまうメソッドです。
 「やったー！」や「文明により」で追加される幸福や衛生がこれに当たります。
 `pCity.changeExtraHealth(3)`とすれば衛生+3にできますね。
 数値型の引数をひとつだけ取るメソッドも練習台にはよいです。
 
+---
+
 どんどんいきましょう。
 
-    50. VOID changeFood (INT iChange)
-    63. VOID changeProduction (INT iChange)
+>
+``` plain
+50. VOID changeFood (INT iChange)
+63. VOID changeProduction (INT iChange)
+```
+
 食料やハンマーのたまり具合を直接増減させてしまいます。
 
+---
 
 ## CommerceとYield
 と、ここで、少し用語の説明をしましょう。
-CommerceとYieldについてです。
+**Commerce**と**Yield**についてです。
 
-YieldとはFood(パン)・Production(ハンマー)・Commerce(コイン)の総称です。
-内部ではこれらをひとまとめで扱い、個々の出力はYieldIDによって区別します。
-たとえばバニラでは、Yield0番がFood・Yield1番がProduction・Yield2番がCommerceになっています。
+**Yield**とは**Food**(パン)・**Production**(ハンマー)・**Commerce**(コイン)の総称です。
+内部ではこれらをひとまとめで扱い、個々の出力は**YieldID**によって区別します。
+たとえばバニラでは、Yield0番が**Food**・Yield1番が**Production**・Yield2番が**Commerce**になっています。
 何が何番なのかは`YieldTypes.YIELD_FOOD`などとしても求められるので、
 実際にMODを作る際はそちらを使うほうがよいでしょう。
 
-CommerceとはGold(ゴールド)・Research(ビーカー)・Culture(文化)・Espionage(スパイポイント)の総称です。
-Commerce(コイン)と英名がまったく同じなので紛らわしいことこの上ないですが、とにかくそうなっています。
+**Commerce**とは**Gold**(ゴールド)・**Research**(ビーカー)・**Culture**(文化)・**Espionage**(スパイポイント)の総称です。
+**Commerce**(コイン)と英名がまったく同じなのでものずごく紛らわしいですが、とにかくそうなっています。
 コインをスライダーによって振り分けるこの4つの出力を
-内部ではひとまとめで扱い、個々の出力はCommerceIDによって区別します。
-たとえばバニラでは、Commerce0番がGold・Commerce1番がResearch・Commerce2番がCulture・Commerce3番がEspionageになっています。
+内部ではひとまとめで扱い、個々の出力は**CommerceID**によって区別します。
+たとえばバニラでは、Commerce0番が**Gold**・Commerce1番が**Research**・Commerce2番が**Culture**・Commerce3番が**Espionage**になっています。
 何が何番なのかは`CommerceTypes.COMMERCE_ESPIONAGE`などとしても求められるので、
 実際にMODを作る際はそちらを使うほうがよいでしょう。
 (もちろん、スパイなしのオプションを入れると、Commerce3番は全く出なくなり、
 Commerce2番に振り分けられます。MODでもスパイなしオプションに対応する場合は
 考慮しなければならないため、いちおう覚えておきましょう。)
 
-
+---
 
 したがって、CyCity型のインスタンスメソッドでも、
-
-    139. INT getCommerceRate (CommerceType eIndex)
 都市のインスタンスから毎ターン何ビーカー出ているか求めたいと思ったとき、
-`iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)`とする必要があります。
-なお、ここでのRateはPer Turn(ターンごと)のRateです。スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。
-さらに、図書館などの効果であるビーカー+25%のパーセントはCommerceRateModifierです。
 
-    140. INT getCommerceRateModifier (CommerceType eIndex)
-こちらにより、都市合計で+何%の修正があるか取得できます。
+>
+``` plain
+139. INT getCommerceRate (CommerceType eIndex)
+```
+
+`iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)`とする必要があります。
+なお、ここでのRateはPer Turn(ターンごと)のRateです。
+スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。
+
+---
+
+さらに、図書館などの効果でよくある「ビーカー+25%」のパーセントはCommerceRateModifierです。
+
+>
+``` plain
+140. INT getCommerceRateModifier (CommerceType eIndex)
+```
+
+こちらにより、その都市に合計で+何%の修正があるか取得できます。
+
+---
 
 ## ID
-なにかのIDの指定を引数で要求してくるメソッドは他にも、
+なにかのIDの指定を引数で要求してくるメソッドは他にもたくさんあります。
+たとえば建造物種IDでいえば、
 
     229. INT getNumBuilding (BuildingType iIndex)
-指定した建造物IDに対応した建造物が都市内にいくつ建っているか
-(といっても通常0か1ですが)を取得してくるメソッドもあります。
+これは指定した建造物種IDに対応した建造物が都市内にいくつ建っているか
+(といっても通常0か1ですが)を取得してくるメソッドです。
 
-建造物IDは`gc.getInfoTypeForString(XMLキーの文字列)`とすることで求められます。
+建造物種IDは`gc.getInfoTypeForString(XMLキーの文字列)`とすることで求められます。
 `if pCity.getNumBuilding( gc.getInfoTypeForString('BUILDING_LIBRARY') ) > 0:`
 などとすれば、都市インスタンスに図書館が建っているかどうかを判定できます。
 
+---
 
 IDを要求するのではなく、戻り値として返してくれるメソッドもあります。
 
     243. PlayerType getOwner ()
 都市の所有者のPlayerIDを返してくれます。
 
-# インスタンス
+# あなたのインスタンスはどこから？
 ところで、便利なメソッドがたくさんあるのはいいのですが、肝心のインスタンスは
 どこから取得すればよいのでしょうか。
 方法は大きく分けて2つあります。
@@ -130,7 +163,7 @@ IDを要求するのではなく、戻り値として返してくれるメソッ
     def onUnitBuilt(self, argsList):
         'Called when a unit is built in a city'
         super(self.__class__, self).onUnitBuilt(argsList)
-        pCity, pUnit = argsList
+        pCity, pUnit、pPlayer = argsList
         ##########
 ```
 
@@ -188,7 +221,10 @@ iPlayer = pCity.getOwner()
 このIDを持っていったらCyPlayer型のインスタンスを返してくれる関数があったらいいのに...
 と思うところですが、それはCyGlobalContext型のインスタンスメソッドとして用意されています。
 
-    208. CyPlayer getPlayer (INT idx)
+>
+``` plain
+208. CyPlayer getPlayer (INT idx)
+```
 
 まずCyGlobalContext型のインスタンスを作って、
 ``` python
@@ -207,16 +243,20 @@ CyGlobalContext型のインスタンスはひとつあれば十分なので、
 CyPlayerのインスタンスメソッドでできることは本当に多岐にわたっていて、
 とてもここでは説明しつくせない量ですので各自[リファレンス](http://civ4bug.sourceforge.net/PythonAPI/index.html)を見ていただくことにして、
 
-今回は例として「奴隷制」の社会制度を採用しているときにだけユニット作成報告が上がるようにしてみましょう。
+今回は例として「奴隷制」の社会制度を採用しているときにだけ
+ユニット作成報告が上がるようにしてみましょう。
 奴隷制のXMLキーは`"CIVIC_SLAVERY"`ですから、
-`gc.getInfoTypeForString("CIVIC_SLAVERY")`でCivicIDを取得できます。
-そのCivicIDと、先に手に入れたCyPlayer型のインスタンスを使って、
-
-    328. BOOL isCivic (CivicType eCivic)
+`gc.getInfoTypeForString("CIVIC_SLAVERY")`でCivicTypeを取得できます。
+そのCivicTypeと、先に手に入れたCyPlayer型のインスタンスを使って、
 
 これを呼び出します。
 
-全部で...
+>
+``` plain
+328. BOOL isCivic (CivicType eCivic)
+```
+
+全部でこうなります...
 ```
 # -*- coding: shift_jis -*-
 from CvPythonExtensions import *
@@ -244,7 +284,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
             message = u"奴隷制を採用する%sで%sがつくられました。" % (cityname, unitname)
             CyInterface().addImmediateMessage(message, "")
 ```
-こうなります。
 
 `pCity`が人間プレイヤーの都市とは限らないことに注意してください。
 したがって`pCity.getOwner()`で取得したPlayerIDも「そのユニットを作ったPlayer」であって、

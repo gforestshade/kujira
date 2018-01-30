@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 4325
+    "wordCount": 4580
   }
 </script>
 
@@ -150,8 +150,8 @@
     <time datetime="2017-07-03">3 Jul, 2017</time>
 
     
-    &middot; 9 Minute Read
-    &middot; 4325 Words
+    &middot; 10 Minute Read
+    &middot; 4580 Words
   </div>
 
   
@@ -207,7 +207,7 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 <h1 id="civilizationiv-ini">CivilizationIV.ini</h1>
 
 <p>早速その<code>CvEventManager.py</code>がどこにあるのか&hellip;を見ていく前に、<br />
-PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。</p>
+PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></p>
 
 <pre><code class="language-ini">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 ; Enable the logging system
@@ -244,7 +244,7 @@ Assets\Python\EntryPoints\CvEventManagerInterface.py
 Assets\Python\EntryPoints\CvEventInterface.py
 </code></pre>
 
-<p>をみると、こうなっていました。</p>
+<p><sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>をみると、こうなっていました。</p>
 
 <pre><code class="language-python"># Sid Meier's Civilization 4
 # Copyright Firaxis Games 2005
@@ -280,7 +280,12 @@ def beginEvent(context, argsList=-1):
 </code></pre>
 
 <p>これを<strong>ディレクトリ階層ごと</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
-新しく作ったMODフォルダにAssets\Python\EntryPoints\ ディレクトリを作って、そこにコピーします。</p>
+MODフォルダに新しくkujira\Assets\Python\EntryPoints\ フォルダを作って、そこにコピーします。</p>
+
+<p>MOD開発中に使用するMODフォルダはユーザーの&rdquo;Documents&rdquo;にある方をおすすめします。<br />
+パッケージ版の場合&rdquo;ドキュメント\My Games\Beyond the Sword (J)\Mods&rdquo;<br />
+Steam版の場合&rdquo;ドキュメント\My Games\Beyond the Sword\Mods&rdquo;<br />
+です。</p>
 
 <pre><code class="language-plain">└─kujira
     └─Assets
@@ -438,7 +443,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <p>独自処理部分では、まず<code>pCity = argsList[0]</code>として<br />
 イベントに付随してくる情報を取得しています。<br />
-<a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベント一覧</a>からdef onCityBuiltをさがしてみると、</p>
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">イベント一覧</a>からdef onCityBuiltをさがしてみると、</p>
 
 <ul>
 <li>Function: def onCityBuilt()<br /></li>
@@ -613,6 +618,17 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <a href="https://gforestshade.github.io/kujira/img/library.png"><img src="https://gforestshade.github.io/kujira/img/library.png"  width="800" height="460" /></a>
 <br />
 動きました！</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Windows10,パッケージ版の場合&rdquo;ドキュメント\My Games\Beyond the Sword(J)&rdquo;<br>Steam版の場合&rdquo;ドキュメント\My Games\Beyond the Sword&rdquo;にあります<br />
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">パッケージ版の場合。Steam版の場合は&rdquo;C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\Python\EntryPoints\CvEventInterface.py&rdquo;<br />
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
 </div>
 
@@ -695,10 +711,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -723,10 +739,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -751,10 +767,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -779,10 +795,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
@@ -863,10 +879,10 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                       
                     
                       
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
                           alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
                       
                     
                   
