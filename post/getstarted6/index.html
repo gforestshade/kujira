@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>はじめてのPythonMOD 6  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="はじめてのPythonMOD, せつめい, ">
+
+
+<meta property="og:title" content="はじめてのPythonMOD 6  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted6/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-08-06T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-08-06T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="はじめてのPythonMOD">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="はじめてのPythonMOD 6" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted6/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "はじめてのPythonMOD 6",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-08-06",
+    "description": "",
+    "wordCount": 3051
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/getstarted6/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_yellow1_1024x200.jpg" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/132803717@N02/27004253005/">&lsquo;Choice&rsquo; by Seán Mackey</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title">はじめてのPythonMOD 6
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-08-06">6 Aug, 2017</time>
+
+    
+    &middot; 7 Minute Read
+    &middot; 3051 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/getstarted6/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a>のつづき<br /></li>
+<li>XMLとPythonの合わせ技・XML編<br /></li>
+<li>あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません<br />
+<br /></li>
+</ul>
+
+<h1 id="構想">構想</h1>
+
+<p>これまでは既存の動作を変更してばかりでした。<br />
+Pythonでしかできない効果を持った新しい建造物を作りましょう！<br />
+とりあえず&rdquo;いつもの&rdquo;を作ります。</p>
+
+<pre><code class="language-plain">└─kujira_fert
+    └─Assets
+        └─Python
+            ├─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h1 id="xml">XML</h1>
+
+<p>新しい建造物を追加します。<br />
+編集するのは<code>CIV4BuildingClassInfos.xml</code>と<code>CIV4BuildingInfos.xml</code>です。<br />
+C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings<br />
+<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>から同じフォルダ階層にコピーします。</p>
+
+<p>ここまででファイル構成はこうなっているはずです。</p>
+
+<pre><code class="language-plain">└─kujira_fert
+    └─Assets
+        ├─Python
+        │  ├─KujiraEventManager.py
+        │  │
+        │  └─Entrypoints
+        │      └─CvEventInterface.py
+        │
+        └─XML
+            └─Buildings
+                ├─CIV4BuildingClassInfos.xml
+                └─CIV4BuildingInfos.xml
+
+</code></pre>
+
+<h2 id="ちょっとだけxmlの話">ちょっとだけXMLの話</h2>
+
+<p><a href="https://civ4-wiki.club/index.php?MOD%2F%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%2F%E3%82%AD%E3%83%BC%E4%B8%80%E8%A6%A7">キー一覧</a>を見ていただくとわかりやすいのですが、<br />
+建造物の種類一つ一つに<strong>BuildingType</strong>、<br />
+UBどうしをひとまとめにしたものに<strong>BuildingClassType</strong>が割り当てられています。<br />
+例えばストーンヘンジで各都市に無償で供給されるのは、<br />
+正確には「BUILDING_OBELISKという建造物」ではなく、<br />
+「BUILDINGCLASS_OBELISKに属する建造物のうち、その文明に合ったもの」なのです。<br />
+(ですから、例えばアメリカ先住民がストヘンを建てると<br />
+ちゃんとトーテムポールが配置されるのですね)</p>
+
+<p>UBが存在しない建造物であっても自分一人をメンバーとした<strong>BuildingClass</strong>が必ずあります。<br />
+というより、<strong>Building</strong>を作るときに所属先である<strong>BuildingClass</strong>を自己申告するタグがあり、<br />
+それは省略できません。<br />
+なのでオレオレ建造物を追加するときは、<br />
+(その<strong>Building</strong>ひとつだけを含む予定の)<strong>BuildingClass</strong>と、<br />
+(その<strong>BuildingClass</strong>に所属する)<strong>Building</strong>本体とを<br />
+一緒に作ってあげなければいけません。</p>
+
+<h2 id="civ4buildingclassinfos-xml">CIV4BuildingClassInfos.xml</h2>
+
+<p>というわけで<code>CIV4BuildingClassInfos.xml</code>の</p>
+
+<p>↓ここに</p>
+
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_00.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_00.png"  width="400" height="800" /></a>
+
+
+<p>↓こんな感じのを追加しておきます。</p>
+
+<pre><code class="language-xml">		&lt;BuildingClassInfo&gt;
+			&lt;Type&gt;BUILDINGCLASS_FERTILIZE_SHRINE&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_FERTIRIZE_SHRINE&lt;/Description&gt;
+			&lt;iMaxGlobalInstances&gt;-1&lt;/iMaxGlobalInstances&gt;
+			&lt;iMaxTeamInstances&gt;-1&lt;/iMaxTeamInstances&gt;
+			&lt;iMaxPlayerInstances&gt;-1&lt;/iMaxPlayerInstances&gt;
+			&lt;iExtraPlayerInstances&gt;0&lt;/iExtraPlayerInstances&gt;
+			&lt;bNoLimit&gt;0&lt;/bNoLimit&gt;
+			&lt;bMonument&gt;0&lt;/bMonument&gt;
+			&lt;DefaultBuilding&gt;BUILDING_FERTILIZE_SHRINE&lt;/DefaultBuilding&gt;
+			&lt;VictoryThresholds/&gt;
+		&lt;/BuildingClassInfo&gt;
+</code></pre>
+
+<h2 id="civ4buildinginfos-xml">CIV4BuildingInfos.xml</h2>
+
+<p><code>CIV4BuildingInfos.xml</code>はタグが多すぎて１からでは無理なのでBUILDING_RECYCLING_CENTERを元に改変することにして、</p>
+
+<p>↓ここから<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_01.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_01.png"  width="400" height="1600" /></a>
+<br />
+↑ここまでを</p>
+
+<p>↓ここに貼り付けます。</p>
+
+<a href="https://gforestshade.github.io/kujira/img/kujira_fert_02.png"><img src="https://gforestshade.github.io/kujira/img/kujira_fert_02.png"  width="400" height="800" /></a>
+
+
+<p><br><br></p>
+
+<p>そのあと、貼り付けた部分の一部を修正していきます。</p>
+
+<pre><code class="language-xml">			&lt;BuildingClass&gt;BUILDINGCLASS_FERTILIZE_SHRINE&lt;/BuildingClass&gt;
+			&lt;Type&gt;BUILDING_FERTILIZE_SHRINE&lt;/Type&gt;
+			&lt;SpecialBuildingType&gt;NONE&lt;/SpecialBuildingType&gt;
+			&lt;Description&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE&lt;/Description&gt;
+			&lt;Civilopedia&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_PEDIA&lt;/Civilopedia&gt;
+			&lt;Strategy&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_STRATEGY&lt;/Strategy&gt;
+</code></pre>
+
+<p>↑<code>&lt;BuildingClass&gt;</code>と<code>&lt;Type&gt;</code>を指定、それから各種テキストキーをそれっぽい名前にしておいて、</p>
+
+<pre><code class="language-xml">			&lt;Help&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_HELP&lt;/Help&gt;
+</code></pre>
+
+<p>↑<code>&lt;Help&gt;</code>というタグを追加しておきます。</p>
+
+<pre><code class="language-xml">			&lt;PrereqTech&gt;TECH_BIOLOGY&lt;/PrereqTech&gt;
+</code></pre>
+
+<p>↑解禁技術を生物学にして、</p>
+
+<pre><code class="language-xml">			&lt;iCost&gt;10&lt;/iCost&gt;
+</code></pre>
+
+<p>↑(開発中の一時的な措置として)ハンマーを軽くしておいて、</p>
+
+<pre><code class="language-xml">			&lt;bBuildingOnlyHealthy&gt;0&lt;/bBuildingOnlyHealthy&gt;
+</code></pre>
+
+<p>↑人口からの不衛生なしを解除して、</p>
+
+<pre><code class="language-xml">			&lt;iHappiness&gt;-10&lt;/iHappiness&gt;
+</code></pre>
+
+<p>↑不幸+10にしてみました。</p>
+
+<p>全部でどんな感じになったかは長いので章末に移動しました。<a href="#おまけ">おまけ</a>をご覧ください。</p>
+
+<p>この時点で生物学解禁の不幸を+10生む建造物ができているはずです。<br />
+ゲームを起動して、シヴィロペディアを見るなり、<br />
+WBで生物学を取って建ててみるなりしてみましょう。<br />
+もちろん、まだテキストキーの内容を定義していませんので、<br />
+生の<code>TXT_KEY_...</code>が出てきますが、<br />
+定義していない以上当然のことなので、気にしないことにしましょう。</p>
+
+<h2 id="text">Text</h2>
+
+<p>XML\Text\ に適当な名前のファイルを作ります。<br />
+今回は<code>Text_Kujira.xml</code>という名前にしましょう。<br />
+フォルダ構成はこうなりました。</p>
+
+<pre><code class="language-plain">└─kujira_fert
+    └─Assets
+        ├─Python
+        │  ├─ KujiraEventManager.py
+        │  │
+        │  └─Entrypoints
+        │      └─CvEventInterface.py
+        │
+        └─XML
+            ├─Buildings
+            │  ├─CIV4BuildingClassInfos.xml
+            │  └─CIV4BuildingInfos.xml
+            │
+            └─Text
+                └─Text_Kujira.xml
+</code></pre>
+
+<p><code>Text_Kujira.xml</code>の中身はこのようにします&hellip;</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;Shift_JIS&quot;?&gt;
+&lt;Civ4GameText xmlns=&quot;http://www.firaxis.com&quot;&gt;
+	&lt;TEXT&gt;
+		&lt;Tag&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE&lt;/Tag&gt;
+		&lt;English&gt;Fartilize Shrine&lt;/English&gt;
+		&lt;French&gt;肥沃化の神殿&lt;/French&gt;
+		&lt;German /&gt;
+		&lt;Italian /&gt;
+		&lt;Spanish /&gt;
+		&lt;Japanese&gt;肥沃化の神殿&lt;/Japanese&gt;
+	&lt;/TEXT&gt;
+	&lt;TEXT&gt;
+		&lt;Tag&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_PEDIA&lt;/Tag&gt;
+		&lt;English&gt;Fartilize Shrine's Pedia&lt;/English&gt;
+		&lt;French&gt;肥沃化の神殿は適当に考えた例題用の建造物です。&lt;/French&gt;
+		&lt;German /&gt;
+		&lt;Italian /&gt;
+		&lt;Spanish /&gt;
+		&lt;Japanese&gt;肥沃化の神殿は適当に考えた例題用の建造物です。&lt;/Japanese&gt;
+	&lt;/TEXT&gt;
+	&lt;TEXT&gt;
+		&lt;Tag&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_STRATEGY&lt;/Tag&gt;
+		&lt;English&gt;Fartilize Shrine changes terrain in city area into glass in return for 10 unhappiness.&lt;/English&gt;
+		&lt;French&gt;この先10もの不幸を背負う代わりに、都市圏内のタイルを即座に草原にします。&lt;/French&gt;
+		&lt;German /&gt;
+		&lt;Italian /&gt;
+		&lt;Spanish /&gt;
+		&lt;Japanese&gt;この先10もの不幸を背負う代わりに、都市圏内のタイルを即座に草原にします。&lt;/Japanese&gt;
+	&lt;/TEXT&gt;
+	&lt;TEXT&gt;
+		&lt;Tag&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_HELP&lt;/Tag&gt;
+		&lt;English&gt;[ICON_BULLET]Fartilize Shrine changes terrain in city area into glass.&lt;/English&gt;
+		&lt;French&gt;[ICON_BULLET]完成時都市圏内のタイルを即座に草原にする&lt;/French&gt;
+		&lt;German /&gt;
+		&lt;Italian /&gt;
+		&lt;Spanish /&gt;
+		&lt;Japanese&gt;[ICON_BULLET]完成時都市圏内のタイルを即座に草原にする&lt;/Japanese&gt;
+	&lt;/TEXT&gt;
+&lt;/Civ4GameText&gt;
+</code></pre>
+
+<p>こんな感じでしょうか。</p>
+
+<p>この時点で生物学解禁の不幸を+10生む、説明にもそれっぽいことが書いてあるけれど実際には草原化などしない(書いていませんからね)そんな <s>詐欺</s> 建造物ができているはずです。<br />
+起動して、いろいろ遊んでみましょう。</p>
+
+<h2 id="ためす-is-大事">ためす is 大事</h2>
+
+<p>こうして一歩進むごとにいちいち動作確認するのは重要です。<br />
+もしPythonをいじっていない今の状態でエラーが出るのなら、<br />
+XMLにまずいところがあるはずです。<br />
+もし一度目のお願いに従って動作確認をしていただいていて、<br />
+その時点では正しく動いていたなら、<br />
+いまいじった<code>Text_Kujira.xml</code>が必ずおかしいということになるはずです。<br />
+動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は<br />
+無制限に広くなっていき、<br />
+最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、<br />
+なんてことになることもあります。<br />
+<strong><em>ためす is 大事。</em></strong></p>
+
+<h1 id="つづく">つづく</h1>
+
+<p>XMLには深入りしないと言ったものの、変更するのと比べて新しく作るのは結構大変でした。<br />
+そのせいで字数が多くなり過ぎたので、<br />
+<a href="https://gforestshade.github.io/kujira/post/getstarted7/">その７</a>へ続きます。</p>
+
+<h1 id="おまけ">おまけ</h1>
+
+<h2 id="civ4buildinginfos-xml追加分の全文">CIV4BuildingInfos.xml追加分の全文</h2>
+
+<pre><code>		&lt;BuildingInfo&gt;
+			&lt;BuildingClass&gt;BUILDINGCLASS_FERTILIZE_SHRINE&lt;/BuildingClass&gt;
+			&lt;Type&gt;BUILDING_FERTILIZE_SHRINE&lt;/Type&gt;
+			&lt;SpecialBuildingType&gt;NONE&lt;/SpecialBuildingType&gt;
+			&lt;Description&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE&lt;/Description&gt;
+			&lt;Civilopedia&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_PEDIA&lt;/Civilopedia&gt;
+			&lt;Strategy&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_STRATEGY&lt;/Strategy&gt;
+			&lt;Help&gt;TXT_KEY_BUILDING_FERTILIZE_SHRINE_HELP&lt;/Help&gt;
+			&lt;Advisor&gt;ADVISOR_GROWTH&lt;/Advisor&gt;
+			&lt;ArtDefineTag&gt;ART_DEF_BUILDING_RECYCLING_CENTER&lt;/ArtDefineTag&gt;
+			&lt;MovieDefineTag&gt;NONE&lt;/MovieDefineTag&gt;
+			&lt;HolyCity&gt;NONE&lt;/HolyCity&gt;
+			&lt;ReligionType&gt;NONE&lt;/ReligionType&gt;
+			&lt;StateReligion&gt;NONE&lt;/StateReligion&gt;
+			&lt;bStateReligion&gt;0&lt;/bStateReligion&gt;
+			&lt;PrereqReligion&gt;NONE&lt;/PrereqReligion&gt;
+			&lt;PrereqCorporation&gt;NONE&lt;/PrereqCorporation&gt;
+			&lt;FoundsCorporation&gt;NONE&lt;/FoundsCorporation&gt;
+			&lt;GlobalReligionCommerce&gt;NONE&lt;/GlobalReligionCommerce&gt;
+			&lt;GlobalCorporationCommerce&gt;NONE&lt;/GlobalCorporationCommerce&gt;
+			&lt;VictoryPrereq&gt;NONE&lt;/VictoryPrereq&gt;
+			&lt;FreeStartEra&gt;NONE&lt;/FreeStartEra&gt;
+			&lt;MaxStartEra&gt;NONE&lt;/MaxStartEra&gt;
+			&lt;ObsoleteTech&gt;NONE&lt;/ObsoleteTech&gt;
+			&lt;PrereqTech&gt;TECH_BIOLOGY&lt;/PrereqTech&gt;
+			&lt;TechTypes/&gt;
+			&lt;Bonus&gt;NONE&lt;/Bonus&gt;
+			&lt;PrereqBonuses/&gt;
+			&lt;ProductionTraits/&gt;
+			&lt;HappinessTraits/&gt;
+			&lt;NoBonus&gt;NONE&lt;/NoBonus&gt;
+			&lt;PowerBonus&gt;NONE&lt;/PowerBonus&gt;
+			&lt;FreeBonus&gt;NONE&lt;/FreeBonus&gt;
+			&lt;iNumFreeBonuses&gt;0&lt;/iNumFreeBonuses&gt;
+			&lt;FreeBuilding&gt;NONE&lt;/FreeBuilding&gt;
+			&lt;FreePromotion&gt;NONE&lt;/FreePromotion&gt;
+			&lt;CivicOption&gt;NONE&lt;/CivicOption&gt;
+			&lt;GreatPeopleUnitClass&gt;NONE&lt;/GreatPeopleUnitClass&gt;
+			&lt;iGreatPeopleRateChange&gt;0&lt;/iGreatPeopleRateChange&gt;
+			&lt;iHurryAngerModifier&gt;0&lt;/iHurryAngerModifier&gt;
+			&lt;bBorderObstacle&gt;0&lt;/bBorderObstacle&gt;
+			&lt;bTeamShare&gt;0&lt;/bTeamShare&gt;
+			&lt;bWater&gt;0&lt;/bWater&gt;
+			&lt;bRiver&gt;0&lt;/bRiver&gt;
+			&lt;bPower&gt;0&lt;/bPower&gt;
+			&lt;bDirtyPower&gt;0&lt;/bDirtyPower&gt;
+			&lt;bAreaCleanPower&gt;0&lt;/bAreaCleanPower&gt;
+			&lt;DiploVoteType&gt;NONE&lt;/DiploVoteType&gt;
+			&lt;bForceTeamVoteEligible&gt;0&lt;/bForceTeamVoteEligible&gt;
+			&lt;bCapital&gt;0&lt;/bCapital&gt;
+			&lt;bGovernmentCenter&gt;0&lt;/bGovernmentCenter&gt;
+			&lt;bGoldenAge&gt;0&lt;/bGoldenAge&gt;
+			&lt;bAllowsNukes&gt;0&lt;/bAllowsNukes&gt;
+			&lt;bMapCentering&gt;0&lt;/bMapCentering&gt;
+			&lt;bNoUnhappiness&gt;0&lt;/bNoUnhappiness&gt;
+			&lt;bNoUnhealthyPopulation&gt;0&lt;/bNoUnhealthyPopulation&gt;
+			&lt;bBuildingOnlyHealthy&gt;0&lt;/bBuildingOnlyHealthy&gt;
+			&lt;bNeverCapture&gt;0&lt;/bNeverCapture&gt;
+			&lt;bNukeImmune&gt;0&lt;/bNukeImmune&gt;
+			&lt;bPrereqReligion&gt;0&lt;/bPrereqReligion&gt;
+			&lt;bCenterInCity&gt;0&lt;/bCenterInCity&gt;
+			&lt;iAIWeight&gt;0&lt;/iAIWeight&gt;
+			&lt;iCost&gt;10&lt;/iCost&gt;
+			&lt;iHurryCostModifier&gt;0&lt;/iHurryCostModifier&gt;
+			&lt;iAdvancedStartCost&gt;100&lt;/iAdvancedStartCost&gt;
+			&lt;iAdvancedStartCostIncrease&gt;0&lt;/iAdvancedStartCostIncrease&gt;
+			&lt;iMinAreaSize&gt;-1&lt;/iMinAreaSize&gt;
+			&lt;iConquestProb&gt;66&lt;/iConquestProb&gt;
+			&lt;iCitiesPrereq&gt;0&lt;/iCitiesPrereq&gt;
+			&lt;iTeamsPrereq&gt;0&lt;/iTeamsPrereq&gt;
+			&lt;iLevelPrereq&gt;0&lt;/iLevelPrereq&gt;
+			&lt;iMinLatitude&gt;0&lt;/iMinLatitude&gt;
+			&lt;iMaxLatitude&gt;90&lt;/iMaxLatitude&gt;
+			&lt;iGreatPeopleRateModifier&gt;0&lt;/iGreatPeopleRateModifier&gt;
+			&lt;iGreatGeneralRateModifier&gt;0&lt;/iGreatGeneralRateModifier&gt;
+			&lt;iDomesticGreatGeneralRateModifier&gt;0&lt;/iDomesticGreatGeneralRateModifier&gt;
+			&lt;iGlobalGreatPeopleRateModifier&gt;0&lt;/iGlobalGreatPeopleRateModifier&gt;
+			&lt;iAnarchyModifier&gt;0&lt;/iAnarchyModifier&gt;
+			&lt;iGoldenAgeModifier&gt;0&lt;/iGoldenAgeModifier&gt;
+			&lt;iGlobalHurryModifier&gt;0&lt;/iGlobalHurryModifier&gt;
+			&lt;iExperience&gt;0&lt;/iExperience&gt;
+			&lt;iGlobalExperience&gt;0&lt;/iGlobalExperience&gt;
+			&lt;iFoodKept&gt;0&lt;/iFoodKept&gt;
+			&lt;iAirlift&gt;0&lt;/iAirlift&gt;
+			&lt;iAirModifier&gt;0&lt;/iAirModifier&gt;
+			&lt;iAirUnitCapacity&gt;0&lt;/iAirUnitCapacity&gt;
+			&lt;iNukeModifier&gt;0&lt;/iNukeModifier&gt;
+			&lt;iNukeExplosionRand&gt;0&lt;/iNukeExplosionRand&gt;
+			&lt;iFreeSpecialist&gt;0&lt;/iFreeSpecialist&gt;
+			&lt;iAreaFreeSpecialist&gt;0&lt;/iAreaFreeSpecialist&gt;
+			&lt;iGlobalFreeSpecialist&gt;0&lt;/iGlobalFreeSpecialist&gt;
+			&lt;iMaintenanceModifier&gt;0&lt;/iMaintenanceModifier&gt;
+			&lt;iWarWearinessModifier&gt;0&lt;/iWarWearinessModifier&gt;
+			&lt;iGlobalWarWearinessModifier&gt;0&lt;/iGlobalWarWearinessModifier&gt;
+			&lt;iEnemyWarWearinessModifier&gt;0&lt;/iEnemyWarWearinessModifier&gt;
+			&lt;iHealRateChange&gt;0&lt;/iHealRateChange&gt;
+			&lt;iHealth&gt;0&lt;/iHealth&gt;
+			&lt;iAreaHealth&gt;0&lt;/iAreaHealth&gt;
+			&lt;iGlobalHealth&gt;0&lt;/iGlobalHealth&gt;
+			&lt;iHappiness&gt;-10&lt;/iHappiness&gt;
+			&lt;iAreaHappiness&gt;0&lt;/iAreaHappiness&gt;
+			&lt;iGlobalHappiness&gt;0&lt;/iGlobalHappiness&gt;
+			&lt;iStateReligionHappiness&gt;0&lt;/iStateReligionHappiness&gt;
+			&lt;iWorkerSpeedModifier&gt;0&lt;/iWorkerSpeedModifier&gt;
+			&lt;iMilitaryProductionModifier&gt;0&lt;/iMilitaryProductionModifier&gt;
+			&lt;iSpaceProductionModifier&gt;0&lt;/iSpaceProductionModifier&gt;
+			&lt;iGlobalSpaceProductionModifier&gt;0&lt;/iGlobalSpaceProductionModifier&gt;
+			&lt;iTradeRoutes&gt;0&lt;/iTradeRoutes&gt;
+			&lt;iCoastalTradeRoutes&gt;0&lt;/iCoastalTradeRoutes&gt;
+			&lt;iGlobalTradeRoutes&gt;0&lt;/iGlobalTradeRoutes&gt;
+			&lt;iTradeRouteModifier&gt;0&lt;/iTradeRouteModifier&gt;
+			&lt;iForeignTradeRouteModifier&gt;0&lt;/iForeignTradeRouteModifier&gt;
+			&lt;iGlobalPopulationChange&gt;0&lt;/iGlobalPopulationChange&gt;
+			&lt;iFreeTechs&gt;0&lt;/iFreeTechs&gt;
+			&lt;iDefense&gt;0&lt;/iDefense&gt;
+			&lt;iBombardDefense&gt;0&lt;/iBombardDefense&gt;
+			&lt;iAllCityDefense&gt;0&lt;/iAllCityDefense&gt;
+			&lt;iEspionageDefense&gt;0&lt;/iEspionageDefense&gt;
+			&lt;iAsset&gt;6&lt;/iAsset&gt;
+			&lt;iPower&gt;0&lt;/iPower&gt;
+			&lt;fVisibilityPriority&gt;1.0&lt;/fVisibilityPriority&gt;
+			&lt;SeaPlotYieldChanges/&gt;
+			&lt;RiverPlotYieldChanges/&gt;
+			&lt;GlobalSeaPlotYieldChanges/&gt;
+			&lt;YieldChanges/&gt;
+			&lt;CommerceChanges/&gt;
+			&lt;ObsoleteSafeCommerceChanges/&gt;
+			&lt;CommerceChangeDoubleTimes/&gt;
+			&lt;CommerceModifiers/&gt;
+			&lt;GlobalCommerceModifiers/&gt;
+			&lt;SpecialistExtraCommerces/&gt;
+			&lt;StateReligionCommerces/&gt;
+			&lt;CommerceHappinesses/&gt;
+			&lt;ReligionChanges/&gt;
+			&lt;SpecialistCounts/&gt;
+			&lt;FreeSpecialistCounts/&gt;
+			&lt;CommerceFlexibles/&gt;
+			&lt;CommerceChangeOriginalOwners/&gt;
+			&lt;ConstructSound&gt;AS2D_BUILD_RECYCLING_CENTER&lt;/ConstructSound&gt;
+			&lt;BonusHealthChanges/&gt;
+			&lt;BonusHappinessChanges/&gt;
+			&lt;BonusProductionModifiers/&gt;
+			&lt;UnitCombatFreeExperiences/&gt;
+			&lt;DomainFreeExperiences/&gt;
+			&lt;DomainProductionModifiers/&gt;
+			&lt;BuildingHappinessChanges/&gt;
+			&lt;PrereqBuildingClasses/&gt;
+			&lt;BuildingClassNeededs/&gt;
+			&lt;SpecialistYieldChanges/&gt;
+			&lt;BonusYieldModifiers/&gt;
+			&lt;ImprovementFreeSpecialists/&gt;
+			&lt;Flavors&gt;
+				&lt;Flavor&gt;
+					&lt;FlavorType&gt;FLAVOR_GROWTH&lt;/FlavorType&gt;
+					&lt;iFlavor&gt;10&lt;/iFlavor&gt;
+				&lt;/Flavor&gt;
+			&lt;/Flavors&gt;
+			&lt;HotKey/&gt;
+			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
+			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+		&lt;/BuildingInfo&gt;
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">パッケージ版の場合。Steam版の場合は&rdquo;C:Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Buildings&rdquo;<br />
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted5/" title="はじめてのPythonMOD 5 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/getstarted7/" title="はじめてのPythonMOD 7" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
+                          alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承２" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承１" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="title">付録：継承１</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">22</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-111798374-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  </body>
+</html>
+

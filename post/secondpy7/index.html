@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>それからのPython 7  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="それからのPython, せつめい, ">
+
+
+<meta property="og:title" content="それからのPython 7  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy7/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-12-30T12:01:00Z" />
+<meta property="og:article:modified_time" content="2017-12-30T12:01:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="それからのPython">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="それからのPython 7" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy7/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "それからのPython 7",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-12-30",
+    "description": "",
+    "wordCount": 3786
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy7/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title">それからのPython 7
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-30">30 Dec, 2017</time>
+
+    
+    &middot; 8 Minute Read
+    &middot; 3786 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy7/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる<br /></li>
+<li>４部作のうちの１回目・XML編<br />
+<br /></li>
+</ul>
+
+<h1 id="設計しよう">設計しよう</h1>
+
+<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br />
+簡単のために、以下の仕様でつくることにします。</p>
+
+<ul>
+<li>スペルと昇進を1対1で対応させる<br /></li>
+<li>発動条件は昇進を取得したとき一回きりとする<br /></li>
+<li>スペル昇進を取れるのは火器ユニットとする<br /></li>
+<li>具体的なスペル効果は以下の3種類とする<br /></li>
+<li>湧き水：砂漠が平原に変化する<br /></li>
+<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br />
+ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
+<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
+<br /></li>
+</ul>
+
+<h1 id="新しい昇進を作る">新しい昇進を作る</h1>
+
+<p>「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、<br />
+毒散布で付与する用の「毒」の昇進をXMLで追加していきます。<br />
+編集するのは &ldquo;Assets\XML\Units\CIV4PromotionInfos.xml&rdquo; です。</p>
+
+<p>元のファイルはパッケージ日本語版の場合<br />
+&ldquo;C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
+にあります。<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></p>
+
+<p>今回のMOD名は<code>kujira_promospell</code>にするので、<br />
+フォルダ階層を作ってxmlファイルをコピーし、下のようにします。</p>
+
+<pre><code class="language-plain">└─kujira_promospell
+    └─Assets
+        └─XML
+            └─Units
+                 └─CIV4PromotionInfos.xml
+</code></pre>
+
+<p>CIV4PromotionInfos.xmlの中身を編集していきます。<br />
+&lt;PromotionInfo&gt;から&lt;/PromotionInfo&gt;までの100行弱が昇進1つ分になっています。<br />
+ものすごくたくさん設定項目がありますが、<br />
+今回は「それ自体は全く何の効果もない」昇進をつくります。<br />
+それでもまだ１から作成するのは分量的に大変ですので、<br />
+戦闘術Ⅰ:&ldquo;PROMOTION_COMBAT1&rdquo;をベースにして、戦闘力+10%を取り除く方法を採ります。</p>
+
+<p>↓ここから<br />
+<a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"  width="400" height="1600" /></a>
+<br />
+↑ここまでを選択・コピーして&hellip;</p>
+
+<p>↓一番下に貼り付けます。<br />
+<a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"  width="400" height="700" /></a>
+</p>
+
+<p>↓こうなります。<br />
+<a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"  width="400" height="700" /></a>
+</p>
+
+<p>テキストエディタでXMLを編集する場合、適宜空行をつくっても構いません。<br />
+むしろ空行があるほうが、オリジナルとMODの境目が分かりやすくなってよいでしょう。</p>
+
+<h2 id="湧き水">湧き水</h2>
+
+<p>&lt;Type&gt;と&lt;Discription&gt;を湧き水用のキーに変更します。</p>
+
+<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+</code></pre>
+
+<p>ついでに&lt;Help&gt;というタグを新しくつくっています。<br />
+このタグがあると、自動生成された説明文に追加の説明をつけることができます。<br />
+(ここではキーをつくるだけです。あとでText\フォルダに文章を書き込みます)</p>
+
+<hr />
+
+<p>さらについでに、&lt;Sound&gt;をAS2D_POSITIVE_DINKに変更します。<br />
+昇進を取ったときの音を変更することで、スペルの発動音のかわりにします。</p>
+
+<p>&lt;iCombatPercent&gt;を0にして、戦闘力+10%をなかったことにします。</p>
+
+<pre><code class="language-xml">			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+</code></pre>
+
+<hr />
+
+<p>この昇進を火器ユニット専用にします。<br />
+&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までの38行分を消去して、<br />
+かわりに下記のように火器ユニットのみにします。</p>
+
+<pre><code class="language-xml">			&lt;UnitCombats&gt;
+				&lt;UnitCombat&gt;
+					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+				&lt;/UnitCombat&gt;
+			&lt;/UnitCombats&gt;
+</code></pre>
+
+<hr />
+
+<p>このままでは<br />
+昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、<br />
+預言者のボタン画像に変更します。</p>
+
+<pre><code class="language-xml">
+			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+
+</code></pre>
+
+<p>これで湧き水発動用の何もしない昇進は完成です。</p>
+
+<h2 id="毒散布-火炎幕">毒散布・火炎幕</h2>
+
+<p>この湧き水昇進をもう2つコピペして3つの何もしない昇進をつくりましょう。<br />
+2番目と3番目をそれぞれ毒散布と火炎幕にします。</p>
+
+<hr />
+
+<p>2番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を毒散布用にします。<br />
+WATERをPOISONに変えています。</p>
+
+<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+</code></pre>
+
+<hr />
+
+<p>3番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を火炎幕用にします。<br />
+WATERをFIREに変えています。</p>
+
+<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+</code></pre>
+
+<h2 id="毒">毒</h2>
+
+<p>毒散布によって相手に付与される「毒」の昇進も忘れずつくります。<br />
+何もしない3つの昇進のいずれかをもう1つコピペして、<br />
+&lt;Type&gt;と&lt;Description&gt;を変更し、<strong><em>&lt;Help&gt;を消します。</em></strong></p>
+
+<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+</code></pre>
+
+<hr />
+
+<p>「毒」には実際に戦闘力-20%の効果を持たせますから、<br />
+自動生成された説明文で十分だからです。<br />
+早速戦闘力-20%にします。</p>
+
+<pre><code class="language-xml">			&lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
+</code></pre>
+
+<hr />
+
+<p>この昇進を経験値で取得できないようにします。<br />
+方法はいろいろありますが、今回は&lt;UnitCombats&gt;を空にして、<br />
+昇進を取得できるユニット戦闘タイプをなくしてしまいます。<br />
+&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までを消去して、<br />
+かわりに下のように入力します。</p>
+
+<pre><code>			&lt;UnitCombats /&gt;
+</code></pre>
+
+<p>これはXMLの空タグといって、中身が空だということを表します。</p>
+
+<hr />
+
+<p>これで、毒ができました。<br />
+全部でどんな感じになったかは長いので章末に移動しました。<a href="#おまけ">おまけ</a>をご覧ください。</p>
+
+<p>この時点でとりあえず火器ユニットが発動用昇進を取得できるようになっているはずです。<br />
+ゲームを起動して適当な火器ユニットをワールドビルダーで作成し、経験値を与えて、<br />
+取得できるかどうか試してみましょう。<br />
+この時点でゲームの起動に失敗したり、発動用昇進が表示されなかったり、<br />
+逆に毒が表示されたりしてしまう場合にはCIV4PromotionInfos.xmlの<br />
+記述が間違っています。もう一度見直してみましょう。</p>
+
+<h1 id="text">Text</h1>
+
+<p>動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが<br />
+そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。</p>
+
+<p>Assets\XML\Text\Text_Kujira.xml を作成します。</p>
+
+<pre><code class="language-plain">└─kujira_promospell
+    └─Assets
+        └─XML
+            ├─Units
+            │   └─CIV4PromotionInfos.xml
+            │
+            └─Text
+                 └─Text_Kujira.xml
+</code></pre>
+
+<p>Text_Kujira.xmlの中身はこのようにします。</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;shift_jis&quot;?&gt;
+&lt;!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) --&gt;
+&lt;Civ4GameText xmlns=&quot;http://www.firaxis.com&quot;&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Tag&gt;
+    &lt;English&gt;Spring Water&lt;/English&gt;
+    &lt;French&gt;湧き水&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;湧き水&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Tag&gt;
+    &lt;English&gt;[ICON_BULLET]Change this tile into Plains if it is Desart&lt;/English&gt;
+    &lt;French&gt;[ICON_BULLET]自領土の砂漠で発動すると平原に変化する&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;[ICON_BULLET]自領土の砂漠で発動すると平原に変化する&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Tag&gt;
+    &lt;English&gt;Spray Poison&lt;/English&gt;
+    &lt;French&gt;毒散布&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;毒散布&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Tag&gt;
+    &lt;English&gt;[ICON_BULLET]Give a promotion &quot;Poisioned&quot; to enemy units around a tile&lt;/English&gt;
+    &lt;French&gt;[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Tag&gt;
+    &lt;English&gt;Fire Curten&lt;/English&gt;
+    &lt;French&gt;火炎幕&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;火炎幕&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Tag&gt;
+    &lt;English&gt;[ICON_BULLET]Inflict 20% damage to enemy units around a tile&lt;/English&gt;
+    &lt;French&gt;[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+  &lt;TEXT&gt;
+    &lt;Tag&gt;TXT_KEY_PROMOTION_POISONED&lt;/Tag&gt;
+    &lt;English&gt;Poisoned&lt;/English&gt;
+    &lt;French&gt;毒&lt;/French&gt;
+    &lt;German /&gt;
+    &lt;Italian /&gt;
+    &lt;Spanish /&gt;
+    &lt;Japanese&gt;毒&lt;/Japanese&gt;
+  &lt;/TEXT&gt;
+  
+&lt;/Civ4GameText&gt;
+</code></pre>
+
+<p>&lt;Japanese&gt;タグで日本語パッケージ版、<br />
+&lt;French&gt;タグでSteam版＋日本語化パッチ、<br />
+その他の言語タグで各言語版で表示されるようになります。</p>
+
+<p>これで、「それっぽいことが書いてあるけれど、実際には何もしない昇進」が3つと、<br />
+戦闘力-20%の効果を持つ昇進ができました。</p>
+
+<p>ゲームを起動して、説明文が表示されるか確かめましょう。<br />
+「毒」は取得する方法がまだないので、それ以外の3つに対して確かめます。</p>
+
+<p><a href="https://gforestshade.github.io/kujira/img/promospell_test1.png"><img src="https://gforestshade.github.io/kujira/img/promospell_test1.png"    /></a>
+<br />
+いいですね！</p>
+
+<p><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８につづく</a></p>
+
+<h1 id="おまけ">おまけ</h1>
+
+<h2 id="civ4promotioninfos-xmlの追加分の全文">CIV4PromotionInfos.xmlの追加分の全文</h2>
+
+<pre><code class="language-xml">		&lt;PromotionInfo&gt;
+			&lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+			&lt;bLeader&gt;0&lt;/bLeader&gt;
+			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
+			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
+			&lt;bRiver&gt;0&lt;/bRiver&gt;
+			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+			&lt;TerrainAttacks/&gt;
+			&lt;TerrainDefenses/&gt;
+			&lt;FeatureAttacks/&gt;
+			&lt;FeatureDefenses/&gt;
+			&lt;UnitCombatMods/&gt;
+			&lt;DomainMods/&gt;
+			&lt;TerrainDoubleMoves/&gt;
+			&lt;FeatureDoubleMoves/&gt;
+			&lt;UnitCombats&gt;
+				&lt;UnitCombat&gt;
+					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+				&lt;/UnitCombat&gt;
+			&lt;/UnitCombats&gt;
+			&lt;HotKey/&gt;
+			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
+			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+		&lt;/PromotionInfo&gt;
+
+		&lt;PromotionInfo&gt;
+			&lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+			&lt;bLeader&gt;0&lt;/bLeader&gt;
+			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
+			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
+			&lt;bRiver&gt;0&lt;/bRiver&gt;
+			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+			&lt;TerrainAttacks/&gt;
+			&lt;TerrainDefenses/&gt;
+			&lt;FeatureAttacks/&gt;
+			&lt;FeatureDefenses/&gt;
+			&lt;UnitCombatMods/&gt;
+			&lt;DomainMods/&gt;
+			&lt;TerrainDoubleMoves/&gt;
+			&lt;FeatureDoubleMoves/&gt;
+			&lt;UnitCombats&gt;
+				&lt;UnitCombat&gt;
+					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+				&lt;/UnitCombat&gt;
+			&lt;/UnitCombats&gt;
+			&lt;HotKey/&gt;
+			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
+			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+		&lt;/PromotionInfo&gt;
+		
+		&lt;PromotionInfo&gt;
+			&lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
+			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+			&lt;bLeader&gt;0&lt;/bLeader&gt;
+			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
+			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
+			&lt;bRiver&gt;0&lt;/bRiver&gt;
+			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+			&lt;TerrainAttacks/&gt;
+			&lt;TerrainDefenses/&gt;
+			&lt;FeatureAttacks/&gt;
+			&lt;FeatureDefenses/&gt;
+			&lt;UnitCombatMods/&gt;
+			&lt;DomainMods/&gt;
+			&lt;TerrainDoubleMoves/&gt;
+			&lt;FeatureDoubleMoves/&gt;
+			&lt;UnitCombats&gt;
+				&lt;UnitCombat&gt;
+					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+				&lt;/UnitCombat&gt;
+			&lt;/UnitCombats&gt;
+			&lt;HotKey/&gt;
+			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
+			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+		&lt;/PromotionInfo&gt;
+
+		&lt;PromotionInfo&gt;
+			&lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
+			&lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
+			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+			&lt;bLeader&gt;0&lt;/bLeader&gt;
+			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
+			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
+			&lt;bRiver&gt;0&lt;/bRiver&gt;
+			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+			&lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
+			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+			&lt;TerrainAttacks/&gt;
+			&lt;TerrainDefenses/&gt;
+			&lt;FeatureAttacks/&gt;
+			&lt;FeatureDefenses/&gt;
+			&lt;UnitCombatMods/&gt;
+			&lt;DomainMods/&gt;
+			&lt;TerrainDoubleMoves/&gt;
+			&lt;FeatureDoubleMoves/&gt;
+			&lt;UnitCombats /&gt;
+			&lt;HotKey/&gt;
+			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
+			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+		&lt;/PromotionInfo&gt;
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Steam版の場合 &ldquo;C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" title="付録：継承２ " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/secondpy8/" title="それからのPython 8" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
+                          alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承２" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承１" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="title">付録：継承１</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">22</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-111798374-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>付録：継承１  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="付録, せつめい, ">
+
+
+<meta property="og:title" content="付録：継承１  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/secondpy_ex2/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-12-04T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-12-04T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="付録">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="付録：継承１" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/secondpy_ex2/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "付録：継承１",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-12-04",
+    "description": "",
+    "wordCount": 5574
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+      
+    
+  
+
+
+  <h1 class="post-title">付録：継承１
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-04">4 Dec, 2017</time>
+
+    
+    &middot; 12 Minute Read
+    &middot; 5574 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li>継承について<br /></li>
+<li>今回は理論回です。この回に出てくるコードはすべてMODではなく<br />
+ただのPythonプログラムになっていますので、<a href="https://paiza.io/ja">paiza.io</a>などでためしましょう。<br />
+(Python2を選ぶことを忘れずに。)<br />
+<br /></li>
+</ul>
+
+<h1 id="クラスの継承">クラスの継承</h1>
+
+<p>「継承」(inheritance)という仕組みを使って、<br />
+既存のクラスを拡張したクラスを新しく作ることができます。</p>
+
+<p>とても簡単なクラスから始めましょう&hellip;</p>
+
+<pre><code class="language-python">class A:
+    def methodA():
+        return &quot;This is methodA().&quot;
+</code></pre>
+
+<p>&hellip;というクラスがあったとき、&rdquo;<code>A</code>をもとにした新しいクラス<code>B</code>&ldquo;を<br />
+<code>class クラス名(もとにするクラス名):</code>のようにして作ることができます&hellip;</p>
+
+<pre><code class="language-python">class A:
+    def methodA():
+        return &quot;This is methodA().&quot;
+
+class B(A):
+    def methodB():
+        return &quot;This is methodB().&quot;
+
+
+a = A() # Aのインスタンスa
+s = a.methodA() # Aのインスタンスメソッドを呼び出せる
+print s
+
+b = B() # Bのインスタンスb
+s = b.methodB() # Bのインスタンスメソッドを呼び出せる
+print s
+s = b.methodA() # Aのインスタンスメソッドも呼び出せる！
+print s
+
+</code></pre>
+
+<p>「継承」において、もとになったクラスを「基底クラス」(super class)、<br />
+基底クラスを受け継いで新しく作ったクラスを「派生クラス」(derived class)または「サブクラス」(subclass)と呼びます。</p>
+
+<p>派生クラスは基底クラスに定義されているものをすべてそのまま受け継ぎます。<br />
+上の例で、<code>B</code>のインスタンス<code>b</code>を使って<code>b.methodA()</code>を呼び出していますが、<br />
+<code>B</code>は<code>A</code>のメソッドを受け継いでいるので、<code>methodA()</code>と<code>methodB()</code>が両方とも存在することになります。</p>
+
+<h1 id="使ってみる">使ってみる</h1>
+
+<p>実際に継承の機能を使ってみましょう。<br />
+まずとにかくもとになる基底クラスが必要です。<br />
+RPGのキャラをモチーフにしたクラスから始めてみましょう&hellip;</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+
+class Unit:
+    &quot;&quot;&quot;RPGのキャラっぽいなにか&quot;&quot;&quot;
+    
+    def __init__(self, hp, attack, defence):
+        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力を設定する&quot;&quot;&quot;
+        self.hp = hp
+        self.attack = attack
+        self.defence = defence
+
+    def getStatus(self):
+        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
+        return &quot;HP: %d | Atk %d | Def %d&quot; % (self.hp, self.attack, self.defence)
+
+    def dealDamage(self, damage):
+        &quot;&quot;&quot;
+        ダメージを受ける
+        damage - 受けるダメージ
+        &quot;&quot;&quot;
+
+        # 実際のダメージは防御力のぶんだけ減算される
+        # ただし1を下限とする
+        damage = max(damage - self.defence, 1)
+
+        # HPからダメージを減らす
+        self.hp -= damage
+
+    def isDead(self):
+        &quot;&quot;&quot;自分はもう死んでいる、かどうか&quot;&quot;&quot;
+        return self.hp &lt;= 0
+
+    def attackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+
+        # 自分が死んでいるなら即負け,
+        # 相手が死んでいるなら即勝ち
+        if self.isDead():
+            return -1
+        if enemy.isDead():
+            return 1
+
+        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
+        enemy.dealDamage(self.attack)
+
+        # この時点で相手が死んでいるなら勝ち
+        if enemy.isDead():
+            return 2
+
+        # 相手が死んでいないなら反撃を受ける
+        # 相手の攻撃力ぶんだけ自分にダメージを与える
+        self.dealDamage(enemy.attack)
+
+        # この時点で自分が死んでしまったら負け
+        if self.isDead():
+            return -2
+
+        # 自分も相手も死ななかったら引き分け判定
+        return 0
+
+
+# ここからメインの処理
+
+a = Unit(20,10,3)
+b = Unit(20,8,4)
+
+for i in range(5):
+    print a.attackTo(b)
+    print &quot;a | %s&quot; % a.getStatus()
+    print &quot;b | %s&quot; % b.getStatus()
+    print
+        
+</code></pre>
+
+<h2 id="説明文">説明文</h2>
+
+<p>各メソッドを見ていきましょう&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+class Unit:
+    &quot;&quot;&quot;RPGのキャラっぽいなにか&quot;&quot;&quot;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>&hellip;の前に、見慣れない表記が出てきています。<br />
+クラスや関数の冒頭にある、<code>&quot;&quot;&quot;ダブルクオーテーション3つで囲まれた文字列&quot;&quot;&quot;</code>は、<br />
+そのクラスやその関数の説明だとみなされます。<br />
+そのクラスやその関数が何をするものなのか、わかりやすい名前をつけるのが一番ですが、<br />
+やはり日本語で説明するほうがなにかとよいです。</p>
+
+<p>特に関数では、引数や戻り値があります。<br />
+それぞれの引数が何を表すのか(呼び出す際にどういう値を指定してほしいのか)、<br />
+どういう戻り値を返しうるのか、などは<br />
+名前だけでは十分に表しきれませんので、<strong><em>日本語で説明を加えるべきです。</em></strong></p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def attackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<h2 id="メソッド巡り">メソッド巡り</h2>
+
+<p>こんどこそ各メソッドを見ていきましょう。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def __init__(self, hp, attack, defence):
+        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力を設定する&quot;&quot;&quot;
+        self.hp = hp
+        self.attack = attack
+        self.defence = defence
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>コンストラクタです。説明文の通りですね。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def getStatus(self):
+        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
+        return &quot;HP: %d | Atk %d | Def %d&quot; % (self.hp, self.attack, self.defence)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>現在のステータスを画面に出力する方法が欲しかったので、<br />
+(何もしなければ変数の中身の値は見えません！)<br />
+フォーマット文字列を使ってステータス画面っぽい文字列を生成して返しています。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def dealDamage(self, damage):
+        &quot;&quot;&quot;
+        ダメージを受ける
+        damage - 受けるダメージ
+        &quot;&quot;&quot;
+
+        # 実際のダメージは防御力のぶんだけ減算される
+        # ただし1を下限とする
+        damage = max(damage - self.defence, 1)
+
+        # HPからダメージを減らす
+        self.hp -= damage
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>ダメージを受けます。</p>
+
+<p><code>max()</code>関数は、与えられた引数の中で最も大きい数を返す関数です。<br />
+このことは、下限を設定することに応用できます。<br />
+たとえば、片方の引数を<code>3</code>に、もう片方の引数をいろいろ変えて最も大きい数を暗算してみましょう。</p>
+
+<ul>
+<li><code>max(6,3)</code> -&gt; <code>6</code><br /></li>
+<li><code>max(5,3)</code> -&gt; <code>5</code><br /></li>
+<li><code>max(4,3)</code> -&gt; <code>4</code><br /></li>
+<li><code>max(3,3)</code> -&gt; <code>3</code><br /></li>
+<li><code>max(2,3)</code> -&gt; <code>3</code><br /></li>
+<li><code>max(1,3)</code> -&gt; <code>3</code><br />
+<br /></li>
+</ul>
+
+<p>変化する部分が<code>3</code>より大きいうちはそのままになり、<br />
+しかも<code>3</code>よりは下がらないことがわかります。</p>
+
+<p>ここでは、<code>damage = max(damage - self.defence, 1)</code>としています。<br />
+自分の防御力のぶんだけダメージから引き(コンストラクタでインスタンス変数として設定していました)、<br />
+ただし下限を<code>1</code>として、<code>damage</code>に再代入しています(変数の今の値を加工して、同じ変数に再び代入することができるのでしたね)。</p>
+
+<p>ところで、&rdquo;変数から数字を引いて同じ変数に再代入する&rdquo;操作はよく使います。<br />
+なので、専用の書き方があります。次の行の<code>self.hp -= damage</code>がそれです。<br />
+&ldquo;<code>self.hp</code>から<code>damage</code>を引いて<code>self.hp</code>に再代入する&rdquo;、<br />
+すなわち&rdquo;<code>self.hp</code>の値を<code>damage</code>だけ減らす&rdquo;ためにこの書き方を使うことができます。</p>
+
+<p>この書き方は減算だけでなく加減乗除それぞれに用意されています。</p>
+
+<ul>
+<li><code>a += 3</code> : <code>a</code>に<code>3</code>を足す<br /></li>
+<li><code>a -= 3</code> : <code>a</code>から<code>3</code>を引く<br /></li>
+<li><code>a *= 3</code> : <code>a</code>に<code>3</code>を掛ける<br /></li>
+<li><code>a /= 3</code> : <code>a</code>から<code>3</code>を割る<br />
+<br /></li>
+</ul>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    def isDead(self):
+        &quot;&quot;&quot;自分はもう死んでいる、かどうか&quot;&quot;&quot;
+        return self.hp &lt;= 0
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>自分が死んでいるかどうかを判定します。<br />
+(短いメソッドですが、あとでこれが活躍します)</p>
+
+<pre><code class="language-python">    def attackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+
+        # 自分が死んでいるなら即負け,
+        # 相手が死んでいるなら即勝ち
+        if self.isDead():
+            return -1
+        if enemy.isDead():
+            return 1
+
+        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
+        enemy.dealDamage(self.attack)
+
+        # この時点で相手が死んでいるなら勝ち
+        if enemy.isDead():
+            return 2
+
+        # 相手が死んでいないなら反撃を受ける
+        # 相手の攻撃力ぶんだけ自分にダメージを与える
+        self.dealDamage(enemy.attack)
+
+        # この時点で自分が死んでしまったら負け
+        if self.isDead():
+            return -2
+
+        # 自分も相手も死ななかったら引き分け判定
+        return 0
+</code></pre>
+
+<p>他の<code>Unit</code>に攻撃を仕掛けます。<br />
+<code>Unit</code>のインスタンスに属するメソッドでありながら、<br />
+&ldquo;他の<code>Unit</code>インスタンス&rdquo;を引数に取っていることがポイントです。<br />
+そうすることで操作できる<code>Unit</code>インスタンスが 自分:<code>self</code>と相手:<code>enemy</code> で<br />
+2つになり、戦闘を実現できるようになります。</p>
+
+<p><code>enemy</code>の<code>isDead()</code>や<code>enemy</code>の<code>dealDamage()</code>を呼び出して<br />
+処理をしているところもポイントです。<br />
+「<code>enemy</code>にあなたは死んでいますか、と聞く」・「<code>enemy</code>にお願いしてダメージを受けてもらう」<br />
+というイメージでしょうか。<br />
+<code>enemy</code>の内部状態のことは<code>enemy</code>自身が一番知っているはずですから、<br />
+<code>enemy</code>の状態に関することは<code>enemy</code>にお願いする、<br />
+またそうできるように最初から<code>Unit</code>のインスタンスメソッドを作っておく、ことが大事です。</p>
+
+<p>さらにメインプログラムが続いています&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+a = Unit(20,10,3)
+b = Unit(20,8,4)
+
+for i in range(5):
+    print a.attackTo(b)
+    print &quot;a | %s&quot; % a.getStatus()
+    print &quot;b | %s&quot; % b.getStatus()
+    print
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>Unit</code>のインスタンスを2つ作り、<br />
+「<code>a</code>から<code>b</code>に攻撃してステータス画面を表示する」のを5回繰り返しています。</p>
+
+<p>各自実行してみましょう。<br />
+4回目の攻撃で<code>a</code>が<code>b</code>を削り切って勝っていることが確認できると思います。</p>
+
+<h1 id="魔法を使いたい">魔法を使いたい</h1>
+
+<p>殴り合うのもよいですが、やはり魔法での攻撃もしてみたいところです。<br />
+「魔法攻撃は攻撃力ではなく魔法攻撃力を用いて計算し、<br />
+反撃を受けないが、魔法が使えるのは魔法使いだけ」<br />
+というのを目指しましょう。</p>
+
+<p>従来の<code>Unit</code>の機能に加えて、魔法攻撃ができる新しいクラスをつくります。<br />
+「継承」の出番です。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+class Wizard(Unit):
+    &quot;&quot;&quot;魔法使い&quot;&quot;&quot;
+
+    def magicalAttackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに魔法攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+
+        # 自分が死んでいるなら即負け,
+        # 相手が死んでいるなら即勝ち
+        if self.isDead():
+            return -1
+        if enemy.isDead():
+            return 1
+
+        # 魔法攻撃力の分だけ相手にダメージを与える
+        enemy.dealDamage(self.magic_attack)
+
+        # この時点で相手が死んでいるなら勝ち
+        if enemy.isDead():
+            return 2
+
+        # 魔法なので反撃なし、死ななかったら引き分け判定
+        return 0
+        
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>&hellip;これが<code>Wizard</code>クラスの定義のすべてです。<br />
+<code>Unit</code>クラスを継承して<code>Wizard</code>クラスをつくり、魔法攻撃用のメソッドを1つ追加しています。<br />
+<code>Unit</code>クラスを継承しているので、<code>Unit</code>クラスに定義されていたもの――<code>self.hp</code>,<code>self.attack</code>,<code>self.defence</code>,<code>self.isDead()</code>,<code>self.dealDamage()</code>,などなど――がすべて<code>Wizard</code>クラスに引き継がれています。<br />
+追加分だけを書けばよい、ということになります。</p>
+
+<p><code>Unit</code>クラスはそこにそのまま存在していることにも注意してください。<br />
+引き続き<code>Unit</code>のインスタンスは作成することができ、戦闘をさせることもできつつ、<br />
+<code>Wizard</code>のインスタンスも新しく作成できるのです。</p>
+
+<p>さらに、<code>Wizard</code>は<code>Unit</code>から<strong><em>すべてを</em></strong>引き継いでいるので、<br />
+<code>Unit</code>で出来たことは<code>Wizard</code>でもできます。<br />
+<code>Wizard</code>のインスタンス<code>a</code>と<code>b</code>に拳で殴り合わせる(<code>a.attackTo(b)</code>)ことも可能です。<br />
+<code>attackTo()</code>を処理するためには<code>self</code>と<code>enemy</code>の双方に<br />
+変数<code>attack</code>,メソッド<code>isDead()</code>,メソッド<code>dealDamage()</code><br />
+がなければなりませんが、<code>Wizard</code>インスタンスにもそれらは存在していますから、<br />
+(なぜなら<strong><em>すべてを</em></strong>引き継いでいるから、記述していないのに！)<br />
+問題なく<code>attackTo()</code>を呼び出すことができます。</p>
+
+<p>さらにいえば、<code>Wizard</code>から<code>Unit</code>に<code>attackTo()</code>することも、<br />
+まったく同じ理屈で可能です。<br />
+<code>Wizard</code>から<code>Unit</code>へは魔法攻撃、<code>Unit</code>から<code>Wizard</code>へは通常攻撃、を<br />
+1セットにして繰り返すメインプログラムにしてみましょう。<br />
+こうなります&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+a = Unit(20,10,3)
+b = Wizard(12,3,3)
+b.magic_attack = 13
+
+for i in range(5):
+    print b.magicalAttackTo(a)
+    print a.attackTo(b)
+    print &quot;a | %s&quot; % a.getStatus()
+    print &quot;b | %s&quot; % b.getStatus()
+    print
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>プログラム全体は次のようになります。<br />
+各自実行してみましょう&hellip;</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+
+class Unit:
+    &quot;&quot;&quot;RPGのキャラっぽいなにか&quot;&quot;&quot;
+    
+    def __init__(self, hp, attack, defence):
+        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力を設定する&quot;&quot;&quot;
+        self.hp = hp
+        self.attack = attack
+        self.defence = defence
+
+    def getStatus(self):
+        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
+        return &quot;HP: %d | Atk %d | Def %d&quot; % (self.hp, self.attack, self.defence)
+
+    def dealDamage(self, damage):
+        &quot;&quot;&quot;
+        ダメージを受ける
+        damage - 受けるダメージ
+        &quot;&quot;&quot;
+
+        # 実際のダメージは防御力のぶんだけ減算される
+        # ただし1を下限とする
+        damage = max(damage - self.defence, 1)
+
+        # HPからダメージを減らす
+        self.hp -= damage
+
+    def isDead(self):
+        &quot;&quot;&quot;自分はもう死んでいる、かどうか&quot;&quot;&quot;
+        return self.hp &lt;= 0
+
+    def attackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+
+        # 自分が死んでいるなら即負け,
+        # 相手が死んでいるなら即勝ち
+        if self.isDead():
+            return -1
+        if enemy.isDead():
+            return 1
+
+        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
+        enemy.dealDamage(self.attack)
+
+        # この時点で相手が死んでいるなら勝ち
+        if enemy.isDead():
+            return 2
+
+        # 相手が死んでいないなら反撃を受ける
+        # 相手の攻撃力ぶんだけ自分にダメージを与える
+        self.dealDamage(enemy.attack)
+
+        # この時点で自分が死んでしまったら負け
+        if self.isDead():
+            return -2
+
+        # 自分も相手も死ななかったら引き分け判定
+        return 0
+
+
+class Wizard(Unit):
+    &quot;&quot;&quot;魔法使い&quot;&quot;&quot;
+
+    def magicalAttackTo(self, enemy):
+        &quot;&quot;&quot;
+        別のUnitインスタンスに魔法攻撃を仕掛ける
+        勝ったら正の値,負けたら負の値,引き分けなら0を返す
+        enemy - 攻撃を仕掛けるUnitインスタンス
+        &quot;&quot;&quot;
+
+        # 自分が死んでいるなら即負け,
+        # 相手が死んでいるなら即勝ち
+        if self.isDead():
+            return -1
+        if enemy.isDead():
+            return 1
+
+        # 魔法攻撃力の分だけ相手にダメージを与える
+        enemy.dealDamage(self.magic_attack)
+
+        # この時点で相手が死んでいるなら勝ち
+        if enemy.isDead():
+            return 2
+
+        # 魔法なので反撃なし、死ななかったら引き分け判定
+        return 0
+        
+
+a = Unit(20,10,3)
+b = Wizard(12,3,3)
+b.magic_attack = 13
+
+for i in range(5):
+    print b.magicalAttackTo(a)
+    print a.attackTo(b)
+    print &quot;a | %s&quot; % a.getStatus()
+    print &quot;b | %s&quot; % b.getStatus()
+    print
+    
+</code></pre>
+
+<p>&hellip;2ターン目で戦闘終了していることが確認できると思います。</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" title="それからのPython 6 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" title="付録：継承２" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
+                          alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承２" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承１" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="title">付録：継承１</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">22</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-111798374-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  </body>
+</html>
+

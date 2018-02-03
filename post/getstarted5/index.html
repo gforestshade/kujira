@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>はじめてのPythonMOD 5  &middot; Kujira, Civ4 Mod Blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="はじめてのPythonMOD, せつめい, ">
+
+
+<meta property="og:title" content="はじめてのPythonMOD 5  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/getstarted5/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-07-30T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-07-30T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="はじめてのPythonMOD">
+    
+<meta property="og:article:tag" content="せつめい">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="はじめてのPythonMOD 5" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/getstarted5/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "はじめてのPythonMOD 5",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-07-30",
+    "description": "",
+    "wordCount": 3298
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/getstarted5/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.22.1" />
+
+
+
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://gforestshade.github.io/kujira/assets/css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-faded">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/tags/">
+              <i class='fa fa-tags'></i>
+              <span>TAGS</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/categories/">
+              <i class='fa fa-folder-open'></i>
+              <span>CATEGORIES</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_yellow1_1024x200.jpg" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/132803717@N02/27004253005/">&lsquo;Choice&rsquo; by Seán Mackey</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title">はじめてのPythonMOD 5
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-07-30">30 Jul, 2017</time>
+
+    
+    &middot; 7 Minute Read
+    &middot; 3298 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/getstarted5/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+
+<h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき<br /></li>
+<li>リストと繰り返し<br /></li>
+<li>他のイベント<br />
+<br /></li>
+</ul>
+
+<h1 id="今日のmod">今日のMOD</h1>
+
+<h2 id="準備">準備</h2>
+
+<p>例によって<code>kujira_for</code>というMODを作ります。<br />
+<code>kujira_if</code>をフォルダごとコピーして、フォルダ名をリネームしましょう。</p>
+
+<pre><code class="language-plain">└─kujira_for
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<h2 id="構想">構想</h2>
+
+<p>《建造物が建設されたとき、その建造物がダンならば、<br />
+　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br />
+を作りましょう。<br />
+捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。</p>
+
+<p>バニラの建造物によくある<br />
+「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br />
+との違いに注意してください。<br />
+今作ろうとしているのはダンが建設完了したその瞬間に<br />
+都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
+
+<h2 id="建造物が建設されたとき">建造物が建設されたとき</h2>
+
+<p>KujiraEventManager.pyをこのようにします&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onBuildingBuilt(self, argsList):
+        'Called when a building is built'
+        super(self.__class__, self).onBuildingBuilt(argsList)
+        ##########
+        CvUtil.pyPrint(&quot;onBuildingBuilt: called&quot;)
+</code></pre>
+
+<p>前回からの変更点はこの部分です&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+def onBuildingBuilt(self, argsList):
+    'Called when a building is built'
+    super(self.__class__, self).onBuildingBuilt(argsList)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>onCityBuilt</code>だったところを<code>onBuildingBuilt</code>に変えています。</p>
+
+<p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントのリスト</a>からonBuildingBuiltを探すと、</p>
+
+<blockquote>
+<pre><code class="language-plain">Function: def onBuildingBuilt()
+Parameters: self, argsList (pCity, iBuildingType)
+Description: Called when a building is built
+</code></pre>
+</blockquote>
+
+<p>となっています。<br />
+argsListに2つの値が入っているようです。例えば、</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity = argsList[0]
+iBuildingType = argsList[1]
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>などとして取り出すことができます。今回はこの<code>[0]</code>とか<code>[1]</code>とかいう書き方について。</p>
+
+<h1 id="今日の理論編">今日の理論編</h1>
+
+<p>Python実行環境を用意しましょう。<br />
+一応埋め込みも置いておきます。<br />
+<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe></p>
+
+<h2 id="リスト">リスト</h2>
+
+<p><strong>リスト</strong>とは、<strong>要素</strong>を順番に並べたもののことです。次のようにして作成します。</p>
+
+<pre><code class="language-python">a = [2, 3, 5, 7, 11]
+</code></pre>
+
+<p>それぞれの<strong>要素</strong>は<strong>0番目</strong>・<strong>1番目</strong>・<strong>2番目</strong>&hellip;&hellip;と順番が割り当てられていて、<br />
+<code>a[2]</code>として<strong>2番目</strong>を取り出すことができます。<br />
+試してみましょう。</p>
+
+<pre><code class="language-python">a = [2, 3, 5, 7, 11]
+print a[0]
+print a[1]
+print a[2]
+print a[3]
+print a[4]
+</code></pre>
+
+<p>何が出力されるでしょうか。予想して、実行してみましょう。<br />
+この番号の部分を<strong>インデックス</strong>(index)と呼びます。</p>
+
+<p><strong>インデックス</strong>は数値ですが、「整数を表すなにか」であれば<br />
+整数そのものである必要はありません。</p>
+
+<pre><code class="language-python">def f(x):
+    return x*x
+
+a = [13, 17, 23, 29, 31, 37]
+b = 5
+print a[1]    # 数値
+print a[b]    # 数値入り変数
+print a[f(2)] # 関数の戻り値
+</code></pre>
+
+<p>頑張って予想しましょう。<br />
+<code>a = [13, 17, 23, 29, 31, 37]</code>とあることから、</p>
+
+<ul>
+<li>0番目: 13<br /></li>
+<li>1番目: 17<br /></li>
+<li>2番目: 23<br /></li>
+<li>3番目: 29<br /></li>
+<li>4番目: 31<br /></li>
+<li>5番目: 37<br />
+<br /></li>
+</ul>
+
+<p>となっています(番号は0から始まるのでした)。</p>
+
+<p><code>a[1]</code>は直接1番目の要素を参照していますから<code>17</code>ですね。<br />
+<code>b</code>は<code>5</code>ですから、<code>a[b]</code>はaの5番目の要素を指すはずです。<code>37</code>ですね。</p>
+
+<p><code>f(2)</code>は何でしょうか。関数の定義の部分に戻ってみると、<br />
+引数の<code>x</code>を<code>x*x</code>にして返しているようです。<br />
+いま、引数に<code>2</code>を渡していますから2*2で<code>4</code>ですね。<br />
+呼び出した部分がそのまま戻り値である<code>4</code>に置き換わるのでしたから<br />
+<code>a[4]</code>となり、<code>31</code>になります。<br />
+さて予想もできたところで本当にそうなるか実行してみましょう。</p>
+
+<p>要素数が十分少ないなら、左辺を<code>,</code>で区切って順番に全て取り出すこともできます。<br />
+<!-- シーケンス型(正確に言えばiterableな型)のunpack。概念は難しいがイディオムとして便利なのでここで紹介。 --></p>
+
+<pre><code class="language-python">a = [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;]
+e, f, g = a
+print e
+print f
+print g
+</code></pre>
+
+<p>予想して、実行してみましょう。</p>
+
+<h2 id="繰り返し">繰り返し</h2>
+
+<p>どうせ全要素printするのなら、「リストの各要素に対して、」という表現があれば便利です。<br />
+というわけで、<strong>for文</strong>がそれにあたります。<br />
+例えばこのように書きます。</p>
+
+<pre><code class="language-python">fib = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+for i in fib:
+    print i
+</code></pre>
+
+<p><code>fib</code>の要素を1つずつ取り出して<code>i</code>に代入しつつ、中のブロックを実行します。<br />
+ブロックを実行し終わったらまた次の要素を<code>i</code>に代入して、中のブロックを実行します。<br />
+これを、リストの要素が尽きるまで&rdquo;繰り返し&rdquo;ます。<br />
+上のプログラムを実行して動作を確かめてみましょう。</p>
+
+<p>リストの内容分繰り返したいのではなく、ただ単に10回繰り返したいときもあるでしょう。<br />
+10個の要素を持ったリストを手作りすればよいのですが、めんどくさいですし、<br />
+数え間違いなどが起こってもいやですので、<code>range()</code>という関数を使います。<br />
+これは、0以上n未満の整数のリストを作って返してくれます。<br />
+動作を見てみましょう。</p>
+
+<pre><code class="language-python">print range(15)
+</code></pre>
+
+<p>中の数字をいろいろいじっていろいろ実行してみるとよいでしょう。<br />
+(なるほどなるほどー。)</p>
+
+<p>これを使って、このように書けます。</p>
+
+<pre><code class="language-python">for i in range(10):
+    print i, &quot;banme&quot;
+</code></pre>
+
+<p><code>range()</code>の動作をいろいろ試した方なら、予想できるかもしれません。<br />
+予想してから、実行してみましょう。</p>
+
+<p>for文を学んだことで、例えばもし、<br />
+「タイル上のユニット数を取得する関数」と、<br />
+「i番目のユニットを取得する関数」があったなら、<br />
+このように書けるはずです。</p>
+
+<pre><code class="language-python">nUnits = ユニット数を取得
+for i in range(nUnits):
+    pUnit = ユニット取得(i)
+    pUnit.いろいろ...
+</code></pre>
+
+<p><code>nUnits</code>回だけブロックを繰り返しますから、<br />
+タイル上の全ユニットになにかしていることになるはずです。<br />
+夢が広がりますね。</p>
+
+<h1 id="modへ戻る">MODへ戻る</h1>
+
+<h2 id="onbuildingbuilt">onBuildingBuilt</h2>
+
+<p>というわけで、<code>onBuildingBuilt()</code>の<code>##########</code>より下をこうしてみました&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+##########
+pCity, iBuildingType = argsList
+
+if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+    plot = pCity.plot()
+
+    for i in range( plot.getNumUnits() ):
+        pUnit = plot.getUnit(i)
+        pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)
+        pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL2'), True)
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>全体像だけ見てみると、インデントが入れ子になっていることが分かります。<br />
+for文も文ですから、if文のブロックの一員にすることができて、<br />
+しかしfor文自身の中身ブロックはそれとは区別しなければなりませんから<br />
+さらに空白文字を足さなければならないのですね。</p>
+
+<p>さて、<code>argsList</code>が何だったかというと、<code>onBuildingBuilt()</code>においては<br />
+<code>[pCity,iBuildingType]</code>という<strong>リスト</strong>なのでした。<br />
+<!-- 本当はリストじゃなくてタプルかもしれない。多分リスト。どのみちシーケンス型なので書き方には影響はない。 --><br />
+ので、このようにして取り出すことが<a href="#リスト">できるのでした</a>&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity = argsList[0]
+iBuildingType = argsList[1]
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>あるいは</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+pCity, iBuildingType = argsList
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p><code>iBuildingType</code>は今まさに建ったその建造物のTypeを表しているので、<br />
+それがダンかどうかはこのようにすればわかります&hellip;</p>
+
+<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>(<code>gc.getInfoTypeForString()</code>の働きは大丈夫ですね？キーを対応する種類IDに直す関数なのでした)</p>
+
+<p>さて、ゲーム中、各タイルの状況は刻々と変わります。<br />
+(上に乗っているユニットや、建っている改善や、道が引かれているか、鉄道はどうか、etc&hellip;)<br />
+なのでこれにも例によって新しい名前があります。<strong>Plot</strong>(地点)です。<br />
+<strong>Terrain</strong>(地形)や<strong>Improvement</strong>(改善)といったものが<strong>Plot</strong>の制御下にあるほか、<br />
+<strong>Unit</strong>や<strong>City</strong>は自分がどこにあるかの情報を<strong>Plot</strong>でもっています。<br />
+たとえば<code>PCity.plot()</code>として<code>pCity</code>の<strong>Plot</strong>を取得できます。</p>
+
+<p>そして、<code>plot</code>上にあるユニットの数は<code>plot.getNumUnits()</code>、<br />
+<code>plot</code>上の<code>i</code>番目のユニットは<code>plot.getUnit(i)</code>で取得できます。<br />
+<code>pUnit = plot.getUnit(i)</code>と受けてあげることで<br />
+各<strong>Unit</strong>に操作ができるようになります。</p>
+
+<p>今回は昇進を与えたいのでしたから、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyUnitからpromotionで探すと&hellip;</p>
+
+<blockquote>
+<pre><code class="language-plain">VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
+void (int (PromotionTypes) eIndex, bool bNewValue)
+</code></pre>
+</blockquote>
+
+<p>結構たくさんヒットしましたが、「昇進を無償で与える」に該当しそうなのはこれでしょうか。<br />
+PromotionType eIndex は例によって昇進の種類IDなのでいいとして、<br />
+もうひとつBOOL bNewValueという引数をとっています。<br />
+これは昇進を持っている状況を<code>True</code>、持っていない状況を<code>False</code>とみなしているのですね。</p>
+
+<p>つまり「昇進を持つようにする」と「昇進の所持状況を<code>True</code>にする」を同一視しているのです。<br />
+もちろん逆に「昇進を剥奪する」と「昇進の所持状況を<code>False</code>にする」が同一視されるわけです。</p>
+
+<p>ここまでわかれば教練Ⅰを持たせられます。<br />
+<code>pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)</code>ですね。</p>
+
+<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
+
+<p>全体でこうなります&hellip;</p>
+
+<pre><code class="language-python">from CvPythonExtensions import *
+import CvEventManager
+import CvUtil
+
+gc = CyGlobalContext()
+
+class MyEventManager(CvEventManager.CvEventManager, object):
+
+    def onBuildingBuilt(self, argsList):
+        'Called when a building is built'
+        super(self.__class__, self).onBuildingBuilt(argsList)
+        ##########
+        pCity, iBuildingType = argsList
+
+        if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
+            plot = pCity.plot()
+
+            for i in range( plot.getNumUnits() ):
+                pUnit = plot.getUnit(i)
+                pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL1'), True)
+                pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DRILL2'), True)
+
+</code></pre>
+
+<h2 id="ためす">ためす</h2>
+
+<p>起動して、ユニットを貯めて、ダンを建てて&hellip;<br />
+<a href="https://gforestshade.github.io/kujira/img/kujira_for_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_for_10.png"    /></a>
+<br />
+できました！</p>
+
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/getstarted4/" title="はじめてのPythonMOD 4 " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://gforestshade.github.io/kujira/post/getstarted6/" title="はじめてのPythonMOD 6" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
+                          alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承２" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承１" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="title">付録：継承１</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">mmd_to_civ4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9b%e3%81%a4%e3%82%81%e3%81%84">せつめい</a>
+            <span class="category-list-count">22</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのpython</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのpythonmod</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://gforestshade.github.io/kujira/page/license/">LICENSE</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://gforestshade.github.io/kujira/assets/js/jquery.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/tether.min.js"></script>
+<script src="https://gforestshade.github.io/kujira/assets/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//kujira.disqus.com/count.js" async></script>
+
+
+<script src="https://gforestshade.github.io/kujira/assets/js/script.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-111798374-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  </body>
+</html>
+
