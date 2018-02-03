@@ -81,79 +81,1435 @@
   </div>
 </nav>
 
-<div class="container post-container">
+<div class="container">
   <header>
     <h1 class="post-title">それからのPython
 </h1>
 
   </header>
-  
-  <p>ぽけぽけ</p>
+    <div class="row m-l-0 m-r-0">
+      <div class="col-xs-12 col-md-9">
+        <div class="row">
+          
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+            <div class="content">
+              
 
-  <ul class="container">
+<p><br>civ4のMOD作成を通して、Pythonの基礎を学習します。</p>
+
+<h1 id="扱っている題材">扱っている題材</h1>
+
+<ul>
+<li>変数と値・型<br /></li>
+<li>クラス・メソッド<br /></li>
+<li>複数ファイル構成・モジュール<br /></li>
+<li>リスト・リスト操作・リスト内包表記<br /></li>
+<li>画面上へのメッセージ表示<br /></li>
+<li>ユニットへの昇進付与<br /></li>
+<li>簡易スペルシステム<br />
+<br /></li>
+</ul>
+
+            </div>
+          </div>
+          
+        </div>
+        
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy10/">
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy10/">
   それからのPython 10
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-30">30 Dec, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">
+    &middot; 9 Minute Read
+    &middot; 4217 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy10/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる<br /></li>
+<li>４部作のうちの４回目<br /></li>
+<li>ついに各スペルの実装へ<br />
+<br /></li>
+</ul>
+
+<h1 id="湧き水">湧き水</h1>
+
+<p>お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy9/">
   それからのPython 9
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-30">30 Dec, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">
+    &middot; 9 Minute Read
+    &middot; 4126 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy9/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる<br /></li>
+<li>４部作のうちの３回目・Python共通編<br /></li>
+<li>クラスを活用する<br />
+<br /></li>
+</ul>
+
+<h1 id="スペル情報クラス">スペル情報クラス</h1>
+
+<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br />
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy8/">
   それからのPython 8
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-30">30 Dec, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">
+    &middot; 12 Minute Read
+    &middot; 5646 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy8/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる<br /></li>
+<li>４部作のうちの２回目・Python準備編<br /></li>
+<li>オブジェクト<br /></li>
+<li>リスト操作<br />
+<br /></li>
+</ul>
+
+<h1 id="pythonファイル">Pythonファイル</h1>
+
+<p>Python側のファイル構成はいつもの感じです。<br />
+EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br />
+忘れてしまった方は<a href="https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py">こちら</a>にも置いてあります。</p>
+
+<pre><code class="language-plain">└─kujira_promospell
+    └─Assets
+        ├─Python
+        │  ├─KujiraEventManager.py
+        │  │
+        │  └─Entrypoints
+        │      └─CvEventInterface.py
+        │
+        └─XML
+            ├─Text
+            │  └─Text_Kujira.xml
+            │
+            └─Units
+                └─CIV4PromotionInfos.xml
+</code></pre>
+
+<p></p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy7/">
   それからのPython 7
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-12-30">30 Dec, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">
+    &middot; 8 Minute Read
+    &middot; 3797 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy7/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき<br /></li>
+<li>簡単なスペルの仕組みをつくってみる<br /></li>
+<li>４部作のうちの１回目・XML編<br />
+<br /></li>
+</ul>
+
+<h1 id="設計しよう">設計しよう</h1>
+
+<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br />
+簡単のために、以下の仕様でつくることにします。</p>
+
+<ul>
+<li>スペルと昇進を1対1で対応させる<br /></li>
+<li>発動条件は昇進を取得したとき一回きりとする<br /></li>
+<li>スペル昇進を取れるのは火器ユニットとする<br /></li>
+<li>具体的なスペル効果は以下の3種類とする<br /></li>
+<li>湧き水：砂漠が平原に変化する<br /></li>
+<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br />
+ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
+<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
+<br /></li>
+</ul>
+
+<p></p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy6/">
   それからのPython 6
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-11-17">17 Nov, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy5/">
+    &middot; 10 Minute Read
+    &middot; 4546 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy6/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy5/">その５</a>のつづき<br /></li>
+<li>もっともっとクラスをつかう<br /></li>
+<li>別ファイルからもつかう<br />
+<br /></li>
+</ul>
+
+<h1 id="コードを読む">コードを読む</h1>
+
+<p>Civ4からあらかじめ提供されているクラスはまだまだあります。<br />
+今回はその中から比較的簡単で読みやすいクラスを例に<br />
+実際にコードを読み解いてみたいと思います。<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy5/">
   それからのPython 5
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-11-04">4 Nov, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">
+    &middot; 9 Minute Read
+    &middot; 4385 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy5/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき<br /></li>
+<li>もっとクラスをつかう<br /></li>
+<li>変数のスコープ<br />
+<br /></li>
+</ul>
+
+<h1 id="インスタンスの中のインスタンス">インスタンスの中のインスタンス</h1>
+
+<p>インスタンス変数にクラス型の変数を使う例を見てみましょう。</p>
+
+<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br />
+それを用いて<br />
+《建造された都市で生産されたユニットだけでなく、<br />
+その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br />
+をつくることです。<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy5/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy4/">
   それからのPython 4
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-23">23 Oct, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">
+    &middot; 9 Minute Read
+    &middot; 4306 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy4/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき<br /></li>
+<li>クラス巡り<br />
+<br /></li>
+</ul>
+
+<h1 id="提供されているクラスを探訪してみる">提供されているクラスを探訪してみる</h1>
+
+<p>新しいクラスをつくる体験をしたところで、<br />
+既存のクラスを使ってみる体験もしてみます。<br />
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、すすめていきましょう。</p>
+
+<p>左上フレームにリストされているのが、クラス名(型名)です。<br />
+ためしにCyCityをクリックしてみましょう。<br />
+すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br />
+CyCity型のメソッドだけでもずいぶん数があります。<br />
+流し読みしつつ、気になったのを見ていきましょう。</p>
+
+<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br />
+BOOL - ブール型(真と偽の2択)<br />
+INT - 数値型<br />
+VOID - なし(戻り値を返さないもの)<br />
+茶色 - なにかのID(基本的なふるまいはINTと同じ)<br />
+緑色 - クラス型<br />
+こんな具合です。<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy4/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy3/">
   それからのPython 3
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-21">21 Oct, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">
+    &middot; 7 Minute Read
+    &middot; 3217 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy3/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき<br /></li>
+<li>クラス<br />
+<br /></li>
+</ul>
+
+<h1 id="準備">準備</h1>
+
+<p>kujira_classというMODを新しく作ります。</p>
+
+<h2 id="フォルダ構成">フォルダ構成</h2>
+
+<pre><code class="language-plain">└─kujira_class
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<p></p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy3/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy2/">
   それからのPython 2
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-20">20 Oct, 2017</time>
+
     
-      <li><a href="https://gforestshade.github.io/kujira/post/secondpy1/">
+    &middot; 11 Minute Read
+    &middot; 5084 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy2/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy1/">その１</a>のつづき<br /></li>
+<li>いろいろ表示してみる<br />
+<br /></li>
+</ul>
+
+<h1 id="4000年">-4000年</h1>
+
+<p><code>gc.getGame().getGameTurnYear()</code>により現在の年を取得します。<br />
+これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで<br />
+Unicode文字列を作り、表示してあげます。</p>
+
+<p>コードはこうなります&hellip;<br />
+</p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy2/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/secondpy1/">
   それからのPython 1
 
 </a>
-</li>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-17">17 Oct, 2017</time>
+
     
-  </ul>
+    &middot; 8 Minute Read
+    &middot; 3701 Words
+  </div>
+
   
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/secondpy1/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<h2 id="これは何か">これは何か</h2>
+
+<p>これは、<br />
+「はじめてのPythonMOD」シリーズの続きです。<br />
+もうちょっとPythonの書き方について勉強して、<br />
+より思い通りに記述できるようになろう、というのが大きな目的です。</p>
+
+<h2 id="これは何でないか">これは何でないか</h2>
+
+<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br />
+また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。<br />
+コピペですぐ動くコードはあまりないかもしれません。</p>
+
+<p></p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/secondpy1/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+        
+
+      </div>
+        <div class="col-xs-12 col-md-3">
+          <div class="sidebar">
+  <div class="card card-block">
+  <h4 class="card-title">RECENTS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul id="recent-post">
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/kujira_paleblue1024x200.png)"
+                          alt="はじめに" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 10" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 9" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 8" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 7" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy7/" class="title">それからのPython 7</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承２" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex3/" class="title">付録：継承２</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="付録：継承１" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/" class="title">付録：継承１</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
+                          alt="それからのPython 6" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">MMD_to_CIV4</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
+            <span class="category-list-count">10</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e4%bb%98%e9%8c%b2">付録</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+            <span class="category-list-count">20</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+</div>
+
+        </div>
+    </div>
 
 </div>
       <footer class="footer hidden-print">

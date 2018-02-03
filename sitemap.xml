@@ -168,30 +168,8 @@
   </url>
   
   <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9B%E3%81%A4%E3%82%81%E3%81%84/</loc>
-    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/</loc>
     <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/</loc>
-    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/"
-                />
   </url>
   
   <url>
@@ -215,6 +193,12 @@
   <url>
     <loc>https://gforestshade.github.io/kujira/tags/%E7%9B%AE%E6%AC%A1/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E8%AC%9B%E5%BA%A7/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
