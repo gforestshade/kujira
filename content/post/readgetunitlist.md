@@ -3,7 +3,7 @@ date = "2017-11-16"
 draft = false
 title = "付録：getUnitList()"
 banner = "green"
-tags = ["付録", "せつめい"]
+tags = ["付録", "講座"]
 +++
 
 # はじめに

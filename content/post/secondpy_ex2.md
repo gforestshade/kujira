@@ -3,7 +3,7 @@ date = "2017-12-04"
 draft = false
 title = "付録：継承１"
 banner = "green"
-tags = ["付録", "せつめい"]
+tags = ["付録", "講座"]
 +++
 
 # はじめに

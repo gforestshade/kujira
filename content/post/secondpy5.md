@@ -3,7 +3,7 @@ date = "2017-11-04"
 draft = false
 title = "それからのPython 5"
 banner = "photo_pink1"
-tags = ["それからのPython", "せつめい"]
+tags = ["それからのPython", "講座"]
 +++
 
 # はじめに

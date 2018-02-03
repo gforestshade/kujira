@@ -4,7 +4,7 @@ lastmod = "2018-01-29"
 draft = false
 title = "それからのPython 1"
 banner = "photo_pink1"
-tags = ["それからのPython", "せつめい"]
+tags = ["それからのPython", "講座"]
 +++
 
 # はじめに

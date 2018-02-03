@@ -1,9 +1,9 @@
 +++
 date = "2017-05-14T12:00:00+09:00"
 draft = false
-title = "第１章"
+title = "MMDモデルをCiv4に登場させたい"
 banner = "green"
-tags = ["MMD_to_CIV4", "せつめい"]
+tags = ["MMD_to_CIV4"]
 +++
 # この文章について
 ## これは何か

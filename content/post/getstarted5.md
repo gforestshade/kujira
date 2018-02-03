@@ -4,7 +4,7 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 5"
 banner = "photo_yellow"
-tags = ["はじめてのPythonMOD", "せつめい"]
+tags = ["はじめてのPythonMOD", "講座"]
 +++
 
 # はじめに

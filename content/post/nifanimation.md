@@ -1,9 +1,9 @@
 +++
 date = "2017-05-15T12:00:00+09:00"
 draft = false
-title = "第２章"
+title = "MMDモデルをCiv4上で動かしたい"
 banner = "green"
-tags = ["MMD_to_CIV4", "せつめい"]
+tags = ["MMD_to_CIV4"]
 
 +++
 

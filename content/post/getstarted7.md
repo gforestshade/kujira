@@ -4,7 +4,7 @@ lastmod = "2018-01-29"
 draft = false
 title = "はじめてのPythonMOD 7"
 banner = "photo_yellow"
-tags = ["はじめてのPythonMOD", "せつめい"]
+tags = ["はじめてのPythonMOD", "講座"]
 +++
 
 [api]: http://civ4bug.sourceforge.net/PythonAPI/index.html
