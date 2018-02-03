@@ -1,5 +1,5 @@
 baseurl = "https://gforestshade.github.io/kujira/"
-languageCode = "en"
+languageCode = "ja-JP"
 title = "Kujira, Civ4 Mod Blog"
 description = "このサイトは、Civ4のMOD開発情報を発信していくブログです。"
 author = "gforest_shade"
@@ -8,6 +8,7 @@ canonifyurls = true
 paginate = 20
 hasCJKLanguage = true
 publishDir = "docs"
+preserveTaxonomyNames = "True"
 
 theme = "hugo-bootstrap"
 
