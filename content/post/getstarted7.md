@@ -9,6 +9,7 @@ tags = ["はじめてのPythonMOD", "せつめい"]
 
 [api]: http://civ4bug.sourceforge.net/PythonAPI/index.html
 
+# はじめに
 - [その６]({{<ref "getstarted6.md">}})のつづき
 - XMLとPythonの合わせ技・Python編
 
@@ -20,6 +21,8 @@ XMLでできるはずもありません。Pythonで実装していきましょ�
 いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。
 「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。
 「都市圏内を草原化する」............都市圏内とは何でしょうか？
+
+<!--more-->
 
 ## 都市圏とは
 {{<img src="/img/kujira_fert_city_area.png" width="300" height="300">}}

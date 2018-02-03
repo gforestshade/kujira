@@ -37,6 +37,7 @@ EntryPoints\\CvEventInterface.pyはいずれかのKujira MODから使いまわ�
                 └─CIV4PromotionInfos.xml
 ```
 
+<!--more-->
 
 # プログラムリスト
 先にKujiraEventManager.pyの全容を見ておきましょう。

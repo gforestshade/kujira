@@ -17,6 +17,7 @@ tags = ["それからのPython", "せつめい"]
 Unicode文字列を作り、表示してあげます。
 
 コードはこうなります...
+<!--more-->
 ```
 # -*- coding: shift_jis -*-
 from CvPythonExtensions import *
@@ -40,6 +41,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 ゲーム開始してみましょう。
 {{<img src="/img/kujira_var_30.png">}}
+
 
 # 紀元前-4000年
 うまく表示されました...が、「紀元前」がマイナスとして表現されてしまっていますね。

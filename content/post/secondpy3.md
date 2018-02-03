@@ -26,6 +26,8 @@ kujira\_classというMODを新しく作ります。
                  └─CvEventInterface.py
 ```
 
+<!--more-->
+
 ## KujiraEventManager.py
 これもリセットしておきます。
 ```

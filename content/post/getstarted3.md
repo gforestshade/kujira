@@ -27,6 +27,8 @@ print 1129
 「出力」のところに`1129`と出ていればOKです。
 {{<img src="/img/paiza_0.png">}}
 
+<!--more-->
+
 # もしくは
 埋め込みを置いておくので、ご利用ください。
 <iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>

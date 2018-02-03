@@ -21,6 +21,8 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは
 あまりないかもしれません。
 
+<!--more-->
+
 # CivilizationIV.ini
 早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
 PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。[^1]

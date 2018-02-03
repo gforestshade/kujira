@@ -18,6 +18,8 @@ tags = ["それからのPython", "せつめい"]
 
 スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、
 このクラスを通してスペルのいろいろな情報を取得することができるようにします。
+<!--more-->
+
 ``` python
 class SpellInfo:
     
