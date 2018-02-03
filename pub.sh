@@ -1,4 +1,2 @@
-./hugo
-git add .
-git commit
-git push
+rm -r docs
+./hugo && ghp-import -p docs
