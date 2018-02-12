@@ -92,141 +92,6 @@
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
                   <div>
   
-
-  <h1 class="post-title">CvGameCoreDll.dllの作り方
-</h1>
-
-  <div class="post-meta">
-  <div class="post-meta-item">
-    <i class="fa fa-calendar"></i>
-    <time datetime="2018-02-04">4 Feb, 2018</time>
-
-    
-    &middot; 1 Minute Read
-    &middot; 419 Words
-  </div>
-
-  
-
-  
-      
-      
-        <div class="post-meta-item">
-          <i class="fa fa-tags"></i>
-          
-          <a href="https://gforestshade.github.io/kujira/tags/c&#43;&#43;">C&#43;&#43;</a>
-          &middot;
-          
-          <a href="https://gforestshade.github.io/kujira/tags/%e3%82%b3%e3%83%a9%e3%83%a0">コラム</a>
-          
-          
-        </div>
-      
-  
-  
-  <div class="post-meta-item">
-    &nbsp;<i class="fa fa-comment-o"></i>
-    <a href="https://gforestshade.github.io/kujira/post/howtocompile/#disqus_thread" class="article-comment-link">
-         Comments
-    </a>
-  </div>
-  
-
-</div>
-
-</div>
-
-                  <div class="content">
-  
-
-<h1 id="筆者の環境">筆者の環境</h1>
-
-<ul>
-<li>Windows 10 64bit<br /></li>
-<li>Civ4 BtS 3.19 パッケージ版<br />
-<br /></li>
-</ul>
-
-<h1 id="必要なもの">必要なもの</h1>
-
-<h2 id="microsoft-visual-c-toolkit-2003">Microsoft Visual C++ Toolkit 2003</h2>
-
-<p><a href="http://kael.civfanatics.net/files/VCToolkitSetup.exe">http://kael.civfanatics.net/files/VCToolkitSetup.exe</a></p>
-
-<h2 id="multi-threading-librarires">Multi Threading Librarires</h2>
-
-<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br />
-<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br />
-C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー</p>
-
-<h2 id="windows-7-sdk">Windows 7 SDK</h2>
-
-<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br />
-古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
-新し目のSDKをISOからインストールする、64bit版はGRMSDKX_EN_DVD.iso</p>
-
-<h2 id="makefile-2-3">MakeFile 2.3</h2>
-
-<p><a href="https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/">https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/</a></p>
-
-<h1 id="やってみる">やってみる</h1>
-
-<p>MODSフォルダにsdk_testというフォルダを作る</p>
-
-<p>sdk_testの中にsdkというフォルダとAssetsというフォルダを作る</p>
-
-<p>C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL<br />
-の中にあるファイルとフォルダをsdkの中にコピーする</p>
-
-<p>Makefileもsdkの中にコピーする</p>
-
-<h2 id="かきかえる">かきかえる</h2>
-
-<pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここから
-PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
-PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここまで
-## Uncomment to have newly compiled dlls copied to your mod's Assets directory
-YOURMOD=..
-</code></pre>
-
-<pre><code class="language-makefile">#### INCLUDES ####
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
-</code></pre>
-
-<p>次の内容でbuild.batをつくり、sdkフォルダに入れる</p>
-
-<pre><code>@echo off
-rem Microsoft SDK 7.1の場合
-set NMAKE_BIN=&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&quot;
-cd /d %~dp0
-
-set TARGET=Release
-%NMAKE_BIN%\nmake
-
-pause
-</code></pre>
-
-<h2 id="実行">実行</h2>
-
-<p>build.batをダブルクリックして実行</p>
-
-<p>Assetsの中にCvGameCoreDll.dllができている</p>
-
-</div>
-
-              </div>
-            </div>
-          
-        
-          
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
-                  <div>
-  
   
     
     
@@ -374,6 +239,75 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
 
               </div>
             </div>
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/howtocompile/">
+  CvGameCoreDll.dllの作り方
+
+</a>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2018-02-04">4 Feb, 2018</time>
+
+    
+    &middot; 1 Minute Read
+    &middot; 419 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/c&#43;&#43;">C&#43;&#43;</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%82%b3%e3%83%a9%e3%83%a0">コラム</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/howtocompile/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      筆者の環境 Windows 10 64bit Civ4 BtS 3.19 パッケージ版 必要なもの Microsoft Visual C++ Toolkit 2003 http://kael.civfanatics.net/files/VCToolkitSetup.exe Multi Threading Librarires http://kael.civfanatics.net/files/msvcrt.lib http://kael.civfanatics.net/files/msvcprt.lib C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー Windows 7 SDK http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso 古いPSDK-x86.exeがWindows
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
           
         
           
@@ -2326,31 +2260,6 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         
         <li>
           <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="thumbnail">
-              
-                  
-                    
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="title">CvGameCoreDll.dllの作り方</a></p>
-            </div>
-        </li>
-        
-        <li>
-          <div class="item-thumbnail bg-inverse">
               <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
               
                   
@@ -2374,6 +2283,31 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           </div>
             <div class="item-inner">
               <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="title">CvGameCoreDll.dllの作り方</a></p>
             </div>
         </li>
         
