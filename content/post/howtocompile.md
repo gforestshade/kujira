@@ -1,6 +1,6 @@
 +++
 date = "2018-02-04"
-draft = true
+draft = false
 title = "CvGameCoreDll.dllの作り方"
 banner = ""
 tags = ["C++", "コラム"]
@@ -78,3 +78,7 @@ pause
 build.batをダブルクリックして実行
 
 Assetsの中にCvGameCoreDll.dllができている
+
+
+
+
