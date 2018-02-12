@@ -54,7 +54,7 @@
     },
     "datePublished": "2018-02-04",
     "description": "",
-    "wordCount": 419
+    "wordCount": 558
   }
 </script>
 
@@ -120,6 +120,24 @@
     <div class="col-xs-12 col-md-9 post-container">
       <div>
   
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+      
+    
+  
+
 
   <h1 class="post-title">CvGameCoreDll.dllの作り方
 </h1>
@@ -130,8 +148,8 @@
     <time datetime="2018-02-04">4 Feb, 2018</time>
 
     
-    &middot; 1 Minute Read
-    &middot; 419 Words
+    &middot; 2 Minute Read
+    &middot; 558 Words
   </div>
 
   
@@ -165,9 +183,7 @@
 </div>
 
       <div class="content">
-  
-
-<h1 id="筆者の環境">筆者の環境</h1>
+  <h1 id="筆者の環境">筆者の環境</h1>
 
 <ul>
 <li>Windows 10 64bit<br /></li>
@@ -185,13 +201,15 @@
 
 <p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br />
 <a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br />
-C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー</p>
+C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーします。</p>
 
 <h2 id="windows-7-sdk">Windows 7 SDK</h2>
 
 <p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br />
 古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
-新し目のSDKをISOからインストールする、64bit版はGRMSDKX_EN_DVD.iso</p>
+新し目のSDKを<strong>ISOから</strong>インストールします。<br />
+64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br />
+インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。</p>
 
 <h2 id="makefile-2-3">MakeFile 2.3</h2>
 
@@ -199,16 +217,20 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー</p>
 
 <h1 id="やってみる">やってみる</h1>
 
-<p>MODSフォルダにsdk_testというフォルダを作る</p>
+<p></p>
 
-<p>sdk_testの中にsdkというフォルダとAssetsというフォルダを作る</p>
+<p>MODSフォルダにsdk_testというフォルダを作ります。</p>
+
+<p>sdk_testの中にsdkというフォルダとAssetsというフォルダを作ります。</p>
 
 <p>C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL<br />
-の中にあるファイルとフォルダをsdkの中にコピーする</p>
+の中にあるファイルとフォルダをsdkの中にコピーします。</p>
 
-<p>Makefileもsdkの中にコピーする</p>
+<p>Makefileもsdkの中にコピーします。</p>
 
 <h2 id="かきかえる">かきかえる</h2>
+
+<p>MakeFileを編集します。</p>
 
 <pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここから
@@ -225,7 +247,7 @@ GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&qu
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
 </code></pre>
 
-<p>次の内容でbuild.batをつくり、sdkフォルダに入れる</p>
+<p>次の内容でbuild.batをつくり、sdkフォルダに入れます。</p>
 
 <pre><code>@echo off
 rem Microsoft SDK 7.1の場合
@@ -240,10 +262,11 @@ pause
 
 <h2 id="実行">実行</h2>
 
-<p>build.batをダブルクリックして実行</p>
+<p>build.batをダブルクリックして実行します。</p>
 
-<p>Assetsの中にCvGameCoreDll.dllができている</p>
+<p>Assetsの中にCvGameCoreDll.dllができているはずです。</p>
 
+<p>Enjoy!</p>
 </div>
 
       <footer>
@@ -341,6 +364,9 @@ pause
                     
                       
                     
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="CvGameCoreDll.dllの作り方" class="thumbnail-image"></span>
                       
                     
                   
