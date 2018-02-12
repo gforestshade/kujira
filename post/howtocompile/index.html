@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>目次  &middot; Kujira, Civ4 Mod Blog</title>
+  <title>CvGameCoreDll.dllの作り方  &middot; Kujira, Civ4 Mod Blog</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -11,22 +11,56 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="">
+<meta name="keywords" content="C&#43;&#43;, コラム, ">
 
 
-<meta property="og:title" content="目次  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:title" content="CvGameCoreDll.dllの作り方  &middot; Kujira, Civ4 Mod Blog ">
 <meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
-<meta property="og:url" content="https://gforestshade.github.io/kujira/tags/%E7%9B%AE%E6%AC%A1/" />
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/howtocompile/" />
 <meta property="og:locale" content="ja-JP">
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-02-04T00:00:00Z" />
+<meta property="og:article:modified_time" content="2018-02-04T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="C&#43;&#43;">
+    
+<meta property="og:article:tag" content="コラム">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="CvGameCoreDll.dllの作り方" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/howtocompile/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "CvGameCoreDll.dllの作り方",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2018-02-04",
+    "description": "",
+    "wordCount": 419
+  }
+</script>
 
 
 
-<link href="https://gforestshade.github.io/kujira/tags/%E7%9B%AE%E6%AC%A1/index.xml" rel="alternate" type="application/rss+xml" title="目次" />
-
-<link rel="canonical" href="https://gforestshade.github.io/kujira/tags/%E7%9B%AE%E6%AC%A1/" />
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/howtocompile/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
@@ -81,56 +115,23 @@
   </div>
 </nav>
 
-<div class="container">
-  <header>
-    <h1 class="post-title">目次
-</h1>
-
-  </header>
-    <div class="row m-l-0 m-r-0">
-      <div class="col-xs-12 col-md-9">
-        <div class="row">
-          
-        </div>
-        
-        
-          
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
-                  <div>
-  
-  
-    
-    
-      
-          <a href="" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/kujira_paleblue1024x200.png" class="img-fluid" alt="Generic responsive image">
-          </a>
-          
-            <p class="banner-license">banner: いらすとや</p>
-          
-      
-    
-      
-    
-      
-    
-      
-    
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
   
 
-
-  <h1 class="post-title">はじめに
+  <h1 class="post-title">CvGameCoreDll.dllの作り方
 </h1>
 
   <div class="post-meta">
   <div class="post-meta-item">
     <i class="fa fa-calendar"></i>
-    <time datetime="2018-01-27">27 Jan, 2018</time>
+    <time datetime="2018-02-04">4 Feb, 2018</time>
 
     
-    &middot; 2 Minute Read
-    &middot; 863 Words
+    &middot; 1 Minute Read
+    &middot; 419 Words
   </div>
 
   
@@ -141,10 +142,10 @@
         <div class="post-meta-item">
           <i class="fa fa-tags"></i>
           
-          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+          <a href="https://gforestshade.github.io/kujira/tags/c&#43;&#43;">C&#43;&#43;</a>
           &middot;
           
-          <a href="https://gforestshade.github.io/kujira/tags/%e7%9b%ae%e6%ac%a1">目次</a>
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%82%b3%e3%83%a9%e3%83%a0">コラム</a>
           
           
         </div>
@@ -153,7 +154,7 @@
   
   <div class="post-meta-item">
     &nbsp;<i class="fa fa-comment-o"></i>
-    <a href="https://gforestshade.github.io/kujira/post/hajimeni/#disqus_thread" class="article-comment-link">
+    <a href="https://gforestshade.github.io/kujira/post/howtocompile/#disqus_thread" class="article-comment-link">
          Comments
     </a>
   </div>
@@ -163,96 +164,129 @@
 
 </div>
 
-                  <div class="content">
+      <div class="content">
   
 
-<p>このサイトは、Civ4のMOD開発情報を発信していくブログです。</p>
-
-<p>主に、いままで日本語情報が少なかったPython、SDK、グラフィック、サウンドなどの<br />
-MODを作る際の情報を筆者の備忘録がわりに書き留めています。</p>
-
-<p>MODを作りたい人向けの情報であり、MODで遊んだり導入したりしたい人向けではないことを<br />
-あらかじめご了承ください。</p>
-
-<h1 id="講座シリーズ">講座シリーズ</h1>
-
-<p>はじめてPythonを触る人向けの講座風コンテンツです。<br />
-PythonでもMODやりたいけどどこからはじめたらいいかよくわからない&hellip;&hellip;<br />
-という方はここから読むことをお勧めします。</p>
-
-<h2 id="第１期シリーズ-はじめてのpythonmod">第１期シリーズ・はじめてのPythonMOD</h2>
-
-<p>順番に読んでいけばPythonMODに入門できる、そんな内容を目指しました。</p>
+<h1 id="筆者の環境">筆者の環境</h1>
 
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a><br />
-PythonでMOD作成する準備 ～ 図書館自動建設<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a><br />
-えこひいき図書館・首都だけ/マリだけ・if文・Player・CivilizationInfo<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a><br />
-防衛志向・ユニット生成・関数の使い方/作り方<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a><br />
-取得済み技術・and/or/else<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a><br />
-ダン強化・都市上にいる全ユニットに昇進・for文<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted6/">その６</a><br />
-XMLで新しい建造物を作る<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted7/">その７</a><br />
-草原化・マップのラップ・Map・Plot・リストとforの応用<br />
+<li>Windows 10 64bit<br /></li>
+<li>Civ4 BtS 3.19 パッケージ版<br />
 <br /></li>
 </ul>
 
-<h2 id="第２期シリーズ-それからのpython">第２期シリーズ・それからのPython</h2>
+<h1 id="必要なもの">必要なもの</h1>
 
-<p>もっと欲張りたい人のための、中級編です。</p>
+<h2 id="microsoft-visual-c-toolkit-2003">Microsoft Visual C++ Toolkit 2003</h2>
 
-<ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy1/">その１</a><br />
-ゲーム画面にメッセージ表示・変数と値・型・Unicode文字列<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a><br />
-年代の表示・フォーマット文字列・抽象化<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a><br />
-クラス・メソッド・インスタンス・コンストラクタ<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a><br />
-クラスの利用・ゲームの要素を操作する方法<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy5/">その５</a><br />
-毎ターン・駐留したユニット・変数のスコープ<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a><br />
-PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a><br />
-昇進の作成<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a><br />
-オブジェクト・リスト操作・リスト内包表記・ジェネレータ式<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a><br />
-クラス変数・リストの連結・filter()<br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy10/">その10</a><br />
-スペル完成<br />
-<br /></li>
-</ul>
+<p><a href="http://kael.civfanatics.net/files/VCToolkitSetup.exe">http://kael.civfanatics.net/files/VCToolkitSetup.exe</a></p>
 
-<h1 id="mmd-to-civ4-プロジェクト">MMD to Civ4 プロジェクト</h1>
+<h2 id="multi-threading-librarires">Multi Threading Librarires</h2>
 
-<p>なんとかもっといろいろなユニットをシド星に召喚できないかと<br />
-試行錯誤していくプロジェクトです。</p>
+<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br />
+<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br />
+C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー</p>
 
-<ul>
-<li><a href="https://gforestshade.github.io/kujira/post/mmd_to_nif/">モデルの変換</a><br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/nifanimation/">リギング</a><br />
-<br />
-<br /></li>
-</ul>
+<h2 id="windows-7-sdk">Windows 7 SDK</h2>
+
+<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br />
+古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
+新し目のSDKをISOからインストールする、64bit版はGRMSDKX_EN_DVD.iso</p>
+
+<h2 id="makefile-2-3">MakeFile 2.3</h2>
+
+<p><a href="https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/">https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/</a></p>
+
+<h1 id="やってみる">やってみる</h1>
+
+<p>MODSフォルダにsdk_testというフォルダを作る</p>
+
+<p>sdk_testの中にsdkというフォルダとAssetsというフォルダを作る</p>
+
+<p>C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL<br />
+の中にあるファイルとフォルダをsdkの中にコピーする</p>
+
+<p>Makefileもsdkの中にコピーする</p>
+
+<h2 id="かきかえる">かきかえる</h2>
+
+<pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここから
+PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
+PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここまで
+## Uncomment to have newly compiled dlls copied to your mod's Assets directory
+YOURMOD=..
+</code></pre>
+
+<pre><code class="language-makefile">#### INCLUDES ####
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
+GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
+</code></pre>
+
+<p>次の内容でbuild.batをつくり、sdkフォルダに入れる</p>
+
+<pre><code>@echo off
+rem Microsoft SDK 7.1の場合
+set NMAKE_BIN=&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&quot;
+cd /d %~dp0
+
+set TARGET=Release
+%NMAKE_BIN%\nmake
+
+pause
+</code></pre>
+
+<h2 id="実行">実行</h2>
+
+<p>build.batをダブルクリックして実行</p>
+
+<p>Assetsの中にCvGameCoreDll.dllができている</p>
 
 </div>
 
-              </div>
-            </div>
-          
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
         
+            <li class="page-item">
+              <a href="https://gforestshade.github.io/kujira/post/hajimeni/" title="はじめに " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
         
 
-      </div>
-        <div class="col-xs-12 col-md-3">
-          <div class="sidebar">
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+          return;
+
+        var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+        dsq.src = '//kujira.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
   <div class="card card-block">
   <h4 class="card-title">RECENTS</h4>
   <div class="card-text">
@@ -558,9 +592,8 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
 
 </div>
 
-        </div>
-    </div>
-
+      </div>
+  </div>
 </div>
       <footer class="footer hidden-print">
   <div class="container">

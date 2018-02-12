@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Kujira, Civ4 Mod Blog</title>
+    <link>https://gforestshade.github.io/kujira/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Kujira, Civ4 Mod Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
+    <lastBuildDate>Sun, 04 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://gforestshade.github.io/kujira/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CvGameCoreDll.dllの作り方</title>
+      <link>https://gforestshade.github.io/kujira/post/howtocompile/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/howtocompile/</guid>
+      <description>筆者の環境 Windows 10 64bit Civ4 BtS 3.19 パッケージ版 必要なもの Microsoft Visual C++ Toolkit 2003 http://kael.civfanatics.net/files/VCToolkitSetup.exe Multi Threading Librarires http://kael.civfanatics.net/files/msvcrt.lib http://kael.civfanatics.net/files/msvcprt.lib C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピー Windows 7 SDK http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso 古いPSDK-x86.exeがWindows</description>
+    </item>
+    
+  </channel>
+</rss>

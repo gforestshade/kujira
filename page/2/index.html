@@ -113,6 +113,132 @@
   
 
 
+  <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/getstarted2/">
+  はじめてのPythonMOD 2
+
+</a>
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-07-12">12 Jul, 2017</time>
+
+    
+    &middot; 8 Minute Read
+    &middot; 3887 Words
+  </div>
+
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%a6%e3%81%aepythonmod">はじめてのPythonMOD</a>
+          &middot;
+          
+          <a href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://gforestshade.github.io/kujira/post/getstarted2/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content">
+  
+    
+      <h1 id="はじめに">はじめに</h1>
+
+<ul>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a>のつづき<br /></li>
+<li>条件分岐を使ってみる<br />
+<br /></li>
+</ul>
+
+<h1 id="準備">準備</h1>
+
+<p>前回の<code>kujira</code>MODをフォルダごとコピーしてリネーム、<code>kujira_if</code>というMODを作ります。</p>
+
+<pre><code class="language-plain">└─kujira_if
+    └─Assets
+        └─Python
+            │─KujiraEventManager.py
+            │
+            └─Entrypoints
+                 └─CvEventInterface.py
+</code></pre>
+
+<p>このようにフォルダごとコピーすることで、<br />
+あるMODをもとにした派生MODを作成することができます。</p>
+
+<h1 id="選り好みする図書館">選り好みする図書館</h1>
+
+<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br />
+しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br />
+などを区別せず、全都市に無差別に図書館を建設します。<br />
+それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br />
+これだと創造志向があまりにもかわいそうですし、<br />
+せめて自動建設は首都だけにして少しマイルドにできないでしょうか。</p>
+
+<p>この制限を考慮に入れて、<br />
+《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br />
+をつくっていきます。</p>
+
+<p></p>
+    
+  
+</div>
+
+      <p class="post-more-link">
+<a href="https://gforestshade.github.io/kujira/post/getstarted2/" class="btn btn-secondary" role="button">Read more &rarr;</a>
+</p>
+
+  </div>
+</div>
+
+          
+        
+          
+            <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 post-container">
+      <div>
+  
+  
+    
+    
+      
+    
+      
+          <a href="" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_yellow1_1024x200.jpg" class="img-fluid" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/132803717@N02/27004253005/">&lsquo;Choice&rsquo; by Seán Mackey</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+      
+    
+  
+
+
   <h1 class="post-title" ><a href="https://gforestshade.github.io/kujira/post/getstarted1/">
   はじめてのPythonMOD 1
 
@@ -389,6 +515,31 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
         
         <li>
           <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/howtocompile/" class="title">CvGameCoreDll.dllの作り方</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
               <a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="thumbnail">
               
                   
@@ -583,34 +734,6 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="thumbnail">
-              
-                  
-                    
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
-                          alt="それからのPython 6" class="thumbnail-image"></span>
-                      
-                    
-                      
-                    
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy6/" class="title">それからのPython 6</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -633,6 +756,11 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
       <ul>
         
           <li>
+            <a href="https://gforestshade.github.io/kujira/tags/c&#43;&#43;">C&#43;&#43;</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
             <a href="https://gforestshade.github.io/kujira/tags/mmd_to_civ4">MMD_to_CIV4</a>
             <span class="category-list-count">2</span>
           </li>
@@ -649,6 +777,11 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
         
           <li>
             <a href="https://gforestshade.github.io/kujira/tags/%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">はじめに</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://gforestshade.github.io/kujira/tags/%e3%82%b3%e3%83%a9%e3%83%a0">コラム</a>
             <span class="category-list-count">1</span>
           </li>
         
