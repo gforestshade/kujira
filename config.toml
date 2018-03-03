@@ -64,6 +64,11 @@ googleAnalytics = "UA-111798374-1"
     license = "['I love nature and nature loves me .....' by CLAUDIA DEA](https://www.flickr.com/photos/135366503@N05/31176873090/) (トリミング) under a [Creative Commons Attribution 2.0](https://creativecommons.org/licenses/by/2.0/deed.ja)."
 
 [[params.banners]]
+    name = "photo_ice1"
+    path = "/banner/photo_ice1_1024x200.jpg"
+    license = "['Middlebrun Island' by Superior Hiking](https://www.flickr.com/photos/markbyzewski/13510664124/) (トリミング) under a [Creative Commons Attribution 2.0](https://creativecommons.org/licenses/by/2.0/deed.ja)."
+
+[[params.banners]]
     name = "green"
     path = "/banner/green1024x200.png"
 

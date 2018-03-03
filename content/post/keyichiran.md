@@ -2,7 +2,7 @@
 date = "2018-02-14"
 draft = false
 title = "XMLキー一覧"
-banner = "green"
+banner = "photo_ice1"
 tags = ["XML"]
 toc = "目次"
 +++
