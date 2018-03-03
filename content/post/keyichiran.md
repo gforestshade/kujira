@@ -650,7 +650,7 @@ UNITCOMBAT_NAVAL|海洋ユニット
 UNITCOMBAT_AIR|航空ユニット
 
 ## 搭載分類
-搭載タイプキー|名称|備考
+搭乗タイプキー|名称|備考
 ---|---|---
 SPECIALUNIT_FIGHTER|戦闘機|空母など
 SPECIALUNIT_PEOPLE|斥候、探検家、宣教師、スパイ、偉人|キャラベル船など
