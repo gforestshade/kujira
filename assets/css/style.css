@@ -32,6 +32,26 @@ html {
   border-left: 6px solid #a9855a;
 }
 
+.content>h3 {
+  font-size: 110%;
+  color: #99bb00;
+  margin-top: 4em;
+  padding: 3px 0 3px 0.4em;
+  border-width: 3px 0;
+  border-style: double;
+}
+
+.content .subnote {
+    max-width: 70%;
+    margin: 1em 0 1em 2em;
+    padding: 1em;
+    border: dotted 3px #dddddd;
+}
+
+.content .subnote>h4 {
+  font-size: 100%;
+}
+
 .content img {
   max-width: 95%;
   height: auto;

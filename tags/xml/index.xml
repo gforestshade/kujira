@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Wed, 14 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIV4UnitInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4unitinfos/</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4unitinfos/</guid>
+      <description>はじめに CIV4UnitInfos.xmlの各項目について説明しています。 &amp;lt;Civ4UnitInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;x-sc</description>
+    </item>
     
     <item>
       <title>XMLキー一覧</title>
