@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIV4UnitClassInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</guid>
+      <description>はじめに CIV4ClassUnitInfos.xmlの各項目について説明しています。 ユニットクラス ただ一口に「斧兵」といっても、個々の斧兵の</description>
+    </item>
     
     <item>
       <title>CIV4UnitInfos.xml</title>
