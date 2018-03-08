@@ -52,7 +52,7 @@
     },
     "datePublished": "2018-03-04",
     "description": "",
-    "wordCount": 21685
+    "wordCount": 21783
   }
 </script>
 
@@ -151,7 +151,7 @@
 
     
     &middot; 44 Minute Read
-    &middot; 21685 Words
+    &middot; 21783 Words
   </div>
 
   
@@ -352,6 +352,19 @@
 
 <p>例：<br />
 &lt;Strategy&gt;TXT_KEY_UNIT_WARRIOR_STRATEGY&lt;/Strategy&gt;</p>
+
+<h3 id="help">&lt;Help&gt;</h3>
+
+<p>このユニットの追加の説明文を指定します。<br />
+XMLに指定した要素については、説明文はある程度自動生成されますが、<br />
+PythonやDLLにおいて直接拡張したときなどに利用します。</p>
+
+<p>利用しない場合は、タグごと省略します。</p>
+
+<p>値：テキストキー</p>
+
+<p>例：<br />
+&lt;Strategy&gt;TXT_KEY_UNIT_WARRIOR_HELP&lt;/Strategy&gt;</p>
 
 <h3 id="advisor">&lt;Advisor&gt;</h3>
 
@@ -1446,7 +1459,9 @@ BtSではこの変数の値は4です。<br />
 
 <h3 id="productiontraits">&lt;ProductionTraits&gt;</h3>
 
-<p>このユニットの生産を加速する志向を指定します。<br />
+<p>このユニットの生産を加速する志向を指定します。</p>
+
+<p>この機能を使わない場合、空タグにします。<br />
 BtSでは、この属性を持つのは開拓者と労働者です。</p>
 
 <p>値：&lt;ProductionTrait&gt;のリスト</p>
@@ -1467,7 +1482,10 @@ BtSでは、この属性を持つのは開拓者と労働者です。</p>
 </div>
 
 
-<p>例：拡張志向によって生産+25%</p>
+<p>例１：<br />
+&lt;ProductionTraits /&gt;</p>
+
+<p>例２：拡張志向によって生産+25%</p>
 
 <pre><code class="language-plain">&lt;ProductionTraits&gt;
     &lt;ProductionTrait&gt;
@@ -3038,7 +3056,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 <hr />
 
 <ol>
-<li id="fn:1">BtSでは、このように3つすべてを埋めてありますが、必ずしも3つすべてを埋める必要はありません。もちろん、減らすことができるだけで、最大値を超えることはできないことに注意してください。<br />
+<li id="fn:1">BtSでは、このように3つすべてを埋めてありますが、必ずしも3つすべてを埋める必要はありません。<br />
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 <li id="fn:2">各フレーバーには重み値をつけることができ、重み値 * フレーバー値 の合計が最も高い技術が対象として選ばれます。<br />
  <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
@@ -3124,6 +3142,36 @@ BtSでは、この属性を持つユニットはありません。</p>
           </div>
             <div class="item-inner">
               <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/hajimeni/" class="title">はじめに</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/power/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/green1024x200.png)"
+                          alt="通常電力、きたない電力" class="thumbnail-image"></span>
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/power/" class="title">通常電力、きたない電力</a></p>
             </div>
         </li>
         
@@ -3307,36 +3355,6 @@ BtSでは、この属性を持つユニットはありません。</p>
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="thumbnail">
-              
-                  
-                    
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
-                          alt="それからのPython 8" class="thumbnail-image"></span>
-                      
-                    
-                      
-                    
-                      
-                    
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="title">それからのPython 8</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -3390,7 +3408,7 @@ BtSでは、この属性を持つユニットはありません。</p>
         
           <li>
             <a href="https://gforestshade.github.io/kujira/tags/%e3%82%b3%e3%83%a9%e3%83%a0">コラム</a>
-            <span class="category-list-count">1</span>
+            <span class="category-list-count">2</span>
           </li>
         
           <li>
