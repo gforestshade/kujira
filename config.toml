@@ -74,4 +74,4 @@ googleAnalytics = "UA-111798374-1"
 
 [blackfriday]
     extensions = ["hardLineBreak"]
-    
+    fractions = false    
