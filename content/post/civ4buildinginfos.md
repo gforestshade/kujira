@@ -1,6 +1,6 @@
 +++
 date = "2018-03-07"
-draft = true
+draft = false
 title = "CIV4BuildingInfos.xml"
 banner = "photo_ice1"
 tags = ["XML"]

@@ -1,6 +1,6 @@
 +++
 date = "2018-03-11"
-draft = true
+draft = false
 title = "用語集"
 banner = "photo_ice1"
 tags = ["XML"]
