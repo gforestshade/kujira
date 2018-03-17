@@ -52,7 +52,7 @@
     },
     "datePublished": "2018-03-04",
     "description": "",
-    "wordCount": 21783
+    "wordCount": 21849
   }
 </script>
 
@@ -151,7 +151,7 @@
 
     
     &middot; 44 Minute Read
-    &middot; 21783 Words
+    &middot; 21849 Words
   </div>
 
   
@@ -1568,7 +1568,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 <h3 id="iadvancedstartcost">&lt;iAdvancedStartCost&gt;</h3>
 
 <p>先行スタートにおいて、このユニットは本来の購入コストから<br />
-ここに指定した割合(単位：%)で購入できます。<br />
+ここに指定した割合(単位：%)を掛けた金額で購入できます。<br />
 -1を指定した場合、このユニットは先行スタートで購入できません。</p>
 
 <p>値：整数</p>
@@ -1594,8 +1594,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <h3 id="iminareasize">&lt;iMinAreaSize&gt;</h3>
 
-<p>都市が面しているひとつながりの水タイル群(海や湖)の<br />
-大きさがここで指定した数以上のときのみ、<br />
+<p>都市が面している<a href="https://gforestshade.github.io/kujira/post/glossary/#水域">水域</a>の大きさがここで指定した数以上のときのみ、<br />
 このユニットを生産できます。<br />
 この機能を使わない場合、-1を指定します。</p>
 
@@ -1650,6 +1649,8 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <p>この属性は、都市や要塞の配備数にのみ影響します。<br />
 艦載数には影響しないことに注意してください。</p>
+
+<p>都市の配備枠については、建造物の<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#iairunitcapacity">&lt;iAirUnitCapacity&gt;</a>も参照してください。</p>
 
 <p>値：整数</p>
 
@@ -2842,6 +2843,8 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <p>このユニットは、ここに指定した値だけスコアを増やします。</p>
 
+<p>値：整数</p>
+
 <p>例：<br />
 &lt;iAsset&gt;1&lt;/iAsset&gt;</p>
 
@@ -2849,7 +2852,10 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <p>このユニットは、ここに指定した値だけ軍事力を増やします。</p>
 
-<p>&lt;iPower&gt;2&lt;/iPower&gt;</p>
+<p>値：整数</p>
+
+<p>例：<br />
+&lt;iPower&gt;2&lt;/iPower&gt;</p>
 
 <h3 id="unitmeshgroups">&lt;UnitMeshGroups&gt;</h3>
 
@@ -2914,7 +2920,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <h3 id="baltdown">&lt;bAltDown&gt;</h3>
 
-<p>1を指定した場合、このユニットを生産するショートカットキーにAltキーを追加します。</p>
+<p>1を指定した場合、このユニットにアップグレードするショートカットキーにAltキーを追加します。</p>
 
 <p>値：0か1</p>
 
@@ -2922,7 +2928,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <h3 id="bshiftdown">&lt;bShiftDown&gt;</h3>
 
-<p>1を指定した場合、このユニットを生産するショートカットキーにShiftキーを追加します。</p>
+<p>1を指定した場合、このユニットにアップグレードするショートカットキーにShiftキーを追加します。</p>
 
 <p>値：0か1</p>
 
@@ -2930,7 +2936,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <h3 id="bctrldown">&lt;bCtrlDown&gt;</h3>
 
-<p>1を指定した場合、このユニットを生産するショートカットキーにCtrlキーを追加します。</p>
+<p>1を指定した場合、このユニットにアップグレードするショートカットキーにCtrlキーを追加します。</p>
 
 <p>値：0か1</p>
 
@@ -3051,6 +3057,8 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <p>例：<br />
 &lt;iOrderPriority&gt;0&lt;/iOrderPriority&gt;</p>
+
+<p><br><br></p>
 <div class="footnotes">
 
 <hr />
@@ -3147,6 +3155,36 @@ BtSでは、この属性を持つユニットはありません。</p>
         
         <li>
           <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/glossary/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_ice1_1024x200.jpg)"
+                          alt="用語集" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/glossary/" class="title">用語集</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
               <a href="https://gforestshade.github.io/kujira/post/power/" class="thumbnail">
               
                   
@@ -3172,6 +3210,36 @@ BtSでは、この属性を持つユニットはありません。</p>
           </div>
             <div class="item-inner">
               <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/power/" class="title">通常電力、きたない電力</a></p>
+            </div>
+        </li>
+        
+        <li>
+          <div class="item-thumbnail bg-inverse">
+              <a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/" class="thumbnail">
+              
+                  
+                    
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_ice1_1024x200.jpg)"
+                          alt="CIV4BuildingInfos.xml" class="thumbnail-image"></span>
+                      
+                    
+                      
+                    
+                  
+              
+              </a>
+          </div>
+            <div class="item-inner">
+              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/" class="title">CIV4BuildingInfos.xml</a></p>
             </div>
         </li>
         
@@ -3295,66 +3363,6 @@ BtSでは、この属性を持つユニットはありません。</p>
             </div>
         </li>
         
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="thumbnail">
-              
-                  
-                    
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
-                          alt="それからのPython 10" class="thumbnail-image"></span>
-                      
-                    
-                      
-                    
-                      
-                    
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy10/" class="title">それからのPython 10</a></p>
-            </div>
-        </li>
-        
-        <li>
-          <div class="item-thumbnail bg-inverse">
-              <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="thumbnail">
-              
-                  
-                    
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                        <span style="background-image:url(https://gforestshade.github.io/kujira//banner/photo_pink1_1024x200.png)"
-                          alt="それからのPython 9" class="thumbnail-image"></span>
-                      
-                    
-                      
-                    
-                      
-                    
-                  
-              
-              </a>
-          </div>
-            <div class="item-inner">
-              <p class="item-title"><a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="title">それからのPython 9</a></p>
-            </div>
-        </li>
-        
       </ul>
     </div>
   </div>
@@ -3388,7 +3396,7 @@ BtSでは、この属性を持つユニットはありません。</p>
         
           <li>
             <a href="https://gforestshade.github.io/kujira/tags/xml">XML</a>
-            <span class="category-list-count">3</span>
+            <span class="category-list-count">5</span>
           </li>
         
           <li>

@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>用語集</title>
+      <link>https://gforestshade.github.io/kujira/post/glossary/</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/glossary/</guid>
+      <description>ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ</description>
+    </item>
+    
+    <item>
       <title>通常電力、きたない電力</title>
       <link>https://gforestshade.github.io/kujira/post/power/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
@@ -37,6 +46,15 @@
 ここでは「電力」で統一します。指しているものは同じものです。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CIV4BuildingInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</guid>
+      <description>はじめに CIV4BuildingInfos.xmlの各項目について説明しています。 &amp;lt;Civ4BuildingInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;</description>
     </item>
     
     <item>
