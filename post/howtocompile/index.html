@@ -54,7 +54,7 @@
     },
     "datePublished": "2018-02-04",
     "description": "",
-    "wordCount": 558
+    "wordCount": 690
   }
 </script>
 
@@ -161,7 +161,7 @@ ga('send', 'pageview');
 
     
     &middot; 2 Minute Read
-    &middot; 558 Words
+    &middot; 690 Words
   </div>
 
   
@@ -222,6 +222,7 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
 古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
 新し目のSDKを<strong>ISOから</strong>インストールします。<br />
 64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br />
+マウントして、setup.exeを実行します。<br />
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。</p>
 
 <h2 id="makefile-2-3">MakeFile 2.3</h2>
@@ -245,6 +246,8 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
 
 <p>MakeFileを編集します。</p>
 
+<p>(30行目くらい)</p>
+
 <pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここから
 PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
@@ -254,15 +257,31 @@ PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
 YOURMOD=..
 </code></pre>
 
+<p>(123行目くらい)</p>
+
 <pre><code class="language-makefile">#### INCLUDES ####
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
+GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program File2s (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
+</code></pre>
+
+<p>CvGameCoreDLL.rcを編集します。<br />
+10行目をコメントアウトして2行分書き加えます。</p>
+
+<pre><code class="language-c">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+// #include &quot;afxres.h&quot;
+#include &lt;windows.h&gt;
+#define IDC_STATIC -1
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
 </code></pre>
 
 <p>次の内容でbuild.batをつくり、sdkフォルダに入れます。</p>
 
-<pre><code>@echo off
+<pre><code class="language-shell">@echo off
 rem Microsoft SDK 7.1の場合
 set NMAKE_BIN=&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&quot;
 cd /d %~dp0
@@ -280,6 +299,10 @@ pause
 <p>Assetsの中にCvGameCoreDll.dllができているはずです。</p>
 
 <p>Enjoy!</p>
+
+<h2 id="付録">付録</h2>
+
+<p>今回変更したファイルの<a href="https://gforestshade.github.io/kujira/src/howtocompile_diff.zip">差分</a></p>
 </div>
 
       <footer>

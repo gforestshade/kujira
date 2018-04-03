@@ -116,6 +116,7 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
 古いPSDK-x86.exeがWindows10でインストールできないようなので&lt;br /&gt;
 新し目のSDKを&lt;strong&gt;ISOから&lt;/strong&gt;インストールします。&lt;br /&gt;
 64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。&lt;br /&gt;
+マウントして、setup.exeを実行します。&lt;br /&gt;
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。&lt;/p&gt;
 
 &lt;h2 id=&#34;makefile-2-3&#34;&gt;MakeFile 2.3&lt;/h2&gt;
