@@ -26,6 +26,7 @@ http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BC
 古いPSDK-x86.exeがWindows10でインストールできないようなので
 新し目のSDKを**ISOから**インストールします。
 64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。
+マウントして、setup.exeを実行します。
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。
 
 ## MakeFile 2.3
@@ -46,6 +47,8 @@ Makefileもsdkの中にコピーします。
 
 ## かきかえる
 MakeFileを編集します。
+
+(30行目くらい)
 ``` makefile
 TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
 <<<<<<<<<< ここから
@@ -56,15 +59,30 @@ PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
 YOURMOD=..
 ```
 
+(123行目くらい)
 ``` makefile
 #### INCLUDES ####
 >>>>>>>>>> ここから
-GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc" /I"C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include"
+GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc" /I"C:\Program File2s (x86)\Microsoft Visual Studio 10.0\VC\include"
+<<<<<<<<<< ここまで
+```
+
+CvGameCoreDLL.rcを編集します。
+10行目をコメントアウトして2行分書き加えます。
+``` c
+>>>>>>>>>> ここから
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+// #include "afxres.h"
+#include <windows.h>
+#define IDC_STATIC -1
 <<<<<<<<<< ここまで
 ```
 
 次の内容でbuild.batをつくり、sdkフォルダに入れます。
-```
+``` shell
 @echo off
 rem Microsoft SDK 7.1の場合
 set NMAKE_BIN="C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"
@@ -85,6 +103,6 @@ Assetsの中にCvGameCoreDll.dllができているはずです。
 Enjoy!
 
 
-
-
+## 付録
+今回変更したファイルの[差分](/src/howtocompile_diff.zip)
 
