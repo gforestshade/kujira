@@ -24,9 +24,9 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
 ## Windows 7 SDK
 http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso
 古いPSDK-x86.exeがWindows10でインストールできないようなので
-新し目のSDKを**ISOから**インストールします。
+新し目のSDKを***ISOから***インストールします。
 64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。
-マウントして、setup.exeを実行します。
+マウントして、***\\Setup\\SDKsetup.exeを***実行します。
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。
 
 ## MakeFile 2.3
