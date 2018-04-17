@@ -42,10 +42,13 @@ html {
 }
 
 .content .subnote {
-    max-width: 70%;
-    margin: 1em 0 1em 2em;
-    padding: 1em;
+    //max-width: 70%;
+    margin: 2em 0;
+    padding: 0.5em 0 0.5em 1.5em;
     border: dotted 3px #dddddd;
+    border-right-style: none;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
 }
 
 .content .subnote>h4 {
@@ -63,12 +66,14 @@ html {
 }
 
 .content strong em{
-  font-weight: bold;
-  color: #660000;  
+    color: #dc3545;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .content strong{
-  font-weight: bold;
+  font-weight: normal;
+  font-style: normal;
   color: #000066;  
 }
 
@@ -77,16 +82,18 @@ html {
   border-left: 6px solid #c6b6be;
 }
 
-.content table, .content th, .content td {
-  border: 2px black solid;
+td[rowspan] {
+    background-color: #fff;
 }
 
-.content table {
-  margin: 1em;
+.content td {
+    word-wrap: break-word;
 }
 
-.content th, .content td {
-  padding: 2px;
+.content .example {
+    padding-left: 1em; 
+    font-size: smaller;
+    border-left: 3px dotted #c6b6be;
 }
 
 .footer {
