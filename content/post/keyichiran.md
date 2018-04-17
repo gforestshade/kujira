@@ -704,6 +704,7 @@ UNITAI_ATTACK_CITY_LEMMING|都市自爆攻撃AI
 
 # 社会制度
 <table style="word-wrap:break-word;">
+<tr><th>体制キー</th><th>政治体制</th><th>社会制度キー</th><th>社会制度</th></tr>
 <tr><td rowspan=5>CIVICOPTION_GOVERNMENT</td><td rowspan=5>政治体制</td><td>CIVIC_DESPOTISM</td><td>専制政治</td></tr>
 <tr><td>CIVIC_HEREDITARY_RULE</td><td>世襲統治</td></tr>
 <tr><td>CIVIC_REPRESENTATION</td><td>代議制</td></tr>
