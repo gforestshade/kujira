@@ -1,0 +1,207 @@
+/* kujira */
+body
+{
+    font-family: "Roboto", "Open Sans", "Sans Serif", "Georgia", "Times New Roman", sans-serif;
+    font-size: 1rem;
+}
+
+.navbar-color
+{
+    background-color: #6E3C75;
+}
+
+@media(min-width:800px)
+{
+    #whole
+    {
+        display: grid;
+        grid-template:
+        "AAAAA  BBBBB" 1fr
+        "CCCCC  CCCCC" 1.5em
+        / 300px minmax(300px, 1000px);
+        justify-content: center;
+    }
+}
+
+@media(max-width:799px)
+{
+    .leftbar {
+        display: none;
+    }
+}
+
+.leftbar {
+    grid-area: AAAAA;
+    font-size: 14px;
+}
+
+.leftbar .card .card-header
+{
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.leftbar .card .card-header a[data-toggle="collapse"]
+{
+    display: block;
+    padding: .75rem 1.25rem;
+    margin: -.75rem -1.25rem;
+}
+
+.leftbar .card .card-header a[data-toggle="collapse"]:active,
+.leftbar .card .card-header a[data-toggle="collapse"]:hover,
+.leftbar .card .card-header a[data-toggle="collapse"]:focus
+{
+    text-decoration: none;
+}
+
+.centerbar {
+    grid-area: BBBBB;
+}
+
+h1.article-title
+{
+  text-decoration: none;
+  margin-top: 0.75em;
+  margin-bottom: 0px;
+}
+
+h1.article-title a
+{
+  text-decoration: none;
+}
+
+.banner-license {
+  text-align: right;
+  font-size: smaller;
+}
+
+img.article-thumbnail
+{
+    vertical-align: middle;
+    max-height: 80px;
+    max-width: 80px;
+    padding: 0px;
+    border: 0px;
+}
+
+.article-info>p
+{
+    margin: 0 0.5em;
+    font-size: smaller;
+}
+
+.article-info>p>a
+{
+    text-transform: none;
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.article {
+    font-family: "Consolas", "Roboto", "Open Sans", "Sans Serif", "Georgia", "Times New Roman", sans-serif;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    background-color: #fff;
+//    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.article>h1
+{
+  font-size: 100%;
+  padding: .5em .75em;
+  background-color: #f6f6f6;
+  border-bottom: 3px solid #aa9966;
+  margin: 2em 0 1em 0;
+}
+
+.article>h2
+{
+  font-size: 100%;
+  padding: .25em 0 .25em .75em;
+  border-left: 6px solid #a9855a;
+  margin: 2em 0 1em 0;
+}
+
+.article>h3
+{
+  font-size: 110%;
+  color: #99bb00;
+  margin-top: 4em;
+  padding: 3px 0 3px 0.4em;
+  border-width: 3px 0;
+  border-style: double;
+}
+
+
+.article .subnote {
+    //max-width: 70%;
+    margin: 2em 0;
+    padding: 0.5em 0 0.5em 1.5em;
+    border: dotted 3px #dddddd;
+    border-right-style: none;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.article .subnote>h4
+{
+  font-size: 100%;
+}
+
+.article>banner-license
+{
+  text-align: right;
+  font-size: smaller;
+}
+
+.article strong em
+{
+    color: #e51c23;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.article strong
+{
+    color: #480c9c;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.article blockquote
+{
+  padding: 0 1em 0;
+  border-left: 4px solid #c6b6be;
+}
+
+.article blockquote .txt
+{
+    border-style: none;
+}
+
+.article sup.footnote-ref
+{
+    font-size: 100%;
+}
+
+.article code:not([class])
+{
+    margin: .2rem; 
+    padding: 1px .2rem;
+    font-size: 90%;
+    color: #bd4147;
+    background-color: #f7f7f9;
+    border: solid 1px #dddddd;
+    border-radius: 2px;
+}
+
+.article table:not(.table) td,
+.article table:not(.table) th
+{
+    border: 1px solid #333;
+}

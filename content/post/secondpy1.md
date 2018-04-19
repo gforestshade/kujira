@@ -4,6 +4,7 @@ lastmod = "2018-01-29"
 draft = false
 title = "それからのPython 1"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -299,7 +300,7 @@ PythonDbg.logをいくら眺めてみても、「1234」が出力されている
 <<<<<<<<
 ```
 ゲームを開始して...
-{{<img src="/img/kujira_var_20.png">}}
+{{<img src="/img/civss_kujira_var_20.png">}}
 いいですね！
 
 # フォーマット文字列
@@ -360,5 +361,5 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 正しくPythonDbg.logに日本語が書き込まれるので、覗いてみてください。
 
 さて、ゲームを開始して...
-{{<img src="/img/kujira_var_21.png">}}
+{{<img src="/img/civss_kujira_var_21.png">}}
 できました！

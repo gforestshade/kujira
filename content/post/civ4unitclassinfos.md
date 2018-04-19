@@ -3,7 +3,7 @@ date = "2018-03-05"
 draft = false
 title = "CIV4UnitClassInfos.xml"
 banner = "photo_ice1"
-tags = ["XML"]
+categories = ["XML"]
 +++
 
 # はじめに
@@ -16,6 +16,8 @@ UUを含むのか含まないのか、どれのことなのか、いまいちよ
 雰囲気で察している方も多いのではないでしょうか。
 Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。
 どうなっているのか、図にしてみました。
+
+<!--more-->
 
 ![ユニットクラスタイプ→ユニットタイプ→個々のユニット](/img/UnitClassType.png)
 

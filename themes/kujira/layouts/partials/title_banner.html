@@ -1,0 +1,21 @@
+{{$p := .}}
+{{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
+  {{if or (in (substr .Params.banner 0 7) "http://") (in (substr .Params.banner 0 8) "https://")}}
+    <a href="{{ $p.Permalink }}" itemprop="url">
+      <img src="{{ $p.Params.banner }}" class="img-fluid" alt="Generic responsive image">
+    </a>
+  {{ else }}
+    {{ $banner := .Params.banner }}
+    {{ range $index, .Site.Params.banners }}
+      {{ if eq $index.name $banner }}
+          <a href="{{ $p.Permalink }}" itemprop="url">
+            <img src="{{ .Site.BaseURL }}{{ $index.path }}" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          {{ with $index.license }}
+            <p class="banner-license">banner: {{ . | markdownify }}</p>
+          {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  <div class="py-3" ></div>
+{{ end }}

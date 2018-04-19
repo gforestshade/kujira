@@ -1,0 +1,21 @@
+{{ $tags := slice "Python" "XML" "C++" }}
+{{ $.Scratch.Set "i" 0 }}
+{{ $page := . }}
+{{ range $name := $.Site.Params.navCategories }}
+{{ $i := $.Scratch.Get "i"}}
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    {{$open := or (eq $i 0) (in $page.Params.categories $name)}}
+    <h5 class="mb-0"><a{{if $open}} class="collapsed"{{end}} data-toggle="collapse" href="#collist_{{$.Scratch.Get "i"}}" role="button">{{$name}}</a></h5>
+  </div><!-- /.card-header -->
+  <div role="tabpanel" id="collist_{{$.Scratch.Get "i"}}" class="collapse{{if  $open}} show{{end}}">
+    <div class="list-group list-group-flush">
+      {{ range ($.Site.Taxonomies.categories.Get $name ).Pages.Reverse }}
+      <a class="list-group-item list-group-item-action" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      {{ end }}
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+{{ $.Scratch.Add "i" 1 }}
+{{ end }}

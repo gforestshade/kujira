@@ -4,6 +4,7 @@ lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 9"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 

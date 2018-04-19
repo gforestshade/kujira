@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+<div id="whole">
+  <div class="leftbar">
+    {{ partial "sidenav" . }}
+  </div>
+  <div class="centerbar">
+    <div class="container-fluid">
+      {{ .Render "article" }}
+    </div>
+  </div>
+{{ partial "footer" . }}

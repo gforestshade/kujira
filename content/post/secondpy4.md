@@ -4,6 +4,7 @@ lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 4"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -24,11 +25,11 @@ CyCity型のメソッドだけでもずいぶん数があります。
 流し読みしつつ、気になったのを見ていきましょう。
 
 なお、色付き文字になっているのは**型**です。例えば、
-BOOL - ブール型(真と偽の2択)
-INT - 数値型
-VOID - なし(戻り値を返さないもの)
-茶色 - なにかのID(基本的なふるまいはINTと同じ)
-緑色 - クラス型
+<span style="color:orange">BOOL</span> - ブール型(真と偽の2択)
+<span style="color:red">INT</span> - 数値型
+<span style="color:blue">VOID</span> - なし(戻り値を返さないもの)
+<span style="color:maroon">茶色</span> - なにかのID(基本的なふるまいはINTと同じ)
+<span style="color:green">緑色</span> - クラス型
 こんな具合です。
 <!--more-->
 
@@ -293,7 +294,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 「ユニットを作ったPlayerが奴隷制を採用しているなら」を判定していることになります。
 
 それを踏まえて眺めていると...
-{{<img src="/img/kujira_class_20.png">}}
+{{<img src="/img/civss_kujira_class_20.png">}}
 奴隷制を採用している文明だけダダ漏れになっています。いいですね。
 
 

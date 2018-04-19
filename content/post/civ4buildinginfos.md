@@ -3,7 +3,7 @@ date = "2018-03-07"
 draft = false
 title = "CIV4BuildingInfos.xml"
 banner = "photo_ice1"
-tags = ["XML"]
+categories = ["XML"]
 +++
 
 # はじめに
@@ -17,6 +17,7 @@ CIV4BuildingInfos.xmlの各項目について説明しています。
 
 以下\<BuildingInfo\>の中身です。
 
+<!--more-->
 
 ### \<BuildingClass\>
 この建造物が属する親の建造物クラスを指定します。
@@ -117,7 +118,7 @@ PythonやDLLにおいて直接拡張したときなどに利用します。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、各宗教の聖廟がこの属性を持ちます。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<HolyCity\>NONE\</HolyCity\>
@@ -133,7 +134,7 @@ BtSでは、各宗教の聖廟がこの属性を持ちます。
 
 この建造物が宗教建造物ではない場合、NONEを指定します。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<ReligionType\>NONE\</ReligionType\>
@@ -145,7 +146,7 @@ BtSでは、各宗教の聖廟がこの属性を持ちます。
 この建造物は、ここに指定した宗教を国教に制定している場合のみ生産できます。
 BtSでは、この属性を持つ建造物はありません。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<StateReligion\>NONE\</StateReligion\>
@@ -165,7 +166,7 @@ BtSでは、バチカン宮殿のみがこの属性を持ちます。
 ### \<PrereqReligion\>
 この建造物は、ここに指定した宗教が布教されている都市でのみ生産できます。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<PrereqReligion\>NONE\</PrereqReligion\>
@@ -177,7 +178,7 @@ BtSでは、バチカン宮殿のみがこの属性を持ちます。
 この建造物は、ここに指定した企業が出店している都市でのみ生産できます。
 BtSでは、この属性を持つ建造物はありません。
 
-値：[企業キー]({{<ref "keyichiran.md">}}#企業)
+値：[企業キー]({{<ref "keyichiran">}}#企業)
 
 例：
 \<PrereqCorporation\>NONE\</PrereqCorporation\>
@@ -186,7 +187,7 @@ BtSでは、この属性を持つ建造物はありません。
 この建造物が建設されたとき、ここに指定した企業が誕生します。
 BtSでは、各企業の本社がこの属性を持ちます。
 
-値：[企業キー]({{<ref "keyichiran.md">}}#企業)
+値：[企業キー]({{<ref "keyichiran">}}#企業)
 
 例：
 \<FoundsCorporation\>NONE\</FoundsCorporation\>
@@ -201,7 +202,7 @@ BtSではどの宗教も1ゴールドです。
 
 この機能を使わない場合、NONEを指定します。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 \<GlobalReligionCommerce\>NONE\</GlobalReligionCommerce\>
 
@@ -215,7 +216,7 @@ BtSではどの企業も4ゴールドです。
 
 この機能を使わない場合、NONEを指定します。
 
-値：[企業キー]({{<ref "keyichiran.md">}}#企業)
+値：[企業キー]({{<ref "keyichiran">}}#企業)
 
 例：
 \<GlobalCorporationCommerce\>NONE\</GlobalCorporationCommerce\>
@@ -238,7 +239,7 @@ BtSでは、バチカン宮殿・国際連合・軌道エレベーターがこ�
 ここに指定した時代以降でゲームをスタートする場合、
 都市建造時この建造物が無償で与えられます。
 
-値：[時代キー]({{<ref "keyichiran.md">}}#時代)
+値：[時代キー]({{<ref "keyichiran">}}#時代)
 
 例１：
 \<FreeStartEra\>NONE\</FreeStartEra\>
@@ -254,7 +255,7 @@ BtSでは、多くの遺産がこの属性を持ちます。[^1]
 
 [^1]: そうすることで、建造物リストが多くなりすぎないようにしていると思われます。
 
-値：[時代キー]({{<ref "keyichiran.md">}}#時代)
+値：[時代キー]({{<ref "keyichiran">}}#時代)
 
 例：
 \<MaxStartEra\>NONE\</MaxStartEra\>
@@ -264,7 +265,7 @@ BtSでは、多くの遺産がこの属性を持ちます。[^1]
 
 陳腐化させない場合、NONEを指定します。
 
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)
+値：[技術キー]({{<ref "keyichiran">}}#技術)
 
 例１：
 \<ObsoleteTech\>NONE\</ObsoleteTech\>
@@ -277,7 +278,7 @@ BtSでは、多くの遺産がこの属性を持ちます。[^1]
 
 技術による制限を設けない場合、NONEを指定します。
 
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)
+値：[技術キー]({{<ref "keyichiran">}}#技術)
 
 例：あとで
 
@@ -295,7 +296,7 @@ BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqt
 
 追加の前提が必要ない場合は空タグにします。
 
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)のリスト
+値：[技術キー]({{<ref "keyichiran">}}#技術)のリスト
 
 例１：メインの前提技術を石工術にする
 ``` plain
@@ -319,7 +320,7 @@ BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqt
 
 BtSでは、前提資源を要求する建造物はありません。
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 例：あとで
 
@@ -346,7 +347,7 @@ BtSでは、前提資源を要求する建造物はありません。
 BtSではこの変数の値は4です。
 (この数は GlobalDefines.xml で変更できます)
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)のリスト
+値：[資源キー]({{<ref "keyichiran">}}#資源)のリスト
 
 例１：資源の制限をつけない[^bonusnum]
 ``` plain
@@ -387,7 +388,7 @@ BtSではこの変数の値は4です。
 
 #### \<ProductionTraitType\>
 志向を指定します。
-値：[志向キー]({{<ref "keyichiran.md">}}#志向)
+値：[志向キー]({{<ref "keyichiran">}}#志向)
 
 #### \<iProductionTrait\>
 〈ハンマー〉への修正率(単位：%)を指定します。
@@ -425,7 +426,7 @@ BtSでこの属性を持つ建造物は、モニュメントと放送塔[^uu]で
 
 #### \<HappinessTraitType\>
 志向を指定します。
-値：[志向キー]({{<ref "keyichiran.md">}}#志向)
+値：[志向キー]({{<ref "keyichiran">}}#志向)
 
 #### \<iHappinessTrait\>
 その志向を持っているときに追加で算出する幸福の値を指定します。
@@ -453,7 +454,7 @@ BtSでこの属性を持つ建造物は、モニュメントと放送塔[^uu]で
 資源の無効化をしない通常の建造物の場合、NONEを指定します。
 BtSでは、この属性を持つ建造物は国立公園のみです。
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 例：
 \<NoBonus\>NONE\</NoBonus\>
@@ -465,7 +466,7 @@ BtSでは、この属性を持つ建造物は国立公園のみです。
 
 この機能を使わない場合、NONEを指定します。
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 例：
 \<PowerBonus\>NONE\</PowerBonus\>
@@ -476,7 +477,7 @@ BtSでは、この属性を持つ建造物は国立公園のみです。
 この属性は産出する資源の種類を指定します。
 特に資源を産出しない普通の建造物の場合、NONEを指定します。
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 例：あとで
 
@@ -516,7 +517,7 @@ BtSでは、この属性を持つ建造物はストーンヘンジとエッフ�
 
 [^freebuil]: この建造物を所有しなくなったり、陳腐化したりしたときは、即座に当該の無償建造物を失います。<br>指定は建造物クラスタイプです。実際には文明ごとに分岐した建造物タイプの建造物を得ます。
 
-値：[建造物クラスキー]({{<ref "keyichiran.md">}}#建造物)
+値：[建造物クラスキー]({{<ref "keyichiran">}}#建造物)
 
 例１：
 \<FreeBuilding\>NONE\</FreeBuilding\>
@@ -529,7 +530,7 @@ BtSでは、この属性を持つ建造物はストーンヘンジとエッフ�
 
 この機能を使わない場合、NONEを指定します。
 
-値：[昇進キー]({{<ref "keyichiran.md">}}#昇進)
+値：[昇進キー]({{<ref "keyichiran">}}#昇進)
 
 例１：
 \<FreePromotion\>NONE\</FreePromotion\>
@@ -544,7 +545,7 @@ BtSでは、この属性を持つ建造物はストーンヘンジとエッフ�
 特に体制を解禁しない普通の建造物の場合、NONEを指定します。
 BtSでは、この属性を持つ建造物はピラミッドとシェダゴン・パヤです。
 
-値：[体制キー]({{<ref "keyichiran.md">}}#社会制度)
+値：[体制キー]({{<ref "keyichiran">}}#社会制度)
 
 例１：
 \<CivicOption\>NONE\</CivicOption\>
@@ -562,7 +563,7 @@ BtSでは、この属性を持つ建造物はピラミッドとシェダゴン�
 偉人ユニットのいずれかである必要はありませんし、
 都市で普通に生産できるようなユニットであっても構いません。
 
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 例：あとで
 
@@ -685,7 +686,7 @@ BtSでは、この属性を持つ建造物はシェール油精製施設と水�
 
 この建造物が電力を供給しない場合、この指定は無視されます。
 
-参考：[通常電力ときたない電力]({{<ref "power.md">}})
+参考：[通常電力ときたない電力]({{<ref "power">}})
 
 値：0か1
 
@@ -899,7 +900,7 @@ BtSでは、中世までの国家遺産が50、それ以降の国家遺産やす
 \<iAdvancedStartCostIncrease\>50\</iAdvancedStartCostIncrease\>
 
 ### \<iMinAreaSize\>
-都市に隣接する[水域]({{<ref "glossary.md">}}#水域)の大きさがここに指定した値以上のときのみ、
+都市に隣接する[水域]({{<ref "glossary">}}#水域)の大きさがここに指定した値以上のときのみ、
 この建造物を生産できます。
 
 そのような制限を設けない普通の建造物の場合、-1を指定します。
@@ -1194,7 +1195,7 @@ BtSでは、この属性を持つのはバンカーのみです。
 配備枠をとくに増やさない普通の建造物の場合、0を指定します。
 BtSでは、この属性を持つのは空港のみです。
 
-ユニットの配備枠占有についてはユニットの[\<iAirUnitCap\>]({{<ref "civ4unitinfos.md">}}#iairunitcap)も参照してください。
+ユニットの配備枠占有についてはユニットの[\<iAirUnitCap\>]({{<ref "civ4unitinfos">}}#iairunitcap)も参照してください。
 
 例１：
 \<iAirUnitCapacity\>0\</iAirUnitCapacity\>
@@ -1434,7 +1435,7 @@ BtSでは、この属性を持つ建造物はありません。
 この属性からは何も産出しません。
 
 この機能を使わない場合は、0を指定します。
-BtSでは、この属性を持つのは各宗教の[大聖堂]({{<ref "glossary.md">}}#大聖堂)です。
+BtSでは、この属性を持つのは各宗教の[大聖堂]({{<ref "glossary">}}#大聖堂)です。
 
 値：整数
 
@@ -1461,7 +1462,7 @@ BtSでは、この属性を持つのはハギア・ソフィア大聖堂のみ�
 \<iWorkerSpeedModifier\>50\</iWorkerSpeedModifier\>
 
 ### \<iMilitaryProductionModifier\>
-この都市が[軍事ユニット]({{<ref "civ4unitinfos.md">}}#bmilitaryproduction)を生産するときの〈ハンマー〉に対する修正率を指定します。
+この都市が[軍事ユニット]({{<ref "civ4unitinfos">}}#bmilitaryproduction)を生産するときの〈ハンマー〉に対する修正率を指定します。
 
 とくに軍事ユニット生産に修正を与えない普通の建造物の場合、0を指定します。
 BtSでは、この属性を持つのは士官学校と英雄叙事詩です。
@@ -1610,7 +1611,7 @@ BtSでは、この属性を持つのは空中庭園です。
 ここに正の値を指定する場合、この都市の建造物防御値がそのぶんだけ増えます。
 
 最終的な都市防御ボーナス基礎値は、素の文化防御値と建造物防御値の高いほうが選ばれます。
-この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos.md">}}#bignorebuildingdefense)によって無効化されます。
+この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos">}}#bignorebuildingdefense)によって無効化されます。
 
 建造物防御値を増やさない普通の建造物の場合、0を指定します。
 
@@ -1624,7 +1625,7 @@ BtSでは、この属性を持つのは空中庭園です。
 この都市への砲撃ダメージに対する軽減率を指定します。
 ここに正の値を指定する場合、その割合だけこの都市への砲撃ダメージが減ります。
 
-この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos.md">}}#bignorebuildingdefense)によって無効化されます。
+この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos">}}#bignorebuildingdefense)によって無効化されます。
 
 とくに砲撃ダメージを軽減しない普通の建造物の場合、0を指定します。
 
@@ -1639,7 +1640,7 @@ BtSでは、この属性を持つのは空中庭園です。
 ### \<iAllCityDefense\>
 ここに正の値を指定する場合、文明の全都市の建造物防御値がそのぶんだけ増えます。
 
-この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos.md">}}#bignorebuildingdefense)によって無効化***されません***。
+この属性は、ユニットの[\<bIgnoreBuildingDefense\>]({{<ref "civ4unitinfos">}}#bignorebuildingdefense)によって無効化***されません***。
 
 BtSでは、この属性を持つ建造物はチチェンイツァーのみです。
 
@@ -1794,7 +1795,7 @@ BtSでは、この属性を持つ建造物は公安局のみです。
 
 ### \<PowerYieldModifiers\>
 この都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。
-ただしこの属性は、[〈電力〉]({{<ref "power.md">}})が供給されている場合にのみ有効になります。
+ただしこの属性は、[〈電力〉]({{<ref "power">}})が供給されている場合にのみ有効になります。
 
 この機能を使わない場合、タグごと省略します。
 
@@ -2220,7 +2221,7 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 
 #### \<ReligionType\>
 宗教を指定します。
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 #### \<iReligionChange\>
 この都市が追加で発するその宗教の宗教圧力の値を指定します。
@@ -2255,7 +2256,7 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 
 #### \<SpecialistType\>
 専門家の種類を指定します。
-値：[専門家キー]({{<ref "keyichiran.md">}}#専門家)
+値：[専門家キー]({{<ref "keyichiran">}}#専門家)
 
 #### \<iSpecialistCount\>
 その専門家の雇用枠の数を指定します。
@@ -2295,7 +2296,7 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 
 #### \<SpecialistType\>
 専門家の種類を指定します。
-値：[専門家キー]({{<ref "keyichiran.md">}}#専門家)
+値：[専門家キー]({{<ref "keyichiran">}}#専門家)
 
 #### \<iSpecialistCount\>
 その専門家の種類に対して、無償の専門家の人数を指定します。
@@ -2397,7 +2398,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<BonusType\>
 資源の種類を指定します。
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 #### \<iHealthChange\>
 その資源から追加で産出される〈衛生〉または〈不衛生〉の数を指定します。
@@ -2455,7 +2456,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<BonusType\>
 資源の種類を指定します。
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 #### \<iHappinessChange\>
 その資源から追加で産出される〈満足〉または〈不満〉の数を指定します。
@@ -2497,7 +2498,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<BonusType\>
 生産を加速する資源を指定します。
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 #### \<iProductonModifier\>[^ton]
 その資源に対して何%加速するか指定します。
@@ -2535,7 +2536,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<UnitCombatType\>
 兵科を指定します。
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 #### \<iExperience\>
 その兵科に対して与える経験値の量を指定します。
@@ -2572,7 +2573,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<DomainType\>
 行動領域を指定します。
-値：[ユニット領域キー]({{<ref "keyichiran.md">}}#行動領域)
+値：[ユニット領域キー]({{<ref "keyichiran">}}#行動領域)
 
 #### \<iExperience\>
 その行動領域に属するユニットに対して与える経験値の量を指定します。
@@ -2609,7 +2610,7 @@ BtSでは、すべての世界遺産の〈文化〉についてこの属性が�
 
 #### \<DomainType\>
 行動領域を指定します。
-値：[ユニット領域キー]({{<ref "keyichiran.md">}}#行動領域)
+値：[ユニット領域キー]({{<ref "keyichiran">}}#行動領域)
 
 #### \<iProductonModifier\>
 その行動領域に属するユニットを生産する際の
@@ -2664,7 +2665,7 @@ BtSでは、この属性を持つ建造物はありません。
 
 この建造物自体に(国家遺産や世界遺産によるなどの)建造数制限がない限り、
 もう一度前提を指定した数用意すればまたこの建造物を1つ生産できます。
-BtSでの[大聖堂]({{<ref "glossary.md">}}#大聖堂)がそのような挙動になっています。
+BtSでの[大聖堂]({{<ref "glossary">}}#大聖堂)がそのような挙動になっています。
 
 BtSでは、この属性を持つのは以下の建造物です。
 
@@ -2699,7 +2700,7 @@ BtSでは、この属性を持つのは以下の建造物です。
 
 #### \<BuildingClassType\>
 建造物クラスを指定します。
-値：[建造物クラスキー]({{<ref "keyichiran.md">}}#建造物)
+値：[建造物クラスキー]({{<ref "keyichiran">}}#建造物)
 
 #### \<iNumBuildingNeeded\>
 その建造物クラスがいくつ必要かの基本値を指定します。
@@ -2747,7 +2748,7 @@ BtSでの大聖堂がそのような挙動になっています。
 
 #### \<BuildingClassType\>
 建造物クラスを指定します。
-値：[建造物クラスキー]({{<ref "keyichiran.md">}}#建造物)
+値：[建造物クラスキー]({{<ref "keyichiran">}}#建造物)
 
 #### \<iNeededInCity\>
 その建造物クラスがいくつ必要かを指定します。
@@ -2783,7 +2784,7 @@ BtSでの大聖堂がそのような挙動になっています。
 
 #### \<SpecialistType\>
 専門家の種類を指定します。
-値：[専門家キー]({{<ref "keyichiran.md">}}#専門家)
+値：[専門家キー]({{<ref "keyichiran">}}#専門家)
 
 #### \<YieldChanges\>
 その専門家が追加で産出する、
@@ -2828,7 +2829,7 @@ BtSでは、この属性を持つのはアンコールワットのみです。
 
 #### \<BonusType\>
 資源を指定します。
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 #### \<YieldModifiers\>
 その資源があるときに発生する
@@ -2884,7 +2885,7 @@ BtSでは、この属性を持つのは国立公園のみです。
 
 #### \<ImprovementType\>
 地形改善の種類を指定します。
-値：[地形改善キー]({{<ref "keyichiran.md">}}#地形改善)
+値：[地形改善キー]({{<ref "keyichiran">}}#地形改善)
 
 #### \<iFreeSpecialistCount\>
 その地形改善1つあたり、何人の無償の専門家を都市に提供するか指定します。

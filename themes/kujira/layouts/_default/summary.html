@@ -1,0 +1,44 @@
+      <div class="card card-body my-5">
+        <div class="article-title">
+          {{ partial "title_banner" . }}
+          <h1 class="article-title"><a href="{{ .Permalink }}">{{ if .IsPage }}{{ if .Draft }}DRAFT :: {{ end }}{{ end }}{{ .Title }}</a></h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02 15:04" }}</time></p>
+          {{ with .Params.author }}
+          <p>{{ $.Site.Data.Strings.byauthor }} {{ . }}</p>
+          {{ end }}
+          <p>{{ .WordCount }} {{ .Site.Data.Strings.words }} Words</p>
+
+          {{ if isset .Params "categories" }}
+          <p>
+            カテゴリ：
+            {{ range $k, $v := .Params.categories }}
+            <a class="btn btn-sm btn-outline-primary" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+            {{ end }}
+          </p>
+          {{ end }}
+
+          {{ if isset .Params "tags" }}
+          <p>
+            タグ：
+            {{ range $k, $v := .Params.tags }}
+            <a class="btn btn-sm btn-outline-info" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+            {{ end }}
+          </p>
+          {{ end }}
+          
+        </div>
+        <div class="article">
+          {{ if .IsPage }}
+            {{ if .Description }}
+              {{ .Description | markdownify }}
+            {{ else }}
+              {{ .Summary }}
+            {{ end }}
+          {{ end }}
+        </div>
+        <p class="mt-4">
+          <a href="{{ .Permalink }}" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
+        </p>
+      </div>

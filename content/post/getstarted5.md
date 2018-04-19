@@ -4,12 +4,13 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 5"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 +++
 
 # はじめに
 
-- [その４]({{<ref "getstarted4.md">}})のつづき
+- [その４]({{<ref "getstarted4">}})のつづき
 - リストと繰り返し
 - 他のイベント
 
@@ -17,7 +18,7 @@ tags = ["はじめてのPythonMOD", "講座"]
 ## 準備
 例によって`kujira_for`というMODを作ります。
 `kujira_if`をフォルダごとコピーして、フォルダ名をリネームしましょう。
-``` plain
+``` txt
 └─kujira_for
     └─Assets
         └─Python
@@ -73,7 +74,7 @@ def onBuildingBuilt(self, argsList):
 [イベントのリスト](http://modiki.civfanatics.com/index.php?title=CvEventManager)からonBuildingBuiltを探すと、
 
 >
-``` plain
+``` nohighlight
 Function: def onBuildingBuilt()
 Parameters: self, argsList (pCity, iBuildingType)
 Description: Called when a building is built
@@ -178,6 +179,7 @@ for i in fib:
 10個の要素を持ったリストを手作りすればよいのですが、めんどくさいですし、
 数え間違いなどが起こってもいやですので、`range()`という関数を使います。
 これは、0以上n未満の整数のリストを作って返してくれます。
+
 動作を見てみましょう。
 ``` python
 print range(15)
@@ -272,9 +274,9 @@ if iBuildingType == gc.getInfoTypeForString('BUILDING_CELTIC_DUN'):
 今回は昇進を与えたいのでしたから、[リファレンス][api]のCyUnitからpromotionで探すと...
 
 >
-``` plain
-VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
-void (int (PromotionTypes) eIndex, bool bNewValue)
+``` nohighlight
+292. VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
+     void (int (PromotionTypes) eIndex, bool bNewValue)
 ```
 
 結構たくさんヒットしましたが、「昇進を無償で与える」に該当しそうなのはこれでしょうか。
@@ -319,5 +321,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ## ためす
 起動して、ユニットを貯めて、ダンを建てて...
-{{<img src="/img/kujira_for_10.png">}}
+{{<img src="/img/civss_kujira_for_10.png">}}
 できました！
+
+[その６へ続く]({{<ref "getstarted6">}})
+

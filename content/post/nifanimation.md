@@ -3,7 +3,7 @@ date = "2017-05-15T12:00:00+09:00"
 draft = false
 title = "MMDモデルをCiv4上で動かしたい"
 banner = "green"
-tags = ["MMD_to_CIV4"]
+categories = ["MMD_to_CIV4"]
 
 +++
 

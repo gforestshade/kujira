@@ -3,7 +3,7 @@ date = "2017-05-14T12:00:00+09:00"
 draft = false
 title = "MMDモデルをCiv4に登場させたい"
 banner = "green"
-tags = ["MMD_to_CIV4"]
+categories = ["MMD_to_CIV4"]
 +++
 # この文章について
 ## これは何か
@@ -260,11 +260,13 @@ NifSkope上でNodeを全部展開していくと、使われているファイ�
 {{<img src="/img/jojisi_mmd_nifskope_2.png" width="648" height="435">}}
 
 # 組み込む
-お疲れ様でした！できたnifとddsをMODS\(MOD名)\assets\Art\Units\Alicia\にコピーして、
+お疲れ様でした！できたnifとddsをMODS\\(MOD名)\\assets\\Art\\Units\\Alicia\\にコピーして、
 {{<img src="/img/jojisi_mmd_mod_folder.png" width="499" height="332">}}
 Civ4ArtDefines_Unit.xmlの ART_DEF_UNIT_LION(ライオン以外の挙動は未調査)の&lt;NIF&gt;と&lt;SHADERNIF&gt;の両方を
 Art/Units/alicia/alicia2.nifに変えると・・・
-(ちょっと大きいですが)MMDモデルがライオンとしてシド星に現れました(画像略)！Enjoy!
+(ちょっと大きいですが)MMDモデルがライオンとしてシド星に現れました(画像略)！
+
+Enjoy!
 
 [第２章へ→]({{<ref "nifanimation.md">}})
 

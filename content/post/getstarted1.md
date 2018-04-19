@@ -4,6 +4,7 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 1"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 +++
 
@@ -27,7 +28,7 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
 PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。[^1]
 
-[^1]: Windows10,パッケージ版の場合"ドキュメント\\My Games\\Beyond the Sword(J)"<br>Steam版の場合"ドキュメント\\My Games\\Beyond the Sword"にあります
+[^1]: Windows10,パッケージ版の場合,**ドキュメント\\My Games\\Beyond the Sword(J)**<br>Steam版の場合,**ドキュメント\\My Games\\Beyond the Sword**にあります
 
 ``` ini
 <<<<<<<<
@@ -47,24 +48,20 @@ OverwriteLogs = 1
 
 # CvEventInterface.py
 さて、`CvEventManager.py`...といいたいところなのですが、後々のことまで考えると、
-`CvEventManager.py` を直接編集するのではなく、
-それを呼び出しているファイルにさかのぼって、
-独自のEventManagerに変えてしまった方がよいです。
+もうちょっと準備が必要です。
 そこで、`CvEventManagerInterface.py`を編集します。
 
 さっそくBtSの元ファイル
-``` plain
-C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\
-Assets\Python\EntryPoints\CvEventManagerInterface.py
-```
+
+C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py
+
 …はなかったので
-``` plain
-C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\
-Assets\Python\EntryPoints\CvEventInterface.py
-```
+
+C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py
+
 [^2]をみると、こうなっていました。
 
-[^2]: パッケージ版の場合。Steam版の場合は"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py"
+[^2]: パッケージ版の場合。Steam版の場合は**C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py**
 
 
 ``` python
@@ -101,15 +98,18 @@ def beginEvent(context, argsList=-1):
 
 ```
 
-これを**ディレクトリ階層ごと**コピーしてきて編集すると、該当ファイルが差し変わるのでした。
+これを**どのフォルダに入っているかも含めて**コピーしてきて編集すると、該当ファイルが差し変わるのでした。
 MODフォルダに新しくkujira\\Assets\\Python\\EntryPoints\\ フォルダを作って、そこにコピーします。
 
 MOD開発中に使用するMODフォルダはユーザーの"Documents"にある方をおすすめします。
-パッケージ版の場合"ドキュメント\\My Games\\Beyond the Sword (J)\\Mods"
-Steam版の場合"ドキュメント\\My Games\\Beyond the Sword\\Mods"
+
+パッケージ版の場合
+ドキュメント\\My Games\\Beyond the Sword (J)\\Mods
+Steam版の場合
+ドキュメント\\My Games\\Beyond the Sword\\Mods
 です。
 
-``` plain
+``` txt
 └─kujira
     └─Assets
         └─Python
@@ -187,7 +187,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         CvUtil.pyPrint("Hello, Python!")
 ```
 
-<!--
+<!-- 難し過ぎたのでコメントアウト
 こうしてみました。元のCvEventManagerを継承して、
 onGameStartメソッドをオーバーライドします。
 気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。
@@ -206,12 +206,12 @@ MODをロードして起動してみましょう。
 ............シド星に降り立ってみても、とくにバニラとなにも変わっていません。
 それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。
 それを確認するには、(ゲームをいちど始めたうえで、)
-Documents\My Games\Beyond the Sword(J)\Logsにある`PythonDbg.log`を開いてみます。
-(ファイルがありませんか？見るフォルダが間違っているか、
-冒頭のini編集ができていない可能性があります。確認してみましょう。)
+Documents\My Games\Beyond the Sword(J)\Logs
+にある`PythonDbg.log`を開いてみます。
+(ファイルがありませんか？見るフォルダが間違っているか、冒頭のini編集ができていない可能性があります。確認してみましょう。)
 
 下に下にスクロールしていくと...
-{{<img src="/img/pyprint.png" width="573" height="428">}}
+{{<img src="/img/pyprint.png" width="572">}}
 ありました。ちゃんと動いているようです！
 
 # 結局、何ができるのか？
@@ -270,6 +270,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 つまり都市を建てたときに割り込んで何らかのプログラム的処理をしますよ、
 という意味になります。
 
+{{<img src="/img/onCityBuilt.svg">}}
+
 ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。
 「ターン開始時」なら、誰のターン開始時で、いま何ターン目なのか、
 「プロジェクトが完成したとき」なら、どの都市で、何のプロジェクトが完成したのか、
@@ -277,18 +279,19 @@ ParametersのargsListのカッコ内にあるのがイベントについてく�
 等等、そのイベントに関する情報が一緒に送られてくるので、
 Pythonではそれらを利用することができます。
 
-`pCity = argsList[0]`に戻ると、argsListの0番目(プログラミング言語では、順番を0番目・1番目・2番目...と数えます)にcityが入っているはずなので、それをpCityに取り出しています。
+`pCity = argsList[0]`に戻ると、`argsList`の中身に`city`が入っているはずなので、
+それをpCityに取り出しています。
 この`pCity`はイメージとしてはいま立ったばかりの都市そのものが
-ぎゅっと詰まっているイメージで、
-`pCity.情報()`とすることで都市の情報を取得したり、
-`pCity.操作()`とすることで都市に操作を加えたりできます。
+ぎゅっと詰まっているイメージです。
+`.`(ピリオド)をつけて命令を記述することで
+都市の情報を取得したり、都市に操作を加えたりできます。
 そこで、`pCity.setPopulation(4)`として、都市の人口を4にセットしています。
 
 つまりぜんぶまとめて、《都市が建設されたとき、その都市の人口を4にするMOD》ができたことになるはずです。
 
 ## ためす
 フォルダ構成がこうなっていることを確認して...
-``` plain
+``` txt
 └─kujira
     └─Assets
         └─Python
@@ -299,7 +302,7 @@ Pythonではそれらを利用することができます。
 ```
 
 起動してみると、
-{{<img src="/img/kujira_population_4.png" width="800" height="460">}}
+{{<img src="/img/civss_kujira_population_4.png">}}
 うまくいきました！
 
 # もう少し進める
@@ -310,13 +313,20 @@ Pythonではそれらを利用することができます。
 探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、
 civfanaticsで漁るのもよいでしょう。英語でよろしければ、[一覧][b]を載せてくれているWebページもあります。
 
-都市に建物を与えるのですからgetというよりsetですね...
-setで始まるCyCityのメソッドの中からBuildingも含んでいるものを探していくと...
+今回は[リファレンス][b]から探してみましょう。
+都市に対する操作なので、最初に`CyCity`をぽちっと押して、
+都市に建物を与えるのですからgetというよりsetでしょうか、
+その中からsetで始まっていてBuildingも含んでいるものを探していくと...
 ありました。
 
+{{<img src="/img/pythonapi_setNumRealBuilding.svg">}}
+
+
 >
-VOID setNumRealBuilding (BuildingType iIndex, INT iNewValue)
+``` nohighlight
+400. VOID setNumRealBuilding (BuildingType iIndex, INT iNewValue)
 (BuildingID, iNum) - Sets number of buildings in this city of BuildingID type
+```
 
 建物の種類と、数値を指定して、その建物の数を設定する操作のようです。
 数は1でよいのでしょうが、肝心の建物の種類を
@@ -365,7 +375,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 どこかでミスっているのでしょうか。エラーを起こしたなら起こしたで
 どの行で起こしたかの場所を知りたいものです。
 このようなときDocuments\My Games\Beyond the Sword(J)\Logsにある
-`PythonErr.log`が助けになってくれます。
+`PythonErr.log`が助けになってくれます。開いてみてみましょう...
 
 >
 ``` txt
@@ -424,6 +434,6 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ## ためす
 起動してみて...
-{{<img src="/img/library.png" width="800" height="460">}}
+{{<img src="/img/civss_library.png">}}
 動きました！
 

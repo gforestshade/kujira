@@ -1,0 +1,27 @@
+{{ partial "header" . }}
+<div id="whole">
+  <div class="leftbar">
+    {{ partial "sidenav" . }}
+  </div>
+  <div class="centerbar">
+    <div class="container-fluid">
+      <div class="card card-body mt-3">
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+        <div class="article">
+          {{ . }}
+        </div>
+        {{ end }}
+      </div>
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+          {{ if gt .Params.weight 80}}
+            {{ .Render "article" }}
+          {{ else }}
+            {{ .Render "summary" }}
+          {{ end }}
+        {{ end }}
+        {{ partial "pagination" . }}
+    </div>
+  </div>
+{{ partial "footer" . }}

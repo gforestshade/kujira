@@ -4,6 +4,7 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 3"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 +++
 
@@ -153,7 +154,7 @@ print a
 
 # やっとこMOD
 前回の`kujira_if`MODをフォルダごとコピーしてリネーム、`kujira_def`というMODを作ります。
-``` plain
+``` txt
 └─kujira_def
     └─Assets
         └─Python
@@ -164,7 +165,7 @@ print a
 ```
 
 ## Yet Another 防衛志向
-前回は『都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD』を作りました。
+前回は《都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD》を作りました。
 その際、要素をこのように分割しました。
 
 - 都市が建設されたとき
@@ -207,14 +208,16 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ## Playerが防衛志向を持つなら
 [リファレンス][api]のCyPlayerからtraitを探すと、こうなっています。
 
-``` plain
+>
+``` nohighlight
 318. BOOL hasTrait (TraitType iIndex)
-bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.
+     bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.
 ```
+
 つまり、`pPlayer.hasTrait(志向の種類ID)`とすると、
 **Player**がその**志向**を持っているかどうか調べられそうです。
 
-防衛志向の**キー**を調べると`TRAIT_PROTECTIVE`であることが分かりました。
+防衛志向の**キー**を[調べると]({{<ref "keyichiran">}}#志向)、`TRAIT_PROTECTIVE`であることが分かりました。
 ↓とすると防衛志向のIDが戻るのでした。
 ```
 gc.getInfoTypeForString('TRAIT_PROTECTIVE')
@@ -246,10 +249,12 @@ if pPlayer.hasTrait(iProtective):
 ## 弓兵を作成する
 [リファレンス][api]のCyPlayerからinitUnitを探すと、こうなっています。
 
-``` plain
+>
+``` nohighlight
 321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
- CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
+     CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
 ```
+
 前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。
 引数をひとつひとつ読んでいきましょう。
 
@@ -265,7 +270,7 @@ INT iX
 そのユニットがどこに降り立つのか教えてあげないといけないのですね。
 
 INT iY
-: 同じくy座標です。今回は都市と同じタイル状に生成されてほしいので、
+: 同じくy座標です。今回は都市と同じタイル上に生成されてほしいので、
 `PCity`の座標を取得する方法を探して
 取得した座標をそのまま(同じ数値として)指定したらよさそうですね。
 
@@ -325,9 +330,11 @@ createUnit(pPlayer, archerUnit, x, y)
 処理も3回実行され、弓兵が3体できるはずです。
 
 ## ためす
-{{<img src="/img/kujira_def_10.png" width="800" height="460">}}
-{{<img src="/img/kujira_def_11.png" width="800" height="460">}}
+{{<img src="/img/civss_kujira_def_10.png">}}
+{{<img src="/img/civss_kujira_def_11.png">}}
 できました！
+
+[その４へ続く]({{<ref "getstarted4">}})
 
 ## 余談
 このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、

@@ -4,6 +4,7 @@ lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 6"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -220,7 +221,7 @@ Civ4ではIDは0からの連番になっているので、これでうまくい�
 技術に限らず、条件を満たしたもののリストをつくりたい、と思ったときは、
 「対象すべてを用意して→for文で1個ずつ取り出し→各要素ついて条件を判定して→Trueなら結果用リストに追加する」
 ことで得ることができます。
-([はじめての その７]({{<ref "getstarted7.md">}})で似た題材を扱いました。今の視点で復習すると新しい発見があるかも？)
+([はじめてのPythonMODその７]({{<ref "getstarted7.md">}})で似た題材を扱いました。今の視点で復習すると新しい発見があるかも？)
 
 ## getUnitList(self):
 `PyPlayer`型のメソッドには「そのプレイヤーに属する全○○のリスト」のたぐいが
@@ -309,11 +310,12 @@ Pythonで他のファイルのクラスや関数を使いたいときは、
 ファイル冒頭に`import ほにゃほにゃ`が並んでいるところに、
 こうやって足してあげます...
 ``` python
-import (モジュール名)
+import モジュール名
 ```
-もうすでに書いてあるimport文がいくつか見えると思いますが、それらも実はモジュールの読み込み指定です。
+もうすでに書いてあるimport文がいくつか見えると思いますが、
+それらも実はモジュールの読み込み指定です。
 同じフォルダか、あるいは元のBtsのAssets\\Pythonに必ず同じ名前の
-`(モジュール名).py`のファイルがありますので、
+`モジュール名.py`のファイルがありますので、
 覗いてみるのもよいでしょう。
 
 モジュールは自分でつくることもできます。
@@ -399,5 +401,5 @@ class MyEventManager(CvEventManager.CvEventManager, object):
                 pUnit.setXY(toX, toY, False, True, True)
 ```
 
-{{<img src="/img/kujira_class_30.png">}}
+{{<img src="/img/civss_kujira_class_30.png">}}
 いいですね！

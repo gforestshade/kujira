@@ -3,6 +3,7 @@ date = "2017-10-20"
 draft = false
 title = "それからのPython 2"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -40,7 +41,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ```
 ゲーム開始してみましょう。
-{{<img src="/img/kujira_var_30.png">}}
+{{<img src="/img/civss_kujira_var_30.png">}}
 
 
 # 紀元前-4000年
@@ -84,7 +85,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 結果、呼び出した関数により画面上にメッセージが表示される............はずです。
 やってみましょう。
-{{<img src="/img/kujira_var_31.png">}}
+{{<img src="/img/civss_kujira_var_31.png">}}
 
 # 紀元前4000年
 「紀元前」を表示することには成功しました。
@@ -146,7 +147,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 さんざん長々と説明しましたが、1行しか変わっていません。(どこかはわかりますね？)
 どこが変わったのかわかったら、ゲームを開始してみましょう。
-{{<img src="/img/kujira_var_32.png">}}
+{{<img src="/img/civss_kujira_var_32.png">}}
 いいですね！
 
 # showGameTurnYear()
@@ -210,10 +211,11 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 こうなっているはずです。
 ゲーム開始して、一度ターンを進めます。
-{{<img src="/img/kujira_var_33.png">}}
+{{<img src="/img/civss_kujira_var_33.png">}}
 わらわらっと出てきてしまいました。
+
 それにめげず、しばらくゲームを進めると
-{{<img src="/img/kujira_var_34.png">}}
+{{<img src="/img/civss_kujira_var_34.png">}}
 紀元後への切り替えはうまくいきましたね！
 
 ## 一般化
@@ -335,7 +337,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 
 起動して何回かターンを進めて...
-{{<img src="/img/kujira_var_35.png">}}
+{{<img src="/img/civss_kujira_var_35.png">}}
 できました！
 
 # アイサツ
@@ -407,7 +409,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 
 ターンを進めて...
-{{<img src="/img/kujira_var_36.png">}}
-{{<img src="/img/kujira_var_37.png">}}
+{{<img src="/img/civss_kujira_var_36.png">}}
+{{<img src="/img/civss_kujira_var_37.png">}}
 うまくいきました。
 処理中であることを明示したことでほんの少し違和感対策ができました。<!-- せやろか -->

@@ -1,0 +1,44 @@
+      <div class="card card-body my-3">
+        <div class="article-title">
+          {{ partial "title_banner" . }}
+          <h1 class="article-title">{{ if .IsPage }}{{ if .Draft }}{{ .Site.Data.Strings.draft }} :: {{ end }}{{ end }}{{ .Title }}</h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02 15:04" }}</time></p>
+          {{ with .Params.author }}
+          <p>&middot;_{{ $.Site.Data.Strings.byauthor }} {{ . }}</p>
+          {{ end }}
+          <p>{{ .WordCount }} {{ .Site.Data.Strings.words }} Words</p>
+          
+          {{ if not (eq .Site.DisqusShortname "") }}{{ if .Params.comment }}
+          <p>
+          
+          <a href="{{ .Permalink }}#disqus_thread" class="article-comment-link">
+            Comments
+          </a>
+          </p>
+          {{end}}{{end}}
+
+          {{ if isset .Params "categories" }}
+          <p>
+            カテゴリ：
+            {{ range $k, $v := .Params.categories }}
+            <a class="btn btn-sm btn-outline-primary" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+            {{ end }}
+          </p>
+          {{ end }}
+
+          {{ if isset .Params "tags" }}
+          <p>
+            タグ：
+            {{ range $k, $v := .Params.tags }}
+            <a class="btn btn-sm btn-outline-info" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+            {{ end }}
+          </p>
+          {{ end }}
+        </div>
+        <div class="article">
+          {{.Content}}
+        </div>
+        {{ partial "disqus" . }}
+      </div>

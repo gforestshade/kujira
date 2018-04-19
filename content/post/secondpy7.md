@@ -4,6 +4,7 @@ lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 7"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -84,10 +85,10 @@ CIV4PromotionInfos.xmlの中身を編集していきます。
 このタグがあると、自動生成された説明文に追加の説明をつけることができます。
 (ここではキーをつくるだけです。あとでText\フォルダに文章を書き込みます)
 
-----
-
 さらについでに、\<Sound\>をAS2D\_POSITIVE\_DINKに変更します。
 昇進を取ったときの音を変更することで、スペルの発動音のかわりにします。
+
+----
 
 \<iCombatPercent\>を0にして、戦闘力+10%をなかったことにします。
 ``` xml
@@ -110,19 +111,18 @@ CIV4PromotionInfos.xmlの中身を編集していきます。
 
 ----
 
-このままでは
-昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、
+このままでは昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、
 預言者のボタン画像に変更します。
 ``` xml
 
 			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
 
 ```
-これで湧き水発動用の何もしない昇進は完成です。
+これで湧き水発動用の「何もしない」昇進は完成です。
 
 ## 毒散布・火炎幕
 
-この湧き水昇進をもう2つコピペして3つの何もしない昇進をつくりましょう。
+この湧き水昇進をもう2つコピペして3つの「何もしない」昇進をつくりましょう。
 2番目と3番目をそれぞれ毒散布と火炎幕にします。
 
 ----
@@ -297,7 +297,7 @@ Text_Kujira.xmlの中身はこのようにします。
 ゲームを起動して、説明文が表示されるか確かめましょう。
 「毒」は取得する方法がまだないので、それ以外の3つに対して確かめます。
 
-{{<img src="/img/promospell_test1.png">}}
+{{<img src="/img/civss_promospell_test1.png">}}
 いいですね！
 
 [その８につづく]({{<ref "secondpy8.md">}})

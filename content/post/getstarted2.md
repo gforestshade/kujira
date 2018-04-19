@@ -4,6 +4,7 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 2"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 
 +++
@@ -16,7 +17,7 @@ tags = ["はじめてのPythonMOD", "講座"]
 # 準備
 
 前回の`kujira`MODをフォルダごとコピーしてリネーム、`kujira_if`というMODを作ります。
-``` plain
+``` txt
 └─kujira_if
     └─Assets
         └─Python
@@ -44,7 +45,7 @@ tags = ["はじめてのPythonMOD", "講座"]
 
 # 文
 Pythonのプログラムは1行で1つの処理を表すことになっています。
-そのひとつひとつの処理を「文」(statement)と呼びます。
+そのひとつひとつの処理を**文**(statement)と呼びます。
 基本的に１行で文になるので、`pCity = argsList[0]`や
 `iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')`も文です。
 複数の処理を記述するときは、上から順番に文を並べます。
@@ -71,8 +72,8 @@ if 条件:
 この"中身"のことを**ブロック**(block)と呼びます。
 
 ``` python
-a = 2           # aを4にする
-b = 3           # bを8にする
+a = 2           # aを2にする
+b = 3           # bを3にする
 c = a * b       # cをa*bの計算結果の値にする
 if c > 20:      # cが20より大き...くないので中身は実行されない
     a = 4
@@ -81,7 +82,7 @@ if c > 20:      # cが20より大き...くないので中身は実行されな�
 print c         # cの値を出力する
 # 6が出力される
 ```
-if文は自分のブロックを含めて大きいひとつの**文**です。
+if文は自分が従えているブロックを含めて大きいひとつの**文**です。
 他の文と混ぜることができ、順番通りに実行されます。
 
 どこからどこまでが**ブロック**なのかは、
@@ -93,10 +94,12 @@ Pythonのルールとしては何文字分字下げしても構いません。
 ただ、基本的には自分ルールで何文字分インデントするか
 あらかじめ決めておくのがよいでしょう。
 「半角スペース4つ」が一般的に推奨されており、
-Kujiraでも半角スペース4つで統一しています。
+Kujiraでも半角スペース4つで統一しています。[^tabindent]
 
 なお、**空白文字**として認識されるのは半角スペースまたはタブ文字です。
 全角スペースではだめなことにだけ注意しておきましょう。
+
+[^tabindent]: Civ4のAssetsにあるPythonファイルの多くは「タブ文字1つ」でインデントしてあります。どうしてもPythonファイルを改変する場合は、郷に入っては郷に従いましょう。
 
 # KujiraEventManager.py
 というわけで、`KujiraEventManager.py`をこうしてみました...
@@ -137,8 +140,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ## ためす
 これで《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》になったはずです。
 
-{{<img src="/img/kujira_if_10.png" width="800" height="460">}}
-{{<img src="/img/kujira_if_11.png" width="800" height="460">}}
+{{<img src="/img/civss_kujira_if_10.png">}}
+{{<img src="/img/civss_kujira_if_11.png">}}
 できました！
 
 # もう少し進める
@@ -159,13 +162,17 @@ XMLではできないPythonでのMODの楽しみのひとつです。
 
 ## 所有者←都市
 [リファレンス][1]でCyCityをクリックしてから"player"で検索すると...
-``` plain
-PlayerType getOwner()
+
+>
+``` nohighlight
+243. PlayerType getOwner()
+     int /* PlayerTypes*/ ()
 ```
+
 それっぽいのがありました。
 `PlayerType`とあるので、`ip = pCity.getOwner()`とすると
-`ip`にはPlayerを表す数値が入るのでしょう。
-(覚えていますか？Typeとあるときはその種類に対応する数値を表すのでした)
+`ip`にはPlayerを表す数値が入ります。
+([覚えていますか]({{<ref "getstarted1.md">}}#図書館を建設する-とは)？Typeとあるときはその種類に対応する数値を表すのでした)
 私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので
 Player本体が欲しいです。
 そこで、`pPlayer = gc.getPlayer(ip)`とすると、`pPlayer`にPlayer本体がぎゅっと入ります。
@@ -175,20 +182,24 @@ pPlayer = gc.getPlayer(ip)
 ```
 `pCity.getOwner()`で取れた数値をいったん`ip`に代入していますが、
 直接その番号を`gc.getPlayer()`することもできます。
-そうすると、
+
+そうする場合はこうなります。
 ``` python
 pPlayer = gc.getPlayer( pCity.getOwner() )
 ```
-こうなります。
 
 ## 所有者→文明
 あらためて[リファレンス][1]でCyPlayerの中から"Civilization"で探すと...
-``` plain
-CivilizationType getCivilizationType ()
+
+>
+``` nohighlight
+161. CivilizationType getCivilizationType ()
+     int ()
 ```
+
 ありました。これで`ic = pPlayer.getCivilizationType()`とすれば、
 `ic`に文明の種類に対応する数値が代入できるのですが、
-ここでいう「文明の種類」とはマリとは何か、カルタゴとは何か、という定義です。
+ここでいう「文明の種類」とは、マリとは何か、カルタゴとは何か、という定義です。
 MODではXMLであってもPythonであっても、そのような定義を**Info**と呼びます。
 
 **文明**は**Player**や**都市**とちがい、ゲーム中に状態が変化したりはしません。
@@ -237,7 +248,7 @@ if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
     # 図書館を建設する
 ```
 if文の条件式の左辺はpCityから直接文明IDを取得しています。
-じつはこのような方法もあったのでした。
+じつはこのような方法もあるのでした。
 右辺はマリの文明IDになっていますから、
 もしこれらが等しければ`pCity`はマリ所属のはずです。
 
@@ -266,12 +277,14 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 こうなります。
 
 ## ためす
-{{<img src="/img/kujira_if_12.png" width="800" height="460">}}
+{{<img src="/img/civss_kujira_if_12.png">}}
 AIマリの都市には最初から図書館が建っていて、
-{{<img src="/img/kujira_if_13.png" width="800" height="460">}}
+{{<img src="/img/civss_kujira_if_13.png">}}
 ケルトの都市にはありません。
 
 動きました！
+
+[その３へ続く]({{<ref "getstarted3.md">}})
 
 ## 余談
 今回は結局**Player**も**Info**も使わずに書ける例も紹介してしまいましたが、

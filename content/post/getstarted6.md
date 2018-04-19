@@ -4,12 +4,13 @@ lastmod = "2018-01-28"
 draft = false
 title = "はじめてのPythonMOD 6"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 +++
 
 # はじめに
 
-- [その５]({{<ref "getstarted5.md">}})のつづき
+- [その５]({{<ref "getstarted5">}})のつづき
 - XMLとPythonの合わせ技・XML編
 - あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません
 
@@ -17,7 +18,7 @@ tags = ["はじめてのPythonMOD", "講座"]
 これまでは既存の動作を変更してばかりでした。
 Pythonでしかできない効果を持った新しい建造物を作りましょう！
 とりあえず"いつもの"を作ります。
-``` plain
+``` txt
 └─kujira_fert
     └─Assets
         └─Python
@@ -32,13 +33,15 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 # XML
 新しい建造物を追加します。
 編集するのは`CIV4BuildingClassInfos.xml`と`CIV4BuildingInfos.xml`です。
-C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Buildings
-[^1]から同じフォルダ階層にコピーします。
+
+C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Buildings[^1]
+
+から同じフォルダ階層にコピーします。
 
 [^1]: パッケージ版の場合。Steam版の場合は"C:Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\XML\\Buildings"
 
 ここまででファイル構成はこうなっているはずです。
-``` plain
+``` txt
 └─kujira_fert
     └─Assets
         ├─Python
@@ -55,14 +58,13 @@ C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the S
 ```
 
 ## ちょっとだけXMLの話
-[キー一覧](https://civ4-wiki.club/index.php?MOD%2F%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%2F%E3%82%AD%E3%83%BC%E4%B8%80%E8%A6%A7)を見ていただくとわかりやすいのですが、
+[キー一覧]({{<ref "keyichiran">}}#建造物)を見ていただくとわかりやすいのですが、
 建造物の種類一つ一つに**BuildingType**、
 UBどうしをひとまとめにしたものに**BuildingClassType**が割り当てられています。
 例えばストーンヘンジで各都市に無償で供給されるのは、
 正確には「BUILDING\_OBELISKという建造物」ではなく、
 「BUILDINGCLASS\_OBELISKに属する建造物のうち、その文明に合ったもの」なのです。
-(ですから、例えばアメリカ先住民がストヘンを建てると
-ちゃんとトーテムポールが配置されるのですね)
+(ですから、例えばアメリカ先住民がストヘンを建てるとちゃんとトーテムポールが配置されるのですね)
 
 UBが存在しない建造物であっても自分一人をメンバーとした**BuildingClass**が必ずあります。
 というより、**Building**を作るときに所属先である**BuildingClass**を自己申告するタグがあり、
@@ -97,7 +99,7 @@ UBが存在しない建造物であっても自分一人をメンバーとした
 
 ## CIV4BuildingInfos.xml
 
-`CIV4BuildingInfos.xml`はタグが多すぎて１からでは無理なのでBUILDING\_RECYCLING\_CENTERを元に改変することにして、
+CIV4BuildingInfos.xmlはタグが多すぎて１からでは無理なのでBUILDING\_RECYCLING\_CENTERを元に改変することにして、
 
 ↓ここから
 {{<img src="/img/kujira_fert_01.png" width="400" height="1600">}}
@@ -147,7 +149,7 @@ UBが存在しない建造物であっても自分一人をメンバーとした
 
 全部でどんな感じになったかは長いので章末に移動しました。[おまけ](#おまけ)をご覧ください。
 
-この時点で生物学解禁の不幸を+10生む建造物ができているはずです。
+この時点で生物学解禁で、不幸を+10生む、そんな建造物ができているはずです。
 ゲームを起動して、シヴィロペディアを見るなり、
 WBで生物学を取って建ててみるなりしてみましょう。
 もちろん、まだテキストキーの内容を定義していませんので、
@@ -158,7 +160,7 @@ WBで生物学を取って建ててみるなりしてみましょう。
 XML\\Text\\ に適当な名前のファイルを作ります。
 今回は`Text_Kujira.xml`という名前にしましょう。
 フォルダ構成はこうなりました。
-``` plain
+``` txt
 └─kujira_fert
     └─Assets
         ├─Python
@@ -221,7 +223,8 @@ XML\\Text\\ に適当な名前のファイルを作ります。
 ```
 こんな感じでしょうか。
 
-この時点で生物学解禁の不幸を+10生む、説明にもそれっぽいことが書いてあるけれど実際には草原化などしない(書いていませんからね)そんな <s>詐欺</s> 建造物ができているはずです。
+この時点で生物学解禁、不幸を+10生む、説明にもそれっぽいことが書いてあるけれど
+実際には草原化などしない(書いていませんからね)そんな <s>詐欺</s> 建造物ができているはずです。
 起動して、いろいろ遊んでみましょう。
 
 ## ためす is 大事
@@ -230,17 +233,18 @@ XML\\Text\\ に適当な名前のファイルを作ります。
 XMLにまずいところがあるはずです。
 もし一度目のお願いに従って動作確認をしていただいていて、
 その時点では正しく動いていたなら、
-いまいじった`Text_Kujira.xml`が必ずおかしいということになるはずです。
+いまいじったText_Kujira.xmlが必ずおかしいということになるはずです。
 動作確認を怠れば怠るほど、どこが間違っているかの探索すべき範囲は
 無制限に広くなっていき、
 最悪どうにもこうにもならなくなり、すべてを捨てて最初から書きなおす、
 なんてことになることもあります。
-***ためす is 大事。***
+
+***こまめに試すのは大事です。***
 
 # つづく
 XMLには深入りしないと言ったものの、変更するのと比べて新しく作るのは結構大変でした。
 そのせいで字数が多くなり過ぎたので、
-[その７]({{<ref "getstarted7.md">}})へ続きます。
+[その７]({{<ref "getstarted7">}})へ続きます。
 
 # おまけ
 ## CIV4BuildingInfos.xml追加分の全文

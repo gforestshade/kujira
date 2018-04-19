@@ -4,6 +4,7 @@ lastmod = "2018-01-29"
 draft = false
 title = "はじめてのPythonMOD 7"
 banner = "photo_yellow"
+categories = ["Python"]
 tags = ["はじめてのPythonMOD", "講座"]
 +++
 
@@ -15,19 +16,19 @@ tags = ["はじめてのPythonMOD", "講座"]
 
 # Python
 残った効果「都市圏内をすべて草原化する」なんてことは
-XMLでできるはずもありません。Pythonで実装していきましょう。
+XMLではできません。Pythonで実装していきましょう。
 
 ## 構想
 いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。
 「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。
-「都市圏内を草原化する」............都市圏内とは何でしょうか？
+「都市圏内を草原化する」......都市圏内とは何でしょうか？
 
 <!--more-->
 
 ## 都市圏とは
 {{<img src="/img/kujira_fert_city_area.png" width="300" height="300">}}
 このように図を使えばなんとなくわかるのですが、
-『ここからここまで』というのをちゃんとした言葉で、
+「ここからここまで」というのをちゃんとした言葉で、
 ひいてはプログラムで表現できないとMODとしては動いてくれません。
 
 まず、それは**Plot**の**リスト**と考えることができます。
@@ -82,14 +83,17 @@ XMLでできるはずもありません。Pythonで実装していきましょ�
 いつものマップスクリプトで「ラップ：平面」にしてマップを作ってみてください。
 マップの端が確かに存在していることが分かります。
 
-この「ラップ：平面」の状態のマップを『くるんっ』と巻いて、
+この「ラップ：平面」の状態のマップを「くるんっ」と巻いて、
 左端と右端をくっつけて円筒型にしたものが「ラップ：円筒形」です(だから円筒という名前なのですね)。
+
+![img](/img/cut_tube.png)
+
 円筒形のマップであっても、巻いてくっつける前の元になった平面のマップで、
 左下隅であったタイルが(0,0)です。
 ゲーム画面右下のミニマップは平面だったころの姿を映していますので、それを参考にするとよいでしょう。
 
-{{<img src="/img/kujira_fert_10.png">}}
-実際に円筒形のマップで座標(0,0) (マップ左下隅)に都市を建ててみた例。
+{{<img src="/img/civss_kujira_fert_10.png">}}
+↑実際に円筒形のマップで座標(0,0) (マップ左下隅)に都市を建ててみた例。
 ミニマップ右下のほうにも文化圏があることが分かります。
 ゲーム上では左端と右端はつながっていますから、１つの文化圏に見えています。
 
@@ -127,7 +131,7 @@ x座標をはみ出して指定しても、端から端へ飛ぶ計算をよし�
 ## ラップしてないほう
 ですがそれも、ラップしている方向だけです。
 
-{{<img src="/img/kujira_fert_10.png">}}
+{{<img src="/img/civss_kujira_fert_10.png">}}
 円筒形マップの(0,0)に都市を建てた様子をもう一度見てもらうとわかりますが、
 マップの一番下よりさらに下はそもそも存在していません。
 文化圏も完全に切れてしまっていることがわかります。
@@ -178,6 +182,7 @@ bx = pMap.isWrapX() or (0 <= x and x < pMap.getGridWidth())
 >>>>>>>>>>
 ```
 どちらかが`True`ならx座標の有効性としても`True`にしたいので、`or`を使っていることに注意してください。
+
 まったく同様にy軸方向について...
 ``` python
 <<<<<<<<<<
@@ -185,6 +190,7 @@ by = pMap.isWrapY() or (0 <= y and y < pMap.getGridHeight())
 >>>>>>>>>>
 ```
 これが`True`なら、y座標として有効な座標であると判定できそうです。
+
 最後に、x座標とy座標の両方が有効な範囲にある必要があります。
 ``` python
 >>>>>>>>>>
@@ -237,7 +243,7 @@ range1 = [
 なお、リストの要素を書き並べている最中は改行しても文の終わりとはみなされません。
 なので、このように各自で見やすいように整形して書くことができます。
 
-コードにするとこうなるでしょうか...
+コードにするとこうなります...
 ``` python
 >>>>>>>>>
 lPlot = []
@@ -266,8 +272,8 @@ for li in range1:
 
 >
 ``` plain
-VOID setTerrainType (TerrainType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
-void (TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
+190. VOID setTerrainType (TerrainType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
+     void (TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
 ```
 
 が見つかりました。
@@ -342,19 +348,19 @@ for文を抜けて、lPlotへの追加がすべて終わってから、改めて
 ためしてみましょう！
 
 わかりやすいようにWBで雪原地帯に都市を建て、生物学をプレイヤーに与えて実験します。
-{{<img src="/img/kujira_fert_20.png">}}
-{{<img src="/img/kujira_fert_21.png">}}
+{{<img src="/img/civss_kujira_fert_20.png">}}
+{{<img src="/img/civss_kujira_fert_21.png">}}
 できました！
 
 ただ、さらにいろんな場所で試していると、
-{{<img src="/img/kujira_fert_22.png">}}
-{{<img src="/img/kujira_fert_23.png">}}
+{{<img src="/img/civss_kujira_fert_22.png">}}
+{{<img src="/img/civss_kujira_fert_23.png">}}
 このままでは水タイルまでもを草原化してしまうことがわかってきます。
 その際、`setTerrainType()`の仕様で、上にあった資源や海軍ユニットも消し飛んでしまいます。
-............これはあまりうまくないですね。直しましょう。
+...これはあまりうまくないですね。直しましょう。
 
 
-# なおす & ひろげる
+# なおす、ひろげる
 ここで最初の目標を思い出してみると、《2マスの都市圏内すべてを草原化》でしたから、
 現在の目標は
 
@@ -464,8 +470,8 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ## ためす
 わかりやすくするため今回もWBで極地かつ沿岸に都市を建てて...
-{{<img src="/img/kujira_fert_30.png">}}
-{{<img src="/img/kujira_fert_31.png">}}
+{{<img src="/img/civss_kujira_fert_30.png">}}
+{{<img src="/img/civss_kujira_fert_31.png">}}
 できました！
 
 # おしまい
@@ -482,7 +488,8 @@ Pythonでどんなことができるかというのは、ぶっちゃけた話�
 
 もちろん、つくるのはあなたのMODなのですから、最後にはちゃんと自分で考えることが大事です。
 作る前・作っている最中には頑張って考えましょう。
-作った後にはテストプレイをしましょう。自分で、ちゃんと、プレイしましょう。
+作った後にはテストプレイをしましょう。
+自分で、ちゃんと、プレイしましょう。
 少なくとも、あなたが「いい」と思わなければ、MODを作っている意味はあまりありません。
 ためして、ためして、ためしましょう。
 

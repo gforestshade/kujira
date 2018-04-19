@@ -3,7 +3,7 @@ date = "2018-03-04"
 draft = false
 title = "CIV4UnitInfos.xml"
 banner = "photo_ice1"
-tags = ["XML"]
+categories = ["XML"]
 +++
 
 # はじめに
@@ -17,10 +17,12 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 
 以下\<UnitInfo\>の中身です。
 
+<!--more-->
+
 ### \<Class\>
 このユニットが属する親ユニットクラスを指定します。
 
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 例：
 \<Class\>UNITCLASS\_WARRIOR\</Class\>
@@ -54,7 +56,7 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 船の方の[\<SpecialCargo\>](#specialcargo)で同じ値を設定すると、
 その船に搭乗できるようになります。
 
-値：[搭乗タイプキー]({{<ref "keyichiran.md">}}#搭載分類)
+値：[搭乗タイプキー]({{<ref "keyichiran">}}#搭載分類)
 
 例１：
 \<Special\>NONE\</Special\>
@@ -71,7 +73,7 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 ユニットの種類が変わってほしくない場合は、[\<Class\>](#class)と同じ値を指定します。
 このユニットが捕獲不能な普通のユニットならば、NONEを指定します。
 
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 例１：
 \<Capture\>NONE\</Capture\>
@@ -82,7 +84,7 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 ### \<Combat\>
 このユニットがどの兵科であるか指定します。
 
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 例：
 \<Combat\>UNITCOMBAT\_MELEE\</Combat\>
@@ -91,7 +93,7 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 このユニットの行動領域を指定します。
 海洋ユニット・陸上ユニット・航空ユニットの別がここで決まります。
 
-値：[ユニット領域キー]({{<ref "keyichiran.md">}}#行動領域)
+値：[ユニット領域キー]({{<ref "keyichiran">}}#行動領域)
 
 例：
 \<Domain\>DOMAIN\_LAND\</Domain\>
@@ -99,7 +101,7 @@ CIV4UnitInfos.xmlの各項目について説明しています。
 ### \<DefaultUnitAI\>
 このユニットの既定の行動タイプを指定します。
 
-値：[ユニットAIタイプキー]({{<ref "keyichiran.md">}}#ユニットai)
+値：[ユニットAIタイプキー]({{<ref "keyichiran">}}#ユニットai)
 
 例：
 \<DefaultUnitAI\>UNITAI\_ATTACK\</DefaultUnitAI\>
@@ -545,7 +547,7 @@ BtSでは、この属性を持つユニットは私掠船のみです。
 
 #### \<UnitClassUpgradeType\>
 アップグレード先のユニットクラスです。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<bUnitClassUpgrade\>
 1を指定します。
@@ -583,7 +585,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitClassTargetType\>
 優先攻撃対象のユニットクラスです。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<bUnitClassTarget\>
 1を指定します。
@@ -621,7 +623,7 @@ BtSでは、この属性を持つユニットはクメール戦象のみです�
 
 #### \<UnitCombatTargetType\>
 優先攻撃対象のユニット戦闘タイプです。
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 #### \<bUnitCombatTarget\>
 1を指定します。
@@ -655,7 +657,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitClassDefenderType\>
 優先防御対象のユニットクラスです。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<bUnitClassDefender\>
 1を指定します。
@@ -693,7 +695,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitCombatDefenderType\>
 優先防御対象のユニット戦闘タイプです。
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 #### \<bUnitCombatDefender\>
 1を指定します。
@@ -723,7 +725,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FlankingStrikeUnitClass\>
 側面攻撃対象のユニットクラスです。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<iFlankingStrength\>
 側面攻撃ダメージの修正値です。単位は%で、デフォルトは100です。
@@ -761,7 +763,7 @@ AI文明は、物理的に行動可能なユニットAIに
 
 #### \<UnitAIType\>
 許可するユニットAIタイプを指定します。
-値：[ユニットAIタイプキー]({{<ref "keyichiran.md">}}#ユニットAI)
+値：[ユニットAIタイプキー]({{<ref "keyichiran">}}#ユニットAI)
 
 #### \<bUnitAI\>
 1を指定します。
@@ -806,7 +808,7 @@ AI文明に対して、このユニットに指定したユニットAIを持た�
 
 #### \<BuildType\>
 許可する整備命令を指定します。
-値：[整備タイプキー]({{<ref "keyichiran.md">}}#整備命令)
+値：[整備タイプキー]({{<ref "keyichiran">}}#整備命令)
 
 #### \<bBuild\>
 1を指定します。
@@ -849,7 +851,7 @@ BtSの宣教師の布教力は40です。
 
 #### \<ReligionType\>
 布教できる宗教を指定します。
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 #### \<iReligionSpread\>
 布教力を指定します。
@@ -890,7 +892,7 @@ BtSの重役の出店力は40です。
 
 #### \<CorporationType\>
 出店できる企業を指定します。
-値：[企業キー]({{<ref "keyichiran.md">}}#企業)
+値：[企業キー]({{<ref "keyichiran">}}#企業)
 
 #### \<iCorporationSpread\>
 出店力を指定します。
@@ -922,7 +924,7 @@ BtSでは偉人ユニットがこの属性を持ちます。
 
 #### \<GreatPeopleType\>
 どの専門家として定住を許可するか指定します。
-値：[専門家キー]({{<ref "keyichiran.md">}}#専門家)
+値：[専門家キー]({{<ref "keyichiran">}}#専門家)
 
 #### \<bGreatPeople\>
 1を指定します。
@@ -955,7 +957,7 @@ BtSでは偉人ユニットがこの属性を持ちます。
 
 #### \<BuildingType\>
 どの建造物を建設できるか指定します。
-値：[建造物キー]({{<ref "keyichiran.md">}}#建造物)
+値：[建造物キー]({{<ref "keyichiran">}}#建造物)
 
 #### \<bBuilding\>
 1を指定します。
@@ -1005,7 +1007,7 @@ BtSでは偉人ユニットがこの属性を持ちます。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、この属性を持つユニットはありません。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<HolyCity\>NONE\</HolyCity\>
@@ -1020,7 +1022,7 @@ BtSでは、この属性を持つユニットはありません。
 ここに何かを指定してもしなくても、追加の制限はとくにかかりません。
 BtSでは、この属性を持つユニットはありません。
 
-値：[宗教キー？]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー？]({{<ref "keyichiran">}}#宗教)
 
 例：
 \<ReligionType\>NONE\</ReligionType\>
@@ -1030,7 +1032,7 @@ BtSでは、この属性を持つユニットはありません。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、この属性を持つユニットはありません。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<StateReligion\>NONE\</StateReligion\>
@@ -1044,7 +1046,7 @@ BtSでは、この属性を持つユニットはありません。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、各宣教師がこの属性を持ちます。
 
-値：[宗教キー]({{<ref "keyichiran.md">}}#宗教)
+値：[宗教キー]({{<ref "keyichiran">}}#宗教)
 
 例１：
 \<PrereqReligion\>NONE\</PrereqReligion\>
@@ -1057,7 +1059,7 @@ BtSでは、各宣教師がこの属性を持ちます。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、各重役がこの属性を持ちます。
 
-値：[企業キー]({{<ref "keyichiran.md">}}#企業)
+値：[企業キー]({{<ref "keyichiran">}}#企業)
 
 例１：
 \<PrereqCorporation\>NONE\</PrereqCorporation\>
@@ -1071,7 +1073,7 @@ BtSでは、各重役がこの属性を持ちます。
 そのような制限を設けない場合、NONEを指定します。
 BtSでは、各宣教師がこの属性を持ちます。
 
-値：[建造物キー]({{<ref "keyichiran.md">}}#建造物)
+値：[建造物キー]({{<ref "keyichiran">}}#建造物)
 
 例１：
 \<PrereqBuilding\>NONE\</PrereqBuilding\>
@@ -1086,7 +1088,7 @@ BtSでは、各宣教師がこの属性を持ちます。
 設定しない場合、他の前提条件が無ければ、いつでも生産可能になります。
 (戦士など)
 
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)
+値：[技術キー]({{<ref "keyichiran">}}#技術)
 
 例：あとで
 
@@ -1104,7 +1106,7 @@ BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqt
 
 追加の前提が必要ない場合は空タグにします。
 
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)のリスト
+値：[技術キー]({{<ref "keyichiran">}}#技術)のリスト
 
 例１：メインの前提技術を青銅器にする
 ``` plain
@@ -1127,7 +1129,7 @@ BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqt
 ### \<BonusType\>
 このユニットはここに指定した資源がある都市でのみ生産できます。
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 例：あとで
 
@@ -1154,7 +1156,7 @@ BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqt
 BtSではこの変数の値は4です。
 (この数は GlobalDefines.xml で変更できます)
 
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)のリスト
+値：[資源キー]({{<ref "keyichiran">}}#資源)のリスト
 
 例１：資源の制限をつけない
 ``` plain
@@ -1198,7 +1200,7 @@ BtSでは、この属性を持つのは開拓者と労働者です。
 
 #### \<ProductionTraitType\>
 志向を指定します。
-値：[志向キー]({{<ref "keyichiran.md">}}#志向)
+値：[志向キー]({{<ref "keyichiran">}}#志向)
 
 #### \<iProductionTrait\>
 ハンマーへの修正値(単位：%)を指定します。
@@ -1237,7 +1239,7 @@ BtSでは、この属性を持つのは開拓者と労働者です。
 
 #### \<FlavorType\>
 フレーバーを指定します。
-値：[フレーバーキー]({{<ref "keyichiran.md">}}#フレーバー)
+値：[フレーバーキー]({{<ref "keyichiran">}}#フレーバー)
 
 #### \<iFlavor\>
 そのフレーバーの重み値を指定します。
@@ -1312,7 +1314,7 @@ BtSでは、この属性を持つユニットはありません。
 \<iAdvancedStartCostIncrease\>50\</iAdvancedStartCostIncrease\>
 
 ### \<iMinAreaSize\>
-都市が面している[水域]({{<ref "glossary.md">}}#水域)の大きさがここで指定した数以上のときのみ、
+都市が面している[水域]({{<ref "glossary">}}#水域)の大きさがここで指定した数以上のときのみ、
 このユニットを生産できます。
 この機能を使わない場合、-1を指定します。
 
@@ -1366,7 +1368,7 @@ BtSでは、この属性を持つユニットはありません。
 この属性は、都市や要塞の配備数にのみ影響します。
 艦載数には影響しないことに注意してください。
 
-都市の配備枠については、建造物の[\<iAirUnitCapacity\>]({{<ref "civ4buildinginfos.md">}}#iairunitcapacity)も参照してください。
+都市の配備枠については、建造物の[\<iAirUnitCapacity\>]({{<ref "civ4buildinginfos">}}#iairunitcapacity)も参照してください。
 
 値：整数
 
@@ -1521,7 +1523,7 @@ BtSでは、この属性を持つユニットは大スパイです。
 
 
 ### \<TerrainImpassables\>
-このユニットは、ここに指定された[基本地形]({{<ref "keyichiran.md">}}#基本地形)に侵入することができません。
+このユニットは、ここに指定された[基本地形]({{<ref "keyichiran">}}#基本地形)に侵入することができません。
 この禁止指定は、技術取得により解禁できます。[\<TerrainPassableTechs\>](#terrainpassabletechs)を参照してください。
 
 値：\<TerrainImpassable\>のリスト
@@ -1532,7 +1534,7 @@ BtSでは、この属性を持つユニットは大スパイです。
 
 #### \<TerrainType\>
 侵入を禁止する基本地形を指定します。
-値：[地形キー]({{<ref "keyichiran.md">}}#基本地形)
+値：[地形キー]({{<ref "keyichiran">}}#基本地形)
 
 #### \<bTerrainImpassable\>
 1を指定します。
@@ -1554,7 +1556,7 @@ BtSでは、この属性を持つユニットは大スパイです。
 ```
 
 ### \<FeatureImpassables\>
-このユニットは、ここに指定された[追加地形]({{<ref "keyichiran.md">}}#追加地形)に侵入することができません。[^3]
+このユニットは、ここに指定された[追加地形]({{<ref "keyichiran">}}#追加地形)に侵入することができません。[^3]
 この禁止指定は、技術取得により解禁できます。[\<FeaturePassableTechs\>](#featurepassabletechs)を参照してください。
 BtSでは、この属性を持つユニットはありません。
 
@@ -1568,7 +1570,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FeatureType\>
 侵入を禁止する追加地形を指定します。
-値：[追加地形キー]({{<ref "keyichiran.md">}}#追加地形)
+値：[追加地形キー]({{<ref "keyichiran">}}#追加地形)
 
 #### \<bFeatureImpassable\>
 1を指定します。
@@ -1601,11 +1603,11 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<TerrainType\>
 侵入を解禁する基本地形を指定します。
-値：[地形キー]({{<ref "keyichiran.md">}}#基本地形)
+値：[地形キー]({{<ref "keyichiran">}}#基本地形)
 
 #### \<PassableTech\>
 その基本地形の侵入を解禁する技術を指定します。
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)
+値：[技術キー]({{<ref "keyichiran">}}#技術)
 
 {{% /div %}}
 
@@ -1634,11 +1636,11 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FeatureType\>
 侵入を解禁する追加地形を指定します。
-値：[追加地形キー]({{<ref "keyichiran.md">}}#追加地形)
+値：[追加地形キー]({{<ref "keyichiran">}}#追加地形)
 
 #### \<PassableTech\>
 その追加地形の侵入を解禁する技術を指定します。
-値：[技術キー]({{<ref "keyichiran.md">}}#技術)
+値：[技術キー]({{<ref "keyichiran">}}#技術)
 
 {{% /div %}}
 
@@ -1840,7 +1842,7 @@ BtSでは、この属性を持つユニットはありません。
 \<iHillsDefense\>0\</iHillsDefense\>
 
 ### \<TerrainNatives\>
-動物として自然沸きできる[基本地形]({{<ref "keyichiran.md">}}#基本地形)を指定します。
+動物として自然沸きできる[基本地形]({{<ref "keyichiran">}}#基本地形)を指定します。
 
 このユニットが[動物](#banimal)であって、星としての動物発生条件を満たしているなら、[^4]
 ここに指定した基本地形であって、追加地形のない、
@@ -1859,7 +1861,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<TerrainType\>
 自然沸きできる基本地形を指定します。
-値：[地形キー]({{<ref "keyichiran.md">}}#基本地形)
+値：[地形キー]({{<ref "keyichiran">}}#基本地形)
 
 #### \<bTerrainNative\>
 1を指定します。
@@ -1885,7 +1887,7 @@ BtSでは、この属性を持つユニットはありません。
 ```
 
 ### \<FeatureNatives\>
-動物として自然沸きできる[追加地形]({{<ref "keyichiran.md">}}#追加地形)を指定します。
+動物として自然沸きできる[追加地形]({{<ref "keyichiran">}}#追加地形)を指定します。
 
 このユニットが[動物](#banimal)であって、星としての動物発生条件を満たしているなら、[^4]
 ここに指定した追加地形があって、どのプレイヤーの視界にも入っていないタイルに、
@@ -1901,7 +1903,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FeatureType\>
 自然沸きできる追加地形を指定します。
-値：[追加地形キー]({{<ref "keyichiran.md">}}#追加地形)
+値：[追加地形キー]({{<ref "keyichiran">}}#追加地形)
 
 #### \<bFeatureNative\>
 1を指定します。
@@ -1923,7 +1925,7 @@ BtSでは、この属性を持つユニットはありません。
 ```
 
 ### \<TerrainAttacks\>
-対[基本地形]({{<ref "keyichiran.md">}}#基本地形)攻撃の戦闘力修正を指定します。
+対[基本地形]({{<ref "keyichiran">}}#基本地形)攻撃の戦闘力修正を指定します。
 このユニットがここに指定した基本地形にいる敵ユニットを攻撃するとき、
 それぞれ指定してある戦闘力修正を受けます。
 
@@ -1938,7 +1940,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<TerrainType\>
 修正を与える基本地形を指定します。
-値：[地形キー]({{<ref "keyichiran.md">}}#基本地形)
+値：[地形キー]({{<ref "keyichiran">}}#基本地形)
 
 #### \<iTerrainAttack\>
 その基本地形を攻撃するときの戦闘力修正値を指定します。(単位：%)
@@ -1960,7 +1962,7 @@ BtSでは、この属性を持つユニットはありません。
 ```
 
 ### \<TerrainDefenses\>
-[基本地形]({{<ref "keyichiran.md">}}#基本地形)防御の戦闘力修正を指定します。
+[基本地形]({{<ref "keyichiran">}}#基本地形)防御の戦闘力修正を指定します。
 このユニットがここに指定した基本地形にいる状態で敵ユニットから攻撃されるとき、
 それぞれ指定してある戦闘力修正を受けます。
 
@@ -1975,7 +1977,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<TerrainType\>
 修正を与える基本地形を指定します。
-値：[地形キー]({{<ref "keyichiran.md">}}#基本地形)
+値：[地形キー]({{<ref "keyichiran">}}#基本地形)
 
 #### \<iTerrainDefense\>
 その基本地形で防御するときの戦闘力修正値を指定します。(単位：%)
@@ -1998,7 +2000,7 @@ BtSでは、この属性を持つユニットはありません。
 ```
 
 ### \<FeatureAttacks\>
-対[追加地形]({{<ref "keyichiran.md">}}#追加地形)攻撃の戦闘力修正を指定します。
+対[追加地形]({{<ref "keyichiran">}}#追加地形)攻撃の戦闘力修正を指定します。
 このユニットがここに指定した追加地形にいる敵ユニットを攻撃するとき、
 それぞれ指定してある戦闘力修正を受けます。
 
@@ -2013,7 +2015,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FeatureType\>
 修正を与える追加地形を指定します。
-値：[追加地形キー]({{<ref "keyichiran.md">}}#追加地形)
+値：[追加地形キー]({{<ref "keyichiran">}}#追加地形)
 
 #### \<iFeatureAttack\>
 その追加地形を攻撃するときの戦闘力修正値を指定します。(単位：%)
@@ -2035,7 +2037,7 @@ BtSでは、この属性を持つユニットはありません。
 ```
 
 ### \<FeatureDefenses\>
-[追加地形]({{<ref "keyichiran.md">}}#追加地形)防御の戦闘力修正を指定します。
+[追加地形]({{<ref "keyichiran">}}#追加地形)防御の戦闘力修正を指定します。
 このユニットがここに指定した追加地形にいる状態で
 敵ユニットから攻撃されるとき、
 それぞれ指定してある戦闘力修正を受けます。
@@ -2051,7 +2053,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<FeatureType\>
 修正を与える追加地形を指定します。
-値：[追加地形キー]({{<ref "keyichiran.md">}}#追加地形)
+値：[追加地形キー]({{<ref "keyichiran">}}#追加地形)
 
 #### \<iFeatureDefense\>
 その追加地形で防御するときの戦闘力修正値を指定します。(単位：%)
@@ -2091,7 +2093,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitClassType\>
 攻撃時に修正を与えるユニットクラスを指定します。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<iUnitClassMod\>
 そのユニットクラスに攻撃するときの戦闘力修正を指定します。(単位：%)
@@ -2134,7 +2136,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitClassType\>
 防御時に修正を与えるユニットクラスを指定します。
-値：[ユニットクラスキー]({{<ref "keyichiran.md">}}#ユニット)
+値：[ユニットクラスキー]({{<ref "keyichiran">}}#ユニット)
 
 #### \<iUnitClassMod\>
 そのユニットクラスに攻撃されたときの戦闘力修正を指定します。(単位：%)
@@ -2168,7 +2170,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitCombatType\>
 修正を与える兵科を指定します。
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 #### \<iUnitCombatMod\>
 その兵科と戦闘するときの戦闘力修正を指定します。(単位：%)
@@ -2200,7 +2202,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<UnitCombatType\>
 この兵科からの副次的損害に耐性を得ます。
-値：[ユニット戦闘タイプキー]({{<ref "keyichiran.md">}}#兵科)
+値：[ユニット戦闘タイプキー]({{<ref "keyichiran">}}#兵科)
 
 #### \<iUnitCombatCollateralImmune\>
 1を指定します。
@@ -2234,7 +2236,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<DomainType\>
 修正を与える行動領域を指定します。
-値：[ユニット領域キー]({{<ref "keyichiran.md">}}#行動領域)
+値：[ユニット領域キー]({{<ref "keyichiran">}}#行動領域)
 
 #### \<iDomainMod\>
 その行動領域を持つユニットに対しての戦闘力修正を指定します。(単位：%)
@@ -2262,7 +2264,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<BonusType\>
 生産を加速する資源を指定します。
-値：[資源キー]({{<ref "keyichiran.md">}}#資源)
+値：[資源キー]({{<ref "keyichiran">}}#資源)
 
 #### \<iProductonModifier\>[^ton]
 その資源に対して何%加速するか指定します。
@@ -2321,7 +2323,7 @@ BtSでは、この属性を持つユニットはありません。
 [\<DomainCargo\>](#domaincargo)と同時に指定される場合、
 両方の条件を満たしているユニットのみを搭載できます。
 
-値：[搭乗タイプキー]({{<ref "keyichiran.md">}}#搭載分類)
+値：[搭乗タイプキー]({{<ref "keyichiran">}}#搭載分類)
 
 例１：
 \<SpecialCargo\>NONE\</SpecialCargo\>
@@ -2340,7 +2342,7 @@ BtSでは、この属性を持つユニットはありません。
 [\<SpecialCargo\>](#specialcargo)と同時に指定される場合、
 両方の条件を満たしているユニットのみを搭載できます。
 
-値：[ユニット領域キー]({{<ref "keyichiran.md">}}#行動領域)
+値：[ユニット領域キー]({{<ref "keyichiran">}}#行動領域)
 
 例１：
 \<DomainCargo\>NONE\</DomainCargo\>
@@ -2534,7 +2536,7 @@ BtSでは、この属性を持つユニットはありません。
 
 #### \<PromotionType\>
 無償で得る昇進を指定します。
-値：[昇進キー]({{<ref "keyichiran.md">}}#昇進)
+値：[昇進キー]({{<ref "keyichiran">}}#昇進)
 
 #### \<bFreePromotion\>
 1を指定します。

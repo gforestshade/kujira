@@ -3,7 +3,8 @@ date = "2018-01-27"
 draft = false
 title = "はじめに"
 banner = "kujira_paleblue"
-tags = ["はじめに", "目次"]
+categories = ["目次"]
+tags = ["はじめに"]
 comment = true
 weight = 99
 +++
@@ -24,50 +25,55 @@ PythonでもMODやりたいけどどこからはじめたらいいかよくわ�
 ## 第１期シリーズ・はじめてのPythonMOD
 順番に読んでいけばPythonMODに入門できる、そんな内容を目指しました。
 
-- [その１]({{<ref "getstarted1.md">}})
+- [その１]({{<ref "getstarted1">}})
 PythonでMOD作成する準備 ～ 図書館自動建設
-- [その２]({{<ref "getstarted2.md">}})
+- [その２]({{<ref "getstarted2">}})
 えこひいき図書館・首都だけ/マリだけ・if文・Player・CivilizationInfo
-- [その３]({{<ref "getstarted3.md">}})
+- [その３]({{<ref "getstarted3">}})
 防衛志向・ユニット生成・関数の使い方/作り方
-- [その４]({{<ref "getstarted4.md">}})
+- [その４]({{<ref "getstarted4">}})
 取得済み技術・and/or/else
-- [その５]({{<ref "getstarted5.md">}})
+- [その５]({{<ref "getstarted5">}})
 ダン強化・都市上にいる全ユニットに昇進・for文
-- [その６]({{<ref "getstarted6.md">}})
+- [その６]({{<ref "getstarted6">}})
 XMLで新しい建造物を作る
-- [その７]({{<ref "getstarted7.md">}})
+- [その７]({{<ref "getstarted7">}})
 草原化・マップのラップ・Map・Plot・リストとforの応用
 
 ## 第２期シリーズ・それからのPython
 もっと欲張りたい人のための、中級編です。
 
-- [その１]({{<ref "secondpy1.md">}})
+- [その１]({{<ref "secondpy1">}})
 ゲーム画面にメッセージ表示・変数と値・型・Unicode文字列
-- [その２]({{<ref "secondpy2.md">}})
+- [その２]({{<ref "secondpy2">}})
 年代の表示・フォーマット文字列・抽象化
-- [その３]({{<ref "secondpy3.md">}})
+- [その３]({{<ref "secondpy3">}})
 クラス・メソッド・インスタンス・コンストラクタ
-- [その４]({{<ref "secondpy4.md">}})
+- [その４]({{<ref "secondpy4">}})
 クラスの利用・ゲームの要素を操作する方法
-- [その５]({{<ref "secondpy5.md">}})
+- [その５]({{<ref "secondpy5">}})
 毎ターン・駐留したユニット・変数のスコープ
-- [その６]({{<ref "secondpy6.md">}})
+- [その６]({{<ref "secondpy6">}})
 PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
-- [その７]({{<ref "secondpy7.md">}})
+- [その７]({{<ref "secondpy7">}})
 昇進の作成
-- [その８]({{<ref "secondpy8.md">}})
+- [その８]({{<ref "secondpy8">}})
 オブジェクト・リスト操作・リスト内包表記・ジェネレータ式
-- [その９]({{<ref "secondpy9.md">}})
+- [その９]({{<ref "secondpy9">}})
 クラス変数・リストの連結・filter()
-- [その10]({{<ref "secondpy10.md">}})
+- [その10]({{<ref "secondpy10">}})
 スペル完成
+
+## C++シリーズ
+CvGameCoreDll.dllとか使って、なんかします。
+
+- [Windows10でDLL開発環境]({{<ref "howtocompile">}})
 
 # MMD to Civ4 プロジェクト
 なんとかもっといろいろなユニットをシド星に召喚できないかと
 試行錯誤していくプロジェクトです。
 
-- [モデルの変換]({{<ref "mmd_to_nif.md">}})
-- [リギング]({{<ref "nifanimation.md">}})
+- [モデルの変換]({{<ref "mmd_to_nif">}})
+- [リギング]({{<ref "nifanimation">}})
 
 

@@ -4,6 +4,7 @@ lastmod = "2018-01-30"
 draft = false
 title = "それからのPython 8"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -297,7 +298,7 @@ def isValidPlot(x, y):
     return bx and by
 ```
 座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。
-この関数は[はじめての・その７]({{<ref "getstarted7.md">}}#座標の有効性を判定する)で作ったものと同じものです。
+この関数は[はじめてのPythonMODその７]({{<ref "getstarted7.md">}}#座標の有効性を判定する)で作ったものと同じものです。
 「周囲nマス」を表現するためにはいつでも必要になる関数なので、使いまわしましょう。
 
 
@@ -493,7 +494,7 @@ list2 = [i * 3 for i in list1 if i % 2 == 0]
 print list2 # [0, 6, 12, 18, 24]
 ```
 上のループを１行にくっつけたような形をしています。
-この書き方をPythonの「リスト内包表記」(List Comprehension)と呼びます。
+この書き方をPythonの**リスト内包表記**(List Comprehension)と呼びます。
 これで、どちらも全く同じ処理になっています。
 実行してみて、`[0, 6, 12, 18, 24]`が出力されるかどうか、試してみましょう。
 (これらは素のPythonプログラムです。MODではないので、しかるべきところで実行しましょう。)

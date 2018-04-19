@@ -3,7 +3,7 @@ date = "2018-02-04"
 draft = false
 title = "CvGameCoreDll.dllの作り方"
 banner = "green"
-tags = ["C++", "コラム"]
+categories = ["C++"]
 comment = true
 +++
 

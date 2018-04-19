@@ -3,6 +3,7 @@ date = "2017-10-21"
 draft = false
 title = "それからのPython 3"
 banner = "photo_pink1"
+categories = ["Python"]
 tags = ["それからのPython", "講座"]
 +++
 
@@ -101,7 +102,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 ```
 
-{{<img src="/img/kujira_class_10.png">}}
+{{<img src="/img/civss_kujira_class_10.png">}}
 いいですね！
 
 # クラス
@@ -216,7 +217,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 
 ゲームを開始して...
-{{<img src="/img/kujira_class_11.png">}}
+{{<img src="/img/civss_kujira_class_11.png">}}
 できているようです。
 
 # 自己紹介させる
@@ -291,8 +292,9 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         CyInterface().addImmediateMessage(message, "")
 ```
 こんな感じでしょうか。
+
 ゲームを開始して...
-{{<img src="/img/kujira_class_12.png">}}
+{{<img src="/img/civss_kujira_class_12.png">}}
 いいですね！
 
 # コンストラクタ
@@ -385,5 +387,5 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 ```
 
 ゲームを起動して...
-{{<img src="/img/kujira_class_13.png">}}
+{{<img src="/img/civss_kujira_class_13.png">}}
 できました！
