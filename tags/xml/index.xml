@@ -21,41 +21,5 @@
       <description>ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ</description>
     </item>
     
-    <item>
-      <title>CIV4BuildingInfos.xml</title>
-      <link>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</link>
-      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</guid>
-      <description>はじめに CIV4BuildingInfos.xmlの各項目について説明しています。 &amp;lt;Civ4BuildingInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;</description>
-    </item>
-    
-    <item>
-      <title>CIV4UnitClassInfos.xml</title>
-      <link>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</link>
-      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</guid>
-      <description>はじめに CIV4ClassUnitInfos.xmlの各項目について説明しています。 ユニットクラス ただ一口に「斧兵」といっても、個々の斧兵の</description>
-    </item>
-    
-    <item>
-      <title>CIV4UnitInfos.xml</title>
-      <link>https://gforestshade.github.io/kujira/post/civ4unitinfos/</link>
-      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/civ4unitinfos/</guid>
-      <description>はじめに CIV4UnitInfos.xmlの各項目について説明しています。 &amp;lt;Civ4UnitInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;x-sc</description>
-    </item>
-    
-    <item>
-      <title>XMLキー一覧</title>
-      <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
-      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
-      <description>文明 文明キー 文明 CIVILIZATION_AMERICA アメリカ CIVILIZATION_ARABIA アラブ CIVILIZATION_AZTEC アステカ CIVILIZATION_BABYLON バビロニア CIVILIZATION_BYZANTIUM ビザンチン CIVILIZATION_CARTHAGE カルタゴ CIVILIZATION_CELT ケルト CIVILIZATION_CHINA 中国 CIVILIZATION_EGYPT エジプト CIVILIZATION_ENGLAND イギリス CIVILIZATION_ETHIOPIA エチオピア CIVILIZATION_FRANCE フランス CIVILIZATION_GERMANY ドイ</description>
-    </item>
-    
   </channel>
 </rss>

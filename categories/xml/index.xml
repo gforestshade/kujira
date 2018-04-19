@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XML on Kujira, Civ4 Mod Blog</title>
+    <link>https://gforestshade.github.io/kujira/categories/xml/</link>
+    <description>Recent content in XML on Kujira, Civ4 Mod Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
+    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://gforestshade.github.io/kujira/categories/xml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XMLキー一覧</title>
+      <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
+      <description>目次 文明 指導者 技術 建造物 太古 古典 中世・ルネサンス 工業化時代 現代・未来 宗教系 国家遺産 世界遺産 その他 プロジェクト ユニット 動物 非戦闘系 白兵・火器 弓</description>
+    </item>
+    
+    <item>
+      <title>CIV4BuildingInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4BuildingInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4buildinginfos&#34;&gt;&amp;lt;Civ4BuildingInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4BuildingSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;buildinginfo&#34;&gt;&amp;lt;BuildingInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、建造物の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;BuildingInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CIV4UnitClassInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4ClassUnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h1 id=&#34;ユニットクラス&#34;&gt;ユニットクラス&lt;/h1&gt;
+
+&lt;p&gt;ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、&lt;br /&gt;
+UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。&lt;br /&gt;
+雰囲気で察している方も多いのではないでしょうか。&lt;br /&gt;
+Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。&lt;br /&gt;
+どうなっているのか、図にしてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CIV4UnitInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4unitinfos/</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4unitinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4UnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4unitinfos&#34;&gt;&amp;lt;Civ4UnitInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4UnitSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;unitinfo&#34;&gt;&amp;lt;UnitInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、ユニットの定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;UnitInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

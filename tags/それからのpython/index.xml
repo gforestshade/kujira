@@ -212,11 +212,11 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br /&gt
 流し読みしつつ、気になったのを見ていきましょう。&lt;/p&gt;
 
 &lt;p&gt;なお、色付き文字になっているのは&lt;strong&gt;型&lt;/strong&gt;です。例えば、&lt;br /&gt;
-BOOL - ブール型(真と偽の2択)&lt;br /&gt;
-INT - 数値型&lt;br /&gt;
-VOID - なし(戻り値を返さないもの)&lt;br /&gt;
-茶色 - なにかのID(基本的なふるまいはINTと同じ)&lt;br /&gt;
-緑色 - クラス型&lt;br /&gt;
+&lt;span style=&#34;color:orange&#34;&gt;BOOL&lt;/span&gt; - ブール型(真と偽の2択)&lt;br /&gt;
+&lt;span style=&#34;color:red&#34;&gt;INT&lt;/span&gt; - 数値型&lt;br /&gt;
+&lt;span style=&#34;color:blue&#34;&gt;VOID&lt;/span&gt; - なし(戻り値を返さないもの)&lt;br /&gt;
+&lt;span style=&#34;color:maroon&#34;&gt;茶色&lt;/span&gt; - なにかのID(基本的なふるまいはINTと同じ)&lt;br /&gt;
+&lt;span style=&#34;color:green&#34;&gt;緑色&lt;/span&gt; - クラス型&lt;br /&gt;
 こんな具合です。&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>

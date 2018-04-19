@@ -29,13 +29,13 @@
 &lt;h1 id=&#34;python&#34;&gt;Python&lt;/h1&gt;
 
 &lt;p&gt;残った効果「都市圏内をすべて草原化する」なんてことは&lt;br /&gt;
-XMLでできるはずもありません。Pythonで実装していきましょう。&lt;/p&gt;
+XMLではできません。Pythonで実装していきましょう。&lt;/p&gt;
 
 &lt;h2 id=&#34;構想&#34;&gt;構想&lt;/h2&gt;
 
 &lt;p&gt;いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。&lt;br /&gt;
 「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。&lt;br /&gt;
-「都市圏内を草原化する」&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;都市圏内とは何でしょうか？&lt;/p&gt;
+「都市圏内を草原化する」&amp;hellip;&amp;hellip;都市圏内とは何でしょうか？&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -61,7 +61,7 @@ XMLでできるはずもありません。Pythonで実装していきましょ�
 Pythonでしかできない効果を持った新しい建造物を作りましょう！&lt;br /&gt;
 とりあえず&amp;rdquo;いつもの&amp;rdquo;を作ります。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_fert
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_fert
     └─Assets
         └─Python
             ├─KujiraEventManager.py
@@ -95,7 +95,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 &lt;p&gt;例によって&lt;code&gt;kujira_for&lt;/code&gt;というMODを作ります。&lt;br /&gt;
 &lt;code&gt;kujira_if&lt;/code&gt;をフォルダごとコピーして、フォルダ名をリネームしましょう。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_for
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_for
     └─Assets
         └─Python
             │─KujiraEventManager.py
@@ -129,21 +129,21 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/getstarted3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;その３でMODひとつしか作れなかったので応用編の別立て&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/getstarted3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;その３でMODひとつしか作れなかったので応用編の別立て&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;もう少し先へ&#34;&gt;もう少し先へ&lt;/h1&gt;
 
-&lt;p&gt;前半戦たるその３では&lt;br /&gt;
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》&lt;br /&gt;
+&lt;p&gt;前半戦たるその３では&lt;br&gt;
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》&lt;br&gt;
 を作りました。少し拡張してみましょう。&lt;/p&gt;
 
 &lt;p&gt;「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」&lt;/p&gt;
 
-&lt;p&gt;と思ったとします。が、少々厄介です。&lt;br /&gt;
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。&lt;br /&gt;
+&lt;p&gt;と思ったとします。が、少々厄介です。&lt;br&gt;
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。&lt;br&gt;
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -202,7 +202,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 
 &lt;p&gt;前回の&lt;code&gt;kujira&lt;/code&gt;MODをフォルダごとコピーしてリネーム、&lt;code&gt;kujira_if&lt;/code&gt;というMODを作ります。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_if
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_if
     └─Assets
         └─Python
             │─KujiraEventManager.py

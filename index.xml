@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>XMLキー一覧</title>
+      <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
+      <description>目次 文明 指導者 技術 建造物 太古 古典 中世・ルネサンス 工業化時代 現代・未来 宗教系 国家遺産 世界遺産 その他 プロジェクト ユニット 動物 非戦闘系 白兵・火器 弓</description>
+    </item>
+    
+    <item>
       <title>用語集</title>
       <link>https://gforestshade.github.io/kujira/post/glossary/</link>
       <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
@@ -54,7 +63,21 @@
       <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</guid>
-      <description>はじめに CIV4BuildingInfos.xmlの各項目について説明しています。 &amp;lt;Civ4BuildingInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;</description>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4BuildingInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4buildinginfos&#34;&gt;&amp;lt;Civ4BuildingInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4BuildingSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;buildinginfo&#34;&gt;&amp;lt;BuildingInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、建造物の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;BuildingInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -63,7 +86,19 @@
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</guid>
-      <description>はじめに CIV4ClassUnitInfos.xmlの各項目について説明しています。 ユニットクラス ただ一口に「斧兵」といっても、個々の斧兵の</description>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4ClassUnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h1 id=&#34;ユニットクラス&#34;&gt;ユニットクラス&lt;/h1&gt;
+
+&lt;p&gt;ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、&lt;br /&gt;
+UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。&lt;br /&gt;
+雰囲気で察している方も多いのではないでしょうか。&lt;br /&gt;
+Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。&lt;br /&gt;
+どうなっているのか、図にしてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,16 +107,21 @@
       <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/civ4unitinfos/</guid>
-      <description>はじめに CIV4UnitInfos.xmlの各項目について説明しています。 &amp;lt;Civ4UnitInfos&amp;gt; ルートタグです。名前空間として、xmlns=&amp;quot;x-sc</description>
-    </item>
-    
-    <item>
-      <title>XMLキー一覧</title>
-      <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
-      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
-      <description>文明 文明キー 文明 CIVILIZATION_AMERICA アメリカ CIVILIZATION_ARABIA アラブ CIVILIZATION_AZTEC アステカ CIVILIZATION_BABYLON バビロニア CIVILIZATION_BYZANTIUM ビザンチン CIVILIZATION_CARTHAGE カルタゴ CIVILIZATION_CELT ケルト CIVILIZATION_CHINA 中国 CIVILIZATION_EGYPT エジプト CIVILIZATION_ENGLAND イギリス CIVILIZATION_ETHIOPIA エチオピア CIVILIZATION_FRANCE フランス CIVILIZATION_GERMANY ドイ</description>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4UnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4unitinfos&#34;&gt;&amp;lt;Civ4UnitInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4UnitSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;unitinfo&#34;&gt;&amp;lt;UnitInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、ユニットの定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;UnitInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -355,11 +395,11 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br /&gt
 流し読みしつつ、気になったのを見ていきましょう。&lt;/p&gt;
 
 &lt;p&gt;なお、色付き文字になっているのは&lt;strong&gt;型&lt;/strong&gt;です。例えば、&lt;br /&gt;
-BOOL - ブール型(真と偽の2択)&lt;br /&gt;
-INT - 数値型&lt;br /&gt;
-VOID - なし(戻り値を返さないもの)&lt;br /&gt;
-茶色 - なにかのID(基本的なふるまいはINTと同じ)&lt;br /&gt;
-緑色 - クラス型&lt;br /&gt;
+&lt;span style=&#34;color:orange&#34;&gt;BOOL&lt;/span&gt; - ブール型(真と偽の2択)&lt;br /&gt;
+&lt;span style=&#34;color:red&#34;&gt;INT&lt;/span&gt; - 数値型&lt;br /&gt;
+&lt;span style=&#34;color:blue&#34;&gt;VOID&lt;/span&gt; - なし(戻り値を返さないもの)&lt;br /&gt;
+&lt;span style=&#34;color:maroon&#34;&gt;茶色&lt;/span&gt; - なにかのID(基本的なふるまいはINTと同じ)&lt;br /&gt;
+&lt;span style=&#34;color:green&#34;&gt;緑色&lt;/span&gt; - クラス型&lt;br /&gt;
 こんな具合です。&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
@@ -461,13 +501,13 @@ Unicode文字列を作り、表示してあげます。&lt;/p&gt;
 &lt;h1 id=&#34;python&#34;&gt;Python&lt;/h1&gt;
 
 &lt;p&gt;残った効果「都市圏内をすべて草原化する」なんてことは&lt;br /&gt;
-XMLでできるはずもありません。Pythonで実装していきましょう。&lt;/p&gt;
+XMLではできません。Pythonで実装していきましょう。&lt;/p&gt;
 
 &lt;h2 id=&#34;構想&#34;&gt;構想&lt;/h2&gt;
 
 &lt;p&gt;いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。&lt;br /&gt;
 「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。&lt;br /&gt;
-「都市圏内を草原化する」&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;都市圏内とは何でしょうか？&lt;/p&gt;
+「都市圏内を草原化する」&amp;hellip;&amp;hellip;都市圏内とは何でしょうか？&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -493,7 +533,7 @@ XMLでできるはずもありません。Pythonで実装していきましょ�
 Pythonでしかできない効果を持った新しい建造物を作りましょう！&lt;br /&gt;
 とりあえず&amp;rdquo;いつもの&amp;rdquo;を作ります。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_fert
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_fert
     └─Assets
         └─Python
             ├─KujiraEventManager.py
@@ -527,7 +567,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 &lt;p&gt;例によって&lt;code&gt;kujira_for&lt;/code&gt;というMODを作ります。&lt;br /&gt;
 &lt;code&gt;kujira_if&lt;/code&gt;をフォルダごとコピーして、フォルダ名をリネームしましょう。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_for
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_for
     └─Assets
         └─Python
             │─KujiraEventManager.py
@@ -561,21 +601,21 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/getstarted3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;その３でMODひとつしか作れなかったので応用編の別立て&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/getstarted3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;その３でMODひとつしか作れなかったので応用編の別立て&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;もう少し先へ&#34;&gt;もう少し先へ&lt;/h1&gt;
 
-&lt;p&gt;前半戦たるその３では&lt;br /&gt;
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》&lt;br /&gt;
+&lt;p&gt;前半戦たるその３では&lt;br&gt;
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》&lt;br&gt;
 を作りました。少し拡張してみましょう。&lt;/p&gt;
 
 &lt;p&gt;「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」&lt;/p&gt;
 
-&lt;p&gt;と思ったとします。が、少々厄介です。&lt;br /&gt;
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。&lt;br /&gt;
+&lt;p&gt;と思ったとします。が、少々厄介です。&lt;br&gt;
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。&lt;br&gt;
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -634,7 +674,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 
 &lt;p&gt;前回の&lt;code&gt;kujira&lt;/code&gt;MODをフォルダごとコピーしてリネーム、&lt;code&gt;kujira_if&lt;/code&gt;というMODを作ります。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_if
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;└─kujira_if
     └─Assets
         └─Python
             │─KujiraEventManager.py
