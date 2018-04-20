@@ -63,7 +63,7 @@ YOURMOD=..
 ``` makefile
 #### INCLUDES ####
 >>>>>>>>>> ここから
-GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc" /I"C:\Program File2s (x86)\Microsoft Visual Studio 10.0\VC\include"
+GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc" /I"C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include"
 <<<<<<<<<< ここまで
 ```
 
