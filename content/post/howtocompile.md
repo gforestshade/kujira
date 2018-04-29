@@ -51,10 +51,10 @@ MakeFileを編集します。
 (30行目くらい)
 ``` makefile
 TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
-<<<<<<<<<< ここから
+>>>>>>>>>> ここから
 PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
 PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
->>>>>>>>>> ここまで
+<<<<<<<<<< ここまで
 ## Uncomment to have newly compiled dlls copied to your mod's Assets directory
 YOURMOD=..
 ```
@@ -103,6 +103,11 @@ Assetsの中にCvGameCoreDll.dllができているはずです。
 Enjoy!
 
 
-## 付録
+# 付録
 今回変更したファイルの[差分](/src/howtocompile_diff.zip)
 
+# エラーが出た
+Microsoft Visual C++ 2010 再頒布可能パッケージがインストール済みだと、
+SDKのインストールに失敗するようです。
+参考：
+https://support.microsoft.com/ja-jp/help/2934068/error-occurs-when-you-install-windows-sdk-for-windows-7-and-the-net-fr

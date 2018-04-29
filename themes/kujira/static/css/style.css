@@ -16,9 +16,9 @@ body
     {
         display: grid;
         grid-template:
-        "AAAAA  BBBBB" 1fr
-        "CCCCC  CCCCC" 1.5em
-        / 300px 0.8fr;
+        ".     AAAAA BBBBB .    " 1fr
+        "CCCCC CCCCC CCCCC CCCCC" 1.5em
+        / 1fr  300px 10fr   1fr;
         justify-content: center;
     }
 }
@@ -69,6 +69,11 @@ body
 
 .centerbar {
     grid-area: BBBBB;
+}
+
+#contentinfo
+{
+    grid-area: CCCCC;
 }
 
 h1.article-title

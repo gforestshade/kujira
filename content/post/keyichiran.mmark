@@ -6,6 +6,42 @@ banner = "photo_ice1"
 categories = ["XML"]
 +++
 
+<style>
+.grid-table
+{
+  display: grid;
+  grid-template-columns:3fr 2fr 3fr 2fr;
+//    minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr);
+      
+}
+
+.grid-table>.grid-title
+{
+    border-bottom: 1px double #dee2e6;
+}
+
+.grid-table>.grid-subtitle
+{
+    grid-column: span 1;
+    grid-row: span 5;
+    vartical-align: center;
+}
+
+.grid-table>div
+{
+    padding: 0.75em;
+    vartical-align: center;
+    border-top: 1px solid #dee2e6;
+}
+
+.grid-table>.grid-item:nth-of-type(4n+1),
+.grid-table>.grid-item:nth-of-type(4n+2)
+{
+  background-color: rgba(0,0,0,.05);
+}
+
+</style>
+
 # 目次
 
 <!-- TOC -->
@@ -967,7 +1003,7 @@ SPECIALUNIT_MISSILE|ミサイル|潜水艦など
 {{%/div%}}{{%/div%}}
 
 ## ユニットAI
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
+{{% div class="row justify-content-center" %}}{{% div class="col-lg-10" %}}
 {.table .table-striped}
 ユニットAIタイプキー|ユニットAI|備考
 ---|---|---
@@ -1016,38 +1052,41 @@ UNITAI_ATTACK_CITY_LEMMING|都市自爆攻撃AI
 
 
 # 社会制度
-<table class="table table-striped" style="word-wrap:break-word;">
-<tr><th>体制キー</th><th>政治体制</th><th>社会制度キー</th><th>社会制度</th></tr>
-<tr><td rowspan=5>CIVICOPTION_GOVERNMENT</td><td rowspan=5>政治体制</td><td>CIVIC_DESPOTISM</td><td>専制政治</td></tr>
-<tr><td>CIVIC_HEREDITARY_RULE</td><td>世襲統治</td></tr>
-<tr><td>CIVIC_REPRESENTATION</td><td>代議制</td></tr>
-<tr><td>CIVIC_POLICE_STATE</td><td>警察国家</td></tr>
-<tr><td>CIVIC_UNIVERSAL_SUFFRAGE</td><td>普通選挙</td></tr>
-<tr><td rowspan=5>CIVICOPTION_LEGAL</td><td rowspan=5>法制度</td>
-<td>CIVIC_BARBARISM</td><td>無秩序</td></tr>
-<tr><td>CIVIC_VASSALAGE</td><td>主従制</td></tr>
-<tr><td>CIVIC_BUREAUCRACY</td><td>官僚制</td></tr>
-<tr><td>CIVIC_NATIONHOOD</td><td>国民国家</td></tr>
-<tr><td>CIVIC_FREE_SPEECH</td><td>表現の自由</td></tr>
-<tr><td rowspan=5>CIVICOPTION_LABOR</td><td rowspan=5>労働制度</td>
-<td>CIVIC_TRIBALISM</td><td>原始部族社会</td></tr>
-<tr><td>CIVIC_SLAVERY</td><td>奴隷制</td></tr>
-<tr><td>CIVIC_SERFDOM</td><td>農奴制</td></tr>
-<tr><td>CIVIC_CASTE_SYSTEM</td><td>カースト制</td></tr>
-<tr><td>CIVIC_EMANCIPATION</td><td>奴隷解放</td></tr>
-<tr><td rowspan=5>CIVICOPTION_ECONOMY</td><td rowspan=5>経済制度</td>
-<td>CIVIC_DECENTRALIZATION</td><td>地方分権</td></tr>
-<tr><td>CIVIC_MERCANTILISM</td><td>重商主義</td></tr>
-<tr><td>CIVIC_FREE_MARKET</td><td>自由市場</td></tr>
-<tr><td>CIVIC_STATE_PROPERTY</td><td>国有化</td></tr>
-<tr><td>CIVIC_ENVIRONMENTALISM</td><td>環境保護主義</td></tr>
-<tr><td rowspan=5>CIVICOPTION_RELIGION</td><td rowspan=5>宗教制度</td>
-<td>CIVIC_PAGANISM</td><td>精霊崇拝</td></tr>
-<tr><td>CIVIC_ORGANIZED_RELIGION</td><td>宗教の組織化</td></tr>
-<tr><td>CIVIC_THEOCRACY</td><td>神権政治</td></tr>
-<tr><td>CIVIC_PACIFISM</td><td>平和主義</td></tr>
-<tr><td>CIVIC_FREE_RELIGION</td><td>信教の自由</td></tr>
-</table>
+<div class="grid-table table table-striped">
+<div class="grid-title">体制キー</div>
+<div class="grid-title">政治体制</div>
+<div class="grid-title">社会制度キー</div>
+<div class="grid-title">社会制度</div>
+
+<div class="grid-subtitle">CIVICOPTION_GOVERNMENT</div>
+<div class="grid-subtitle">政治体制</div>
+<div class="grid-item">CIVIC_DESPOTISM</div>
+<div class="grid-item">専制政治</div>
+<div class="grid-item">CIVIC_HEREDITARY_RULE</div>
+<div class="grid-item">世襲統治</div>
+<div class="grid-item">CIVIC_REPRESENTATION</div>
+<div class="grid-item">代議制</div>
+<div class="grid-item">CIVIC_POLICE_STATE</div>
+<div class="grid-item">警察国家</div>
+<div class="grid-item">CIVIC_UNIVERSAL_SUFFRAGE</div>
+<div class="grid-item">普通選挙</div>
+
+
+<div class="grid-subtitle">CIVICOPTION_LEGAL</div>
+<div class="grid-subtitle">法制度</div>
+<div class="grid-item">CIVIC_BARBARISM</div>
+<div class="grid-item">無秩序</div>
+<div class="grid-item">CIVIC_VASSALAGE</div>
+<div class="grid-item">主従制</div>
+<div class="grid-item">CIVIC_BUREAUCRACY</div>
+<div class="grid-item">官僚制</div>
+<div class="grid-item">CIVIC_NATIONHOOD</div>
+<div class="grid-item">国民国家</div>
+<div class="grid-item">CIVIC_FREE_SPEECH</div>
+<div class="grid-item">表現の自由</div>
+
+</div>
+
 
 # 志向
 {{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
