@@ -1355,4 +1355,16 @@ FLAVOR_GROWTH|成長
 FLAVOR_ESPIONAGE|諜報
 {{%/div%}}{{%/div%}}
 
-
+# 時代
+{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
+{.table .table-striped}
+時代キー|時代
+---|---
+ERA_ANCIENT|古代
+ERA_CLASSICAL|古典時代
+ERA_MEDIEVAL|中世
+ERA_RENAISSANCE|ルネサンス時代
+ERA_INDUSTRIAL|工業化時代
+ERA_MODERN|現代
+ERA_FUTURE|未来
+{{%/div%}}{{%/div%}}
