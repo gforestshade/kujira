@@ -22,12 +22,35 @@
     </item>
     
     <item>
+      <title>CIV4LeaderHeadInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/</link>
+      <pubDate>Fri, 04 May 2018 16:32:36 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4LeaderHeadInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4leaderheadinfos&#34;&gt;&amp;lt;Civ4LeaderHeadInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;leaderheadinfo&#34;&gt;&amp;lt;LeaderHeadInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、指導者の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;LeaderHeadInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>XMLキー一覧</title>
       <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
-      <description>目次 文明 指導者 技術 建造物 太古 古典 中世・ルネサンス 工業化時代 現代・未来 宗教系 国家遺産 世界遺産 その他 プロジェクト ユニット 動物 非戦闘系 白兵・火器 弓</description>
+      <description>.grid-table { display: grid; grid-template-columns:3fr 2fr 3fr 2fr; // minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr); } .grid-table.grid-title { border-bottom: 1px double #dee2e6; } .grid-table.grid-subtitle { grid-column: span 1; grid-row: span 5; vartical-align: center; } .grid-tablediv { padding: 0.75em; vartical-align: center; border-top: 1px solid #dee2e6; } .grid-table.grid-item:nth-of-type(4n+1), .grid-table.grid-item:nth-of-type(4n+2) { background-color: rgba(0,0,0,.05); } 目次 文明 指導者 技術 建造物 太古 古典 中世・ルネ</description>
     </item>
     
     <item>

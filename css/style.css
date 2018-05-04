@@ -10,7 +10,20 @@ body
     background-color: #6E3C75;
 }
 
-@media(min-width:800px)
+@media(min-width:1281px)
+{
+    #whole
+    {
+        display: grid;
+        grid-template:
+        ".     AAAAA BBBBB .    " 1fr
+        "CCCCC CCCCC CCCCC CCCCC" 1.5em
+        / 1fr  300px minmax(650px,10fr)   1fr;
+        justify-content: center;
+    }
+}
+
+@media(min-width:960px) and (max-width:1280px)
 {
     #whole
     {
@@ -18,12 +31,12 @@ body
         grid-template:
         "AAAAA  BBBBB" 1fr
         "CCCCC  CCCCC" 1.5em
-        / 300px minmax(300px, 1000px);
+        / 300px 650px;
         justify-content: center;
     }
 }
 
-@media(max-width:799px)
+@media(max-width:959px)
 {
     .leftbar {
         display: none;
@@ -56,6 +69,11 @@ body
 
 .centerbar {
     grid-area: BBBBB;
+}
+
+#contentinfo
+{
+    grid-area: CCCCC;
 }
 
 h1.article-title
@@ -137,6 +155,11 @@ img {
   border-style: double;
 }
 
+.article>h1 + h3,
+.article>h2 + h3
+{
+    margin-top: 2em;
+}
 
 .article .subnote {
     //max-width: 70%;
@@ -204,4 +227,16 @@ img {
 .article table:not(.table) th
 {
     border: 1px solid #333;
+}
+
+.article .example
+{
+    padding-left: 1em; 
+    border-left: 3px dotted #c6b6be;
+    font-size: smaller;
+}
+
+.article .example>p
+{
+    margin-bottom: .3em;
 }

@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-02-04",
     "description": "",
-    "wordCount": 700
+    "wordCount": 756
   }
 </script>
 
@@ -201,6 +201,8 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
+      
     </div>
     <div class="card-footer p-2"></div>
   </div>
@@ -295,7 +297,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-02-04">2018-02-04 00:00</time></p>
           
-          <p>700  Words</p>
+          <p>756  Words</p>
           
           
           <p>
@@ -371,10 +373,10 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
 <p>(30行目くらい)</p>
 
 <pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここから
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
 PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
 PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここまで
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
 ## Uncomment to have newly compiled dlls copied to your mod's Assets directory
 YOURMOD=..
 </code></pre>
@@ -383,7 +385,7 @@ YOURMOD=..
 
 <pre><code class="language-makefile">#### INCLUDES ####
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program File2s (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
+GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
 </code></pre>
 
@@ -422,9 +424,16 @@ pause
 
 <p>Enjoy!</p>
 
-<h2 id="付録">付録</h2>
+<h1 id="付録">付録</h1>
 
 <p>今回変更したファイルの<a href="https://gforestshade.github.io/kujira/src/howtocompile_diff.zip">差分</a></p>
+
+<h1 id="エラーが出た">エラーが出た</h1>
+
+<p>Microsoft Visual C++ 2010 再頒布可能パッケージがインストール済みだと、<br />
+SDKのインストールに失敗するようです。<br />
+参考：<br />
+<a href="https://support.microsoft.com/ja-jp/help/2934068/error-occurs-when-you-install-windows-sdk-for-windows-7-and-the-net-fr">https://support.microsoft.com/ja-jp/help/2934068/error-occurs-when-you-install-windows-sdk-for-windows-7-and-the-net-fr</a></p>
         </div>
         <div class="col-12">
   
