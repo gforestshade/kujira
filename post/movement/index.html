@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>移動力と移動コスト  &middot; Kujira, Civ4 Mod Blog</title>
+    <title>移動力と地形コスト  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
@@ -14,7 +14,7 @@
 <meta name="keywords" content="">
 
 
-<meta property="og:title" content="移動力と移動コスト  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:title" content="移動力と地形コスト  &middot; Kujira, Civ4 Mod Blog ">
 <meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
 <meta property="og:url" content="https://gforestshade.github.io/kujira/post/movement/" />
 <meta property="og:locale" content="ja-JP">
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="移動力と移動コスト" />
+<meta name="twitter:title" content="移動力と地形コスト" />
 <meta name="twitter:description" content="" />
 <meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/movement/" />
 <meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
@@ -41,7 +41,7 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "移動力と移動コスト",
+    "headline": "移動力と地形コスト",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
@@ -237,9 +237,7 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/power/">通常電力、きたない電力</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/movement/">移動力と移動コスト</a>
-      
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/">移動力と移動コスト</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/movement/">移動力と地形コスト</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -296,7 +294,7 @@ ga('send', 'pageview');
   <div class="py-3" ></div>
 
 
-          <h1 class="article-title">移動力と移動コスト</h1>
+          <h1 class="article-title">移動力と地形コスト</h1>
         </div>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-05">2018-05-05 17:56</time></p>
@@ -346,7 +344,7 @@ BtSでは、全地形で<code>1</code>です。<br />
 
 <p>この時点で、丘陵補正がかかります。もしタイルが丘陵ならば、<code>+1</code>します。</p>
 
-<p>例：草原/丘陵/森林 -&gt; 移動コスト3</p>
+<p>例：草原/丘陵/森林 -&gt; 地形コスト3</p>
 
 <p>ユニットは、移動先の地形コストの分だけ移動力を消費します。<br />
 もし、まだ移動力が残っているようなら、そこからさらに移動/行動ができます。</p>
@@ -356,7 +354,7 @@ BtSでは、全地形で<code>1</code>です。<br />
 
 <h1 id="深みへ">深みへ</h1>
 
-<p>この移動力と移動コスト、実は内部では1/60単位まで計算されています。<br />
+<p>この移動力と地形コスト、実は内部では1/60単位まで計算されています。<br />
 そこで、移動力に<code>60</code>を掛けたものを、<strong>内部移動力</strong>、<br />
 地形コストに<code>60</code>を掛けたものを<strong>内部地形コスト</strong>と呼ぶことにします。</p>
 
