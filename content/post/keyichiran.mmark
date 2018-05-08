@@ -1071,7 +1071,6 @@ UNITAI_ATTACK_CITY_LEMMING|都市自爆攻撃AI
 <div class="grid-item">CIVIC_UNIVERSAL_SUFFRAGE</div>
 <div class="grid-item">普通選挙</div>
 
-
 <div class="grid-subtitle">CIVICOPTION_LEGAL</div>
 <div class="grid-subtitle">法制度</div>
 <div class="grid-item">CIVIC_BARBARISM</div>
@@ -1084,6 +1083,45 @@ UNITAI_ATTACK_CITY_LEMMING|都市自爆攻撃AI
 <div class="grid-item">国民国家</div>
 <div class="grid-item">CIVIC_FREE_SPEECH</div>
 <div class="grid-item">表現の自由</div>
+
+<div class="grid-subtitle">CIVICOPTION_LABOR</div>
+<div class="grid-subtitle">労働制度</div>
+<div class="grid-item">CIVIC_TRIBALISM</div>
+<div class="grid-item">原始部族社会</div>
+<div class="grid-item">CIVIC_SLAVERY</div>
+<div class="grid-item">奴隷制</div>
+<div class="grid-item">CIVIC_SERFDOM</div>
+<div class="grid-item">農奴制</div>
+<div class="grid-item">CIVIC_CASTE_SYSTEM</div>
+<div class="grid-item">カースト制</div>
+<div class="grid-item">CIVIC_EMANCIPATION</div>
+<div class="grid-item">奴隷解放</div>
+
+<div class="grid-subtitle">CIVICOPTION_ECONOMY</div>
+<div class="grid-subtitle">経済制度</div>
+<div class="grid-item">CIVIC_DECENTRALIZATION</div>
+<div class="grid-item">地方分権</div>
+<div class="grid-item">CIVIC_MERCANTILISM</div>
+<div class="grid-item">重商主義</div>
+<div class="grid-item">CIVIC_FREE_MARKET</div>
+<div class="grid-item">自由市場</div>
+<div class="grid-item">CIVIC_STATE_PROPERTY</div>
+<div class="grid-item">国有化</div>
+<div class="grid-item">CIVIC_ENVIRONMENTALISM</div>
+<div class="grid-item">環境保護主義</div>
+
+<div class="grid-subtitle">CIVICOPTION_RELIGION</div>
+<div class="grid-subtitle">宗教制度</div>
+<div class="grid-item">CIVIC_PAGANISM</div>
+<div class="grid-item">精霊崇拝</div>
+<div class="grid-item">CIVIC_ORGANIZED_RELIGION</div>
+<div class="grid-item">宗教の組織化</div>
+<div class="grid-item">CIVIC_THEOCRACY</div>
+<div class="grid-item">神権政治</div>
+<div class="grid-item">CIVIC_PACIFISM</div>
+<div class="grid-item">平和主義</div>
+<div class="grid-item">CIVIC_FREE_RELIGION</div>
+<div class="grid-item">信教の自由</div>
 
 </div>
 
