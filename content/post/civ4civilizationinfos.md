@@ -322,7 +322,7 @@ Civ4CivilizationInfos.xmlの各項目について説明しています。
 ```
 
 ### \<FreeBuildingClasses\>
-この文明が最初に建造したときに与えられる無償の建造物を指定します。
+この文明が最初に都市を建造したときに与えられる無償の建造物を指定します。
 
 値：\<FreeBuildingClass\>のリスト
 
