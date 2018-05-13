@@ -1,7 +1,9 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
 /* kujira */
 body
 {
-    font-family: "Roboto", "Open Sans", "Sans Serif", "Georgia", "Times New Roman", sans-serif;
+    font-family: "Roboto", "NotoSansjp-light", "Open Sans", "Sans Serif", "メイリオ", sans-serif;
     font-size: 1rem;
 }
 
@@ -18,7 +20,7 @@ body
         grid-template:
         ".     AAAAA BBBBB .    " 1fr
         "CCCCC CCCCC CCCCC CCCCC" 1.5em
-        / 1fr  300px minmax(650px,10fr)   1fr;
+        / 1fr  minmax(300px,max-content) minmax(650px,10fr)   1fr;
         justify-content: center;
     }
 }
@@ -31,7 +33,7 @@ body
         grid-template:
         "AAAAA  BBBBB" 1fr
         "CCCCC  CCCCC" 1.5em
-        / 300px 650px;
+        / minmax(300px,max-content) minmax(650px,1fr);
         justify-content: center;
     }
 }
@@ -65,6 +67,51 @@ body
 .leftbar .card .card-header a[data-toggle="collapse"]:focus
 {
     text-decoration: none;
+}
+
+.table-of-contents ul
+{
+    padding-left: 1.4em;
+    margin-bottom: 0.4em;
+}
+
+.table-of-contents ul li
+{
+    word-wrap: break-word;
+}
+
+.table-of-contents ul.toc-h1 li,
+.table-of-contents ul.toc-h2 li,
+.table-of-contents ul.toc-h3 li
+{
+    list-style: none
+}
+
+.table-of-contents ul.toc-h1 li::before
+{
+    color: #787878;
+    font-family: "Font Awesome 5 Free";
+    content: "\f15b";
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.table-of-contents ul.toc-h2 li::before
+{
+    color: #787878;
+    font-family: "Font Awesome 5 Free";
+    content: "\f15b";
+    font-weight: normal;
+    font-size: 80%;
+}
+
+.table-of-contents ul.toc-h3 li::before
+{
+    color: #787878;
+    font-family: "Font Awesome 5 Free";
+    content: "\f02b";
+    font-weight: bold;
+    font-size: 80%;
 }
 
 .centerbar {
@@ -121,7 +168,7 @@ img {
 }
 
 .article {
-    font-family: "Consolas", "Roboto", "Open Sans", "Sans Serif", "Georgia", "Times New Roman", sans-serif;
+    font-family: "Consolas", "Roboto", "NotoSansjp-light", "Open Sans", "Sans Serif", "メイリオ", sans-serif;
     line-height: 1.8;
     margin-bottom: 24px;
     background-color: #fff;
