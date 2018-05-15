@@ -36,11 +36,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
 <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/materia/bootstrap.min.css" rel="stylesheet" integrity="sha384-BJWCnw/x/9+kQsLGLQDoCX2oJg7j1LjkOfPZWtUPTJ0tn00hYIB5r9u7KnGJxFnY" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://gforestshade.github.io/kujira/css/style.css" />
 
@@ -177,6 +177,10 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/">Civ4CivilizationInfos.xml</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">Civ4CivicInfos.xml</a>
+      
     </div>
     <div class="card-footer p-2"></div>
   </div>
@@ -236,6 +240,14 @@ ga('send', 'pageview');
     <div class="card-footer p-2"></div>
   </div>
 </div>
+
+
+
+ 
+
+
+
+
 
 
 
@@ -415,6 +427,153 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
   
 </div>
 
+      </div>
+
+          
+        
+          
+                  <div class="card card-body my-5">
+        <div class="article-title">
+          
+
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="https://gforestshade.github.io/kujira/post/civ4civicinfos/" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+  <div class="py-3" ></div>
+
+
+          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">Civ4CivicInfos.xml</a></h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="2018-05-16">2018-05-16 01:16</time></p>
+          
+          <p>10378  Words</p>
+
+          
+          <p>
+            カテゴリ：
+            
+            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/xml">XML</a>
+            
+          </p>
+          
+
+          
+          
+        </div>
+        <div class="article">
+          
+            
+              <h1 id="はじめに">はじめに</h1>
+
+<p>Civ4CivicInfos.xmlの各項目について説明しています。</p>
+
+<h1 id="間違えやすい設定項目">間違えやすい設定項目</h1>
+
+<ul>
+<li>指導者の好む社会制度の設定は、各指導者のところにあります。<br />
+<br /></li>
+</ul>
+
+<h1 id="解説">解説</h1>
+
+<h2 id="civ4civicinfos">&lt;Civ4CivicInfos&gt;</h2>
+
+<p>ルートタグです。名前空間として、<code>&quot;x-schema:CIV4GameInfoSchema.xml&quot;</code>を指定します。</p>
+
+<h2 id="civicinfo">&lt;CivicInfo&gt;</h2>
+
+<p>このタグ1つが、社会制度の定義1つと対応しています。</p>
+
+<p>以下&lt;CivicInfo&gt;の中身です。</p>
+
+<p></p>
+            
+          
+        </div>
+        <p class="mt-4">
+          <a href="https://gforestshade.github.io/kujira/post/civ4civicinfos/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
+        </p>
+      </div>
+
+          
+        
+          
+                  <div class="card card-body my-5">
+        <div class="article-title">
+          
+
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="https://gforestshade.github.io/kujira/post/glossary/" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+  <div class="py-3" ></div>
+
+
+          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a></h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="2018-05-10">2018-05-10 00:00</time></p>
+          
+          <p>1350  Words</p>
+
+          
+          <p>
+            カテゴリ：
+            
+            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/xml">XML</a>
+            
+          </p>
+          
+
+          
+          
+        </div>
+        <div class="article">
+          
+            
+              ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ
+            
+          
+        </div>
+        <p class="mt-4">
+          <a href="https://gforestshade.github.io/kujira/post/glossary/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
+        </p>
       </div>
 
           
@@ -673,7 +832,7 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-04-16">2018-04-16 00:00</time></p>
           
-          <p>9822  Words</p>
+          <p>9671  Words</p>
 
           
           <p>
@@ -690,74 +849,12 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
         <div class="article">
           
             
-              .grid-table { display: grid; grid-template-columns:3fr 2fr 3fr 2fr; // minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr); } .grid-table.grid-title { border-bottom: 1px double #dee2e6; } .grid-table.grid-subtitle { grid-column: span 1; grid-row: span 5; vartical-align: center; } .grid-tablediv { padding: 0.75em; vartical-align: center; border-top: 1px solid #dee2e6; } .grid-table.grid-item:nth-of-type(4n+1), .grid-table.grid-item:nth-of-type(4n+2) { background-color: rgba(0,0,0,.05); } 目次 文明 指導者 技術 建造物 太古 古典 中世・ルネ
+              .grid-table { display: grid; grid-template-columns:3fr 2fr 3fr 2fr; // minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr); } .grid-table.grid-title { border-bottom: 1px double #dee2e6; } .grid-table.grid-subtitle { grid-column: span 1; grid-row: span 5; vartical-align: center; } .grid-tablediv { padding: 0.75em; vartical-align: center; border-top: 1px solid #dee2e6; } .grid-table.grid-item:nth-of-type(4n+1), .grid-table.grid-item:nth-of-type(4n+2) { background-color: rgba(0,0,0,.05); } 文明 文明キー 文明 CIVILIZATION_AMERICA アメリカ CIVILIZATION_ARABIA アラブ CIVILIZATION_AZTEC アステ
             
           
         </div>
         <p class="mt-4">
           <a href="https://gforestshade.github.io/kujira/post/keyichiran/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
-        </p>
-      </div>
-
-          
-        
-          
-                  <div class="card card-body my-5">
-        <div class="article-title">
-          
-
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-          <a href="https://gforestshade.github.io/kujira/post/glossary/" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
-          </a>
-          
-            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
-          
-      
-    
-      
-    
-  
-  <div class="py-3" ></div>
-
-
-          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a></h1>
-        </div>
-        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
-          <p><time datetime="2018-03-11">2018-03-11 00:00</time></p>
-          
-          <p>450  Words</p>
-
-          
-
-          
-          <p>
-            タグ：
-            
-            <a class="btn btn-sm btn-outline-info" href="https://gforestshade.github.io/kujira/tags/xml">XML</a>
-            
-          </p>
-          
-          
-        </div>
-        <div class="article">
-          
-            
-              ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ
-            
-          
-        </div>
-        <p class="mt-4">
-          <a href="https://gforestshade.github.io/kujira/post/glossary/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
         </p>
       </div>
 
@@ -866,7 +963,7 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-03-07">2018-03-07 00:00</time></p>
           
-          <p>26743  Words</p>
+          <p>26470  Words</p>
 
           
           <p>
@@ -1790,95 +1887,6 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         </div>
         <p class="mt-4">
           <a href="https://gforestshade.github.io/kujira/post/readgetunitlist/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
-        </p>
-      </div>
-
-          
-        
-          
-                  <div class="card card-body my-5">
-        <div class="article-title">
-          
-
-  
-    
-    
-      
-    
-      
-    
-      
-          <a href="https://gforestshade.github.io/kujira/post/secondpy5/" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid border rounded" alt="Generic responsive image">
-          </a>
-          
-            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
-          
-      
-    
-      
-    
-      
-    
-  
-  <div class="py-3" ></div>
-
-
-          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/secondpy5/">それからのPython 5</a></h1>
-        </div>
-        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
-          <p><time datetime="2017-11-04">2017-11-04 00:00</time></p>
-          
-          <p>4394  Words</p>
-
-          
-          <p>
-            カテゴリ：
-            
-            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/python">Python</a>
-            
-          </p>
-          
-
-          
-          <p>
-            タグ：
-            
-            <a class="btn btn-sm btn-outline-info" href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
-            
-            <a class="btn btn-sm btn-outline-info" href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
-            
-          </p>
-          
-          
-        </div>
-        <div class="article">
-          
-            
-              <h1 id="はじめに">はじめに</h1>
-
-<ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき<br /></li>
-<li>もっとクラスをつかう<br /></li>
-<li>変数のスコープ<br />
-<br /></li>
-</ul>
-
-<h1 id="インスタンスの中のインスタンス">インスタンスの中のインスタンス</h1>
-
-<p>インスタンス変数にクラス型の変数を使う例を見てみましょう。</p>
-
-<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br />
-それを用いて<br />
-《建造された都市で生産されたユニットだけでなく、<br />
-その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br />
-をつくることです。<br />
-</p>
-            
-          
-        </div>
-        <p class="mt-4">
-          <a href="https://gforestshade.github.io/kujira/post/secondpy5/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
         </p>
       </div>
 
