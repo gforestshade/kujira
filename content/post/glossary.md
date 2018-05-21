@@ -1,5 +1,5 @@
 +++
-date = "2018-05-10"
+date = "2018-05-21"
 title = "用語集"
 banner = "photo_ice1"
 categories = ["XML"]
@@ -101,4 +101,9 @@ comment = true
 **人口係数** = 12% + \[[社会制度人口係数]({{<ref "civ4civicinfos">}}#ifreemilitaryunitspopulationpercent)\]
 (12%:最低保証人口係数(軍事)。GlobalDefines.xmlで変更可能)
 
----
+## 経験値
+
+昇進を`i`個取るための必要経験値は以下の式によります。
+**必要経験値** = (i^2+1) * \[[志向補正]({{<ref "civ4traitinfos">}}#ilevelexperiencemodifier)\]
+
+無償の昇進は数に含まれません(その意味での無償です)。
