@@ -1,10 +1,12 @@
 +++
 title = "License"
 date = "2017-07-06"
+lastupdate = "2018-05-21"
+copyright = "No rights reserved in this page."
 +++
 
 # About License
-本文の内容は特記のない限りCC BY 4.0 国際 ライセンス に従って利用ができます。
+本文の内容は特記のない限り[CC BY 4.0 国際 ライセンス](https://creativecommons.org/licenses/by/4.0/deed.ja) に従って利用ができます。
 コード片は特記のない限りMIT Licence(下記)に従っての利用またはCiv4のMODに使用する場合に限り
 無断・無表示での利用および無制限の改変ができるものとします。
 本文の構成上、私が書いたものではないソースコードを引用して説明している場合があります。(BtSのAssetsのソースコードなど)
@@ -24,9 +26,10 @@ date = "2017-07-06"
 - 載っているコードをあなたのMODに使う分には連絡・謝辞表示などは一切不要だよ
 - ただし無保証。私はサポートする義務等を負わないよ
 - 本編の記事自体を転載したい場合も自由にやっていいよ
-- その場合は最低限`Copyright (c) 2017, gforest_shade; licenced by CC-BY-4.0`の文言を入れてね
+- その場合は最低限`Copyright (c) 2017-2018, gforest_shade; licenced by CC-BY-4.0`の文言を入れてね
 - Wikiや掲示板にも無断転載していいよ、ただし上記の表示を入れるのと、
 そのためにフォーマットを整えたりなどの改変をしたときはその旨を明示してね
+一例「元記事:\[元記事へのリンク\] Wikiへの転載のため、Wiki記法への変換とバナー画像の削除をしました。 Copyright (c) 2017-2018, gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)」
 - ただし無保証。私はサポートする義務等を負わないよ
 
 # COPYING

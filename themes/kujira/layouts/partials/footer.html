@@ -1,8 +1,8 @@
 
 <footer id="contentinfo" class="footer">
-  <address id="about" class="vcard body">
-    &copy; <a href="{{.Site.BaseURL}}">{{.Site.Title}}</a>
-  </address><!-- /#about -->
+  <address id="about" class="vcard body ml-2">
+     <a href="{{.Site.BaseURL}}">{{.Site.Title}}</a> {{ with .Page.Params.copyright }} {{ . }} {{ else }} &copy; {{ now.Format "2006" }} {{ with $.Site.Copyright }}{{ . | markdownify}}{{ end }}{{ end }}
+  </address>
 </footer><!-- /#contentinfo -->
 
 </div><!-- container -->
