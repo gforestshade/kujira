@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-16",
     "description": "",
-    "wordCount": 10378
+    "wordCount": 10425
   }
 </script>
 
@@ -205,11 +205,13 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/">Civ4CivilizationInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a>
-      
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">Civ4CivicInfos.xml</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a>
+      
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4techinfos/">Civ4TechInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4traitinfos/">Civ4TraitInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -2823,7 +2825,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-16">2018-05-16 01:16</time></p>
           
-          <p>10378  Words</p>
+          <p>10425  Words</p>
           
           
 
@@ -3640,7 +3642,7 @@ BtSでは、この属性を持つ社会制度は官僚制です。</p>
 <p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br />
 BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br />
 ここの指定によって〈コイン〉を増やしたり、<br />
-〈パン〉や〈ハンマー〉を産出させることもできます。</p>
+〈パン〉や〈ハンマー〉を産出させたりできます。</p>
 
 <p>どれも修正しない場合、空タグにします。<br />
 BtSでは、この属性を持つ社会制度はありません。</p>
@@ -3652,7 +3654,7 @@ BtSでは、この属性を持つ社会制度はありません。</p>
 <p>例１：<br />
 &lt;TradeYieldModifiers /&gt;</p>
 
-<p>例２：+10%〈パン〉, +10%〈ハンマー〉, +30%〈コイン〉 (交易路収入から)</p>
+<p>例２：交易路により〈パン〉+10%, 〈ハンマー〉+10%, 〈コイン〉+30%</p>
 
 <pre><code class="language-txt">&lt;TradeYieldModifiers&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
@@ -3660,6 +3662,8 @@ BtSでは、この属性を持つ社会制度はありません。</p>
     &lt;iYield&gt;30&lt;/iYield&gt;
 &lt;/TradeYieldModifiers&gt;
 </code></pre>
+
+<p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
 
 <h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
 
@@ -3720,7 +3724,7 @@ BtSでは、この属性を持つ社会制度はありません。</p>
 
 <h3 id="specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</h3>
 
-<p>専門家の出力に、一律で〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉のいずれかを加えます。</p>
+<p>専門家の出力に、一律で〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を加えます。</p>
 
 <p>この機能を使わない場合、空タグにします。<br />
 BtSでは、この属性を持つ社会制度は代議制です。</p>

@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Civ4TraitInfos.xml  &middot; Kujira, Civ4 Mod Blog</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="Civ4TraitInfos.xml  &middot; Kujira, Civ4 Mod Blog ">
+<meta property="og:site_name" content="Kujira, Civ4 Mod Blog"/>
+<meta property="og:url" content="https://gforestshade.github.io/kujira/post/civ4traitinfos/" />
+<meta property="og:locale" content="ja-JP">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-05-21T23:37:10&#43;09:00" />
+<meta property="og:article:modified_time" content="2018-05-21T23:37:10&#43;09:00" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Civ4TraitInfos.xml" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://gforestshade.github.io/kujira/post/civ4traitinfos/" />
+<meta name="twitter:domain" content="https://gforestshade.github.io/kujira/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Civ4TraitInfos.xml",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2018-05-21",
+    "description": "",
+    "wordCount": 3572
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://gforestshade.github.io/kujira/post/civ4traitinfos/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
+<link href="https://gforestshade.github.io/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/materia/bootstrap.min.css" rel="stylesheet" integrity="sha384-BJWCnw/x/9+kQsLGLQDoCX2oJg7j1LjkOfPZWtUPTJ0tn00hYIB5r9u7KnGJxFnY" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://gforestshade.github.io/kujira/css/style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-111798374-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    </head>
+
+    <body id="index" class="archive">
+      <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
+        <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+          &#9776;
+        </button>
+        <div class="mx-md-4"></div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="nav navbar-nav">
+            
+            
+              <a class="nav-item nav-link menu-item mx-md-2" href="https://gforestshade.github.io/kujira/post/hajimeni/">
+              <i class='fa fa-star'></i>
+              <span>はじめに</span>
+              </a>
+            
+              <a class="nav-item nav-link menu-item mx-md-2" href="https://gforestshade.github.io/kujira/page/license/">
+              <i class='fa fa-file'></i>
+              <span>LICENSE</span>
+              </a>
+            
+          </div>
+        </div>
+      </nav>
+      <div class="m-3"></div>
+
+<div id="whole">
+  <div class="leftbar">
+    
+
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" href="#collist_0" role="button">目次</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_0" class="collapse show">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/hajimeni/">はじめに</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a data-toggle="collapse" href="#collist_1" role="button">Python</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_1" class="collapse">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted1/">はじめてのPythonMOD 1</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted2/">はじめてのPythonMOD 2</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted3/">はじめてのPythonMOD 3</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted4/">はじめてのPythonMOD 4</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted5/">はじめてのPythonMOD 5</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted6/">はじめてのPythonMOD 6</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/getstarted7/">はじめてのPythonMOD 7</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy1/">それからのPython 1</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy2/">それからのPython 2</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy3/">それからのPython 3</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy4/">それからのPython 4</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy5/">それからのPython 5</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy6/">それからのPython 6</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy7/">それからのPython 7</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy8/">それからのPython 8</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy9/">それからのPython 9</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/secondpy10/">それからのPython 10</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" href="#collist_2" role="button">XML</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_2" class="collapse show">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4unitinfos/">CIV4UnitInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4unitclassinfos/">CIV4UnitClassInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/">Civ4CivilizationInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">Civ4CivicInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/glossary/">用語集</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4techinfos/">Civ4TechInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4traitinfos/">Civ4TraitInfos.xml</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a data-toggle="collapse" href="#collist_3" role="button">C&#43;&#43;</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_3" class="collapse">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/howtocompile/">CvGameCoreDll.dllの作り方</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a data-toggle="collapse" href="#collist_4" role="button">コラム</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_4" class="collapse">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/power/">通常電力、きたない電力</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/movement/">移動力と地形コスト</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/irrigation/">灌漑</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+<div class="card m-3">
+  <div class="card-header" role="tab">
+    
+    <h5 class="mb-0"><a data-toggle="collapse" href="#collist_5" role="button">MMD_to_CIV4</a></h5>
+  </div>
+  <div role="tabpanel" id="collist_5" class="collapse">
+    <div class="list-group list-group-flush">
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/mmd_to_nif/">MMDモデルをCiv4に登場させたい</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/nifanimation/">MMDモデルをCiv4上で動かしたい</a>
+      
+    </div>
+    <div class="card-footer p-2"></div>
+  </div>
+</div>
+
+
+
+ 
+
+
+
+
+
+
+<div class="table-of-contents toc bd-callout rounded border border-secondary m-3 p-2">
+    
+    <h4 class="text-muted">目次</h4>
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">
+                    はじめに
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#%e9%96%93%e9%81%95%e3%81%88%e3%82%84%e3%81%99%e3%81%84%e9%a0%85%e7%9b%ae">
+                    間違えやすい項目
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#%e5%86%85%e5%ae%b9">
+                    内容
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#civ4traitinfos">
+                    Civ4TraitInfos
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#traitinfo">
+                    TraitInfo
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#type">
+                    Type
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#description">
+                    Description
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#shortdescription">
+                    ShortDescription
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#ihealth">
+                    iHealth
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#ihappiness">
+                    iHappiness
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#imaxanarchy">
+                    iMaxAnarchy
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#iupkeepmodifier">
+                    iUpkeepModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#ilevelexperiencemodifier">
+                    iLevelExperienceModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#igreatpeopleratemodifier">
+                    iGreatPeopleRateModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#igreatgeneralratemodifier">
+                    iGreatGeneralRateModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#idomesticgreatgeneralratemodifier">
+                    iDomesticGreatGeneralRateModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#imaxglobalbuildingproductionmodifier">
+                    iMaxGlobalBuildingProductionModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#imaxteambuildingproductionmodifier">
+                    iMaxTeamBuildingProductionModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#imaxplayerbuildingproductionmodifier">
+                    iMaxPlayerBuildingProductionModifier
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#extrayieldthresholds">
+                    ExtraYieldThresholds
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#tradeyieldmodifiers">
+                    TradeYieldModifiers
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#commercechanges">
+                    CommerceChanges
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#commercemodifiers">
+                    CommerceModifiers
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#freepromotions">
+                    FreePromotions
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#promotiontype">
+                    PromotionType
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#bfreepromotion">
+                    bFreePromotion
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#freepromotionunitcombats">
+                    FreePromotionUnitCombats
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#unitcombattype">
+                    UnitCombatType
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+        
+        
+            
+                
+                
+                
+                    <ul class="toc-h1">
+                
+                    <ul class="toc-h2">
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                
+                
+                
+                
+                <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#bfreepromotionunitcombat">
+                    bFreePromotionUnitCombat
+                </a></li>
+                
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+                    </ul>
+                
+            
+        
+    
+</div>
+
+
+
+
+  </div>
+  <div class="centerbar">
+    <div class="container-fluid">
+            <div class="card card-body my-3">
+        <div class="article-title">
+          
+
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+  <div class="py-3" ></div>
+
+
+          <h1 class="article-title">Civ4TraitInfos.xml</h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="2018-05-21">2018-05-21 23:37</time></p>
+          
+          <p>3572  Words</p>
+          
+          
+
+          
+          <p>
+            カテゴリ：
+            
+            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/xml">XML</a>
+            
+          </p>
+          
+
+          
+        </div>
+        <div class="article">
+          <h1 id="はじめに">はじめに</h1>
+
+<p>Civ4TraitInfos.xmlの各項目について説明しています。</p>
+
+<h1 id="間違えやすい項目">間違えやすい項目</h1>
+
+<p>建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。<br />
+建造物のページの<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#productiontraits">&lt;ProductionTraits&gt;</a>と<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#happinesstraits">&lt;HappinessTraits&gt;</a>も参照してください。</p>
+
+<h1 id="内容">内容</h1>
+
+<h2 id="civ4traitinfos">&lt;Civ4TraitInfos&gt;</h2>
+
+<p>ルートタグです。名前空間として、<code>&quot;x-schema:CIV4CivilizationsSchema.xml&quot;</code>を指定します。</p>
+
+<h2 id="traitinfo">&lt;TraitInfo&gt;</h2>
+
+<p>このタグ1つが、文明の定義1つと対応しています。</p>
+
+<p>以下&lt;TraitInfo&gt;の中身です。</p>
+
+<p></p>
+
+<h3 id="type">&lt;Type&gt;</h3>
+
+<p>この志向の志向キーを定義します。<br />
+他と被らなければなんでも構いませんが、TRAIT_英語名 にするのが無難です。</p>
+
+<p>値：志向キー</p>
+
+<p>例：<br />
+&lt;Type&gt;TRAIT_PROTECTIVE&lt;/Type&gt;</p>
+
+<h3 id="description">&lt;Description&gt;</h3>
+
+<p>この志向の名称を指定します。</p>
+
+<p>値：テキストキー</p>
+
+<p>例：「防衛志向」<br />
+&lt;Description&gt;TXT_KEY_TRAIT_PROTECTIVE&lt;/Description&gt;</p>
+
+<h3 id="shortdescription">&lt;ShortDescription&gt;</h3>
+
+<p>この文明の略称を指定します。<br />
+英語版では3文字、日本語版では1文字の略称を指定します。</p>
+
+<p>値：テキストキー</p>
+
+<p>例：(日)「防」 (英)&ldquo;Pro&rdquo;<br />
+&lt;ShortDescription&gt;TXT_KEY_TRAIT_PROTECTIVE_SHORT&lt;/ShortDescription&gt;</p>
+
+<h3 id="ihealth">&lt;iHealth&gt;</h3>
+
+<p>この志向を持つ指導者は、全都市に追加の〈衛生〉+nを得ます。</p>
+
+<p>負の数を指定することもでき、その場合〈不衛生〉が追加されます。<br />
+BtSでは、この属性を持つのは拡張志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iHealth&gt;0&lt;/iHealth&gt;</p>
+
+<p>例２：全都市に〈衛生〉+2<br />
+&lt;iHealth&gt;2&lt;/iHealth&gt;</p>
+
+<h3 id="ihappiness">&lt;iHappiness&gt;</h3>
+
+<p>この志向を持つ指導者は、全都市に追加の〈満足〉+nを得ます。</p>
+
+<p>負の数を指定することもでき、その場合〈不満〉が追加されます。<br />
+BtSでは、この属性を持つのはカリスマ志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iHappiness&gt;0&lt;/iHappiness&gt;</p>
+
+<p>例２：全都市に〈満足〉+1<br />
+&lt;iHappiness&gt;1&lt;/iHappiness&gt;</p>
+
+<h3 id="imaxanarchy">&lt;iMaxAnarchy&gt;</h3>
+
+<p>革命にかかるターン数を制限します。<br />
+ここに0以上の整数nを指定した場合、<br />
+この志向を持つ指導者は、無政府状態のターン数上限がnターンになります。<br />
+とくに<code>0</code>を指定したとき、無政府状態がなくなります。</p>
+
+<p>無政府状態ターンに影響を及ぼさない普通の志向の場合、負の整数を指定します。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iMaxAnarchy&gt;-1&lt;/iMaxAnarchy&gt;</p>
+
+<p>例２：無政府状態0ターン<br />
+&lt;iMaxAnarchy&gt;0&lt;/iMaxAnarchy&gt;</p>
+
+<h3 id="iupkeepmodifier">&lt;iUpkeepModifier&gt;</h3>
+
+<p>社会制度の維持費に対する修正率を指定します。<br />
+この志向を持つ指導者は、社会制度の維持費が+n%されます。</p>
+
+<p>BtSでは、この志向を持つのは組織志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iUpkeepModifier&gt;0&lt;/iUpkeepModifier&gt;</p>
+
+<p>例２：社会制度の維持管理費-50%<br />
+&lt;iUpkeepModifier&gt;-50&lt;/iUpkeepModifier&gt;</p>
+
+<h3 id="ilevelexperiencemodifier">&lt;iLevelExperienceModifier&gt;</h3>
+
+<p>ユニットのレベルアップに必要な経験値に対する修正率を指定します。<br />
+必要経験値については<a href="https://gforestshade.github.io/kujira/post/glossary/#経験値">用語集</a>も参照してください。</p>
+
+<p>BtSでは、この志向を持つのはカリスマ志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iLevelExperienceModifier&gt;0&lt;/iLevelExperienceModifier&gt;</p>
+
+<p>例２：レベルアップに必要な経験値-25%<br />
+&lt;iLevelExperienceModifier&gt;-25&lt;/iLevelExperienceModifier&gt;</p>
+
+<h3 id="igreatpeopleratemodifier">&lt;iGreatPeopleRateModifier&gt;</h3>
+
+<p>全都市の偉人ポイントへの修正率を指定します。<br />
+この志向を持つ指導者の都市では偉人ポイントの産出が+n%されます。<br />
+負の値も指定できます。</p>
+
+<p>特に偉人ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つのは哲学志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iGreatPeopleRateModifier&gt;0&lt;/iGreatPeopleRateModifier&gt;</p>
+
+<p>例２：偉人出生率+100%<br />
+&lt;iGreatPeopleRateModifier&gt;100&lt;/iGreatPeopleRateModifier&gt;</p>
+
+<h3 id="igreatgeneralratemodifier">&lt;iGreatGeneralRateModifier&gt;</h3>
+
+<p>大将軍ポイントへの修正率を指定します。<br />
+この志向を持つ指導者の都市では、<br />
+全ての戦闘において大将軍ポイントの産出が+n%されます。<br />
+負の値も指定できます。</p>
+
+<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つのは帝国主義志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iGreatGeneralRateModifier&gt;0&lt;/iGreatGeneralRateModifier&gt;</p>
+
+<p>例２：大将軍出現確率+100%<br />
+&lt;iGreatGeneralRateModifier&gt;100&lt;/iGreatGeneralRateModifier&gt;</p>
+
+<h3 id="idomesticgreatgeneralratemodifier">&lt;iDomesticGreatGeneralRateModifier&gt;</h3>
+
+<p>文化圏内の大将軍ポイントへの修正率を指定します。<br />
+この社会制度を採用している文明では、<br />
+自文化圏内で行われた戦闘において大将軍ポイントの産出が+n%されます。<br />
+負の値も指定できます。</p>
+
+<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つ社会制度はありません。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iDomesticGreatGeneralRateModifier&gt;0&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
+
+<p>例２：文化圏内に大将軍が出現する確率+50%<br />
+&lt;iDomesticGreatGeneralRateModifier&gt;50&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
+
+<h3 id="imaxglobalbuildingproductionmodifier">&lt;iMaxGlobalBuildingProductionModifier&gt;</h3>
+
+<p>世界遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
+
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つのは勤労志向です。</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iMaxGlobalBuildingProductionModifier&gt;0&lt;/iMaxGlobalBuildingProductionModifier&gt;</p>
+
+<p>例２：文化遺産の生産+50%<br />
+&lt;iMaxGlobalBuildingProductionModifier&gt;50&lt;/iMaxGlobalBuildingProductionModifier&gt;</p>
+
+<h3 id="imaxteambuildingproductionmodifier">&lt;iMaxTeamBuildingProductionModifier&gt;</h3>
+
+<p>チーム遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
+
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つのは勤労志向です。</p>
+
+<p>遺産関係の3つの属性にすべて同じ値が指定されているときに限り、説明文から効果が省略されます。(文化遺産の生産+n%に統一されます)</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iMaxTeamBuildingProductionModifier&gt;0&lt;/iMaxTeamBuildingProductionModifier&gt;</p>
+
+<p>例２：チームの文化遺産の生産+50%<br />
+&lt;iMaxTeamBuildingProductionModifier&gt;50&lt;/iMaxTeamBuildingProductionModifier&gt;</p>
+
+<h3 id="imaxplayerbuildingproductionmodifier">&lt;iMaxPlayerBuildingProductionModifier&gt;</h3>
+
+<p>国家遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
+
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+BtSでは、この属性を持つのは勤労志向です。</p>
+
+<p>遺産関係の3つの属性にすべて同じ値が指定されているときに限り、説明文から効果が省略されます。(文化遺産の生産+n%に統一されます)</p>
+
+<p>値：整数</p>
+
+<p>例１：<br />
+&lt;iMaxPlayerBuildingProductionModifier&gt;0&lt;/iMaxPlayerBuildingProductionModifier&gt;</p>
+
+<p>例２：国家遺産の生産+50%<br />
+&lt;iMaxPlayerBuildingProductionModifier&gt;50&lt;/iMaxPlayerBuildingProductionModifier&gt;</p>
+
+<h3 id="extrayieldthresholds">&lt;ExtraYieldThresholds&gt;</h3>
+
+<p>〈パン〉・〈ハンマー〉・〈コイン〉の生産を+1します。<br />
+〈パン〉・〈ハンマー〉・〈コイン〉のそれぞれに、<br />
+ここに指定した閾値以上を産出するタイルに対して、その産出値が+1されます。</p>
+
+<p>値：&lt;iExtraYieldThreshold&gt;のリスト<br />
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。</p>
+
+<hr />
+
+<p>例１：<br />
+&lt;ExtraYieldThresholds /&gt;</p>
+
+<hr />
+
+<p>例２：〈コイン〉2を産出するスクエアで〈コイン〉+1</p>
+
+<pre><code class="language-txt">&lt;ExtraYieldThresholds&gt;
+    &lt;iExtraYieldThreshold&gt;0&lt;/iExtraYieldThreshold&gt;
+    &lt;iExtraYieldThreshold&gt;0&lt;/iExtraYieldThreshold&gt;
+    &lt;iExtraYieldThreshold&gt;2&lt;/iExtraYieldThreshold&gt;
+&lt;/ExtraYieldThresholds&gt;
+</code></pre>
+
+<hr />
+
+<p>例３：<br />
+〈パン〉5を産出するスクエアで〈パン〉+1<br />
+〈ハンマー〉4を産出するスクエアで〈ハンマー〉+1<br />
+〈コイン〉3を産出するスクエアで〈コイン〉+1</p>
+
+<pre><code class="language-txt">&lt;ExtraYieldThresholds&gt;
+    &lt;iExtraYieldThreshold&gt;5&lt;/iExtraYieldThreshold&gt;
+    &lt;iExtraYieldThreshold&gt;4&lt;/iExtraYieldThreshold&gt;
+    &lt;iExtraYieldThreshold&gt;3&lt;/iExtraYieldThreshold&gt;
+&lt;/ExtraYieldThresholds&gt;
+</code></pre>
+
+<hr />
+
+<p>なお、指定できるのは閾値のみです。+1の部分を変更することはできませんし、<br />
++1させる回数を変更することもできません。</p>
+
+<h3 id="tradeyieldmodifiers">&lt;TradeYieldModifiers&gt;</h3>
+
+<p>交易路収入の〈パン〉・〈ハンマー〉・〈コイン〉への変化率を指定します。</p>
+
+<p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br />
+BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br />
+ここの指定によって〈コイン〉を増やしたり、<br />
+〈パン〉や〈ハンマー〉を産出させたりできます。</p>
+
+<p>どれも修正しない場合、空タグにします。<br />
+BtSでは、この属性を持つ志向はありません。</p>
+
+<p>値：&lt;iYield&gt;のリスト<br />
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+　　後ろの要素が必要なければ、省略しても構いません。</p>
+
+<p>例１：<br />
+&lt;TradeYieldModifiers /&gt;</p>
+
+<p>例２：交易路により〈パン〉+10%, 〈ハンマー〉+10%, 〈コイン〉+30%</p>
+
+<pre><code class="language-txt">&lt;TradeYieldModifiers&gt;
+    &lt;iYield&gt;10&lt;/iYield&gt;
+    &lt;iYield&gt;10&lt;/iYield&gt;
+    &lt;iYield&gt;30&lt;/iYield&gt;
+&lt;/TradeYieldModifiers&gt;
+</code></pre>
+
+<p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
+
+<h3 id="commercechanges">&lt;CommerceChanges&gt;</h3>
+
+<p>全都市の出力に、一律で〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を加えます。</p>
+
+<p>どれも追加しない場合、空タグにします。<br />
+BtSでは、この属性を持つのは創造志向です。</p>
+
+<p>値：&lt;iCommerce&gt;のリスト<br />
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+　　後ろの要素が必要なければ、省略しても構いません。</p>
+
+<p>例１：<br />
+&lt;CommerceChanges /&gt;</p>
+
+<p>例２：〈文化〉+2/都市</p>
+
+<pre><code class="language-txt">&lt;CommerceChanges&gt;
+    &lt;iCommerce&gt;0&lt;/iCommerce&gt;
+    &lt;iCommerce&gt;0&lt;/iCommerce&gt;
+    &lt;iCommerce&gt;2&lt;/iCommerce&gt;
+&lt;/CommerceChanges&gt;
+</code></pre>
+
+<p>なお、BtSではバグがあり、都市から〈ゴールド〉を産出させる志向を持った状態で都市を建設し「マップを再生成」すると〈ゴールド〉が積算してしまいます。注意してください。</p>
+
+<h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
+
+<p>全都市の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
+
+<p>どれも修正しない場合、空タグにします。<br />
+BtSでは、この属性を持つ志向はありません。</p>
+
+<p>値：&lt;iCommerce&gt;のリスト<br />
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+　　後ろの要素が必要なければ、省略しても構いません。</p>
+
+<p>例１：<br />
+&lt;CommerceModifiers /&gt;</p>
+
+<p>例２：〈諜報〉+25%</p>
+
+<pre><code class="language-txt">&lt;CommerceModifiers&gt;
+    &lt;iCommerce&gt;0&lt;/iCommerce&gt;
+    &lt;iCommerce&gt;0&lt;/iCommerce&gt;
+    &lt;iCommerce&gt;0&lt;/iCommerce&gt;
+    &lt;iCommerce&gt;25&lt;/iCommerce&gt;
+&lt;/CommerceModifiers&gt;
+</code></pre>
+
+<h3 id="freepromotions">&lt;FreePromotions&gt;</h3>
+
+<p>無償の昇進の種類を指定します。<br />
+ここでは、昇進の種類のみを指定します。<a href="#freepromotionunitcombats">&lt;FreePromotionUnitCombats&gt;</a>で昇進を与える対象も併せて指定してください。</p>
+
+<p>値：&lt;FreePromotion&gt;のリスト</p>
+
+<div class="subnote">
+  <p>&lt;FreePromotion&gt;は以下の2つのタグを含みます。</p>
+
+<h4 id="promotiontype">&lt;PromotionType&gt;</h4>
+
+<p>無償の昇進の種類を指定します。<br />
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#昇進">昇進キー</a></p>
+
+<h4 id="bfreepromotion">&lt;bFreePromotion&gt;</h4>
+
+<p>1を指定します。</p>
+
+</div>
+
+
+<p>無償の昇進を与えない志向の場合、空タグにします。</p>
+
+<p>例：あとで</p>
+
+<h3 id="freepromotionunitcombats">&lt;FreePromotionUnitCombats&gt;</h3>
+
+<p>無償の昇進を与えるユニットの種類を指定します。<br />
+ここでは、昇進を与える対象のみを指定します。<a href="#freepromotions">&lt;FreePromotions&gt;</a>で昇進の種類も併せて指定してください。</p>
+
+<p>値：&lt;FreePromotionUnitCombat&gt;のリスト</p>
+
+<div class="subnote">
+  <p>&lt;FreePromotionUnitCombat&gt;は以下の2つのタグを含みます。</p>
+
+<h4 id="unitcombattype">&lt;UnitCombatType&gt;</h4>
+
+<p>昇進を与える兵科を指定します。<br />
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
+
+<h4 id="bfreepromotionunitcombat">&lt;bFreePromotionUnitCombat&gt;</h4>
+
+<p>1を指定します。</p>
+
+</div>
+
+
+<p>無償の昇進を与えない志向の場合、空タグにします。</p>
+
+<p>例１：<br />
+&lt;FreePromotions /&gt;<br />
+&lt;FreePromotionUnitCombats /&gt;</p>
+
+<p>例２：無償でスキルを供与(都市駐留Ⅰ, 教練Ⅰ):弓兵ユニット, 火器ユニット</p>
+
+<pre><code class="language-txt">&lt;FreePromotions&gt;
+    &lt;FreePromotion&gt;
+        &lt;PromotionType&gt;PROMOTION_CITY_GARRISON1&lt;/PromotionType&gt;
+        &lt;bFreePromotion&gt;1&lt;/bFreePromotion&gt;
+    &lt;/FreePromotion&gt;
+    &lt;FreePromotion&gt;
+        &lt;PromotionType&gt;PROMOTION_DRILL1&lt;/PromotionType&gt;
+        &lt;bFreePromotion&gt;1&lt;/bFreePromotion&gt;
+    &lt;/FreePromotion&gt;
+&lt;/FreePromotions&gt;
+&lt;FreePromotionUnitCombats&gt;
+    &lt;FreePromotionUnitCombat&gt;
+        &lt;UnitCombatType&gt;UNITCOMBAT_ARCHER&lt;/UnitCombatType&gt;
+        &lt;bFreePromotionUnitCombat&gt;1&lt;/bFreePromotionUnitCombat&gt;
+    &lt;/FreePromotionUnitCombat&gt;
+    &lt;FreePromotionUnitCombat&gt;
+        &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+        &lt;bFreePromotionUnitCombat&gt;1&lt;/bFreePromotionUnitCombat&gt;
+    &lt;/FreePromotionUnitCombat&gt;
+&lt;/FreePromotionUnitCombats&gt;
+</code></pre>
+
+<div style="margin:5em"></div>
+        </div>
+        <div class="col-12">
+  
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+<footer id="contentinfo" class="footer">
+  <address id="about" class="vcard body ml-2">
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+  </address>
+</footer>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
+

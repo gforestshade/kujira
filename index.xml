@@ -22,6 +22,36 @@
     </item>
     
     <item>
+      <title>Civ4TraitInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4traitinfos/</link>
+      <pubDate>Mon, 21 May 2018 23:37:10 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4traitinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;Civ4TraitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h1 id=&#34;間違えやすい項目&#34;&gt;間違えやすい項目&lt;/h1&gt;
+
+&lt;p&gt;建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。&lt;br /&gt;
+建造物のページの&lt;a href=&#34;https://gforestshade.github.io/kujira/post/civ4buildinginfos/#productiontraits&#34;&gt;&amp;lt;ProductionTraits&amp;gt;&lt;/a&gt;と&lt;a href=&#34;https://gforestshade.github.io/kujira/post/civ4buildinginfos/#happinesstraits&#34;&gt;&amp;lt;HappinessTraits&amp;gt;&lt;/a&gt;も参照してください。&lt;/p&gt;
+
+&lt;h1 id=&#34;内容&#34;&gt;内容&lt;/h1&gt;
+
+&lt;h2 id=&#34;civ4traitinfos&#34;&gt;&amp;lt;Civ4TraitInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;traitinfo&#34;&gt;&amp;lt;TraitInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、文明の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;TraitInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Civ4TechInfos.xml</title>
       <link>https://gforestshade.github.io/kujira/post/civ4techinfos/</link>
       <pubDate>Mon, 21 May 2018 14:56:45 +0900</pubDate>
@@ -49,6 +79,15 @@
 &lt;p&gt;以下&amp;lt;TechInfo&amp;gt;の中身です。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用語集</title>
+      <link>https://gforestshade.github.io/kujira/post/glossary/</link>
+      <pubDate>Mon, 21 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/glossary/</guid>
+      <description>ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ</description>
     </item>
     
     <item>
@@ -81,15 +120,6 @@
 &lt;p&gt;以下&amp;lt;CivicInfo&amp;gt;の中身です。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>用語集</title>
-      <link>https://gforestshade.github.io/kujira/post/glossary/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/post/glossary/</guid>
-      <description>ちょっとわかりにくい言葉をあつめてみました。 これがない！という場合はお気軽にお知らせください。 大聖堂 音楽で解禁される、寺院3つを前提とするこ</description>
     </item>
     
     <item>
