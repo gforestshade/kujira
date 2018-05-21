@@ -69,6 +69,14 @@ body
     text-decoration: none;
 }
 
+.table-of-contents
+{
+    position: sticky;
+    height: 96vh;
+    top: 2vh;
+    overflow-y: scroll;
+}
+
 .table-of-contents ul
 {
     padding-left: 1.4em;
