@@ -1098,11 +1098,10 @@ BtSでは、各宣教師がこの属性を持ちます。
 [\<PrereqTech\>](#prereqtech)も含め、すべての技術を取得済みのときのみ
 このユニットを生産できます。
 
-ここでは最大で NUM\_UNIT\_AND\_TECH\_PREREQS 個の技術キーを
-リストにして指定することができます。
-BtSではこの変数の値は3なので、メインの[\<PrereqTech\>](#prereqtech)とあわせて
+ここでは最大で3つまでの技術キーを指定することができます。
+メインの[\<PrereqTech\>](#prereqtech)とあわせて
 最大4つの前提技術を指定できます。
-(この数は GlobalDefines.xml で変更できます)
+(この数は GlobalDefines.xml の NUM\_UNIT\_AND\_TECH\_PREREQS で変更できます)
 
 追加の前提が必要ない場合は空タグにします。
 
