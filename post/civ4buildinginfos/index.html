@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-07",
     "description": "",
-    "wordCount": 26470
+    "wordCount": 26463
   }
 </script>
 
@@ -209,6 +209,8 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">Civ4CivicInfos.xml</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4techinfos/">Civ4TechInfos.xml</a>
+      
     </div>
     <div class="card-footer p-2"></div>
   </div>
@@ -317,7 +319,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-03-07">2018-03-07 00:00</time></p>
           
-          <p>26470  Words</p>
+          <p>26463  Words</p>
           
           
 
@@ -639,11 +641,10 @@ BtSでは、バチカン宮殿・国際連合・軌道エレベーターがこ�
 <a href="#prereqtech">&lt;PrereqTech&gt;</a>も含め、すべての技術を取得済みのときのみ<br />
 この建造物を生産できます。</p>
 
-<p>ここでは最大で NUM_BUILDING_AND_TECH_PREREQS 個の技術キーを<br />
-リストにして指定することができます。<br />
-BtSではこの変数の値は3なので、メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br />
+<p>ここでは最大で3つまでの技術キーを指定することができます。<br />
+メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br />
 最大4つの前提技術を指定できます。<br />
-(この数は GlobalDefines.xml で変更できます)</p>
+(この数は GlobalDefines.xml の NUM_BUILDING_AND_TECH_PREREQS で変更できます)</p>
 
 <p>追加の前提が必要ない場合は空タグにします。</p>
 
@@ -2812,15 +2813,15 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 
 <p>この建造物が完成したとき、〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉の<br />
 いずれか指定した商業出力について、スライダーを解禁します。<br />
-通常、商業力を各商業出力に振り分けるスライダーは技術によって解禁されますが、<br />
+通常、商業力を各商業出力に振り分けるスライダーは<a href="https://gforestshade.github.io/kujira/post/civ4techinfos/#commerceflexible">技術によって解禁されます</a>が、<br />
 この属性はそれを無視してスライダーを解禁します。</p>
 
 <p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
 それぞれの&lt;iCommerce&gt;では0または1を指定します。<br />
 1を指定した商業出力について、スライダーが解禁されます。</p>
 
-<p>通常、〈ゴールド〉と〈ビーカー〉はゲーム開始時から解禁されているので、<br />
-1番目と2番目の&lt;iCommerce&gt;指定はとくに意味を成しません。<br />
+<p>通常、〈ゴールド〉〈ビーカー〉〈諜報〉のスライダーはゲーム開始時から解禁されているので、<br />
+3番目以外の&lt;iCommerce&gt;指定はとくに意味を成しません。<br />
 また、〈諜報〉のスライダーは、解禁された後いずれかの文明と接触していないと<br />
 表示されないことに注意してください。</p>
 
@@ -2870,7 +2871,7 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 
 <p>この建造物が完成したときに流れる効果音を指定します。</p>
 
-<p>値：サウンド2Dキー</p>
+<p>値：2Dサウンドスクリプトキー</p>
 
 <p>例：<br />
 &lt;ConstructSound&gt;AS2D_BUILD_WALLS&lt;/ConstructSound&gt;</p>
@@ -3629,8 +3630,8 @@ Ctrlキーを足すのは推奨されません。</p>
   </div>
 
 <footer id="contentinfo" class="footer">
-  <address id="about" class="vcard body">
-    &copy; <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
+  <address id="about" class="vcard body ml-2">
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

@@ -22,6 +22,36 @@
     </item>
     
     <item>
+      <title>Civ4TechInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4techinfos/</link>
+      <pubDate>Mon, 21 May 2018 14:56:45 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4techinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;Civ4TechInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;h1 id=&#34;一方向性&#34;&gt;一方向性&lt;/h1&gt;
+
+&lt;p&gt;技術は放棄を選択できないという特性があります。&lt;br /&gt;
+技術で設定した事項は文明全体に恒久的な影響を及ぼすことに注意してください。&lt;/p&gt;
+
+&lt;h1 id=&#34;解説&#34;&gt;解説&lt;/h1&gt;
+
+&lt;h2 id=&#34;civ4techinfos&#34;&gt;&amp;lt;Civ4TechInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4TechnologiesSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;techinfo&#34;&gt;&amp;lt;TechInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、技術の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;TechInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Civ4CivicInfos.xml</title>
       <link>https://gforestshade.github.io/kujira/post/civ4civicinfos/</link>
       <pubDate>Wed, 16 May 2018 01:16:00 +0900</pubDate>
