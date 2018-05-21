@@ -64,7 +64,21 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
 - [その10]({{<ref "secondpy10">}})
 スペル完成
 
-## C++シリーズ
+# XML詳説シリーズ
+XMLを1ファイルずつ取り上げ、各タグの役割について解説する辞書的コンテンツです、
+
+- [XMLキー一覧]({{<ref "keyichiran">}})
+XMLキーだけを一覧にしたものです。簡易的な調べものにどうぞ。
+- [ユニットクラス]({{<ref "civ4unitclassinfos">}})
+- [ユニット]({{<ref "civ4unitinfos">}})
+- [建造物]({{<ref "civ4buildinginfos">}})
+- [技術]({{<ref "civ4techinfos">}})
+- [指導者]({{<ref "civ4leaderheadinfos">}})
+- [文明]({{<ref "civ4civilizationinfos">}})
+- [社会制度]({{<ref "civ4civicinfos">}})
+- [志向]({{<ref "civ4traitinfos">}})
+
+# C++シリーズ
 CvGameCoreDll.dllとか使って、なんかします。
 
 - [Windows10でDLL開発環境]({{<ref "howtocompile">}})
