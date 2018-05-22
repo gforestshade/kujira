@@ -13,7 +13,15 @@ tags = ["付録", "講座"]
 
 # 読む
 
-早速 `(略)\Beyond the Sword(J)\Assets\Python\Pyhelpers.py`を開いて、
+早速 
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\Pyhelpers.py{{</path>}}[^1]
+
+[^1]: パッケージ版の場合。Steam版は{{<inpath>}}C:Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\Python\Pyhelpers.py{{</inpath>}}
+
+を開いて、
+
+
 `getUnitList()`というメソッドを見ていきます...
 ``` python
 ## Sid Meier's Civilization 4

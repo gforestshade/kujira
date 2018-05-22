@@ -21,7 +21,7 @@ Civ4からあらかじめ提供されているクラスはまだまだありま�
 <!--more-->
 
 ## Pyhelpers.py
-早速 "(BtSのインストールフォルダ)\\Assets\\Python\\Pyhelpers.py"を開いてみましょう。
+早速 {{<inpath>}}(BtSのインストールフォルダ)\Assets\Python\Pyhelpers.py{{</inpath>}}を開いてみましょう。
 BtSのAssetsに元からあるファイルですね。
 開いたウィンドウを横において読み進めてください。
 
@@ -314,7 +314,7 @@ import モジュール名
 ```
 もうすでに書いてあるimport文がいくつか見えると思いますが、
 それらも実はモジュールの読み込み指定です。
-同じフォルダか、あるいは元のBtsのAssets\\Pythonに必ず同じ名前の
+同じフォルダか、あるいは元のBtsの{{<inpath>}}Assets\Python{{</inpath>}}に必ず同じ名前の
 `モジュール名.py`のファイルがありますので、
 覗いてみるのもよいでしょう。
 
@@ -322,11 +322,11 @@ import モジュール名
 方法は簡単、新しいファイルを作ってそこにPythonコードを書くだけです。
 自動的にファイル名からモジュール名が命名されます。
 
-このとき、Assets\\Pythonの中にさらにフォルダ階層を作ってしまうと、
+このとき、{{<inpath>}}Assets\Python{{</inpath>}}の中にさらにフォルダ階層を作ってしまうと、
 ファイル名とモジュール名が一致しなくなるので、
 最初のうちは同じフォルダにPythonファイルを置きましょう。
 
-今回は、BtsのAssets\\Pythonフォルダにある`PyHelpers.py`をMODから使いたいのでした。
+今回は、Btsの{{<inpath>}}Assets\\Python{{</inpath>}}フォルダにある`PyHelpers.py`をMODから使いたいのでした。
 モジュール名は`PyHelpers`になりますから、ファイル冒頭付近で...
 ``` python
 import PyHelpers

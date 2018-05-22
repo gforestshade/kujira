@@ -34,11 +34,11 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 新しい建造物を追加します。
 編集するのは`CIV4BuildingClassInfos.xml`と`CIV4BuildingInfos.xml`です。
 
-C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Buildings[^1]
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings{{</path>}}[^1]
 
 から同じフォルダ階層にコピーします。
 
-[^1]: パッケージ版の場合。Steam版の場合は"C:Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\XML\\Buildings"
+[^1]: パッケージ版の場合。Steam版の場合は{{<inpath>}}C:Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Buildings{{</inpath>}}
 
 ここまででファイル構成はこうなっているはずです。
 ``` txt

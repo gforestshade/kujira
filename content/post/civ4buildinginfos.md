@@ -10,6 +10,12 @@ toc = "目次"
 # はじめに
 CIV4BuildingInfos.xmlの各項目について説明しています。
 
+BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingInfos.xml{{</path>}}
+
+にあります。
+
 ## \<Civ4BuildingInfos\>
 ルートタグです。名前空間として、`xmlns="x-schema:CIV4BuildingSchema.xml"`を指定します。
 

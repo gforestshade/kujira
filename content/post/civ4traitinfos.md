@@ -9,6 +9,12 @@ toc = "目次"
 # はじめに
 Civ4TraitInfos.xmlの各項目について説明しています。
 
+このファイルはBtSでは更新されていません。BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Warlords(J)\Assets\XML\Civilizations\CIV4TraitInfos.xml{{</path>}}
+
+にあります。
+
 # 間違えやすい項目
 建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。
 建造物のページの[\<ProductionTraits\>]({{<ref "civ4buildinginfos">}}#productiontraits)と[\<HappinessTraits\>]({{<ref "civ4buildinginfos">}}#happinesstraits)も参照してください。

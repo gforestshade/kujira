@@ -9,6 +9,12 @@ toc = "目次"
 # はじめに
 Civ4TechInfos.xmlの各項目について説明しています。
 
+BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Technologies\CIV4TechInfos.xml{{</path>}}
+
+にあります。
+
 # 一方向性
 技術は放棄を選択できないという特性があります。
 技術で設定した事項は文明全体に恒久的な影響を及ぼすことに注意してください。

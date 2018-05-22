@@ -40,7 +40,7 @@ MODSフォルダにsdk_testというフォルダを作ります。
 
 sdk_testの中にsdkというフォルダとAssetsというフォルダを作ります。
 
-C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL\
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL\{{</path>}}
 の中にあるファイルとフォルダをsdkの中にコピーします。
 
 Makefileもsdkの中にコピーします。

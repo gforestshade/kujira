@@ -33,13 +33,15 @@ tags = ["それからのPython", "講座"]
 # 新しい昇進を作る
 「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、
 毒散布で付与する用の「毒」の昇進をXMLで追加していきます。
-編集するのは "Assets\\XML\\Units\\CIV4PromotionInfos.xml" です。
+編集するのは{{<inpath>}}\Assets\XML\Units\CIV4PromotionInfos.xml{{</inpath>}}です。
 
 元のファイルはパッケージ日本語版の場合
-"C:\\Program Files (x86)\\CYBERFRONT\\Sid Meier's Civilization 4(J)\\Beyond the Sword(J)\\Assets\\XML\\Units\\Civ4PromotionInfos.xml"
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml{{</path>}}
+
 にあります。[^1]
 
-[^1]: Steam版の場合 "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\XML\\Units\\Civ4PromotionInfos.xml"
+[^1]: Steam版の場合{{<inpath>}}C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml{{</inpath>}}
 
 今回のMOD名は`kujira_promospell`にするので、
 フォルダ階層を作ってxmlファイルをコピーし、下のようにします。
@@ -196,7 +198,7 @@ WATERをFIREに変えています。
 動作テストしたとき、TXT\_KEY\_PROMOTION\_SPELL\_WATERなどのキーが
 そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。
 
-Assets\\XML\\Text\\Text_Kujira.xml を作成します。
+{{<inpath>}}Assets\XML\Text\Text_Kujira.xml{{</inpath>}}を作成します。
 ``` plain
 └─kujira_promospell
     └─Assets

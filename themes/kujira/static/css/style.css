@@ -218,6 +218,14 @@ img {
     margin-top: 2em;
 }
 
+.article .path
+{
+    font-family: "Meiryo UI", sans-serif;
+    font-size: smaller;
+    background-color: #ececec;
+    padding: 2px 1em;
+}
+
 .article .subnote {
     //max-width: 70%;
     margin: 2em 0;

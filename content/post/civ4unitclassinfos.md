@@ -9,6 +9,12 @@ toc = "目次"
 # はじめに
 CIV4ClassUnitInfos.xmlの各項目について説明しています。
 
+BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitClassInfos.xml{{</path>}}
+
+にあります。
+
 # ユニットクラス
 
 ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、

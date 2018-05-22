@@ -9,6 +9,13 @@ toc = "目次"
 # はじめに
 Civ4CivicInfos.xmlの各項目について説明しています。
 
+BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4CivicInfos.xml{{</path>}}
+
+にあります。
+
+
 # 間違えやすい設定項目
 - 指導者の好む社会制度の設定は、各指導者のところにあります。
 

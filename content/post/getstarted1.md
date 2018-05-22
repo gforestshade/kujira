@@ -28,7 +28,7 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 早速その`CvEventManager.py`がどこにあるのか...を見ていく前に、
 PythonのModdingをしていくにあたって`CivilizationIV.ini`を編集しましょう。[^1]
 
-[^1]: Windows10,パッケージ版の場合,**ドキュメント\\My Games\\Beyond the Sword(J)**<br>Steam版の場合,**ドキュメント\\My Games\\Beyond the Sword**にあります
+[^1]: Windows10,パッケージ版の場合,{{<inpath>}}ドキュメント\My Games\Beyond the Sword(J){{</inpath>}}<br>Steam版の場合,{{<inpath>}}ドキュメント\My Games\Beyond the Sword{{</inpath>}}にあります
 
 ``` ini
 <<<<<<<<
@@ -53,15 +53,15 @@ OverwriteLogs = 1
 
 さっそくBtSの元ファイル
 
-C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py{{</path>}}
 
 …はなかったので
 
-C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py{{</path>}}
 
 [^2]をみると、こうなっていました。
 
-[^2]: パッケージ版の場合。Steam版の場合は**C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py**
+[^2]: パッケージ版の場合。Steam版の場合は{{<inpath>}}C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py{{</inpath>}}
 
 
 ``` python
@@ -99,14 +99,18 @@ def beginEvent(context, argsList=-1):
 ```
 
 これを**どのフォルダに入っているかも含めて**コピーしてきて編集すると、該当ファイルが差し変わるのでした。
-MODフォルダに新しくkujira\\Assets\\Python\\EntryPoints\\ フォルダを作って、そこにコピーします。
+**MODフォルダ**に新しく{{<inpath>}}kujira\Assets\Python\EntryPoints\{{</inpath>}}フォルダを作って、そこにコピーします。
 
 MOD開発中に使用するMODフォルダはユーザーの"Documents"にある方をおすすめします。
 
 パッケージ版の場合
-ドキュメント\\My Games\\Beyond the Sword (J)\\Mods
+
+{{<path>}}ドキュメント\My Games\Beyond the Sword (J)\Mods{{</path>}}
+
 Steam版の場合
-ドキュメント\\My Games\\Beyond the Sword\\Mods
+
+{{<path>}}ドキュメント\My Games\Beyond the Sword\Mods{{</path>}}
+
 です。
 
 ``` txt

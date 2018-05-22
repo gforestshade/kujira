@@ -9,6 +9,12 @@ toc = "目次"
 # はじめに
 CIV4LeaderHeadInfos.xmlの各項目について説明しています。
 
+BtSパッケージ版では
+
+{{<path>}}C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Civilizations\CIV4LeaderHeadInfos.xml{{</path>}}
+
+にあります。
+
 ## \<Civ4LeaderHeadInfos\>
 ルートタグです。名前空間として、`xmlns="x-schema:CIV4CivilizationsSchema.xml"`を指定します。
 
