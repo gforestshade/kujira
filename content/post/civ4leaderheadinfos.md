@@ -1237,7 +1237,7 @@ BtSでは、全指導者で`ATTITUDE_CAUTIOUS`です。
 例：
 \<DemandTributeAttitudeThreshold\>ATTITUDE\_CAUTIOUS\</DemandTributeAttitudeThreshold\>
 
-### \<NoGiveHelpAttitudeThreshold\>ATTITUDE\_CAUTIOUS\</NoGiveHelpAttitudeThreshold\>
+### \<NoGiveHelpAttitudeThreshold\>
 プレイヤーから見て、AI文明の態度が***プレイヤー自身の***この値以上であれば、
 AI文明はそのプレイヤーに援助の提供(Give Help)をしなくなります。
 
