@@ -1,9 +1,9 @@
 +++
 date = "2018-03-04"
-draft = false
 title = "CIV4UnitInfos.xml"
 banner = "photo_ice1"
 categories = ["XML"]
+toc = "目次"
 +++
 
 # はじめに

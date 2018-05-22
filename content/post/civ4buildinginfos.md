@@ -4,6 +4,7 @@ draft = false
 title = "CIV4BuildingInfos.xml"
 banner = "photo_ice1"
 categories = ["XML"]
+toc = "目次"
 +++
 
 # はじめに

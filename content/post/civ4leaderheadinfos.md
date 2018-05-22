@@ -3,6 +3,7 @@ date = "2018-05-04T16:32:36+09:00"
 title = "CIV4LeaderHeadInfos.xml"
 banner = "photo_ice1"
 categories = ["XML"]
+toc = "目次"
 +++
 
 # はじめに

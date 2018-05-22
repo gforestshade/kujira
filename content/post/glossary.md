@@ -4,6 +4,7 @@ title = "用語集"
 banner = "photo_ice1"
 categories = ["XML"]
 comment = true
+toc = "目次"
 +++
 
 ちょっとわかりにくい言葉をあつめてみました。
