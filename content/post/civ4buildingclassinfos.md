@@ -1,5 +1,5 @@
 +++
-date = "2018-05-22"
+date = "2018-05-25T01:49:25+09:00"
 title = "CIV4BuildingClassInfos.xml"
 banner = "photo_ice1"
 categories = ["XML"]
