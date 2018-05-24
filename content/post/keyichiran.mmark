@@ -1,1364 +1,2147 @@
 +++
 date = "2018-04-16"
-draft = false
 title = "XMLキー一覧"
 banner = "photo_ice1"
 categories = ["XML"]
+customcss = "keyichiran.css"
 toc = "目次"
 +++
 
-<style>
-.grid-table
-{
-  display: grid;
-  grid-template-columns:3fr 2fr 3fr 2fr;
-//    minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr);
-      
-}
-
-.grid-table>.grid-title
-{
-    border-bottom: 1px double #dee2e6;
-}
-
-.grid-table>.grid-subtitle
-{
-    grid-column: span 1;
-    grid-row: span 5;
-    vartical-align: center;
-}
-
-.grid-table>div
-{
-    padding: 0.75em;
-    vartical-align: center;
-    border-top: 1px solid #dee2e6;
-}
-
-.grid-table>.grid-item:nth-of-type(4n+1),
-.grid-table>.grid-item:nth-of-type(4n+2)
-{
-  background-color: rgba(0,0,0,.05);
-}
-
-</style>
-
 # 文明
+<div class="grid-table gt2 auto-g">
+<div class="grid-title">文明キー</div>
+<div class="grid-title">文明</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-文明キー|文明
----|---
-CIVILIZATION_AMERICA|アメリカ
-CIVILIZATION_ARABIA|アラブ
-CIVILIZATION_AZTEC|アステカ
-CIVILIZATION_BABYLON|バビロニア
-CIVILIZATION_BYZANTIUM|ビザンチン
-CIVILIZATION_CARTHAGE|カルタゴ
-CIVILIZATION_CELT|ケルト
-CIVILIZATION_CHINA|中国
-CIVILIZATION_EGYPT|エジプト
-CIVILIZATION_ENGLAND|イギリス
-CIVILIZATION_ETHIOPIA|エチオピア
-CIVILIZATION_FRANCE|フランス
-CIVILIZATION_GERMANY|ドイツ
-CIVILIZATION_GREECE|ギリシャ
-CIVILIZATION_HOLY_ROMAN|神聖ローマ
-CIVILIZATION_INCA|インカ
-CIVILIZATION_INDIA|インド
-CIVILIZATION_JAPAN|日本
-CIVILIZATION_KHMER|クメール
-CIVILIZATION_KOREA|朝鮮
-CIVILIZATION_MALI|マリ
-CIVILIZATION_MAYA|マヤ
-CIVILIZATION_MONGOL|モンゴル
-CIVILIZATION_NATIVE_AMERICA|アメリカ先住民
-CIVILIZATION_NETHERLANDS|オランダ
-CIVILIZATION_OTTOMAN|オスマン
-CIVILIZATION_PERSIA|ペルシャ
-CIVILIZATION_PORTUGAL|ポルトガル
-CIVILIZATION_ROME|ローマ
-CIVILIZATION_RUSSIA|ロシア
-CIVILIZATION_SPAIN|スペイン
-CIVILIZATION_SUMERIA|シュメール
-CIVILIZATION_VIKING|ヴァイキング
-CIVILIZATION_ZULU|ズールー
-CIVILIZATION_MINOR|二等文明
-CIVILIZATION_BARBARIAN|蛮族
-
-{{% /div %}}{{% /div %}}
+<div class="grid-item">CIVILIZATION_AMERICA</div>
+<div class="grid-item">アメリカ</div>
+<div class="grid-item">CIVILIZATION_ARABIA</div>
+<div class="grid-item">アラブ</div>
+<div class="grid-item">CIVILIZATION_AZTEC</div>
+<div class="grid-item">アステカ</div>
+<div class="grid-item">CIVILIZATION_BABYLON</div>
+<div class="grid-item">バビロニア</div>
+<div class="grid-item">CIVILIZATION_BYZANTIUM</div>
+<div class="grid-item">ビザンチン</div>
+<div class="grid-item">CIVILIZATION_CARTHAGE</div>
+<div class="grid-item">カルタゴ</div>
+<div class="grid-item">CIVILIZATION_CELT</div>
+<div class="grid-item">ケルト</div>
+<div class="grid-item">CIVILIZATION_CHINA</div>
+<div class="grid-item">中国</div>
+<div class="grid-item">CIVILIZATION_EGYPT</div>
+<div class="grid-item">エジプト</div>
+<div class="grid-item">CIVILIZATION_ENGLAND</div>
+<div class="grid-item">イギリス</div>
+<div class="grid-item">CIVILIZATION_ETHIOPIA</div>
+<div class="grid-item">エチオピア</div>
+<div class="grid-item">CIVILIZATION_FRANCE</div>
+<div class="grid-item">フランス</div>
+<div class="grid-item">CIVILIZATION_GERMANY</div>
+<div class="grid-item">ドイツ</div>
+<div class="grid-item">CIVILIZATION_GREECE</div>
+<div class="grid-item">ギリシャ</div>
+<div class="grid-item">CIVILIZATION_HOLY_ROMAN</div>
+<div class="grid-item">神聖ローマ</div>
+<div class="grid-item">CIVILIZATION_INCA</div>
+<div class="grid-item">インカ</div>
+<div class="grid-item">CIVILIZATION_INDIA</div>
+<div class="grid-item">インド</div>
+<div class="grid-item">CIVILIZATION_JAPAN</div>
+<div class="grid-item">日本</div>
+<div class="grid-item">CIVILIZATION_KHMER</div>
+<div class="grid-item">クメール</div>
+<div class="grid-item">CIVILIZATION_KOREA</div>
+<div class="grid-item">朝鮮</div>
+<div class="grid-item">CIVILIZATION_MALI</div>
+<div class="grid-item">マリ</div>
+<div class="grid-item">CIVILIZATION_MAYA</div>
+<div class="grid-item">マヤ</div>
+<div class="grid-item">CIVILIZATION_MONGOL</div>
+<div class="grid-item">モンゴル</div>
+<div class="grid-item">CIVILIZATION_NATIVE_AMERICA</div>
+<div class="grid-item">アメリカ先住民</div>
+<div class="grid-item">CIVILIZATION_NETHERLANDS</div>
+<div class="grid-item">オランダ</div>
+<div class="grid-item">CIVILIZATION_OTTOMAN</div>
+<div class="grid-item">オスマン</div>
+<div class="grid-item">CIVILIZATION_PERSIA</div>
+<div class="grid-item">ペルシャ</div>
+<div class="grid-item">CIVILIZATION_PORTUGAL</div>
+<div class="grid-item">ポルトガル</div>
+<div class="grid-item">CIVILIZATION_ROME</div>
+<div class="grid-item">ローマ</div>
+<div class="grid-item">CIVILIZATION_RUSSIA</div>
+<div class="grid-item">ロシア</div>
+<div class="grid-item">CIVILIZATION_SPAIN</div>
+<div class="grid-item">スペイン</div>
+<div class="grid-item">CIVILIZATION_SUMERIA</div>
+<div class="grid-item">シュメール</div>
+<div class="grid-item">CIVILIZATION_VIKING</div>
+<div class="grid-item">ヴァイキング</div>
+<div class="grid-item">CIVILIZATION_ZULU</div>
+<div class="grid-item">ズールー</div>
+<div class="grid-item">CIVILIZATION_MINOR</div>
+<div class="grid-item">二等文明</div>
+<div class="grid-item">CIVILIZATION_BARBARIAN</div>
+<div class="grid-item">蛮族</div>
+</div>
 
 # 指導者
+<div class="grid-table gt2 auto-g">
+<div class="grid-title">指導者キー</div>
+<div class="grid-title">指導者</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-指導者キー|指導者
----|---
-LEADER_ALEXANDER|アレクサンドロス
-LEADER_ASOKA|アショーカ
-LEADER_AUGUSTUS|アウグストゥス
-LEADER_BISMARCK|ビスマルク
-LEADER_BOUDICA|ブーディカ
-LEADER_BRENNUS|ブレヌス
-LEADER_CATHERINE|エカテリーナ
-LEADER_CHARLEMAGNE|シャルルマーニュ
-LEADER_CHURCHILL|チャーチル
-LEADER_CYRUS|大キュロス
-LEADER_DARIUS|ダレイオス1世
-LEADER_DE_GAULLE|ド・ゴール
-LEADER_ELIZABETH|エリザベス
-LEADER_FREDERICK|フリードリッヒ
-LEADER_GANDHI|ガンジー
-LEADER_GENGHIS_KHAN|チンギス・ハーン
-LEADER_GILGAMESH|ギルガメッシュ
-LEADER_HAMMURABI|ハンムラビ大王
-LEADER_HANNIBAL|ハンニバル
-LEADER_HATSHEPSUT|ハトシェプスト
-LEADER_HUAYNA_CAPAC|ワイナ・カパック
-LEADER_ISABELLA|イザベル
-LEADER_JOAO|ジョアン2世
-LEADER_JULIUS_CAESAR|ユリウス・カエサル
-LEADER_JUSTINIAN|ユスティニアヌス1世
-LEADER_KUBLAI_KHAN|フビライ・ハーン
-LEADER_LINCOLN|リンカーン
-LEADER_LOUIS_XIV|ルイ14世
-LEADER_MANSA_MUSA|マンサ・ムサ
-LEADER_CHINESE_LEADER|毛沢東
-LEADER_MEHMED|メフメド２世
-LEADER_MONTEZUMA|モンテスマ
-LEADER_NAPOLEON|ナポレオン
-LEADER_PACAL|パカル2世
-LEADER_PERICLES|ペリクレス
-LEADER_PETER|ピョートル
-LEADER_QIN_SHI_HUANG|始皇帝
-LEADER_RAMESSES|ラムセス２世
-LEADER_RAGNAR|ラグナル
-LEADER_FRANKLIN_ROOSEVELT|ルーズヴェルト
-LEADER_SALADIN|サラディン
-LEADER_SHAKA|シャカ
-LEADER_SITTING_BULL|シッティング・ブル
-LEADER_STALIN|スターリン
-LEADER_SULEIMAN|スレイマン
-LEADER_SURYAVARMAN|スーリヤヴァルマン2世
-LEADER_TOKUGAWA|徳川家康
-LEADER_VICTORIA|ヴィクトリア
-LEADER_WANGKON|王建
-LEADER_WASHINGTON|ワシントン
-LEADER_WILLEM_VAN_ORANJE|オラニエ公ヴィレム1世
-LEADER_ZARA_YAQOB|ザラ･ヤコブ
-LEADER_BARBARIAN|蛮族
-
-{{%/div%}}{{%/div%}}
+<div class="grid-item">LEADER_ALEXANDER</div>
+<div class="grid-item">アレクサンドロス</div>
+<div class="grid-item">LEADER_ASOKA</div>
+<div class="grid-item">アショーカ</div>
+<div class="grid-item">LEADER_AUGUSTUS</div>
+<div class="grid-item">アウグストゥス</div>
+<div class="grid-item">LEADER_BISMARCK</div>
+<div class="grid-item">ビスマルク</div>
+<div class="grid-item">LEADER_BOUDICA</div>
+<div class="grid-item">ブーディカ</div>
+<div class="grid-item">LEADER_BRENNUS</div>
+<div class="grid-item">ブレヌス</div>
+<div class="grid-item">LEADER_CATHERINE</div>
+<div class="grid-item">エカテリーナ</div>
+<div class="grid-item">LEADER_CHARLEMAGNE</div>
+<div class="grid-item">シャルルマーニュ</div>
+<div class="grid-item">LEADER_CHURCHILL</div>
+<div class="grid-item">チャーチル</div>
+<div class="grid-item">LEADER_CYRUS</div>
+<div class="grid-item">大キュロス</div>
+<div class="grid-item">LEADER_DARIUS</div>
+<div class="grid-item">ダレイオス1世</div>
+<div class="grid-item">LEADER_DE_GAULLE</div>
+<div class="grid-item">ド・ゴール</div>
+<div class="grid-item">LEADER_ELIZABETH</div>
+<div class="grid-item">エリザベス</div>
+<div class="grid-item">LEADER_FREDERICK</div>
+<div class="grid-item">フリードリッヒ</div>
+<div class="grid-item">LEADER_GANDHI</div>
+<div class="grid-item">ガンジー</div>
+<div class="grid-item">LEADER_GENGHIS_KHAN</div>
+<div class="grid-item">チンギス・ハーン</div>
+<div class="grid-item">LEADER_GILGAMESH</div>
+<div class="grid-item">ギルガメッシュ</div>
+<div class="grid-item">LEADER_HAMMURABI</div>
+<div class="grid-item">ハンムラビ大王</div>
+<div class="grid-item">LEADER_HANNIBAL</div>
+<div class="grid-item">ハンニバル</div>
+<div class="grid-item">LEADER_HATSHEPSUT</div>
+<div class="grid-item">ハトシェプスト</div>
+<div class="grid-item">LEADER_HUAYNA_CAPAC</div>
+<div class="grid-item">ワイナ・カパック</div>
+<div class="grid-item">LEADER_ISABELLA</div>
+<div class="grid-item">イザベル</div>
+<div class="grid-item">LEADER_JOAO</div>
+<div class="grid-item">ジョアン2世</div>
+<div class="grid-item">LEADER_JULIUS_CAESAR</div>
+<div class="grid-item">ユリウス・カエサル</div>
+<div class="grid-item">LEADER_JUSTINIAN</div>
+<div class="grid-item">ユスティニアヌス1世</div>
+<div class="grid-item">LEADER_KUBLAI_KHAN</div>
+<div class="grid-item">フビライ・ハーン</div>
+<div class="grid-item">LEADER_LINCOLN</div>
+<div class="grid-item">リンカーン</div>
+<div class="grid-item">LEADER_LOUIS_XIV</div>
+<div class="grid-item">ルイ14世</div>
+<div class="grid-item">LEADER_MANSA_MUSA</div>
+<div class="grid-item">マンサ・ムサ</div>
+<div class="grid-item">LEADER_CHINESE_LEADER</div>
+<div class="grid-item">毛沢東</div>
+<div class="grid-item">LEADER_MEHMED</div>
+<div class="grid-item">メフメド２世</div>
+<div class="grid-item">LEADER_MONTEZUMA</div>
+<div class="grid-item">モンテスマ</div>
+<div class="grid-item">LEADER_NAPOLEON</div>
+<div class="grid-item">ナポレオン</div>
+<div class="grid-item">LEADER_PACAL</div>
+<div class="grid-item">パカル2世</div>
+<div class="grid-item">LEADER_PERICLES</div>
+<div class="grid-item">ペリクレス</div>
+<div class="grid-item">LEADER_PETER</div>
+<div class="grid-item">ピョートル</div>
+<div class="grid-item">LEADER_QIN_SHI_HUANG</div>
+<div class="grid-item">始皇帝</div>
+<div class="grid-item">LEADER_RAMESSES</div>
+<div class="grid-item">ラムセス２世</div>
+<div class="grid-item">LEADER_RAGNAR</div>
+<div class="grid-item">ラグナル</div>
+<div class="grid-item">LEADER_FRANKLIN_ROOSEVELT</div>
+<div class="grid-item">ルーズヴェルト</div>
+<div class="grid-item">LEADER_SALADIN</div>
+<div class="grid-item">サラディン</div>
+<div class="grid-item">LEADER_SHAKA</div>
+<div class="grid-item">シャカ</div>
+<div class="grid-item">LEADER_SITTING_BULL</div>
+<div class="grid-item">シッティング・ブル</div>
+<div class="grid-item">LEADER_STALIN</div>
+<div class="grid-item">スターリン</div>
+<div class="grid-item">LEADER_SULEIMAN</div>
+<div class="grid-item">スレイマン</div>
+<div class="grid-item">LEADER_SURYAVARMAN</div>
+<div class="grid-item">スーリヤヴァルマン2世</div>
+<div class="grid-item">LEADER_TOKUGAWA</div>
+<div class="grid-item">徳川家康</div>
+<div class="grid-item">LEADER_VICTORIA</div>
+<div class="grid-item">ヴィクトリア</div>
+<div class="grid-item">LEADER_WANGKON</div>
+<div class="grid-item">王建</div>
+<div class="grid-item">LEADER_WASHINGTON</div>
+<div class="grid-item">ワシントン</div>
+<div class="grid-item">LEADER_WILLEM_VAN_ORANJE</div>
+<div class="grid-item">オラニエ公ヴィレム1世</div>
+<div class="grid-item">LEADER_ZARA_YAQOB</div>
+<div class="grid-item">ザラ･ヤコブ</div>
+<div class="grid-item">LEADER_BARBARIAN</div>
+<div class="grid-item">蛮族</div>
+</div>
 
 # 技術
+<div class="grid-table gt2 auto-g">
+<div class="grid-title">技術キー</div>
+<div class="grid-title">技術</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-技術キー|技術
----|---
-TECH_AGRICULTURE|農業
-TECH_FISHING|漁業
-TECH_SAILING|帆走
-TECH_ANIMAL_HUSBANDRY|畜産
-TECH_HUNTING|狩猟
-TECH_ARCHERY|弓術
-TECH_MYSTICISM|神秘主義
-TECH_MINING|採鉱
-TECH_MASONRY|石工術
-TECH_BRONZE_WORKING|青銅器
-TECH_THE_WHEEL|車輪
-TECH_POTTERY|陶器
-TECH_MEDITATION|瞑想
-TECH_POLYTHEISM|多神教
-TECH_PRIESTHOOD|聖職
-TECH_MONOTHEISM|一神教
-TECH_WRITING|筆記
-TECH_IRON_WORKING|鉄器
-TECH_ALPHABET|アルファベット
-TECH_MATHEMATICS|数学
-TECH_CALENDAR|暦
-TECH_CONSTRUCTION|建築学
-TECH_CURRENCY|通貨
-TECH_CODE_OF_LAWS|法律
-TECH_HORSEBACK_RIDING|騎乗
-TECH_MONARCHY|君主政治
-TECH_FEUDALISM|封建制
-TECH_AESTHETICS|美学
-TECH_LITERATURE|文学
-TECH_DRAMA|演劇
-TECH_MUSIC|音楽
-TECH_METAL_CASTING|鋳金
-TECH_MACHINERY|機械
-TECH_ENGINEERING|工学
-TECH_CIVIL_SERVICE|官吏
-TECH_PHILOSOPHY|哲学
-TECH_THEOLOGY|神学
-TECH_DIVINE_RIGHT|神授王権
-TECH_PAPER|紙
-TECH_GUILDS|ギルド
-TECH_BANKING|銀行制度
-TECH_COMPASS|羅針盤
-TECH_OPTICS|光学
-TECH_ASTRONOMY|天文学
-TECH_PRINTING_PRESS|活版印刷
-TECH_NATIONALISM|ナショナリズム
-TECH_EDUCATION|教育
-TECH_LIBERALISM|自由主義
-TECH_ECONOMICS|経済学
-TECH_GUNPOWDER|火薬
-TECH_CHEMISTRY|化学
-TECH_REPLACEABLE_PARTS|共通規格
-TECH_STEEL|鋼鉄
-TECH_MILITARY_TRADITION|職業軍人
-TECH_RIFLING|ライフリング
-TECH_CONSTITUTION|憲法
-TECH_DEMOCRACY|民主主義
-TECH_CORPORATION|企業
-TECH_MILITARY_SCIENCE|軍事科学
-TECH_SCIENTIFIC_METHOD|科学的手法
-TECH_UTOPIA|共産主義
-TECH_BIOLOGY|生物学
-TECH_MEDICINE|医術
-TECH_STEAM_POWER|蒸気機関
-TECH_COMBUSTION|内燃機関
-TECH_PHYSICS|物理学
-TECH_ARTILLERY|長距離砲
-TECH_ELECTRICITY|電気
-TECH_RAILROAD|鉄道
-TECH_ASSEMBLY_LINE|大量生産
-TECH_FASCISM|ファシズム
-TECH_ROCKETRY|ロケット工学
-TECH_FISSION|核分裂
-TECH_RADIO|無線通信
-TECH_MASS_MEDIA|マスメディア
-TECH_REFRIGERATION|冷蔵技術
-TECH_FLIGHT|飛行機
-TECH_SATELLITES|人工衛星
-TECH_ADVANCED_FLIGHT|高度航空術
-TECH_INDUSTRIALISM|産業主義
-TECH_PLASTICS|プラスチック
-TECH_COMPUTERS|コンピュータ
-TECH_SUPERCONDUCTORS|超伝導
-TECH_GENETICS|遺伝子工学
-TECH_LASER|レーザー
-TECH_COMPOSITES|複合材料
-TECH_ECOLOGY|エコロジー
-TECH_FIBER_OPTICS|光ファイバー
-TECH_STEALTH|ステルス
-TECH_FUSION|核融合
-TECH_ROBOTICS|ロボット工学
-TECH_FUTURE_TECH|未来技術
-
-{{%/div%}}{{%/div%}}
+<div class="grid-item">TECH_AGRICULTURE</div>
+<div class="grid-item">農業</div>
+<div class="grid-item">TECH_FISHING</div>
+<div class="grid-item">漁業</div>
+<div class="grid-item">TECH_SAILING</div>
+<div class="grid-item">帆走</div>
+<div class="grid-item">TECH_ANIMAL_HUSBANDRY</div>
+<div class="grid-item">畜産</div>
+<div class="grid-item">TECH_HUNTING</div>
+<div class="grid-item">狩猟</div>
+<div class="grid-item">TECH_ARCHERY</div>
+<div class="grid-item">弓術</div>
+<div class="grid-item">TECH_MYSTICISM</div>
+<div class="grid-item">神秘主義</div>
+<div class="grid-item">TECH_MINING</div>
+<div class="grid-item">採鉱</div>
+<div class="grid-item">TECH_MASONRY</div>
+<div class="grid-item">石工術</div>
+<div class="grid-item">TECH_BRONZE_WORKING</div>
+<div class="grid-item">青銅器</div>
+<div class="grid-item">TECH_THE_WHEEL</div>
+<div class="grid-item">車輪</div>
+<div class="grid-item">TECH_POTTERY</div>
+<div class="grid-item">陶器</div>
+<div class="grid-item">TECH_MEDITATION</div>
+<div class="grid-item">瞑想</div>
+<div class="grid-item">TECH_POLYTHEISM</div>
+<div class="grid-item">多神教</div>
+<div class="grid-item">TECH_PRIESTHOOD</div>
+<div class="grid-item">聖職</div>
+<div class="grid-item">TECH_MONOTHEISM</div>
+<div class="grid-item">一神教</div>
+<div class="grid-item">TECH_WRITING</div>
+<div class="grid-item">筆記</div>
+<div class="grid-item">TECH_IRON_WORKING</div>
+<div class="grid-item">鉄器</div>
+<div class="grid-item">TECH_ALPHABET</div>
+<div class="grid-item">アルファベット</div>
+<div class="grid-item">TECH_MATHEMATICS</div>
+<div class="grid-item">数学</div>
+<div class="grid-item">TECH_CALENDAR</div>
+<div class="grid-item">暦</div>
+<div class="grid-item">TECH_CONSTRUCTION</div>
+<div class="grid-item">建築学</div>
+<div class="grid-item">TECH_CURRENCY</div>
+<div class="grid-item">通貨</div>
+<div class="grid-item">TECH_CODE_OF_LAWS</div>
+<div class="grid-item">法律</div>
+<div class="grid-item">TECH_HORSEBACK_RIDING</div>
+<div class="grid-item">騎乗</div>
+<div class="grid-item">TECH_MONARCHY</div>
+<div class="grid-item">君主政治</div>
+<div class="grid-item">TECH_FEUDALISM</div>
+<div class="grid-item">封建制</div>
+<div class="grid-item">TECH_AESTHETICS</div>
+<div class="grid-item">美学</div>
+<div class="grid-item">TECH_LITERATURE</div>
+<div class="grid-item">文学</div>
+<div class="grid-item">TECH_DRAMA</div>
+<div class="grid-item">演劇</div>
+<div class="grid-item">TECH_MUSIC</div>
+<div class="grid-item">音楽</div>
+<div class="grid-item">TECH_METAL_CASTING</div>
+<div class="grid-item">鋳金</div>
+<div class="grid-item">TECH_MACHINERY</div>
+<div class="grid-item">機械</div>
+<div class="grid-item">TECH_ENGINEERING</div>
+<div class="grid-item">工学</div>
+<div class="grid-item">TECH_CIVIL_SERVICE</div>
+<div class="grid-item">官吏</div>
+<div class="grid-item">TECH_PHILOSOPHY</div>
+<div class="grid-item">哲学</div>
+<div class="grid-item">TECH_THEOLOGY</div>
+<div class="grid-item">神学</div>
+<div class="grid-item">TECH_DIVINE_RIGHT</div>
+<div class="grid-item">神授王権</div>
+<div class="grid-item">TECH_PAPER</div>
+<div class="grid-item">紙</div>
+<div class="grid-item">TECH_GUILDS</div>
+<div class="grid-item">ギルド</div>
+<div class="grid-item">TECH_BANKING</div>
+<div class="grid-item">銀行制度</div>
+<div class="grid-item">TECH_COMPASS</div>
+<div class="grid-item">羅針盤</div>
+<div class="grid-item">TECH_OPTICS</div>
+<div class="grid-item">光学</div>
+<div class="grid-item">TECH_ASTRONOMY</div>
+<div class="grid-item">天文学</div>
+<div class="grid-item">TECH_PRINTING_PRESS</div>
+<div class="grid-item">活版印刷</div>
+<div class="grid-item">TECH_NATIONALISM</div>
+<div class="grid-item">ナショナリズム</div>
+<div class="grid-item">TECH_EDUCATION</div>
+<div class="grid-item">教育</div>
+<div class="grid-item">TECH_LIBERALISM</div>
+<div class="grid-item">自由主義</div>
+<div class="grid-item">TECH_ECONOMICS</div>
+<div class="grid-item">経済学</div>
+<div class="grid-item">TECH_GUNPOWDER</div>
+<div class="grid-item">火薬</div>
+<div class="grid-item">TECH_CHEMISTRY</div>
+<div class="grid-item">化学</div>
+<div class="grid-item">TECH_REPLACEABLE_PARTS</div>
+<div class="grid-item">共通規格</div>
+<div class="grid-item">TECH_STEEL</div>
+<div class="grid-item">鋼鉄</div>
+<div class="grid-item">TECH_MILITARY_TRADITION</div>
+<div class="grid-item">職業軍人</div>
+<div class="grid-item">TECH_RIFLING</div>
+<div class="grid-item">ライフリング</div>
+<div class="grid-item">TECH_CONSTITUTION</div>
+<div class="grid-item">憲法</div>
+<div class="grid-item">TECH_DEMOCRACY</div>
+<div class="grid-item">民主主義</div>
+<div class="grid-item">TECH_CORPORATION</div>
+<div class="grid-item">企業</div>
+<div class="grid-item">TECH_MILITARY_SCIENCE</div>
+<div class="grid-item">軍事科学</div>
+<div class="grid-item">TECH_SCIENTIFIC_METHOD</div>
+<div class="grid-item">科学的手法</div>
+<div class="grid-item">TECH_UTOPIA</div>
+<div class="grid-item">共産主義</div>
+<div class="grid-item">TECH_BIOLOGY</div>
+<div class="grid-item">生物学</div>
+<div class="grid-item">TECH_MEDICINE</div>
+<div class="grid-item">医術</div>
+<div class="grid-item">TECH_STEAM_POWER</div>
+<div class="grid-item">蒸気機関</div>
+<div class="grid-item">TECH_COMBUSTION</div>
+<div class="grid-item">内燃機関</div>
+<div class="grid-item">TECH_PHYSICS</div>
+<div class="grid-item">物理学</div>
+<div class="grid-item">TECH_ARTILLERY</div>
+<div class="grid-item">長距離砲</div>
+<div class="grid-item">TECH_ELECTRICITY</div>
+<div class="grid-item">電気</div>
+<div class="grid-item">TECH_RAILROAD</div>
+<div class="grid-item">鉄道</div>
+<div class="grid-item">TECH_ASSEMBLY_LINE</div>
+<div class="grid-item">大量生産</div>
+<div class="grid-item">TECH_FASCISM</div>
+<div class="grid-item">ファシズム</div>
+<div class="grid-item">TECH_ROCKETRY</div>
+<div class="grid-item">ロケット工学</div>
+<div class="grid-item">TECH_FISSION</div>
+<div class="grid-item">核分裂</div>
+<div class="grid-item">TECH_RADIO</div>
+<div class="grid-item">無線通信</div>
+<div class="grid-item">TECH_MASS_MEDIA</div>
+<div class="grid-item">マスメディア</div>
+<div class="grid-item">TECH_REFRIGERATION</div>
+<div class="grid-item">冷蔵技術</div>
+<div class="grid-item">TECH_FLIGHT</div>
+<div class="grid-item">飛行機</div>
+<div class="grid-item">TECH_SATELLITES</div>
+<div class="grid-item">人工衛星</div>
+<div class="grid-item">TECH_ADVANCED_FLIGHT</div>
+<div class="grid-item">高度航空術</div>
+<div class="grid-item">TECH_INDUSTRIALISM</div>
+<div class="grid-item">産業主義</div>
+<div class="grid-item">TECH_PLASTICS</div>
+<div class="grid-item">プラスチック</div>
+<div class="grid-item">TECH_COMPUTERS</div>
+<div class="grid-item">コンピュータ</div>
+<div class="grid-item">TECH_SUPERCONDUCTORS</div>
+<div class="grid-item">超伝導</div>
+<div class="grid-item">TECH_GENETICS</div>
+<div class="grid-item">遺伝子工学</div>
+<div class="grid-item">TECH_LASER</div>
+<div class="grid-item">レーザー</div>
+<div class="grid-item">TECH_COMPOSITES</div>
+<div class="grid-item">複合材料</div>
+<div class="grid-item">TECH_ECOLOGY</div>
+<div class="grid-item">エコロジー</div>
+<div class="grid-item">TECH_FIBER_OPTICS</div>
+<div class="grid-item">光ファイバー</div>
+<div class="grid-item">TECH_STEALTH</div>
+<div class="grid-item">ステルス</div>
+<div class="grid-item">TECH_FUSION</div>
+<div class="grid-item">核融合</div>
+<div class="grid-item">TECH_ROBOTICS</div>
+<div class="grid-item">ロボット工学</div>
+<div class="grid-item">TECH_FUTURE_TECH</div>
+<div class="grid-item">未来技術</div>
+</div>
 
 # 建造物
 ## 太古
 
-<table class="table table-striped" style="table-layout:fixed;">
-<colgroup>
-  <col style="width:38%" />
-  <col style="width:38%" />
-  <col style="width:24%" />
-<colgroup>
-<thead>
-  <th>建造物クラスキー</th>
-  <th>建造物キー</th>
-  <th>建造物</th>
-</thead>
+<div class="grid-table gt3">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物キー</div>
+<div class="grid-title">建造物</div>
 
-<tr>
-  <td rowspan=4>BUILDINGCLASS_OBELISK</td>
-  <td>BUILDING_OBELISK</td>
-  <td>モニュメント</td>
-</tr>
-<tr>
-  <td>BUILDING_EGYPTIAN_OBELISK</td>
-  <td>オベリスク</td>
-</tr>
-<tr>
-  <td>BUILDING_ETHIOPIAN_STELE</td>
-  <td>ステラ</td>
-</tr>
-<tr>
-  <td>BUILDING_NATIVE_AMERICA_TOTEM</td>
-  <td>トーテムポール</td>
-</tr>
+<div class="grid-subtitle gty-4">BUILDINGCLASS_OBELISK</div>
+<div class="grid-item g">BUILDING_OBELISK</div>
+<div class="grid-item g">モニュメント</div>
+<div class="grid-item">BUILDING_EGYPTIAN_OBELISK</div>
+<div class="grid-item">オベリスク</div>
+<div class="grid-item g">BUILDING_ETHIOPIAN_STELE</div>
+<div class="grid-item g">ステラ</div>
+<div class="grid-item">BUILDING_NATIVE_AMERICA_TOTEM</div>
+<div class="grid-item">トーテムポール</div>
 
-<tr>
-  <td rowspan=2>BUILDINGCLASS_WALLS</td>
-  <td>BUILDING_WALLS</td>
-  <td>防壁</td>
-</tr>
-<tr>
-  <td>BUILDING_CELTIC_DUN</td>
-  <td>ダン</td>
-</tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_WALLS</div>
+<div class="grid-item g">BUILDING_WALLS</div>
+<div class="grid-item g">防壁</div>
+<div class="grid-item">BUILDING_CELTIC_DUN</div>
+<div class="grid-item">ダン</div>
 
-<tr>
-  <td rowspan=2>BUILDINGCLASS_BARRACKS</td>
-  <td>BUILDING_BARRACKS</td>
-  <td>兵舎</td>
-</tr>
-<tr>
-  <td>BUILDING_ZULU_IKHANDA</td>
-  <td>イカンダ</td>
-</tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_BARRACKS</div>
+<div class="grid-item g">BUILDING_BARRACKS</div>
+<div class="grid-item g">兵舎</div>
+<div class="grid-item">BUILDING_ZULU_IKHANDA</div>
+<div class="grid-item">イカンダ</div>
 
-<tr>
-  <td rowspan=2>BUILDINGCLASS_GRANARY</td>
-  <td>BUILDING_GRANARY</td>
-  <td>穀物庫</td>
-</tr>
-<tr>
-  <td>BUILDING_INCAN_TERRACE</td>
-  <td>棚畑</td>
-</tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_GRANARY</div>
+<div class="grid-item g">BUILDING_GRANARY</div>
+<div class="grid-item g">穀物庫</div>
+<div class="grid-item">BUILDING_INCAN_TERRACE</div>
+<div class="grid-item">棚畑</div>
 
-<tr>
-  <td rowspan=2>BUILDINGCLASS_LIGHTHOUSE</td>
-  <td>BUILDING_LIGHTHOUSE</td>
-  <td>灯台</td>
-</tr>
-<tr>
-  <td>BUILDING_VIKING_TRADING_POST</td>
-  <td>交易所</td>
-</tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_LIGHTHOUSE</div>
+<div class="grid-item g">BUILDING_LIGHTHOUSE</div>
+<div class="grid-item g">灯台</div>
+<div class="grid-item">BUILDING_VIKING_TRADING_POST</div>
+<div class="grid-item">交易所</div>
 
-<tr>
-  <td rowspan=2>BUILDINGCLASS_LIBRARY</td>
-  <td>BUILDING_LIBRARY</td>
-  <td>図書館</td>
-</tr>
-<tr>
-  <td>BUILDING_ARABIAN_MADRASSA</td>
-  <td>マドラッサ</td>
-</tr>
-
-</table>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_LIBRARY</div>
+<div class="grid-item g">BUILDING_LIBRARY</div>
+<div class="grid-item g">図書館</div>
+<div class="grid-item">BUILDING_ARABIAN_MADRASSA</div>
+<div class="grid-item">マドラッサ</div>
+</div>
 
 ## 古典
-<table class="table table-striped" style="table-layout:fixed;">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<thead>
-  <th>建造物クラスキー</th>
-  <th>建造物キー</th>
-  <th>建造物</th>
-</thead>
+<div class="grid-table gt3">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物キー</div>
+<div class="grid-title">建造物</div>
 
-<tr>
-  <td rowspan=3>BUILDINGCLASS_THEATRE</td>
-  <td>BUILDING_THEATRE</td>
-  <td>劇場</td>
-</tr>
-<tr>
-  <td>BUILDING_CHINESE_PAVILLION</td>
-  <td>楼閣</td>
-</tr>
-<tr>
-  <td>BUILDING_BYZANTINE_HIPPODROME</td>
-  <td>ヒッポドローム</td>
-</tr>
+<div class="grid-subtitle gty-3">BUILDINGCLASS_THEATRE</div>
+<div class="grid-item g">BUILDING_THEATRE</div>
+<div class="grid-item g">劇場</div>
+<div class="grid-item">BUILDING_CHINESE_PAVILLION</div>
+<div class="grid-item">楼閣</div>
+<div class="grid-item g">BUILDING_BYZANTINE_HIPPODROME</div>
+<div class="grid-item g">ヒッポドローム</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_STABLE</td><td>BUILDING_STABLE</td><td>厩舎</td></tr>
-<tr><td>BUILDING_MONGOL_GER</td><td>ゲル</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_STABLE</div>
+<div class="grid-item">BUILDING_STABLE</div>
+<div class="grid-item">厩舎</div>
+<div class="grid-item g">BUILDING_MONGOL_GER</div>
+<div class="grid-item g">ゲル</div>
 
-<tr><td rowspan=4>BUILDINGCLASS_COLOSSEUM</td><td>BUILDING_COLOSSEUM</td><td>コロシアム</td></tr>
-<tr><td>BUILDING_GREEK_ODEON</td><td>オデオン</td></tr>
-<tr><td>BUILDING_MAYA_BALL_COURT</td><td>球技場</td></tr>
-<tr><td>BUILDING_BABYLON_GARDEN</td><td>庭園</td></tr>
+<div class="grid-subtitle gty-4">BUILDINGCLASS_COLOSSEUM</div>
+<div class="grid-item">BUILDING_COLOSSEUM</div>
+<div class="grid-item">コロシアム</div>
+<div class="grid-item g">BUILDING_GREEK_ODEON</div>
+<div class="grid-item g">オデオン</div>
+<div class="grid-item">BUILDING_MAYA_BALL_COURT</div>
+<div class="grid-item">球技場</div>
+<div class="grid-item g">BUILDING_BABYLON_GARDEN</div>
+<div class="grid-item g">庭園</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_HARBOR</td><td>BUILDING_HARBOR</td><td>港</td></tr>
-<tr><td>BUILDING_CARTHAGE_COTHON</td><td>コトン</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_HARBOR</div>
+<div class="grid-item">BUILDING_HARBOR</div>
+<div class="grid-item">港</div>
+<div class="grid-item g">BUILDING_CARTHAGE_COTHON</div>
+<div class="grid-item g">コトン</div>
 
-<tr><td rowspan=3>BUILDINGCLASS_AQUEDUCT</td><td>BUILDING_AQUEDUCT</td><td>水道橋</td></tr>
-<tr><td>BUILDING_OTTOMAN_HAMMAM</td><td>ハマム</td></tr>
-<tr><td>BUILDING_KHMER_BARAY</td><td>バライ</td></tr>
+<div class="grid-subtitle gty-3">BUILDINGCLASS_AQUEDUCT</div>
+<div class="grid-item">BUILDING_AQUEDUCT</div>
+<div class="grid-item">水道橋</div>
+<div class="grid-item g">BUILDING_OTTOMAN_HAMMAM</div>
+<div class="grid-item g">ハマム</div>
+<div class="grid-item">BUILDING_KHMER_BARAY</div>
+<div class="grid-item">バライ</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_FORGE</td><td>BUILDING_FORGE</td><td>溶鉱炉</td></tr>
-<tr><td>BUILDING_MALI_MINT</td><td>ミント</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_FORGE</div>
+<div class="grid-item g">BUILDING_FORGE</div>
+<div class="grid-item g">溶鉱炉</div>
+<div class="grid-item">BUILDING_MALI_MINT</div>
+<div class="grid-item">ミント</div>
 
-<tr><td rowspan=4>BUILDINGCLASS_COURTHOUSE</td><td>BUILDING_COURTHOUSE</td><td>裁判所</td></tr>
-<tr><td>BUILDING_HOLY_ROMAN_RATHAUS</td><td>ラートハウス</td></tr>
-<tr><td>BUILDING_AZTEC_SACRIFICIAL_ALTAR</td><td>生贄の祭壇</td></tr>
-<tr><td>BUILDING_SUMERIAN_ZIGGURAT</td><td>ジッグラト</td></tr>
+<div class="grid-subtitle gty-4">BUILDINGCLASS_COURTHOUSE</div>
+<div class="grid-item g">BUILDING_COURTHOUSE</div>
+<div class="grid-item g">裁判所</div>
+<div class="grid-item">BUILDING_HOLY_ROMAN_RATHAUS</div>
+<div class="grid-item">ラートハウス</div>
+<div class="grid-item g">BUILDING_AZTEC_SACRIFICIAL_ALTAR</div>
+<div class="grid-item g">生贄の祭壇</div>
+<div class="grid-item">BUILDING_SUMERIAN_ZIGGURAT</div>
+<div class="grid-item">ジッグラト</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_MARKET</td><td>BUILDING_MARKET</td><td>市場</td></tr>
-<tr><td>BUILDING_ROMAN_FORUM</td><td>公共広場</td></tr>
-</table>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_MARKET</div>
+<div class="grid-item g">BUILDING_MARKET</div>
+<div class="grid-item g">市場</div>
+<div class="grid-item">BUILDING_ROMAN_FORUM</div>
+<div class="grid-item">公共広場</div>
+</div>
 
 ## 中世・ルネサンス
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<thead>
-  <th>建造物クラスキー</th>
-  <th>建造物キー</th>
-  <th>建造物</th>
-</thead>
+<div class="grid-table gt3">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物キー</div>
+<div class="grid-title">建造物</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_CASTLE</td><td>BUILDING_CASTLE</td><td>城</td></tr>
-<tr><td>BUILDING_SPANISH_CITADEL</td><td>城塞</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_CASTLE</div>
+<div class="grid-item g">BUILDING_CASTLE</div>
+<div class="grid-item g">城</div>
+<div class="grid-item">BUILDING_SPANISH_CITADEL</div>
+<div class="grid-item">城塞</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_GROCER</td><td>BUILDING_GROCER</td><td>雑貨商</td></tr>
-<tr><td>BUILDING_PERSIAN_APOTHECARY</td><td>薬屋</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_GROCER</div>
+<div class="grid-item g">BUILDING_GROCER</div>
+<div class="grid-item g">雑貨商</div>
+<div class="grid-item">BUILDING_PERSIAN_APOTHECARY</div>
+<div class="grid-item">薬屋</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_BANK</td><td>BUILDING_BANK</td><td>銀行</td></tr>
-<tr><td>BUILDING_ENGLISH_STOCK_EXCHANGE</td><td>証券取引所</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_BANK</div>
+<div class="grid-item g">BUILDING_BANK</div>
+<div class="grid-item g">銀行</div>
+<div class="grid-item">BUILDING_ENGLISH_STOCK_EXCHANGE</div>
+<div class="grid-item">証券取引所</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_UNIVERSITY</td><td>BUILDING_UNIVERSITY</td><td>大学</td></tr>
-<tr><td>BUILDING_KOREAN_SEOWON</td><td>書院</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_UNIVERSITY</div>
+<div class="grid-item g">BUILDING_UNIVERSITY</div>
+<div class="grid-item g">大学</div>
+<div class="grid-item">BUILDING_KOREAN_SEOWON</div>
+<div class="grid-item">書院</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_CUSTOM_HOUSE</td><td>BUILDING_CUSTOM_HOUSE</td><td>税関</td></tr>
-<tr><td>BUILDING_PORTUGAL_FEITORIA</td><td>フェイトリア</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_CUSTOM_HOUSE</div>
+<div class="grid-item g">BUILDING_CUSTOM_HOUSE</div>
+<div class="grid-item g">税関</div>
+<div class="grid-item">BUILDING_PORTUGAL_FEITORIA</div>
+<div class="grid-item">フェイトリア</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_OBSERVATORY</td><td>BUILDING_OBSERVATORY</td><td>天文台</td></tr>
-<tr><td>BUILDING_FRENCH_SALON</td><td>サロン</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_OBSERVATORY</div>
+<div class="grid-item g">BUILDING_OBSERVATORY</div>
+<div class="grid-item g">天文台</div>
+<div class="grid-item">BUILDING_FRENCH_SALON</div>
+<div class="grid-item">サロン</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_JAIL</td><td>BUILDING_JAIL</td><td>刑務所</td></tr>
-<tr><td>BUILDING_INDIAN_MAUSOLEUM</td><td>霊廟</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_JAIL</div>
+<div class="grid-item g">BUILDING_JAIL</div>
+<div class="grid-item g">刑務所</div>
+<div class="grid-item">BUILDING_INDIAN_MAUSOLEUM</div>
+<div class="grid-item">霊廟</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_NATIONAL_SECURITY</td><td>BUILDING_NATIONAL_SECURITY</td><td>公安局</td></tr>
-
-</table>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_NATIONAL_SECURITY</div>
+<div class="grid-item g">BUILDING_NATIONAL_SECURITY</div>
+<div class="grid-item g">公安局</div>
+</div>
 
 ## 工業化時代
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<thead>
-  <th>建造物クラスキー</th>
-  <th>建造物キー</th>
-  <th>建造物</th>
-</thead>
+<div class="grid-table gt3">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物キー</div>
+<div class="grid-title">建造物</div>
 
-<tr><td>BUILDINGCLASS_DRYDOCK</td><td>BUILDING_DRYDOCK</td><td>乾ドック</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_DRYDOCK</div>
+<div class="grid-item g">BUILDING_DRYDOCK</div>
+<div class="grid-item g">乾ドック</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_INTELLIGENCE_AGENCY</td><td>BUILDING_INTELLIGENCE_AGENCY</td><td>諜報機関</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_INTELLIGENCE_AGENCY</div>
+<div class="grid-item">BUILDING_INTELLIGENCE_AGENCY</div>
+<div class="grid-item">諜報機関</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_LEVEE</td><td>BUILDING_LEVEE</td><td>堤防</td></tr>
-<tr><td>BUILDING_NETHERLANDS_DIKE</td><td>ダイク</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_LEVEE</div>
+<div class="grid-item g">BUILDING_LEVEE</div>
+<div class="grid-item g">堤防</div>
+<div class="grid-item">BUILDING_NETHERLANDS_DIKE</div>
+<div class="grid-item">ダイク</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_FACTORY</td><td>BUILDING_FACTORY</td><td>工場</td></tr>
-<tr><td>BUILDING_GERMAN_ASSEMBLY_PLANT</td><td>総合組立工場</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_FACTORY</div>
+<div class="grid-item g">BUILDING_FACTORY</div>
+<div class="grid-item g">工場</div>
+<div class="grid-item">BUILDING_GERMAN_ASSEMBLY_PLANT</div>
+<div class="grid-item">総合組立工場</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_COAL_PLANT</td><td>BUILDING_COAL_PLANT</td><td>火力発電所</td></tr>
-<tr><td>BUILDING_JAPANESE_SHALE_PLANT</td><td>シェール油精製施設</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_COAL_PLANT</div>
+<div class="grid-item g">BUILDING_COAL_PLANT</div>
+<div class="grid-item g">火力発電所</div>
+<div class="grid-item">BUILDING_JAPANESE_SHALE_PLANT</div>
+<div class="grid-item">シェール油精製施設</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_NUCLEAR_PLANT</td><td>BUILDING_NUCLEAR_PLANT</td><td>原子力発電所</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_NUCLEAR_PLANT</div>
+<div class="grid-item g">BUILDING_NUCLEAR_PLANT</div>
+<div class="grid-item g">原子力発電所</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_INDUSTRIAL_PARK</td><td>BUILDING_INDUSTRIAL_PARK</td><td>工業団地</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_INDUSTRIAL_PARK</div>
+<div class="grid-item">BUILDING_INDUSTRIAL_PARK</div>
+<div class="grid-item">工業団地</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_PUBLIC_TRANSPORTATION</td><td>BUILDING_PUBLIC_TRANSPORTATION</td><td>公共交通機関</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_PUBLIC_TRANSPORTATION</div>
+<div class="grid-item g">BUILDING_PUBLIC_TRANSPORTATION</div>
+<div class="grid-item g">公共交通機関</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_HOSPITAL</td><td>BUILDING_HOSPITAL</td><td>病院</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_HOSPITAL</div>
+<div class="grid-item">BUILDING_HOSPITAL</div>
+<div class="grid-item">病院</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_BUNKER</td><td>BUILDING_BUNKER</td><td>バンカー</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_BUNKER</div>
+<div class="grid-item g">BUILDING_BUNKER</div>
+<div class="grid-item g">バンカー</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_BOMB_SHELTER</td><td>BUILDING_BOMB_SHELTER</td><td>核シェルター</td></tr>
-
-</table>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_BOMB_SHELTER</div>
+<div class="grid-item">BUILDING_BOMB_SHELTER</div>
+<div class="grid-item">核シェルター</div>
+</div>
 
 ## 現代・未来
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<tr>
-  <th>建造物クラスキー</th>
-  <th>建造物キー</th>
-  <th>建造物</th>
-</tr>
+<div class="grid-table gt3">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物キー</div>
+<div class="grid-title">建造物</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_HYDRO_PLANT</td><td>BUILDING_HYDRO_PLANT</td><td>水力発電所</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_HYDRO_PLANT</div>
+<div class="grid-item g">BUILDING_HYDRO_PLANT</div>
+<div class="grid-item g">水力発電所</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_SUPERMARKET</td><td>BUILDING_SUPERMARKET</td><td>スーパーマーケット</td></tr>
-<tr><td>BUILDING_AMERICAN_MALL</td><td>ショッピングモール</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_SUPERMARKET</div>
+<div class="grid-item">BUILDING_SUPERMARKET</div>
+<div class="grid-item">スーパーマーケット</div>
+<div class="grid-item g">BUILDING_AMERICAN_MALL</div>
+<div class="grid-item g">ショッピングモール</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_AIRPORT</td><td>BUILDING_AIRPORT</td><td>空港</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_AIRPORT</div>
+<div class="grid-item">BUILDING_AIRPORT</div>
+<div class="grid-item">空港</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_BROADCAST_TOWER</td><td>BUILDING_BROADCAST_TOWER</td><td>放送塔</td></tr>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_BROADCAST_TOWER</div>
+<div class="grid-item g">BUILDING_BROADCAST_TOWER</div>
+<div class="grid-item g">放送塔</div>
 
-<tr><td rowspan=2>BUILDINGCLASS_LABORATORY</td><td>BUILDING_LABORATORY</td><td>研究所</td></tr>
-<tr><td>BUILDING_RUSSIAN_RESEARCH_INSTITUTE</td><td>研究施設</td></tr>
+<div class="grid-subtitle gty-2">BUILDINGCLASS_LABORATORY</div>
+<div class="grid-item">BUILDING_LABORATORY</div>
+<div class="grid-item">研究所</div>
+<div class="grid-item g">BUILDING_RUSSIAN_RESEARCH_INSTITUTE</div>
+<div class="grid-item g">研究施設</div>
 
-<tr><td rowspan=1>BUILDINGCLASS_RECYCLING_CENTER</td><td>BUILDING_RECYCLING_CENTER</td><td>リサイクル施設</td></tr>
-
-</table>
+<div class="grid-subtitle gty-1">BUILDINGCLASS_RECYCLING_CENTER</div>
+<div class="grid-item">BUILDING_RECYCLING_CENTER</div>
+<div class="grid-item">リサイクル施設</div>
+</div>
 
 ## 宗教系
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-建造物クラスキー|建造物
----|---
-BUILDINGCLASS_JEWISH_MONASTERY|ユダヤ教僧院
-BUILDINGCLASS_CHRISTIAN_MONASTERY|キリスト教修道院
-BUILDINGCLASS_ISLAMIC_MONASTERY|イスラム教僧院
-BUILDINGCLASS_HINDU_MONASTERY|ヒンズー教僧院
-BUILDINGCLASS_BUDDHIST_MONASTERY|仏教僧院
-BUILDINGCLASS_CONFUCIAN_MONASTERY|儒教僧院
-BUILDINGCLASS_TAOIST_MONASTERY|道教僧院
-BUILDINGCLASS_JEWISH_TEMPLE|ユダヤ教寺院
-BUILDINGCLASS_CHRISTIAN_TEMPLE|キリスト教寺院
-BUILDINGCLASS_ISLAMIC_TEMPLE|イスラム教寺院
-BUILDINGCLASS_HINDU_TEMPLE|ヒンズー教寺院
-BUILDINGCLASS_BUDDHIST_TEMPLE|仏教寺院
-BUILDINGCLASS_CONFUCIAN_TEMPLE|儒教寺院
-BUILDINGCLASS_TAOIST_TEMPLE|道教寺院
-BUILDINGCLASS_JEWISH_CATHEDRAL|ユダヤ教シナゴーグ
-BUILDINGCLASS_CHRISTIAN_CATHEDRAL|キリスト教大聖堂
-BUILDINGCLASS_ISLAMIC_CATHEDRAL|イスラム教モスク
-BUILDINGCLASS_HINDU_CATHEDRAL|マンディール
-BUILDINGCLASS_BUDDHIST_CATHEDRAL|卒塔婆
-BUILDINGCLASS_CONFUCIAN_CATHEDRAL|大儒学院
-BUILDINGCLASS_TAOIST_CATHEDRAL|道教パゴダ
-BUILDINGCLASS_JEWISH_SHRINE|ソロモンの神殿
-BUILDINGCLASS_CHRISTIAN_SHRINE|聖誕教会
-BUILDINGCLASS_ISLAMIC_SHRINE|マスジド・アル・ハラーム
-BUILDINGCLASS_HINDU_SHRINE|ヴィシュワナート寺院
-BUILDINGCLASS_BUDDHIST_SHRINE|大菩提寺
-BUILDINGCLASS_CONFUCIAN_SHRINE|孔廟
-BUILDINGCLASS_TAOIST_SHRINE|岱廟
-{{%/div%}}{{%/div%}}
+<div class="grid-item">BUILDINGCLASS_JEWISH_MONASTERY</div>
+<div class="grid-item">ユダヤ教僧院</div>
+<div class="grid-item">BUILDINGCLASS_CHRISTIAN_MONASTERY</div>
+<div class="grid-item">キリスト教修道院</div>
+<div class="grid-item">BUILDINGCLASS_ISLAMIC_MONASTERY</div>
+<div class="grid-item">イスラム教僧院</div>
+<div class="grid-item">BUILDINGCLASS_HINDU_MONASTERY</div>
+<div class="grid-item">ヒンズー教僧院</div>
+<div class="grid-item">BUILDINGCLASS_BUDDHIST_MONASTERY</div>
+<div class="grid-item">仏教僧院</div>
+
+<div class="grid-item">BUILDINGCLASS_CONFUCIAN_MONASTERY</div>
+<div class="grid-item">儒教僧院</div>
+<div class="grid-item">BUILDINGCLASS_TAOIST_MONASTERY</div>
+<div class="grid-item">道教僧院</div>
+<div class="grid-item">BUILDINGCLASS_JEWISH_TEMPLE</div>
+<div class="grid-item">ユダヤ教寺院</div>
+<div class="grid-item">BUILDINGCLASS_CHRISTIAN_TEMPLE</div>
+<div class="grid-item">キリスト教寺院</div>
+<div class="grid-item">BUILDINGCLASS_ISLAMIC_TEMPLE</div>
+<div class="grid-item">イスラム教寺院</div>
+<div class="grid-item">BUILDINGCLASS_HINDU_TEMPLE</div>
+<div class="grid-item">ヒンズー教寺院</div>
+<div class="grid-item">BUILDINGCLASS_BUDDHIST_TEMPLE</div>
+<div class="grid-item">仏教寺院</div>
+<div class="grid-item">BUILDINGCLASS_CONFUCIAN_TEMPLE</div>
+<div class="grid-item">儒教寺院</div>
+<div class="grid-item">BUILDINGCLASS_TAOIST_TEMPLE</div>
+<div class="grid-item">道教寺院</div>
+<div class="grid-item">BUILDINGCLASS_JEWISH_CATHEDRAL</div>
+<div class="grid-item">ユダヤ教シナゴーグ</div>
+<div class="grid-item">BUILDINGCLASS_CHRISTIAN_CATHEDRAL</div>
+<div class="grid-item">キリスト教大聖堂</div>
+<div class="grid-item">BUILDINGCLASS_ISLAMIC_CATHEDRAL</div>
+<div class="grid-item">イスラム教モスク</div>
+<div class="grid-item">BUILDINGCLASS_HINDU_CATHEDRAL</div>
+<div class="grid-item">マンディール</div>
+<div class="grid-item">BUILDINGCLASS_BUDDHIST_CATHEDRAL</div>
+<div class="grid-item">卒塔婆</div>
+<div class="grid-item">BUILDINGCLASS_CONFUCIAN_CATHEDRAL</div>
+<div class="grid-item">大儒学院</div>
+<div class="grid-item">BUILDINGCLASS_TAOIST_CATHEDRAL</div>
+<div class="grid-item">道教パゴダ</div>
+<div class="grid-item">BUILDINGCLASS_JEWISH_SHRINE</div>
+<div class="grid-item">ソロモンの神殿</div>
+<div class="grid-item">BUILDINGCLASS_CHRISTIAN_SHRINE</div>
+<div class="grid-item">聖誕教会</div>
+<div class="grid-item">BUILDINGCLASS_ISLAMIC_SHRINE</div>
+<div class="grid-item">マスジド・アル・ハラーム</div>
+<div class="grid-item">BUILDINGCLASS_HINDU_SHRINE</div>
+<div class="grid-item">ヴィシュワナート寺院</div>
+<div class="grid-item">BUILDINGCLASS_BUDDHIST_SHRINE</div>
+<div class="grid-item">大菩提寺</div>
+<div class="grid-item">BUILDINGCLASS_CONFUCIAN_SHRINE</div>
+<div class="grid-item">孔廟</div>
+<div class="grid-item">BUILDINGCLASS_TAOIST_SHRINE</div>
+<div class="grid-item">岱廟</div>
+</div>
 
 ## 国家遺産
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-建造物クラスキー|遺産
----|---
-BUILDINGCLASS_PALACE|宮殿
-BUILDINGCLASS_GREAT_PALACE|紫禁城
-BUILDINGCLASS_HEROIC_EPIC|英雄叙事詩
-BUILDINGCLASS_NATIONAL_EPIC|民族叙事詩
-BUILDINGCLASS_MOAI_STATUES|モアイ像
-BUILDINGCLASS_GLOBE_THEATRE|グローブ座
-BUILDINGCLASS_NATIONAL_PARK|国立公園
-BUILDINGCLASS_HERMITAGE|エルミタージュ美術館
-BUILDINGCLASS_OXFORD_UNIVERSITY|オックスフォード大学
-BUILDINGCLASS_MT_RUSHMORE|ラシュモア山
-BUILDINGCLASS_WALL_STREET|ウォール街
-BUILDINGCLASS_RED_CROSS|赤十字
-BUILDINGCLASS_IRON_WORKS|製鉄所
-BUILDINGCLASS_WEST_POINT|ウェストポイント
-{{%/div%}}{{%/div%}}
+<div class="grid-item">BUILDINGCLASS_PALACE</div>
+<div class="grid-item">宮殿</div>
+<div class="grid-item">BUILDINGCLASS_GREAT_PALACE</div>
+<div class="grid-item">紫禁城</div>
+<div class="grid-item">BUILDINGCLASS_HEROIC_EPIC</div>
+<div class="grid-item">英雄叙事詩</div>
+<div class="grid-item">BUILDINGCLASS_NATIONAL_EPIC</div>
+<div class="grid-item">民族叙事詩</div>
+<div class="grid-item">BUILDINGCLASS_MOAI_STATUES</div>
+<div class="grid-item">モアイ像</div>
+<div class="grid-item">BUILDINGCLASS_GLOBE_THEATRE</div>
+<div class="grid-item">グローブ座</div>
+<div class="grid-item">BUILDINGCLASS_NATIONAL_PARK</div>
+<div class="grid-item">国立公園</div>
+<div class="grid-item">BUILDINGCLASS_HERMITAGE</div>
+<div class="grid-item">エルミタージュ美術館</div>
+<div class="grid-item">BUILDINGCLASS_OXFORD_UNIVERSITY</div>
+<div class="grid-item">オックスフォード大学</div>
+<div class="grid-item">BUILDINGCLASS_MT_RUSHMORE</div>
+<div class="grid-item">ラシュモア山</div>
+<div class="grid-item">BUILDINGCLASS_WALL_STREET</div>
+<div class="grid-item">ウォール街</div>
+<div class="grid-item">BUILDINGCLASS_RED_CROSS</div>
+<div class="grid-item">赤十字</div>
+<div class="grid-item">BUILDINGCLASS_IRON_WORKS</div>
+<div class="grid-item">製鉄所</div>
+<div class="grid-item">BUILDINGCLASS_WEST_POINT</div>
+<div class="grid-item">ウェストポイント</div>
+</div>
 
 ## 世界遺産
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-建造物クラスキー|遺産
----|---
-BUILDINGCLASS_STONEHENGE|ストーンヘンジ
-BUILDINGCLASS_ORACLE|アポロ神殿
-BUILDINGCLASS_GREAT_WALL|万里の長城
-BUILDINGCLASS_GREAT_LIGHTHOUSE|ファロス灯台
-BUILDINGCLASS_COLOSSUS|ロードス島の巨神像
-BUILDINGCLASS_HANGING_GARDEN|空中庭園
-BUILDINGCLASS_STATUE_OF_ZEUS|ゼウス像
-BUILDINGCLASS_GREAT_LIBRARY|アレクサンドリア図書館
-BUILDINGCLASS_ARTEMIS|アルテミス神殿
-BUILDINGCLASS_PARTHENON|パルテノン神殿
-BUILDINGCLASS_APOSTOLIC_PALACE|バチカン宮殿
-BUILDINGCLASS_MAUSOLEUM_OF_MAUSSOLLOS|マウソロス霊廟
-BUILDINGCLASS_SHWEDAGON_PAYA|シェダゴン・パヤ
-BUILDINGCLASS_PYRAMID|ピラミッド
-BUILDINGCLASS_ANGKOR_WAT|アンコールワット
-BUILDINGCLASS_HAGIA_SOPHIA|ハギア・ソフィア大聖堂
-BUILDINGCLASS_CHICHEN_ITZA|チチェンイツァー
-BUILDINGCLASS_SPIRAL_MINARET|マルウィヤ・ミナレット
-BUILDINGCLASS_NOTRE_DAME|ノートルダム大聖堂
-BUILDINGCLASS_SANKORE|サンコーレ大学
-BUILDINGCLASS_SISTINE_CHAPEL|システィナ礼拝堂
-BUILDINGCLASS_TAJ_MAHAL|タージマハル
-BUILDINGCLASS_VERSAILLES|ヴェルサイユ宮殿
-BUILDINGCLASS_KREMLIN|クレムリン宮殿
-BUILDINGCLASS_BROADWAY|ブロードウェイ
-BUILDINGCLASS_ROCKNROLL|ロックンロール
-BUILDINGCLASS_HOLLYWOOD|ハリウッド
-BUILDINGCLASS_UNITED_NATIONS|国際連合
-BUILDINGCLASS_CRISTO_REDENTOR|コルコバードのキリスト像
-BUILDINGCLASS_EIFFEL_TOWER|エッフェル塔
-BUILDINGCLASS_PENTAGON|ペンタゴン
-BUILDINGCLASS_STATUE_OF_LIBERTY|自由の女神
-BUILDINGCLASS_GREAT_DAM|三峡ダム
-BUILDINGCLASS_SPACE_ELEVATOR|軌道エレベーター
-{{%/div%}}{{%/div%}}
+<div class="grid-item">BUILDINGCLASS_STONEHENGE</div>
+<div class="grid-item">ストーンヘンジ</div>
+<div class="grid-item">BUILDINGCLASS_ORACLE</div>
+<div class="grid-item">アポロ神殿</div>
+<div class="grid-item">BUILDINGCLASS_GREAT_WALL</div>
+<div class="grid-item">万里の長城</div>
+<div class="grid-item">BUILDINGCLASS_GREAT_LIGHTHOUSE</div>
+<div class="grid-item">ファロス灯台</div>
+<div class="grid-item">BUILDINGCLASS_COLOSSUS</div>
+<div class="grid-item">ロードス島の巨神像</div>
+<div class="grid-item">BUILDINGCLASS_HANGING_GARDEN</div>
+<div class="grid-item">空中庭園</div>
+<div class="grid-item">BUILDINGCLASS_STATUE_OF_ZEUS</div>
+<div class="grid-item">ゼウス像</div>
+<div class="grid-item">BUILDINGCLASS_GREAT_LIBRARY</div>
+<div class="grid-item">アレクサンドリア図書館</div>
+<div class="grid-item">BUILDINGCLASS_ARTEMIS</div>
+<div class="grid-item">アルテミス神殿</div>
+<div class="grid-item">BUILDINGCLASS_PARTHENON</div>
+<div class="grid-item">パルテノン神殿</div>
+<div class="grid-item">BUILDINGCLASS_APOSTOLIC_PALACE</div>
+<div class="grid-item">バチカン宮殿</div>
+<div class="grid-item">BUILDINGCLASS_MAUSOLEUM_OF_MAUSSOLLOS</div>
+<div class="grid-item">マウソロス霊廟</div>
+<div class="grid-item">BUILDINGCLASS_SHWEDAGON_PAYA</div>
+<div class="grid-item">シェダゴン・パヤ</div>
+<div class="grid-item">BUILDINGCLASS_PYRAMID</div>
+<div class="grid-item">ピラミッド</div>
+<div class="grid-item">BUILDINGCLASS_ANGKOR_WAT</div>
+<div class="grid-item">アンコールワット</div>
+<div class="grid-item">BUILDINGCLASS_HAGIA_SOPHIA</div>
+<div class="grid-item">ハギア・ソフィア大聖堂</div>
+<div class="grid-item">BUILDINGCLASS_CHICHEN_ITZA</div>
+<div class="grid-item">チチェンイツァー</div>
+<div class="grid-item">BUILDINGCLASS_SPIRAL_MINARET</div>
+<div class="grid-item">マルウィヤ・ミナレット</div>
+<div class="grid-item">BUILDINGCLASS_NOTRE_DAME</div>
+<div class="grid-item">ノートルダム大聖堂</div>
+<div class="grid-item">BUILDINGCLASS_SANKORE</div>
+<div class="grid-item">サンコーレ大学</div>
+<div class="grid-item">BUILDINGCLASS_SISTINE_CHAPEL</div>
+<div class="grid-item">システィナ礼拝堂</div>
+<div class="grid-item">BUILDINGCLASS_TAJ_MAHAL</div>
+<div class="grid-item">タージマハル</div>
+<div class="grid-item">BUILDINGCLASS_VERSAILLES</div>
+<div class="grid-item">ヴェルサイユ宮殿</div>
+<div class="grid-item">BUILDINGCLASS_KREMLIN</div>
+<div class="grid-item">クレムリン宮殿</div>
+<div class="grid-item">BUILDINGCLASS_BROADWAY</div>
+<div class="grid-item">ブロードウェイ</div>
+<div class="grid-item">BUILDINGCLASS_ROCKNROLL</div>
+<div class="grid-item">ロックンロール</div>
+<div class="grid-item">BUILDINGCLASS_HOLLYWOOD</div>
+<div class="grid-item">ハリウッド</div>
+<div class="grid-item">BUILDINGCLASS_UNITED_NATIONS</div>
+<div class="grid-item">国際連合</div>
+<div class="grid-item">BUILDINGCLASS_CRISTO_REDENTOR</div>
+<div class="grid-item">コルコバードのキリスト像</div>
+<div class="grid-item">BUILDINGCLASS_EIFFEL_TOWER</div>
+<div class="grid-item">エッフェル塔</div>
+<div class="grid-item">BUILDINGCLASS_PENTAGON</div>
+<div class="grid-item">ペンタゴン</div>
+<div class="grid-item">BUILDINGCLASS_STATUE_OF_LIBERTY</div>
+<div class="grid-item">自由の女神</div>
+<div class="grid-item">BUILDINGCLASS_GREAT_DAM</div>
+<div class="grid-item">三峡ダム</div>
+<div class="grid-item">BUILDINGCLASS_SPACE_ELEVATOR</div>
+<div class="grid-item">軌道エレベーター</div>
+</div>
 
 ## その他
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">建造物クラスキー</div>
+<div class="grid-title">建造物</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-建造物クラスキー|建造物
----|---
-BUILDINGCLASS_ACADEMY|アカデミー
-BUILDINGCLASS_SCOTLAND_YARD|スコットランドヤード
-BUILDINGCLASS_MILITARY_ACADEMY|士官学校
-BUILDINGCLASS_CORPORATION_1|シリアル・ミル
-BUILDINGCLASS_CORPORATION_2|シド寿司
-BUILDINGCLASS_CORPORATION_3|スタンダード・エタノール
-BUILDINGCLASS_CORPORATION_4|クリエイティブ建設
-BUILDINGCLASS_CORPORATION_5|マイニング社
-BUILDINGCLASS_CORPORATION_6|アルミニウム社
-BUILDINGCLASS_CORPORATION_7|シヴィライズド・ジュエリー社
-{{%/div%}}{{%/div%}}
+<div class="grid-item">BUILDINGCLASS_ACADEMY</div>
+<div class="grid-item">アカデミー</div>
+<div class="grid-item">BUILDINGCLASS_SCOTLAND_YARD</div>
+<div class="grid-item">スコットランドヤード</div>
+<div class="grid-item">BUILDINGCLASS_MILITARY_ACADEMY</div>
+<div class="grid-item">士官学校</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_1</div>
+<div class="grid-item">シリアル・ミル</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_2</div>
+<div class="grid-item">シド寿司</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_3</div>
+<div class="grid-item">スタンダード・エタノール</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_4</div>
+<div class="grid-item">クリエイティブ建設</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_5</div>
+<div class="grid-item">マイニング社</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_6</div>
+<div class="grid-item">アルミニウム社</div>
+<div class="grid-item">BUILDINGCLASS_CORPORATION_7</div>
+<div class="grid-item">シヴィライズド・ジュエリー社</div>
+</div>
 
 # プロジェクト
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">プロジェクトキー</div>
+<div class="grid-title">プロジェクト</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-プロジェクトキー|プロジェクト
----|---
-PROJECT_MANHATTAN_PROJECT|マンハッタン計画
-PROJECT_THE_INTERNET|インターネット
-PROJECT_SDI|戦略防衛構想
-PROJECT_APOLLO_PROGRAM|アポロ計画
-PROJECT_SS_COCKPIT|宇宙船のコクピット
-PROJECT_SS_LIFE_SUPPORT|宇宙船の生命維持装置
-PROJECT_SS_STASIS_CHAMBER|宇宙船の冷凍睡眠室
-PROJECT_SS_DOCKING_BAY|宇宙船のドッキングベイ
-PROJECT_SS_ENGINE|宇宙船のエンジン
-PROJECT_SS_CASING|宇宙船の外殻
-PROJECT_SS_THRUSTERS|宇宙船のスラスター
-{{%/div%}}{{%/div%}}
-
+<div class="grid-item">PROJECT_MANHATTAN_PROJECT</div>
+<div class="grid-item">マンハッタン計画</div>
+<div class="grid-item">PROJECT_THE_INTERNET</div>
+<div class="grid-item">インターネット</div>
+<div class="grid-item">PROJECT_SDI</div>
+<div class="grid-item">戦略防衛構想</div>
+<div class="grid-item">PROJECT_APOLLO_PROGRAM</div>
+<div class="grid-item">アポロ計画</div>
+<div class="grid-item">PROJECT_SS_COCKPIT</div>
+<div class="grid-item">宇宙船のコクピット</div>
+<div class="grid-item">PROJECT_SS_LIFE_SUPPORT</div>
+<div class="grid-item">宇宙船の生命維持装置</div>
+<div class="grid-item">PROJECT_SS_STASIS_CHAMBER</div>
+<div class="grid-item">宇宙船の冷凍睡眠室</div>
+<div class="grid-item">PROJECT_SS_DOCKING_BAY</div>
+<div class="grid-item">宇宙船のドッキングベイ</div>
+<div class="grid-item">PROJECT_SS_ENGINE</div>
+<div class="grid-item">宇宙船のエンジン</div>
+<div class="grid-item">PROJECT_SS_CASING</div>
+<div class="grid-item">宇宙船の外殻</div>
+<div class="grid-item">PROJECT_SS_THRUSTERS</div>
+<div class="grid-item">宇宙船のスラスター</div>
+</div>
 
 # ユニット
 ## 動物
-<table class="table table-striped" style="table-layout:fixed">
-<thead><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></thead>
-<tr><td rowspan=1>UNITCLASS_LION</td><td>UNIT_LION</td><td>ライオン</td></tr>
-<tr><td rowspan=1>UNITCLASS_BEAR</td><td>UNIT_BEAR</td><td>クマ</td></tr>
-<tr><td rowspan=1>UNITCLASS_PANTHER</td><td>UNIT_PANTHER</td><td>ヒョウ</td></tr>
-<tr><td rowspan=1>UNITCLASS_WOLF</td><td>UNIT_WOLF</td><td>オオカミ</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_LION</div>
+<div class="grid-item g">UNIT_LION</div>
+<div class="grid-item g">ライオン</div>
+<div class="grid-subtitle gty-1">UNITCLASS_BEAR</div>
+<div class="grid-item">UNIT_BEAR</div>
+<div class="grid-item">クマ</div>
+<div class="grid-subtitle gty-1">UNITCLASS_PANTHER</div>
+<div class="grid-item g">UNIT_PANTHER</div>
+<div class="grid-item g">ヒョウ</div>
+<div class="grid-subtitle gty-1">UNITCLASS_WOLF</div>
+<div class="grid-item">UNIT_WOLF</div>
+<div class="grid-item">オオカミ</div>
+</div>
 
 ## 非戦闘系
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<thead>
-  <th>ユニットクラスキー</th>
-  <th>ユニットキー</th>
-  <th>ユニット</th>
-</thead>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
 
-<tr>
-  <td rowspan=1>UNITCLASS_SETTLER</td>
-  <td>UNIT_SETTLER</td>
-  <td>開拓者</td>
-</tr>
-<tr>
-  <td rowspan=2>UNITCLASS_WORKER</td>
-  <td>UNIT_WORKER</td>
-  <td>労働者</td>
-</tr>
-<tr>
-  <td>UNIT_INDIAN_FAST_WORKER</td>
-  <td>熟練労働者</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_SCOUT</td>
-  <td>UNIT_SCOUT</td>
-  <td>斥候</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXPLORER</td>
-  <td>UNIT_EXPLORER</td>
-  <td>探検家</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_SPY</td>
-  <td>UNIT_SPY</td>
-  <td>スパイ</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_1</td>
-  <td>UNIT_EXECUTIVE_1</td>
-  <td>シリアル・ミル社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_2</td>
-  <td>UNIT_EXECUTIVE_2</td>
-  <td>シド寿司社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_3</td>
-  <td>UNIT_EXECUTIVE_3</td>
-  <td>スタンダード・エタノール社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_4</td>
-  <td>UNIT_EXECUTIVE_4</td>
-  <td>クリエイティブ建設社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_5</td>
-  <td>UNIT_EXECUTIVE_5</td>
-  <td>マイニング社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_6</td>
-  <td>UNIT_EXECUTIVE_6</td>
-  <td>アルミニウム社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_EXECUTIVE_7</td>
-  <td>UNIT_EXECUTIVE_7</td>
-  <td>シヴィライズド・ジュエリー社重役</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_JEWISH_MISSIONARY</td>
-  <td>UNIT_JEWISH_MISSIONARY</td>
-  <td>ユダヤ教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_CHRISTIAN_MISSIONARY</td>
-  <td>UNIT_CHRISTIAN_MISSIONARY</td>
-  <td>キリスト教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_ISLAMIC_MISSIONARY</td>
-  <td>UNIT_ISLAMIC_MISSIONARY</td>
-  <td>イスラム教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_HINDU_MISSIONARY</td>
-  <td>UNIT_HINDU_MISSIONARY</td>
-  <td>ヒンズー教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_BUDDHIST_MISSIONARY</td>
-  <td>UNIT_BUDDHIST_MISSIONARY</td>
-  <td>仏教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_CONFUCIAN_MISSIONARY</td>
-  <td>UNIT_CONFUCIAN_MISSIONARY</td>
-  <td>儒教宣教師</td>
-</tr>
-<tr>
-  <td rowspan=1>UNITCLASS_TAOIST_MISSIONARY</td>
-  <td>UNIT_TAOIST_MISSIONARY</td>
-  <td>道教宣教師</td>
-</tr>
-</table>
+<div class="grid-subtitle gty-1">UNITCLASS_SETTLER</div>
+<div class="grid-item g">UNIT_SETTLER</div>
+<div class="grid-item g">開拓者</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_WORKER</div>
+<div class="grid-item">UNIT_WORKER</div>
+<div class="grid-item">労働者</div>
+<div class="grid-item g">UNIT_INDIAN_FAST_WORKER</div>
+<div class="grid-item g">熟練労働者</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SCOUT</div>
+<div class="grid-item">UNIT_SCOUT</div>
+<div class="grid-item">斥候</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXPLORER</div>
+<div class="grid-item g">UNIT_EXPLORER</div>
+<div class="grid-item g">探検家</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SPY</div>
+<div class="grid-item">UNIT_SPY</div>
+<div class="grid-item">スパイ</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_1</div>
+<div class="grid-item g">UNIT_EXECUTIVE_1</div>
+<div class="grid-item g">シリアル・ミル社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_2</div>
+<div class="grid-item">UNIT_EXECUTIVE_2</div>
+<div class="grid-item">シド寿司社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_3</div>
+<div class="grid-item g">UNIT_EXECUTIVE_3</div>
+<div class="grid-item g">スタンダード・エタノール社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_4</div>
+<div class="grid-item">UNIT_EXECUTIVE_4</div>
+<div class="grid-item">クリエイティブ建設社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_5</div>
+<div class="grid-item g">UNIT_EXECUTIVE_5</div>
+<div class="grid-item g">マイニング社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_6</div>
+<div class="grid-item">UNIT_EXECUTIVE_6</div>
+<div class="grid-item">アルミニウム社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_EXECUTIVE_7</div>
+<div class="grid-item g">UNIT_EXECUTIVE_7</div>
+<div class="grid-item g">シヴィライズド・ジュエリー社重役</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_JEWISH_MISSIONARY</div>
+<div class="grid-item">UNIT_JEWISH_MISSIONARY</div>
+<div class="grid-item">ユダヤ教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_CHRISTIAN_MISSIONARY</div>
+<div class="grid-item g">UNIT_CHRISTIAN_MISSIONARY</div>
+<div class="grid-item g">キリスト教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ISLAMIC_MISSIONARY</div>
+<div class="grid-item">UNIT_ISLAMIC_MISSIONARY</div>
+<div class="grid-item">イスラム教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_HINDU_MISSIONARY</div>
+<div class="grid-item g">UNIT_HINDU_MISSIONARY</div>
+<div class="grid-item g">ヒンズー教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_BUDDHIST_MISSIONARY</div>
+<div class="grid-item">UNIT_BUDDHIST_MISSIONARY</div>
+<div class="grid-item">仏教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_CONFUCIAN_MISSIONARY</div>
+<div class="grid-item g">UNIT_CONFUCIAN_MISSIONARY</div>
+<div class="grid-item g">儒教宣教師</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_TAOIST_MISSIONARY</div>
+<div class="grid-item">UNIT_TAOIST_MISSIONARY</div>
+<div class="grid-item">道教宣教師</div>
+</div>
 
 ## 白兵・火器
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<thaed><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></thead>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
 
-<tr><td rowspan=2>UNITCLASS_WARRIOR</td><td>UNIT_WARRIOR</td><td>戦士</td></tr>
-<tr><td>UNIT_INCAN_QUECHUA</td><td>ケチュア戦士</td></tr>
-<tr><td rowspan=4>UNITCLASS_SWORDSMAN</td><td>UNIT_SWORDSMAN</td><td>剣士</td></tr>
-<tr><td>UNIT_AZTEC_JAGUAR</td><td>ジャガー戦士</td></tr>
-<tr><td>UNIT_CELTIC_GALLIC_WARRIOR</td><td>ガリア戦士</td></tr>
-<tr><td>UNIT_ROME_PRAETORIAN</td><td>プラエトリアン</td></tr>
-<tr><td rowspan=4>UNITCLASS_AXEMAN</td><td>UNIT_AXEMAN</td><td>斧兵</td></tr>
-<tr><td>UNIT_GREEK_PHALANX</td><td>ファランクス</td></tr>
-<tr><td>UNIT_SUMERIAN_VULTURE</td><td>死鳥隊</td></tr>
-<tr><td>UNIT_NATIVE_AMERICA_DOG_SOLDIER</td><td>犬戦士</td></tr>
-<tr><td rowspan=3>UNITCLASS_MACEMAN</td><td>UNIT_MACEMAN</td><td>鎚鉾兵</td></tr>
-<tr><td>UNIT_JAPAN_SAMURAI</td><td>侍</td></tr>
-<tr><td>UNIT_VIKING_BESERKER</td><td>ベルセルク</td></tr>
-<tr><td rowspan=3>UNITCLASS_SPEARMAN</td><td>UNIT_SPEARMAN</td><td>槍兵</td></tr>
-<tr><td>UNIT_ZULU_IMPI</td><td>インピ</td></tr>
-<tr><td>UNIT_MAYA_HOLKAN</td><td>ホルカン</td></tr>
-<tr><td rowspan=2>UNITCLASS_PIKEMAN</td><td>UNIT_PIKEMAN</td><td>長槍兵</td></tr>
-<tr><td>UNIT_HOLY_ROMAN_LANDSKNECHT</td><td>ランツクネヒト</td></tr>
-<tr><td rowspan=4>UNITCLASS_MUSKETMAN</td><td>UNIT_MUSKETMAN</td><td>マスケット兵</td></tr>
-<tr><td>UNIT_FRENCH_MUSKETEER</td><td>銃士隊</td></tr>
-<tr><td>UNIT_OTTOMAN_JANISSARY</td><td>イェニチェリ</td></tr>
-<tr><td>UNIT_ETHIOPIAN_OROMO_WARRIOR</td><td>オロモ戦士</td></tr>
-<tr><td rowspan=2>UNITCLASS_RIFLEMAN</td><td>UNIT_RIFLEMAN</td><td>ライフル兵</td></tr>
-<tr><td>UNIT_ENGLISH_REDCOAT</td><td>イギリス赤服兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_GRENADIER</td><td>UNIT_GRENADIER</td><td>擲弾兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_AT_INFANTRY</td><td>UNIT_AT_INFANTRY</td><td>対戦車歩兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_INFANTRY</td><td>UNIT_INFANTRY</td><td>歩兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_SAM_INFANTRY</td><td>UNIT_SAM_INFANTRY</td><td>SAM歩兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_MOBILE_SAM</td><td>UNIT_MOBILE_SAM</td><td>移動式SAM</td></tr>
-<tr><td rowspan=2>UNITCLASS_MARINE</td><td>UNIT_MARINE</td><td>海兵隊</td></tr>
-<tr><td>UNIT_AMERICAN_NAVY_SEAL</td><td>シールズ</td></tr>
-<tr><td rowspan=1>UNITCLASS_PARATROOPER</td><td>UNIT_PARATROOPER</td><td>空挺部隊 </td></tr>
-<tr><td rowspan=1>UNITCLASS_MECHANIZED_INFANTRY</td><td>UNIT_MECHANIZED_INFANTRY</td><td>機械化歩兵</td></tr>
-</table>
+<div class="grid-subtitle gty-2">UNITCLASS_WARRIOR</div>
+<div class="grid-item g">UNIT_WARRIOR</div>
+<div class="grid-item g">戦士</div>
+<div class="grid-item">UNIT_INCAN_QUECHUA</div>
+<div class="grid-item">ケチュア戦士</div>
+
+<div class="grid-subtitle gty-4">UNITCLASS_SWORDSMAN</div>
+<div class="grid-item g">UNIT_SWORDSMAN</div>
+<div class="grid-item g">剣士</div>
+<div class="grid-item">UNIT_AZTEC_JAGUAR</div>
+<div class="grid-item">ジャガー戦士</div>
+<div class="grid-item g">UNIT_CELTIC_GALLIC_WARRIOR</div>
+<div class="grid-item g">ガリア戦士</div>
+<div class="grid-item">UNIT_ROME_PRAETORIAN</div>
+<div class="grid-item">プラエトリアン</div>
+
+<div class="grid-subtitle gty-4">UNITCLASS_AXEMAN</div>
+<div class="grid-item g">UNIT_AXEMAN</div>
+<div class="grid-item g">斧兵</div>
+<div class="grid-item">UNIT_GREEK_PHALANX</div>
+<div class="grid-item">ファランクス</div>
+<div class="grid-item g">UNIT_SUMERIAN_VULTURE</div>
+<div class="grid-item g">死鳥隊</div>
+<div class="grid-item">UNIT_NATIVE_AMERICA_DOG_SOLDIER</div>
+<div class="grid-item">犬戦士</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_MACEMAN</div>
+<div class="grid-item g">UNIT_MACEMAN</div>
+<div class="grid-item g">鎚鉾兵</div>
+<div class="grid-item">UNIT_JAPAN_SAMURAI</div>
+<div class="grid-item">侍</div>
+<div class="grid-item g">UNIT_VIKING_BESERKER</div>
+<div class="grid-item g">ベルセルク</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_SPEARMAN</div>
+<div class="grid-item">UNIT_SPEARMAN</div>
+<div class="grid-item">槍兵</div>
+<div class="grid-item g">UNIT_ZULU_IMPI</div>
+<div class="grid-item g">インピ</div>
+<div class="grid-item">UNIT_MAYA_HOLKAN</div>
+<div class="grid-item">ホルカン</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_PIKEMAN</div>
+<div class="grid-item g">UNIT_PIKEMAN</div>
+<div class="grid-item g">長槍兵</div>
+<div class="grid-item">UNIT_HOLY_ROMAN_LANDSKNECHT</div>
+<div class="grid-item">ランツクネヒト</div>
+
+<div class="grid-subtitle gty-4">UNITCLASS_MUSKETMAN</div>
+<div class="grid-item g">UNIT_MUSKETMAN</div>
+<div class="grid-item g">マスケット兵</div>
+<div class="grid-item">UNIT_FRENCH_MUSKETEER</div>
+<div class="grid-item">銃士隊</div>
+<div class="grid-item g">UNIT_OTTOMAN_JANISSARY</div>
+<div class="grid-item g">イェニチェリ</div>
+<div class="grid-item">UNIT_ETHIOPIAN_OROMO_WARRIOR</div>
+<div class="grid-item">オロモ戦士</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_RIFLEMAN</div>
+<div class="grid-item g">UNIT_RIFLEMAN</div>
+<div class="grid-item g">ライフル兵</div>
+<div class="grid-item">UNIT_ENGLISH_REDCOAT</div>
+<div class="grid-item">イギリス赤服兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GRENADIER</div>
+<div class="grid-item g">UNIT_GRENADIER</div>
+<div class="grid-item g">擲弾兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_AT_INFANTRY</div>
+<div class="grid-item">UNIT_AT_INFANTRY</div>
+<div class="grid-item">対戦車歩兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_INFANTRY</div>
+<div class="grid-item g">UNIT_INFANTRY</div>
+<div class="grid-item g">歩兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SAM_INFANTRY</div>
+<div class="grid-item">UNIT_SAM_INFANTRY</div>
+<div class="grid-item">SAM歩兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MOBILE_SAM</div>
+<div class="grid-item g">UNIT_MOBILE_SAM</div>
+<div class="grid-item g">移動式SAM</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_MARINE</div>
+<div class="grid-item">UNIT_MARINE</div>
+<div class="grid-item">海兵隊</div>
+<div class="grid-item g">UNIT_AMERICAN_NAVY_SEAL</div>
+<div class="grid-item g">シールズ</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_PARATROOPER</div>
+<div class="grid-item">UNIT_PARATROOPER</div>
+<div class="grid-item">空挺部隊 </div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MECHANIZED_INFANTRY</div>
+<div class="grid-item g">UNIT_MECHANIZED_INFANTRY</div>
+<div class="grid-item g">機械化歩兵</div>
+</div>
 
 ## 弓兵・騎乗
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:35%" />
-  <col style="width:40%" />
-  <col style="width:25%" />
-<colgroup>
-<tr><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></tr>
-<tr><td rowspan=3>UNITCLASS_ARCHER</td><td>UNIT_ARCHER</td><td>弓兵</td></tr>
-<tr><td>UNIT_MALI_SKIRMISHER</td><td>スカーミッシュ兵</td></tr>
-<tr><td>UNIT_BABYLON_BOWMAN</td><td>バビロニア弓兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_LONGBOWMAN</td><td>UNIT_LONGBOWMAN</td><td>長弓兵</td></tr>
-<tr><td rowspan=2>UNITCLASS_CROSSBOWMAN</td><td>UNIT_CROSSBOWMAN</td><td>弩兵</td></tr>
-<tr><td>UNIT_CHINA_CHOKONU</td><td>連弩兵</td></tr>
-<tr><td rowspan=3>UNITCLASS_CHARIOT</td><td>UNIT_CHARIOT</td><td>チャリオット兵</td></tr>
-<tr><td>UNIT_EGYPT_WARCHARIOT</td><td>重チャリオット兵</td></tr>
-<tr><td>UNIT_PERSIA_IMMORTAL</td><td>不死隊</td></tr>
-<tr><td rowspan=3>UNITCLASS_HORSE_ARCHER</td><td>UNIT_HORSE_ARCHER</td><td>弓騎兵</td></tr>
-<tr><td>UNIT_CARTHAGE_NUMIDIAN_CAVALRY</td><td>ヌミディア騎兵</td></tr>
-<tr><td>UNIT_MONGOL_KESHIK</td><td>ケシク</td></tr>
-<tr><td rowspan=3>UNITCLASS_KNIGHT</td><td>UNIT_KNIGHT</td><td>騎士</td></tr>
-<tr><td>UNIT_ARABIA_CAMELARCHER</td><td>ラクダ弓兵</td></tr>
-<tr><td>UNIT_BYZANTINE_CATAPHRACT</td><td>カタフラクト</td></tr>
-<tr><td rowspan=2>UNITCLASS_CUIRASSIER</td><td>UNIT_SPANISH_CONQUISTADOR</td><td>コンキスタドール</td></tr>
-<tr><td>UNIT_CUIRASSIER</td><td>胸甲騎兵</td></tr>
-<tr><td rowspan=2>UNITCLASS_CAVALRY</td><td>UNIT_CAVALRY</td><td>騎兵隊</td></tr>
-<tr><td>UNIT_RUSSIA_COSSACK</td><td>コサック兵</td></tr>
-<tr><td rowspan=2>UNITCLASS_WAR_ELEPHANT</td><td>UNIT_WAR_ELEPHANT</td><td>軍用象</td></tr>
-<tr><td>UNIT_KHMER_BALLISTA_ELEPHANT</td><td>クメール戦象</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_ARCHER</div>
+<div class="grid-item g">UNIT_ARCHER</div>
+<div class="grid-item g">弓兵</div>
+<div class="grid-item">UNIT_MALI_SKIRMISHER</div>
+<div class="grid-item">スカーミッシュ兵</div>
+<div class="grid-item g">UNIT_BABYLON_BOWMAN</div>
+<div class="grid-item g">バビロニア弓兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_LONGBOWMAN</div>
+<div class="grid-item">UNIT_LONGBOWMAN</div>
+<div class="grid-item">長弓兵</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_CROSSBOWMAN</div>
+<div class="grid-item g">UNIT_CROSSBOWMAN</div>
+<div class="grid-item g">弩兵</div>
+<div class="grid-item">UNIT_CHINA_CHOKONU</div>
+<div class="grid-item">連弩兵</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_CHARIOT</div>
+<div class="grid-item g">UNIT_CHARIOT</div>
+<div class="grid-item g">チャリオット兵</div>
+<div class="grid-item">UNIT_EGYPT_WARCHARIOT</div>
+<div class="grid-item">重チャリオット兵</div>
+<div class="grid-item g">UNIT_PERSIA_IMMORTAL</div>
+<div class="grid-item g">不死隊</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_HORSE_ARCHER</div>
+<div class="grid-item">UNIT_HORSE_ARCHER</div>
+<div class="grid-item">弓騎兵</div>
+<div class="grid-item g">UNIT_CARTHAGE_NUMIDIAN_CAVALRY</div>
+<div class="grid-item g">ヌミディア騎兵</div>
+<div class="grid-item">UNIT_MONGOL_KESHIK</div>
+<div class="grid-item">ケシク</div>
+
+<div class="grid-subtitle gty-3">UNITCLASS_KNIGHT</div>
+<div class="grid-item g">UNIT_KNIGHT</div>
+<div class="grid-item g">騎士</div>
+<div class="grid-item">UNIT_ARABIA_CAMELARCHER</div>
+<div class="grid-item">ラクダ弓兵</div>
+<div class="grid-item g">UNIT_BYZANTINE_CATAPHRACT</div>
+<div class="grid-item g">カタフラクト</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_CUIRASSIER</div>
+<div class="grid-item">UNIT_SPANISH_CONQUISTADOR</div>
+<div class="grid-item">コンキスタドール</div>
+<div class="grid-item g">UNIT_CUIRASSIER</div>
+<div class="grid-item g">胸甲騎兵</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_CAVALRY</div>
+<div class="grid-item">UNIT_CAVALRY</div>
+<div class="grid-item">騎兵隊</div>
+<div class="grid-item g">UNIT_RUSSIA_COSSACK</div>
+<div class="grid-item g">コサック兵</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_WAR_ELEPHANT</div>
+<div class="grid-item">UNIT_WAR_ELEPHANT</div>
+<div class="grid-item">軍用象</div>
+<div class="grid-item g">UNIT_KHMER_BALLISTA_ELEPHANT</div>
+<div class="grid-item g">クメール戦象</div>
+</div>
 
 ## 装甲・ヘリコプター・攻城兵器
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:38%" />
-  <col style="width:38%" />
-  <col style="width:24%" />
-<colgroup>
-<thead><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></thead>
-<tr><td rowspan=2>UNITCLASS_TANK</td><td>UNIT_TANK</td><td>戦車</td></tr>
-<tr><td>UNIT_GERMAN_PANZER</td><td>パンツァー</td></tr>
-<tr><td rowspan=1>UNITCLASS_MODERN_ARMOR</td><td>UNIT_MODERN_ARMOR</td><td>現代機甲部隊</td></tr>
-<tr><td rowspan=1>UNITCLASS_GUNSHIP</td><td>UNIT_GUNSHIP</td><td>ガンシップ</td></tr>
-<tr><td rowspan=2>UNITCLASS_CATAPULT</td><td>UNIT_CATAPULT</td><td>カタパルト</td></tr>
-<tr><td>UNIT_KOREAN_HWACHA</td><td>火車</td></tr>
-<tr><td rowspan=1>UNITCLASS_TREBUCHET</td><td>UNIT_TREBUCHET</td><td>トレブシェット</td></tr>
-<tr><td rowspan=1>UNITCLASS_CANNON</td><td>UNIT_CANNON</td><td>カノン砲</td></tr>
-<tr><td rowspan=1>UNITCLASS_MACHINE_GUN</td><td>UNIT_MACHINE_GUN</td><td>機関銃兵</td></tr>
-<tr><td rowspan=1>UNITCLASS_ARTILLERY</td><td>UNIT_ARTILLERY</td><td>長距離砲</td></tr>
-<tr><td rowspan=1>UNITCLASS_MOBILE_ARTILLERY</td><td>UNIT_MOBILE_ARTILLERY</td><td>自走砲</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_TANK</div>
+<div class="grid-item g">UNIT_TANK</div>
+<div class="grid-item g">戦車</div>
+<div class="grid-item">UNIT_GERMAN_PANZER</div>
+<div class="grid-item">パンツァー</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MODERN_ARMOR</div>
+<div class="grid-item g">UNIT_MODERN_ARMOR</div>
+<div class="grid-item g">現代機甲部隊</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GUNSHIP</div>
+<div class="grid-item">UNIT_GUNSHIP</div>
+<div class="grid-item">ガンシップ</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_CATAPULT</div>
+<div class="grid-item g">UNIT_CATAPULT</div>
+<div class="grid-item g">カタパルト</div>
+<div class="grid-item">UNIT_KOREAN_HWACHA</div>
+<div class="grid-item">火車</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_TREBUCHET</div>
+<div class="grid-item g">UNIT_TREBUCHET</div>
+<div class="grid-item g">トレブシェット</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_CANNON</div>
+<div class="grid-item">UNIT_CANNON</div>
+<div class="grid-item">カノン砲</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MACHINE_GUN</div>
+<div class="grid-item g">UNIT_MACHINE_GUN</div>
+<div class="grid-item g">機関銃兵</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ARTILLERY</div>
+<div class="grid-item">UNIT_ARTILLERY</div>
+<div class="grid-item">長距離砲</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MOBILE_ARTILLERY</div>
+<div class="grid-item g">UNIT_MOBILE_ARTILLERY</div>
+<div class="grid-item g">自走砲</div>
+</div>
 
 ## 海洋
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:40%" />
-  <col style="width:40%" />
-  <col style="width:20%" />
-<colgroup>
-<tr><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></tr>
-<tr><td rowspan=1>UNITCLASS_WORKBOAT</td><td>UNIT_WORKBOAT</td><td>作業船</td></tr>
-<tr><td rowspan=1>UNITCLASS_GALLEY</td><td>UNIT_GALLEY</td><td>ガレー船</td></tr>
-<tr><td rowspan=1>UNITCLASS_TRIREME</td><td>UNIT_TRIREME</td><td>三段櫂船</td></tr>
-<tr><td rowspan=2>UNITCLASS_CARAVEL</td><td>UNIT_CARAVEL</td><td>キャラベル船</td></tr>
-<tr><td>UNIT_PORTUGAL_CARRACK</td><td>キャラック船</td></tr>
-<tr><td rowspan=2>UNITCLASS_GALLEON</td><td>UNIT_GALLEON</td><td>ガレオン船</td></tr>
-<tr><td>UNIT_NETHERLANDS_OOSTINDIEVAARDER</td><td>東インド貿易船</td></tr>
-<tr><td rowspan=1>UNITCLASS_PRIVATEER</td><td>UNIT_PRIVATEER</td><td>私掠船</td></tr>
-<tr><td rowspan=1>UNITCLASS_FRIGATE</td><td>UNIT_FRIGATE</td><td>フリゲート艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_SHIP_OF_THE_LINE</td><td>UNIT_SHIP_OF_THE_LINE</td><td>戦列艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_IRONCLAD</td><td>UNIT_IRONCLAD</td><td>装甲艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_TRANSPORT</td><td>UNIT_TRANSPORT</td><td>輸送艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_DESTROYER</td><td>UNIT_DESTROYER</td><td>駆逐艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_BATTLESHIP</td><td>UNIT_BATTLESHIP</td><td>戦艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_MISSILE_CRUISER</td><td>UNIT_MISSILE_CRUISER</td><td>ミサイル巡洋艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_STEALTH_DESTROYER</td><td>UNIT_STEALTH_DESTROYER</td><td>ステルス駆逐艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_SUBMARINE</td><td>UNIT_SUBMARINE</td><td>潜水艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_ATTACK_SUBMARINE</td><td>UNIT_ATTACK_SUBMARINE</td><td>攻撃型潜水艦</td></tr>
-<tr><td rowspan=1>UNITCLASS_CARRIER</td><td>UNIT_CARRIER</td><td>航空母艦</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_WORKBOAT</div>
+<div class="grid-item g">UNIT_WORKBOAT</div>
+<div class="grid-item g">作業船</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GALLEY</div>
+<div class="grid-item">UNIT_GALLEY</div>
+<div class="grid-item">ガレー船</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_TRIREME</div>
+<div class="grid-item g">UNIT_TRIREME</div>
+<div class="grid-item g">三段櫂船</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_CARAVEL</div>
+<div class="grid-item">UNIT_CARAVEL</div>
+<div class="grid-item">キャラベル船</div>
+<div class="grid-item g">UNIT_PORTUGAL_CARRACK</div>
+<div class="grid-item g">キャラック船</div>
+
+<div class="grid-subtitle gty-2">UNITCLASS_GALLEON</div>
+<div class="grid-item">UNIT_GALLEON</div>
+<div class="grid-item">ガレオン船</div>
+<div class="grid-item g">UNIT_NETHERLANDS_OOSTINDIEVAARDER</div>
+<div class="grid-item g">東インド貿易船</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_PRIVATEER</div>
+<div class="grid-item">UNIT_PRIVATEER</div>
+<div class="grid-item">私掠船</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_FRIGATE</div>
+<div class="grid-item g">UNIT_FRIGATE</div>
+<div class="grid-item g">フリゲート艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SHIP_OF_THE_LINE</div>
+<div class="grid-item">UNIT_SHIP_OF_THE_LINE</div>
+<div class="grid-item">戦列艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_IRONCLAD</div>
+<div class="grid-item g">UNIT_IRONCLAD</div>
+<div class="grid-item g">装甲艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_TRANSPORT</div>
+<div class="grid-item">UNIT_TRANSPORT</div>
+<div class="grid-item">輸送艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_DESTROYER</div>
+<div class="grid-item g">UNIT_DESTROYER</div>
+<div class="grid-item g">駆逐艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_BATTLESHIP</div>
+<div class="grid-item">UNIT_BATTLESHIP</div>
+<div class="grid-item">戦艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MISSILE_CRUISER</div>
+<div class="grid-item g">UNIT_MISSILE_CRUISER</div>
+<div class="grid-item g">ミサイル巡洋艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_STEALTH_DESTROYER</div>
+<div class="grid-item">UNIT_STEALTH_DESTROYER</div>
+<div class="grid-item">ステルス駆逐艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SUBMARINE</div>
+<div class="grid-item g">UNIT_SUBMARINE</div>
+<div class="grid-item g">潜水艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ATTACK_SUBMARINE</div>
+<div class="grid-item">UNIT_ATTACK_SUBMARINE</div>
+<div class="grid-item">攻撃型潜水艦</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_CARRIER</div>
+<div class="grid-item g">UNIT_CARRIER</div>
+<div class="grid-item g">航空母艦</div>
+</div>
 
 ## 航空・ミサイル
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:38%" />
-  <col style="width:38%" />
-  <col style="width:24%" />
-<colgroup>
-<tr><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></tr>
-<tr><td rowspan=1>UNITCLASS_AIRSHIP</td><td>UNIT_AIRSHIP</td><td>飛行船</td></tr>
-<tr><td rowspan=1>UNITCLASS_FIGHTER</td><td>UNIT_FIGHTER</td><td>戦闘機</td></tr>
-<tr><td rowspan=1>UNITCLASS_JET_FIGHTER</td><td>UNIT_JET_FIGHTER</td><td>ジェット戦闘機</td></tr>
-<tr><td rowspan=1>UNITCLASS_BOMBER</td><td>UNIT_BOMBER</td><td>爆撃機</td></tr>
-<tr><td rowspan=1>UNITCLASS_STEALTH_BOMBER</td><td>UNIT_STEALTH_BOMBER</td><td>ステルス爆撃機</td></tr>
-<tr><td rowspan=1>UNITCLASS_GUIDED_MISSILE</td><td>UNIT_GUIDED_MISSILE</td><td>誘導ミサイル</td></tr>
-<tr><td rowspan=1>UNITCLASS_TACTICAL_NUKE</td><td>UNIT_TACTICAL_NUKE</td><td>戦術核</td></tr>
-<tr><td rowspan=1>UNITCLASS_ICBM</td><td>UNIT_ICBM</td><td>ICBM</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_AIRSHIP</div>
+<div class="grid-item g">UNIT_AIRSHIP</div>
+<div class="grid-item g">飛行船</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_FIGHTER</div>
+<div class="grid-item">UNIT_FIGHTER</div>
+<div class="grid-item">戦闘機</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_JET_FIGHTER</div>
+<div class="grid-item g">UNIT_JET_FIGHTER</div>
+<div class="grid-item g">ジェット戦闘機</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_BOMBER</div>
+<div class="grid-item">UNIT_BOMBER</div>
+<div class="grid-item">爆撃機</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_STEALTH_BOMBER</div>
+<div class="grid-item g">UNIT_STEALTH_BOMBER</div>
+<div class="grid-item g">ステルス爆撃機</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GUIDED_MISSILE</div>
+<div class="grid-item">UNIT_GUIDED_MISSILE</div>
+<div class="grid-item">誘導ミサイル</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_TACTICAL_NUKE</div>
+<div class="grid-item g">UNIT_TACTICAL_NUKE</div>
+<div class="grid-item g">戦術核</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ICBM</div>
+<div class="grid-item">UNIT_ICBM</div>
+<div class="grid-item">ICBM</div>
+</div>
 
 ## 偉人
-<table class="table table-striped" style="table-layout:fixed">
-<colgroup>
-  <col style="width:38%" />
-  <col style="width:38%" />
-  <col style="width:24%" />
-<colgroup>
-<tr><th>ユニットクラスキー</th><th>ユニットキー</th><th>ユニット</th></tr>
-<tr><td rowspan=1>UNITCLASS_PROPHET</td><td>UNIT_PROPHET</td><td>大預言者</td></tr>
-<tr><td rowspan=1>UNITCLASS_ARTIST</td><td>UNIT_ARTIST</td><td>大芸術家</td></tr>
-<tr><td rowspan=1>UNITCLASS_SCIENTIST</td><td>UNIT_SCIENTIST</td><td>大科学者</td></tr>
-<tr><td rowspan=1>UNITCLASS_MERCHANT</td><td>UNIT_MERCHANT</td><td>大商人</td></tr>
-<tr><td rowspan=1>UNITCLASS_ENGINEER</td><td>UNIT_ENGINEER</td><td>大技術者</td></tr>
-<tr><td rowspan=1>UNITCLASS_GREAT_GENERAL</td><td>UNIT_GREAT_GENERAL</td><td>大将軍</td></tr>
-<tr><td rowspan=1>UNITCLASS_GREAT_SPY</td><td>UNIT_GREAT_SPY</td><td>大スパイ</td></tr>
-</table>
+<div class="grid-table gt3">
+<div class="grid-title">ユニットクラスキー</div>
+<div class="grid-title">ユニットキー</div>
+<div class="grid-title">ユニット</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_PROPHET</div>
+<div class="grid-item g">UNIT_PROPHET</div>
+<div class="grid-item g">大預言者</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ARTIST</div>
+<div class="grid-item">UNIT_ARTIST</div>
+<div class="grid-item">大芸術家</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_SCIENTIST</div>
+<div class="grid-item g">UNIT_SCIENTIST</div>
+<div class="grid-item g">大科学者</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_MERCHANT</div>
+<div class="grid-item">UNIT_MERCHANT</div>
+<div class="grid-item">大商人</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_ENGINEER</div>
+<div class="grid-item g">UNIT_ENGINEER</div>
+<div class="grid-item g">大技術者</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GREAT_GENERAL</div>
+<div class="grid-item">UNIT_GREAT_GENERAL</div>
+<div class="grid-item">大将軍</div>
+
+<div class="grid-subtitle gty-1">UNITCLASS_GREAT_SPY</div>
+<div class="grid-item g">UNIT_GREAT_SPY</div>
+<div class="grid-item g">大スパイ</div>
+</div>
 
 ## 行動領域
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">ユニット領域キー</div>
+<div class="grid-title">行動領域</div>
 
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-ユニット領域キー|行動領域
----|---
-DOMAIN_SEA|海洋ユニット
-DOMAIN_AIR|航空ユニット
-DOMAIN_LAND|陸上ユニット
-DOMAIN_IMMOBILE|固定ユニット
-{{%/div%}}{{%/div%}}
+<div class="grid-item">DOMAIN_SEA</div>
+<div class="grid-item">海洋ユニット</div>
+<div class="grid-item">DOMAIN_AIR</div>
+<div class="grid-item">航空ユニット</div>
+<div class="grid-item">DOMAIN_LAND</div>
+<div class="grid-item">陸上ユニット</div>
+<div class="grid-item">DOMAIN_IMMOBILE</div>
+<div class="grid-item">固定ユニット</div>
+</div>
 
 ## 兵科
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-ユニット戦闘タイプキー|兵科
----|---
-UNITCOMBAT_RECON|偵察ユニット
-UNITCOMBAT_ARCHER|弓兵ユニット
-UNITCOMBAT_MOUNTED|騎乗ユニット
-UNITCOMBAT_MELEE|白兵戦ユニット
-UNITCOMBAT_SIEGE|攻城兵器
-UNITCOMBAT_GUN|火器ユニット
-UNITCOMBAT_ARMOR|装甲ユニット
-UNITCOMBAT_HELICOPTER|ヘリコプターユニット
-UNITCOMBAT_NAVAL|海洋ユニット
-UNITCOMBAT_AIR|航空ユニット
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">ユニット戦闘タイプキー</div>
+<div class="grid-title">兵科</div>
+
+<div class="grid-item">UNITCOMBAT_RECON</div>
+<div class="grid-item">偵察ユニット</div>
+<div class="grid-item">UNITCOMBAT_ARCHER</div>
+<div class="grid-item">弓兵ユニット</div>
+<div class="grid-item">UNITCOMBAT_MOUNTED</div>
+<div class="grid-item">騎乗ユニット</div>
+<div class="grid-item">UNITCOMBAT_MELEE</div>
+<div class="grid-item">白兵戦ユニット</div>
+<div class="grid-item">UNITCOMBAT_SIEGE</div>
+<div class="grid-item">攻城兵器</div>
+<div class="grid-item">UNITCOMBAT_GUN</div>
+<div class="grid-item">火器ユニット</div>
+<div class="grid-item">UNITCOMBAT_ARMOR</div>
+<div class="grid-item">装甲ユニット</div>
+<div class="grid-item">UNITCOMBAT_HELICOPTER</div>
+<div class="grid-item">ヘリコプターユニット</div>
+<div class="grid-item">UNITCOMBAT_NAVAL</div>
+<div class="grid-item">海洋ユニット</div>
+<div class="grid-item">UNITCOMBAT_AIR</div>
+<div class="grid-item">航空ユニット</div>
+</div>
 
 ## 搭載分類
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-10" %}}
-{.table .table-striped}
-搭乗タイプキー|名称|備考
----|---|---
-SPECIALUNIT_FIGHTER|戦闘機|空母など
-SPECIALUNIT_PEOPLE|斥候、探検家、宣教師、スパイ、偉人|キャラベル船など
-SPECIALUNIT_MISSILE|ミサイル|潜水艦など
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt3 auto-g3">
+<div class="grid-title">搭乗タイプキー</div>
+<div class="grid-title">名称</div>
+<div class="grid-title">備考</div>
+
+<div class="grid-item">SPECIALUNIT_FIGHTER</div>
+<div class="grid-item">戦闘機</div>
+<div class="grid-item">空母など</div>
+
+<div class="grid-item">SPECIALUNIT_PEOPLE</div>
+<div class="grid-item">斥候、探検家、宣教師、スパイ、偉人</div>
+<div class="grid-item">キャラベル船など</div>
+
+<div class="grid-item">SPECIALUNIT_MISSILE</div>
+<div class="grid-item">ミサイル</div>
+<div class="grid-item">潜水艦など</div>
+</div>
 
 ## ユニットAI
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-10" %}}
-{.table .table-striped}
-ユニットAIタイプキー|ユニットAI|備考
----|---|---
-UNITAI_UNKNOWN|不明AI|行動未決定状態
-UNITAI_ANIMAL|動物AI
-UNITAI_SETTLE|開拓者AI
-UNITAI_WORKER|労働者AI
-UNITAI_ATTACK|攻撃AI
-UNITAI_ATTACK_CITY|都市攻撃AI
-UNITAI_COLLATERAL|副次AI|攻城兵器野戦用
-UNITAI_PILLAGE|略奪AI
-UNITAI_RESERVE|予備AI
-UNITAI_COUNTER|反撃AI
-UNITAI_CITY_DEFENSE|都市防衛AI
-UNITAI_CITY_COUNTER|都市反撃AI
-UNITAI_CITY_SPECIAL|都市特別AI|対地空ユニット用
-UNITAI_EXPLORE|探検AI
-UNITAI_MISSIONARY|宣教師AI
-UNITAI_PROPHET|預言者AI
-UNITAI_ARTIST|芸術家AI
-UNITAI_SCIENTIST|科学者AI
-UNITAI_GENERAL|将軍AI
-UNITAI_MERCHANT|商人AI
-UNITAI_ENGINEER|技術者AI
-UNITAI_SPY|スパイAI
-UNITAI_ICBM|核兵器AI
-UNITAI_WORKER_SEA|海洋作業AI|作業船
-UNITAI_ATTACK_SEA|海洋攻撃AI
-UNITAI_RESERVE_SEA|海洋予備AI
-UNITAI_ESCORT_SEA|海洋警護AI
-UNITAI_EXPLORE_SEA|海洋探検AI
-UNITAI_ASSAULT_SEA|海洋猛襲AI|強襲揚陸艦
-UNITAI_SETTLER_SEA|海洋開拓者AI
-UNITAI_MISSIONARY_SEA|海洋宣教師AI
-UNITAI_SPY_SEA|海洋スパイAI
-UNITAI_CARRIER_SEA|海洋輸送AI|航空母艦
-UNITAI_MISSILE_CARRIER_SEA|海洋ミサイル輸送AI|ミサイル巡洋艦
-UNITAI_PIRATE_SEA|海洋略奪AI|私掠船
-UNITAI_ATTACK_AIR|航空攻撃AI
-UNITAI_DEFENSE_AIR|航空防衛AI
-UNITAI_CARRIER_AIR|航空輸送AI
-UNITAI_MISSILE_AIR|巡航ミサイルAI
-UNITAI_PARADROP|空中投下AI|空挺部隊
-UNITAI_ATTACK_CITY_LEMMING|都市自爆攻撃AI
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt3 auto-g3">
+<div class="grid-title">ユニットAIタイプキー</div>
+<div class="grid-title">ユニットAI</div>
+<div class="grid-title">備考</div>
 
+<div class="grid-item">UNITAI_UNKNOWN</div>
+<div class="grid-item">不明AI</div>
+<div class="grid-item">行動未決定状態</div>
+
+<div class="grid-item">UNITAI_ANIMAL</div>
+<div class="grid-item">動物AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_SETTLE</div>
+<div class="grid-item">開拓者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_WORKER</div>
+<div class="grid-item">労働者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ATTACK</div>
+<div class="grid-item">攻撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ATTACK_CITY</div>
+<div class="grid-item">都市攻撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_COLLATERAL</div>
+<div class="grid-item">副次AI</div>
+<div class="grid-item">攻城兵器野戦用</div>
+
+<div class="grid-item">UNITAI_PILLAGE</div>
+<div class="grid-item">略奪AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_RESERVE</div>
+<div class="grid-item">予備AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_COUNTER</div>
+<div class="grid-item">反撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_CITY_DEFENSE</div>
+<div class="grid-item">都市防衛AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_CITY_COUNTER</div>
+<div class="grid-item">都市反撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_CITY_SPECIAL</div>
+<div class="grid-item">都市特別AI</div>
+<div class="grid-item">対地空ユニット用</div>
+
+<div class="grid-item">UNITAI_EXPLORE</div>
+<div class="grid-item">探検AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_MISSIONARY</div>
+<div class="grid-item">宣教師AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_PROPHET</div>
+<div class="grid-item">預言者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ARTIST</div>
+<div class="grid-item">芸術家AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_SCIENTIST</div>
+<div class="grid-item">科学者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_GENERAL</div>
+<div class="grid-item">将軍AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_MERCHANT</div>
+<div class="grid-item">商人AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ENGINEER</div>
+<div class="grid-item">技術者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_SPY</div>
+<div class="grid-item">スパイAI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ICBM</div>
+<div class="grid-item">核兵器AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_WORKER_SEA</div>
+<div class="grid-item">海洋作業AI</div>
+<div class="grid-item">作業船</div>
+
+<div class="grid-item">UNITAI_ATTACK_SEA</div>
+<div class="grid-item">海洋攻撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_RESERVE_SEA</div>
+<div class="grid-item">海洋予備AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ESCORT_SEA</div>
+<div class="grid-item">海洋警護AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_EXPLORE_SEA</div>
+<div class="grid-item">海洋探検AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_ASSAULT_SEA</div>
+<div class="grid-item">海洋猛襲AI</div>
+<div class="grid-item">強襲揚陸艦</div>
+
+<div class="grid-item">UNITAI_SETTLER_SEA</div>
+<div class="grid-item">海洋開拓者AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_MISSIONARY_SEA</div>
+<div class="grid-item">海洋宣教師AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_SPY_SEA</div>
+<div class="grid-item">海洋スパイAI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_CARRIER_SEA</div>
+<div class="grid-item">海洋輸送AI</div>
+<div class="grid-item">航空母艦</div>
+
+<div class="grid-item">UNITAI_MISSILE_CARRIER_SEA</div>
+<div class="grid-item">海洋ミサイル輸送AI</div>
+<div class="grid-item">ミサイル巡洋艦</div>
+
+<div class="grid-item">UNITAI_PIRATE_SEA</div>
+<div class="grid-item">海洋略奪AI</div>
+<div class="grid-item">私掠船</div>
+
+<div class="grid-item">UNITAI_ATTACK_AIR</div>
+<div class="grid-item">航空攻撃AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_DEFENSE_AIR</div>
+<div class="grid-item">航空防衛AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_CARRIER_AIR</div>
+<div class="grid-item">航空輸送AI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_MISSILE_AIR</div>
+<div class="grid-item">巡航ミサイルAI</div>
+<div class="grid-item"></div>
+
+<div class="grid-item">UNITAI_PARADROP</div>
+<div class="grid-item">空中投下AI</div>
+<div class="grid-item">空挺部隊</div>
+
+<div class="grid-item">UNITAI_ATTACK_CITY_LEMMING</div>
+<div class="grid-item">都市自爆攻撃AI</div>
+<div class="grid-item"></div>
+</div>
 
 # 社会制度
-<div class="grid-table table table-striped">
+<div class="grid-table gt4">
 <div class="grid-title">体制キー</div>
 <div class="grid-title">政治体制</div>
 <div class="grid-title">社会制度キー</div>
 <div class="grid-title">社会制度</div>
 
-<div class="grid-subtitle">CIVICOPTION_GOVERNMENT</div>
-<div class="grid-subtitle">政治体制</div>
-<div class="grid-item">CIVIC_DESPOTISM</div>
-<div class="grid-item">専制政治</div>
+<div class="grid-subtitle gty-5">CIVICOPTION_GOVERNMENT</div>
+<div class="grid-subtitle gty-5">政治体制</div>
+<div class="grid-item g">CIVIC_DESPOTISM</div>
+<div class="grid-item g">専制政治</div>
 <div class="grid-item">CIVIC_HEREDITARY_RULE</div>
 <div class="grid-item">世襲統治</div>
-<div class="grid-item">CIVIC_REPRESENTATION</div>
-<div class="grid-item">代議制</div>
+<div class="grid-item g">CIVIC_REPRESENTATION</div>
+<div class="grid-item g">代議制</div>
 <div class="grid-item">CIVIC_POLICE_STATE</div>
 <div class="grid-item">警察国家</div>
-<div class="grid-item">CIVIC_UNIVERSAL_SUFFRAGE</div>
-<div class="grid-item">普通選挙</div>
+<div class="grid-item g">CIVIC_UNIVERSAL_SUFFRAGE</div>
+<div class="grid-item g">普通選挙</div>
 
-<div class="grid-subtitle">CIVICOPTION_LEGAL</div>
-<div class="grid-subtitle">法制度</div>
+<div class="grid-subtitle gty-5">CIVICOPTION_LEGAL</div>
+<div class="grid-subtitle gty-5">法制度</div>
 <div class="grid-item">CIVIC_BARBARISM</div>
 <div class="grid-item">無秩序</div>
-<div class="grid-item">CIVIC_VASSALAGE</div>
-<div class="grid-item">主従制</div>
+<div class="grid-item g">CIVIC_VASSALAGE</div>
+<div class="grid-item g">主従制</div>
 <div class="grid-item">CIVIC_BUREAUCRACY</div>
 <div class="grid-item">官僚制</div>
-<div class="grid-item">CIVIC_NATIONHOOD</div>
-<div class="grid-item">国民国家</div>
+<div class="grid-item g">CIVIC_NATIONHOOD</div>
+<div class="grid-item g">国民国家</div>
 <div class="grid-item">CIVIC_FREE_SPEECH</div>
 <div class="grid-item">表現の自由</div>
 
-<div class="grid-subtitle">CIVICOPTION_LABOR</div>
-<div class="grid-subtitle">労働制度</div>
-<div class="grid-item">CIVIC_TRIBALISM</div>
-<div class="grid-item">原始部族社会</div>
+<div class="grid-subtitle gty-5">CIVICOPTION_LABOR</div>
+<div class="grid-subtitle gty-5">労働制度</div>
+<div class="grid-item g">CIVIC_TRIBALISM</div>
+<div class="grid-item g">原始部族社会</div>
 <div class="grid-item">CIVIC_SLAVERY</div>
 <div class="grid-item">奴隷制</div>
-<div class="grid-item">CIVIC_SERFDOM</div>
-<div class="grid-item">農奴制</div>
+<div class="grid-item g">CIVIC_SERFDOM</div>
+<div class="grid-item g">農奴制</div>
 <div class="grid-item">CIVIC_CASTE_SYSTEM</div>
 <div class="grid-item">カースト制</div>
-<div class="grid-item">CIVIC_EMANCIPATION</div>
-<div class="grid-item">奴隷解放</div>
+<div class="grid-item g">CIVIC_EMANCIPATION</div>
+<div class="grid-item g">奴隷解放</div>
 
-<div class="grid-subtitle">CIVICOPTION_ECONOMY</div>
-<div class="grid-subtitle">経済制度</div>
+<div class="grid-subtitle gty-5">CIVICOPTION_ECONOMY</div>
+<div class="grid-subtitle gty-5">経済制度</div>
 <div class="grid-item">CIVIC_DECENTRALIZATION</div>
 <div class="grid-item">地方分権</div>
-<div class="grid-item">CIVIC_MERCANTILISM</div>
-<div class="grid-item">重商主義</div>
+<div class="grid-item g">CIVIC_MERCANTILISM</div>
+<div class="grid-item g">重商主義</div>
 <div class="grid-item">CIVIC_FREE_MARKET</div>
 <div class="grid-item">自由市場</div>
-<div class="grid-item">CIVIC_STATE_PROPERTY</div>
-<div class="grid-item">国有化</div>
+<div class="grid-item g">CIVIC_STATE_PROPERTY</div>
+<div class="grid-item g">国有化</div>
 <div class="grid-item">CIVIC_ENVIRONMENTALISM</div>
 <div class="grid-item">環境保護主義</div>
 
-<div class="grid-subtitle">CIVICOPTION_RELIGION</div>
-<div class="grid-subtitle">宗教制度</div>
-<div class="grid-item">CIVIC_PAGANISM</div>
-<div class="grid-item">精霊崇拝</div>
+<div class="grid-subtitle gty-5">CIVICOPTION_RELIGION</div>
+<div class="grid-subtitle gty-5">宗教制度</div>
+<div class="grid-item g">CIVIC_PAGANISM</div>
+<div class="grid-item g">精霊崇拝</div>
 <div class="grid-item">CIVIC_ORGANIZED_RELIGION</div>
 <div class="grid-item">宗教の組織化</div>
-<div class="grid-item">CIVIC_THEOCRACY</div>
-<div class="grid-item">神権政治</div>
+<div class="grid-item g">CIVIC_THEOCRACY</div>
+<div class="grid-item g">神権政治</div>
 <div class="grid-item">CIVIC_PACIFISM</div>
 <div class="grid-item">平和主義</div>
-<div class="grid-item">CIVIC_FREE_RELIGION</div>
-<div class="grid-item">信教の自由</div>
+<div class="grid-item g">CIVIC_FREE_RELIGION</div>
+<div class="grid-item g">信教の自由</div>
 
 </div>
 
 
 # 志向
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-志向キー|志向
----|---
-TRAIT_PHILOSOPHICAL|哲学志向
-TRAIT_AGGRESSIVE|攻撃志向
-TRAIT_SPIRITUAL|宗教志向
-TRAIT_EXPANSIVE|拡張志向
-TRAIT_INDUSTRIOUS|勤労志向
-TRAIT_CREATIVE|創造志向
-TRAIT_FINANCIAL|金融志向
-TRAIT_ORGANIZED|組織志向
-TRAIT_CHARISMATIC|カリスマ志向
-TRAIT_PROTECTIVE|防衛志向
-TRAIT_IMPERIALIST|帝国主義志向
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">志向キー</div>
+<div class="grid-title">志向</div>
+
+<div class="grid-item">TRAIT_PHILOSOPHICAL</div>
+<div class="grid-item">哲学志向</div>
+<div class="grid-item">TRAIT_AGGRESSIVE</div>
+<div class="grid-item">攻撃志向</div>
+<div class="grid-item">TRAIT_SPIRITUAL</div>
+<div class="grid-item">宗教志向</div>
+<div class="grid-item">TRAIT_EXPANSIVE</div>
+<div class="grid-item">拡張志向</div>
+<div class="grid-item">TRAIT_INDUSTRIOUS</div>
+<div class="grid-item">勤労志向</div>
+<div class="grid-item">TRAIT_CREATIVE</div>
+<div class="grid-item">創造志向</div>
+<div class="grid-item">TRAIT_FINANCIAL</div>
+<div class="grid-item">金融志向</div>
+<div class="grid-item">TRAIT_ORGANIZED</div>
+<div class="grid-item">組織志向</div>
+<div class="grid-item">TRAIT_CHARISMATIC</div>
+<div class="grid-item">カリスマ志向</div>
+<div class="grid-item">TRAIT_PROTECTIVE</div>
+<div class="grid-item">防衛志向</div>
+<div class="grid-item">TRAIT_IMPERIALIST</div>
+<div class="grid-item">帝国主義志向</div>
+</div>
 
 # 昇進
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-昇進キー|昇進
----|---
-PROMOTION_COMBAT1|戦闘Ⅰ
-PROMOTION_COMBAT2|戦闘Ⅱ
-PROMOTION_COMBAT3|戦闘Ⅲ
-PROMOTION_COMBAT4|戦闘Ⅳ
-PROMOTION_COMBAT5|戦闘Ⅴ
-PROMOTION_COVER|カバー
-PROMOTION_SHOCK|陽動
-PROMOTION_PINCH|急襲
-PROMOTION_FORMATION|隊形
-PROMOTION_CHARGE|突撃
-PROMOTION_AMBUSH|伏兵
-PROMOTION_AMPHIBIOUS|水陸両用
-PROMOTION_MARCH|行軍
-PROMOTION_BLITZ|電撃戦
-PROMOTION_COMMANDO|特別奇襲
-PROMOTION_MEDIC1|衛生兵Ⅰ
-PROMOTION_MEDIC2|衛生兵Ⅱ
-PROMOTION_GUERILLA1|ゲリラⅠ
-PROMOTION_GUERILLA2|ゲリラⅡ
-PROMOTION_GUERILLA3|ゲリラⅢ
-PROMOTION_WOODSMAN1|レンジャーⅠ
-PROMOTION_WOODSMAN2|レンジャーⅡ
-PROMOTION_WOODSMAN3|レンジャーⅢ
-PROMOTION_CITY_RAIDER1|都市襲撃Ⅰ
-PROMOTION_CITY_RAIDER2|都市襲撃Ⅱ
-PROMOTION_CITY_RAIDER3|都市襲撃Ⅲ
-PROMOTION_CITY_GARRISON1|都市駐留Ⅰ
-PROMOTION_CITY_GARRISON2|都市駐留Ⅱ
-PROMOTION_CITY_GARRISON3|都市駐留Ⅲ
-PROMOTION_DRILL1|教練Ⅰ
-PROMOTION_DRILL2|教練Ⅱ
-PROMOTION_DRILL3|教練Ⅲ
-PROMOTION_DRILL4|教練Ⅳ
-PROMOTION_BARRAGE1|弾幕Ⅰ
-PROMOTION_BARRAGE2|弾幕Ⅱ
-PROMOTION_BARRAGE3|弾幕Ⅲ
-PROMOTION_ACCURACY|精密攻撃
-PROMOTION_FLANKING1|側面攻撃Ⅰ
-PROMOTION_FLANKING2|側面攻撃Ⅱ
-PROMOTION_SENTRY|歩哨
-PROMOTION_MOBILITY|機動力
-PROMOTION_NAVIGATION1|航海術Ⅰ
-PROMOTION_NAVIGATION2|航海術Ⅱ
-PROMOTION_LEADER|ウォーロードが指揮
-PROMOTION_LEADERSHIP|リーダーシップ
-PROMOTION_TACTICS|戦術
-PROMOTION_COMBAT6|戦闘Ⅵ
-PROMOTION_MORALE|士気
-PROMOTION_MEDIC3|衛生兵Ⅲ
-PROMOTION_RANGE1|行動範囲Ⅰ
-PROMOTION_RANGE2|行動範囲Ⅱ
-PROMOTION_INTERCEPTION1|迎撃Ⅰ
-PROMOTION_INTERCEPTION2|迎撃Ⅱ
-PROMOTION_ACE|エース
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2 auto-g">
+<div class="grid-title">昇進キー</div>
+<div class="grid-title">昇進</div>
+
+<div class="grid-item">PROMOTION_COMBAT1</div>
+<div class="grid-item">戦闘Ⅰ</div>
+<div class="grid-item">PROMOTION_COMBAT2</div>
+<div class="grid-item">戦闘Ⅱ</div>
+<div class="grid-item">PROMOTION_COMBAT3</div>
+<div class="grid-item">戦闘Ⅲ</div>
+<div class="grid-item">PROMOTION_COMBAT4</div>
+<div class="grid-item">戦闘Ⅳ</div>
+<div class="grid-item">PROMOTION_COMBAT5</div>
+<div class="grid-item">戦闘Ⅴ</div>
+<div class="grid-item">PROMOTION_COVER</div>
+<div class="grid-item">カバー</div>
+<div class="grid-item">PROMOTION_SHOCK</div>
+<div class="grid-item">陽動</div>
+<div class="grid-item">PROMOTION_PINCH</div>
+<div class="grid-item">急襲</div>
+<div class="grid-item">PROMOTION_FORMATION</div>
+<div class="grid-item">隊形</div>
+<div class="grid-item">PROMOTION_CHARGE</div>
+<div class="grid-item">突撃</div>
+<div class="grid-item">PROMOTION_AMBUSH</div>
+<div class="grid-item">伏兵</div>
+<div class="grid-item">PROMOTION_AMPHIBIOUS</div>
+<div class="grid-item">水陸両用</div>
+<div class="grid-item">PROMOTION_MARCH</div>
+<div class="grid-item">行軍</div>
+<div class="grid-item">PROMOTION_BLITZ</div>
+<div class="grid-item">電撃戦</div>
+<div class="grid-item">PROMOTION_COMMANDO</div>
+<div class="grid-item">特別奇襲</div>
+<div class="grid-item">PROMOTION_MEDIC1</div>
+<div class="grid-item">衛生兵Ⅰ</div>
+<div class="grid-item">PROMOTION_MEDIC2</div>
+<div class="grid-item">衛生兵Ⅱ</div>
+<div class="grid-item">PROMOTION_GUERILLA1</div>
+<div class="grid-item">ゲリラⅠ</div>
+<div class="grid-item">PROMOTION_GUERILLA2</div>
+<div class="grid-item">ゲリラⅡ</div>
+<div class="grid-item">PROMOTION_GUERILLA3</div>
+<div class="grid-item">ゲリラⅢ</div>
+<div class="grid-item">PROMOTION_WOODSMAN1</div>
+<div class="grid-item">レンジャーⅠ</div>
+<div class="grid-item">PROMOTION_WOODSMAN2</div>
+<div class="grid-item">レンジャーⅡ</div>
+<div class="grid-item">PROMOTION_WOODSMAN3</div>
+<div class="grid-item">レンジャーⅢ</div>
+<div class="grid-item">PROMOTION_CITY_RAIDER1</div>
+<div class="grid-item">都市襲撃Ⅰ</div>
+<div class="grid-item">PROMOTION_CITY_RAIDER2</div>
+<div class="grid-item">都市襲撃Ⅱ</div>
+<div class="grid-item">PROMOTION_CITY_RAIDER3</div>
+<div class="grid-item">都市襲撃Ⅲ</div>
+<div class="grid-item">PROMOTION_CITY_GARRISON1</div>
+<div class="grid-item">都市駐留Ⅰ</div>
+<div class="grid-item">PROMOTION_CITY_GARRISON2</div>
+<div class="grid-item">都市駐留Ⅱ</div>
+<div class="grid-item">PROMOTION_CITY_GARRISON3</div>
+<div class="grid-item">都市駐留Ⅲ</div>
+<div class="grid-item">PROMOTION_DRILL1</div>
+<div class="grid-item">教練Ⅰ</div>
+<div class="grid-item">PROMOTION_DRILL2</div>
+<div class="grid-item">教練Ⅱ</div>
+<div class="grid-item">PROMOTION_DRILL3</div>
+<div class="grid-item">教練Ⅲ</div>
+<div class="grid-item">PROMOTION_DRILL4</div>
+<div class="grid-item">教練Ⅳ</div>
+<div class="grid-item">PROMOTION_BARRAGE1</div>
+<div class="grid-item">弾幕Ⅰ</div>
+<div class="grid-item">PROMOTION_BARRAGE2</div>
+<div class="grid-item">弾幕Ⅱ</div>
+<div class="grid-item">PROMOTION_BARRAGE3</div>
+<div class="grid-item">弾幕Ⅲ</div>
+<div class="grid-item">PROMOTION_ACCURACY</div>
+<div class="grid-item">精密攻撃</div>
+<div class="grid-item">PROMOTION_FLANKING1</div>
+<div class="grid-item">側面攻撃Ⅰ</div>
+<div class="grid-item">PROMOTION_FLANKING2</div>
+<div class="grid-item">側面攻撃Ⅱ</div>
+<div class="grid-item">PROMOTION_SENTRY</div>
+<div class="grid-item">歩哨</div>
+<div class="grid-item">PROMOTION_MOBILITY</div>
+<div class="grid-item">機動力</div>
+<div class="grid-item">PROMOTION_NAVIGATION1</div>
+<div class="grid-item">航海術Ⅰ</div>
+<div class="grid-item">PROMOTION_NAVIGATION2</div>
+<div class="grid-item">航海術Ⅱ</div>
+<div class="grid-item">PROMOTION_LEADER</div>
+<div class="grid-item">ウォーロードが指揮</div>
+<div class="grid-item">PROMOTION_LEADERSHIP</div>
+<div class="grid-item">リーダーシップ</div>
+<div class="grid-item">PROMOTION_TACTICS</div>
+<div class="grid-item">戦術</div>
+<div class="grid-item">PROMOTION_COMBAT6</div>
+<div class="grid-item">戦闘Ⅵ</div>
+<div class="grid-item">PROMOTION_MORALE</div>
+<div class="grid-item">士気</div>
+<div class="grid-item">PROMOTION_MEDIC3</div>
+<div class="grid-item">衛生兵Ⅲ</div>
+<div class="grid-item">PROMOTION_RANGE1</div>
+<div class="grid-item">行動範囲Ⅰ</div>
+<div class="grid-item">PROMOTION_RANGE2</div>
+<div class="grid-item">行動範囲Ⅱ</div>
+<div class="grid-item">PROMOTION_INTERCEPTION1</div>
+<div class="grid-item">迎撃Ⅰ</div>
+<div class="grid-item">PROMOTION_INTERCEPTION2</div>
+<div class="grid-item">迎撃Ⅱ</div>
+<div class="grid-item">PROMOTION_ACE</div>
+<div class="grid-item">エース</div>
+</div>
 
 # 専門家
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-専門家キー|専門家
----|---
-SPECIALIST_CITIZEN|特別市民
-SPECIALIST_PRIEST|聖職者
-SPECIALIST_ARTIST|芸術家
-SPECIALIST_SCIENTIST|科学者
-SPECIALIST_MERCHANT|商人
-SPECIALIST_ENGINEER|技術者
-SPECIALIST_SPY|スパイ
-SPECIALIST_GREAT_PRIEST|大預言者
-SPECIALIST_GREAT_ARTIST|大芸術家
-SPECIALIST_GREAT_SCIENTIST|大科学者
-SPECIALIST_GREAT_MERCHANT|大商人
-SPECIALIST_GREAT_ENGINEER|大技術者
-SPECIALIST_GREAT_GENERAL|大軍事教官
-SPECIALIST_GREAT_SPY|大スパイ
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">専門家キー</div>
+<div class="grid-title">専門家</div>
+
+<div class="grid-item">SPECIALIST_CITIZEN</div>
+<div class="grid-item">特別市民</div>
+<div class="grid-item">SPECIALIST_PRIEST</div>
+<div class="grid-item">聖職者</div>
+<div class="grid-item">SPECIALIST_ARTIST</div>
+<div class="grid-item">芸術家</div>
+<div class="grid-item">SPECIALIST_SCIENTIST</div>
+<div class="grid-item">科学者</div>
+<div class="grid-item">SPECIALIST_MERCHANT</div>
+<div class="grid-item">商人</div>
+<div class="grid-item">SPECIALIST_ENGINEER</div>
+<div class="grid-item">技術者</div>
+<div class="grid-item">SPECIALIST_SPY</div>
+<div class="grid-item">スパイ</div>
+<div class="grid-item">SPECIALIST_GREAT_PRIEST</div>
+<div class="grid-item">大預言者</div>
+<div class="grid-item">SPECIALIST_GREAT_ARTIST</div>
+<div class="grid-item">大芸術家</div>
+<div class="grid-item">SPECIALIST_GREAT_SCIENTIST</div>
+<div class="grid-item">大科学者</div>
+<div class="grid-item">SPECIALIST_GREAT_MERCHANT</div>
+<div class="grid-item">大商人</div>
+<div class="grid-item">SPECIALIST_GREAT_ENGINEER</div>
+<div class="grid-item">大技術者</div>
+<div class="grid-item">SPECIALIST_GREAT_GENERAL</div>
+<div class="grid-item">大軍事教官</div>
+<div class="grid-item">SPECIALIST_GREAT_SPY</div>
+<div class="grid-item">大スパイ</div>
+</div>
 
 # 地形
 ## 基本地形
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-地形キー|地形
----|---
-TERRAIN_GRASS|草原
-TERRAIN_PLAINS|平原
-TERRAIN_DESERT|砂漠
-TERRAIN_TUNDRA|ツンドラ
-TERRAIN_SNOW|氷土
-TERRAIN_COAST|近海
-TERRAIN_OCEAN|外洋
-TERRAIN_PEAK|山岳
-TERRAIN_HILL|丘陵
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">基本地形キー</div>
+<div class="grid-title">地形</div>
+
+<div class="grid-item">TERRAIN_GRASS</div>
+<div class="grid-item">草原</div>
+<div class="grid-item">TERRAIN_PLAINS</div>
+<div class="grid-item">平原</div>
+<div class="grid-item">TERRAIN_DESERT</div>
+<div class="grid-item">砂漠</div>
+<div class="grid-item">TERRAIN_TUNDRA</div>
+<div class="grid-item">ツンドラ</div>
+<div class="grid-item">TERRAIN_SNOW</div>
+<div class="grid-item">氷土</div>
+<div class="grid-item">TERRAIN_COAST</div>
+<div class="grid-item">近海</div>
+<div class="grid-item">TERRAIN_OCEAN</div>
+<div class="grid-item">外洋</div>
+<div class="grid-item">TERRAIN_PEAK</div>
+<div class="grid-item">山岳</div>
+<div class="grid-item">TERRAIN_HILL</div>
+<div class="grid-item">丘陵</div>
+</div>
 
 ## 追加地形
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-追加地形キー|地形
----|---
-FEATURE_ICE|氷河
-FEATURE_JUNGLE|ジャングル
-FEATURE_OASIS|オアシス
-FEATURE_FLOOD_PLAINS|氾濫原
-FEATURE_FOREST|森林
-FEATURE_FALLOUT|死の灰
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">追加地形キー</div>
+<div class="grid-title">地形</div>
+
+<div class="grid-item">FEATURE_ICE</div>
+<div class="grid-item">氷河</div>
+<div class="grid-item">FEATURE_JUNGLE</div>
+<div class="grid-item">ジャングル</div>
+<div class="grid-item">FEATURE_OASIS</div>
+<div class="grid-item">オアシス</div>
+<div class="grid-item">FEATURE_FLOOD_PLAINS</div>
+<div class="grid-item">氾濫原</div>
+<div class="grid-item">FEATURE_FOREST</div>
+<div class="grid-item">森林</div>
+<div class="grid-item">FEATURE_FALLOUT</div>
+<div class="grid-item">死の灰</div>
+</div>
 
 ## 地形改善
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-地形改善キー|地形改善
----|---
-IMPROVEMENT_CITY_RUINS|都市の廃墟
-IMPROVEMENT_GOODY_HUT|部族集落
-IMPROVEMENT_FARM|農場
-IMPROVEMENT_COTTAGE|小屋
-IMPROVEMENT_HAMLET|村落
-IMPROVEMENT_VILLAGE|村
-IMPROVEMENT_TOWN|町
-IMPROVEMENT_MINE|鉱山
-IMPROVEMENT_WORKSHOP|工房
-IMPROVEMENT_LUMBERMILL|製材所
-IMPROVEMENT_WINDMILL|風車
-IMPROVEMENT_WATERMILL|水車
-IMPROVEMENT_FISHING_BOATS|漁船
-IMPROVEMENT_WHALING_BOATS|捕鯨船
-IMPROVEMENT_PLANTATION|大規模農場
-IMPROVEMENT_QUARRY|採石場
-IMPROVEMENT_PASTURE|牧草地
-IMPROVEMENT_CAMP|キャンプ
-IMPROVEMENT_WELL|油井
-IMPROVEMENT_OFFSHORE_PLATFORM|洋上プラットフォーム
-IMPROVEMENT_WINERY|ワイン醸造所
-IMPROVEMENT_FORT|要塞
-IMPROVEMENT_FOREST_PRESERVE|保安林
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">地形改善キー</div>
+<div class="grid-title">地形改善</div>
+
+<div class="grid-item">IMPROVEMENT_CITY_RUINS</div>
+<div class="grid-item">都市の廃墟</div>
+<div class="grid-item">IMPROVEMENT_GOODY_HUT</div>
+<div class="grid-item">部族集落</div>
+<div class="grid-item">IMPROVEMENT_FARM</div>
+<div class="grid-item">農場</div>
+<div class="grid-item">IMPROVEMENT_COTTAGE</div>
+<div class="grid-item">小屋</div>
+<div class="grid-item">IMPROVEMENT_HAMLET</div>
+<div class="grid-item">村落</div>
+<div class="grid-item">IMPROVEMENT_VILLAGE</div>
+<div class="grid-item">村</div>
+<div class="grid-item">IMPROVEMENT_TOWN</div>
+<div class="grid-item">町</div>
+<div class="grid-item">IMPROVEMENT_MINE</div>
+<div class="grid-item">鉱山</div>
+<div class="grid-item">IMPROVEMENT_WORKSHOP</div>
+<div class="grid-item">工房</div>
+<div class="grid-item">IMPROVEMENT_LUMBERMILL</div>
+<div class="grid-item">製材所</div>
+<div class="grid-item">IMPROVEMENT_WINDMILL</div>
+<div class="grid-item">風車</div>
+<div class="grid-item">IMPROVEMENT_WATERMILL</div>
+<div class="grid-item">水車</div>
+<div class="grid-item">IMPROVEMENT_FISHING_BOATS</div>
+<div class="grid-item">漁船</div>
+<div class="grid-item">IMPROVEMENT_WHALING_BOATS</div>
+<div class="grid-item">捕鯨船</div>
+<div class="grid-item">IMPROVEMENT_PLANTATION</div>
+<div class="grid-item">大規模農場</div>
+<div class="grid-item">IMPROVEMENT_QUARRY</div>
+<div class="grid-item">採石場</div>
+<div class="grid-item">IMPROVEMENT_PASTURE</div>
+<div class="grid-item">牧草地</div>
+<div class="grid-item">IMPROVEMENT_CAMP</div>
+<div class="grid-item">キャンプ</div>
+<div class="grid-item">IMPROVEMENT_WELL</div>
+<div class="grid-item">油井</div>
+<div class="grid-item">IMPROVEMENT_OFFSHORE_PLATFORM</div>
+<div class="grid-item">洋上プラットフォーム</div>
+<div class="grid-item">IMPROVEMENT_WINERY</div>
+<div class="grid-item">ワイン醸造所</div>
+<div class="grid-item">IMPROVEMENT_FORT</div>
+<div class="grid-item">要塞</div>
+<div class="grid-item">IMPROVEMENT_FOREST_PRESERVE</div>
+<div class="grid-item">保安林</div>
+</div>
 
 ## 道
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-道キー|道
----|---
-ROUTE_ROAD|道路
-ROUTE_RAILROAD|鉄道
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">道キー</div>
+<div class="grid-title">道</div>
+
+<div class="grid-item">ROUTE_ROAD</div>
+<div class="grid-item">道路</div>
+<div class="grid-item">ROUTE_RAILROAD</div>
+<div class="grid-item">鉄道</div>
+</div>
 
 # 資源
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-資源キー|資源
----|---
-BONUS_ALUMINUM|アルミニウム
-BONUS_COAL|石炭
-BONUS_COPPER|銅
-BONUS_HORSE|馬
-BONUS_IRON|鉄
-BONUS_MARBLE|大理石
-BONUS_OIL|石油
-BONUS_STONE|石材
-BONUS_URANIUM|ウラン
-BONUS_BANANA|バナナ
-BONUS_CLAM|貝
-BONUS_CORN|トウモロコシ
-BONUS_COW|牛
-BONUS_CRAB|蟹
-BONUS_DEER|鹿
-BONUS_FISH|魚
-BONUS_PIG|豚
-BONUS_RICE|米
-BONUS_SHEEP|羊
-BONUS_WHEAT|小麦
-BONUS_DYE|染料
-BONUS_FUR|毛皮
-BONUS_GEMS|宝石
-BONUS_GOLD|金
-BONUS_INCENSE|香料
-BONUS_IVORY|象牙
-BONUS_SILK|絹
-BONUS_SILVER|銀
-BONUS_SPICES|香辛料
-BONUS_SUGAR|砂糖
-BONUS_WINE|ワイン
-BONUS_WHALE|鯨
-BONUS_DRAMA|ヒットミュージカル
-BONUS_MUSIC|ヒット曲
-BONUS_MOVIES|ヒット映画
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2 auto-g">
+<div class="grid-title">資源キー</div>
+<div class="grid-title">資源</div>
+
+<div class="grid-item">BONUS_ALUMINUM</div>
+<div class="grid-item">アルミニウム</div>
+<div class="grid-item">BONUS_COAL</div>
+<div class="grid-item">石炭</div>
+<div class="grid-item">BONUS_COPPER</div>
+<div class="grid-item">銅</div>
+<div class="grid-item">BONUS_HORSE</div>
+<div class="grid-item">馬</div>
+<div class="grid-item">BONUS_IRON</div>
+<div class="grid-item">鉄</div>
+<div class="grid-item">BONUS_MARBLE</div>
+<div class="grid-item">大理石</div>
+<div class="grid-item">BONUS_OIL</div>
+<div class="grid-item">石油</div>
+<div class="grid-item">BONUS_STONE</div>
+<div class="grid-item">石材</div>
+<div class="grid-item">BONUS_URANIUM</div>
+<div class="grid-item">ウラン</div>
+<div class="grid-item">BONUS_BANANA</div>
+<div class="grid-item">バナナ</div>
+<div class="grid-item">BONUS_CLAM</div>
+<div class="grid-item">貝</div>
+<div class="grid-item">BONUS_CORN</div>
+<div class="grid-item">トウモロコシ</div>
+<div class="grid-item">BONUS_COW</div>
+<div class="grid-item">牛</div>
+<div class="grid-item">BONUS_CRAB</div>
+<div class="grid-item">蟹</div>
+<div class="grid-item">BONUS_DEER</div>
+<div class="grid-item">鹿</div>
+<div class="grid-item">BONUS_FISH</div>
+<div class="grid-item">魚</div>
+<div class="grid-item">BONUS_PIG</div>
+<div class="grid-item">豚</div>
+<div class="grid-item">BONUS_RICE</div>
+<div class="grid-item">米</div>
+<div class="grid-item">BONUS_SHEEP</div>
+<div class="grid-item">羊</div>
+<div class="grid-item">BONUS_WHEAT</div>
+<div class="grid-item">小麦</div>
+<div class="grid-item">BONUS_DYE</div>
+<div class="grid-item">染料</div>
+<div class="grid-item">BONUS_FUR</div>
+<div class="grid-item">毛皮</div>
+<div class="grid-item">BONUS_GEMS</div>
+<div class="grid-item">宝石</div>
+<div class="grid-item">BONUS_GOLD</div>
+<div class="grid-item">金</div>
+<div class="grid-item">BONUS_INCENSE</div>
+<div class="grid-item">香料</div>
+<div class="grid-item">BONUS_IVORY</div>
+<div class="grid-item">象牙</div>
+<div class="grid-item">BONUS_SILK</div>
+<div class="grid-item">絹</div>
+<div class="grid-item">BONUS_SILVER</div>
+<div class="grid-item">銀</div>
+<div class="grid-item">BONUS_SPICES</div>
+<div class="grid-item">香辛料</div>
+<div class="grid-item">BONUS_SUGAR</div>
+<div class="grid-item">砂糖</div>
+<div class="grid-item">BONUS_WINE</div>
+<div class="grid-item">ワイン</div>
+<div class="grid-item">BONUS_WHALE</div>
+<div class="grid-item">鯨</div>
+<div class="grid-item">BONUS_DRAMA</div>
+<div class="grid-item">ヒットミュージカル</div>
+<div class="grid-item">BONUS_MUSIC</div>
+<div class="grid-item">ヒット曲</div>
+<div class="grid-item">BONUS_MOVIES</div>
+<div class="grid-item">ヒット映画</div>
+</div>
 
 
 # 宗教
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-宗教キー|宗教
----|---
-RELIGION_JUDAISM|ユダヤ教
-RELIGION_CHRISTIANITY|キリスト教
-RELIGION_ISLAM|イスラム教
-RELIGION_HINDUISM|ヒンズー教
-RELIGION_BUDDHISM|仏教
-RELIGION_CONFUCIANISM|儒教
-RELIGION_TAOISM|道教
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">宗教キー</div>
+<div class="grid-title">宗教</div>
+
+<div class="grid-item">RELIGION_JUDAISM</div>
+<div class="grid-item">ユダヤ教</div>
+<div class="grid-item">RELIGION_CHRISTIANITY</div>
+<div class="grid-item">キリスト教</div>
+<div class="grid-item">RELIGION_ISLAM</div>
+<div class="grid-item">イスラム教</div>
+<div class="grid-item">RELIGION_HINDUISM</div>
+<div class="grid-item">ヒンズー教</div>
+<div class="grid-item">RELIGION_BUDDHISM</div>
+<div class="grid-item">仏教</div>
+<div class="grid-item">RELIGION_CONFUCIANISM</div>
+<div class="grid-item">儒教</div>
+<div class="grid-item">RELIGION_TAOISM</div>
+<div class="grid-item">道教</div>
+</div>
 
 # 企業
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-企業キー|企業
----|---
-CORPORATION_1|シリアル・ミル
-CORPORATION_2|シド寿司
-CORPORATION_3|スタンダード・エタノール
-CORPORATION_4|クリエイティブ建設
-CORPORATION_5|マイニング社
-CORPORATION_6|アルミニウム社
-CORPORATION_7|シヴィライズド・ジュエリー社
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">企業キー</div>
+<div class="grid-title">企業</div>
+
+<div class="grid-item">CORPORATION_1</div>
+<div class="grid-item">シリアル・ミル</div>
+<div class="grid-item">CORPORATION_2</div>
+<div class="grid-item">シド寿司</div>
+<div class="grid-item">CORPORATION_3</div>
+<div class="grid-item">スタンダード・エタノール</div>
+<div class="grid-item">CORPORATION_4</div>
+<div class="grid-item">クリエイティブ建設</div>
+<div class="grid-item">CORPORATION_5</div>
+<div class="grid-item">マイニング社</div>
+<div class="grid-item">CORPORATION_6</div>
+<div class="grid-item">アルミニウム社</div>
+<div class="grid-item">CORPORATION_7</div>
+<div class="grid-item">シヴィライズド・ジュエリー社</div>
+</div>
 
 # 外交態度
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-外交態度キー|外交態度|略語
----|---|---
-ATTITUDE_FURIOUS|怒っている|激怒
-ATTITUDE_ANNOYED|いらだっている|苛立
-ATTITUDE_CAUTIOUS|用心している|警戒
-ATTITUDE_PLEASED|不満はない|満足
-ATTITUDE_FRIENDLY|親しみを感じている|友好
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt3 auto-g3">
+<div class="grid-title">外交態度キー</div>
+<div class="grid-title">外交態度</div>
+<div class="grid-title">略語</div>
+
+<div class="grid-item">ATTITUDE_FURIOUS</div>
+<div class="grid-item">怒っている</div>
+<div class="grid-item">激怒</div>
+
+<div class="grid-item">ATTITUDE_ANNOYED</div>
+<div class="grid-item">いらだっている</div>
+<div class="grid-item">苛立</div>
+
+<div class="grid-item">ATTITUDE_CAUTIOUS</div>
+<div class="grid-item">用心している</div>
+<div class="grid-item">警戒</div>
+
+<div class="grid-item">ATTITUDE_PLEASED</div>
+<div class="grid-item">不満はない</div>
+<div class="grid-item">満足</div>
+
+<div class="grid-item">ATTITUDE_FRIENDLY</div>
+<div class="grid-item">親しみを感じている</div>
+<div class="grid-item">友好</div>
+</div>
 
 # 風味
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-フレーバーキー|風味
----|---
-FLAVOR_MILITARY|軍事
-FLAVOR_RELIGION|宗教
-FLAVOR_PRODUCTION|生産
-FLAVOR_GOLD|経済
-FLAVOR_SCIENCE|化学
-FLAVOR_CULTURE|文化
-FLAVOR_GROWTH|成長
-FLAVOR_ESPIONAGE|諜報
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">フレーバーキー</div>
+<div class="grid-title">風味</div>
+
+<div class="grid-item">FLAVOR_MILITARY</div>
+<div class="grid-item">軍事</div>
+<div class="grid-item">FLAVOR_RELIGION</div>
+<div class="grid-item">宗教</div>
+<div class="grid-item">FLAVOR_PRODUCTION</div>
+<div class="grid-item">生産</div>
+<div class="grid-item">FLAVOR_GOLD</div>
+<div class="grid-item">経済</div>
+<div class="grid-item">FLAVOR_SCIENCE</div>
+<div class="grid-item">化学</div>
+<div class="grid-item">FLAVOR_CULTURE</div>
+<div class="grid-item">文化</div>
+<div class="grid-item">FLAVOR_GROWTH</div>
+<div class="grid-item">成長</div>
+<div class="grid-item">FLAVOR_ESPIONAGE</div>
+<div class="grid-item">諜報</div>
+</div>
 
 # 時代
-{{% div class="row justify-content-center" %}}{{% div class="col-lg-8" %}}
-{.table .table-striped}
-時代キー|時代
----|---
-ERA_ANCIENT|古代
-ERA_CLASSICAL|古典時代
-ERA_MEDIEVAL|中世
-ERA_RENAISSANCE|ルネサンス時代
-ERA_INDUSTRIAL|工業化時代
-ERA_MODERN|現代
-ERA_FUTURE|未来
-{{%/div%}}{{%/div%}}
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">時代キー</div>
+<div class="grid-title">時代</div>
+
+<div class="grid-item">ERA_ANCIENT</div>
+<div class="grid-item">古代</div>
+<div class="grid-item">ERA_CLASSICAL</div>
+<div class="grid-item">古典時代</div>
+<div class="grid-item">ERA_MEDIEVAL</div>
+<div class="grid-item">中世</div>
+<div class="grid-item">ERA_RENAISSANCE</div>
+<div class="grid-item">ルネサンス時代</div>
+<div class="grid-item">ERA_INDUSTRIAL</div>
+<div class="grid-item">工業化時代</div>
+<div class="grid-item">ERA_MODERN</div>
+<div class="grid-item">現代</div>
+<div class="grid-item">ERA_FUTURE</div>
+<div class="grid-item">未来</div>
+</div>
+
