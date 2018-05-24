@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 3801
+    "wordCount": 3849
   }
 </script>
 
@@ -77,6 +77,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://gforestshade.github.io/kujira/css/style.css" />
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -327,7 +328,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:01</time></p>
           
-          <p>3801  Words</p>
+          <p>3849  Words</p>
           
           
 
@@ -385,11 +386,19 @@ ga('send', 'pageview');
 
 <p>「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、<br />
 毒散布で付与する用の「毒」の昇進をXMLで追加していきます。<br />
-編集するのは &ldquo;Assets\XML\Units\CIV4PromotionInfos.xml&rdquo; です。</p>
+編集するのは<span class="path">
+  \Assets\XML\Units\CIV4PromotionInfos.xml
+</span>
+です。</p>
 
-<p>元のファイルはパッケージ日本語版の場合<br />
-&ldquo;C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
-にあります。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+<p>元のファイルはパッケージ日本語版の場合</p>
+
+<p class="path">
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml
+</p>
+
+
+<p>にあります。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
 
 <p>今回のMOD名は<code>kujira_promospell</code>にするので、<br />
 フォルダ階層を作ってxmlファイルをコピーし、下のようにします。</p>
@@ -551,7 +560,10 @@ WATERをFIREに変えています。</p>
 <p>動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが<br />
 そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。</p>
 
-<p>Assets\XML\Text\Text_Kujira.xml を作成します。</p>
+<p><span class="path">
+  Assets\XML\Text\Text_Kujira.xml
+</span>
+を作成します。</p>
 
 <pre><code class="language-plain">└─kujira_promospell
     └─Assets
@@ -937,7 +949,10 @@ WATERをFIREに変えています。</p>
 <hr />
 
 <ol>
-<li id="fn:1">Steam版の場合 &ldquo;C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml&rdquo;<br />
+<li id="fn:1">Steam版の場合<span class="path">
+  C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml
+</span>
+<br />
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>

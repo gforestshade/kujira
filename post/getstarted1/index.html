@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 4507
+    "wordCount": 4504
   }
 </script>
 
@@ -77,6 +77,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://gforestshade.github.io/kujira/css/style.css" />
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -327,7 +328,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-03">2017-07-03 00:00</time></p>
           
-          <p>4507  Words</p>
+          <p>4504  Words</p>
           
           
 
@@ -399,11 +400,17 @@ OverwriteLogs = 1
 
 <p>さっそくBtSの元ファイル</p>
 
-<p>C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py</p>
+<p class="path">
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py
+</p>
+
 
 <p>…はなかったので</p>
 
-<p>C:\Program Files (x86)\CYBERFRONT\Sid Meier&rsquo;s Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py</p>
+<p class="path">
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py
+</p>
+
 
 <p><sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>をみると、こうなっていました。</p>
 
@@ -441,15 +448,28 @@ def beginEvent(context, argsList=-1):
 </code></pre>
 
 <p>これを<strong>どのフォルダに入っているかも含めて</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
-MODフォルダに新しくkujira\Assets\Python\EntryPoints\ フォルダを作って、そこにコピーします。</p>
+<strong>MODフォルダ</strong>に新しく<span class="path">
+  kujira\Assets\Python\EntryPoints\
+</span>
+フォルダを作って、そこにコピーします。</p>
 
 <p>MOD開発中に使用するMODフォルダはユーザーの&rdquo;Documents&rdquo;にある方をおすすめします。</p>
 
-<p>パッケージ版の場合<br />
-ドキュメント\My Games\Beyond the Sword (J)\Mods<br />
-Steam版の場合<br />
-ドキュメント\My Games\Beyond the Sword\Mods<br />
-です。</p>
+<p>パッケージ版の場合</p>
+
+<p class="path">
+  ドキュメント\My Games\Beyond the Sword (J)\Mods
+</p>
+
+
+<p>Steam版の場合</p>
+
+<p class="path">
+  ドキュメント\My Games\Beyond the Sword\Mods
+</p>
+
+
+<p>です。</p>
 
 <pre><code class="language-txt">└─kujira
     └─Assets
@@ -797,9 +817,18 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <hr />
 
 <ol>
-<li id="fn:1">Windows10,パッケージ版の場合,<strong>ドキュメント\My Games\Beyond the Sword(J)</strong><br>Steam版の場合,<strong>ドキュメント\My Games\Beyond the Sword</strong>にあります<br />
+<li id="fn:1">Windows10,パッケージ版の場合,<span class="path">
+  ドキュメント\My Games\Beyond the Sword(J)
+</span>
+<br>Steam版の場合,<span class="path">
+  ドキュメント\My Games\Beyond the Sword
+</span>
+にあります<br />
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">パッケージ版の場合。Steam版の場合は<strong>C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier&rsquo;s Civilization IV Beyond the Sword\Beyond the Sword\Assets\Python\EntryPoints\CvEventInterface.py</strong><br />
+<li id="fn:2">パッケージ版の場合。Steam版の場合は<span class="path">
+  C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py
+</span>
+<br />
  <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
 </ol>
 </div>

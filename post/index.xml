@@ -31,6 +31,15 @@
 
 &lt;p&gt;Civ4TraitInfos.xmlの各項目について説明しています。&lt;/p&gt;
 
+&lt;p&gt;このファイルはBtSでは更新されていません。BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Warlords(J)\Assets\XML\Civilizations\CIV4TraitInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
 &lt;h1 id=&#34;間違えやすい項目&#34;&gt;間違えやすい項目&lt;/h1&gt;
 
 &lt;p&gt;建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。&lt;br /&gt;
@@ -60,6 +69,15 @@
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 
 &lt;p&gt;Civ4TechInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Technologies\CIV4TechInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
 
 &lt;h1 id=&#34;一方向性&#34;&gt;一方向性&lt;/h1&gt;
 
@@ -100,6 +118,15 @@
 
 &lt;p&gt;Civ4CivicInfos.xmlの各項目について説明しています。&lt;/p&gt;
 
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4CivicInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
 &lt;h1 id=&#34;間違えやすい設定項目&#34;&gt;間違えやすい設定項目&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -131,6 +158,15 @@
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 
 &lt;p&gt;Civ4CivilizationInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Civilizations\CIV4CivilizationInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
 
 &lt;h2 id=&#34;civ4civilizationinfos&#34;&gt;&amp;lt;Civ4CivilizationInfos&amp;gt;&lt;/h2&gt;
 
@@ -188,6 +224,15 @@
 
 &lt;p&gt;CIV4LeaderHeadInfos.xmlの各項目について説明しています。&lt;/p&gt;
 
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Civilizations\CIV4LeaderHeadInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
 &lt;h2 id=&#34;civ4leaderheadinfos&#34;&gt;&amp;lt;Civ4LeaderHeadInfos&amp;gt;&lt;/h2&gt;
 
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
@@ -207,7 +252,7 @@
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/keyichiran/</guid>
-      <description>.grid-table { display: grid; grid-template-columns:3fr 2fr 3fr 2fr; // minmax(max-content,3fr) minmax(max-content,2fr) minmax(max-content,3fr) minmax(max-content,2fr); } .grid-table.grid-title { border-bottom: 1px double #dee2e6; } .grid-table.grid-subtitle { grid-column: span 1; grid-row: span 5; vartical-align: center; } .grid-tablediv { padding: 0.75em; vartical-align: center; border-top: 1px solid #dee2e6; } .grid-table.grid-item:nth-of-type(4n+1), .grid-table.grid-item:nth-of-type(4n+2) { background-color: rgba(0,0,0,.05); } 文明 文明キー 文明 CIVILIZATION_AMERICA アメリカ CIVILIZATION_ARABIA アラブ CIVILIZATION_AZTEC アステ</description>
+      <description>文明 文明キー 文明 CIVILIZATION_AMERICA アメリカ CIVILIZATION_ARABIA アラブ CIVILIZATION_AZTEC アステカ CIVILIZATION_BABYLON バビロニア CIVILIZATION_BYZANTIUM ビザンチン CIVILIZATION_CARTHAGE カルタゴ CIVILIZATION_CELT ケルト CIVILIZATION_CHINA 中国 CIVILIZATION_EGYPT エジプト CIVILIZATION_ENGLAND イギリス CIVILIZATION_ETHIOPIA エチオピア CIVILIZATION_FRANCE フランス CIVILIZATION_GERMANY ドイ</description>
     </item>
     
     <item>
@@ -238,6 +283,15 @@
 
 &lt;p&gt;CIV4BuildingInfos.xmlの各項目について説明しています。&lt;/p&gt;
 
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
 &lt;h2 id=&#34;civ4buildinginfos&#34;&gt;&amp;lt;Civ4BuildingInfos&amp;gt;&lt;/h2&gt;
 
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4BuildingSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
@@ -261,6 +315,15 @@
 
 &lt;p&gt;CIV4ClassUnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
 
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitClassInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
 &lt;h1 id=&#34;ユニットクラス&#34;&gt;ユニットクラス&lt;/h1&gt;
 
 &lt;p&gt;ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、&lt;br /&gt;
@@ -281,6 +344,15 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 
 &lt;p&gt;CIV4UnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
 
 &lt;h2 id=&#34;civ4unitinfos&#34;&gt;&amp;lt;Civ4UnitInfos&amp;gt;&lt;/h2&gt;
 
@@ -509,7 +581,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
       <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/readgetunitlist/</guid>
-      <description>はじめに それからのPython その６の付録 全ユニットを列挙するには 読む 早速 (略)\Beyond the Sword(J)\Assets\Python</description>
+      <description>はじめに それからのPython その６の付録 全ユニットを列挙するには 読む 早速 C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\Python\Pyhelpers.py 1 を開いて、 getUnitList()というメソッ</description>
     </item>
     
     <item>

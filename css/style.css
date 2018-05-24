@@ -33,8 +33,13 @@ body
         grid-template:
         "AAAAA  BBBBB" 1fr
         "CCCCC  CCCCC" 1.5em
-        / minmax(300px,max-content) minmax(650px,1fr);
+        / minmax(300px,390px) minmax(650px,1fr);
         justify-content: center;
+    }
+
+    .table-of-contents
+    {
+        overflow-x: scroll;
     }
 }
 
@@ -72,7 +77,7 @@ body
 .table-of-contents
 {
     position: sticky;
-    height: 96vh;
+    max-height: 96vh;
     top: 2vh;
     overflow-y: scroll;
 }
@@ -83,16 +88,13 @@ body
     margin-bottom: 0.4em;
 }
 
-.table-of-contents ul li
-{
-    word-wrap: break-word;
-}
-
 .table-of-contents ul.toc-h1 li,
 .table-of-contents ul.toc-h2 li,
 .table-of-contents ul.toc-h3 li
 {
-    list-style: none
+    list-style: none;
+    white-space: nowrap;
+    word-break: break-all;
 }
 
 .table-of-contents ul.toc-h1 li::before
@@ -214,6 +216,14 @@ img {
 .article>h2 + h3
 {
     margin-top: 2em;
+}
+
+.article .path
+{
+    font-family: "Meiryo UI", sans-serif;
+    font-size: smaller;
+    background-color: #ececec;
+    padding: 2px 1em;
 }
 
 .article .subnote {
