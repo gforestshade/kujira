@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-07",
     "description": "",
-    "wordCount": 26488
+    "wordCount": 26500
   }
 </script>
 
@@ -213,6 +213,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4techinfos/">Civ4TechInfos.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4traitinfos/">Civ4TraitInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildingclassinfos/">CIV4BuildingClassInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -6487,7 +6489,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-03-07">2018-03-07 00:00</time></p>
           
-          <p>26488  Words</p>
+          <p>26500  Words</p>
           
           
 
@@ -6555,7 +6557,7 @@ ga('send', 'pageview');
 <p>通常は、NONEを指定します。<br />
 BtSでは、核シェルター・寺院・大聖堂・僧院がグループを利用しています。</p>
 
-<p>値：特殊建造物キー</p>
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#特殊建造物グループ">特殊建造物キー</a></p>
 
 <p>&lt;SpecialBuildingType&gt;NONE&lt;/SpecialBuildingType&gt;</p>
 
@@ -6605,7 +6607,7 @@ PythonやDLLにおいて直接拡張したときなどに利用します。</p>
 <p>生産物を決めるポップアップにおいて、どの分類になるかを指定します。<br />
 推奨生産物に選ばれたときや、担当相の表示をオンにしているときなどに表示されます。</p>
 
-<p>値：アドバイザーキー</p>
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#担当相">アドバイザーキー</a></p>
 
 <p>例：<br />
 &lt;Advisor&gt;ADVISOR_MILITARY&lt;/Advisor&gt;</p>
@@ -6754,7 +6756,7 @@ BtSではどの企業も4ゴールドです。<br />
 <p>特に勝利条件による制限を設けない場合、NONEを指定します。<br />
 BtSでは、バチカン宮殿・国際連合・軌道エレベーターがこの属性を持ちます。</p>
 
-<p>値：勝利条件キー</p>
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#勝利条件">勝利条件キー</a></p>
 
 <p>例１：<br />
 &lt;VictoryPrereq&gt;NONE&lt;/VictoryPrereq&gt;</p>
@@ -7322,7 +7324,9 @@ BtSでは、この属性を持つ建造物はピラミッドとシェダゴン�
 <p>特に何も発足させない普通の建造物の場合、NONEを指定します。<br />
 BtSでは、この属性を持つ建造物はバチカン宮殿と国際連合です。</p>
 
-<p>値：国際機関キー</p>
+<p>値：国際機関キー<br />
+　　<code>DIPLOVOTE_UN</code>: 国際連合<br />
+　　<code>DIPLOVOTE_POPE</code>: バチカン宮殿</p>
 
 <p>例：<br />
 &lt;DiploVoteType&gt;NONE&lt;/DiploVoteType&gt;</p>
