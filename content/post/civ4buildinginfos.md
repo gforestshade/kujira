@@ -50,7 +50,7 @@ BtSパッケージ版では
 通常は、NONEを指定します。
 BtSでは、核シェルター・寺院・大聖堂・僧院がグループを利用しています。
 
-値：特殊建造物キー
+値：[特殊建造物キー]({{<ref "keyichiran">}}#特殊建造物グループ)
 
 \<SpecialBuildingType\>NONE\</SpecialBuildingType\>
 
@@ -95,7 +95,7 @@ PythonやDLLにおいて直接拡張したときなどに利用します。
 生産物を決めるポップアップにおいて、どの分類になるかを指定します。
 推奨生産物に選ばれたときや、担当相の表示をオンにしているときなどに表示されます。
 
-値：アドバイザーキー
+値：[アドバイザーキー]({{<ref "keyichiran">}}#担当相)
 
 例：
 \<Advisor\>ADVISOR\_MILITARY\</Advisor\>
@@ -234,7 +234,7 @@ BtSではどの企業も4ゴールドです。
 特に勝利条件による制限を設けない場合、NONEを指定します。
 BtSでは、バチカン宮殿・国際連合・軌道エレベーターがこの属性を持ちます。
 
-値：勝利条件キー
+値：[勝利条件キー]({{<ref "keyichiran">}}#勝利条件)
 
 例１：
 \<VictoryPrereq\>NONE\</VictoryPrereq\>
@@ -714,6 +714,8 @@ BtSでは、この属性を持つ建造物はシェール油精製施設と水�
 BtSでは、この属性を持つ建造物はバチカン宮殿と国際連合です。
 
 値：国際機関キー
+　　`DIPLOVOTE_UN`: 国際連合
+　　`DIPLOVOTE_POPE`: バチカン宮殿
 
 例：
 \<DiploVoteType\>NONE\</DiploVoteType\>
