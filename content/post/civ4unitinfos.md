@@ -2162,7 +2162,7 @@ BtSでは、この属性を持つユニットはありません。
 </UnitClassDefenseMods>
 ```
 
-### \<UnitCombatMods /\>
+### \<UnitCombatMods\>
 兵科ごとの戦闘力修正を指定します。
 このユニットは、指定された特定の兵科と戦闘する際、
 それぞれここに指定されたぶんだけ戦闘力修正を受けます。
@@ -2530,7 +2530,7 @@ BtSでは、この属性を持つユニットはありません。
 例：
 \<iHotKeyPriority\>0\</iHotKeyPriority\>
 
-### \<FreePromotions/\>
+### \<FreePromotions\>
 このユニットが得る無償の昇進を指定します。
 
 この機能を使わない場合、空タグにします。
@@ -2606,4 +2606,4 @@ BtSでは、この属性を持つユニットはありません。
 例：
 \<iOrderPriority\>0\</iOrderPriority\>
 
-<br><br>
+<div style="padding:5em"></div>
