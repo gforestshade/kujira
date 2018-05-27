@@ -82,22 +82,33 @@ body
     overflow-y: scroll;
 }
 
-.table-of-contents ul
+.table-of-contents div
 {
-    padding-left: 1.4em;
+    white-space: nowrap;
     margin-bottom: 0.4em;
 }
 
-.table-of-contents ul.toc-h1 li,
-.table-of-contents ul.toc-h2 li,
-.table-of-contents ul.toc-h3 li
+.table-of-contents .toc-h1
 {
-    list-style: none;
-    white-space: nowrap;
-    word-break: break-all;
+    margin-left: 1.2em;
 }
 
-.table-of-contents ul.toc-h1 li::before
+.table-of-contents .toc-h2
+{
+    margin-left: 2.4em;
+}
+
+.table-of-contents .toc-h3
+{
+    margin-left: 3.6em;
+}
+
+.table-of-contents .toc-h4
+{
+    margin-left: 4.8em;
+}
+
+.table-of-contents .toc-h1::before
 {
     color: #787878;
     font-family: "Font Awesome 5 Free";
@@ -106,7 +117,7 @@ body
     font-size: 80%;
 }
 
-.table-of-contents ul.toc-h2 li::before
+.table-of-contents .toc-h2::before
 {
     color: #787878;
     font-family: "Font Awesome 5 Free";
@@ -115,13 +126,19 @@ body
     font-size: 80%;
 }
 
-.table-of-contents ul.toc-h3 li::before
+.table-of-contents .toc-h3::before
 {
     color: #787878;
     font-family: "Font Awesome 5 Free";
     content: "\f02b";
     font-weight: bold;
     font-size: 80%;
+}
+
+.table-of-contents .toc-h4::before
+{
+    color: #787878;
+    content: "- ";
 }
 
 .centerbar {

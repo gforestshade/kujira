@@ -7,10 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Fri, 25 May 2018 01:49:25 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 May 2018 14:27:55 +0900</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/categories/xml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIV4PromotionInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4promotioninfos/</link>
+      <pubDate>Fri, 25 May 2018 14:27:55 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4promotioninfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4PromotionInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4PromotionInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4promotioninfos&#34;&gt;&amp;lt;Civ4PromotionInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4UnitSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;promotioninfo&#34;&gt;&amp;lt;PromotionInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、昇進の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;PromotionInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CIV4BuildingClassInfos.xml</title>
