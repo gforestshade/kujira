@@ -205,7 +205,9 @@ ga('send', 'pageview');
   <div role="tabpanel" id="collist_3" class="collapse">
     <div class="list-group list-group-flush">
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/howtocompile/">CvGameCoreDll.dllの作り方</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/howtocompile/">CvGameCoreDll.dllの作り方(2018-02)</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">CvGameCoreDll.dllの作り方(2018-05)</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -420,7 +422,7 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
 <p>CvGameCoreDll.dllとか使って、なんかします。</p>
 
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/howtocompile/">Windows10でDLL開発環境</a><br />
+<li><a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">Windows10でDLL開発環境</a><br />
 <br /></li>
 </ul>
 
@@ -456,6 +458,95 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
   
 </div>
 
+      </div>
+
+          
+        
+          
+                  <div class="card card-body my-5">
+        <div class="article-title">
+          
+
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/green1024x200.png" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          
+      
+    
+  
+  <div class="py-3" ></div>
+
+
+          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">CvGameCoreDll.dllの作り方(2018-05)</a></h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="2018-05-29">2018-05-29 16:22</time></p>
+          
+          <p>972  Words</p>
+
+          
+          <p>
+            カテゴリ：
+            
+            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/c&#43;&#43;">C&#43;&#43;</a>
+            
+          </p>
+          
+
+          
+          
+        </div>
+        <div class="article">
+          
+            
+              <h1 id="筆者の環境">筆者の環境</h1>
+
+<ul>
+<li>Windows 10 64bit<br /></li>
+<li>Civ4 BtS 3.19 パッケージ版<br />
+<br /></li>
+</ul>
+
+<h1 id="必要なもの">必要なもの</h1>
+
+<p>Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。<br />
+<a href="https://sourceforge.net/projects/beyond-the-sword-sdk/">https://sourceforge.net/projects/beyond-the-sword-sdk/</a><br />
+ここから<br />
+/VS2010Express1.iso と<br />
+/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を<br />
+両方ダウンロードします。</p>
+
+<p>Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは<br />
+実行して指示に従いインストールします。</p>
+
+<p>VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。<br />
+(それ以外のプログラミング言語は不要です。)<br />
+Setup.htaからVC++2010を選ぶか、<span class="path">
+  \VCExpress\setup.exe
+</span>
+を直接実行します。</p>
+
+<h1 id="やってみる">やってみる</h1>
+
+<p></p>
+            
+          
+        </div>
+        <p class="mt-4">
+          <a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
+        </p>
       </div>
 
           
@@ -1697,12 +1788,12 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
   <div class="py-3" ></div>
 
 
-          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/howtocompile/">CvGameCoreDll.dllの作り方</a></h1>
+          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/howtocompile/">CvGameCoreDll.dllの作り方(2018-02)</a></h1>
         </div>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-02-04">2018-02-04 00:00</time></p>
           
-          <p>756  Words</p>
+          <p>811  Words</p>
 
           
           <p>
@@ -1719,7 +1810,14 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
         <div class="article">
           
             
-              <h1 id="筆者の環境">筆者の環境</h1>
+              <div class="alert alert-danger">
+  <p>より簡単な方法が公開されました。このページに従ってもできますが、<br />
+<a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">DoC全部入りパッケージ版</a>も参照してください。</p>
+
+</div>
+
+
+<h1 id="筆者の環境">筆者の環境</h1>
 
 <ul>
 <li>Windows 10 64bit<br /></li>
@@ -1929,110 +2027,6 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
         </div>
         <p class="mt-4">
           <a href="https://gforestshade.github.io/kujira/post/secondpy9/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
-        </p>
-      </div>
-
-          
-        
-          
-                  <div class="card card-body my-5">
-        <div class="article-title">
-          
-
-  
-    
-    
-      
-    
-      
-    
-      
-          <a href="https://gforestshade.github.io/kujira/post/secondpy8/" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/photo_pink1_1024x200.png" class="img-fluid border rounded" alt="Generic responsive image">
-          </a>
-          
-            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/135366503@N05/31176873090/">&lsquo;I love nature and nature loves me &hellip;..&rsquo; by CLAUDIA DEA</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
-          
-      
-    
-      
-    
-      
-    
-  
-  <div class="py-3" ></div>
-
-
-          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/secondpy8/">それからのPython 8</a></h1>
-        </div>
-        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
-          <p><time datetime="2017-12-30">2017-12-30 12:02</time></p>
-          
-          <p>5652  Words</p>
-
-          
-          <p>
-            カテゴリ：
-            
-            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/python">Python</a>
-            
-          </p>
-          
-
-          
-          <p>
-            タグ：
-            
-            <a class="btn btn-sm btn-outline-info" href="https://gforestshade.github.io/kujira/tags/%e3%81%9d%e3%82%8c%e3%81%8b%e3%82%89%e3%81%aepython">それからのPython</a>
-            
-            <a class="btn btn-sm btn-outline-info" href="https://gforestshade.github.io/kujira/tags/%e8%ac%9b%e5%ba%a7">講座</a>
-            
-          </p>
-          
-          
-        </div>
-        <div class="article">
-          
-            
-              <h1 id="はじめに">はじめに</h1>
-
-<ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの２回目・Python準備編<br /></li>
-<li>オブジェクト<br /></li>
-<li>リスト操作<br />
-<br /></li>
-</ul>
-
-<h1 id="pythonファイル">Pythonファイル</h1>
-
-<p>Python側のファイル構成はいつもの感じです。<br />
-EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br />
-忘れてしまった方は<a href="https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py">こちら</a>にも置いてあります。</p>
-
-<pre><code class="language-plain">└─kujira_promospell
-    └─Assets
-        ├─Python
-        │  ├─KujiraEventManager.py
-        │  │
-        │  └─Entrypoints
-        │      └─CvEventInterface.py
-        │
-        └─XML
-            ├─Text
-            │  └─Text_Kujira.xml
-            │
-            └─Units
-                └─CIV4PromotionInfos.xml
-</code></pre>
-
-<p></p>
-            
-          
-        </div>
-        <p class="mt-4">
-          <a href="https://gforestshade.github.io/kujira/post/secondpy8/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
         </p>
       </div>
 

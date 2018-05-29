@@ -22,6 +22,44 @@
     </item>
     
     <item>
+      <title>CvGameCoreDll.dllの作り方(2018-05)</title>
+      <link>https://gforestshade.github.io/kujira/post/howtocompiledoc/</link>
+      <pubDate>Tue, 29 May 2018 16:22:20 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/howtocompiledoc/</guid>
+      <description>&lt;h1 id=&#34;筆者の環境&#34;&gt;筆者の環境&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows 10 64bit&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Civ4 BtS 3.19 パッケージ版&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h1&gt;
+
+&lt;p&gt;Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。&lt;br /&gt;
+&lt;a href=&#34;https://sourceforge.net/projects/beyond-the-sword-sdk/&#34;&gt;https://sourceforge.net/projects/beyond-the-sword-sdk/&lt;/a&gt;&lt;br /&gt;
+ここから&lt;br /&gt;
+/VS2010Express1.iso と&lt;br /&gt;
+/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を&lt;br /&gt;
+両方ダウンロードします。&lt;/p&gt;
+
+&lt;p&gt;Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは&lt;br /&gt;
+実行して指示に従いインストールします。&lt;/p&gt;
+
+&lt;p&gt;VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。&lt;br /&gt;
+(それ以外のプログラミング言語は不要です。)&lt;br /&gt;
+Setup.htaからVC++2010を選ぶか、&lt;span class=&#34;path&#34;&gt;
+  \VCExpress\setup.exe
+&lt;/span&gt;
+を直接実行します。&lt;/p&gt;
+
+&lt;h1 id=&#34;やってみる&#34;&gt;やってみる&lt;/h1&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>CIV4PromotionInfos.xml</title>
       <link>https://gforestshade.github.io/kujira/post/civ4promotioninfos/</link>
       <pubDate>Fri, 25 May 2018 14:27:55 +0900</pubDate>
@@ -443,12 +481,19 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
     </item>
     
     <item>
-      <title>CvGameCoreDll.dllの作り方</title>
+      <title>CvGameCoreDll.dllの作り方(2018-02)</title>
       <link>https://gforestshade.github.io/kujira/post/howtocompile/</link>
       <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/post/howtocompile/</guid>
-      <description>&lt;h1 id=&#34;筆者の環境&#34;&gt;筆者の環境&lt;/h1&gt;
+      <description>&lt;div class=&#34;alert alert-danger&#34;&gt;
+  &lt;p&gt;より簡単な方法が公開されました。このページに従ってもできますが、&lt;br /&gt;
+&lt;a href=&#34;https://gforestshade.github.io/kujira/post/howtocompiledoc/&#34;&gt;DoC全部入りパッケージ版&lt;/a&gt;も参照してください。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h1 id=&#34;筆者の環境&#34;&gt;筆者の環境&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Windows 10 64bit&lt;br /&gt;&lt;/li&gt;
