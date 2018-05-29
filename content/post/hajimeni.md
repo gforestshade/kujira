@@ -81,7 +81,7 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
 # C++シリーズ
 CvGameCoreDll.dllとか使って、なんかします。
 
-- [Windows10でDLL開発環境]({{<ref "howtocompile">}})
+- [Windows10でDLL開発環境]({{<ref "howtocompiledoc">}})
 
 # MMD to Civ4 プロジェクト
 なんとかもっといろいろなユニットをシド星に召喚できないかと

@@ -1,11 +1,15 @@
 +++
 date = "2018-02-04"
-draft = false
-title = "CvGameCoreDll.dllの作り方"
+title = "CvGameCoreDll.dllの作り方(2018-02)"
 banner = "green"
 categories = ["C++"]
-comment = true
+comment = false
 +++
+
+{{% div class="alert alert-danger" %}}
+より簡単な方法が公開されました。このページに従ってもできますが、
+[DoC全部入りパッケージ版]({{<ref "howtocompiledoc">}})も参照してください。
+{{% /div %}}
 
 # 筆者の環境
 - Windows 10 64bit
