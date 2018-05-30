@@ -110,14 +110,14 @@ PythonやDLLにおいて直接拡張したときなどに利用します。
 \<ArtDefineTag\>ART\_DEF\_BUILDING\_CELTIC\_DUN\</ArtDefineTag\>
 
 ### \<MovieDefineTag\>
-ムービーのグラフィックを指定します。
-キーの定義は \\XML\\Art\\CIV4ArtDefines_Movie.xml にあります。
+ムービーのグラフィックを指定します。キーの定義は
+\\XML\\Art\\CIV4ArtDefines_Movie.xml にあります。
 
-ここにNONE以外のキーを指定する場合、建造物完成時に
-そのキーの内容に従ってムービーが再生されます。[^movie]
+ここにNONE以外のキーを指定する場合、建造物完成時にそのキーの内容に従ってムービーが再生されます。[^movie]
 
 [^movie]: この効果は、遺産に限定されません。
 
+例：
 \<MovieDefineTag\>NONE\</MovieDefineTag\>
 
 ### \<HolyCity\>

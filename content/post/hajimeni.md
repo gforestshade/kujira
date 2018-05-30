@@ -71,12 +71,14 @@ XMLを1ファイルずつ取り上げ、各タグの役割について解説す�
 XMLキーだけを一覧にしたものです。簡易的な調べものにどうぞ。
 - [ユニットクラス]({{<ref "civ4unitclassinfos">}})
 - [ユニット]({{<ref "civ4unitinfos">}})
+- [建造物クラス]({{<ref "civ4buildingclassinfos">}})
 - [建造物]({{<ref "civ4buildinginfos">}})
 - [技術]({{<ref "civ4techinfos">}})
 - [指導者]({{<ref "civ4leaderheadinfos">}})
 - [文明]({{<ref "civ4civilizationinfos">}})
 - [社会制度]({{<ref "civ4civicinfos">}})
 - [志向]({{<ref "civ4traitinfos">}})
+- [昇進]({{<ref "civ4promotioninfos">}})
 
 # C++シリーズ
 CvGameCoreDll.dllとか使って、なんかします。
