@@ -2268,3 +2268,33 @@ toc = "目次"
 <div class="grid-item">外交的</div>
 </div>
 
+# 部族集落
+<div class="grid-table gt2-nw auto-g">
+<div class="grid-title">部族集落タイプキー</div>
+<div class="grid-title">イベント</div>
+
+<div class="grid-item">GOODY_LOW_GOLD</div>
+<div class="grid-item">ゴールド(少)</div>
+<div class="grid-item">GOODY_HIGH_GOLD</div>
+<div class="grid-item">ゴールド(多)</div>
+<div class="grid-item">GOODY_MAP</div>
+<div class="grid-item">地図</div>
+<div class="grid-item">GOODY_SETTLER</div>
+<div class="grid-item">開拓者</div>
+<div class="grid-item">GOODY_WARRIOR</div>
+<div class="grid-item">戦士</div>
+<div class="grid-item">GOODY_SCOUT</div>
+<div class="grid-item">斥候</div>
+<div class="grid-item">GOODY_WORKER</div>
+<div class="grid-item">労働者</div>
+<div class="grid-item">GOODY_EXPERIENCE</div>
+<div class="grid-item">経験値</div>
+<div class="grid-item">GOODY_HEALING</div>
+<div class="grid-item">回復</div>
+<div class="grid-item">GOODY_TECH</div>
+<div class="grid-item">技術</div>
+<div class="grid-item">GOODY_BARBARIANS_WEAK</div>
+<div class="grid-item">敵対(弱)</div>
+<div class="grid-item">GOODY_BARBARIANS_STRONG</div>
+<div class="grid-item">敵対(強)</div>
+</div>

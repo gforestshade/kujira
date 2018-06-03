@@ -256,8 +256,7 @@ BtSでは：
 この値が高いほど、この指導者はプレイヤーとの技術取引において
 「そちらの文明は進みすぎているようだ。」になりにくくなります。
 
-**取引による技術取得数上限** = [iRefuseToTalkWarThreshold] * [難易度補正]
-\(難易度補正は難易度のiNoTechTradeModifierで指定されます\)
+**取引による技術取得数上限** = [iRefuseToTalkWarThreshold] * [難易度補正]({{<ref "civ4handicapinfo">}}#inotechtrademodifier)
 
 何を対価にしたかを問わず、相手国が取引によって入手した技術の数が上限を超えると、
 この指導者はその相手との技術交換を拒否するようになります。
@@ -286,8 +285,7 @@ BtSでは：
 この値が高いほど、「まだこのテクノロジーを手放す気にはなれないな。」になりやすくなり、
 技術を交換に出しにくくなります。
 
-**秘密主義度** = [iTechTradeKnownPercent] * [難易度補正] * [解禁係数]
-\(難易度補正は難易度のiTechTradeKnownModifierで指定されます\)
+**秘密主義度** = [iTechTradeKnownPercent] * [難易度補正]({{<ref "civ4handicapinfo">}}#itechtradeknownmodifier) * [解禁係数]
 
 **解禁係数** = (その技術により解禁されるユニット・建造物・プロジェクトにより上昇、最低値は0)
 
