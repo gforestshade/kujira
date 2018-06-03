@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-21",
     "description": "",
-    "wordCount": 1420
+    "wordCount": 2124
   }
 </script>
 
@@ -219,6 +219,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4promotioninfos/">CIV4PromotionInfos.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4projectinfos/">CIV4ProjectInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -450,6 +452,40 @@ ga('send', 'pageview');
             
         
     
+        
+        
+            
+              <div class="toc-h2">
+                
+                
+                
+                
+                  
+                  <a href="https://gforestshade.github.io/kujira/post/glossary/#%e5%88%9d%e6%9c%9f%e9%98%b2%e8%a1%9b%e5%85%b5%e7%a8%ae">
+                    初期防衛兵種
+                  </a>
+                  
+              </div>
+            
+        
+    
+        
+        
+            
+              <div class="toc-h2">
+                
+                
+                
+                
+                  
+                  <a href="https://gforestshade.github.io/kujira/post/glossary/#%e5%88%9d%e6%9c%9f%e6%8e%a2%e7%b4%a2%e5%85%b5%e7%a8%ae">
+                    初期探索兵種
+                  </a>
+                  
+              </div>
+            
+        
+    
 </div>
 
 
@@ -491,7 +527,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-21">2018-05-21 00:00</time></p>
           
-          <p>1420  Words</p>
+          <p>2124  Words</p>
           
           
           <p>
@@ -695,6 +731,47 @@ ga('send', 'pageview');
 <strong>必要経験値</strong> = (i^2+1) * [<a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/#ilevelexperiencemodifier">志向補正</a>]</p>
 
 <p>無償の昇進は数に含まれません(その意味での無償です)。</p>
+
+<h2 id="初期防衛兵種">初期防衛兵種</h2>
+
+<p>以下の条件を満たすユニットを、初期防衛兵種と呼びます。</p>
+
+<ul>
+<li>都市防御ボーナスをもとから持つユニットである<br />
+または<code>UNITAI_CITY_DEFENSE</code>が明示的に指定されたユニットである<br /></li>
+<li>防御ボーナスを受けられるユニットである<br /></li>
+<li>初期技術として与えられた技術で生産できる<br /></li>
+<li>資源なしで生産できる<br /></li>
+<li>以上の条件を満たす中で、(都市防御ボーナスを含めて)都市防御時の戦闘力が最大である<br />
+<br /></li>
+</ul>
+
+<p>たとえば、国王以上の難易度ではAI文明に初期防衛ユニットが無償で付与されます。<br />
+太古スタートの場合、初期防衛兵種は弓兵なので、AIは無償の弓兵を得ることになります。<br />
+また、スタートする時代によって、初期防衛ユニットがもらえることがあります。<br />
+大抵の場合、初期防衛兵種として選ばれるのはその時代の標準的な弓術ユニットまたは火器ユニットです。</p>
+
+<h2 id="初期探索兵種">初期探索兵種</h2>
+
+<p>以下の条件を満たすユニットを、初期探索兵種と呼びます。</p>
+
+<ul>
+<li>通行不能地形が設定されていないユニットである<br />
+または<code>UNITAI_EXPLORE</code>が明示的に指定されたユニットである<br /></li>
+<li>初期技術として与えられた技術で生産できる<br /></li>
+<li>資源なしで生産できる<br /></li>
+<li>以上の条件を満たす中で、移動力が最大である<br /></li>
+<li>移動力が同点のユニットが複数あって決まらない場合、<br />
+部族小屋から良い結果を得るユニットが優先<br /></li>
+<li>それでも決まらない場合、その中で戦闘力が最大のユニット<br />
+<br /></li>
+</ul>
+
+<p>たとえば、初期技術に狩猟がないときは(戦士しか作れないので)戦士、<br />
+狩猟があるときは(斥候と戦士を比較して)斥候が選ばれます。<br />
+スタートする時代によっては初期技術が異なりますが、<br />
+大抵の場合初期探索兵種として選ばれるのは<br />
+(移動力が2で部族小屋から良い結果を得る能力を持つ)斥候か探検家です。</p>
 
         </div>
         <div class="col-12">

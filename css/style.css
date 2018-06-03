@@ -322,3 +322,25 @@ img {
 {
     margin-bottom: .3em;
 }
+
+em.handicap-game
+{
+    display: inline-block;
+    line-height: 1rem;
+    color: #9c27b0;
+    background-color: #edd7f2;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border: dotted 1px #9c27b0;
+}
+
+em.handicap-player
+{
+    display: inline-block;
+    line-height: 1rem;
+    color: #0a92ff;
+    background-color: #d6eaf9;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border: dotted 1px #0a92ff;
+}

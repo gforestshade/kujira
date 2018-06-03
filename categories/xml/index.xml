@@ -7,10 +7,63 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Tue, 29 May 2018 18:58:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Jun 2018 18:54:07 +0900</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/categories/xml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIV4HandicapInfo.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4handicapinfo/</link>
+      <pubDate>Sun, 03 Jun 2018 18:54:07 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4handicapinfo/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4HandicapInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4HandicapInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
+&lt;h1 id=&#34;難易度の影響範囲&#34;&gt;難易度の影響範囲&lt;/h1&gt;
+
+&lt;p&gt;&lt;em class=&#34;handicap-player&#34;&gt;各プレイヤー向け設定値&lt;/em&gt;&lt;br /&gt;
+実は、難易度は人間・AI問わずすべてのプレイヤーに設定されています。&lt;br /&gt;
+初期〈幸福〉や〈衛生〉などは、すべてのプレイヤーが、自分自身に設定されている難易度を参照します。&lt;br /&gt;
+通常、AIプレイヤーの難易度は貴族で固定です。(これはGlobalDefines.xmlのSTANDARD_HANDICAPで変更可能です)&lt;br /&gt;
+例：&lt;br /&gt;
+難易度が高いほど自分の維持費が上昇する&lt;/p&gt;
+
+&lt;p&gt;&lt;em class=&#34;handicap-game&#34;&gt;ゲーム全体向け設定値&lt;/em&gt;&lt;br /&gt;
+すべての人間プレイヤーの難易度を平均したものが「ゲーム全体の難易度」として設定されます。&lt;br /&gt;
+(通常、「ゲーム全体の難易度」を直接確認することはできませんが、&lt;br /&gt;
+ シングルゲームなら人間プレイヤーが1人なので、&lt;br /&gt;
+ その人間プレイヤーが選んだ難易度がゲーム全体の難易度と一致します。)&lt;/p&gt;
+
+&lt;p&gt;AIプレイヤーや蛮族に作用する設定は、この「ゲーム全体の難易度」の設定値を参照します。&lt;br /&gt;
+例：&lt;br /&gt;
+ゲーム全体の難易度(=人間が選択した難易度)が高いほどAIがユニット作成コストに割引を得る&lt;/p&gt;
+
+&lt;h1 id=&#34;各タグの説明&#34;&gt;各タグの説明&lt;/h1&gt;
+
+&lt;h2 id=&#34;civ4handicapinfos&#34;&gt;&amp;lt;Civ4HandicapInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4GameInfoSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;handicapinfo&#34;&gt;&amp;lt;HandicapInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、難易度の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;HandicapInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CIV4ProjectInfos.xml</title>

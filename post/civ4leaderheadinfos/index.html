@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-04",
     "description": "",
-    "wordCount": 41254
+    "wordCount": 41169
   }
 </script>
 
@@ -219,6 +219,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4promotioninfos/">CIV4PromotionInfos.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4projectinfos/">CIV4ProjectInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -3209,7 +3211,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-04">2018-05-04 16:32</time></p>
           
-          <p>41254  Words</p>
+          <p>41169  Words</p>
           
           
 
@@ -3503,8 +3505,7 @@ ga('send', 'pageview');
 この値が高いほど、この指導者はプレイヤーとの技術取引において<br />
 「そちらの文明は進みすぎているようだ。」になりにくくなります。</p>
 
-<p><strong>取引による技術取得数上限</strong> = [iRefuseToTalkWarThreshold] * [難易度補正]<br />
-(難易度補正は難易度のiNoTechTradeModifierで指定されます)</p>
+<p><strong>取引による技術取得数上限</strong> = [iRefuseToTalkWarThreshold] * <a href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/#inotechtrademodifier">難易度補正</a></p>
 
 <p>何を対価にしたかを問わず、相手国が取引によって入手した技術の数が上限を超えると、<br />
 この指導者はその相手との技術交換を拒否するようになります。<br />
@@ -3536,8 +3537,7 @@ ga('send', 'pageview');
 この値が高いほど、「まだこのテクノロジーを手放す気にはなれないな。」になりやすくなり、<br />
 技術を交換に出しにくくなります。</p>
 
-<p><strong>秘密主義度</strong> = [iTechTradeKnownPercent] * [難易度補正] * [解禁係数]<br />
-(難易度補正は難易度のiTechTradeKnownModifierで指定されます)</p>
+<p><strong>秘密主義度</strong> = [iTechTradeKnownPercent] * <a href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/#itechtradeknownmodifier">難易度補正</a> * [解禁係数]</p>
 
 <p><strong>解禁係数</strong> = (その技術により解禁されるユニット・建造物・プロジェクトにより上昇、最低値は0)</p>
 
