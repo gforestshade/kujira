@@ -7,10 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sun, 03 Jun 2018 18:54:07 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 05 Aug 2018 17:50:43 +0900</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/categories/xml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIV4BonusInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4bonusinfos/</link>
+      <pubDate>Sun, 05 Aug 2018 17:50:43 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4bonusinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4BonusInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Warlords(J)\Assets\XML\Terrain\CIV4BonusInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4bonusinfos&#34;&gt;&amp;lt;Civ4BonusInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4TerrainSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;bonusinfo&#34;&gt;&amp;lt;BonusInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、資源の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;BonusInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CIV4HandicapInfo.xml</title>
