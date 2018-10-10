@@ -5,7 +5,7 @@
       <img src="{{ $p.Params.banner }}" class="img-fluid" alt="Generic responsive image">
     </a>
   {{ else }}
-    {{ $banner := .Params.banner }}
+    {{ $banner := .Params.banner }}{{ $index := 0 }}
     {{ range $index, .Site.Params.banners }}
       {{ if eq $index.name $banner }}
           <a href="{{ $p.Permalink }}" itemprop="url">
