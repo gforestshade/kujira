@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-17",
     "description": "",
-    "wordCount": 3701
+    "wordCount": 3522
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,12 +81,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -230,6 +234,8 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
+      
     </div>
     <div class="card-footer p-2"></div>
   </div>
@@ -340,7 +346,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-17">2017-10-17 00:00</time></p>
           
-          <p>3701  Words</p>
+          <p>3522  Words</p>
           
           
 
@@ -436,18 +442,18 @@ from CvPythonExtensions import *
 myEventManager = KujiraEventManager.MyEventManager()
 
 def getEventManager():
-	return myEventManager
+    return myEventManager
 
 def onEvent(argsList):
-	'Called when a game event happens - return 1 if the event was consumed'
-	return getEventManager().handleEvent(argsList)
+    'Called when a game event happens - return 1 if the event was consumed'
+    return getEventManager().handleEvent(argsList)
 
 def applyEvent(argsList):
-	context, playerID, netUserData, popupReturn = argsList
-	return getEventManager().applyEvent(argsList)
+    context, playerID, netUserData, popupReturn = argsList
+    return getEventManager().applyEvent(argsList)
 
 def beginEvent(context, argsList=-1):
-	return getEventManager().beginEvent(context, argsList)
+    return getEventManager().beginEvent(context, argsList)
 </code></pre>
 
 <h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
@@ -495,31 +501,26 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 この場合「<code>a</code>という名前の変数に<code>&quot;Hello, Python!&quot;</code>という値を代入している」ということになります。</p>
 
 <p>代入以外の場所に書かれている変数は中身の値を表します。<br />
-いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、<br />
-<code>CvUtil.pyPrint(a)</code>は<code>CvUtil.pyPrint(&quot;Hello, Python!&quot;)</code>と同じ意味を表すことになります。</p>
+いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、</p>
 
-<h2 id="型">型</h2>
+<pre><code class="language-CvUtil.pyPrint(a)```は```CvUtil.pyPrint(&quot;Hello,">
+## 型
+**値**にはデータの性質によって種類があります。
+たとえば...
 
-<p><strong>値</strong>にはデータの性質によって種類があります。<br />
-たとえば&hellip;</p>
++ 数値型 ```a = 123```
++ 文字列型 ```a = &quot;123&quot;```
++ リスト型 ```a = [1,2,3]```
++ ブール型 ```a = True```
 
-<ul>
-<li>数値型 <code>a = 123</code><br /></li>
-<li>文字列型 <code>a = &quot;123&quot;</code><br /></li>
-<li>リスト型 <code>a = [1,2,3]</code><br /></li>
-<li>ブール型 <code>a = True</code><br />
-<br /></li>
-</ul>
+............などなど、いろいろあります。
 
-<p>&hellip;&hellip;&hellip;&hellip;などなど、いろいろあります。</p>
+## 型の一致
+**型**の話で大事なのは、***型の種類があっていないと関数は基本的に失敗する***ということです。
 
-<h2 id="型の一致">型の一致</h2>
-
-<p><strong>型</strong>の話で大事なのは、<strong><em>型の種類があっていないと関数は基本的に失敗する</em></strong>ということです。</p>
-
-<p>試してみましょう。文字列型の代わりに数値型を使って<code>CvUtil.pyPrint(a)</code>してみます。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+試してみましょう。文字列型の代わりに数値型を使って```CvUtil.pyPrint(a)```してみます。
+``` python
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
         a = 1234
         CvUtil.pyPrint(a) # 数値型で呼び出す
@@ -666,10 +667,11 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 
 <h1 id="ゲーム画面に表示してみる">ゲーム画面に表示してみる</h1>
 
-<p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。<br />
-<code>CyInterface().addImmediateMessage(表示したい文字列の値, &quot;&quot;)</code>です。</p>
+<p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。</p>
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+<pre><code class="language-CyInterface().addImmediateMessage(表示したい文字列の値,">
+``` python
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         # ログファイルに出力する
         message1 = &quot;ato &quot;
         turnleft = 10 - 2
@@ -716,32 +718,35 @@ PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the 
 (もちろん、わかっている方で、euc_jpやutf-8をお使いの方は読み替えてください)<br />
 1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。</p>
 
-<p>そのうえで、フォーマット文字列の仕組みを使い、<br />
-<code>message = u&quot;あと%dターンです！&quot; % turnleft</code>とすればよいです。</p>
+<p>そのうえで、フォーマット文字列の仕組みを使い、</p>
 
-<p>ファイル全体で&hellip;</p>
-
-<pre><code># -*- coding: shift_jis -*-
-from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
-
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
-        # ログファイルに出力する
-        turnleft = 10 - 2
-        
-        message = u&quot;あと%dターンです！&quot; % turnleft
-        print message
-        
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
+<pre><code class="language-message">
+ファイル全体で...
 </code></pre>
 
-<p>こうなります。<br />
+<h1 id="coding-shift-jis">-<em>- coding: shift_jis -</em>-</h1>
+
+<p>from CvPythonExtensions import *<br />
+import CvEventManager<br />
+import CvUtil</p>
+
+<p>class MyEventManager(CvEventManager.CvEventManager, object):</p>
+
+<pre><code>def onGameStart(self, argsList):
+    'Called at the start of the game'
+    super(self.__class__, self).onGameStart(argsList)
+    ##########
+    # ログファイルに出力する
+    turnleft = 10 - 2
+
+    message = u&quot;あと%dターンです！&quot; % turnleft
+    print message
+
+    CyInterface().addImmediateMessage(message, &quot;&quot;)
+</code></pre>
+
+<p>```<br />
+こうなります。<br />
 このコードではUnicode文字列に対してprint文を使っていますが、その場合もよしなにやってくれて<br />
 正しくPythonDbg.logに日本語が書き込まれるので、覗いてみてください。</p>
 

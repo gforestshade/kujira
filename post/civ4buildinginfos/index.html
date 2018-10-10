@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -75,12 +75,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -223,6 +227,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -4040,10 +4046,10 @@ BtSではこの変数の値は4です。<br />
 <p>例２：防衛志向によって生産速度2倍</p>
 
 <pre><code class="language-plain">&lt;ProductionTraits&gt;
-	&lt;ProductionTrait&gt;
-		&lt;ProductionTraitType&gt;TRAIT_PROTECTIVE&lt;/ProductionTraitType&gt;
-		&lt;iProductionTrait&gt;100&lt;/iProductionTrait&gt;
-	&lt;/ProductionTrait&gt;
+    &lt;ProductionTrait&gt;
+        &lt;ProductionTraitType&gt;TRAIT_PROTECTIVE&lt;/ProductionTraitType&gt;
+        &lt;iProductionTrait&gt;100&lt;/iProductionTrait&gt;
+    &lt;/ProductionTrait&gt;
 &lt;/ProductionTraits&gt;
 </code></pre>
 
@@ -6292,7 +6298,7 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
 <hr />
 
 <ol>
-<li id="fn:ton">iProduc<strong>ton</strong>Modifierです。誤字ではありません。<br />
+<li id="fn:ton">iProduc<strong>ton</strong>Modifierです。誤字ではありません。<br />
  <a class="footnote-return" href="#fnref:ton"><sup>[return]</sup></a></li>
 </ol>
 </div>
@@ -6870,37 +6876,37 @@ Ctrlキーを足すのは推奨されません。</p>
 <hr />
 
 <ol>
-<li id="fn:movie">この効果は、遺産に限定されません。<br />
+<li id="fn:movie">この効果は、遺産に限定されません。<br />
  <a class="footnote-return" href="#fnref:movie"><sup>[return]</sup></a></li>
-<li id="fn:1">そうすることで、建造物リストが多くなりすぎないようにしていると思われます。<br />
+<li id="fn:1">そうすることで、建造物リストが多くなりすぎないようにしていると思われます。<br />
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:technum">実際のところ、BtSでは前提技術2つ(メインとサブ1つずつ)の建造物が最大です。<br />
+<li id="fn:technum">実際のところ、BtSでは前提技術2つ(メインとサブ1つずつ)の建造物が最大です。<br />
  <a class="footnote-return" href="#fnref:technum"><sup>[return]</sup></a></li>
-<li id="fn:bonusnum">実際のところ、BtSでは前提資源を要求する建造物はありません。<br />
+<li id="fn:bonusnum">実際のところ、BtSでは前提資源を要求する建造物はありません。<br />
  <a class="footnote-return" href="#fnref:bonusnum"><sup>[return]</sup></a></li>
-<li id="fn:uu">それらのUU群を含みます。<br />
+<li id="fn:uu">それらのUU群を含みます。<br />
  <a class="footnote-return" href="#fnref:uu"><sup>[return]</sup></a></li>
-<li id="fn:freebuil">この建造物を所有しなくなったり、陳腐化したりしたときは、即座に当該の無償建造物を失います。<br>指定は建造物クラスタイプです。実際には文明ごとに分岐した建造物タイプの建造物を得ます。<br />
+<li id="fn:freebuil">この建造物を所有しなくなったり、陳腐化したりしたときは、即座に当該の無償建造物を失います。<br>指定は建造物クラスタイプです。実際には文明ごとに分岐した建造物タイプの建造物を得ます。<br />
  <a class="footnote-return" href="#fnref:freebuil"><sup>[return]</sup></a></li>
-<li id="fn:teamww">アポロ神殿のような、このリストとは関係ないような遺産までもがこの属性を持ちます。もちろんそのような場合、特に意味はありません。なぜかアルテミス神殿だけはこの属性を持っていません。謎です。<br />
+<li id="fn:teamww">アポロ神殿のような、このリストとは関係ないような遺産までもがこの属性を持ちます。もちろんそのような場合、特に意味はありません。なぜかアルテミス神殿だけはこの属性を持っていません。謎です。<br />
  <a class="footnote-return" href="#fnref:teamww"><sup>[return]</sup></a></li>
-<li id="fn:waterriver">どちらかで構いません。<br />
+<li id="fn:waterriver">どちらかで構いません。<br />
  <a class="footnote-return" href="#fnref:waterriver"><sup>[return]</sup></a></li>
-<li id="fn:capcul">元の建造物には文化出力がなく、UUには文化出力があるような場合は指定されていません。<br>なので、棚畑やオデオンが破壊されず残ってしまう場合もあります。<br />
+<li id="fn:capcul">元の建造物には文化出力がなく、UUには文化出力があるような場合は指定されていません。<br>なので、棚畑やオデオンが破壊されず残ってしまう場合もあります。<br />
  <a class="footnote-return" href="#fnref:capcul"><sup>[return]</sup></a></li>
-<li id="fn:wwcm">ここに0を指定した遺産も当然MODでなら作ることができます。<br />
+<li id="fn:wwcm">ここに0を指定した遺産も当然MODでなら作ることができます。<br />
  <a class="footnote-return" href="#fnref:wwcm"><sup>[return]</sup></a></li>
-<li id="fn:hurrytype">人口でも、富でも<br />
+<li id="fn:hurrytype">人口でも、富でも<br />
  <a class="footnote-return" href="#fnref:hurrytype"><sup>[return]</sup></a></li>
-<li id="fn:nukeexplosion">核攻撃によるものと、メルトダウンによるものの両方に適用されます。<br />
+<li id="fn:nukeexplosion">核攻撃によるものと、メルトダウンによるものの両方に適用されます。<br />
  <a class="footnote-return" href="#fnref:nukeexplosion"><sup>[return]</sup></a></li>
-<li id="fn:foreigntr">他国の都市(属国でも可)との間の交易路のこと。シヴィロペディアには誤植があり、別の大陸の都市である必要はありません。<br />
+<li id="fn:foreigntr">他国の都市(属国でも可)との間の交易路のこと。シヴィロペディアには誤植があり、別の大陸の都市である必要はありません。<br />
  <a class="footnote-return" href="#fnref:foreigntr"><sup>[return]</sup></a></li>
-<li id="fn:year">ターン数ではなく、年です。ゲーム速度との関連に注意してください。<br />
+<li id="fn:year">ターン数ではなく、年です。ゲーム速度との関連に注意してください。<br />
  <a class="footnote-return" href="#fnref:year"><sup>[return]</sup></a></li>
-<li id="fn:religiondistance">交易路としての長さとは関係なく、2都市間の絶対距離で決まります。大陸の反対側の都市と長い道路でつながっていて、海を渡っていった方が距離が近い場合、天文学を持っているかどうかに関係なく、近い方の距離が使われます。<br>また、距離によってかなり急速に減衰し、星の反対側では確率1/1000になってしまいます。Pangaea大きさ標準マップにおいて圧力1で実用的に自然伝搬できる距離は、おおむね距離12程度のようです。<br />
+<li id="fn:religiondistance">交易路としての長さとは関係なく、2都市間の絶対距離で決まります。大陸の反対側の都市と長い道路でつながっていて、海を渡っていった方が距離が近い場合、天文学を持っているかどうかに関係なく、近い方の距離が使われます。<br>また、距離によってかなり急速に減衰し、星の反対側では確率1/1000になってしまいます。Pangaea大きさ標準マップにおいて圧力1で実用的に自然伝搬できる距離は、おおむね距離12程度のようです。<br />
  <a class="footnote-return" href="#fnref:religiondistance"><sup>[return]</sup></a></li>
-<li id="fn:ccoo">効果範囲はこの2つの属性だけです。ほかの属性の効果を抑制することはできないことに注意してください。<br />
+<li id="fn:ccoo">効果範囲はこの2つの属性だけです。ほかの属性の効果を抑制することはできないことに注意してください。<br />
  <a class="footnote-return" href="#fnref:ccoo"><sup>[return]</sup></a></li>
 </ol>
 </div>

@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,12 +81,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -229,6 +233,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -449,10 +455,10 @@ ga('send', 'pageview');
 
 <p>&lt;Type&gt;と&lt;Discription&gt;を湧き水用のキーに変更します。</p>
 
-<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
 </code></pre>
 
 <p>ついでに&lt;Help&gt;というタグを新しくつくっています。<br />
@@ -466,7 +472,7 @@ ga('send', 'pageview');
 
 <p>&lt;iCombatPercent&gt;を0にして、戦闘力+10%をなかったことにします。</p>
 
-<pre><code class="language-xml">			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+<pre><code class="language-xml">            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
 </code></pre>
 
 <hr />
@@ -475,12 +481,12 @@ ga('send', 'pageview');
 &lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までの38行分を消去して、<br />
 かわりに下記のように火器ユニットのみにします。</p>
 
-<pre><code class="language-xml">			&lt;UnitCombats&gt;
-				&lt;UnitCombat&gt;
-					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-				&lt;/UnitCombat&gt;
-			&lt;/UnitCombats&gt;
+<pre><code class="language-xml">            &lt;UnitCombats&gt;
+                &lt;UnitCombat&gt;
+                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+                &lt;/UnitCombat&gt;
+            &lt;/UnitCombats&gt;
 </code></pre>
 
 <hr />
@@ -489,7 +495,7 @@ ga('send', 'pageview');
 預言者のボタン画像に変更します。</p>
 
 <pre><code class="language-xml">
-			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
 
 </code></pre>
 
@@ -505,10 +511,10 @@ ga('send', 'pageview');
 <p>2番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を毒散布用にします。<br />
 WATERをPOISONに変えています。</p>
 
-<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
 </code></pre>
 
 <hr />
@@ -516,10 +522,10 @@ WATERをPOISONに変えています。</p>
 <p>3番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を火炎幕用にします。<br />
 WATERをFIREに変えています。</p>
 
-<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
 </code></pre>
 
 <h2 id="毒">毒</h2>
@@ -528,9 +534,9 @@ WATERをFIREに変えています。</p>
 何もしない3つの昇進のいずれかをもう1つコピペして、<br />
 &lt;Type&gt;と&lt;Description&gt;を変更し、<strong><em>&lt;Help&gt;を消します。</em></strong></p>
 
-<pre><code class="language-xml">			&lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
 </code></pre>
 
 <hr />
@@ -539,7 +545,7 @@ WATERをFIREに変えています。</p>
 自動生成された説明文で十分だからです。<br />
 早速戦闘力-20%にします。</p>
 
-<pre><code class="language-xml">			&lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
+<pre><code class="language-xml">            &lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
 </code></pre>
 
 <hr />
@@ -550,7 +556,7 @@ WATERをFIREに変えています。</p>
 &lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までを消去して、<br />
 かわりに下のように入力します。</p>
 
-<pre><code>			&lt;UnitCombats /&gt;
+<pre><code>            &lt;UnitCombats /&gt;
 </code></pre>
 
 <p>これはXMLの空タグといって、中身が空だということを表します。</p>
@@ -686,275 +692,275 @@ WATERをFIREに変えています。</p>
 
 <h2 id="civ4promotioninfos-xmlの追加分の全文">CIV4PromotionInfos.xmlの追加分の全文</h2>
 
-<pre><code class="language-xml">		&lt;PromotionInfo&gt;
-			&lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-			&lt;bLeader&gt;0&lt;/bLeader&gt;
-			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
-			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
-			&lt;bRiver&gt;0&lt;/bRiver&gt;
-			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-			&lt;TerrainAttacks/&gt;
-			&lt;TerrainDefenses/&gt;
-			&lt;FeatureAttacks/&gt;
-			&lt;FeatureDefenses/&gt;
-			&lt;UnitCombatMods/&gt;
-			&lt;DomainMods/&gt;
-			&lt;TerrainDoubleMoves/&gt;
-			&lt;FeatureDoubleMoves/&gt;
-			&lt;UnitCombats&gt;
-				&lt;UnitCombat&gt;
-					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-				&lt;/UnitCombat&gt;
-			&lt;/UnitCombats&gt;
-			&lt;HotKey/&gt;
-			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
-			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-		&lt;/PromotionInfo&gt;
+<pre><code class="language-xml">        &lt;PromotionInfo&gt;
+            &lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+            &lt;bLeader&gt;0&lt;/bLeader&gt;
+            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
+            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
+            &lt;bRiver&gt;0&lt;/bRiver&gt;
+            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+            &lt;TerrainAttacks/&gt;
+            &lt;TerrainDefenses/&gt;
+            &lt;FeatureAttacks/&gt;
+            &lt;FeatureDefenses/&gt;
+            &lt;UnitCombatMods/&gt;
+            &lt;DomainMods/&gt;
+            &lt;TerrainDoubleMoves/&gt;
+            &lt;FeatureDoubleMoves/&gt;
+            &lt;UnitCombats&gt;
+                &lt;UnitCombat&gt;
+                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+                &lt;/UnitCombat&gt;
+            &lt;/UnitCombats&gt;
+            &lt;HotKey/&gt;
+            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
+            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+        &lt;/PromotionInfo&gt;
 
-		&lt;PromotionInfo&gt;
-			&lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-			&lt;bLeader&gt;0&lt;/bLeader&gt;
-			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
-			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
-			&lt;bRiver&gt;0&lt;/bRiver&gt;
-			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-			&lt;TerrainAttacks/&gt;
-			&lt;TerrainDefenses/&gt;
-			&lt;FeatureAttacks/&gt;
-			&lt;FeatureDefenses/&gt;
-			&lt;UnitCombatMods/&gt;
-			&lt;DomainMods/&gt;
-			&lt;TerrainDoubleMoves/&gt;
-			&lt;FeatureDoubleMoves/&gt;
-			&lt;UnitCombats&gt;
-				&lt;UnitCombat&gt;
-					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-				&lt;/UnitCombat&gt;
-			&lt;/UnitCombats&gt;
-			&lt;HotKey/&gt;
-			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
-			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-		&lt;/PromotionInfo&gt;
-		
-		&lt;PromotionInfo&gt;
-			&lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
-			&lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-			&lt;bLeader&gt;0&lt;/bLeader&gt;
-			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
-			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
-			&lt;bRiver&gt;0&lt;/bRiver&gt;
-			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-			&lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-			&lt;TerrainAttacks/&gt;
-			&lt;TerrainDefenses/&gt;
-			&lt;FeatureAttacks/&gt;
-			&lt;FeatureDefenses/&gt;
-			&lt;UnitCombatMods/&gt;
-			&lt;DomainMods/&gt;
-			&lt;TerrainDoubleMoves/&gt;
-			&lt;FeatureDoubleMoves/&gt;
-			&lt;UnitCombats&gt;
-				&lt;UnitCombat&gt;
-					&lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-					&lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-				&lt;/UnitCombat&gt;
-			&lt;/UnitCombats&gt;
-			&lt;HotKey/&gt;
-			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
-			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-		&lt;/PromotionInfo&gt;
+        &lt;PromotionInfo&gt;
+            &lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+            &lt;bLeader&gt;0&lt;/bLeader&gt;
+            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
+            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
+            &lt;bRiver&gt;0&lt;/bRiver&gt;
+            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+            &lt;TerrainAttacks/&gt;
+            &lt;TerrainDefenses/&gt;
+            &lt;FeatureAttacks/&gt;
+            &lt;FeatureDefenses/&gt;
+            &lt;UnitCombatMods/&gt;
+            &lt;DomainMods/&gt;
+            &lt;TerrainDoubleMoves/&gt;
+            &lt;FeatureDoubleMoves/&gt;
+            &lt;UnitCombats&gt;
+                &lt;UnitCombat&gt;
+                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+                &lt;/UnitCombat&gt;
+            &lt;/UnitCombats&gt;
+            &lt;HotKey/&gt;
+            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
+            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+        &lt;/PromotionInfo&gt;
+        
+        &lt;PromotionInfo&gt;
+            &lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
+            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+            &lt;bLeader&gt;0&lt;/bLeader&gt;
+            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
+            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
+            &lt;bRiver&gt;0&lt;/bRiver&gt;
+            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
+            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+            &lt;TerrainAttacks/&gt;
+            &lt;TerrainDefenses/&gt;
+            &lt;FeatureAttacks/&gt;
+            &lt;FeatureDefenses/&gt;
+            &lt;UnitCombatMods/&gt;
+            &lt;DomainMods/&gt;
+            &lt;TerrainDoubleMoves/&gt;
+            &lt;FeatureDoubleMoves/&gt;
+            &lt;UnitCombats&gt;
+                &lt;UnitCombat&gt;
+                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
+                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
+                &lt;/UnitCombat&gt;
+            &lt;/UnitCombats&gt;
+            &lt;HotKey/&gt;
+            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
+            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+        &lt;/PromotionInfo&gt;
 
-		&lt;PromotionInfo&gt;
-			&lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
-			&lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
-			&lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-			&lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-			&lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-			&lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-			&lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-			&lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-			&lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-			&lt;bLeader&gt;0&lt;/bLeader&gt;
-			&lt;bBlitz&gt;0&lt;/bBlitz&gt;
-			&lt;bAmphib&gt;0&lt;/bAmphib&gt;
-			&lt;bRiver&gt;0&lt;/bRiver&gt;
-			&lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-			&lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-			&lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-			&lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-			&lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-			&lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-			&lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-			&lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-			&lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-			&lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-			&lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-			&lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-			&lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-			&lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-			&lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-			&lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-			&lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-			&lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-			&lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-			&lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-			&lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-			&lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
-			&lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-			&lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-			&lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-			&lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-			&lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-			&lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-			&lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-			&lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-			&lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-			&lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-			&lt;TerrainAttacks/&gt;
-			&lt;TerrainDefenses/&gt;
-			&lt;FeatureAttacks/&gt;
-			&lt;FeatureDefenses/&gt;
-			&lt;UnitCombatMods/&gt;
-			&lt;DomainMods/&gt;
-			&lt;TerrainDoubleMoves/&gt;
-			&lt;FeatureDoubleMoves/&gt;
-			&lt;UnitCombats /&gt;
-			&lt;HotKey/&gt;
-			&lt;bAltDown&gt;0&lt;/bAltDown&gt;
-			&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-			&lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-			&lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-			&lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-		&lt;/PromotionInfo&gt;
+        &lt;PromotionInfo&gt;
+            &lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
+            &lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
+            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
+            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
+            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
+            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
+            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
+            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
+            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
+            &lt;bLeader&gt;0&lt;/bLeader&gt;
+            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
+            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
+            &lt;bRiver&gt;0&lt;/bRiver&gt;
+            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
+            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
+            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
+            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
+            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
+            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
+            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
+            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
+            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
+            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
+            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
+            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
+            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
+            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
+            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
+            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
+            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
+            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
+            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
+            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
+            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
+            &lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
+            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
+            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
+            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
+            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
+            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
+            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
+            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
+            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
+            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
+            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
+            &lt;TerrainAttacks/&gt;
+            &lt;TerrainDefenses/&gt;
+            &lt;FeatureAttacks/&gt;
+            &lt;FeatureDefenses/&gt;
+            &lt;UnitCombatMods/&gt;
+            &lt;DomainMods/&gt;
+            &lt;TerrainDoubleMoves/&gt;
+            &lt;FeatureDoubleMoves/&gt;
+            &lt;UnitCombats /&gt;
+            &lt;HotKey/&gt;
+            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
+            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
+            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
+            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
+            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
+        &lt;/PromotionInfo&gt;
 </code></pre>
 <div class="footnotes">
 
@@ -964,7 +970,7 @@ WATERをFIREに変えています。</p>
 <li id="fn:1">Steam版の場合<span class="path">
   C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml
 </span>
-<br />
+<br />
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>

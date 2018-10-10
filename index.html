@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -47,12 +47,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -196,6 +200,8 @@ ga('send', 'pageview');
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
       
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
+      
     </div>
     <div class="card-footer p-2"></div>
   </div>
@@ -309,7 +315,7 @@ ga('send', 'pageview');
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-01-27">2018-01-27 00:00</time></p>
           
-          <p>1040  Words</p>
+          <p>1060  Words</p>
           
           
           <p>
@@ -407,7 +413,7 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
 
 <h1 id="xml詳説シリーズ">XML詳説シリーズ</h1>
 
-<p>XMLを1ファイルずつ取り上げ、各タグの役割について解説する辞書的コンテンツです、</p>
+<p>XMLを1ファイルずつ取り上げ、各タグの役割について解説する辞書的コンテンツです。</p>
 
 <ul>
 <li><a href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a><br />
@@ -421,7 +427,11 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
 <li><a href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/">文明</a><br /></li>
 <li><a href="https://gforestshade.github.io/kujira/post/civ4civicinfos/">社会制度</a><br /></li>
 <li><a href="https://gforestshade.github.io/kujira/post/civ4traitinfos/">志向</a><br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/civ4promotioninfos/">昇進</a><br />
+<li><a href="https://gforestshade.github.io/kujira/post/civ4promotioninfos/">昇進</a><br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/civ4projectinfos/">プロジェクト</a><br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">難易度</a><br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">資源</a><br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">地形改善</a><br />
 <br /></li>
 </ul>
 
@@ -441,9 +451,7 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
 
 <ul>
 <li><a href="https://gforestshade.github.io/kujira/post/mmd_to_nif/">モデルの変換</a><br /></li>
-<li><a href="https://gforestshade.github.io/kujira/post/nifanimation/">リギング</a><br />
-<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/nifanimation/">リギング</a><br /></li>
 </ul>
 
         </div>
@@ -466,6 +474,91 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
   
 </div>
 
+      </div>
+
+          
+        
+          
+                  <div class="card card-body my-5">
+        <div class="article-title">
+          
+
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+          <a href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/" itemprop="url">
+            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
+          </a>
+          
+            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
+          
+      
+    
+      
+    
+  
+  <div class="py-3" ></div>
+
+
+          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a></h1>
+        </div>
+        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
+          <p><time datetime="2018-10-11">2018-10-11 01:20</time></p>
+          
+          <p>5937  Words</p>
+
+          
+          <p>
+            カテゴリ：
+            
+            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/xml">XML</a>
+            
+          </p>
+          
+
+          
+          
+        </div>
+        <div class="article">
+          
+            
+              <h1 id="はじめに">はじめに</h1>
+
+<p>CIV4ImprovementInfos.xmlの各項目について説明しています。</p>
+
+<p>BtSパッケージ版では</p>
+
+<p class="path">
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Terrain\CIV4ImprovementInfos.xml
+</p>
+
+
+<p>にあります。</p>
+
+<h2 id="civ4improvementinfos">&lt;Civ4ImprovementInfos&gt;</h2>
+
+<p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4TerrainSchema.xml&quot;</code>を指定します。</p>
+
+<h2 id="improvementinfo">&lt;ImprovementInfo&gt;</h2>
+
+<p>このタグ1つが、地形改善の定義1つと対応しています。</p>
+
+<p>以下&lt;ImprovementInfo&gt;の中身です。</p>
+
+<p></p>
+            
+          
+        </div>
+        <p class="mt-4">
+          <a href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
+        </p>
       </div>
 
           
@@ -1234,7 +1327,7 @@ Setup.htaからVC++2010を選ぶか、<span class="path">
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-21">2018-05-21 00:00</time></p>
           
-          <p>2124  Words</p>
+          <p>2136  Words</p>
 
           
           <p>
@@ -1695,7 +1788,7 @@ Setup.htaからVC++2010を選ぶか、<span class="path">
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-04-16">2018-04-16 00:00</time></p>
           
-          <p>5342  Words</p>
+          <p>5343  Words</p>
 
           
           <p>
@@ -1955,91 +2048,6 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
         </div>
         <p class="mt-4">
           <a href="https://gforestshade.github.io/kujira/post/civ4unitclassinfos/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
-        </p>
-      </div>
-
-          
-        
-          
-                  <div class="card card-body my-5">
-        <div class="article-title">
-          
-
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-          <a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/" itemprop="url">
-            <img src="https://gforestshade.github.io/kujira/banner/photo_ice1_1024x200.jpg" class="img-fluid border rounded" alt="Generic responsive image">
-          </a>
-          
-            <p class="banner-license">banner: <a href="https://www.flickr.com/photos/markbyzewski/13510664124/">&lsquo;Middlebrun Island&rsquo; by Superior Hiking</a> (トリミング) under a <a href="https://creativecommons.org/licenses/by/2.0/deed.ja">Creative Commons Attribution 2.0</a>.</p>
-          
-      
-    
-      
-    
-  
-  <div class="py-3" ></div>
-
-
-          <h1 class="article-title"><a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/">CIV4UnitInfos.xml</a></h1>
-        </div>
-        <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
-          <p><time datetime="2018-03-04">2018-03-04 00:00</time></p>
-          
-          <p>21852  Words</p>
-
-          
-          <p>
-            カテゴリ：
-            
-            <a class="btn btn-sm btn-outline-primary" href="https://gforestshade.github.io/kujira/categories/xml">XML</a>
-            
-          </p>
-          
-
-          
-          
-        </div>
-        <div class="article">
-          
-            
-              <h1 id="はじめに">はじめに</h1>
-
-<p>CIV4UnitInfos.xmlの各項目について説明しています。</p>
-
-<p>BtSパッケージ版では</p>
-
-<p class="path">
-  C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitInfos.xml
-</p>
-
-
-<p>にあります。</p>
-
-<h2 id="civ4unitinfos">&lt;Civ4UnitInfos&gt;</h2>
-
-<p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4UnitSchema.xml&quot;</code>を指定します。</p>
-
-<h2 id="unitinfo">&lt;UnitInfo&gt;</h2>
-
-<p>このタグ1つが、ユニットの定義1つと対応しています。</p>
-
-<p>以下&lt;UnitInfo&gt;の中身です。</p>
-
-<p></p>
-            
-          
-        </div>
-        <p class="mt-4">
-          <a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/" class="btn btn-primary shadow-sm" role="button">続きを読む &rarr;</a>
         </p>
       </div>
 

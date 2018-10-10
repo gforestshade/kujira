@@ -22,6 +22,38 @@
     </item>
     
     <item>
+      <title>CIV4ImprovementInfos.xml</title>
+      <link>https://gforestshade.github.io/kujira/post/civ4improvementinfos/</link>
+      <pubDate>Thu, 11 Oct 2018 01:20:39 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/post/civ4improvementinfos/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;CIV4ImprovementInfos.xmlの各項目について説明しています。&lt;/p&gt;
+
+&lt;p&gt;BtSパッケージ版では&lt;/p&gt;
+
+&lt;p class=&#34;path&#34;&gt;
+  C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Terrain\CIV4ImprovementInfos.xml
+&lt;/p&gt;
+
+
+&lt;p&gt;にあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;civ4improvementinfos&#34;&gt;&amp;lt;Civ4ImprovementInfos&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4TerrainSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
+
+&lt;h2 id=&#34;improvementinfo&#34;&gt;&amp;lt;ImprovementInfo&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;このタグ1つが、地形改善の定義1つと対応しています。&lt;/p&gt;
+
+&lt;p&gt;以下&amp;lt;ImprovementInfo&amp;gt;の中身です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>CIV4BonusInfos.xml</title>
       <link>https://gforestshade.github.io/kujira/post/civ4bonusinfos/</link>
       <pubDate>Sun, 05 Aug 2018 17:50:43 +0900</pubDate>

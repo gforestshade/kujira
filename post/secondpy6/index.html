@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,12 +81,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -229,6 +233,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -400,18 +406,18 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	' CyPlayer Helper Functions - Requires Player ID to initialize instance '
-	
-	def __init__(self, iPlayer):
-		' Called whenever a new PyPlayer instance is created '
-		if iPlayer:
-			self.player = gc.getPlayer(iPlayer)
-		else:
-			self.player = gc.getPlayer(0)
-	
-	def CyGet(self):
-		' used to get the CyUnit instance for quick calls '
-		return self.player
+    ' CyPlayer Helper Functions - Requires Player ID to initialize instance '
+    
+    def __init__(self, iPlayer):
+        ' Called whenever a new PyPlayer instance is created '
+        if iPlayer:
+            self.player = gc.getPlayer(iPlayer)
+        else:
+            self.player = gc.getPlayer(0)
+    
+    def CyGet(self):
+        ' used to get the CyUnit instance for quick calls '
+        return self.player
 
 # ...他にもたくさんたくさん...
 </code></pre>
@@ -432,14 +438,14 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	' CyPlayer Helper Functions - Requires Player ID to initialize instance '
-	
-	def __init__(self, iPlayer):
-		' Called whenever a new PyPlayer instance is created '
-		if iPlayer:
-			self.player = gc.getPlayer(iPlayer)
-		else:
-			self.player = gc.getPlayer(0)
+    ' CyPlayer Helper Functions - Requires Player ID to initialize instance '
+    
+    def __init__(self, iPlayer):
+        ' Called whenever a new PyPlayer instance is created '
+        if iPlayer:
+            self.player = gc.getPlayer(iPlayer)
+        else:
+            self.player = gc.getPlayer(0)
 </code></pre>
 
 <p>コンストラクタです。プレイヤーIDを受け取って、そのプレイヤーIDが0でないなら<br />
@@ -454,17 +460,17 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	# ...(中略)...
-	
-	def isAlive(self):
-		return self.player.isAlive()
-	
-	def getID(self):
-		' int - ID # '
-		return self.player.getID()
+    # ...(中略)...
+    
+    def isAlive(self):
+        return self.player.isAlive()
+    
+    def getID(self):
+        ' int - ID # '
+        return self.player.getID()
 
-	def getName(self):
-		return self.player.getName()
+    def getName(self):
+        return self.player.getName()
 </code></pre>
 
 <p>それぞれ、生存しているか、IDの取得、名前の取得のメソッドです。<br />
@@ -487,12 +493,12 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	# ...(中略)...
-	
-	def hasResearchedTech(self, iTech):
-		' bool - Has researched iTech '
-		if self.getTeam().isHasTech( iTech ):
-			return True
+    # ...(中略)...
+    
+    def hasResearchedTech(self, iTech):
+        ' bool - Has researched iTech '
+        if self.getTeam().isHasTech( iTech ):
+            return True
 </code></pre>
 
 <p><code>CyPlayer</code>にはない便利メソッドをこうして定義しています。</p>
@@ -523,15 +529,15 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	# ...(中略)...
-	
-	def getTeamID(self):
-		' int - gets the players teamID '
-		return self.player.getTeam()
-	
-	def getTeam(self):
-		' obj - returns Team Instance '
-		return gc.getTeam( self.getTeamID() )
+    # ...(中略)...
+    
+    def getTeamID(self):
+        ' int - gets the players teamID '
+        return self.player.getTeam()
+    
+    def getTeam(self):
+        ' obj - returns Team Instance '
+        return gc.getTeam( self.getTeamID() )
 </code></pre>
 
 <p>2つメソッドが見えます。下のメソッドに注目すると、<br />
@@ -560,15 +566,15 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	# ...(中略)...
-	
-	def getResearchedTechList(self):
-		' intlist - list of researched techs '
-		lTechs = []
-		for i in range(gc.getNumTechInfos()):
-			if self.hasResearchedTech(i):
-				lTechs.append(i)
-		return lTechs
+    # ...(中略)...
+    
+    def getResearchedTechList(self):
+        ' intlist - list of researched techs '
+        lTechs = []
+        for i in range(gc.getNumTechInfos()):
+            if self.hasResearchedTech(i):
+                lTechs.append(i)
+        return lTechs
 </code></pre>
 
 <p><code>getResearchedTechList()</code>「そのプレイヤーが研究済みの全技術のリストを取得する」です。<br />
@@ -608,17 +614,17 @@ import CvUtil
 gc = CyGlobalContext()
 
 class PyPlayer:
-	# ...(中略)...
-	
-	def getUnitList(self):
-		' UnitList - All of the players alive units '
-		lUnit = []
-		(loopUnit, iter) = self.player.firstUnit(false)
-		while( loopUnit ):
-			if ( not loopUnit.isDead() ): #is the unit alive and valid?
-				lUnit.append(loopUnit) #add unit instance to list
-			(loopUnit, iter) = self.player.nextUnit(iter, false)
-		return lUnit
+    # ...(中略)...
+    
+    def getUnitList(self):
+        ' UnitList - All of the players alive units '
+        lUnit = []
+        (loopUnit, iter) = self.player.firstUnit(false)
+        while( loopUnit ):
+            if ( not loopUnit.isDead() ): #is the unit alive and valid?
+                lUnit.append(loopUnit) #add unit instance to list
+            (loopUnit, iter) = self.player.nextUnit(iter, false)
+        return lUnit
 </code></pre>
 
 <p>「そのプレイヤーに属する全ユニットのリスト」です。<br />

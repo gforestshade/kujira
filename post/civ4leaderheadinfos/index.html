@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.49" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -75,12 +75,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-111798374-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111798374-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     </head>
 
@@ -223,6 +227,8 @@ ga('send', 'pageview');
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4handicapinfo/">CIV4HandicapInfo.xml</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4bonusinfos/">CIV4BonusInfos.xml</a>
+      
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4improvementinfos/">CIV4ImprovementInfos.xml</a>
       
     </div>
     <div class="card-footer p-2"></div>
@@ -6453,23 +6459,23 @@ BtSでは、全指導者で<code>50</code>です。</p>
 <hr />
 
 <ol>
-<li id="fn:wcr">通常の遺産としての評価値をまず計算し、そこに上乗せされます。遺産建造度が0とは、遺産を建造しないのではなく、遺産を無条件で贔屓はしないという意味です。<br />
+<li id="fn:wcr">通常の遺産としての評価値をまず計算し、そこに上乗せされます。遺産建造度が0とは、遺産を建造しないのではなく、遺産を無条件で贔屓はしないという意味です。<br />
  <a class="footnote-return" href="#fnref:wcr"><sup>[return]</sup></a></li>
-<li id="fn:gold">ゴールド/ターン ではなく、直接のゴールドの取引を指します。<br />
+<li id="fn:gold">ゴールド/ターン ではなく、直接のゴールドの取引を指します。<br />
  <a class="footnote-return" href="#fnref:gold"><sup>[return]</sup></a></li>
-<li id="fn:dwtr">他のAI文明にはちゃんと技術などの対価を渡して取引します。プレイヤーに対し無償で参戦要求する際はこの値でなく別の値が用いられることに注意してください。<br />
+<li id="fn:dwtr">他のAI文明にはちゃんと技術などの対価を渡して取引します。プレイヤーに対し無償で参戦要求する際はこの値でなく別の値が用いられることに注意してください。<br />
  <a class="footnote-return" href="#fnref:dwtr"><sup>[return]</sup></a></li>
-<li id="fn:raze">僻地か大都市か、自国が赤字で苦しくないか、自国から近いか遠いか、などを勘案します<br />
+<li id="fn:raze">僻地か大都市か、自国が赤字で苦しくないか、自国から近いか遠いか、などを勘案します<br />
  <a class="footnote-return" href="#fnref:raze"><sup>[return]</sup></a></li>
-<li id="fn:minus">負の値であれば下限<br />
+<li id="fn:minus">負の値であれば下限<br />
  <a class="footnote-return" href="#fnref:minus"><sup>[return]</sup></a></li>
-<li id="fn:worstenemy">ほかの要因によって取引が拒否されることはあり得ます。たとえば同時に最悪の敵でもあった場合は、一切の外交取引ができません。<br />
+<li id="fn:worstenemy">ほかの要因によって取引が拒否されることはあり得ます。たとえば同時に最悪の敵でもあった場合は、一切の外交取引ができません。<br />
  <a class="footnote-return" href="#fnref:worstenemy"><sup>[return]</sup></a></li>
-<li id="fn:trait0">0個でも構いません。<br />
+<li id="fn:trait0">0個でも構いません。<br />
  <a class="footnote-return" href="#fnref:trait0"><sup>[return]</sup></a></li>
-<li id="fn:naimono">出せる金銭を持っていなかったなど。ないものは出せません。<br />
+<li id="fn:naimono">出せる金銭を持っていなかったなど。ないものは出せません。<br />
  <a class="footnote-return" href="#fnref:naimono"><sup>[return]</sup></a></li>
-<li id="fn:highestculturecity">自国が支配している必要はありません。したがって、対象文明と戦争関係にあるとは限りません。<br />
+<li id="fn:highestculturecity">自国が支配している必要はありません。したがって、対象文明と戦争関係にあるとは限りません。<br />
  <a class="footnote-return" href="#fnref:highestculturecity"><sup>[return]</sup></a></li>
 </ol>
 </div>
