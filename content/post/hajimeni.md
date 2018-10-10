@@ -65,7 +65,7 @@ PyPlayer・複数ファイル・モジュール・文明の持つ全ユニット
 スペル完成
 
 # XML詳説シリーズ
-XMLを1ファイルずつ取り上げ、各タグの役割について解説する辞書的コンテンツです、
+XMLを1ファイルずつ取り上げ、各タグの役割について解説する辞書的コンテンツです。
 
 - [XMLキー一覧]({{<ref "keyichiran">}})
 XMLキーだけを一覧にしたものです。簡易的な調べものにどうぞ。
@@ -79,6 +79,10 @@ XMLキーだけを一覧にしたものです。簡易的な調べものにど�
 - [社会制度]({{<ref "civ4civicinfos">}})
 - [志向]({{<ref "civ4traitinfos">}})
 - [昇進]({{<ref "civ4promotioninfos">}})
+- [プロジェクト]({{<ref "civ4projectinfos">}})
+- [難易度]({{<ref "civ4handicapinfo">}})
+- [資源]({{<ref "civ4bonusinfos">}})
+- [地形改善]({{<ref "civ4improvementinfos">}})
 
 # C++シリーズ
 CvGameCoreDll.dllとか使って、なんかします。
@@ -91,5 +95,3 @@ CvGameCoreDll.dllとか使って、なんかします。
 
 - [モデルの変換]({{<ref "mmd_to_nif">}})
 - [リギング]({{<ref "nifanimation">}})
-
-
