@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-11-04",
     "description": "",
-    "wordCount": 4394
+    "wordCount":  4394 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -374,414 +374,336 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき<br /></li>
-<li>もっとクラスをつかう<br /></li>
-<li>変数のスコープ<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき</li>
+<li>もっとクラスをつかう</li>
+<li>変数のスコープ</li>
 </ul>
-
 <h1 id="インスタンスの中のインスタンス">インスタンスの中のインスタンス</h1>
-
 <p>インスタンス変数にクラス型の変数を使う例を見てみましょう。</p>
+<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br>
+それを用いて<br>
+《建造された都市で生産されたユニットだけでなく、<br>
+その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br>
+をつくることです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KujiraBuilding</span>:
 
-<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br />
-それを用いて<br />
-《建造された都市で生産されたユニットだけでなく、<br />
-その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br />
-をつくることです。<br />
-</p>
-
-<pre><code class="language-python">class KujiraBuilding:
-
-    def __init__(self, pCity, pPlot):
-        self.pCity = pCity
-        self.pPlot = pPlot
-        self.iBuilding = gc.getInfoTypeForString(&quot;BUILDING_RED_CROSS&quot;)
-        self.iPromotion = gc.getInfoTypeForString(&quot;PROMOTION_MEDIC1&quot;)
-</code></pre>
-
-<p>クラス<code>KujiraBuilding</code>を作り、コンストラクタ<code>__init__()</code>で<br />
-「<code>CyCity</code>型のインスタンス<code>pCity</code>」と「<code>CyPlot</code>型のインスタンス<code>pPlot</code>」を<br />
+    <span style="color:#66d9ef">def</span> __init__(self, pCity, pPlot):
+        self<span style="color:#f92672">.</span>pCity <span style="color:#f92672">=</span> pCity
+        self<span style="color:#f92672">.</span>pPlot <span style="color:#f92672">=</span> pPlot
+        self<span style="color:#f92672">.</span>iBuilding <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_RED_CROSS</span><span style="color:#e6db74">&#34;</span>)
+        self<span style="color:#f92672">.</span>iPromotion <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_MEDIC1</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>クラス<code>KujiraBuilding</code>を作り、コンストラクタ<code>__init__()</code>で<br>
+「<code>CyCity</code>型のインスタンス<code>pCity</code>」と「<code>CyPlot</code>型のインスタンス<code>pPlot</code>」を<br>
 インスタンス変数として<code>self</code>の中に保持します。</p>
-
-<p>ついでに赤十字の建造物種IDと衛生兵Ⅰの昇進種IDも<br />
+<p>ついでに赤十字の建造物種IDと衛生兵Ⅰの昇進種IDも<br>
 数値型のインスタンス変数として保持しておきます。</p>
-
 <h1 id="即時的効果と継続的効果">即時的効果と継続的効果</h1>
-
-<p>これは筆者の造語なのですが、Pythonで実現できる類の効果はタイミングによって<br />
-<strong>即時的効果</strong>と<strong>継続的効果</strong>に分類されます。<br />
-例えば同じ「衛生兵Ⅰを付与する」という効果にしても、<br />
+<p>これは筆者の造語なのですが、Pythonで実現できる類の効果はタイミングによって<br>
+<strong>即時的効果</strong>と<strong>継続的効果</strong>に分類されます。<br>
+例えば同じ「衛生兵Ⅰを付与する」という効果にしても、<br>
 発動するタイミングによって、</p>
-
-<p>「プロジェクトAが完成したとき自文明の全ユニットに」<br />
-でしたら一回ぽんと発生して終わりですし、<br />
+<p>「プロジェクトAが完成したとき自文明の全ユニットに」<br>
+でしたら一回ぽんと発生して終わりですし、<br>
 (この類の効果はプロジェクトに多いです)</p>
-
-<p>「建造物Bが建っている都市にユニットが駐留したとき」<br />
-ならば建造物Bが建ってから何らかの理由で壊されるまでずっと<br />
-効果が発生し続けることになります。<br />
+<p>「建造物Bが建っている都市にユニットが駐留したとき」<br>
+ならば建造物Bが建ってから何らかの理由で壊されるまでずっと<br>
+効果が発生し続けることになります。<br>
 (この類の効果は建造物に多いです)</p>
-
-<p>という違いが生じてきます。<br />
-&hellip;&hellip;&hellip;&hellip;なのですが、実のところPythonで「ずっと」を表現する手段はありません。<br />
-継続的効果を作りたい場合であっても、<br />
+<p>という違いが生じてきます。<br>
+&hellip;&hellip;&hellip;&hellip;なのですが、実のところPythonで「ずっと」を表現する手段はありません。<br>
+継続的効果を作りたい場合であっても、<br>
 どうにかして即時的効果に読み替える必要が出てきます。</p>
-
-<p>そこで役に立つことがあるのが、「ターン処理開始時に」というタイミングです。<br />
-少しゆるい言葉で言うなら、「～を毎ターン行う」ということです。<br />
-毎ターン、毎回、同じ即時的効果が発生するなら継続してるっぽく見えるだろう、<br />
+<p>そこで役に立つことがあるのが、「ターン処理開始時に」というタイミングです。<br>
+少しゆるい言葉で言うなら、「～を毎ターン行う」ということです。<br>
+毎ターン、毎回、同じ即時的効果が発生するなら継続してるっぽく見えるだろう、<br>
 ということですね。</p>
-
-<p>つまりたとえば、<br />
-《ターン処理開始時に、各都市を調べ、その都市に赤十字があるならば、<br />
-　その都市が建っている地点の、その地点にいる各ユニットに、衛生兵Ⅰを持たせる》<br />
+<p>つまりたとえば、<br>
+《ターン処理開始時に、各都市を調べ、その都市に赤十字があるならば、<br>
+　その都市が建っている地点の、その地点にいる各ユニットに、衛生兵Ⅰを持たせる》<br>
 とすることで、継続的効果っぽく見せることが可能になるのです。</p>
-
 <h1 id="毎ターン各都市で">毎ターン各都市で</h1>
-
-<p>というわけで、ターン処理開始時に都市のインスタンスをまとめて取得したいのですが、<br />
-なんとそれをやってくれるイベントがあらかじめ存在しています。<br />
+<p>というわけで、ターン処理開始時に都市のインスタンスをまとめて取得したいのですが、<br>
+なんとそれをやってくれるイベントがあらかじめ存在しています。<br>
 うれしいですね。<code>onCityDoTurn()</code>です。</p>
-
-<pre><code class="language-python">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-    def onCityDoTurn(self, argsList):
-        'Called every turn for every city'
-        super(self.__class__, self).onCityDoTurn(argsList)
-        pCity, iPlayer = argsList
-        ##########
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>argsList</code>の0番目<code>pCity</code>はいま注目すべき都市のインスタンス、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityDoTurn</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called every turn for every city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityDoTurn(argsList)
+        pCity, iPlayer <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>argsList</code>の0番目<code>pCity</code>はいま注目すべき都市のインスタンス、<br>
 1番目<code>iPlayer</code>はいま誰のターン処理中かのプレイヤーIDです。</p>
-
 <p>このメソッド中で、<code>KujiraBuilding</code>クラスを使ってみることにしましょう&hellip;</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # インスタンスpCity()とその地点pCity.plot()をもとにして
-        # KujiraBuildingのインスタンスをつくる
-        kuBuil = KujiraBuilding(pCity, pCity.plot())
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># インスタンスpCity()とその地点pCity.plot()をもとにして</span>
+        <span style="color:#75715e"># KujiraBuildingのインスタンスをつくる</span>
+        kuBuil <span style="color:#f92672">=</span> KujiraBuilding(pCity, pCity<span style="color:#f92672">.</span>plot())
         
-        # つくったインスタンスのメソッドを呼び出す(中身はまだない)
-        # ユニットに昇進を与えるっぽい名前にしておく
-        kuBuil.giveUnitsPromotion()
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<h1 id="効果を書こう">効果を書こう</h1>
-
-<p>まだ書いてもいないインスタンスメソッドを呼び出すよう書いてしまったので、<br />
+        <span style="color:#75715e"># つくったインスタンスのメソッドを呼び出す(中身はまだない)</span>
+        <span style="color:#75715e"># ユニットに昇進を与えるっぽい名前にしておく</span>
+        kuBuil<span style="color:#f92672">.</span>giveUnitsPromotion()
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><h1 id="効果を書こう">効果を書こう</h1>
+<p>まだ書いてもいないインスタンスメソッドを呼び出すよう書いてしまったので、<br>
 KujiraBuildingの定義の中に戻って書いていきましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KujiraBuilding</span>:
 
-<pre><code class="language-python">class KujiraBuilding:
-
-    # ...(中略)...
+    <span style="color:#75715e"># ...(中略)...</span>
         
-    def giveUnitsPromotion(self):
-        if self.pCity.getNumBuilding(self.iBuilding):
-            N = self.pPlot.getNumUnits()
-            for i in range(N):
-                pUnit = self.pPlot.getUnit(i)
-                pUnit.setHasPromotion(self.iPromotion, True)
-</code></pre>
-
-<p><code>self.pCity</code>, <code>self.pPlot</code>, <code>self.iBuilding</code>, <code>self.iPromotion</code>の<br />
-4つのインスタンス変数を使っています。<br />
-それぞれの中身の値がなんだったか忘れてしまった方は<br />
-<a href="#インスタンスの中のインスタンス">コンストラクタのところ</a>まで戻って復習しておきましょう。</p>
-
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">giveUnitsPromotion</span>(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>pCity<span style="color:#f92672">.</span>getNumBuilding(self<span style="color:#f92672">.</span>iBuilding):
+            N <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getNumUnits()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+                pUnit <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getUnit(i)
+                pUnit<span style="color:#f92672">.</span>setHasPromotion(self<span style="color:#f92672">.</span>iPromotion, True)
+</code></pre></div><p><code>self.pCity</code>, <code>self.pPlot</code>, <code>self.iBuilding</code>, <code>self.iPromotion</code>の<br>
+4つのインスタンス変数を使っています。<br>
+それぞれの中身の値がなんだったか忘れてしまった方は<br>
+<a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%AE%E4%B8%AD%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9">コンストラクタのところ</a>まで戻って復習しておきましょう。</p>
 <h2 id="赤十字があるならば">赤十字があるならば</h2>
-
-<p>まず「その都市に赤十字があるならば」ですね。<br />
+<p>まず「その都市に赤十字があるならば」ですね。<br>
 <code>CyCity</code>のインスタンスメソッドにお願いして調べてもらいます。</p>
-
 <blockquote>
-<pre><code class="language-plain">229. INT getNumBuilding (BuildingType iIndex)
-</code></pre>
 </blockquote>
-
-<p>指定した建造物種IDが自身のインスタンスにいくつあるか数値で返します。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">229. INT getNumBuilding (BuildingType iIndex)
+</code></pre></div><p>指定した建造物種IDが自身のインスタンスにいくつあるか数値で返します。<br>
 たとえば赤十字があるかどうか調べたいときには次のようにします。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        if self.pCity.getNumBuilding(self.iBuilding):
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>(難しいですか？<code>self.pCity</code>が都市のインスタンス、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>pCity<span style="color:#f92672">.</span>getNumBuilding(self<span style="color:#f92672">.</span>iBuilding):
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>(難しいですか？<code>self.pCity</code>が都市のインスタンス、<br>
 <code>self.iBuilding</code>が建造物IDだったことを思い出してくださいね。)</p>
-
-<p>勘がよい方は<code>self.pCity.getNumBuilding(self.iBuilding)</code><br />
-の戻り値の数値を何とも比較していないことにお気づきになるかもしれません。<br />
-もちろん、意味をそのまま書き下して<br />
-<code>if self.pCity.getNumBuilding(self.iBuilding) == 1:</code><br />
-としてもかまわないのですが、<br />
-if文にはTrueでもFalseでもない値を入れてもいい感じに判定してくれる機能があります。<br />
-その基準はこうです。(<a href="https://gforestshade.github.io/kujira/post/getstarted4/#真と偽">はじめてのPythonMODその4</a>から転載)</p>
-
+<p>勘がよい方は<code>self.pCity.getNumBuilding(self.iBuilding)</code><br>
+の戻り値の数値を何とも比較していないことにお気づきになるかもしれません。<br>
+もちろん、意味をそのまま書き下して<br>
+<code>if self.pCity.getNumBuilding(self.iBuilding) == 1:</code><br>
+としてもかまわないのですが、<br>
+if文にはTrueでもFalseでもない値を入れてもいい感じに判定してくれる機能があります。<br>
+その基準はこうです。(<a href="https://gforestshade.github.io/kujira/post/getstarted4/#%E7%9C%9F%E3%81%A8%E5%81%BD">はじめてのPythonMODその4</a>から転載)</p>
 <blockquote>
+</blockquote>
 <p>if文において<strong>真</strong>と解釈されるもの</p>
-
+<blockquote>
+</blockquote>
 <ul>
-<li><code>True</code><br /></li>
-<li>その他<strong>偽</strong>と解釈されるもの以外全部<br />
-<br />
-<br /></li>
+<li><code>True</code></li>
+<li>その他<strong>偽</strong>と解釈されるもの以外全部</li>
 </ul>
-
+<blockquote>
+</blockquote>
 <p><strong>偽</strong>と解釈されるもの</p>
-
+<blockquote>
+</blockquote>
 <ul>
-<li><code>False</code><br /></li>
-<li>数値の<code>0</code><br /></li>
-<li>空の文字列<code>&quot;&quot;</code><br /></li>
-<li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code><br /></li>
-<li><code>None</code><br /></li>
+<li><code>False</code></li>
+<li>数値の<code>0</code></li>
+<li>空の文字列<code>&quot;&quot;</code></li>
+<li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code></li>
+<li><code>None</code></li>
 </ul>
-</blockquote>
-
-<p><code>0</code>が<strong>偽</strong>の仲間になっているところがポイントです。<br />
+<p><code>0</code>が<strong>偽</strong>の仲間になっているところがポイントです。<br>
 <strong>真</strong>の条件より、<code>0</code>以外の数値はif文においては<strong>真</strong>扱いになります。</p>
-
-<p>建造物数が0なら、「ない」と判定されて正しいですし、<br />
+<p>建造物数が0なら、「ない」と判定されて正しいですし、<br>
 建造物数が1なら<small>(もしくは万が一2以上だったとしても！)</small>「ある」と判定されて正しいですね。</p>
-
 <h2 id="その地点にある全ユニットに対し">その地点にある全ユニットに対し</h2>
-
-<p>次は「その地点にある全ユニットに対し」です。<br />
+<p>次は「その地点にある全ユニットに対し」です。<br>
 <code>CyPlot</code>のインスタンスメソッド2つの合わせ技で実現します。</p>
-
 <blockquote>
-<pre><code class="language-plain">56. INT getNumUnits ()
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">56. INT getNumUnits ()
 81. CyUnit getUnit (INT iIndex)
-</code></pre>
-</blockquote>
-
-<p>「CyPlotのインスタンスが表している地点」にいる<code>i</code>番目のユニットは<br />
-<code>pPlot.getUnit(i)</code>で取得できます。<br />
-が、そもそもその地点に全部でユニットが何体いるのかわからないと<br />
-何人分ユニット取得すればよいのかわかりません。<br />
-そこであらかじめ「CyPlotのインスタンスが表している地点」にいるユニットの数を<br />
+</code></pre></div><p>「CyPlotのインスタンスが表している地点」にいる<code>i</code>番目のユニットは<br>
+<code>pPlot.getUnit(i)</code>で取得できます。<br>
+が、そもそもその地点に全部でユニットが何体いるのかわからないと<br>
+何人分ユニット取得すればよいのかわかりません。<br>
+そこであらかじめ「CyPlotのインスタンスが表している地点」にいるユニットの数を<br>
 <code>N = pPlot.getNumUnits()</code>で取得しておきます。</p>
-
 <p>そうしてから、for文で<code>N</code>回ループしてあげればよいですね。こうなります。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            N = self.pPlot.getNumUnits()
-            for i in range(N):
-                pUnit = self.pPlot.getUnit(i)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>得られたユニットのインスタンス<code>pUnit</code>をつかって、昇進をつけましょう。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+            N <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getNumUnits()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+                pUnit <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getUnit(i)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>得られたユニットのインスタンス<code>pUnit</code>をつかって、昇進をつけましょう。<br>
 CyUnitのインスタンスメソッドからそれっぽいのを探します。</p>
-
 <blockquote>
-<pre><code class="language-plain">292. VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
-</code></pre>
 </blockquote>
-
-<p>そのインスタンスの、昇進ID<code>eIndex</code>の取得状況を<code>nNewValue</code>に書き換えます。<br />
-つまり「持たせる」というよりは「持っているかどうか、のデータをTrue(そうです)に書き換える」のですね。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">292. VOID setHasPromotion (PromotionType eIndex, BOOL bNewValue)
+</code></pre></div><p>そのインスタンスの、昇進ID<code>eIndex</code>の取得状況を<code>nNewValue</code>に書き換えます。<br>
+つまり「持たせる」というよりは「持っているかどうか、のデータをTrue(そうです)に書き換える」のですね。<br>
 こうしましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+                pUnit<span style="color:#f92672">.</span>setHasPromotion(self<span style="color:#f92672">.</span>iPromotion, True)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><h1 id="ためす">ためす</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-                pUnit.setHasPromotion(self.iPromotion, True)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-<h1 id="ためす">ためす</h1>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KujiraBuilding</span>:
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
-
-gc = CyGlobalContext()
-
-class KujiraBuilding:
-
-    def __init__(self, pCity, pPlot):
-        self.pCity = pCity
-        self.pPlot = pPlot
-        self.iBuilding = gc.getInfoTypeForString(&quot;BUILDING_RED_CROSS&quot;)
-        self.iPromotion = gc.getInfoTypeForString(&quot;PROMOTION_MEDIC1&quot;)
+    <span style="color:#66d9ef">def</span> __init__(self, pCity, pPlot):
+        self<span style="color:#f92672">.</span>pCity <span style="color:#f92672">=</span> pCity
+        self<span style="color:#f92672">.</span>pPlot <span style="color:#f92672">=</span> pPlot
+        self<span style="color:#f92672">.</span>iBuilding <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_RED_CROSS</span><span style="color:#e6db74">&#34;</span>)
+        self<span style="color:#f92672">.</span>iPromotion <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_MEDIC1</span><span style="color:#e6db74">&#34;</span>)
         
-    def giveUnitsPromotion(self):
-        if self.pCity.getNumBuilding(self.iBuilding):
-            N = self.pPlot.getNumUnits()
-            for i in range(N):
-                pUnit = self.pPlot.getUnit(i)
-                pUnit.setHasPromotion(self.iPromotion, True)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">giveUnitsPromotion</span>(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>pCity<span style="color:#f92672">.</span>getNumBuilding(self<span style="color:#f92672">.</span>iBuilding):
+            N <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getNumUnits()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+                pUnit <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getUnit(i)
+                pUnit<span style="color:#f92672">.</span>setHasPromotion(self<span style="color:#f92672">.</span>iPromotion, True)
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onCityDoTurn(self, argsList):
-        'Called every turn for every city'
-        super(self.__class__, self).onCityDoTurn(argsList)
-        pCity, iPlayer = argsList
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityDoTurn</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called every turn for every city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityDoTurn(argsList)
+        pCity, iPlayer <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
 
-        kuBuil = KujiraBuilding(pCity, pCity.plot())
-        kuBuil.giveUnitsPromotion()
-</code></pre>
-
-<p>じつは<a href="https://gforestshade.github.io/kujira/post/getstarted5/#kujiraeventmanager-py">はじめてのPythonMODその5</a>で書いたMODと<br />
-タイミングが違うだけで効果はほとんど同じですが、<br />
-二つ並べて比較してみてみると、<br />
-効果の処理のほとんどが自作クラスのインスタンスメソッドに<br />
+        kuBuil <span style="color:#f92672">=</span> KujiraBuilding(pCity, pCity<span style="color:#f92672">.</span>plot())
+        kuBuil<span style="color:#f92672">.</span>giveUnitsPromotion()
+</code></pre></div><p>じつは<a href="https://gforestshade.github.io/kujira/post/getstarted5/#kujiraeventmanager-py">はじめてのPythonMODその5</a>で書いたMODと<br>
+タイミングが違うだけで効果はほとんど同じですが、<br>
+二つ並べて比較してみてみると、<br>
+効果の処理のほとんどが自作クラスのインスタンスメソッドに<br>
 分離されていることが見た目からもわかります。</p>
-
 <h1 id="変数のスコープ">変数のスコープ</h1>
-
-<p>ところで、変数には「変数がつくられた関数内でしか使えない」という制限があります。<br />
+<p>ところで、変数には「変数がつくられた関数内でしか使えない」という制限があります。<br>
 変数が使える範囲を、その変数の<strong>スコープ</strong>と呼びます。</p>
-
 <h2 id="普通の変数">普通の変数</h2>
-
-<p>通常の変数のスコープは、その関数内です。<br />
-さきほどのプログラムに<code>makeI()</code>と<code>useI()</code>という2つのメソッドを<br />
+<p>通常の変数のスコープは、その関数内です。<br>
+さきほどのプログラムに<code>makeI()</code>と<code>useI()</code>という2つのメソッドを<br>
 新しく作って動作を確かめてみます&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KujiraBuilding</span>:
 
-class KujiraBuilding:
-
-    def __init__(self, pCity, pPlot):
-        self.pCity = pCity
-        self.pPlot = pPlot
-        self.iBuilding = gc.getInfoTypeForString(&quot;BUILDING_RED_CROSS&quot;)
-        self.iPromotion = gc.getInfoTypeForString(&quot;PROMOTION_MEDIC1&quot;)
+    <span style="color:#66d9ef">def</span> __init__(self, pCity, pPlot):
+        self<span style="color:#f92672">.</span>pCity <span style="color:#f92672">=</span> pCity
+        self<span style="color:#f92672">.</span>pPlot <span style="color:#f92672">=</span> pPlot
+        self<span style="color:#f92672">.</span>iBuilding <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_RED_CROSS</span><span style="color:#e6db74">&#34;</span>)
+        self<span style="color:#f92672">.</span>iPromotion <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_MEDIC1</span><span style="color:#e6db74">&#34;</span>)
         
-    def giveUnitsPromotion(self):
-        if self.pCity.getNumBuilding(self.iBuilding):
-            N = self.pPlot.getNumUnits()
-            for i in range(N):
-                pUnit = self.pPlot.getUnit(i)
-                pUnit.setHasPromotion(self.iPromotion, True)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">giveUnitsPromotion</span>(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>pCity<span style="color:#f92672">.</span>getNumBuilding(self<span style="color:#f92672">.</span>iBuilding):
+            N <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getNumUnits()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+                pUnit <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getUnit(i)
+                pUnit<span style="color:#f92672">.</span>setHasPromotion(self<span style="color:#f92672">.</span>iPromotion, True)
 
-    def makeI(self):
-        i = 15 # iに15を代入しておく
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">makeI</span>(self):
+        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span> <span style="color:#75715e"># iに15を代入しておく</span>
 
-    def useI(self):
-        # iの値を使おうとするが...
-        a = i + 20 # エラー！ iという変数はもはや存在しない
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">useI</span>(self):
+        <span style="color:#75715e"># iの値を使おうとするが...</span>
+        a <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">20</span> <span style="color:#75715e"># エラー！ iという変数はもはや存在しない</span>
         
-        return a
+        <span style="color:#66d9ef">return</span> a
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onCityDoTurn(self, argsList):
-        'Called every turn for every city'
-        super(self.__class__, self).onCityDoTurn(argsList)
-        pCity, iPlayer = argsList
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityDoTurn</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called every turn for every city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityDoTurn(argsList)
+        pCity, iPlayer <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
 
-        kuBuil = KujiraBuilding(pCity, pCity.plot())
-        kuBuil.giveUnitsPromotion()
+        kuBuil <span style="color:#f92672">=</span> KujiraBuilding(pCity, pCity<span style="color:#f92672">.</span>plot())
+        kuBuil<span style="color:#f92672">.</span>giveUnitsPromotion()
 
-        kuBuil.makeI() # makeI()を呼び出す
-        result = kuBuil.useI() # useI()を呼び出して値を取得しようとする
-</code></pre>
-
-<p>コメントにあるように、これはエラーになります。<br />
+        kuBuil<span style="color:#f92672">.</span>makeI() <span style="color:#75715e"># makeI()を呼び出す</span>
+        result <span style="color:#f92672">=</span> kuBuil<span style="color:#f92672">.</span>useI() <span style="color:#75715e"># useI()を呼び出して値を取得しようとする</span>
+</code></pre></div><p>コメントにあるように、これはエラーになります。<br>
 (本当にエラーになるでしょうか？どうやって確かめればよいのでしたか？)</p>
-
-<p>不便に思えますが、悪いことばかりではありません。<br />
-関数をまたぐと消えてしまうということはむしろ、<br />
-「『この名前の変数はどこかで使ってたっけ、上書きしても大丈夫かな&hellip;』と考える必要がなくなる」<br />
+<p>不便に思えますが、悪いことばかりではありません。<br>
+関数をまたぐと消えてしまうということはむしろ、<br>
+「『この名前の変数はどこかで使ってたっけ、上書きしても大丈夫かな&hellip;』と考える必要がなくなる」<br>
 ということでもあるからです。</p>
-
-<p>特にこのことは、関数が100を超えるような中規模以上のMODで特に恩恵が大きいです。<br />
-プログラムのすべてを頭の中に収めることができなくなってくるからです。<br />
-できれば最初のうちから<br />
-<strong><em>いくらめんどくさくても関数は分割する</em></strong><br />
+<p>特にこのことは、関数が100を超えるような中規模以上のMODで特に恩恵が大きいです。<br>
+プログラムのすべてを頭の中に収めることができなくなってくるからです。<br>
+できれば最初のうちから<br>
+<em><strong>いくらめんどくさくても関数は分割する</strong></em><br>
 ようにしておくのがよいです。</p>
-
-<p>MODのすべてを自分が書いているわけではない場合にも<br />
-スコープがあることは利点になります。<br />
-関数さえまたいでいれば、変数の名前をうっかり被らせてしまい、<br />
-値を勝手に変更して元の部分の動作をおかしくしてしまう危険がゼロになるからです。<br />
-MODMODを開発するようなとき、<br />
-この種のバグは<strong><em>ものすごく、ものすごく見つけづらい</em></strong>ので、<br />
+<p>MODのすべてを自分が書いているわけではない場合にも<br>
+スコープがあることは利点になります。<br>
+関数さえまたいでいれば、変数の名前をうっかり被らせてしまい、<br>
+値を勝手に変更して元の部分の動作をおかしくしてしまう危険がゼロになるからです。<br>
+MODMODを開発するようなとき、<br>
+この種のバグは<em><strong>ものすごく、ものすごく見つけづらい</strong></em>ので、<br>
 発生する心配自体がないというのは心強いですね。</p>
-
 <h2 id="インスタンス変数">インスタンス変数</h2>
-
-<p>それでも、この値は保存しておかないと、消えたら困る！<br />
-という需要にお応えするのが<strong>インスタンス変数</strong>です。<br />
+<p>それでも、この値は保存しておかないと、消えたら困る！<br>
+という需要にお応えするのが<strong>インスタンス変数</strong>です。<br>
 <strong>インスタンス変数</strong>の<strong>スコープ</strong>はそのクラス内に拡大されます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KujiraBuilding</span>:
 
-class KujiraBuilding:
-
-    def __init__(self, pCity, pPlot):
-        self.pCity = pCity
-        self.pPlot = pPlot
-        self.iBuilding = gc.getInfoTypeForString(&quot;BUILDING_RED_CROSS&quot;)
-        self.iPromotion = gc.getInfoTypeForString(&quot;PROMOTION_MEDIC1&quot;)
+    <span style="color:#66d9ef">def</span> __init__(self, pCity, pPlot):
+        self<span style="color:#f92672">.</span>pCity <span style="color:#f92672">=</span> pCity
+        self<span style="color:#f92672">.</span>pPlot <span style="color:#f92672">=</span> pPlot
+        self<span style="color:#f92672">.</span>iBuilding <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_RED_CROSS</span><span style="color:#e6db74">&#34;</span>)
+        self<span style="color:#f92672">.</span>iPromotion <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_MEDIC1</span><span style="color:#e6db74">&#34;</span>)
         
-    def giveUnitsPromotion(self):
-        if self.pCity.getNumBuilding(self.iBuilding):
-            N = self.pPlot.getNumUnits()
-            for i in range(N):
-                pUnit = self.pPlot.getUnit(i)
-                pUnit.setHasPromotion(self.iPromotion, True)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">giveUnitsPromotion</span>(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>pCity<span style="color:#f92672">.</span>getNumBuilding(self<span style="color:#f92672">.</span>iBuilding):
+            N <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getNumUnits()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+                pUnit <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>pPlot<span style="color:#f92672">.</span>getUnit(i)
+                pUnit<span style="color:#f92672">.</span>setHasPromotion(self<span style="color:#f92672">.</span>iPromotion, True)
 
-    def makeI(self):
-        self.i = 15 # インスタンス変数iに15を代入しておく
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">makeI</span>(self):
+        self<span style="color:#f92672">.</span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span> <span style="color:#75715e"># インスタンス変数iに15を代入しておく</span>
 
-    def useI(self):
-        # iの値を使おうとするが...
-        a = self.i + 20 # 参照できる
-        return a
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">useI</span>(self):
+        <span style="color:#75715e"># iの値を使おうとするが...</span>
+        a <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">20</span> <span style="color:#75715e"># 参照できる</span>
+        <span style="color:#66d9ef">return</span> a
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onCityDoTurn(self, argsList):
-        'Called every turn for every city'
-        super(self.__class__, self).onCityDoTurn(argsList)
-        pCity, iPlayer = argsList
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityDoTurn</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called every turn for every city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityDoTurn(argsList)
+        pCity, iPlayer <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
 
-        kuBuil = KujiraBuilding(pCity, pCity.plot())
-        kuBuil.giveUnitsPromotion()
+        kuBuil <span style="color:#f92672">=</span> KujiraBuilding(pCity, pCity<span style="color:#f92672">.</span>plot())
+        kuBuil<span style="color:#f92672">.</span>giveUnitsPromotion()
 
-        kuBuil.makeI()
-        result = kuBuil.useI() # 35が返ってくる
-        print result
-</code></pre>
-
-<p>インスタンス変数はインスタンスに紐づいている変数なので、<br />
-インスタンス本体が生きている限り消えてもらっては困りますのでこうなっています。<br />
-この場合も、同じインスタンスに対するインスタンス変数が共有されるだけで、<br />
-別のインスタンスのインスタンス変数は当然別の変数ですから、<br />
-(<code>a.i</code>と<code>b.i</code>は別の値を取ります)<br />
+        kuBuil<span style="color:#f92672">.</span>makeI()
+        result <span style="color:#f92672">=</span> kuBuil<span style="color:#f92672">.</span>useI() <span style="color:#75715e"># 35が返ってくる</span>
+        <span style="color:#66d9ef">print</span> result
+</code></pre></div><p>インスタンス変数はインスタンスに紐づいている変数なので、<br>
+インスタンス本体が生きている限り消えてもらっては困りますのでこうなっています。<br>
+この場合も、同じインスタンスに対するインスタンス変数が共有されるだけで、<br>
+別のインスタンスのインスタンス変数は当然別の変数ですから、<br>
+(<code>a.i</code>と<code>b.i</code>は別の値を取ります)<br>
 インスタンスさえ分けてしまえば影響範囲を最小限に抑えることができるといえそうです。</p>
-
 <h2 id="グローバル変数">グローバル変数</h2>
-
-<p>一応、スコープがファイル内全体になる変数も存在して、<strong>グローバル変数</strong>と呼びます。<br />
-クラス定義や関数定義などのさらに外に記述してある代入文が<strong>グローバル変数</strong>の定義になり、<br />
-上の例では<code>gc = CyGlobalContext()</code>がそれにあたります。<br />
+<p>一応、スコープがファイル内全体になる変数も存在して、<strong>グローバル変数</strong>と呼びます。<br>
+クラス定義や関数定義などのさらに外に記述してある代入文が<strong>グローバル変数</strong>の定義になり、<br>
+上の例では<code>gc = CyGlobalContext()</code>がそれにあたります。<br>
 確かに、ファイル内のどこからでも<code>CyGlobalContext</code>型のインスタンス<code>gc</code>を使用できていましたね。</p>
-
-<p>グローバル変数に対して関数内から代入して値を上書きすることは基本的には<strong><em>できません</em></strong>。<!-- 普通にやろうとすると同名のローカルスコープな変数に対して代入される。globalキーワードを使えばできるのだが、そうしなければならないほど再代入には慎重になるべきだということである。 --><br />
+<p>グローバル変数に対して関数内から代入して値を上書きすることは基本的には<em><strong>できません</strong></em>。<!-- 普通にやろうとすると同名のローカルスコープな変数に対して代入される。globalキーワードを使えばできるのだが、そうしなければならないほど再代入には慎重になるべきだということである。 --><br>
 それができてしまうと結局上記の問題の抜け道になるだけなので、当然ですね。</p>
-
-<p>Civ4のMODでは、プログラムの時点で固定の値(＝ゲーム中に一切変更されない値)を入れておくのに使えますが、<br />
-固定の値を返す関数のほうが適切な場合もままあるので、<br />
+<p>Civ4のMODでは、プログラムの時点で固定の値(＝ゲーム中に一切変更されない値)を入れておくのに使えますが、<br>
+固定の値を返す関数のほうが適切な場合もままあるので、<br>
 使用には慎重に行きたいところです。</p>
         </div>
         <div class="col-12">
@@ -795,7 +717,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

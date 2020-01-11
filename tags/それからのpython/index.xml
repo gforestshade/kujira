@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>それからのPython on Kujira, Civ4 Mod Blog</title>
@@ -19,19 +19,14 @@
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy10/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy9/&#34;&gt;その９&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;４部作のうちの４回目&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;ついに各スペルの実装へ&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy9/&#34;&gt;その９&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;/li&gt;
+&lt;li&gt;４部作のうちの４回目&lt;/li&gt;
+&lt;li&gt;ついに各スペルの実装へ&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;湧き水&#34;&gt;湧き水&lt;/h1&gt;
-
-&lt;p&gt;お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,20 +36,15 @@
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy9/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy8/&#34;&gt;その８&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;４部作のうちの３回目・Python共通編&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;クラスを活用する&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy8/&#34;&gt;その８&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;/li&gt;
+&lt;li&gt;４部作のうちの３回目・Python共通編&lt;/li&gt;
+&lt;li&gt;クラスを活用する&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;スペル情報クラス&#34;&gt;スペル情報クラス&lt;/h1&gt;
-
-&lt;p&gt;スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、&lt;br /&gt;
-このクラスを通してスペルのいろいろな情報を取得することができるようにします。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、&lt;br&gt;
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,23 +54,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy8/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy7/&#34;&gt;その７&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;４部作のうちの２回目・Python準備編&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;オブジェクト&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;リスト操作&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy7/&#34;&gt;その７&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;/li&gt;
+&lt;li&gt;４部作のうちの２回目・Python準備編&lt;/li&gt;
+&lt;li&gt;オブジェクト&lt;/li&gt;
+&lt;li&gt;リスト操作&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;pythonファイル&#34;&gt;Pythonファイル&lt;/h1&gt;
-
-&lt;p&gt;Python側のファイル構成はいつもの感じです。&lt;br /&gt;
-EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。&lt;br /&gt;
+&lt;p&gt;Python側のファイル構成はいつもの感じです。&lt;br&gt;
+EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。&lt;br&gt;
 忘れてしまった方は&lt;a href=&#34;https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py&#34;&gt;こちら&lt;/a&gt;にも置いてあります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_promospell
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_promospell
     └─Assets
         ├─Python
         │  ├─KujiraEventManager.py
@@ -94,9 +79,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
             │
             └─Units
                 └─CIV4PromotionInfos.xml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -106,33 +89,25 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy7/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy6/&#34;&gt;その６&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;４部作のうちの１回目・XML編&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy6/&#34;&gt;その６&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;簡単なスペルの仕組みをつくってみる&lt;/li&gt;
+&lt;li&gt;４部作のうちの１回目・XML編&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;設計しよう&#34;&gt;設計しよう&lt;/h1&gt;
-
-&lt;p&gt;実際のMODの例として、簡単なスペルをつくっていきたいと思います。&lt;br /&gt;
+&lt;p&gt;実際のMODの例として、簡単なスペルをつくっていきたいと思います。&lt;br&gt;
 簡単のために、以下の仕様でつくることにします。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;スペルと昇進を1対1で対応させる&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;発動条件は昇進を取得したとき一回きりとする&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;スペル昇進を取れるのは火器ユニットとする&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;具体的なスペル効果は以下の3種類とする&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;湧き水：砂漠が平原に変化する&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える&lt;br /&gt;
-ただしこれによって最大HPの60%を切ることはないようにする&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;li&gt;スペルと昇進を1対1で対応させる&lt;/li&gt;
+&lt;li&gt;発動条件は昇進を取得したとき一回きりとする&lt;/li&gt;
+&lt;li&gt;スペル昇進を取れるのは火器ユニットとする&lt;/li&gt;
+&lt;li&gt;具体的なスペル効果は以下の3種類とする&lt;/li&gt;
+&lt;li&gt;湧き水：砂漠が平原に変化する&lt;/li&gt;
+&lt;li&gt;毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える&lt;/li&gt;
+&lt;li&gt;火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える&lt;br&gt;
+ただしこれによって最大HPの60%を切ることはないようにする&lt;/li&gt;
+&lt;li&gt;湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -142,20 +117,15 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy6/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy5/&#34;&gt;その５&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;もっともっとクラスをつかう&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;別ファイルからもつかう&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy5/&#34;&gt;その５&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;もっともっとクラスをつかう&lt;/li&gt;
+&lt;li&gt;別ファイルからもつかう&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;コードを読む&#34;&gt;コードを読む&lt;/h1&gt;
-
-&lt;p&gt;Civ4からあらかじめ提供されているクラスはまだまだあります。&lt;br /&gt;
-今回はその中から比較的簡単で読みやすいクラスを例に&lt;br /&gt;
-実際にコードを読み解いてみたいと思います。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;Civ4からあらかじめ提供されているクラスはまだまだあります。&lt;br&gt;
+今回はその中から比較的簡単で読みやすいクラスを例に&lt;br&gt;
+実際にコードを読み解いてみたいと思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -165,24 +135,18 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy5/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy4/&#34;&gt;その４&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;もっとクラスをつかう&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;変数のスコープ&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy4/&#34;&gt;その４&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;もっとクラスをつかう&lt;/li&gt;
+&lt;li&gt;変数のスコープ&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;インスタンスの中のインスタンス&#34;&gt;インスタンスの中のインスタンス&lt;/h1&gt;
-
 &lt;p&gt;インスタンス変数にクラス型の変数を使う例を見てみましょう。&lt;/p&gt;
-
-&lt;p&gt;題材は、ちょっと賢い建造物クラス&lt;code&gt;KujiraBuilding&lt;/code&gt;と、&lt;br /&gt;
-それを用いて&lt;br /&gt;
-《建造された都市で生産されたユニットだけでなく、&lt;br /&gt;
-その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》&lt;br /&gt;
-をつくることです。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;題材は、ちょっと賢い建造物クラス&lt;code&gt;KujiraBuilding&lt;/code&gt;と、&lt;br&gt;
+それを用いて&lt;br&gt;
+《建造された都市で生産されたユニットだけでなく、&lt;br&gt;
+その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》&lt;br&gt;
+をつくることです。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -192,33 +156,26 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy4/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;クラス巡り&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;クラス巡り&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;提供されているクラスを探訪してみる&#34;&gt;提供されているクラスを探訪してみる&lt;/h1&gt;
-
-&lt;p&gt;新しいクラスをつくる体験をしたところで、&lt;br /&gt;
-既存のクラスを使ってみる体験もしてみます。&lt;br /&gt;
+&lt;p&gt;新しいクラスをつくる体験をしたところで、&lt;br&gt;
+既存のクラスを使ってみる体験もしてみます。&lt;br&gt;
 &lt;a href=&#34;http://civ4bug.sourceforge.net/PythonAPI/index.html&#34;&gt;APIリファレンス&lt;/a&gt;を見ながら、すすめていきましょう。&lt;/p&gt;
-
-&lt;p&gt;左上フレームにリストされているのが、クラス名(型名)です。&lt;br /&gt;
-ためしにCyCityをクリックしてみましょう。&lt;br /&gt;
-すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。&lt;br /&gt;
-CyCity型のメソッドだけでもずいぶん数があります。&lt;br /&gt;
+&lt;p&gt;左上フレームにリストされているのが、クラス名(型名)です。&lt;br&gt;
+ためしにCyCityをクリックしてみましょう。&lt;br&gt;
+すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。&lt;br&gt;
+CyCity型のメソッドだけでもずいぶん数があります。&lt;br&gt;
 流し読みしつつ、気になったのを見ていきましょう。&lt;/p&gt;
-
-&lt;p&gt;なお、色付き文字になっているのは&lt;strong&gt;型&lt;/strong&gt;です。例えば、&lt;br /&gt;
-&lt;span style=&#34;color:orange&#34;&gt;BOOL&lt;/span&gt; - ブール型(真と偽の2択)&lt;br /&gt;
-&lt;span style=&#34;color:red&#34;&gt;INT&lt;/span&gt; - 数値型&lt;br /&gt;
-&lt;span style=&#34;color:blue&#34;&gt;VOID&lt;/span&gt; - なし(戻り値を返さないもの)&lt;br /&gt;
-&lt;span style=&#34;color:maroon&#34;&gt;茶色&lt;/span&gt; - なにかのID(基本的なふるまいはINTと同じ)&lt;br /&gt;
-&lt;span style=&#34;color:green&#34;&gt;緑色&lt;/span&gt; - クラス型&lt;br /&gt;
-こんな具合です。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;なお、色付き文字になっているのは&lt;strong&gt;型&lt;/strong&gt;です。例えば、&lt;br&gt;
+&lt;span style=&#34;color:orange&#34;&gt;BOOL&lt;/span&gt; - ブール型(真と偽の2択)&lt;br&gt;
+&lt;span style=&#34;color:red&#34;&gt;INT&lt;/span&gt; - 数値型&lt;br&gt;
+&lt;span style=&#34;color:blue&#34;&gt;VOID&lt;/span&gt; - なし(戻り値を返さないもの)&lt;br&gt;
+&lt;span style=&#34;color:maroon&#34;&gt;茶色&lt;/span&gt; - なにかのID(基本的なふるまいはINTと同じ)&lt;br&gt;
+&lt;span style=&#34;color:green&#34;&gt;緑色&lt;/span&gt; - クラス型&lt;br&gt;
+こんな具合です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -228,29 +185,21 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br /&gt
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy3/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy2/&#34;&gt;その２&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;クラス&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy2/&#34;&gt;その２&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;クラス&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;準備&#34;&gt;準備&lt;/h1&gt;
-
 &lt;p&gt;kujira_classというMODを新しく作ります。&lt;/p&gt;
-
 &lt;h2 id=&#34;フォルダ構成&#34;&gt;フォルダ構成&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;└─kujira_class
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_class
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -260,21 +209,15 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br /&gt
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy2/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy1/&#34;&gt;その１&lt;/a&gt;のつづき&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;いろいろ表示してみる&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/secondpy1/&#34;&gt;その１&lt;/a&gt;のつづき&lt;/li&gt;
+&lt;li&gt;いろいろ表示してみる&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&#34;4000年&#34;&gt;-4000年&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;gc.getGame().getGameTurnYear()&lt;/code&gt;により現在の年を取得します。&lt;br /&gt;
-これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで&lt;br /&gt;
+&lt;h1 id=&#34;-4000年&#34;&gt;-4000年&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;gc.getGame().getGameTurnYear()&lt;/code&gt;により現在の年を取得します。&lt;br&gt;
+これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで&lt;br&gt;
 Unicode文字列を作り、表示してあげます。&lt;/p&gt;
-
-&lt;p&gt;コードはこうなります&amp;hellip;&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;コードはこうなります&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -284,21 +227,15 @@ Unicode文字列を作り、表示してあげます。&lt;/p&gt;
       
       <guid>https://gforestshade.github.io/kujira/post/secondpy1/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;h2 id=&#34;これは何か&#34;&gt;これは何か&lt;/h2&gt;
-
-&lt;p&gt;これは、&lt;br /&gt;
-「はじめてのPythonMOD」シリーズの続きです。&lt;br /&gt;
-もうちょっとPythonの書き方について勉強して、&lt;br /&gt;
+&lt;p&gt;これは、&lt;br&gt;
+「はじめてのPythonMOD」シリーズの続きです。&lt;br&gt;
+もうちょっとPythonの書き方について勉強して、&lt;br&gt;
 より思い通りに記述できるようになろう、というのが大きな目的です。&lt;/p&gt;
-
 &lt;h2 id=&#34;これは何でないか&#34;&gt;これは何でないか&lt;/h2&gt;
-
-&lt;p&gt;これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。&lt;br /&gt;
-また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。&lt;br /&gt;
-コピペですぐ動くコードはあまりないかもしれません。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。&lt;br&gt;
+また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。&lt;br&gt;
+コピペですぐ動くコードはあまりないかもしれません。&lt;/p&gt;</description>
     </item>
     
   </channel>

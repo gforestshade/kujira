@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-10-29",
     "description": "",
-    "wordCount": 3446
+    "wordCount":  3446 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -890,407 +890,264 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4GameSpeedInfo.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4GameSpeedInfo.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h2 id="civ4gamespeedinfo">&lt;Civ4GameSpeedInfo&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4GameInfoSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="gamespeedinfo">&lt;GameSpeedInfo&gt;</h2>
-
 <p>このタグ1つが、ゲーム速度の定義1つと対応しています。</p>
-
 <p>以下&lt;GameSpeedInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>このゲーム速度のゲーム速度キーを定義します。<br />
+<p>このゲーム速度のゲーム速度キーを定義します。<br>
 他と被らなければなんでも構いませんが、GAMESPEED_英語名 にするのが無難です。</p>
-
 <p>値：ゲーム速度キー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;GAMESPEED_MARATHON&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>このゲーム速度の名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「マラソン」<br />
+<p>例：「マラソン」<br>
 &lt;Description&gt;TXT_KEY_GAMESPEED_MARATHON&lt;/Description&gt;</p>
-
 <h3 id="help">&lt;Help&gt;</h3>
-
 <p>このゲーム速度の説明文を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「極度に時間の掛かるこのゲーム速度では、それぞれの時代が、ほぼ通常のゲーム１回分に値します。」<br />
+<p>例：「極度に時間の掛かるこのゲーム速度では、それぞれの時代が、ほぼ通常のゲーム１回分に値します。」<br>
 &lt;Help&gt;TXT_KEY_GAMESPEED_MARATHON_HELP&lt;/Help&gt;</p>
-
 <h3 id="igrowthpercent">&lt;iGrowthPercent&gt;</h3>
-
-<p>このゲーム速度のとき、都市が成長するために必要な〈パン〉の備蓄量が通常のn%になります。<br />
-値が大きいほど都市の人口が増えるのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で都市の人口が増えるようになります。<br />
+<p>このゲーム速度のとき、都市が成長するために必要な〈パン〉の備蓄量が通常のn%になります。<br>
+値が大きいほど都市の人口が増えるのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で都市の人口が増えるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGrowthPercent&gt;300&lt;/iGrowthPercent&gt;</p>
-
 <h3 id="itrainpercent">&lt;iTrainPercent&gt;</h3>
-
-<p>このゲーム速度のとき、ユニットを生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br />
-値が大きいほどユニットを生産するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数でユニットを生産できるようになります。<br />
+<p>このゲーム速度のとき、ユニットを生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br>
+値が大きいほどユニットを生産するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数でユニットを生産できるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iTrainPercent&gt;200&lt;/iTrainPercent&gt;</p>
-
 <h3 id="iconstructpercent">&lt;iConstructPercent&gt;</h3>
-
-<p>このゲーム速度のとき、建造物を生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br />
-値が大きいほど建造物を生産するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で建造物を生産できるようになります。<br />
+<p>このゲーム速度のとき、建造物を生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br>
+値が大きいほど建造物を生産するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で建造物を生産できるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iConstructPercent&gt;300&lt;/iConstructPercent&gt;</p>
-
 <h3 id="icreatepercent">&lt;iCreatePercent&gt;</h3>
-
-<p>このゲーム速度のとき、プロジェクトを生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br />
-値が大きいほどプロジェクトを生産するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数でプロジェクトを生産できるようになります。<br />
+<p>このゲーム速度のとき、プロジェクトを生産するのにかかる〈ハンマー〉コストが通常のn%になります。<br>
+値が大きいほどプロジェクトを生産するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数でプロジェクトを生産できるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCreatePercent&gt;300&lt;/iCreatePercent&gt;</p>
-
 <h3 id="iresearchpercent">&lt;iResearchPercent&gt;</h3>
-
-<p>このゲーム速度のとき、技術を研究するのにかかる〈ビーカー〉コストが通常のn%になります。<br />
-値が大きいほど技術を研究するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で技術を研究できるようになります。<br />
+<p>このゲーム速度のとき、技術を研究するのにかかる〈ビーカー〉コストが通常のn%になります。<br>
+値が大きいほど技術を研究するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で技術を研究できるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iResearchPercent&gt;300&lt;/iResearchPercent&gt;</p>
-
 <h3 id="ibuildpercent">&lt;iBuildPercent&gt;</h3>
-
-<p>このゲーム速度のとき、地形改善を建設するのにかかる時間が通常のn%になります。<br />
-値が大きいほど地形改善を建設するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で地形改善を建設できるようになります。<br />
+<p>このゲーム速度のとき、地形改善を建設するのにかかる時間が通常のn%になります。<br>
+値が大きいほど地形改善を建設するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で地形改善を建設できるようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBuildPercent&gt;300&lt;/iBuildPercent&gt;</p>
-
 <h3 id="iimprovementpercent">&lt;iImprovementPercent&gt;</h3>
-
-<p>このゲーム速度のとき、地形改善が成長するのにかかる時間が通常のn%になります。<br />
-値が大きいほど地形改善が成長するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で地形改善が成長するようになります。<br />
+<p>このゲーム速度のとき、地形改善が成長するのにかかる時間が通常のn%になります。<br>
+値が大きいほど地形改善が成長するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で地形改善が成長するようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iImprovementPercent&gt;300&lt;/iImprovementPercent&gt;</p>
-
 <h3 id="igreatpeoplepercent">&lt;iGreatPeoplePercent&gt;</h3>
-
-<p>このゲーム速度のとき、偉人が誕生するのに必要な偉人ポイントが通常のn%になります。<br />
-値が大きいほど偉人が誕生するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で偉人が誕生するようになります。<br />
+<p>このゲーム速度のとき、偉人が誕生するのに必要な偉人ポイントが通常のn%になります。<br>
+値が大きいほど偉人が誕生するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で偉人が誕生するようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatPeoplePercent&gt;300&lt;/iGreatPeoplePercent&gt;</p>
-
 <h3 id="iculturepercent">&lt;iCulturePercent&gt;</h3>
-
-<p>BtSでは陳腐化しました。ゲーム速度による都市の文化レベルの指定は、<br />
+<p>BtSでは陳腐化しました。ゲーム速度による都市の文化レベルの指定は、<br>
 こちらではなく CIV4CultureLevelInfo.xml にあります。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCulturePercent&gt;300&lt;/iCulturePercent&gt;</p>
-
 <h3 id="ianarchypercent">&lt;iAnarchyPercent&gt;</h3>
-
-<p>このゲーム速度のとき、無政府状態の時間が通常のn%になります。<br />
-値が大きいほど社会制度や国教の変更にターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で社会制度や国教の変更ができるようになります。<sup class="footnote-ref" id="fnref:anarchy"><a href="#fn:anarchy">1</a></sup><br />
+<p>このゲーム速度のとき、無政府状態の時間が通常のn%になります。<br>
+値が大きいほど社会制度や国教の変更にターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で社会制度や国教の変更ができるようになります。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAnarchyPercent&gt;200&lt;/iAnarchyPercent&gt;</p>
-
 <h3 id="ibarbpercent">&lt;iBarbPercent&gt;</h3>
-
-<p>このゲーム速度のとき、蛮族が沸くのにかかる時間が通常のn%になります。<br />
-値が大きいほど蛮族ユニットや蛮族都市が自然発生するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数で蛮族ユニットや蛮族都市が自然発生するようになります。<br />
+<p>このゲーム速度のとき、蛮族が沸くのにかかる時間が通常のn%になります。<br>
+値が大きいほど蛮族ユニットや蛮族都市が自然発生するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数で蛮族ユニットや蛮族都市が自然発生するようになります。<br>
 BtSの「普通」では100です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBarbPercent&gt;400&lt;/iBarbPercent&gt;</p>
-
 <h3 id="ifeatureproductionpercent">&lt;iFeatureProductionPercent&gt;</h3>
-
-<p>このゲーム速度のとき、伐採することで得られる〈ハンマー〉が通常のn%になります。<br />
-伐採にもターン数補正がかかるため、そのままではターン当たりの伐採ハンマーが目減りしてしまいます。<br />
+<p>このゲーム速度のとき、伐採することで得られる〈ハンマー〉が通常のn%になります。<br>
+伐採にもターン数補正がかかるため、そのままではターン当たりの伐採ハンマーが目減りしてしまいます。<br>
 それを防ぐため、通常は<a href="ibuildpercent">&lt;iBuildPercent&gt;</a>と同じ値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFeatureProductionPercent&gt;300&lt;/iFeatureProductionPercent&gt;</p>
-
 <h3 id="iunitdiscoverpercent">&lt;iUnitDiscoverPercent&gt;</h3>
-
-<p>このゲーム速度のとき、偉人を電球消費したときに得られる〈ビーカー〉が通常のn%になります。<br />
-必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ビーカーが目減りしてしまいます。<br />
+<p>このゲーム速度のとき、偉人を電球消費したときに得られる〈ビーカー〉が通常のn%になります。<br>
+必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ビーカーが目減りしてしまいます。<br>
 それを防ぐため、通常は<a href="igreatPeoplepercent">&lt;iGreatPeoplePercent&gt;</a>と同じ値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnitDiscoverPercent&gt;300&lt;/iUnitDiscoverPercent&gt;</p>
-
 <h3 id="iunithurrypercent">&lt;iUnitHurryPercent&gt;</h3>
-
-<p>このゲーム速度のとき、偉人<sup class="footnote-ref" id="fnref:unithurry"><a href="#fn:unithurry">2</a></sup>に緊急生産させたときに得られる〈ハンマー〉が通常のn%になります。<br />
-必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ハンマーが目減りしてしまいます。<br />
+<p>このゲーム速度のとき、偉人<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>に緊急生産させたときに得られる〈ハンマー〉が通常のn%になります。<br>
+必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ハンマーが目減りしてしまいます。<br>
 それを防ぐため、通常は<a href="igreatPeoplepercent">&lt;iGreatPeoplePercent&gt;</a>と同じ値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnitHurryPercent&gt;300&lt;/iUnitHurryPercent&gt;</p>
-
 <h3 id="iunittradepercent">&lt;iUnitTradePercent&gt;</h3>
-
-<p>このゲーム速度のとき、偉人<sup class="footnote-ref" id="fnref:unittrade"><a href="#fn:unittrade">3</a></sup>に通商ミッションをさせたときに得られる〈ゴールド〉が通常のn%になります。<br />
-必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ゴールドが目減りしてしまいます。<br />
+<p>このゲーム速度のとき、偉人<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>に通商ミッションをさせたときに得られる〈ゴールド〉が通常のn%になります。<br>
+必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来ゴールドが目減りしてしまいます。<br>
 それを防ぐため、通常は<a href="igreatPeoplepercent">&lt;iGreatPeoplePercent&gt;</a>と同じ値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnitTradePercent&gt;300&lt;/iUnitTradePercent&gt;</p>
-
 <h3 id="iunitgreatworkpercent">&lt;iUnitGreatWorkPercent&gt;</h3>
-
-<p>このゲーム速度のとき、偉人<sup class="footnote-ref" id="fnref:unitgw"><a href="#fn:unitgw">4</a></sup>に偉大な作品を完成させたときに得られる〈文化〉が通常のn%になります。<br />
-必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来文化力が目減りしてしまいます。<br />
+<p>このゲーム速度のとき、偉人<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>に偉大な作品を完成させたときに得られる〈文化〉が通常のn%になります。<br>
+必要偉人Pにもターン数補正がかかるため、そのままではターン当たりの偉人由来文化力が目減りしてしまいます。<br>
 それを防ぐため、通常は<a href="igreatPeoplepercent">&lt;iGreatPeoplePercent&gt;</a>と同じ値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnitGreatWorkPercent&gt;300&lt;/iUnitGreatWorkPercent&gt;</p>
-
 <h3 id="igoldenagepercent">&lt;iGoldenAgePercent&gt;</h3>
-
 <p>このゲーム速度のとき、黄金期の継続時間が通常のn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGoldenAgePercent&gt;200&lt;/iGoldenAgePercent&gt;</p>
-
 <h3 id="ihurrypercent">&lt;iHurryPercent&gt;</h3>
-
-<p>緊急生産コストが通常のn%になります。<br />
-緊急生産に必要な人口や金銭にもターン数補正がかかるため、そのままではターン当たりの緊急生産力が目減りしてしまいます。<br />
+<p>緊急生産コストが通常のn%になります。<br>
+緊急生産に必要な人口や金銭にもターン数補正がかかるため、そのままではターン当たりの緊急生産力が目減りしてしまいます。<br>
 それを防ぐため、通常は 10000 / <a href="igrowthpercent">&lt;iGrowthPercent&gt;</a> の値を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHurryPercent&gt;33&lt;/iHurryPercent&gt;</p>
-
 <h3 id="ihurryconscriptangerpercent">&lt;iHurryConscriptAngerPercent&gt;</h3>
-
 <p>奴隷や徴兵による〈不満〉の継続時間が通常のn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHurryConscriptAngerPercent&gt;300&lt;/iHurryConscriptAngerPercent&gt;</p>
-
 <h3 id="iinflationpercent">&lt;iInflationPercent&gt;</h3>
-
-<p>インフレによる維持費が通常のn%になります。<br />
-値が大きいほどインフレが進行するのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数でインフレが進行するようになります。<br />
+<p>インフレによる維持費が通常のn%になります。<br>
+値が大きいほどインフレが進行するのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数でインフレが進行するようになります。<br>
 BtSの「普通」では30です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iInflationPercent&gt;10&lt;/iInflationPercent&gt;</p>
-
 <h3 id="iinflationoffset">&lt;iInflationOffset&gt;</h3>
-
-<p>インフレ発生開始までのターン数を指定します。<br />
-値が大きいほどインフレが始まるのにターン数がかかるようになり、<br />
-値が小さいほど少ないターン数でインフレが始まるようになります。<br />
+<p>インフレ発生開始までのターン数を指定します。<br>
+値が大きいほどインフレが始まるのにターン数がかかるようになり、<br>
+値が小さいほど少ないターン数でインフレが始まるようになります。<br>
 BtSの「普通」では-90です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iInflationOffset&gt;-270&lt;/iInflationOffset&gt;</p>
-
 <h3 id="ivictorydelaypercent">&lt;iVictoryDelayPercent&gt;</h3>
-
 <p>宇宙船到達までの待ち時間と、議案を提出するまでの期間が通常のn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iVictoryDelayPercent&gt;300&lt;/iVictoryDelayPercent&gt;</p>
-
 <h3 id="gameturninfos">&lt;GameTurnInfos&gt;</h3>
-
-<p>1ターンに何年、あるいは何か月経つかの指定をします。<br />
-各&lt;GameTurnInfo&gt;を上から順に適用していきます。<br />
+<p>1ターンに何年、あるいは何か月経つかの指定をします。<br>
+各&lt;GameTurnInfo&gt;を上から順に適用していきます。<br>
 最後の&lt;GameTurnInfo&gt;が終了したターンに、時間勝利の判定をします。</p>
-
 <p>値：&lt;GameTurnInfo&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;GameTurnInfo&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;GameTurnInfo&gt;は以下の2つのタグを含みます。</p>
 <h4 id="imonthincrement">&lt;iMonthIncrement&gt;</h4>
-
-<p>1ターンごとに何か月経つかを指定します。<br />
+<p>1ターンごとに何か月経つかを指定します。<br>
 値：整数</p>
-
 <h4 id="iturnsperincrement">&lt;iTurnsPerIncrement&gt;</h4>
-
-<p>この指定を何ターン続けるかを指定します。<br />
+<p>この指定を何ターン続けるかを指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>例１：1ターン40年を75ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;480&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;75&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例２：1ターン25年を60ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例２：1ターン25年を60ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;300&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;60&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例３：1ターン20年を25ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例３：1ターン20年を25ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;240&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;25&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例４：1ターン10年を50ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例４：1ターン10年を50ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;120&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;50&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例４：1ターン5年を60ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例４：1ターン5年を60ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;60&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;60&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例４：1ターン2年を50ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例４：1ターン2年を50ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;24&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;50&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例４：1ターン1年を120ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例４：1ターン1年を120ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;12&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;120&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<p>例４：1ターン6か月を60ターン</p>
-
-<pre><code class="language-txt">&lt;GameTurnInfo&gt;
+</code></pre></div><p>例４：1ターン6か月を60ターン</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;GameTurnInfo&gt;
     &lt;iMonthIncrement&gt;6&lt;/iMonthIncrement&gt;
     &lt;iTurnsPerIncrement&gt;60&lt;/iTurnsPerIncrement&gt;
 &lt;/GameTurnInfo&gt;
-</code></pre>
-
-<div style="padding:5em"></div>
-<div class="footnotes">
-
-<hr />
-
+</code></pre></div><div style="padding:5em"></div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:anarchy">とはいえ、志向で指定されない限り、革命には必ず1ターン以上かかります。速いゲーム速度ではここを小さくすることになるでしょうが、効果は限定的になるでしょう。<br />
- <a class="footnote-return" href="#fnref:anarchy"><sup>[return]</sup></a></li>
-<li id="fn:unithurry">通常は大技術者<br />
- <a class="footnote-return" href="#fnref:unithurry"><sup>[return]</sup></a></li>
-<li id="fn:unittrade">通常は大商人<br />
- <a class="footnote-return" href="#fnref:unittrade"><sup>[return]</sup></a></li>
-<li id="fn:unitgw">通常は大商人<br />
- <a class="footnote-return" href="#fnref:unitgw"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>とはいえ、志向で指定されない限り、革命には必ず1ターン以上かかります。速いゲーム速度ではここを小さくすることになるでしょうが、効果は限定的になるでしょう。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>通常は大技術者 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>通常は大商人 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>通常は大商人 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -1303,7 +1160,7 @@ BtSの「普通」では-90です。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

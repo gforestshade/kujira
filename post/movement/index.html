@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-05",
     "description": "",
-    "wordCount": 2204
+    "wordCount":  2203 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -340,7 +340,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-05">2018-05-05 17:56</time></p>
           
-          <p>2204  Words</p>
+          <p>2203  Words</p>
           
           
 
@@ -357,146 +357,97 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
-<p>みなさん、斥候は好きですか？<br />
-移動力2の彼らは、迅速な探索に、偵察に、となくてはならない存在ですよね。<br />
-でも、丘・森・道路・ヘリコプターなどが複雑に絡んでくると<br />
-いったいユニットってどこまで移動できるのかよくわからなくなりがちです。<br />
+<p>みなさん、斥候は好きですか？<br>
+移動力2の彼らは、迅速な探索に、偵察に、となくてはならない存在ですよね。<br>
+でも、丘・森・道路・ヘリコプターなどが複雑に絡んでくると<br>
+いったいユニットってどこまで移動できるのかよくわからなくなりがちです。<br>
 今回はそんなユニットの移動についてのお話です。</p>
-
-<p></p>
-
 <h1 id="移動力">移動力</h1>
-
-<p>みなさんご存知移動力。足のマークで表記されているあれです。<br />
-ユニットごとに固定です。一応大将軍を合成すれば、昇進「士気」によって<code>+1</code>だけ<br />
+<p>みなさんご存知移動力。足のマークで表記されているあれです。<br>
+ユニットごとに固定です。一応大将軍を合成すれば、昇進「士気」によって<code>+1</code>だけ<br>
 後天的に上昇させることができます。</p>
-
 <h1 id="地形コスト">地形コスト</h1>
-
 <p>あらゆる地形には「地形コスト」というものが設定されています。</p>
-
-<p>基本地形コストは、基本地形によって決まります。<br />
-BtSでは、全地形で<code>1</code>です。<br />
+<p>基本地形コストは、基本地形によって決まります。<br>
+BtSでは、全地形で<code>1</code>です。<br>
 (MODで変更可能なので、砂漠の移動コストを増やしていたりするMODもあります。)</p>
-
-<p>地形コストを指定する追加地形がある場合、基本地形コストを上書きします。<br />
+<p>地形コストを指定する追加地形がある場合、基本地形コストを上書きします。<br>
 森・ジャングル・オアシス・死の灰で<code>2</code>です。</p>
-
 <p>この時点で、丘陵補正がかかります。もしタイルが丘陵ならば、<code>+1</code>します。</p>
-
 <p>例：草原/丘陵/森林 -&gt; 地形コスト3</p>
-
-<p>ユニットは、移動先の地形コストの分だけ移動力を消費します。<br />
+<p>ユニットは、移動先の地形コストの分だけ移動力を消費します。<br>
 もし、まだ移動力が残っているようなら、そこからさらに移動/行動ができます。</p>
-
-<p>移動力3の熟練労働者は、森林(コスト2)に入っても移動力が1残るので、伐採コマンドの実行ができますが、<br />
+<p>移動力3の熟練労働者は、森林(コスト2)に入っても移動力が1残るので、伐採コマンドの実行ができますが、<br>
 森林/丘陵(コスト3)に入ると、移動力を使い切ってしまい、行動終了状態になってしまいます。</p>
-
 <h1 id="深みへ">深みへ</h1>
-
-<p>この移動力と地形コスト、実は内部では1/60単位まで計算されています。<br />
-そこで、移動力に<code>60</code>を掛けたものを、<strong>内部移動力</strong>、<br />
+<p>この移動力と地形コスト、実は内部では1/60単位まで計算されています。<br>
+そこで、移動力に<code>60</code>を掛けたものを、<strong>内部移動力</strong>、<br>
 地形コストに<code>60</code>を掛けたものを<strong>内部地形コスト</strong>と呼ぶことにします。</p>
-
-<p>移動力1 -&gt; 内部移動力60<br />
-移動力2 -&gt; 内部移動力120<br />
-移動力3 -&gt; 内部移動力180<br />
+<p>移動力1 -&gt; 内部移動力60<br>
+移動力2 -&gt; 内部移動力120<br>
+移動力3 -&gt; 内部移動力180<br>
 移動力4 -&gt; 内部移動力240</p>
-
-<p>平地 -&gt; 内部地形コスト60<br />
-森林 -&gt; 内部地形コスト120<br />
-丘陵 -&gt; 内部地形コスト120<br />
+<p>平地 -&gt; 内部地形コスト60<br>
+森林 -&gt; 内部地形コスト120<br>
+丘陵 -&gt; 内部地形コスト120<br>
 森林/丘陵 -&gt; 内部地形コスト180</p>
-
 <h1 id="地形コストを減らす効果">地形コストを減らす効果</h1>
-
-<p>道(道路・鉄道)、昇進「レンジャーⅡ」、昇進「ゲリラⅡ」、昇進「機動力」は、<br />
+<p>道(道路・鉄道)、昇進「レンジャーⅡ」、昇進「ゲリラⅡ」、昇進「機動力」は、<br>
 地形コストの方を減らすことによってユニットがよりたくさん移動できるようにします。</p>
-
 <h2 id="機動力">機動力</h2>
-
-<p>昇進「機動力」を持っていた場合、この時点で地形コストを<code>1</code>減らします。<br />
-ただしこれによって<code>0</code>になってしまった場合は<code>1</code>に戻されます。<br />
+<p>昇進「機動力」を持っていた場合、この時点で地形コストを<code>1</code>減らします。<br>
+ただしこれによって<code>0</code>になってしまった場合は<code>1</code>に戻されます。<br>
 つまり機動力は「森や丘を1つ無視しているかのように移動できる」昇進です。</p>
-
-<p>またその性質上、内部地形コストを<code>1</code>以下に下げることはできませんので、<br />
+<p>またその性質上、内部地形コストを<code>1</code>以下に下げることはできませんので、<br>
 もともと移動力1のユニットがこの昇進を持っても無意味です。</p>
-
 <h2 id="移動力による切り下げ">移動力による切り下げ</h2>
-
-<p>ここまでの計算で地形コストが移動力を上回ってしまった場合、<br />
+<p>ここまでの計算で地形コストが移動力を上回ってしまった場合、<br>
 移動力と同じ値まで切り下げられます。</p>
-
-<p>戦士(移動力1)が森林(コスト2)に侵入しようとしている:<br />
+<p>戦士(移動力1)が森林(コスト2)に侵入しようとしている:<br>
 地形コスト2 -&gt; 地形コスト1</p>
-
 <h2 id="内部コストへ変換">内部コストへ変換</h2>
-
-<p>これより先は割り算処理です。その前に内部コストに変換します。<br />
+<p>これより先は割り算処理です。その前に内部コストに変換します。<br>
 地形コスト1 -&gt; 内部地形コスト60</p>
-
-<h2 id="レンジャー-ゲリラ">レンジャー・ゲリラ</h2>
-
-<p>ユニットが昇進「レンジャーⅡ」を持っていて、森林に侵入しようとしている場合は、<br />
+<h2 id="レンジャーゲリラ">レンジャー・ゲリラ</h2>
+<p>ユニットが昇進「レンジャーⅡ」を持っていて、森林に侵入しようとしている場合は、<br>
 内部地形コストを半分にします。</p>
-
-<p>「レンジャーⅡ」を持つ戦士が森林に侵入しようとしている:<br />
-地形コスト<code>2</code> →(切り下げ)→ 地形コスト<code>1</code> →(変換)→<br />
+<p>「レンジャーⅡ」を持つ戦士が森林に侵入しようとしている:<br>
+地形コスト<code>2</code> →(切り下げ)→ 地形コスト<code>1</code> →(変換)→<br>
 内部地形コスト<code>60</code> →(半減)→ 内部地形コスト<code>30</code></p>
-
-<hr />
-
+<hr>
 <p>「ゲリラⅡ」も同様に半減します。</p>
-
-<p>「ゲリラⅡ」を持つ戦士が森林/丘陵に侵入しようとしている:<br />
-地形コスト<code>3</code> →(切り下げ)→ 地形コスト<code>1</code> →(変換)→<br />
+<p>「ゲリラⅡ」を持つ戦士が森林/丘陵に侵入しようとしている:<br>
+地形コスト<code>3</code> →(切り下げ)→ 地形コスト<code>1</code> →(変換)→<br>
 内部地形コスト<code>60</code> →(半減)→ 内部地形コスト<code>30</code></p>
-
-<hr />
-
-<p>ここまでで内部地形コストが<code>30</code>になりましたから、<br />
+<hr>
+<p>ここまでで内部地形コストが<code>30</code>になりましたから、<br>
 戦士(内部移動力60)は森林タイルをまたいで2マス移動できることになります。</p>
-
-<p>ただし、昇進と地形の組み合わせによるコスト半減処理は1度しか行われません。<br />
+<p>ただし、昇進と地形の組み合わせによるコスト半減処理は1度しか行われません。<br>
 「ゲリラⅡ」と「レンジャーⅡ」を両方持っていても、半減は1回です。</p>
-
-<p>さらに、この処理は<a href="#移動力による切り下げ">移動力による切り下げ</a>をする直前に<br />
-移動力が<code>1</code>を超えていた場合にのみ発生します。<br />
+<p>さらに、この処理は<a href="#%E7%A7%BB%E5%8B%95%E5%8A%9B%E3%81%AB%E3%82%88%E3%82%8B%E5%88%87%E3%82%8A%E4%B8%8B%E3%81%92">移動力による切り下げ</a>をする直前に<br>
+移動力が<code>1</code>を超えていた場合にのみ発生します。<br>
 これにより、機動力とレンジャーⅡ/ゲリラⅡを同時に持つユニットは、機動力の効果しか受けられなくなります。</p>
-
 <h2 id="道">道</h2>
-
-<p>移動元のタイルと移動先のタイルの両方に道(道路・鉄道)が存在する場合、<br />
-内部地形コストが上書きされます。<br />
-(非常に稀なケースかつMOD前提ですが、もし万が一ここまでの内部地形コストが<br />
+<p>移動元のタイルと移動先のタイルの両方に道(道路・鉄道)が存在する場合、<br>
+内部地形コストが上書きされます。<br>
+(非常に稀なケースかつMOD前提ですが、もし万が一ここまでの内部地形コストが<br>
 道コストより小さい場合、小さい方が優先されます)</p>
-
 <p>道路:<code>30</code> 鉄道:<code>6</code></p>
-
 <p>戦車(内部移動力120)が鉄道を使用するとき、20マス移動できることになります。</p>
-
-<p>ただし、建築学を持っておらず、かつ川越えの場合に限り、道は無効化され、<br />
-元の内部地形コストが適用されます。<br />
+<p>ただし、建築学を持っておらず、かつ川越えの場合に限り、道は無効化され、<br>
+元の内部地形コストが適用されます。<br>
 (道が無効化されるだけで、川越えに追加の地形コストがかかることはありません)</p>
-
-<p>また、戦争中の敵文明の領土の中であって、特別奇襲を持っていない場合も、道は無効化されて、<br />
+<p>また、戦争中の敵文明の領土の中であって、特別奇襲を持っていない場合も、道は無効化されて、<br>
 元の内部地形コストが適用されます。</p>
-
 <p>それとは別に、道には工学用のコストも設定されています。</p>
-
 <p>道路:<code>30</code> 鉄道:<code>20</code></p>
-
-<p>そして工学自体にも、工学用コスト<code>-10</code>という値が設定されています。<br />
-もし、持っているすべての技術によるコスト減少を考慮した工学用コストの方が小さい場合、<br />
+<p>そして工学自体にも、工学用コスト<code>-10</code>という値が設定されています。<br>
+もし、持っているすべての技術によるコスト減少を考慮した工学用コストの方が小さい場合、<br>
 小さい方が適用されます。</p>
-
-<p>例<br />
-工学を持っていれば、道路の道コストは<code>30</code>、工学用コストは<code>30-10</code>で<code>20</code><br />
+<p>例<br>
+工学を持っていれば、道路の道コストは<code>30</code>、工学用コストは<code>30-10</code>で<code>20</code><br>
 したがって<code>20</code>が適用され、移動力1で3マス移動できる</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
 <p>たくさん移動して、よき電撃戦ライフを！</p>
         </div>
         <div class="col-12">
@@ -510,7 +461,7 @@ BtSでは、全地形で<code>1</code>です。<br />
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

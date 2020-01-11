@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 4217
+    "wordCount":  4222 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:04</time></p>
           
-          <p>4217  Words</p>
+          <p>4222  Words</p>
           
           
 
@@ -374,20 +374,14 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの４回目<br /></li>
-<li>ついに各スペルの実装へ<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの４回目</li>
+<li>ついに各スペルの実装へ</li>
 </ul>
-
 <h1 id="湧き水">湧き水</h1>
-
-<p>お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。<br />
-</p>
-
+<p>お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。</p>
 <pre><code>class SpellWater(Spell):
     &quot;&quot;&quot;湧き水&quot;&quot;&quot;
     
@@ -407,230 +401,190 @@ if (!doNotTrack) {
 
 # スペル一覧に追加
 SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))
-</code></pre>
-
-<p><code>class SpellWater(Spell):</code>で、Spellというクラスをベースにして<br />
-SpellWaterというクラスをつくっています。<br />
-これは継承という仕組みを用いています。<br />
-継承について詳しく知りたい方は、<a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/">付録</a>を参照してください。<br />
-ざっくりいうと、さきほどの共通処理に加えて、<br />
+</code></pre><p><code>class SpellWater(Spell):</code>で、Spellというクラスをベースにして<br>
+SpellWaterというクラスをつくっています。<br>
+これは継承という仕組みを用いています。<br>
+継承について詳しく知りたい方は、<a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/">付録</a>を参照してください。<br>
+ざっくりいうと、さきほどの共通処理に加えて、<br>
 いまから個別処理を書きますよ、と宣言しています。</p>
-
 <p>先ほど空呼びしていた<code>execute()</code>を実際に書いています。</p>
-
-<p><code>caster_plot.getTeam() == self._caster.getTeam()</code>で<br />
-詠唱者がいま立っているPlotのチームと、詠唱者自身の所属チームを比較しています。<br />
-右辺はわかりやすいと思いますが、<br />
-左辺は「詠唱者がいま立っているタイルは誰の領土か」ということを表しています。<br />
-左辺のチームと右辺のチームが同じであるということは、<br />
-「詠唱者がいま立っているタイルは詠唱者自身の所属チームの領土である」、<br />
+<p><code>caster_plot.getTeam() == self._caster.getTeam()</code>で<br>
+詠唱者がいま立っているPlotのチームと、詠唱者自身の所属チームを比較しています。<br>
+右辺はわかりやすいと思いますが、<br>
+左辺は「詠唱者がいま立っているタイルは誰の領土か」ということを表しています。<br>
+左辺のチームと右辺のチームが同じであるということは、<br>
+「詠唱者がいま立っているタイルは詠唱者自身の所属チームの領土である」、<br>
 つまり「詠唱者は自領土のタイルの上にいる」ということを表します。</p>
-
-<p><code>caster_plot.getTerrainType() == DESERT</code>で<br />
-さらにそのタイルの地形idと砂漠のidとを比較しています。<br />
+<p><code>caster_plot.getTerrainType() == DESERT</code>で<br>
+さらにそのタイルの地形idと砂漠のidとを比較しています。<br>
 「そのタイルが砂漠である」ことを表していますね。</p>
-
-<p><code>and</code>でその両方を満たすならば、<br />
-<code>caster_plot.setTerrainType(PLAINS, True, True)</code><br />
-地形を平原のidに設定します。<br />
-そしてこの場合、スペルは成功したことになりますから、<br />
+<p><code>and</code>でその両方を満たすならば、<br>
+<code>caster_plot.setTerrainType(PLAINS, True, True)</code><br>
+地形を平原のidに設定します。<br>
+そしてこの場合、スペルは成功したことになりますから、<br>
 <code>return True</code>で、共通処理の方に「エフェクト再生してもいいよ」と伝えます。</p>
-
-<p>両方を満たすというわけではない場合、<br />
-そのまま<code>return</code>を迎えないままでメソッドが終了しています。<br />
-こういった場合、戻り値として<code>None</code>という値が呼び出し元に帰ります。<br />
-これは偽扱いになりますので、それを受け取った<code>cast()</code>はエフェクトを再生しません。<br />
-ただ、昇進を取ったことをなかったことにするわけではないので、<br />
-ただの無駄撃ちになります。これは<a href="https://gforestshade.github.io/kujira/post/secondpy7/#設計しよう">設計</a>のときに定めた通りです。</p>
-
-<p>そして最後に<strong><em>クラス外で</em></strong>、<br />
-<code>SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))</code><br />
-という文を実行しています。<br />
-まず<code>SpellInfo(&quot;SPELL_WATER&quot;, SpellWater)</code>の部分で<br />
-SpellInfoインスタンスを作成しています。<br />
-SpellInfoインスタンスは「名前」と「クラスオブジェクト」を保持するのでした。<br />
+<p>両方を満たすというわけではない場合、<br>
+そのまま<code>return</code>を迎えないままでメソッドが終了しています。<br>
+こういった場合、戻り値として<code>None</code>という値が呼び出し元に帰ります。<br>
+これは偽扱いになりますので、それを受け取った<code>cast()</code>はエフェクトを再生しません。<br>
+ただ、昇進を取ったことをなかったことにするわけではないので、<br>
+ただの無駄撃ちになります。これは<a href="https://gforestshade.github.io/kujira/post/secondpy7/#%E8%A8%AD%E8%A8%88%E3%81%97%E3%82%88%E3%81%86">設計</a>のときに定めた通りです。</p>
+<p>そして最後に<em><strong>クラス外で</strong></em>、<br>
+<code>SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))</code><br>
+という文を実行しています。<br>
+まず<code>SpellInfo(&quot;SPELL_WATER&quot;, SpellWater)</code>の部分で<br>
+SpellInfoインスタンスを作成しています。<br>
+SpellInfoインスタンスは「名前」と「クラスオブジェクト」を保持するのでした。<br>
 <code>&quot;SPELL_WATER&quot;</code>と<code>SpellWater</code>クラスをここで指定しています。</p>
-
-<p>このSpellInfoインスタンスを、<code>SpellInfo.spells</code>というリストに<br />
-(クラス変数なのでした)<code>append()</code>しています。<br />
-これで、気分としては「&rdquo;SPELL_WATER&rdquo;という名前で、<br />
-SpellWaterクラスに個別処理が書いてある、そういうスペルがあるよ」<br />
+<p>このSpellInfoインスタンスを、<code>SpellInfo.spells</code>というリストに<br>
+(クラス変数なのでした)<code>append()</code>しています。<br>
+これで、気分としては「&ldquo;SPELL_WATER&quot;という名前で、<br>
+SpellWaterクラスに個別処理が書いてある、そういうスペルがあるよ」<br>
 と登録したような感じになります。</p>
-
-<p>クラス外にこの処理を書くことにより、<br />
-処理はこのファイル(KujiraEventManager.py)が最初に読み込まれたとき<br />
-(おそらくCiv4の起動時)に実行されます。<br />
-Infoに登録する情報を名前とクラスだけに絞ったのもこのためです。<br />
-ゲームが始まっていなくてもInfoだけは読み込まれるようになります。<br />
-今回はやりませんが、スペルの情報もCivilopediaに載せたいと思ったときに<br />
-このことが重要になってきます。<br />
+<p>クラス外にこの処理を書くことにより、<br>
+処理はこのファイル(KujiraEventManager.py)が最初に読み込まれたとき<br>
+(おそらくCiv4の起動時)に実行されます。<br>
+Infoに登録する情報を名前とクラスだけに絞ったのもこのためです。<br>
+ゲームが始まっていなくてもInfoだけは読み込まれるようになります。<br>
+今回はやりませんが、スペルの情報もCivilopediaに載せたいと思ったときに<br>
+このことが重要になってきます。<br>
 Civilipediaはゲームの状況とは関係なく開けるからです。</p>
-
 <p>これで、湧き水の処理とスペル一覧への登録ができました。</p>
-
 <h1 id="毒散布">毒散布</h1>
-
-<p>土台をある程度ちゃんと書いたおかげで、<br />
-コピペは最小限で済ませつつ、スペルを増やせるようになっています。<br />
+<p>土台をある程度ちゃんと書いたおかげで、<br>
+コピペは最小限で済ませつつ、スペルを増やせるようになっています。<br>
 毒散布を見てみましょう。</p>
-
-<pre><code class="language-python">class SpellPoison(Spell):
-    &quot;&quot;&quot;毒散布&quot;&quot;&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellPoison</span>(Spell):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">毒散布</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def execute(self):
-        &quot;&quot;&quot;
-        周囲1マスの敵対ユニットに『毒』を与える
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        周囲1マスの敵対ユニットに『毒』を与える</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        POISONED = git(&quot;PROMOTION_POISONED&quot;)
-        units = self.selectEnemyUnits(1)
-        for unit in units:
-            unit.setHasPromotion(POISONED, True)
+        POISONED <span style="color:#f92672">=</span> git(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_POISONED</span><span style="color:#e6db74">&#34;</span>)
+        units <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>selectEnemyUnits(<span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">for</span> unit <span style="color:#f92672">in</span> units:
+            unit<span style="color:#f92672">.</span>setHasPromotion(POISONED, True)
 
-        return True
+        <span style="color:#66d9ef">return</span> True
 
-SpellInfo.spells.append(SpellInfo(&quot;SPELL_POISON&quot;, SpellPoison))
+SpellInfo<span style="color:#f92672">.</span>spells<span style="color:#f92672">.</span>append(SpellInfo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SPELL_POISON</span><span style="color:#e6db74">&#34;</span>, SpellPoison))
 
-</code></pre>
-
-<p>湧き水と同様、Spellを継承して<code>execute()</code>の中に個別処理を書いていきます。<br />
-共通処理に書いてあるので、<code>units = self.selectEnemyUnits(1)</code>とするだけで<br />
-1マス圏内にいる敵対ユニットのリストが取れてきます。<br />
+</code></pre></div><p>湧き水と同様、Spellを継承して<code>execute()</code>の中に個別処理を書いていきます。<br>
+共通処理に書いてあるので、<code>units = self.selectEnemyUnits(1)</code>とするだけで<br>
+1マス圏内にいる敵対ユニットのリストが取れてきます。<br>
 (よく使う共通処理に名前が付けられる、一度書けば呼び出すだけでいい、など、関数の利点なのでした)</p>
-
-<p>ですから、あとは<code>units</code>の中の各ユニットに対して<br />
-<code>unit.setHasPromotion(POISONED, True)</code>で昇進を付与するだけです。<br />
-あらかじめ<code>POISONED = git(&quot;PROMOTION_POISONED&quot;)</code>としたことで<br />
-<code>POISONED</code>の値は&rdquo;PROMOTION_POISONED&rdquo;の昇進idになっていますね。</p>
-
-<p>そしてスペル一覧に登録します。名前は&rdquo;SPELL_POISON&rdquo;にしましょう。<br />
-これで&rdquo;PROMOTION_&ldquo;を頭につけたとき、&rdquo;PROMOTION_SPELL_POISON&rdquo;になるはずです。<br />
+<p>ですから、あとは<code>units</code>の中の各ユニットに対して<br>
+<code>unit.setHasPromotion(POISONED, True)</code>で昇進を付与するだけです。<br>
+あらかじめ<code>POISONED = git(&quot;PROMOTION_POISONED&quot;)</code>としたことで<br>
+<code>POISONED</code>の値は&quot;PROMOTION_POISONED&quot;の昇進idになっていますね。</p>
+<p>そしてスペル一覧に登録します。名前は&quot;SPELL_POISON&quot;にしましょう。<br>
+これで&quot;PROMOTION_&ldquo;を頭につけたとき、&ldquo;PROMOTION_SPELL_POISON&quot;になるはずです。<br>
 発動用の昇進と同じ名前になりますね。</p>
-
 <h1 id="火炎幕">火炎幕</h1>
-
 <p>どんどん追加していきます。火炎幕です。</p>
-
-<pre><code class="language-python">class SpellFire(Spell):
-    &quot;&quot;&quot;火炎幕&quot;&quot;&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellFire</span>(Spell):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">火炎幕</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def execute(self):
-        &quot;&quot;&quot;
-        周囲1マスの敵対ユニットに10%のダメージを与える
-        最大40%まで
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        周囲1マスの敵対ユニットに10</span><span style="color:#e6db74">%</span><span style="color:#e6db74">のダメージを与える</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        最大40</span><span style="color:#e6db74">%</span><span style="color:#e6db74">まで</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        i_damage = 10
-        max_damage = 40
-        caster_owner = self._caster.getOwner()
-        units = self.selectEnemyUnits(1)
+        i_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+        max_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>
+        caster_owner <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>getOwner()
+        units <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>selectEnemyUnits(<span style="color:#ae81ff">1</span>)
         
-        for unit in units:
-            if unit.getDamage() &gt;= max_damage:
-                continue
+        <span style="color:#66d9ef">for</span> unit <span style="color:#f92672">in</span> units:
+            <span style="color:#66d9ef">if</span> unit<span style="color:#f92672">.</span>getDamage() <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> max_damage:
+                <span style="color:#66d9ef">continue</span>
             
-            damage = min(unit.getDamage() + i_damage, max_damage)
-            unit.setDamage(damage, caster_owner)
+            damage <span style="color:#f92672">=</span> min(unit<span style="color:#f92672">.</span>getDamage() <span style="color:#f92672">+</span> i_damage, max_damage)
+            unit<span style="color:#f92672">.</span>setDamage(damage, caster_owner)
 
-        return True
+        <span style="color:#66d9ef">return</span> True
 
-SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
+SpellInfo<span style="color:#f92672">.</span>spells<span style="color:#f92672">.</span>append(SpellInfo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SPELL_FIRE</span><span style="color:#e6db74">&#34;</span>, SpellFire))
 
-</code></pre>
-
-<p>さっきと対象は同じで周囲１マスの敵対ユニットです。<br />
+</code></pre></div><p>さっきと対象は同じで周囲１マスの敵対ユニットです。<br>
 今度は昇進付与ではなく<code>unit.setDamage(damage, caster_owner)</code>としています。</p>
-
-<p>これは文字通りダメージ値を上書きさせるメソッドです。<br />
-全てのユニットは(戦闘力とは別に)HPを持っていて、<br />
-最大HPは戦闘力にかかわらず100です。<br />
-そしてHPが100から減っているユニットは、<br />
-その割合に応じて戦闘力にペナルティを受けます。<br />
-例えば歩兵(戦闘力20)のHPが40にまで減っているとき、<br />
+<p>これは文字通りダメージ値を上書きさせるメソッドです。<br>
+全てのユニットは(戦闘力とは別に)HPを持っていて、<br>
+最大HPは戦闘力にかかわらず100です。<br>
+そしてHPが100から減っているユニットは、<br>
+その割合に応じて戦闘力にペナルティを受けます。<br>
+例えば歩兵(戦闘力20)のHPが40にまで減っているとき、<br>
 その状態での戦闘力は 20 * 0.40 = 8 という計算になります。</p>
-
-<p>しかし、Civ4内部表現ではHPという形ではなく、「ダメージ値」で表されています。<br />
-といっても難しいものではなく、「ダメージ値」は<br />
-100からどれくらいHPが減っているかを表す値です。<br />
-ダメージ値が10のときは残りHP90、ダメージ値が50のときは残りHP50、<br />
+<p>しかし、Civ4内部表現ではHPという形ではなく、「ダメージ値」で表されています。<br>
+といっても難しいものではなく、「ダメージ値」は<br>
+100からどれくらいHPが減っているかを表す値です。<br>
+ダメージ値が10のときは残りHP90、ダメージ値が50のときは残りHP50、<br>
 ダメージ値が100に達するとHPがなくなってユニットは撃破された扱いになります。</p>
-
-<p>今回はHPが6割を切らないようにしたいので、<br />
-ダメージ値が40を超えないように、40を超える値でダメージ値を上書きしてしまわないようにします。<br />
-そもそも現在のダメージ値が40以上になっているユニットは<code>continue</code>で飛ばします。<br />
-その上で、現在ダメージ値に10を足したものを新しいダメージ値として上書きしたいのですが、<br />
-このときも40を超えないように注意する必要があります。<br />
-現在ダメージ値は状況によっては35や39かもしれないからです。<br />
-そこで<code>min()</code>関数を使って40が上限になるように新しいダメージ値を得ます。<br />
-(<code>min()</code>関数による上限設定については、<a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/#メソッド巡り">付録</a>に詳しいです)<br />
+<p>今回はHPが6割を切らないようにしたいので、<br>
+ダメージ値が40を超えないように、40を超える値でダメージ値を上書きしてしまわないようにします。<br>
+そもそも現在のダメージ値が40以上になっているユニットは<code>continue</code>で飛ばします。<br>
+その上で、現在ダメージ値に10を足したものを新しいダメージ値として上書きしたいのですが、<br>
+このときも40を超えないように注意する必要があります。<br>
+現在ダメージ値は状況によっては35や39かもしれないからです。<br>
+そこで<code>min()</code>関数を使って40が上限になるように新しいダメージ値を得ます。<br>
+(<code>min()</code>関数による上限設定については、<a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E5%B7%A1%E3%82%8A">付録</a>に詳しいです)<br>
 そうして求めた値<code>damage</code>でダメージ値を上書きします。</p>
-
-<p><code>setDamage()</code>には第１引数に新しいダメージ値、<br />
-第２引数に「誰によるダメージか」をプレイヤーidで指定しなければなりません。<br />
-あらかじめ詠唱者のオーナーのプレイヤーidを<br />
+<p><code>setDamage()</code>には第１引数に新しいダメージ値、<br>
+第２引数に「誰によるダメージか」をプレイヤーidで指定しなければなりません。<br>
+あらかじめ詠唱者のオーナーのプレイヤーidを<br>
 <code>caster_owner</code>に代入しておいて、それを指定しています。</p>
-
-<p>忘れずにスペル一覧に登録します。名前は&rdquo;SPELL_FIRE&rdquo;にしましょう。<br />
-&ldquo;PROMOTION_&ldquo;を頭につけたら&rdquo;PROMOTION_SPELL_FIRE&rdquo;になるはずです。<br />
+<p>忘れずにスペル一覧に登録します。名前は&quot;SPELL_FIRE&quot;にしましょう。<br>
+&ldquo;PROMOTION_&ldquo;を頭につけたら&quot;PROMOTION_SPELL_FIRE&quot;になるはずです。<br>
 発動用の昇進と同じ名前になります。</p>
-
 <h1 id="昇進を取得したとき">昇進を取得したとき</h1>
-
-<p>ここまでの壮大な前振りを経て、ついにスペルを発動させる部分です。<br />
-昇進を取得したときのイベントを捕まえて、<br />
+<p>ここまでの壮大な前振りを経て、ついにスペルを発動させる部分です。<br>
+昇進を取得したときのイベントを捕まえて、<br>
 適切なクラスの<code>cast()</code>メソッドを呼び出します。見てみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-<pre><code class="language-python">class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onUnitPromoted</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a unit is promoted</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onUnitPromoted(argsList)
+        pUnit, iPromotion <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
 
-    def onUnitPromoted(self, argsList):
-        'Called when a unit is promoted'
-        super(self.__class__, self).onUnitPromoted(argsList)
-        pUnit, iPromotion = argsList
-        ##########
+        <span style="color:#66d9ef">for</span> spellinfo <span style="color:#f92672">in</span> SpellInfo<span style="color:#f92672">.</span>spells:
+            iSpellPromo <span style="color:#f92672">=</span> git(spellinfo<span style="color:#f92672">.</span>getPromotionName())
+            <span style="color:#66d9ef">if</span> iPromotion <span style="color:#f92672">==</span> iSpellPromo:
+                SpellClass <span style="color:#f92672">=</span> spellinfo<span style="color:#f92672">.</span>getSpellClass()
+                spell <span style="color:#f92672">=</span> SpellClass(pUnit)
+                spell<span style="color:#f92672">.</span>cast()
 
-        for spellinfo in SpellInfo.spells:
-            iSpellPromo = git(spellinfo.getPromotionName())
-            if iPromotion == iSpellPromo:
-                SpellClass = spellinfo.getSpellClass()
-                spell = SpellClass(pUnit)
-                spell.cast()
-
-</code></pre>
-
-<p><code>onUnitPromoted()</code>メソッドをオーバーライドします。<br />
-引数情報は<code>pUnit</code>が昇進を取得したユニットのインスタンス、<br />
+</code></pre></div><p><code>onUnitPromoted()</code>メソッドをオーバーライドします。<br>
+引数情報は<code>pUnit</code>が昇進を取得したユニットのインスタンス、<br>
 <code>iPromotion</code>が取得された昇進のidです。</p>
-
-<p>そして、スペル一覧<code>SpellInfo.spells</code>をfor文で各要素巡回します。<br />
-ここにはスペル1種類につき1つのSpellInfoインスタンスが登録されているのでした。<br />
-つまり、<code>spellinfo</code>はなんらかのスペルのSpellInfoで、<br />
-<code>spellinfo.getPromotionName()</code>とすれば<br />
-そのスペルの(名前から生成した)昇進名が得られることになります。<br />
-それをさらに<code>gc.getInfoTypeForString()</code>に通せば<br />
+<p>そして、スペル一覧<code>SpellInfo.spells</code>をfor文で各要素巡回します。<br>
+ここにはスペル1種類につき1つのSpellInfoインスタンスが登録されているのでした。<br>
+つまり、<code>spellinfo</code>はなんらかのスペルのSpellInfoで、<br>
+<code>spellinfo.getPromotionName()</code>とすれば<br>
+そのスペルの(名前から生成した)昇進名が得られることになります。<br>
+それをさらに<code>gc.getInfoTypeForString()</code>に通せば<br>
 スペルに対応する昇進idが得られます。</p>
-
-<p>もし、いまユニットが取得した昇進と、そのスペルの昇進名が一致すれば、<br />
-ユニットの発動しようとしたスペルは正にそのスペルだと特定できたことになります。<br />
-<code>spellinfo.getSpellClass()</code>からクラスオブジェクトを取得し、<br />
-(このオブジェクトはSpellWater・SpellPoison・SpellFireのうちの<br />
-いずれか１つ、昇進名からヒットしたものになっているはずです)<br />
+<p>もし、いまユニットが取得した昇進と、そのスペルの昇進名が一致すれば、<br>
+ユニットの発動しようとしたスペルは正にそのスペルだと特定できたことになります。<br>
+<code>spellinfo.getSpellClass()</code>からクラスオブジェクトを取得し、<br>
+(このオブジェクトはSpellWater・SpellPoison・SpellFireのうちの<br>
+いずれか１つ、昇進名からヒットしたものになっているはずです)<br>
 そのクラスのインスタンスを作成します。</p>
-
-<p>その際に詠唱者を引数として渡しましょう。<br />
-これは共通部分のところでインスタンス変数として保存・活用されるのでした。<br />
-最後に<code>cast()</code>を呼び出します。<br />
-あとのことはここまで頑張って書いてきた共通処理が<code>execute()</code>を<br />
+<p>その際に詠唱者を引数として渡しましょう。<br>
+これは共通部分のところでインスタンス変数として保存・活用されるのでした。<br>
+最後に<code>cast()</code>を呼び出します。<br>
+あとのことはここまで頑張って書いてきた共通処理が<code>execute()</code>を<br>
 適切に呼び出して、適切にエフェクトを出したり出さなかったりしてくれるはずです。</p>
-
 <h1 id="ためす">ためす</h1>
-
-<p>というわけで、できました。お疲れさまでした。<br />
+<p>というわけで、できました。お疲れさまでした。<br>
 起動して遊んでみましょう。</p>
-
 <h1 id="おわりに">おわりに</h1>
-
-<p>これで「それからのPython」シリーズも終わりです。<br />
-だいぶ基礎は見についてきましたが、まだまだいろいろなMODがあります。<br />
+<p>これで「それからのPython」シリーズも終わりです。<br>
+だいぶ基礎は見についてきましたが、まだまだいろいろなMODがあります。<br>
 是非自分でも作ってみてください。</p>
         </div>
         <div class="col-12">
@@ -644,7 +598,7 @@ SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

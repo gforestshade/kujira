@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-07",
     "description": "",
-    "wordCount": 26502
+    "wordCount":  26500 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -3059,7 +3059,7 @@ if (!doNotTrack) {
                 
                 
                   
-                    iProductonModifier1
+                    iProductonModifier17
                   
               </div>
             
@@ -3601,7 +3601,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-03-07">2018-03-07 00:00</time></p>
           
-          <p>26502  Words</p>
+          <p>26500  Words</p>
           
           
 
@@ -3618,2440 +3618,1513 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4BuildingInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h2 id="civ4buildinginfos">&lt;Civ4BuildingInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4BuildingSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="buildinginfo">&lt;BuildingInfo&gt;</h2>
-
 <p>このタグ1つが、建造物の定義1つと対応しています。</p>
-
 <p>以下&lt;BuildingInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="buildingclass">&lt;BuildingClass&gt;</h3>
-
 <p>この建造物が属する親の建造物クラスを指定します。</p>
-
 <p>値：建造物クラスキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;BuildingClass&gt;BUILDINGCLASS_WALLS&lt;/BuildingClass&gt;</p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>この建造物の建造物キーを定義します。<br />
+<p>この建造物の建造物キーを定義します。<br>
 他と被らなければなんでも構いませんが、BUILDING_英語名 にするのが無難です。</p>
-
 <p>値：建造物キー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;BUILDING_CELTIC_DUN&lt;/Type&gt;</p>
-
 <h3 id="specialbuildingtype">&lt;SpecialBuildingType&gt;</h3>
-
-<p>特にグループを作って、そのグループごとに特殊な処理をしたい場合、<br />
+<p>特にグループを作って、そのグループごとに特殊な処理をしたい場合、<br>
 この建造物がどのグループの一員であるか指定します。</p>
-
-<p>通常は、NONEを指定します。<br />
+<p>通常は、NONEを指定します。<br>
 BtSでは、核シェルター・寺院・大聖堂・僧院がグループを利用しています。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#特殊建造物グループ">特殊建造物キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E7%89%B9%E6%AE%8A%E5%BB%BA%E9%80%A0%E7%89%A9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">特殊建造物キー</a></p>
 <p>&lt;SpecialBuildingType&gt;NONE&lt;/SpecialBuildingType&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>この建造物の名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「ダン」<br />
+<p>例：「ダン」<br>
 &lt;Description&gt;TXT_KEY_BUILDING_CELTIC_DUN&lt;/Description&gt;</p>
-
 <h3 id="civilopedia">&lt;Civilopedia&gt;</h3>
-
 <p>この建造物のシヴィロペディアに表示される文章を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Civilopedia&gt;TXT_KEY_BUILDING_CELTIC_DUN_PEDIA&lt;/Civilopedia&gt;</p>
-
 <h3 id="strategy">&lt;Strategy&gt;</h3>
-
-<p>この建造物の短い説明文を指定します。<br />
+<p>この建造物の短い説明文を指定します。<br>
 シドのヒントやシヴィロペディアに表示されます。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_BUILDING_CELTIC_DUN_STRATEGY&lt;/Strategy&gt;</p>
-
 <h3 id="help">&lt;Help&gt;</h3>
-
-<p>この建造物の追加の説明文を指定します。<br />
-XMLに指定した要素については、説明文はある程度自動生成されますが、<br />
+<p>この建造物の追加の説明文を指定します。<br>
+XMLに指定した要素については、説明文はある程度自動生成されますが、<br>
 PythonやDLLにおいて直接拡張したときなどに利用します。</p>
-
 <p>利用しない場合は、タグごと省略します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_BUILDING_CELTIC_DUN_HELP&lt;/Strategy&gt;</p>
-
 <h3 id="advisor">&lt;Advisor&gt;</h3>
-
-<p>生産物を決めるポップアップにおいて、どの分類になるかを指定します。<br />
+<p>生産物を決めるポップアップにおいて、どの分類になるかを指定します。<br>
 推奨生産物に選ばれたときや、担当相の表示をオンにしているときなどに表示されます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#担当相">アドバイザーキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8B%85%E5%BD%93%E7%9B%B8">アドバイザーキー</a></p>
+<p>例：<br>
 &lt;Advisor&gt;ADVISOR_MILITARY&lt;/Advisor&gt;</p>
-
 <h3 id="artdefinetag">&lt;ArtDefineTag&gt;</h3>
-
-<p>建造物のグラフィックを指定します。<br />
+<p>建造物のグラフィックを指定します。<br>
 キーの定義は \XML\Art\CIV4ArtDefines_Building.xml にあります。</p>
-
 <p>値：建造物アートキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;ArtDefineTag&gt;ART_DEF_BUILDING_CELTIC_DUN&lt;/ArtDefineTag&gt;</p>
-
 <h3 id="moviedefinetag">&lt;MovieDefineTag&gt;</h3>
-
-<p>ムービーのグラフィックを指定します。キーの定義は<br />
+<p>ムービーのグラフィックを指定します。キーの定義は<br>
 \XML\Art\CIV4ArtDefines_Movie.xml にあります。</p>
-
-<p>ここにNONE以外のキーを指定する場合、建造物完成時にそのキーの内容に従ってムービーが再生されます。<sup class="footnote-ref" id="fnref:movie"><a href="#fn:movie">1</a></sup></p>
-
-<p>例：<br />
+<p>ここにNONE以外のキーを指定する場合、建造物完成時にそのキーの内容に従ってムービーが再生されます。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>例：<br>
 &lt;MovieDefineTag&gt;NONE&lt;/MovieDefineTag&gt;</p>
-
 <h3 id="holycity">&lt;HolyCity&gt;</h3>
-
-<p>この建造物は、ここに指定した宗教の聖都でしか生産できません。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+<p>この建造物は、ここに指定した宗教の聖都でしか生産できません。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、各宗教の聖廟がこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;HolyCity&gt;NONE&lt;/HolyCity&gt;</p>
-
-<p>例２：ユダヤ教の聖都でのみ生産可能<br />
+<p>例２：ユダヤ教の聖都でのみ生産可能<br>
 &lt;HolyCity&gt;RELIGION_JUDAISM&lt;/HolyCity&gt;</p>
-
 <h3 id="religiontype">&lt;ReligionType&gt;</h3>
-
-<p>この建造物がどの宗教に属しているか指定します。<br />
-この値がプレイヤーの採用する国教と一致している間、<br />
-この建造物は国教に関する建造物と判定され、<br />
+<p>この建造物がどの宗教に属しているか指定します。<br>
+この値がプレイヤーの採用する国教と一致している間、<br>
+この建造物は国教に関する建造物と判定され、<br>
 一部の遺産やクエストのカウント対象になります。</p>
-
 <p>この建造物が宗教建造物ではない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;ReligionType&gt;NONE&lt;/ReligionType&gt;</p>
-
-<p>例２：ユダヤ教の建造物にする<br />
+<p>例２：ユダヤ教の建造物にする<br>
 &lt;HolyCity&gt;RELIGION_JUDAISM&lt;/HolyCity&gt;</p>
-
 <h3 id="statereligion">&lt;StateReligion&gt;</h3>
-
-<p>この建造物は、ここに指定した宗教を国教に制定している場合のみ生産できます。<br />
+<p>この建造物は、ここに指定した宗教を国教に制定している場合のみ生産できます。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;StateReligion&gt;NONE&lt;/StateReligion&gt;</p>
-
-<p>例２：ユダヤ教を国教にしている間だけ生産可能<br />
+<p>例２：ユダヤ教を国教にしている間だけ生産可能<br>
 &lt;StateReligion&gt;RELIGION_JUDAISM&lt;/StateReligion&gt;</p>
-
 <h3 id="bstatereligion">&lt;bStateReligion&gt;</h3>
-
-<p>ここに1を指定する場合、この建造物は、国教(なんでもよい)を制定している場合のみ生産できます。<br />
+<p>ここに1を指定する場合、この建造物は、国教(なんでもよい)を制定している場合のみ生産できます。<br>
 BtSでは、バチカン宮殿のみがこの属性を持ちます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bStateReligion&gt;0&lt;/bStateReligion&gt;</p>
-
 <h3 id="prereqreligion">&lt;PrereqReligion&gt;</h3>
-
 <p>この建造物は、ここに指定した宗教が布教されている都市でのみ生産できます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;PrereqReligion&gt;NONE&lt;/PrereqReligion&gt;</p>
-
-<p>例２：ユダヤ教が布教されている都市でのみ生産可能<br />
+<p>例２：ユダヤ教が布教されている都市でのみ生産可能<br>
 &lt;PrereqReligion&gt;RELIGION_JUDAISM&lt;/PrereqReligion&gt;</p>
-
 <h3 id="prereqcorporation">&lt;PrereqCorporation&gt;</h3>
-
-<p>この建造物は、ここに指定した企業が出店している都市でのみ生産できます。<br />
+<p>この建造物は、ここに指定した企業が出店している都市でのみ生産できます。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#企業">企業キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%BC%81%E6%A5%AD">企業キー</a></p>
+<p>例：<br>
 &lt;PrereqCorporation&gt;NONE&lt;/PrereqCorporation&gt;</p>
-
 <h3 id="foundscorporation">&lt;FoundsCorporation&gt;</h3>
-
-<p>この建造物が建設されたとき、ここに指定した企業が誕生します。<br />
+<p>この建造物が建設されたとき、ここに指定した企業が誕生します。<br>
 BtSでは、各企業の本社がこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#企業">企業キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%BC%81%E6%A5%AD">企業キー</a></p>
+<p>例：<br>
 &lt;FoundsCorporation&gt;NONE&lt;/FoundsCorporation&gt;</p>
-
 <h3 id="globalreligioncommerce">&lt;GlobalReligionCommerce&gt;</h3>
-
-<p>この建造物は、ここに指定した宗教が布教されている全世界の都市数に応じて<br />
-その宗教が指定するなにかを産出します。<br />
-何が産出されるかは \XML\GameInfo\CIV4ReligionInfo.xml の<br />
-&lt;GlobalReligionCommerces&gt; によって指定されますが、<br />
-BtSではどの宗教も1ゴールドです。<br />
+<p>この建造物は、ここに指定した宗教が布教されている全世界の都市数に応じて<br>
+その宗教が指定するなにかを産出します。<br>
+何が産出されるかは \XML\GameInfo\CIV4ReligionInfo.xml の<br>
+&lt;GlobalReligionCommerces&gt; によって指定されますが、<br>
+BtSではどの宗教も1ゴールドです。<br>
 結果として、BtSでは、この建造物は指定された宗教の都市数の分だけ〈ゴールド〉を算出します。</p>
-
 <p>この機能を使わない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
 <p>&lt;GlobalReligionCommerce&gt;NONE&lt;/GlobalReligionCommerce&gt;</p>
-
 <h3 id="globalcorporationcommerce">&lt;GlobalCorporationCommerce&gt;</h3>
-
-<p>この建造物は、ここに指定した企業が出店している全世界の都市数に応じて<br />
-その企業が指定するなにかを算出します。<br />
-何が産出されるかは \XML\GameInfo\CIV4CorporationInfo.xml の<br />
-&lt;HeadquarterCommerces&gt; によって指定されますが、<br />
-BtSではどの企業も4ゴールドです。<br />
+<p>この建造物は、ここに指定した企業が出店している全世界の都市数に応じて<br>
+その企業が指定するなにかを算出します。<br>
+何が産出されるかは \XML\GameInfo\CIV4CorporationInfo.xml の<br>
+&lt;HeadquarterCommerces&gt; によって指定されますが、<br>
+BtSではどの企業も4ゴールドです。<br>
 結果として、BtSでは、この建造物は指定された宗教の都市数*4だけ〈ゴールド〉を算出します。</p>
-
 <p>この機能を使わない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#企業">企業キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%BC%81%E6%A5%AD">企業キー</a></p>
+<p>例：<br>
 &lt;GlobalCorporationCommerce&gt;NONE&lt;/GlobalCorporationCommerce&gt;</p>
-
 <h3 id="victoryprereq">&lt;VictoryPrereq&gt;</h3>
-
 <p>この建造物は、ここに指定した勝利条件が有効になっているときのみ生産できます。</p>
-
-<p>特に勝利条件による制限を設けない場合、NONEを指定します。<br />
+<p>特に勝利条件による制限を設けない場合、NONEを指定します。<br>
 BtSでは、バチカン宮殿・国際連合・軌道エレベーターがこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#勝利条件">勝利条件キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%8B%9D%E5%88%A9%E6%9D%A1%E4%BB%B6">勝利条件キー</a></p>
+<p>例１：<br>
 &lt;VictoryPrereq&gt;NONE&lt;/VictoryPrereq&gt;</p>
-
-<p>例２：宇宙開発勝利が有効のときのみ建造可能<br />
+<p>例２：宇宙開発勝利が有効のときのみ建造可能<br>
 &lt;VictoryPrereq&gt;VICTORY_SPACE_RACE&lt;/VictoryPrereq&gt;</p>
-
 <h3 id="freestartera">&lt;FreeStartEra&gt;</h3>
-
-<p>ここに指定した時代以降でゲームをスタートする場合、<br />
+<p>ここに指定した時代以降でゲームをスタートする場合、<br>
 都市建造時この建造物が無償で与えられます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#時代">時代キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%99%82%E4%BB%A3">時代キー</a></p>
+<p>例１：<br>
 &lt;FreeStartEra&gt;NONE&lt;/FreeStartEra&gt;</p>
-
-<p>例２：中世以降のスタートで無償提供<br />
+<p>例２：中世以降のスタートで無償提供<br>
 &lt;FreeStartEra&gt;ERA_MEDIEVAL&lt;/FreeStartEra&gt;</p>
-
 <h3 id="maxstartera">&lt;MaxStartEra&gt;</h3>
-
-<p>ここに指定した時代以降でゲームをスタートする場合、<br />
+<p>ここに指定した時代以降でゲームをスタートする場合、<br>
 この建造物を建造することはできません。</p>
-
-<p>BtSでは、多くの遺産がこの属性を持ちます。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">2</a></sup></p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#時代">時代キー</a></p>
-
-<p>例：<br />
+<p>BtSでは、多くの遺産がこの属性を持ちます。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%99%82%E4%BB%A3">時代キー</a></p>
+<p>例：<br>
 &lt;MaxStartEra&gt;NONE&lt;/MaxStartEra&gt;</p>
-
 <h3 id="obsoletetech">&lt;ObsoleteTech&gt;</h3>
-
 <p>この建造物は、ここに指定した技術によって陳腐化します。</p>
-
 <p>陳腐化させない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
+<p>例１：<br>
 &lt;ObsoleteTech&gt;NONE&lt;/ObsoleteTech&gt;</p>
-
-<p>例２：ライフリングによって陳腐化<br />
+<p>例２：ライフリングによって陳腐化<br>
 &lt;ObsoleteTech&gt;TECH_RIFLING&lt;/ObsoleteTech&gt;</p>
-
 <h3 id="prereqtech">&lt;PrereqTech&gt;</h3>
-
 <p>この建造物は、ここに指定した技術を取得済みのときのみ生産できます。</p>
-
 <p>技術による制限を設けない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
 <p>例：あとで</p>
-
 <h3 id="techtypes">&lt;TechTypes&gt;</h3>
-
-<p>2つ以上の前提技術を指定したい場合、<br />
-<a href="#prereqtech">&lt;PrereqTech&gt;</a>に加えて、2つ目以降の追加の前提をここに記述します。<br />
-<a href="#prereqtech">&lt;PrereqTech&gt;</a>も含め、すべての技術を取得済みのときのみ<br />
+<p>2つ以上の前提技術を指定したい場合、<br>
+<a href="#prereqtech">&lt;PrereqTech&gt;</a>に加えて、2つ目以降の追加の前提をここに記述します。<br>
+<a href="#prereqtech">&lt;PrereqTech&gt;</a>も含め、すべての技術を取得済みのときのみ<br>
 この建造物を生産できます。</p>
-
-<p>ここでは最大で3つまでの技術キーを指定することができます。<br />
-メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br />
-最大4つの前提技術を指定できます。<br />
+<p>ここでは最大で3つまでの技術キーを指定することができます。<br>
+メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br>
+最大4つの前提技術を指定できます。<br>
 (この数は GlobalDefines.xml の NUM_BUILDING_AND_TECH_PREREQS で変更できます)</p>
-
 <p>追加の前提が必要ない場合は空タグにします。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a>のリスト</p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a>のリスト</p>
 <p>例１：メインの前提技術を石工術にする</p>
-
-<pre><code class="language-plain">&lt;PrereqTech&gt;TECH_MASONRY&lt;/PrereqTech&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PrereqTech&gt;TECH_MASONRY&lt;/PrereqTech&gt;
 &lt;TechTypes /&gt;
-</code></pre>
-
-<p>例２：メインの前提技術をギルド・追加の前提技術を通貨にする<sup class="footnote-ref" id="fnref:technum"><a href="#fn:technum">3</a></sup></p>
-
-<pre><code class="language-plain">&lt;PrereqTech&gt;TECH_GUILDS&lt;/PrereqTech&gt;
+</code></pre></div><p>例２：メインの前提技術をギルド・追加の前提技術を通貨にする<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PrereqTech&gt;TECH_GUILDS&lt;/PrereqTech&gt;
 &lt;TechTypes&gt;
     &lt;PrereqTech&gt;TECH_CURRENCY&lt;/PrereqTech&gt;
 &lt;/TechTypes&gt;
-</code></pre>
-
-<h3 id="bonus">&lt;Bonus&gt;</h3>
-
-<p>この建造物は、ここに指定した資源があるときのみ生産できます。<br />
+</code></pre></div><h3 id="bonus">&lt;Bonus&gt;</h3>
+<p>この建造物は、ここに指定した資源があるときのみ生産できます。<br>
 資源による制限を設けない場合、NONEを指定します。</p>
-
 <p>BtSでは、前提資源を要求する建造物はありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
 <p>例：あとで</p>
-
 <h3 id="prereqbonuses">&lt;PrereqBonuses&gt;</h3>
-
-<p>2つ以上の前提資源を設定したい場合、ここに資源キーのリストを指定します。<br />
-&lt;Bonus&gt;の資源があって、&lt;PrereqBonuses&gt;のうちのいずれかの資源がある都市で、<br />
-この建造物は生産可能になります。<br />
+<p>2つ以上の前提資源を設定したい場合、ここに資源キーのリストを指定します。<br>
+&lt;Bonus&gt;の資源があって、&lt;PrereqBonuses&gt;のうちのいずれかの資源がある都市で、<br>
+この建造物は生産可能になります。<br>
 &lt;Bonus&gt;と&lt;PrereqBonuses&gt;の指定の仕方で資源の要求の仕方が変わってきます。</p>
-
 <dl>
-<dt>&lt;Bonus&gt;指定なし、&lt;PrereqBonuses&gt;指定なし の場合<br /></dt>
-<dd>この建造物は資源なしで生産できます。<br />
-<br /></dd>
-<dt>&lt;Bonus&gt;指定あり、&lt;PrereqBonuses&gt;指定なし の場合<br /></dt>
-<dd>この建造物は&lt;Bonus&gt;の資源がある都市で生産できます。<br />
-<br /></dd>
-<dt>&lt;Bonus&gt;指定なし、&lt;PrereqBonuses&gt;複数指定 の場合<br /></dt>
-<dd>この建造物は&lt;PrereqBonuses&gt;のうちの<strong><em>いずれか</em></strong>の資源がある都市で生産できます。<br />
-<br /></dd>
-<dt>&lt;Bonus&gt;指定あり、&lt;PrereqBonuses&gt;1つ指定 の場合<br /></dt>
-<dd>この建造物は&lt;Bonus&gt;と&lt;PrereqBonuses&gt;に<br />
-指定された<strong><em>両方</em></strong>の資源がある都市で生産できます。<br />
-<br /></dd>
+<dt>&lt;Bonus&gt;指定なし、&lt;PrereqBonuses&gt;指定なし の場合</dt>
+<dd>この建造物は資源なしで生産できます。</dd>
+<dt>&lt;Bonus&gt;指定あり、&lt;PrereqBonuses&gt;指定なし の場合</dt>
+<dd>この建造物は&lt;Bonus&gt;の資源がある都市で生産できます。</dd>
+<dt>&lt;Bonus&gt;指定なし、&lt;PrereqBonuses&gt;複数指定 の場合</dt>
+<dd>この建造物は&lt;PrereqBonuses&gt;のうちの<em><strong>いずれか</strong></em>の資源がある都市で生産できます。</dd>
+<dt>&lt;Bonus&gt;指定あり、&lt;PrereqBonuses&gt;1つ指定 の場合</dt>
+<dd>この建造物は&lt;Bonus&gt;と&lt;PrereqBonuses&gt;に<br>
+指定された<em><strong>両方</strong></em>の資源がある都市で生産できます。</dd>
 </dl>
-
-<p>ここには最大で NUM_BUILDING_PREREQ_OR_BONUSES 個の資源キーを指定できます。<br />
-BtSではこの変数の値は4です。<br />
+<p>ここには最大で NUM_BUILDING_PREREQ_OR_BONUSES 個の資源キーを指定できます。<br>
+BtSではこの変数の値は4です。<br>
 (この数は GlobalDefines.xml で変更できます)</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a>のリスト</p>
-
-<p>例１：資源の制限をつけない<sup class="footnote-ref" id="fnref:bonusnum"><a href="#fn:bonusnum">4</a></sup></p>
-
-<pre><code class="language-plain">&lt;Bonus&gt;NONE&lt;/Bonus&gt;
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a>のリスト</p>
+<p>例１：資源の制限をつけない<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Bonus&gt;NONE&lt;/Bonus&gt;
 &lt;PrereqBonuses /&gt;
-</code></pre>
-
-<p>例２：銅または鉄があれば生産可能</p>
-
-<pre><code class="language-plain">&lt;Bonus&gt;NONE&lt;/Bonus&gt;
+</code></pre></div><p>例２：銅または鉄があれば生産可能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Bonus&gt;NONE&lt;/Bonus&gt;
 &lt;PrereqBonuses&gt;
     &lt;Bonus&gt;BONUS_COPPER&lt;/Bonus&gt;
     &lt;Bonus&gt;BONUS_IRON&lt;/Bonus&gt;
 &lt;/PrereqBonuses&gt;
-</code></pre>
-
-<p>例３：石油とアルミニウムの両方があれば生産可能</p>
-
-<pre><code class="language-plain">&lt;Bonus&gt;BONUS_OIL&lt;/Bonus&gt;
+</code></pre></div><p>例３：石油とアルミニウムの両方があれば生産可能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Bonus&gt;BONUS_OIL&lt;/Bonus&gt;
 &lt;PrereqBonuses&gt;
     &lt;Bonus&gt;BONUS_ALUMINUM&lt;/Bonus&gt;
 &lt;/PrereqBonuses&gt;
-</code></pre>
-
-<h3 id="productiontraits">&lt;ProductionTraits&gt;</h3>
-
+</code></pre></div><h3 id="productiontraits">&lt;ProductionTraits&gt;</h3>
 <p>この建造物の生産を加速する志向を指定します。</p>
-
 <p>この機能を使わない場合、空タグにします。</p>
-
 <p>値：&lt;ProductionTrait&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ProductionTrait&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;ProductionTrait&gt;は以下の2つのタグを含みます。</p>
 <h4 id="productiontraittype">&lt;ProductionTraitType&gt;</h4>
-
-<p>志向を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#志向">志向キー</a></p>
-
+<p>志向を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BF%97%E5%90%91">志向キー</a></p>
 <h4 id="iproductiontrait">&lt;iProductionTrait&gt;</h4>
-
-<p>〈ハンマー〉への修正率(単位：%)を指定します。<br />
+<p>〈ハンマー〉への修正率(単位：%)を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ProductionTraits /&gt;</p>
-
 <p>例２：防衛志向によって生産速度2倍</p>
-
-<pre><code class="language-plain">&lt;ProductionTraits&gt;
-    &lt;ProductionTrait&gt;
-        &lt;ProductionTraitType&gt;TRAIT_PROTECTIVE&lt;/ProductionTraitType&gt;
-        &lt;iProductionTrait&gt;100&lt;/iProductionTrait&gt;
-    &lt;/ProductionTrait&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ProductionTraits&gt;
+	&lt;ProductionTrait&gt;
+		&lt;ProductionTraitType&gt;TRAIT_PROTECTIVE&lt;/ProductionTraitType&gt;
+		&lt;iProductionTrait&gt;100&lt;/iProductionTrait&gt;
+	&lt;/ProductionTrait&gt;
 &lt;/ProductionTraits&gt;
-</code></pre>
-
-<h3 id="happinesstraits">&lt;HappinessTraits&gt;</h3>
-
-<p>都市の所有者がここで指定した志向を持っている場合、<br />
+</code></pre></div><h3 id="happinesstraits">&lt;HappinessTraits&gt;</h3>
+<p>都市の所有者がここで指定した志向を持っている場合、<br>
 この建造物はそれぞれ指定されたぶんだけ追加の幸福または不満を産出します。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
-BtSでこの属性を持つ建造物は、モニュメントと放送塔<sup class="footnote-ref" id="fnref:uu"><a href="#fn:uu">5</a></sup>です。</p>
-
+<p>この機能を使わない場合、空タグにします。<br>
+BtSでこの属性を持つ建造物は、モニュメントと放送塔<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>です。</p>
 <p>値：&lt;HappinessTrait&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;HappinessTrait&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;HappinessTrait&gt;は以下の2つのタグを含みます。</p>
 <h4 id="happinesstraittype">&lt;HappinessTraitType&gt;</h4>
-
-<p>志向を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#志向">志向キー</a></p>
-
+<p>志向を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BF%97%E5%90%91">志向キー</a></p>
 <h4 id="ihappinesstrait">&lt;iHappinessTrait&gt;</h4>
-
-<p>その志向を持っているときに追加で算出する幸福の値を指定します。<br />
-正の数で幸福、負の数で不満になります。<br />
+<p>その志向を持っているときに追加で算出する幸福の値を指定します。<br>
+正の数で幸福、負の数で不満になります。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;HappinessTraits /&gt;</p>
-
 <p>例２：カリスマ志向の指導者に+1〈幸福〉</p>
-
-<pre><code class="language-plain">&lt;HappinessTraits&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;HappinessTraits&gt;
     &lt;HappinessTrait&gt;
         &lt;HappinessTraitType&gt;TRAIT_CHARISMATIC&lt;/HappinessTraitType&gt;
         &lt;iHappinessTrait&gt;1&lt;/iHappinessTrait&gt;
     &lt;/HappinessTrait&gt;
 &lt;/HappinessTraits&gt;
-</code></pre>
-
-<h3 id="nobonus">&lt;NoBonus&gt;</h3>
-
+</code></pre></div><h3 id="nobonus">&lt;NoBonus&gt;</h3>
 <p>この建造物がある都市では、ここに指定した資源を利用できなくなります。</p>
-
-<p>資源の無効化をしない通常の建造物の場合、NONEを指定します。<br />
+<p>資源の無効化をしない通常の建造物の場合、NONEを指定します。<br>
 BtSでは、この属性を持つ建造物は国立公園のみです。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<p>例：<br>
 &lt;NoBonus&gt;NONE&lt;/NoBonus&gt;</p>
-
 <h3 id="powerbonus">&lt;PowerBonus&gt;</h3>
-
 <p>この建造物は、ここに指定した資源があるときこの都市に電力を供給します。</p>
-
 <p><a href="#bpower">&lt;bPower&gt;</a>や<a href="#bdirtypower">&lt;bDirtyPower&gt;</a>も参照してください。</p>
-
 <p>この機能を使わない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<p>例：<br>
 &lt;PowerBonus&gt;NONE&lt;/PowerBonus&gt;</p>
-
 <h3 id="freebonus">&lt;FreeBonus&gt;</h3>
-
 <p>この建造物は、ここに指定した資源を産出します。</p>
-
-<p>この属性は産出する資源の種類を指定します。<br />
+<p>この属性は産出する資源の種類を指定します。<br>
 特に資源を産出しない普通の建造物の場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
 <p>例：あとで</p>
-
 <h3 id="inumfreebonuses">&lt;iNumFreeBonuses&gt;</h3>
-
 <p>この建造物が産出する資源の数を産出します。</p>
-
-<p><a href="#freebonus">&lt;FreeBonus&gt;</a>にNONE以外の値を指定していて、ここに正の値を指定する場合、<br />
+<p><a href="#freebonus">&lt;FreeBonus&gt;</a>にNONE以外の値を指定していて、ここに正の値を指定する場合、<br>
 この建造物は指定された資源を指定された数だけ産出します。</p>
-
-<p>固定の数ではなく、マップサイズによる変動値を採用したい場合、-1を指定します。<br />
-その場合、\XML\GameInfo\CIV4WorldInfo.xml の各マップサイズ定義から、<br />
+<p>固定の数ではなく、マップサイズによる変動値を採用したい場合、-1を指定します。<br>
+その場合、\XML\GameInfo\CIV4WorldInfo.xml の各マップサイズ定義から、<br>
 &lt;iNumFreeBuildingBonuses&gt; の値が使用されます。</p>
-
 <p>この機能を使わない場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
-&lt;FreeBonus&gt;NONE&lt;/FreeBonus&gt;<br />
+<p>例１：<br>
+&lt;FreeBonus&gt;NONE&lt;/FreeBonus&gt;<br>
 &lt;iNumFreeBonuses&gt;0&lt;/iNumFreeBonuses&gt;</p>
-
-<p>例２：ヒットミュージカルをマップサイズ依存の数だけ産出する<br />
-&lt;FreeBonus&gt;BONUS_DRAMA&lt;/FreeBonus&gt;<br />
+<p>例２：ヒットミュージカルをマップサイズ依存の数だけ産出する<br>
+&lt;FreeBonus&gt;BONUS_DRAMA&lt;/FreeBonus&gt;<br>
 &lt;iNumFreeBonuses&gt;-1&lt;/iNumFreeBonuses&gt;</p>
-
-<p>例３：馬を1つ産出する<br />
-&lt;FreeBonus&gt;BONUS_HORSE&lt;/FreeBonus&gt;<br />
+<p>例３：馬を1つ産出する<br>
+&lt;FreeBonus&gt;BONUS_HORSE&lt;/FreeBonus&gt;<br>
 &lt;iNumFreeBonuses&gt;1&lt;/iNumFreeBonuses&gt;</p>
-
 <h3 id="freebuilding">&lt;FreeBuilding&gt;</h3>
-
-<p>この建造物を所有している間、同じ文明の全都市はここに指定した無償の建造物を得ます。<sup class="footnote-ref" id="fnref:freebuil"><a href="#fn:freebuil">6</a></sup></p>
-
-<p>この機能を使わない場合、NONEを指定します。<br />
+<p>この建造物を所有している間、同じ文明の全都市はここに指定した無償の建造物を得ます。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>この機能を使わない場合、NONEを指定します。<br>
 BtSでは、この属性を持つ建造物はストーンヘンジとエッフェル塔です。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物クラスキー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物クラスキー</a></p>
+<p>例１：<br>
 &lt;FreeBuilding&gt;NONE&lt;/FreeBuilding&gt;</p>
-
-<p>例２：全都市に無償のモニュメント(またはそのUB)<br />
+<p>例２：全都市に無償のモニュメント(またはそのUB)<br>
 &lt;FreeBuilding&gt;BUILDINGCLASS_OBELISK&lt;/FreeBuilding&gt;</p>
-
 <h3 id="freepromotion">&lt;FreePromotion&gt;</h3>
-
 <p>この建造物がある都市で生産された新規ユニットは、ここに指定した無償の昇進を得ます。</p>
-
 <p>この機能を使わない場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#昇進">昇進キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%98%87%E9%80%B2">昇進キー</a></p>
+<p>例１：<br>
 &lt;FreePromotion&gt;NONE&lt;/FreePromotion&gt;</p>
-
-<p>例２：この都市で生産されるユニットに無償のゲリラⅠ<br />
+<p>例２：この都市で生産されるユニットに無償のゲリラⅠ<br>
 &lt;FreePromotion&gt;PROMOTION_GUERILLA1&lt;/FreePromotion&gt;</p>
-
 <h3 id="civicoption">&lt;CivicOption&gt;</h3>
-
-<p>この建造物を所有している間、所有者の文明はここに指定した体制に属する社会制度を<br />
+<p>この建造物を所有している間、所有者の文明はここに指定した体制に属する社会制度を<br>
 無条件に採用できるようになります。</p>
-
-<p>特に体制を解禁しない普通の建造物の場合、NONEを指定します。<br />
+<p>特に体制を解禁しない普通の建造物の場合、NONEを指定します。<br>
 BtSでは、この属性を持つ建造物はピラミッドとシェダゴン・パヤです。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#社会制度">体制キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E7%A4%BE%E4%BC%9A%E5%88%B6%E5%BA%A6">体制キー</a></p>
+<p>例１：<br>
 &lt;CivicOption&gt;NONE&lt;/CivicOption&gt;</p>
-
-<p>例２：すべての政治体制を採用可能<br />
+<p>例２：すべての政治体制を採用可能<br>
 &lt;CivicOption&gt;CIVICOPTION_GOVERNMENT&lt;/CivicOption&gt;</p>
-
 <h3 id="greatpeopleunitclass">&lt;GreatPeopleUnitClass&gt;</h3>
-
 <p>この建造物は、ここに指定したユニットに対する偉人ポイントを産出します。</p>
-
-<p>この属性は産出する偉人ポイントの種類を指定します。<br />
+<p>この属性は産出する偉人ポイントの種類を指定します。<br>
 特に偉人ポイントを産出しない建造物の場合、NONEを指定します。</p>
-
-<p>ここに指定するユニットクラスタイプは、任意のものを指定できます。<br />
-偉人ユニットのいずれかである必要はありませんし、<br />
+<p>ここに指定するユニットクラスタイプは、任意のものを指定できます。<br>
+偉人ユニットのいずれかである必要はありませんし、<br>
 都市で普通に生産できるようなユニットであっても構いません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <p>例：あとで</p>
-
 <h3 id="igreatpeopleratechange">&lt;iGreatPeopleRateChange&gt;</h3>
-
 <p>この建造物が産出する偉人ポイントの数を指定します。</p>
-
-<p><a href="#greatpeoppleunitclass">&lt;GreatPeopleUnitClass&gt;</a>にNONE以外の値を指定していて、ここに正の値を指定する場合、<br />
+<p><a href="#greatpeoppleunitclass">&lt;GreatPeopleUnitClass&gt;</a>にNONE以外の値を指定していて、ここに正の値を指定する場合、<br>
 この建造物は指定された種類の偉人ポイントを指定されたぶんだけ産出します。</p>
-
 <p>この機能を使わない場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
-&lt;GreatPeopleUnitClass&gt;NONE&lt;/GreatPeopleUnitClass&gt;<br />
+<p>例１：<br>
+&lt;GreatPeopleUnitClass&gt;NONE&lt;/GreatPeopleUnitClass&gt;<br>
 &lt;iGreatPeopleRateChange&gt;0&lt;/iGreatPeopleRateChange&gt;</p>
-
-<p>例２：大預言者ポイント+2<br />
-&lt;GreatPeopleUnitClass&gt;UNITCLASS_PROPHET&lt;/GreatPeopleUnitClass&gt;<br />
+<p>例２：大預言者ポイント+2<br>
+&lt;GreatPeopleUnitClass&gt;UNITCLASS_PROPHET&lt;/GreatPeopleUnitClass&gt;<br>
 &lt;iGreatPeopleRateChange&gt;2&lt;/iGreatPeopleRateChange&gt;</p>
-
-<p>例３：機械化歩兵ポイント+10<br />
-&lt;GreatPeopleUnitClass&gt;UNITCLASS_MECHANIZED_INFANTRY&lt;/GreatPeopleUnitClass&gt;<br />
+<p>例３：機械化歩兵ポイント+10<br>
+&lt;GreatPeopleUnitClass&gt;UNITCLASS_MECHANIZED_INFANTRY&lt;/GreatPeopleUnitClass&gt;<br>
 &lt;iGreatPeopleRateChange&gt;10&lt;/iGreatPeopleRateChange&gt;</p>
-
 <h3 id="ihurryangermodifier">&lt;iHurryAngerModifier&gt;</h3>
-
-<p>奴隷不満のターンに対する修正率を指定します。<br />
+<p>奴隷不満のターンに対する修正率を指定します。<br>
 この建造物のある都市ではここに指定した割合だけ奴隷不満のターン数が増加します。(単位：%)</p>
-
 <p>この機能を使わない場合、0を指定します。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHurryAngerModifier&gt;0&lt;/iHurryAngerModifier&gt;</p>
-
-<p>例２：人口犠牲による不満の継続期間-50%<br />
+<p>例２：人口犠牲による不満の継続期間-50%<br>
 &lt;iHurryAngerModifier&gt;-50&lt;/iHurryAngerModifier&gt;</p>
-
 <h3 id="bborderobstacle">&lt;bBorderObstacle&gt;</h3>
-
-<p>ここに1を指定する場合、この建造物を所有している間、<br />
+<p>ここに1を指定する場合、この建造物を所有している間、<br>
 その都市と同じ大陸にある文化圏に蛮族が侵入できなくなります。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bBorderObstacle&gt;0&lt;/bBorderObstacle&gt;</p>
-
 <h3 id="bteamshare">&lt;bTeamShare&gt;</h3>
-
-<p>ここに1を指定する場合、以下のタグの効果範囲が<br />
+<p>ここに1を指定する場合、以下のタグの効果範囲が<br>
 自文明だけでなく、同じチームの全員にまで広がります。</p>
-
 <table>
 <thead>
 <tr>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
+<th> </th>
+<th> </th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="#freebuilding">&lt;FreeBuilding&gt;</a></td>
 <td><a href="#civicoption">&lt;CivicOption&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iglobalgreatpeopleratemodifier">&lt;iGlobalGreatPeopleRateModifier&gt;</a></td>
 <td><a href="#igreatgeneralratemodifier">&lt;iGreatGeneralRateModifier&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#idomesticgreatgeneralratemodifier">&lt;iDomesticGreatGeneralRateModifier&gt;</a></td>
 <td><a href="#ianarchymodifier">&lt;iAnarchyModifier&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#igoldenagemodifier">&lt;iGoldenAgeModifier&gt;</a></td>
 <td><a href="#iglobalhurrymodifier">&lt;iGlobalHurryModifier&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iglobalexperience">&lt;iGlobalExperience&gt;</a></td>
 <td><a href="#iglobalwarwearinessmodifier">&lt;iGlobalWarWearinessModifier&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iareafreespecialist">&lt;iAreaFreeSpecialist&gt;</a></td>
 <td><a href="#iglobalfreespecialist">&lt;iGlobalFreeSpecialist&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#icoastaltraderoutes">&lt;iCoastalTradeRoutes&gt;</a></td>
 <td><a href="#iglobaltraderoutes">&lt;iGlobalTradeRoutes&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iareahealth">&lt;iAreaHealth&gt;</a></td>
 <td><a href="#iglobalhealth">&lt;iGlobalHealth&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iareahappiness">&lt;iAreaHappiness&gt;</a></td>
 <td><a href="#iglobalhappiness">&lt;iGlobalHappiness&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iworkerspeedmodifier">&lt;iWorkerSpeedModifier&gt;</a></td>
 <td><a href="#iglobalspaceproductionmodifier">&lt;iGlobalSpaceProductionModifier&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#iallcitydefense">&lt;iAllCityDefense&gt;</a></td>
 <td><a href="#bareacleanpower">&lt;bAreaCleanPower&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#bborderobstacle">&lt;bBorderObstacle&gt;</a></td>
 <td><a href="#globalseaplotyieldchanges">&lt;GlobalSeaPlotYieldChanges&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#areayieldmodifiers">&lt;AreaYieldModifiers&gt;</a></td>
 <td><a href="#globalyieldmodifiers">&lt;GlobalYieldModifiers&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#globalcommercemodifiers">&lt;GlobalCommerceModifiers&gt;</a></td>
 <td><a href="#specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#statereligioncommerces">&lt;StateReligionCommerces&gt;</a></td>
 <td><a href="#commerceflexibles">&lt;CommerceFlexibles&gt;</a></td>
 </tr>
-
 <tr>
 <td><a href="#buildinghappinesschanges">&lt;BuildingHappinessChanges&gt;</a></td>
 <td><a href="#specialistyieldchanges">&lt;SpecialistYieldChanges&gt;</a></td>
 </tr>
 </tbody>
 </table>
-
-<p>BtSでは、ほとんどの世界遺産がこの属性を持ちます。<sup class="footnote-ref" id="fnref:teamww"><a href="#fn:teamww">7</a></sup></p>
-
+<p>BtSでは、ほとんどの世界遺産がこの属性を持ちます。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bTeamShare&gt;0&lt;/bTeamShare&gt;</p>
-
 <h3 id="bwater">&lt;bWater&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物は水タイルに面した都市でのみ生産できます。</p>
-
-<p>&lt;bWater&gt;と<a href="#briver">&lt;bRiver&gt;</a>の両方を1にする場合、<br />
-この建造物は水タイルに面しているか、川沿いにある都市で生産できます。<sup class="footnote-ref" id="fnref:waterriver"><a href="#fn:waterriver">8</a></sup></p>
-
+<p>&lt;bWater&gt;と<a href="#briver">&lt;bRiver&gt;</a>の両方を1にする場合、<br>
+この建造物は水タイルに面しているか、川沿いにある都市で生産できます。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bWater&gt;0&lt;/bWater&gt;</p>
-
 <h3 id="briver">&lt;bRiver&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物は川沿いの都市でのみ生産できます。</p>
-
-<p><a href="#bwater">&lt;bWater&gt;</a>と&lt;bRiver&gt;の両方を1にする場合、<br />
-この建造物は水タイルに面しているか、川沿いにある都市で生産できます。<sup class="footnote-ref" id="fnref:waterriver"><a href="#fn:waterriver">8</a></sup></p>
-
+<p><a href="#bwater">&lt;bWater&gt;</a>と&lt;bRiver&gt;の両方を1にする場合、<br>
+この建造物は水タイルに面しているか、川沿いにある都市で生産できます。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bRiver&gt;0&lt;/bRiver&gt;</p>
-
 <h3 id="bpower">&lt;bPower&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物はこの都市に電力を供給します。</p>
-
-<p><a href="#powerbonus">&lt;PowerBonus&gt;</a>と異なり、この属性は無条件で電力を供給します。<br />
-<a href="#powerbonus">&lt;PowerBonus&gt;</a>と&lt;bPower&gt;の両方を指定した場合、<br />
+<p><a href="#powerbonus">&lt;PowerBonus&gt;</a>と異なり、この属性は無条件で電力を供給します。<br>
+<a href="#powerbonus">&lt;PowerBonus&gt;</a>と&lt;bPower&gt;の両方を指定した場合、<br>
 &lt;bPower&gt;が優先され、資源によらず常に電力を供給します。</p>
-
 <p>BtSでは、この属性を持つ建造物はシェール油精製施設と水力発電所です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bPower&gt;0&lt;/bPower&gt;</p>
-
 <h3 id="bdirtypower">&lt;bDirtyPower&gt;</h3>
-
-<p>ここに1を指定する場合、この建造物が供給する電力の種類がきたない電力になります。<br />
+<p>ここに1を指定する場合、この建造物が供給する電力の種類がきたない電力になります。<br>
 ここに0を指定する場合、この建造物が供給する電力の種類が通常電力になります。</p>
-
 <p>この建造物が電力を供給しない場合、この指定は無視されます。</p>
-
 <p>参考：<a href="https://gforestshade.github.io/kujira/post/power/">通常電力ときたない電力</a></p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bDirtyPower&gt;0&lt;/bDirtyPower&gt;</p>
-
 <h3 id="bareacleanpower">&lt;bAreaCleanPower&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物と同じ大陸にある都市は無償の通常電力を得ます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bAreaCleanPower&gt;0&lt;/bAreaCleanPower&gt;</p>
-
 <h3 id="diplovotetype">&lt;DiploVoteType&gt;</h3>
-
 <p>この建造物は、ここに指定した国際機関を発足させます。</p>
-
-<p>特に何も発足させない普通の建造物の場合、NONEを指定します。<br />
+<p>特に何も発足させない普通の建造物の場合、NONEを指定します。<br>
 BtSでは、この属性を持つ建造物はバチカン宮殿と国際連合です。</p>
-
-<p>値：国際機関キー<br />
-　　<code>DIPLOVOTE_UN</code>: 国際連合<br />
+<p>値：国際機関キー<br>
+　　<code>DIPLOVOTE_UN</code>: 国際連合<br>
 　　<code>DIPLOVOTE_POPE</code>: バチカン宮殿</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;DiploVoteType&gt;NONE&lt;/DiploVoteType&gt;</p>
-
 <h3 id="bforceteamvoteeligible">&lt;bForceTeamVoteEligible&gt;</h3>
-
-<p>ここに1を指定する場合、この建造物が発足させた国際機関において、<br />
-この建造物の所有者が必ず議長国選挙に立候補します。<br />
+<p>ここに1を指定する場合、この建造物が発足させた国際機関において、<br>
+この建造物の所有者が必ず議長国選挙に立候補します。<br>
 その場合、もう一方は所有者以外の文明で票数を最も多く持つ文明になります。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bForceTeamVoteEligible&gt;0&lt;/bForceTeamVoteEligible&gt;</p>
-
 <h3 id="bcapital">&lt;bCapital&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物がある都市は、首都です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bCapital&gt;0&lt;/bCapital&gt;</p>
-
 <h3 id="bgovernmentcenter">&lt;bGovernmentCenter&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物は距離維持費の起点になります。</p>
-
 <p>BtSでは、この属性を持つ建造物は宮殿・紫禁城・ヴェルサイユ宮殿です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bGovernmentCenter&gt;0&lt;/bGovernmentCenter&gt;</p>
-
 <h3 id="bgoldenage">&lt;bGoldenAge&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物が完成したとき、黄金期を開始します。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bGoldenAge&gt;0&lt;/bGoldenAge&gt;</p>
-
 <h3 id="ballowsnukes">&lt;bAllowsNukes&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物が完成したとき、全文明に対して核攻撃を解禁します。</p>
-
 <p>BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bAllowsNukes&gt;0&lt;/bAllowsNukes&gt;</p>
-
 <h3 id="bmapcentering">&lt;bMapCentering&gt;</h3>
-
 <p>ここに1を指定する場合、この建造が完成したとき、世界地図を球体化します。</p>
-
 <p>BtSでは、この属性を持つ建造物はストーンヘンジです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMapCentering&gt;0&lt;/bMapCentering&gt;</p>
-
 <h3 id="bnounhappiness">&lt;bNoUnhappiness&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物のある都市からは不満が発生しなくなります。</p>
-
 <p>BtSでは、この属性を持つ建造物はグローブ座です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoUnhappiness&gt;0&lt;/bNoUnhappiness&gt;</p>
-
 <h3 id="bnounhealthypopulation">&lt;bNoUnhealthyPopulation&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物のある都市からは人口による不衛生が発生しなくなります。</p>
-
 <p>BtSでは、この属性を持つ建造物は国立公園です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoUnhealthyPopulation&gt;0&lt;/bNoUnhealthyPopulation&gt;</p>
-
 <h3 id="bbuildingonlyhealthy">&lt;bBuildingOnlyHealthy&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物のある都市からは建造物による不衛生が発生しなくなります。</p>
-
 <p>BtSでは、この属性を持つ建造物はリサイクル施設です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bBuildingOnlyHealthy&gt;0&lt;/bBuildingOnlyHealthy&gt;</p>
-
 <h3 id="bnevercapture">&lt;bNeverCapture&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物は戦争によって占領された際に必ず破壊されます。</p>
-
-<p>BtSでは、文化値出力がある一般建造物がこの属性を持ちます。<br />
-これによって占領した直後の都市からは建造物による〈文化〉が出ないようになっています。<sup class="footnote-ref" id="fnref:capcul"><a href="#fn:capcul">9</a></sup></p>
-
+<p>BtSでは、文化値出力がある一般建造物がこの属性を持ちます。<br>
+これによって占領した直後の都市からは建造物による〈文化〉が出ないようになっています。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></p>
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNeverCapture&gt;0&lt;/bNeverCapture&gt;</p>
-
 <h3 id="bnukeimmune">&lt;bNukeImmune&gt;</h3>
-
 <p>ここに1を指定する場合、この建造物は核攻撃によって破壊されません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNukeImmune&gt;0&lt;/bNukeImmune&gt;</p>
-
 <h3 id="bprereqreligion">&lt;bPrereqReligion&gt;</h3>
-
 <p>ここに1を指定する場合、この都市に布教されている宗教があるときのみこの建造物を生産できます。</p>
-
 <p>BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bPrereqReligion&gt;0&lt;/bPrereqReligion&gt;</p>
-
 <h3 id="bcenterincity">&lt;bCenterInCity&gt;</h3>
-
 <p>ここに1を指定する場合、建造物の3Dモデルがマップ上で都市の中心に表示されます。</p>
-
 <p>BtSでは、この属性を持つ建造物はモニュメント・防壁・城(とそのUU群)です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bCenterInCity&gt;1&lt;/bCenterInCity&gt;</p>
-
 <h3 id="iaiweight">&lt;iAIWeight&gt;</h3>
-
-<p>AIの生産物評価値に対して、このユニットの評価値に修正を与えます。<br />
-正負どちらの値も指定でき、このユニットに対する評価値が一律その分だけ加算されます。<br />
+<p>AIの生産物評価値に対して、このユニットの評価値に修正を与えます。<br>
+正負どちらの値も指定でき、このユニットに対する評価値が一律その分だけ加算されます。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIWeight&gt;0&lt;/iAIWeight&gt;</p>
-
 <h3 id="icost">&lt;iCost&gt;</h3>
-
 <p>この建造物の生産コストを指定します。(単位：〈ハンマー〉)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCost&gt;50&lt;/iCost&gt;</p>
-
 <h3 id="ihurrycostmodifier">&lt;iHurryCostModifier&gt;</h3>
-
 <p>この建造物を緊急生産するときのコスト修正率を指定します。(単位：%)</p>
-
-<p>緊急生産コストを普通にする場合、0を指定します。<br />
-BtSでは、中世までの国家遺産が50、それ以降の国家遺産やすべての世界遺産は100の値を持ちます。<sup class="footnote-ref" id="fnref:wwcm"><a href="#fn:wwcm">10</a></sup></p>
-
+<p>緊急生産コストを普通にする場合、0を指定します。<br>
+BtSでは、中世までの国家遺産が50、それ以降の国家遺産やすべての世界遺産は100の値を持ちます。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHurryCostModifier&gt;0&lt;/iHurryCostModifier&gt;</p>
-
-<p>例２：緊急生産コスト+100%<br />
+<p>例２：緊急生産コスト+100%<br>
 &lt;iHurryCostModifier&gt;100&lt;/iHurryCostModifier&gt;</p>
-
 <h3 id="iadvancedstartcost">&lt;iAdvancedStartCost&gt;</h3>
-
-<p>先行スタートにおいて、このユニットは本来の購入コストから<br />
-ここに指定した割合(単位：%)を掛けた金額で購入できます。<br />
+<p>先行スタートにおいて、このユニットは本来の購入コストから<br>
+ここに指定した割合(単位：%)を掛けた金額で購入できます。<br>
 -1を指定した場合、このユニットは先行スタートで購入できません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAdvancedStartCost&gt;100&lt;/iAdvancedStartCost&gt;</p>
-
-<p>例２：先行スタート時、本来の60%の価格で購入可能<br />
+<p>例２：先行スタート時、本来の60%の価格で購入可能<br>
 &lt;iAdvancedStartCost&gt;60&lt;/iAdvancedStartCost&gt;</p>
-
 <h3 id="iadvancedstartcostincrease">&lt;iAdvancedStartCostIncrease&gt;</h3>
-
-<p>先行スタートにおいて、このユニットは購入するごとに<br />
+<p>先行スタートにおいて、このユニットは購入するごとに<br>
 ここに指定した割合で(単位：%)購入コストが増加していきます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAdvancedStartCostIncrease&gt;0&lt;/iAdvancedStartCostIncrease&gt;</p>
-
-<p>例２：先行スタート時、1体購入するごとに50%ずつ購入コスト増加<br />
+<p>例２：先行スタート時、1体購入するごとに50%ずつ購入コスト増加<br>
 &lt;iAdvancedStartCostIncrease&gt;50&lt;/iAdvancedStartCostIncrease&gt;</p>
-
 <h3 id="iminareasize">&lt;iMinAreaSize&gt;</h3>
-
-<p>都市に隣接する<a href="https://gforestshade.github.io/kujira/post/glossary/#水域">水域</a>の大きさがここに指定した値以上のときのみ、<br />
+<p>都市に隣接する<a href="https://gforestshade.github.io/kujira/post/glossary/#%E6%B0%B4%E5%9F%9F">水域</a>の大きさがここに指定した値以上のときのみ、<br>
 この建造物を生産できます。</p>
-
 <p>そのような制限を設けない普通の建造物の場合、-1を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMinAreaSize&gt;-1&lt;/iMinAreaSize&gt;</p>
-
 <h3 id="iconquestprob">&lt;iConquestProb&gt;</h3>
-
-<p>この建造物のある都市が占領されたとき、ここに指定した確率で(単位：%)<br />
-この建造物は<strong><em>残ることができます</em></strong>。</p>
-
-<p><a href="#bnevercapture">&lt;bNeverCapture&gt;</a>に1(必ず破壊)、&lt;iConquestProb&gt;に1以上の値を指定する(残る確率がある)場合、<br />
+<p>この建造物のある都市が占領されたとき、ここに指定した確率で(単位：%)<br>
+この建造物は<em><strong>残ることができます</strong></em>。</p>
+<p><a href="#bnevercapture">&lt;bNeverCapture&gt;</a>に1(必ず破壊)、&lt;iConquestProb&gt;に1以上の値を指定する(残る確率がある)場合、<br>
 &lt;bNeverCapture&gt;が優先され、占領時必ず破壊されます。</p>
-
-<p>BtSでは、防壁や城など一部の建造物で、<code>bNeverCapture = 0</code>, <code>iConquestProb = 0</code>が指定されていて、<br />
+<p>BtSでは、防壁や城など一部の建造物で、<code>bNeverCapture = 0</code>, <code>iConquestProb = 0</code>が指定されていて、<br>
 結局占領時に残らないようになっている建造物があります。</p>
-
 <p>値：0(決して残らない)～100(必ず残る)までの整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iConquestProb&gt;0&lt;/iConquestProb&gt;</p>
-
 <h3 id="icitiesprereq">&lt;iCitiesPrereq&gt;</h3>
-
-<p>文明全体でここに指定した以上の数の都市を所有しているときのみ、<br />
-この建造物を生産できます。<br />
-都市数による制限を設けない場合、0を指定します。<br />
+<p>文明全体でここに指定した以上の数の都市を所有しているときのみ、<br>
+この建造物を生産できます。<br>
+都市数による制限を設けない場合、0を指定します。<br>
 BtSでは、宮殿(4)と紫禁城(8)がこの属性を持ちます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCitiesPrereq&gt;0&lt;/iCitiesPrereq&gt;</p>
-
 <h3 id="iteamsprereq">&lt;iTeamsPrereq&gt;</h3>
-
-<p>まだゲームに残っているチームの数がここに指定した数以上であるときのみ、<br />
+<p>まだゲームに残っているチームの数がここに指定した数以上であるときのみ、<br>
 この建造物を生産できます。</p>
-
-<p>残存チーム数による制限を設けない普通の建造物の場合、0を指定します。<br />
+<p>残存チーム数による制限を設けない普通の建造物の場合、0を指定します。<br>
 BtSでは、国際連合(3)とバチカン宮殿(3)がこの属性を持ちます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iTeamsPrereq&gt;0&lt;/iTeamsPrereq&gt;</p>
-
 <h3 id="ilevelprereq">&lt;iLevelPrereq&gt;</h3>
-
-<p>過去も含めてユニットレベルがここに指定した数に達したことのある文明でのみ、<br />
+<p>過去も含めてユニットレベルがここに指定した数に達したことのある文明でのみ、<br>
 この建造物を生産できます。</p>
-
 <p>過去最大レベルによる制限をしない普通の建造物の場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iLevelPrereq&gt;0&lt;/iLevelPrereq&gt;</p>
-
 <h3 id="iminlatitude">&lt;iMinLatitude&gt;</h3>
-
-<p>ここに指定した緯度より高い緯度に都市が建っている場合のみ、<br />
+<p>ここに指定した緯度より高い緯度に都市が建っている場合のみ、<br>
 この建造物を生産できます。</p>
-
-<p>緯度は赤道の0が最小で、北極と南極の90が最高です。<br />
+<p>緯度は赤道の0が最小で、北極と南極の90が最高です。<br>
 &lt;iMinLatitude&gt;を0に指定すると、下限を指定しないかのようになります。</p>
-
 <p>値：整数</p>
-
 <p>例：あとで</p>
-
 <h3 id="imaxlatitude">&lt;iMaxLatitude&gt;</h3>
-
-<p>ここに指定した緯度より低い緯度に都市が建っている場合のみ、<br />
+<p>ここに指定した緯度より低い緯度に都市が建っている場合のみ、<br>
 この建造物を生産できます。</p>
-
-<p>緯度は赤道の0が最小で、北極と南極の90が最高です。<br />
+<p>緯度は赤道の0が最小で、北極と南極の90が最高です。<br>
 &lt;iMaxLatitude&gt;を90に指定すると、上限を指定しないかのようになります。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
-&lt;iMinLatitude&gt;0&lt;/iMinLatitude&gt;<br />
+<p>例１：<br>
+&lt;iMinLatitude&gt;0&lt;/iMinLatitude&gt;<br>
 &lt;iMaxLatitude&gt;90&lt;/iMaxLatitude&gt;</p>
-
-<p>例２：最高北(南)緯30度で作成可能<br />
-&lt;iMinLatitude&gt;0&lt;/iMinLatitude&gt;<br />
+<p>例２：最高北(南)緯30度で作成可能<br>
+&lt;iMinLatitude&gt;0&lt;/iMinLatitude&gt;<br>
 &lt;iMaxLatitude&gt;30&lt;/iMaxLatitude&gt;</p>
-
 <h3 id="igreatpeopleratemodifier">&lt;iGreatPeopleRateModifier&gt;</h3>
-
-<p>都市の偉人ポイントへの修正率を指定します。<br />
+<p>都市の偉人ポイントへの修正率を指定します。<br>
 この建造物が建っている都市では偉人ポイントの産出が+n%されます。</p>
-
-<p>特に偉人ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br />
+<p>特に偉人ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは民族叙事詩と公共広場です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatPeopleRateModifier&gt;0&lt;/iGreatPeopleRateModifier&gt;</p>
-
 <h3 id="igreatgeneralratemodifier">&lt;iGreatGeneralRateModifier&gt;</h3>
-
-<p>大将軍ポイントへの修正率を指定します。<br />
+<p>大将軍ポイントへの修正率を指定します。<br>
 獲得する大将軍ポイントが(どこで戦闘したかを問わず)+n%されます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatGeneralRateModifier&gt;0&lt;/iGreatGeneralRateModifier&gt;</p>
-
 <h3 id="idomesticgreatgeneralratemodifier">&lt;iDomesticGreatGeneralRateModifier&gt;</h3>
-
-<p>国内大将軍ポイントへの修正率を指定します。<br />
+<p>国内大将軍ポイントへの修正率を指定します。<br>
 国内での戦闘により獲得する大将軍ポイントが+n%されます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物は万里の長城のみです。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iDomesticGreatGeneralRateModifier&gt;0&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
-
 <h3 id="iglobalgreatpeopleratemodifier">&lt;iGlobalGreatPeopleRateModifier&gt;</h3>
-
-<p>全都市の偉人ポイントへの修正率を指定します。<br />
+<p>全都市の偉人ポイントへの修正率を指定します。<br>
 この建造物を所有している文明は、全都市で偉人ポイントの産出が+n%されます。</p>
-
-<p>特に偉人ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br />
+<p>特に偉人ポイントを割合で増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはパルテノン神殿です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGlobalGreatPeopleRateModifier&gt;0&lt;/iGlobalGreatPeopleRateModifier&gt;</p>
-
 <h3 id="ianarchymodifier">&lt;iAnarchyModifier&gt;</h3>
-
 <p>無政府状態のターンに対する修正率を指定します。</p>
-
-<p>詳しくは、<a href="https://gforestshade.github.io/kujira/post/glossary/#無政府状態">用語集</a>も参照してください。</p>
-
-<p>無政府状態のターン数にとくに影響を及ぼさない普通の建造物の場合、0を指定します。<br />
-ここに-100を指定したときのみ、シヴィロペディアの表示が「無政府状態なし」に変わります。<br />
+<p>詳しくは、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E7%84%A1%E6%94%BF%E5%BA%9C%E7%8A%B6%E6%85%8B">用語集</a>も参照してください。</p>
+<p>無政府状態のターン数にとくに影響を及ぼさない普通の建造物の場合、0を指定します。<br>
+ここに-100を指定したときのみ、シヴィロペディアの表示が「無政府状態なし」に変わります。<br>
 BtSでは、この属性を持つ建造物はコルコバードのキリスト像のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAnarchyModifier&gt;0&lt;/iAnarchyModifier&gt;</p>
-
-<p>例２：社会制度または国境を変える際の待ち時間:-50%<br />
+<p>例２：社会制度または国境を変える際の待ち時間:-50%<br>
 &lt;iAnarchyModifier&gt;-50&lt;/iAnarchyModifier&gt;</p>
-
 <h3 id="igoldenagemodifier">&lt;iGoldenAgeModifier&gt;</h3>
-
 <p>黄金期の継続ターンに対する修正率を指定します。</p>
-
-<p>黄金期の継続ターンにとくに影響を及ぼさない普通の建造物の場合、0を指定します。<br />
+<p>黄金期の継続ターンにとくに影響を及ぼさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはマウソロス霊廟のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGoldenAgeModifier&gt;0&lt;/iGoldenAgeModifier&gt;</p>
-
-<p>例２：黄金時代の期間+50%<br />
+<p>例２：黄金時代の期間+50%<br>
 &lt;iGoldenAgeModifier&gt;50&lt;/iGoldenAgeModifier&gt;</p>
-
 <h3 id="iglobalhurrymodifier">&lt;iGlobalHurryModifier&gt;</h3>
-
-<p>全都市の緊急生産コスト修正率を指定します。(単位：%)<br />
-この建造物を所持している間、文明の全都市で緊急生産<sup class="footnote-ref" id="fnref:hurrytype"><a href="#fn:hurrytype">11</a></sup>コストに<br />
+<p>全都市の緊急生産コスト修正率を指定します。(単位：%)<br>
+この建造物を所持している間、文明の全都市で緊急生産<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>コストに<br>
 ここに指定した分だけ修正を受けます。</p>
-
-<p>緊急生産コストを修正しない普通の建造物の場合、0を指定します。<br />
+<p>緊急生産コストを修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はクレムリン宮殿のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalHurryModifier&gt;0&lt;/iGlobalHurryModifier&gt;</p>
-
-<p>例２：緊急生産コスト-33%<br />
+<p>例２：緊急生産コスト-33%<br>
 &lt;iGlobalHurryModifier&gt;-33&lt;/iGlobalHurryModifier&gt;</p>
-
 <h3 id="iexperience">&lt;iExperience&gt;</h3>
-
 <p>この都市で生産されるユニットは、ここに指定された分の経験値を追加で得ます。</p>
-
-<p>この属性はこの都市で生産される全ユニットが対象になります。<br />
-経験値を付与する対象を(陸上・海洋・兵科などで)制限したい場合は使用できません。<br />
+<p>この属性はこの都市で生産される全ユニットが対象になります。<br>
+経験値を付与する対象を(陸上・海洋・兵科などで)制限したい場合は使用できません。<br>
 <a href="#domainfreeexperiences">&lt;DomainFreeExperiences&gt;</a>や<a href="#unitcombatfreeexperiences">&lt;UnitCombatFreeExperiences&gt;</a>を参照してください。</p>
-
-<p>とくに経験値を加算しない普通の建造物の場合、0を指定します。<br />
+<p>とくに経験値を加算しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はウエストポイントのみです。</p>
-
-<p>ここに負の値を指定することはできますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
 各要因からの無償の経験値の合計が負になった場合は0まで底上げされます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iExperience&gt;0&lt;/iExperience&gt;</p>
-
-<p>例２：新ユニットが経験値+4ポイントを取得<br />
+<p>例２：新ユニットが経験値+4ポイントを取得<br>
 &lt;iExperience&gt;4&lt;/iExperience&gt;</p>
-
 <h3 id="iglobalexperience">&lt;iGlobalExperience&gt;</h3>
-
 <p>全都市で生産されるユニットに、ここに指定された分の経験値を追加で得させます。</p>
-
-<p>とくに経験値を加算しない普通の建造物の場合、0を指定します。<br />
+<p>とくに経験値を加算しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はペンタゴンのみです</p>
-
-<p>ここに負の値を指定することはできますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
 各要因からの無償の経験値の合計が負になった場合は0まで底上げされます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalExperience&gt;0&lt;/iGlobalExperience&gt;</p>
-
-<p>例２：全都市の新ユニットが経験値+2ポイントを取得<br />
+<p>例２：全都市の新ユニットが経験値+2ポイントを取得<br>
 &lt;iGlobalExperience&gt;2&lt;/iGlobalExperience&gt;</p>
-
 <h3 id="ifoodkept">&lt;iFoodKept&gt;</h3>
-
-<p>ここに正の値を指定した場合、<br />
-この建造物を所有している間に都市に貯蔵されたパンのうちその割合が<br />
+<p>ここに正の値を指定した場合、<br>
+この建造物を所有している間に都市に貯蔵されたパンのうちその割合が<br>
 人口増加時に追加で貯蔵されます。</p>
-
-<p>とくに食料を追加で持ち越さない普通の建造物の場合、0を指定します。<br />
+<p>とくに食料を追加で持ち越さない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物は穀物庫のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iFoodKept&gt;0&lt;/iFoodKept&gt;</p>
-
-<p>例２：成長後に食料50%を貯蔵<br />
+<p>例２：成長後に食料50%を貯蔵<br>
 &lt;iFoodKept&gt;50&lt;/iFoodKept&gt;</p>
-
 <h3 id="iairlift">&lt;iAirlift&gt;</h3>
-
 <p>ここに正の値を指定した場合、都市の空輸能力をその数だけ増やします。</p>
-
-<p>空輸能力が1以上ある都市は、1ターンにその数だけユニットを空輸できます。<br />
-また空輸される都市の側では、<br />
-空輸能力が0の都市なら1ターンに1ユニットを空輸されることができます。<br />
+<p>空輸能力が1以上ある都市は、1ターンにその数だけユニットを空輸できます。<br>
+また空輸される都市の側では、<br>
+空輸能力が0の都市なら1ターンに1ユニットを空輸されることができます。<br>
 空輸能力が1以上ある都市なら、空輸されるユニット数は無制限になります。</p>
-
-<p>都市の空輸能力は最初は0です。この属性によってのみ増やすことができます。<br />
-空輸能力を増やさない普通の建造物の場合、0を指定します。<br />
+<p>都市の空輸能力は最初は0です。この属性によってのみ増やすことができます。<br>
+空輸能力を増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは空港のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAirlift&gt;0&lt;/iAirlift&gt;</p>
-
-<p>例２：ターンごとに1 ユニットの空輸が可能に<br />
+<p>例２：ターンごとに1 ユニットの空輸が可能に<br>
 &lt;iAirlift&gt;1&lt;/iAirlift&gt;</p>
-
 <h3 id="iairmodifier">&lt;iAirModifier&gt;</h3>
-
 <p>この都市に駐留するユニットへの空爆ダメージに対する修正率を指定します。</p>
-
-<p>空爆ダメージをとくに修正しない普通の建造物の場合、0を指定します。<br />
+<p>空爆ダメージをとくに修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはバンカーのみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAirModifier&gt;0&lt;/iAirModifier&gt;</p>
-
-<p>例２：航空ユニットによるダメージ-50%<br />
+<p>例２：航空ユニットによるダメージ-50%<br>
 &lt;iAirModifier&gt;-50&lt;/iAirModifier&gt;</p>
-
 <h3 id="iairunitcapacity">&lt;iAirUnitCapacity&gt;</h3>
-
 <p>ここに正の値を指定した場合、都市の航空ユニット配備枠をここに指定した数だけ増やします。</p>
-
-<p>配備枠をとくに増やさない普通の建造物の場合、0を指定します。<br />
+<p>配備枠をとくに増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは空港のみです。</p>
-
 <p>ユニットの配備枠占有についてはユニットの<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#iairunitcap">&lt;iAirUnitCap&gt;</a>も参照してください。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAirUnitCapacity&gt;0&lt;/iAirUnitCapacity&gt;</p>
-
-<p>例２：+4航空ユニットを収容可能<br />
+<p>例２：+4航空ユニットを収容可能<br>
 &lt;iAirUnitCapacity&gt;4&lt;/iAirUnitCapacity&gt;</p>
-
 <h3 id="inukemodifier">&lt;iNukeModifier&gt;</h3>
-
-<p>核爆発<sup class="footnote-ref" id="fnref:nukeexplosion"><a href="#fn:nukeexplosion">12</a></sup>によるダメージに対する修正率を指定します。</p>
-
-<p>この修正は、ユニットへのダメージと人口減少数に対して適用されます。<br />
+<p>核爆発<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>によるダメージに対する修正率を指定します。</p>
+<p>この修正は、ユニットへのダメージと人口減少数に対して適用されます。<br>
 建造物の破壊確率には適用されません。</p>
-
-<p>核爆発ダメージをとくに修正しない普通の建造物の場合、0を指定します。<br />
+<p>核爆発ダメージをとくに修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは核シェルターのみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iNukeModifier&gt;0&lt;/iNukeModifier&gt;</p>
-
-<p>例２：核爆発によるダメージ-50%<br />
+<p>例２：核爆発によるダメージ-50%<br>
 &lt;iNukeModifier&gt;-50&lt;/iNukeModifier&gt;</p>
-
 <h3 id="inukeexplosionrand">&lt;iNukeExplosionRand&gt;</h3>
-
 <p>この建造物がメルトダウンする確率を指定します。</p>
-
-<p>ここに正の値nを指定する場合、この建造物は毎ターン1/nの確率でメルトダウンし、<br />
+<p>ここに正の値nを指定する場合、この建造物は毎ターン1/nの確率でメルトダウンし、<br>
 半径1の核爆発を起こします。</p>
-
-<p>メルトダウンしない普通の建造物の場合、0を指定します。<br />
+<p>メルトダウンしない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは原子力発電所のみです。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iNukeExplosionRand&gt;0&lt;/iNukeExplosionRand&gt;</p>
-
-<p>例２：原発事故の可能性あり、1/2000の確率でメルトダウン<br />
+<p>例２：原発事故の可能性あり、1/2000の確率でメルトダウン<br>
 &lt;iNukeExplosionRand&gt;2000&lt;/iNukeExplosionRand&gt;</p>
-
 <h3 id="ifreespecialist">&lt;iFreeSpecialist&gt;</h3>
-
-<p>ここに正の値を指定した場合、その数だけ都市に無償の専門家が与えられます。<br />
+<p>ここに正の値を指定した場合、その数だけ都市に無償の専門家が与えられます。<br>
 この属性では、プレイヤーがどの専門家に割り当てるかを決定します。</p>
-
-<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br />
+<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeSpecialist&gt;0&lt;/iFreeSpecialist&gt;</p>
-
 <h3 id="iareafreespecialist">&lt;iAreaFreeSpecialist&gt;</h3>
-
-<p>ここに正の値を指定した場合、その数だけ同じ大陸の全都市に無償の専門家が与えられます。<br />
+<p>ここに正の値を指定した場合、その数だけ同じ大陸の全都市に無償の専門家が与えられます。<br>
 この属性では、プレイヤーがどの専門家に割り当てるかを決定します。</p>
-
-<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br />
+<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物は自由の女神です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAreaFreeSpecialist&gt;0&lt;/iAreaFreeSpecialist&gt;</p>
-
 <h3 id="iglobalfreespecialist">&lt;iGlobalFreeSpecialist&gt;</h3>
-
-<p>ここに正の値を指定した場合、その数だけ文明の全都市に無償の専門家が与えられます。<br />
+<p>ここに正の値を指定した場合、その数だけ文明の全都市に無償の専門家が与えられます。<br>
 この属性では、プレイヤーがどの専門家に割り当てるかを決定します。</p>
-
-<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br />
+<p>とくに無償の専門家を提供しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGlobalFreeSpecialist&gt;0&lt;/iGlobalFreeSpecialist&gt;</p>
-
 <h3 id="imaintenancemodifier">&lt;iMaintenanceModifier&gt;</h3>
-
 <p>この都市の維持費に対する修正率を指定します。</p>
-
-<p>とくに維持費を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに維持費を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはイカンダと裁判所(とそのUU群)です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaintenanceModifier&gt;0&lt;/iMaintenanceModifier&gt;</p>
-
-<p>例２：維持管理費-50%<br />
+<p>例２：維持管理費-50%<br>
 &lt;iMaintenanceModifier&gt;-50&lt;/iMaintenanceModifier&gt;</p>
-
 <h3 id="iwarwearinessmodifier">&lt;iWarWearinessModifier&gt;</h3>
-
 <p>この都市の厭戦感情に対する修正率を指定します。</p>
-
-<p>とくに厭戦感情を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに厭戦感情を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは刑務所と霊廟です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iWarWearinessModifier&gt;0&lt;/iWarWearinessModifier&gt;</p>
-
-<p>例２：厭戦感情-25%<br />
+<p>例２：厭戦感情-25%<br>
 &lt;iWarWearinessModifier&gt;-25&lt;/iWarWearinessModifier&gt;</p>
-
 <h3 id="iglobalwarwearinessmodifier">&lt;iGlobalWarWearinessModifier&gt;</h3>
-
 <p>文明の全都市の厭戦感情に対する修正率を指定します。</p>
-
-<p>とくに厭戦感情を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに厭戦感情を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはラシュモア山です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalWarWearinessModifier&gt;0&lt;/iGlobalWarWearinessModifier&gt;</p>
-
-<p>例２：全都市で厭戦感情-25%<br />
+<p>例２：全都市で厭戦感情-25%<br>
 &lt;iGlobalWarWearinessModifier&gt;-25&lt;/iGlobalWarWearinessModifier&gt;</p>
-
 <h3 id="ienemywarwearinessmodifier">&lt;iEnemyWarWearinessModifier&gt;</h3>
-
 <p>戦争相手の厭戦感情に対する修正率を指定します。</p>
-
-<p>とくに相手の厭戦感情を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに相手の厭戦感情を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはゼウス像です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iEnemyWarWearinessModifier&gt;0&lt;/iEnemyWarWearinessModifier&gt;</p>
-
-<p>例２：敵が+100%厭戦感情をこうむります<br />
+<p>例２：敵が+100%厭戦感情をこうむります<br>
 &lt;iEnemyWarWearinessModifier&gt;100&lt;/iEnemyWarWearinessModifier&gt;</p>
-
 <h3 id="ihealratechange">&lt;iHealRateChange&gt;</h3>
-
-<p>この都市に駐留するユニットがダメージを回復するとき、<br />
+<p>この都市に駐留するユニットがダメージを回復するとき、<br>
 ここに指定したぶんだけ追加でダメージを回復します。</p>
-
-<p>この属性の効果は、都市に駐留したまま回復判定を迎えた場合に、回復値に追加される形で現れます。<br />
-回復判定を迎えなければ効果がないことに注意してください。<br />
+<p>この属性の効果は、都市に駐留したまま回復判定を迎えた場合に、回復値に追加される形で現れます。<br>
+回復判定を迎えなければ効果がないことに注意してください。<br>
 ユニットの回復判定はダメージを負った状態で移動せずにターンをまたいだ場合に発生します。</p>
-
-<p>追加の回復機能を持たない普通の建造物の場合、0を指定します。<br />
+<p>追加の回復機能を持たない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは病院のみです。</p>
-
-<p>ここに負の値を指定することもできます。<br />
-各要因からの回復値の合計が負の値になった場合、<br />
-そのユニットが回復判定を迎えるとその分ダメージを受けます。<br />
+<p>ここに負の値を指定することもできます。<br>
+各要因からの回復値の合計が負の値になった場合、<br>
+そのユニットが回復判定を迎えるとその分ダメージを受けます。<br>
 その場合でも、ダメージを負っていなければ回復判定が発生しないことに注意してください。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHealRateChange&gt;0&lt;/iHealRateChange&gt;</p>
-
-<p>例２：ユニットのダメージを、1ターンごとにさらに10%回復<br />
+<p>例２：ユニットのダメージを、1ターンごとにさらに10%回復<br>
 &lt;iHealRateChange&gt;10&lt;/iHealRateChange&gt;</p>
-
 <h3 id="ihealth">&lt;iHealth&gt;</h3>
-
 <p>この都市の〈衛生〉への増減値を指定します。</p>
-
-<p>ここに正の値を指定する場合、その分だけ〈衛生〉が加算されます。<br />
-ここに負の値を指定する場合、その分だけ〈不衛生〉が加算されます。<br />
-(この場合のみ、<a href="#bbuildingonlyhealthy">&lt;bBuildingOnlyHealthy&gt;</a>の対象になります。)<br />
+<p>ここに正の値を指定する場合、その分だけ〈衛生〉が加算されます。<br>
+ここに負の値を指定する場合、その分だけ〈不衛生〉が加算されます。<br>
+(この場合のみ、<a href="#bbuildingonlyhealthy">&lt;bBuildingOnlyHealthy&gt;</a>の対象になります。)<br>
 ここに0を指定する場合、どちらも発生しない普通の建造物になります。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHealth&gt;0&lt;/iHealth&gt;</p>
-
-<p>例２：衛生+2<br />
+<p>例２：衛生+2<br>
 &lt;iHealth&gt;2&lt;/iHealth&gt;</p>
-
-<p>例３：不衛生-1<br />
+<p>例３：不衛生-1<br>
 &lt;iHealth&gt;-1&lt;/iHealth&gt;</p>
-
 <h3 id="iareahealth">&lt;iAreaHealth&gt;</h3>
-
 <p>同じ大陸にある全都市の衛生への増減値を指定します。</p>
-
-<p>指定の仕方は<a href="#ihealth">&lt;iHealth&gt;</a>を参照してください。<br />
+<p>指定の仕方は<a href="#ihealth">&lt;iHealth&gt;</a>を参照してください。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAreaHealth&gt;0&lt;/iAreaHealth&gt;</p>
-
 <h3 id="iglobalhealth">&lt;iGlobalHealth&gt;</h3>
-
 <p>文明の全都市の衛生への増減値を指定します。</p>
-
-<p>指定の仕方は<a href="#ihealth">&lt;iHealth&gt;</a>を参照してください。<br />
+<p>指定の仕方は<a href="#ihealth">&lt;iHealth&gt;</a>を参照してください。<br>
 BtSでは、この属性を持つ建造物は空中庭園です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalHealth&gt;0&lt;/iGlobalHealth&gt;</p>
-
-<p>例２：全都市で衛生+1<br />
+<p>例２：全都市で衛生+1<br>
 &lt;iGlobalHealth&gt;1&lt;/iGlobalHealth&gt;</p>
-
 <h3 id="ihappiness">&lt;iHappiness&gt;</h3>
-
 <p>この都市の〈満足〉への増減値を指定します。</p>
-
-<p>ここに正の値を指定する場合、その分だけ〈満足〉が加算されます。<br />
-ここに負の値を指定する場合、その分だけ〈不満〉が加算されます。<br />
+<p>ここに正の値を指定する場合、その分だけ〈満足〉が加算されます。<br>
+ここに負の値を指定する場合、その分だけ〈不満〉が加算されます。<br>
 ここに0を指定する場合、どちらも発生しない普通の建造物になります。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHappiness&gt;0&lt;/iHappiness&gt;</p>
-
-<p>例２：満足+1<br />
+<p>例２：満足+1<br>
 &lt;iHappiness&gt;1&lt;/iHappiness&gt;</p>
-
-<p>例３：不満+10<br />
+<p>例３：不満+10<br>
 &lt;iHappiness&gt;-10&lt;/iHappiness&gt;</p>
-
 <h3 id="iareahappiness">&lt;iAreaHappiness&gt;</h3>
-
 <p>同じ大陸にある都市の満足への増減値を指定します。</p>
-
-<p>指定の仕方は<a href="#ihappiness">&lt;iHappiness&gt;</a>を参照してください。<br />
+<p>指定の仕方は<a href="#ihappiness">&lt;iHappiness&gt;</a>を参照してください。<br>
 BtSでは、この属性を持つのはノートルダム大聖堂のみです。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAreaHappiness&gt;0&lt;/iAreaHappiness&gt;</p>
-
 <h3 id="iglobalhappiness">&lt;iGlobalHappiness&gt;</h3>
-
 <p>文明の全都市の満足への増減値を指定します。</p>
-
-<p>指定の仕方は<a href="#ihappiness">&lt;iHappiness&gt;</a>を参照してください。<br />
+<p>指定の仕方は<a href="#ihappiness">&lt;iHappiness&gt;</a>を参照してください。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGlobalHappiness&gt;0&lt;/iGlobalHappiness&gt;</p>
-
 <h3 id="istatereligionhappiness">&lt;iStateReligionHappiness&gt;</h3>
-
 <p>この建造物が<a href="#religiontype">国教建造物</a>ならば、この建造物はここに指定した値の幸福を産出します。</p>
-
-<p><a href="#religiontype">&lt;ReligionType&gt;</a>を指定しなかったり、国教と違っている場合は、<br />
+<p><a href="#religiontype">&lt;ReligionType&gt;</a>を指定しなかったり、国教と違っている場合は、<br>
 この属性からは何も産出しません。</p>
-
-<p>この機能を使わない場合は、0を指定します。<br />
-BtSでは、この属性を持つのは各宗教の<a href="https://gforestshade.github.io/kujira/post/glossary/#大聖堂">大聖堂</a>です。</p>
-
+<p>この機能を使わない場合は、0を指定します。<br>
+BtSでは、この属性を持つのは各宗教の<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%A4%A7%E8%81%96%E5%A0%82">大聖堂</a>です。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iStateReligionHappiness&gt;0&lt;/iStateReligionHappiness&gt;</p>
-
 <h3 id="iworkerspeedmodifier">&lt;iWorkerSpeedModifier&gt;</h3>
-
-<p>労働効率への修正率を指定します。<br />
+<p>労働効率への修正率を指定します。<br>
 この建造物を所有している間、この修正は全労働者に対して自動的に有効になります。</p>
-
-<p>とくに労働効率を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに労働効率を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはハギア・ソフィア大聖堂のみです。</p>
-
-<p>ここに負の値を指定することもできます。<br />
-それによって労働効率が負の値になる場合、0まで底上げされます。<br />
+<p>ここに負の値を指定することもできます。<br>
+それによって労働効率が負の値になる場合、0まで底上げされます。<br>
 ただし労働効率が0になるとタイル整備コマンドは何もしないことに注意してください。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iWorkerSpeedModifier&gt;0&lt;/iWorkerSpeedModifier&gt;</p>
-
-<p>例２：労働者の資源活用施設の建設速度が+50%向上<br />
+<p>例２：労働者の資源活用施設の建設速度が+50%向上<br>
 &lt;iWorkerSpeedModifier&gt;50&lt;/iWorkerSpeedModifier&gt;</p>
-
 <h3 id="imilitaryproductionmodifier">&lt;iMilitaryProductionModifier&gt;</h3>
-
 <p>この都市が<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bmilitaryproduction">軍事ユニット</a>を生産するときの〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>とくに軍事ユニット生産に修正を与えない普通の建造物の場合、0を指定します。<br />
+<p>とくに軍事ユニット生産に修正を与えない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは士官学校と英雄叙事詩です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMilitaryProductionModifier&gt;0&lt;/iMilitaryProductionModifier&gt;</p>
-
-<p>例２：軍事ユニット生産+100%<br />
+<p>例２：軍事ユニット生産+100%<br>
 &lt;iMilitaryProductionModifier&gt;100&lt;/iMilitaryProductionModifier&gt;</p>
-
 <h3 id="ispaceproductionmodifier">&lt;iSpaceProductionModifier&gt;</h3>
-
 <p>この都市が宇宙船のパーツを生産するときの〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>とくに宇宙船パーツ生産を加速しない普通の建造物の場合、0を指定します。<br />
+<p>とくに宇宙船パーツ生産を加速しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは研究所と研究施設です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iSpaceProductionModifier&gt;0&lt;/iSpaceProductionModifier&gt;</p>
-
-<p>例２：宇宙船の生産+50%<br />
+<p>例２：宇宙船の生産+50%<br>
 &lt;iSpaceProductionModifier&gt;50&lt;/iSpaceProductionModifier&gt;</p>
-
 <h3 id="iglobalspaceproductionmodifier">&lt;iGlobalSpaceProductionModifier&gt;</h3>
-
 <p>文明の全都市に対し、宇宙船のパーツを生産するときの〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>とくに宇宙船パーツ生産を加速しない普通の建造物の場合、0を指定します。<br />
+<p>とくに宇宙船パーツ生産を加速しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは軌道エレベーターです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalSpaceProductionModifier&gt;0&lt;/iGlobalSpaceProductionModifier&gt;</p>
-
-<p>例２：全都市で宇宙船の生産+50%<br />
+<p>例２：全都市で宇宙船の生産+50%<br>
 &lt;iGlobalSpaceProductionModifier&gt;50&lt;/iGlobalSpaceProductionModifier&gt;</p>
-
 <h3 id="itraderoutes">&lt;iTradeRoutes&gt;</h3>
-
 <p>ここに正の値を指定した場合、その数だけこの都市の交易路を増やします。</p>
-
-<p>とくに交易路を増やさない普通の建造物の場合、0を指定します。<br />
+<p>とくに交易路を増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは城・城塞・コトン・空港です。</p>
-
-<p>ここに負の値を指定することはできますが、<br />
-交易路の総本数が負の値になることは想定されていないため、<br />
-そうならないように注意を払うべきです。<br />
-実験したところでは、総本数が負の値になっても0本であるかのようにふるまいますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
+交易路の総本数が負の値になることは想定されていないため、<br>
+そうならないように注意を払うべきです。<br>
+実験したところでは、総本数が負の値になっても0本であるかのようにふるまいますが、<br>
 想定外の動作であることに注意してください。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iTradeRoutes&gt;0&lt;/iTradeRoutes&gt;</p>
-
-<p>例２：交易路+1<br />
+<p>例２：交易路+1<br>
 &lt;iTradeRoutes&gt;1&lt;/iTradeRoutes&gt;</p>
-
 <h3 id="icoastaltraderoutes">&lt;iCoastalTradeRoutes&gt;</h3>
-
 <p>ここに正の値を指定した場合、その数だけ文明の全ての沿岸都市に交易路を増やします。</p>
-
-<p>とくに沿岸交易路を増やさない普通の建造物の場合、0を指定します。<br />
+<p>とくに沿岸交易路を増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのはファロス灯台です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iCoastalTradeRoutes&gt;0&lt;/iCoastalTradeRoutes&gt;</p>
-
-<p>例２：沿岸部にある全都市で交易路を+2<br />
+<p>例２：沿岸部にある全都市で交易路を+2<br>
 &lt;iCoastalTradeRoutes&gt;2&lt;/iCoastalTradeRoutes&gt;</p>
-
 <h3 id="iglobaltraderoutes">&lt;iGlobalTradeRoutes&gt;</h3>
-
 <p>ここに正の値を指定した場合、その数だけ文明の全都市に交易路を増やします。</p>
-
-<p>とくに交易路を増やさない普通の建造物の場合、0を指定します。<br />
+<p>とくに交易路を増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGlobalTradeRoutes&gt;0&lt;/iGlobalTradeRoutes&gt;</p>
-
 <h3 id="itraderoutemodifier">&lt;iTradeRouteModifier&gt;</h3>
-
 <p>この都市の交易路収益に対する修正率を指定します。</p>
-
-<p>とくに交易路収益を修正しない普通の建造物の場合、0を指定します。<br />
+<p>とくに交易路収益を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは港・コトン・アルテミス神殿です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iTradeRouteModifier&gt;0&lt;/iTradeRouteModifier&gt;</p>
-
-<p>例２：交易路の生産量+50%<br />
+<p>例２：交易路の生産量+50%<br>
 &lt;iTradeRouteModifier&gt;50&lt;/iTradeRouteModifier&gt;</p>
-
 <h3 id="iforeigntraderoutemodifier">&lt;iForeignTradeRouteModifier&gt;</h3>
-
-<p>この都市の対外交易路<sup class="footnote-ref" id="fnref:foreigntr"><a href="#fn:foreigntr">13</a></sup>からの収益に対する修正率を指定します。</p>
-
-<p>とくに交易路収益を修正しない普通の建造物の場合、0を指定します。<br />
+<p>この都市の対外交易路<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>からの収益に対する修正率を指定します。</p>
+<p>とくに交易路収益を修正しない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは税関・フェイトリアです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iForeignTradeRouteModifier&gt;0&lt;/iForeignTradeRouteModifier&gt;</p>
-
-<p>例２：<del>大陸間</del> 国際貿易利益+100%<br />
+<p>例２：<del>大陸間</del> 国際貿易利益+100%<br>
 &lt;iForeignTradeRouteModifier&gt;100&lt;/iForeignTradeRouteModifier&gt;</p>
-
 <h3 id="iglobalpopulationchange">&lt;iGlobalPopulationChange&gt;</h3>
-
 <p>この建造物が完成したとき、文明の全都市の人口がここに指定した数だけ増えます。</p>
-
-<p>とくに人口を増やさない普通の建造物の場合、0を指定します。<br />
+<p>とくに人口を増やさない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つのは空中庭園です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGlobalPopulationChange&gt;0&lt;/iGlobalPopulationChange&gt;</p>
-
-<p>例２：全都市の人口+1<br />
+<p>例２：全都市の人口+1<br>
 &lt;iGlobalPopulationChange&gt;1&lt;/iGlobalPopulationChange&gt;</p>
-
 <h3 id="ifreetechs">&lt;iFreeTechs&gt;</h3>
-
-<p>ここに正の値を指定した場合、この建造物が完成したとき、<br />
+<p>ここに正の値を指定した場合、この建造物が完成したとき、<br>
 建造した文明はその数ぶんの無償のテクノロジーを得ます。</p>
-
 <p>とくに無償の技術を与えない普通の建造物の場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iFreeTechs&gt;0&lt;/iFreeTechs&gt;</p>
-
-<p>例２：1種類のテクノロジーを無償で獲得<br />
+<p>例２：1種類のテクノロジーを無償で獲得<br>
 &lt;iFreeTechs&gt;1&lt;/iFreeTechs&gt;</p>
-
 <h3 id="idefense">&lt;iDefense&gt;</h3>
-
 <p>ここに正の値を指定する場合、この都市の建造物防御値がそのぶんだけ増えます。</p>
-
-<p>最終的な都市防御ボーナス基礎値は、素の文化防御値と建造物防御値の高いほうが選ばれます。<br />
+<p>最終的な都市防御ボーナス基礎値は、素の文化防御値と建造物防御値の高いほうが選ばれます。<br>
 この属性は、ユニットの<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bignorebuildingdefense">&lt;bIgnoreBuildingDefense&gt;</a>によって無効化されます。</p>
-
 <p>建造物防御値を増やさない普通の建造物の場合、0を指定します。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iDefense&gt;0&lt;/iDefense&gt;</p>
-
-<p>例２：防御力+50%<br />
+<p>例２：防御力+50%<br>
 &lt;iDefense&gt;50&lt;/iDefense&gt;</p>
-
 <h3 id="ibombarddefense">&lt;iBombardDefense&gt;</h3>
-
-<p>この都市への砲撃ダメージに対する軽減率を指定します。<br />
+<p>この都市への砲撃ダメージに対する軽減率を指定します。<br>
 ここに正の値を指定する場合、その割合だけこの都市への砲撃ダメージが減ります。</p>
-
 <p>この属性は、ユニットの<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bignorebuildingdefense">&lt;bIgnoreBuildingDefense&gt;</a>によって無効化されます。</p>
-
 <p>とくに砲撃ダメージを軽減しない普通の建造物の場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iBombardDefense&gt;0&lt;/iBombardDefense&gt;</p>
-
-<p>例２：砲撃による都市防御へのダメージ-50%<br />
+<p>例２：砲撃による都市防御へのダメージ-50%<br>
 &lt;iBombardDefense&gt;50&lt;/iBombardDefense&gt;</p>
-
 <h3 id="iallcitydefense">&lt;iAllCityDefense&gt;</h3>
-
 <p>ここに正の値を指定する場合、文明の全都市の建造物防御値がそのぶんだけ増えます。</p>
-
-<p>この属性は、ユニットの<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bignorebuildingdefense">&lt;bIgnoreBuildingDefense&gt;</a>によって無効化<strong><em>されません</em></strong>。</p>
-
+<p>この属性は、ユニットの<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bignorebuildingdefense">&lt;bIgnoreBuildingDefense&gt;</a>によって無効化<em><strong>されません</strong></em>。</p>
 <p>BtSでは、この属性を持つ建造物はチチェンイツァーのみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAllCityDefense&gt;0&lt;/iAllCityDefense&gt;</p>
-
-<p>例２：全都市の防御力+25%<br />
+<p>例２：全都市の防御力+25%<br>
 &lt;iAllCityDefense&gt;25&lt;/iAllCityDefense&gt;</p>
-
 <h3 id="iespionagedefense">&lt;iEspionageDefense&gt;</h3>
-
-<p>他国のスパイがこの都市で行う諜報ミッションのコストに対する修正率を指定します。<br />
-さらに、この修正率が正の値になる場合、<br />
+<p>他国のスパイがこの都市で行う諜報ミッションのコストに対する修正率を指定します。<br>
+さらに、この修正率が正の値になる場合、<br>
 スパイユニットが駐留しているのと同様のスパイ活動妨害効果を得ます。</p>
-
-<p>特に防諜能力のない普通の建造物の場合、0を指定します。<br />
+<p>特に防諜能力のない普通の建造物の場合、0を指定します。<br>
 BtSでは、この属性を持つ建造物は公安局のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iEspionageDefense&gt;0&lt;/iEspionageDefense&gt;</p>
-
-<p>例２：防諜レベル+50%、敵スパイの妨害<br />
+<p>例２：防諜レベル+50%、敵スパイの妨害<br>
 &lt;iEspionageDefense&gt;50&lt;/iEspionageDefense&gt;</p>
-
 <h3 id="iasset">&lt;iAsset&gt;</h3>
-
 <p>このユニットは、ここに指定した値だけスコアを増やします。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAsset&gt;1&lt;/iAsset&gt;</p>
-
 <h3 id="ipower">&lt;iPower&gt;</h3>
-
 <p>このユニットは、ここに指定した値だけ軍事力を増やします。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iPower&gt;3&lt;/iPower&gt;</p>
-
 <h3 id="fvisibilitypriority">&lt;fVisibilityPriority&gt;</h3>
-
-<p>マップ上の都市に建造物の3Dモデルを描画する際の優先度を指定します。<br />
+<p>マップ上の都市に建造物の3Dモデルを描画する際の優先度を指定します。<br>
 都市に入りきらなくなった優先度の低い建造物のモデルは描画を省略されます。</p>
-
 <p>値：小数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;fVisibilityPriority&gt;1.0&lt;/fVisibilityPriority&gt;</p>
-
 <h3 id="yieldchanges">&lt;YieldChanges&gt;</h3>
-
 <p>この建造物が直接産出する〈パン〉・〈ハンマー〉・〈コイン〉への加減値を指定します。</p>
-
-<p>値は&lt;iYield&gt;のリストで、上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br />
+<p>値は&lt;iYield&gt;のリストで、上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br>
 &lt;iYield&gt;を1個や2個で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
 <p>〈パン〉・〈ハンマー〉・〈コイン〉のいずれもこの建造物からは直接産出しない場合、空タグにします。</p>
-
-<p>各&lt;iYield&gt;に負の値を指定することはできますが、<br />
-都市合計で負の値にならないように気を付けてください。<br />
+<p>各&lt;iYield&gt;に負の値を指定することはできますが、<br>
+都市合計で負の値にならないように気を付けてください。<br>
 出力にペナルティーを与えたい場合、<a href="#yieldmodifiers">&lt;YieldModifiers&gt;</a>の使用も検討してください。</p>
-
-<hr />
-
-<p>例１：<br />
+<hr>
+<p>例１：<br>
 &lt;YieldChanges /&gt;</p>
-
-<hr />
-
+<hr>
 <p>例２：+1〈パン〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;1&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例２(別解)：+1〈パン〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;1&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例３：+2〈ハンマー〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;2&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例３(別解)：+2〈ハンマー〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;2&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例４：+3〈コイン〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;3&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例５：+2〈パン〉・+2〈ハンマー〉・-2〈コイン〉</p>
-
-<pre><code class="language-plain">&lt;YieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldChanges&gt;
     &lt;iYield&gt;2&lt;/iYield&gt;
     &lt;iYield&gt;2&lt;/iYield&gt;
     &lt;iYield&gt;-2&lt;/iYield&gt;
 &lt;/YieldChanges&gt;
-</code></pre>
-
-<h3 id="yieldmodifiers">&lt;YieldModifiers&gt;</h3>
-
+</code></pre></div><h3 id="yieldmodifiers">&lt;YieldModifiers&gt;</h3>
 <p>この都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
-<p>値は&lt;iYield&gt;のリストで、上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br />
+<p>値は&lt;iYield&gt;のリストで、上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br>
 &lt;iYield&gt;を1個や2個で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
 <p>この機能を使わない場合、タグごと省略します。</p>
-
 <p>例：+25%〈ハンマー〉</p>
-
-<pre><code class="language-plain">&lt;YieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;YieldModifiers&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;25&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
 &lt;/YieldModifiers&gt;
-</code></pre>
-
-<h3 id="poweryieldmodifiers">&lt;PowerYieldModifiers&gt;</h3>
-
-<p>この都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。<br />
+</code></pre></div><h3 id="poweryieldmodifiers">&lt;PowerYieldModifiers&gt;</h3>
+<p>この都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。<br>
 ただしこの属性は、<a href="https://gforestshade.github.io/kujira/post/power/">〈電力〉</a>が供給されている場合にのみ有効になります。</p>
-
 <p>この機能を使わない場合、タグごと省略します。</p>
-
 <p>例：+50%〈ハンマー〉 エネルギー(電力)があれば</p>
-
-<pre><code class="language-plain">&lt;PowerYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PowerYieldModifiers&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
 &lt;/PowerYieldModifiers&gt;
-</code></pre>
-
-<h3 id="areayieldmodifiers">&lt;AreaYieldModifiers&gt;</h3>
-
+</code></pre></div><h3 id="areayieldmodifiers">&lt;AreaYieldModifiers&gt;</h3>
 <p>同じ大陸にある全都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
-<p>この機能を使わない場合、タグごと省略します。<br />
+<p>この機能を使わない場合、タグごと省略します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>例：+50%〈コイン〉この大陸の全都市</p>
-
-<pre><code class="language-plain">&lt;AreaYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;AreaYieldModifiers&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
 &lt;/AreaYieldModifiers&gt;
-</code></pre>
-
-<h3 id="globalyieldmodifiers">&lt;GlobalYieldModifiers&gt;</h3>
-
+</code></pre></div><h3 id="globalyieldmodifiers">&lt;GlobalYieldModifiers&gt;</h3>
 <p>文明の全都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
-<p>この機能を使わない場合、タグごと省略します。<br />
+<p>この機能を使わない場合、タグごと省略します。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>例：+50%〈コイン〉 全都市</p>
-
-<pre><code class="language-plain">&lt;GlobalYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;GlobalYieldModifiers&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
 &lt;/GlobalYieldModifiers&gt;
-</code></pre>
-
-<h3 id="seaplotyieldchanges">&lt;SeaPlotYieldChanges&gt;</h3>
-
+</code></pre></div><h3 id="seaplotyieldchanges">&lt;SeaPlotYieldChanges&gt;</h3>
 <p>この都市の都市圏にある水タイルの〈パン〉・〈ハンマー〉・〈コイン〉への加減値を指定します。</p>
-
 <p>指定の仕方は<a href="#yieldchanges">&lt;YieldChanges&gt;</a>も参照してください。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SeaPlotYieldChanges /&gt;</p>
-
 <p>例２：海洋スクエア:+1〈パン〉</p>
-
-<pre><code class="language-plain">&lt;SeaPlotYieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;SeaPlotYieldChanges&gt;
     &lt;iYield&gt;1&lt;/iYield&gt;
 &lt;/SeaPlotYieldChanges&gt;
-</code></pre>
-
-<h3 id="riverplotyieldchanges">&lt;RiverPlotYieldChanges&gt;</h3>
-
+</code></pre></div><h3 id="riverplotyieldchanges">&lt;RiverPlotYieldChanges&gt;</h3>
 <p>この都市の都市圏にある川沿いタイルの〈パン〉・〈ハンマー〉・〈コイン〉への加減値を指定します。</p>
-
 <p>指定の仕方は<a href="#yieldchanges">&lt;YieldChanges&gt;</a>も参照してください。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;RiverPlotYieldChanges /&gt;</p>
-
 <p>例２：川沿いタイルから+1〈ハンマー〉</p>
-
-<pre><code class="language-plain">&lt;RiverPlotYieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;RiverPlotYieldChanges&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;1&lt;/iYield&gt;
 &lt;/RiverPlotYieldChanges&gt;
-</code></pre>
-
-<h3 id="globalseaplotyieldchanges">&lt;GlobalSeaPlotYieldChanges&gt;</h3>
-
+</code></pre></div><h3 id="globalseaplotyieldchanges">&lt;GlobalSeaPlotYieldChanges&gt;</h3>
 <p>全都市の水タイルの〈パン〉・〈ハンマー〉・〈コイン〉への加減値を指定します。</p>
-
 <p>指定の仕方は<a href="#yieldchanges">&lt;YieldChanges&gt;</a>も参照してください。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;GlobalSeaPlotYieldChanges /&gt;</p>
-
 <p>例２：全都市の海洋スクエア:+1〈コイン〉</p>
-
-<pre><code class="language-plain">&lt;GlobalSeaPlotYieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;GlobalSeaPlotYieldChanges&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;1&lt;/iYield&gt;
 &lt;/GlobalSeaPlotYieldChanges&gt;
-</code></pre>
-
-<h3 id="commercechanges">&lt;CommerceChanges&gt;</h3>
-
+</code></pre></div><h3 id="commercechanges">&lt;CommerceChanges&gt;</h3>
 <p>この建造物が直接産出する〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への加減値を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
 <p>〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉のいずれもこの建造物からは直接産出しない場合、空タグにします。</p>
-
-<p>各&lt;iCommerce&gt;に負の値を指定することはできますが、<br />
-都市合計で負の値にならないように気を付けてください。<br />
+<p>各&lt;iCommerce&gt;に負の値を指定することはできますが、<br>
+都市合計で負の値にならないように気を付けてください。<br>
 出力にペナルティーを与えたい場合、<a href="#commercemodifiers">&lt;CommerceModifiers&gt;</a>の使用も検討してください。</p>
-
-<hr />
-
-<p>例１：<br />
+<hr>
+<p>例１：<br>
 &lt;CommerceChanges /&gt;</p>
-
-<hr />
-
+<hr>
 <p>例２：+1〈ゴールド〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;1&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例２・別解：+1〈ゴールド〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;1&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例３：+2〈ビーカー〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例３・別解：+2〈ビーカー〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例４：+3〈文化〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;3&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例４・別解：+3〈文化〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;3&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例５：+4〈諜報〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;4&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例６：-2〈ゴールド〉・+2〈ビーカー〉・+4〈諜報〉</p>
-
-<pre><code class="language-plain">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;-2&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;4&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<h3 id="obsoletesafecommercechanges">&lt;ObsoleteSafeCommerceChanges&gt;</h3>
-
-<p>この建造物が陳腐化後も産出する〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への加減値を指定します。<br />
-この属性だけは陳腐化の影響を受けず、陳腐化する前でも後でも同じ出力を産出します。<br />
+</code></pre></div><h3 id="obsoletesafecommercechanges">&lt;ObsoleteSafeCommerceChanges&gt;</h3>
+<p>この建造物が陳腐化後も産出する〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への加減値を指定します。<br>
+この属性だけは陳腐化の影響を受けず、陳腐化する前でも後でも同じ出力を産出します。<br>
 BtSの建造物が陳腐化後も〈文化〉を出し続けるのは、ここに指定しているからです。</p>
-
-<p>陳腐化する前であれば、<a href="#commercechanges">&lt;CommerceChanges&gt;</a>と重複し、<br />
-両方の出力が合計されることに注意してください。<br />
-〈文化〉の例では、<a href="#commercechanges">&lt;CommerceChanges&gt;</a>には指定せず<br />
+<p>陳腐化する前であれば、<a href="#commercechanges">&lt;CommerceChanges&gt;</a>と重複し、<br>
+両方の出力が合計されることに注意してください。<br>
+〈文化〉の例では、<a href="#commercechanges">&lt;CommerceChanges&gt;</a>には指定せず<br>
 &lt;ObsoleteSafeCommerceChanges&gt;に指定することでBtSと同じ挙動になります。</p>
-
 <p>指定の仕方は<a href="#commercechanges">&lt;CommerceChanges&gt;</a>も参照してください。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ObsoleteSafeCommerceChanges /&gt;</p>
-
 <p>例２：+2〈文化〉(陳腐化しない)</p>
-
-<pre><code class="language-plain">&lt;ObsoleteSafeCommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ObsoleteSafeCommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
 &lt;/ObsoleteSafeCommerceChanges&gt;
-</code></pre>
-
-<h3 id="commercechangedoubletimes">&lt;CommerceChangeDoubleTimes&gt;</h3>
-
+</code></pre></div><h3 id="commercechangedoubletimes">&lt;CommerceChangeDoubleTimes&gt;</h3>
 <p>出力を倍にするために必要となる年数を指定します。</p>
-
-<p>ここに正の値nを指定した場合、この建造物が完成してからn年<sup class="footnote-ref" id="fnref:year"><a href="#fn:year">14</a></sup>ごとに、<br />
+<p>ここに正の値nを指定した場合、この建造物が完成してからn年<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>ごとに、<br>
 該当する出力が2倍になります。</p>
-
-<p>BtSでは、〈文化〉に対して1000を指定することで、<br />
+<p>BtSでは、〈文化〉に対して1000を指定することで、<br>
 俗に「Agedボーナス」と呼ばれる挙動が実現されています。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
-&lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
+&lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。<br>
 0を指定すると、その出力に対しては2倍になる効果は働きません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceChangeDoubleTimes /&gt;</p>
-
 <p>例２：完成から1000年経つと〈文化〉2倍</p>
-
-<pre><code class="language-plain">&lt;CommerceChangeDoubleTimes&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChangeDoubleTimes&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;1000&lt;/iCommerce&gt;
 &lt;/CommerceChangeDoubleTimes&gt;
-</code></pre>
-
-<h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
-
+</code></pre></div><h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
 <p>この都市の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
 <p>〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉のいずれにも修正率を与えない場合、空タグにします。</p>
-
-<hr />
-
-<p>例１：<br />
+<hr>
+<p>例１：<br>
 &lt;CommerceModifiers /&gt;</p>
-
-<hr />
-
+<hr>
 <p>例２：+25%〈ゴールド〉</p>
-
-<pre><code class="language-plain">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;25&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例３：+25%〈ビーカー〉</p>
-
-<pre><code class="language-plain">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;25&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例４：+50%〈文化〉</p>
-
-<pre><code class="language-plain">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例５：+50%〈諜報〉</p>
-
-<pre><code class="language-plain">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<h3 id="globalcommercemodifiers">&lt;GlobalCommerceModifiers&gt;</h3>
-
+</code></pre></div><h3 id="globalcommercemodifiers">&lt;GlobalCommerceModifiers&gt;</h3>
 <p>文明の全都市の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;GlobalCommerceModifiers /&gt;</p>
-
 <p>例２：+50%〈ゴールド〉, +50%〈ビーカー〉, +50%〈文化〉, +50%〈諜報〉 全都市</p>
-
-<pre><code class="language-plain">&lt;GlobalCommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;GlobalCommerceModifiers&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
     &lt;iCommerce&gt;50&lt;/iCommerce&gt;
 &lt;/GlobalCommerceModifiers&gt;
-</code></pre>
-
-<h3 id="specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</h3>
-
-<p>文明の全都市・全種類の専門家から産出される、<br />
+</code></pre></div><h3 id="specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</h3>
+<p>文明の全都市・全種類の専門家から産出される、<br>
 〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉に対する増減値を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみです。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialistExtraCommerces /&gt;</p>
-
 <p>例２：+2〈文化〉を全都市の専門家ごとに取得</p>
-
-<pre><code class="language-plains">&lt;SpecialistExtraCommerces&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;SpecialistExtraCommerces&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
 &lt;/SpecialistExtraCommerces&gt;
-</code></pre>
-
-<h3 id="statereligioncommerces">&lt;StateReligionCommerces&gt;</h3>
-
-<p>文明の全都市に建造されている<a href="#religiontype">国教建造物</a>が追加で産出する<br />
+</code></pre><h3 id="statereligioncommerces">&lt;StateReligionCommerces&gt;</h3>
+<p>文明の全都市に建造されている<a href="#religiontype">国教建造物</a>が追加で産出する<br>
 〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみです。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;StateReligionCommerces&gt;</p>
-
 <p>例２：+2〈ビーカー〉を すべての国教の建造物から取得</p>
-
-<pre><code class="language-plains">&lt;StateReligionCommerces&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;StateReligionCommerces&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
 &lt;/StateReligionCommerces&gt;
-</code></pre>
-
-<h3 id="commercehappinesses">&lt;CommerceHappinesses&gt;</h3>
-
-<p>この都市について、商業力スライダーを〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉の<br />
+</code></pre><h3 id="commercehappinesses">&lt;CommerceHappinesses&gt;</h3>
+<p>この都市について、商業力スライダーを〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉の<br>
 いずれかに振ることにより産出される〈幸福〉の量を指定します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 &lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
-<p>&lt;iCommerce&gt;に正の値nを指定した場合、100%の1/nを振るごとに<br />
+<p>&lt;iCommerce&gt;に正の値nを指定した場合、100%の1/nを振るごとに<br>
 その都市は+1の〈幸福〉を得ます。</p>
-
 <p>たとえば劇場の記述を例にすると、</p>
-
-<pre><code class="language-plains">&lt;CommerceHappinesses&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;CommerceHappinesses&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;10&lt;/iCommerce&gt;
 &lt;/CommerceHappinesses&gt;
-</code></pre>
-
-<p>100% の 1/10 = 10% を〈文化〉に振るごとに+1〈幸福〉が産出されます。</p>
-
+</code></pre><p>100% の 1/10 = 10% を〈文化〉に振るごとに+1〈幸福〉が産出されます。</p>
 <p>この機能を使わない場合、空タグにします。</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;CommerceHappinesses /&gt;</p>
-
 <h3 id="religionchanges">&lt;ReligionChanges&gt;</h3>
-
-<p>この建造物から発生する宗教圧力を指定します。<br />
-ここに宗教と値の組を指定すると、<br />
+<p>この建造物から発生する宗教圧力を指定します。<br>
+ここに宗教と値の組を指定すると、<br>
 その宗教の周囲への自然伝搬率がその値のぶんだけ上がります。</p>
-
-<p>宗教圧力は聖都から1発生しますが、そのほかにはこの属性からのみ発生し、<br />
+<p>宗教圧力は聖都から1発生しますが、そのほかにはこの属性からのみ発生し、<br>
 ただ布教されているだけの都市や、そのほかの宗教建造物からは発生しません。</p>
-
-<p>宗教圧力は交易路を通して伝搬し、交易路がつながっていて、<br />
-宗教がまだ布教されていない都市に対してのみ自然伝搬します。<br />
-宗教圧力は距離によって急速に減衰するので、遠くにある都市ほど伝搬しにくくなります。<sup class="footnote-ref" id="fnref:religiondistance"><a href="#fn:religiondistance">15</a></sup></p>
-
-<p>また、ここになんらかの宗教を指定する場合、<br />
+<p>宗教圧力は交易路を通して伝搬し、交易路がつながっていて、<br>
+宗教がまだ布教されていない都市に対してのみ自然伝搬します。<br>
+宗教圧力は距離によって急速に減衰するので、遠くにある都市ほど伝搬しにくくなります。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></p>
+<p>また、ここになんらかの宗教を指定する場合、<br>
 この建造物が完成したとき、その宗教を自動的に布教する効果も持ちます。</p>
-
 <p>値：&lt;ReligionChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ReligionChange&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="religiontype">&lt;ReligionType&gt;</h4>
-
-<p>宗教を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
+<p>&lt;ReligionChange&gt;は以下の2つのタグを含みます。</p>
+<h4 id="religiontype-1">&lt;ReligionType&gt;</h4>
+<p>宗教を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
 <h4 id="ireligionchange">&lt;iReligionChange&gt;</h4>
-
-<p>この都市が追加で発するその宗教の宗教圧力の値を指定します。<br />
+<p>この都市が追加で発するその宗教の宗教圧力の値を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ReligionChanges /&gt;</p>
-
 <p>例２：〈ユダヤ教〉を布教</p>
-
-<pre><code class="language-plain">&lt;ReligionChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ReligionChanges&gt;
     &lt;ReligionChange&gt;
         &lt;ReligionType&gt;RELIGION_JUDAISM&lt;/ReligionType&gt;
         &lt;iReligionChange&gt;1&lt;/iReligionChange&gt;
     &lt;/ReligionChange&gt;
 &lt;/ReligionChanges&gt;
-</code></pre>
-
-<h3 id="specialistcounts">&lt;SpecialistCounts&gt;</h3>
-
+</code></pre></div><h3 id="specialistcounts">&lt;SpecialistCounts&gt;</h3>
 <p>この建造物が解禁する専門化枠を指定します。</p>
-
 <p>とくに専門家の枠を解禁しない建造物の場合、空タグにします。</p>
-
 <p>値：&lt;SpecialistCount&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;SpecialistCount&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;SpecialistCount&gt;は以下の2つのタグを含みます。</p>
 <h4 id="specialisttype">&lt;SpecialistType&gt;</h4>
-
-<p>専門家の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#専門家">専門家キー</a></p>
-
+<p>専門家の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%B0%82%E9%96%80%E5%AE%B6">専門家キー</a></p>
 <h4 id="ispecialistcount">&lt;iSpecialistCount&gt;</h4>
-
-<p>その専門家の雇用枠の数を指定します。<br />
+<p>その専門家の雇用枠の数を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialistCounts /&gt;</p>
-
 <p>例２：2人の市民を科学者に転向可能、2人の市民を聖職者に転向可能</p>
-
-<pre><code class="language-plain">&lt;SpecialistCounts&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;SpecialistCounts&gt;
     &lt;SpecialistCount&gt;
         &lt;SpecialistType&gt;SPECIALIST_SCIENTIST&lt;/SpecialistType&gt;
         &lt;iSpecialistCount&gt;2&lt;/iSpecialistCount&gt;
@@ -6061,145 +5134,94 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
         &lt;iSpecialistCount&gt;2&lt;/iSpecialistCount&gt;
     &lt;/SpecialistCount&gt;
 &lt;/SpecialistCounts&gt;
-</code></pre>
-
-<h3 id="freespecialistcounts">&lt;FreeSpecialistCounts&gt;</h3>
-
-<p>この建造物により無償で提供される(特定の種類の)専門家の数を指定します。<br />
-<a href="#ifreespecialist">&lt;iFreeSpecialist&gt;</a>とは異なり、<br />
+</code></pre></div><h3 id="freespecialistcounts">&lt;FreeSpecialistCounts&gt;</h3>
+<p>この建造物により無償で提供される(特定の種類の)専門家の数を指定します。<br>
+<a href="#ifreespecialist">&lt;iFreeSpecialist&gt;</a>とは異なり、<br>
 無償の専門家の種類はあらかじめここに指定した種類で固定されます。</p>
-
 <p>とくに無償の専門家を与えない建造物の場合、空タグにします。</p>
-
 <p>値：&lt;SpecialistCount&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;SpecialistCount&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="specialisttype">&lt;SpecialistType&gt;</h4>
-
-<p>専門家の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#専門家">専門家キー</a></p>
-
-<h4 id="ispecialistcount">&lt;iSpecialistCount&gt;</h4>
-
-<p>その専門家の種類に対して、無償の専門家の人数を指定します。<br />
+<p>&lt;SpecialistCount&gt;は以下の2つのタグを含みます。</p>
+<h4 id="specialisttype-1">&lt;SpecialistType&gt;</h4>
+<p>専門家の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%B0%82%E9%96%80%E5%AE%B6">専門家キー</a></p>
+<h4 id="ispecialistcount-1">&lt;iSpecialistCount&gt;</h4>
+<p>その専門家の種類に対して、無償の専門家の人数を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FreeSpecialistCounts /&gt;</p>
-
 <p>例２：無償の科学者+2</p>
-
-<pre><code class="language-plain">&lt;FreeSpecialistCounts&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FreeSpecialistCounts&gt;
     &lt;FreeSpecialistCount&gt;
         &lt;SpecialistType&gt;SPECIALIST_SCIENTIST&lt;/SpecialistType&gt;
         &lt;iFreeSpecialistCount&gt;2&lt;/iFreeSpecialistCount&gt;
     &lt;/FreeSpecialistCount&gt;
 &lt;/FreeSpecialistCounts&gt;
-</code></pre>
-
-<h3 id="commerceflexibles">&lt;CommerceFlexibles&gt;</h3>
-
-<p>この建造物が完成したとき、〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉の<br />
-いずれか指定した商業出力について、スライダーを解禁します。<br />
-通常、商業力を各商業出力に振り分けるスライダーは<a href="https://gforestshade.github.io/kujira/post/civ4techinfos/#commerceflexible">技術によって解禁されます</a>が、<br />
+</code></pre></div><h3 id="commerceflexibles">&lt;CommerceFlexibles&gt;</h3>
+<p>この建造物が完成したとき、〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉の<br>
+いずれか指定した商業出力について、スライダーを解禁します。<br>
+通常、商業力を各商業出力に振り分けるスライダーは<a href="https://gforestshade.github.io/kujira/post/civ4techinfos/#commerceflexible">技術によって解禁されます</a>が、<br>
 この属性はそれを無視してスライダーを解禁します。</p>
-
-<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
-それぞれの&lt;iCommerce&gt;では0または1を指定します。<br />
+<p>値は&lt;iCommerce&gt;のリストで、上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
+それぞれの&lt;iCommerce&gt;では0または1を指定します。<br>
 1を指定した商業出力について、スライダーが解禁されます。</p>
-
-<p>通常、〈ゴールド〉〈ビーカー〉〈諜報〉のスライダーはゲーム開始時から解禁されているので、<br />
-3番目以外の&lt;iCommerce&gt;指定はとくに意味を成しません。<br />
-また、〈諜報〉のスライダーは、解禁された後いずれかの文明と接触していないと<br />
+<p>通常、〈ゴールド〉〈ビーカー〉〈諜報〉のスライダーはゲーム開始時から解禁されているので、<br>
+3番目以外の&lt;iCommerce&gt;指定はとくに意味を成しません。<br>
+また、〈諜報〉のスライダーは、解禁された後いずれかの文明と接触していないと<br>
 表示されないことに注意してください。</p>
-
 <p>&lt;iCommerce&gt;を途中で止めることもできます。その場合、指定しなかった分は0とみなされます。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceFlexibles /&gt;</p>
-
 <p>例２：〈諜報〉を調整可能</p>
-
-<pre><code class="language-plain">&lt;CommerceFlexibles&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceFlexibles&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;1&lt;/iCommerce&gt;
 &lt;/CommerceFlexibles&gt;
-</code></pre>
-
-<h3 id="commercechangeoriginalowners">&lt;CommerceChangeOriginalOwners&gt;</h3>
-
-<p><a href="#commercechanges">&lt;CommerceChanges&gt;</a>や<a href="#obsoletesafecommercechanges">&lt;ObsoleteSafeCommerceChanges&gt;</a>の指定について、<sup class="footnote-ref" id="fnref:ccoo"><a href="#fn:ccoo">16</a></sup><br />
-この建造物を建造した文明にしか効果がないように<br />
+</code></pre></div><h3 id="commercechangeoriginalowners">&lt;CommerceChangeOriginalOwners&gt;</h3>
+<p><a href="#commercechanges">&lt;CommerceChanges&gt;</a>や<a href="#obsoletesafecommercechanges">&lt;ObsoleteSafeCommerceChanges&gt;</a>の指定について、<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup><br>
+この建造物を建造した文明にしか効果がないように<br>
 (占領した都市にこの建造物が残っても効果がないように)することができます。</p>
-
-<p>値は&lt;bCommerceChangeOriginalOwner&gt;のリストで、<br />
-上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
-それぞれの&lt;bCommerceChangeOriginalOwner&gt;では0または1を指定します。<br />
+<p>値は&lt;bCommerceChangeOriginalOwner&gt;のリストで、<br>
+上から順に〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
+それぞれの&lt;bCommerceChangeOriginalOwner&gt;では0または1を指定します。<br>
 1を指定した商業出力について、この建造物を建造した文明にしか効果がないようになります。</p>
-
-<p>BtSでは、すべての世界遺産の〈文化〉についてこの属性が使われています。<br />
-結果として、世界遺産は占領されても〈文化〉を産出しません。<br />
+<p>BtSでは、すべての世界遺産の〈文化〉についてこの属性が使われています。<br>
+結果として、世界遺産は占領されても〈文化〉を産出しません。<br>
 この機能を使わない場合、空タグにします。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceChangeOriginalOwners /&gt;</p>
-
 <p>例２：(占領されたら〈文化〉を出さないようになる)</p>
-
-<pre><code class="language-plain">&lt;CommerceChangeOriginalOwners&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CommerceChangeOriginalOwners&gt;
     &lt;bCommerceChangeOriginalOwner&gt;0&lt;/bCommerceChangeOriginalOwner&gt;
     &lt;bCommerceChangeOriginalOwner&gt;0&lt;/bCommerceChangeOriginalOwner&gt;
     &lt;bCommerceChangeOriginalOwner&gt;1&lt;/bCommerceChangeOriginalOwner&gt;
 &lt;/CommerceChangeOriginalOwners&gt;
-</code></pre>
-
-<h3 id="constructsound">&lt;ConstructSound&gt;</h3>
-
+</code></pre></div><h3 id="constructsound">&lt;ConstructSound&gt;</h3>
 <p>この建造物が完成したときに流れる効果音を指定します。</p>
-
 <p>値：2Dサウンドスクリプトキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;ConstructSound&gt;AS2D_BUILD_WALLS&lt;/ConstructSound&gt;</p>
-
 <h3 id="bonushealthchanges">&lt;BonusHealthChanges&gt;</h3>
-
 <p>資源からの追加の〈衛生〉または〈不衛生〉を指定します。</p>
-
 <p>この機能を使わない場合、空タグにします。</p>
-
 <p>値：&lt;BonusHealthChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BonusHealthChange&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;BonusHealthChange&gt;は以下の2つのタグを含みます。</p>
 <h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>資源の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
+<p>資源の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
 <h4 id="ihealthchange">&lt;iHealthChange&gt;</h4>
-
-<p>その資源から追加で産出される〈衛生〉または〈不衛生〉の数を指定します。<br />
-正の数で〈衛生〉、負の数で〈不衛生〉になります。<br />
+<p>その資源から追加で産出される〈衛生〉または〈不衛生〉の数を指定します。<br>
+正の数で〈衛生〉、負の数で〈不衛生〉になります。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BonusHealthChanges /&gt;</p>
-
 <p>例２：次の資源から〈衛生〉+1: トウモロコシ, 米, 小麦</p>
-
-<pre><code class="language-plain">&lt;BonusHealthChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusHealthChanges&gt;
     &lt;BonusHealthChange&gt;
         &lt;BonusType&gt;BONUS_CORN&lt;/BonusType&gt;
         &lt;iHealthChange&gt;1&lt;/iHealthChange&gt;
@@ -6213,11 +5235,8 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
         &lt;iHealthChange&gt;1&lt;/iHealthChange&gt;
     &lt;/BonusHealthChange&gt;
 &lt;/BonusHealthChanges&gt;
-</code></pre>
-
-<p>例２：次の資源から〈不衛生〉+2: 石炭, 石油</p>
-
-<pre><code class="language-plain">&lt;BonusHealthChanges&gt;
+</code></pre></div><p>例２：次の資源から〈不衛生〉+2: 石炭, 石油</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusHealthChanges&gt;
     &lt;BonusHealthChange&gt;
         &lt;BonusType&gt;BONUS_OIL&lt;/BonusType&gt;
         &lt;iHealthChange&gt;-2&lt;/iHealthChange&gt;
@@ -6227,39 +5246,24 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
         &lt;iHealthChange&gt;-2&lt;/iHealthChange&gt;
     &lt;/BonusHealthChange&gt;
 &lt;/BonusHealthChanges&gt;
-</code></pre>
-
-<h3 id="bonushappinesschanges">&lt;BonusHappinessChanges&gt;</h3>
-
+</code></pre></div><h3 id="bonushappinesschanges">&lt;BonusHappinessChanges&gt;</h3>
 <p>資源からの追加の〈満足〉または〈不満〉を指定します。</p>
-
 <p>この機能を使わない場合、空タグにします。</p>
-
 <p>値：&lt;BonusHappinessChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BonusHappinessChange&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>資源の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
+<p>&lt;BonusHappinessChange&gt;は以下の2つのタグを含みます。</p>
+<h4 id="bonustype-1">&lt;BonusType&gt;</h4>
+<p>資源の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
 <h4 id="ihappinesschange">&lt;iHappinessChange&gt;</h4>
-
-<p>その資源から追加で産出される〈満足〉または〈不満〉の数を指定します。<br />
-正の数で〈満足〉、負の数で〈不満〉になります。<br />
+<p>その資源から追加で産出される〈満足〉または〈不満〉の数を指定します。<br>
+正の数で〈満足〉、負の数で〈不満〉になります。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BonusHappinessChanges /&gt;</p>
-
 <p>例２：次の資源から〈満足〉+1: 宝石, 金, 銀</p>
-
-<pre><code class="language-plain">&lt;BonusHappinessChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusHappinessChanges&gt;
     &lt;BonusHappinessChange&gt;
         &lt;BonusType&gt;BONUS_GEMS&lt;/BonusType&gt;
         &lt;iHappinessChange&gt;1&lt;/iHappinessChange&gt;
@@ -6273,207 +5277,124 @@ BtSでは、この属性を持つ建造物はシスティナ礼拝堂のみで�
         &lt;iHappinessChange&gt;1&lt;/iHappinessChange&gt;
     &lt;/BonusHappinessChange&gt;
 &lt;/BonusHappinessChanges&gt;
-</code></pre>
-
-<h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
-
+</code></pre></div><h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
 <p>この建造物の生産を加速する資源を指定します。</p>
-
 <p>値：&lt;BonusProductionModifier&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BonusProductionModifier&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>生産を加速する資源を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<h4 id="iproductonmodifier-ton">&lt;iProductonModifier&gt;<sup class="footnote-ref" id="fnref:ton"><a href="#fn:ton">1</a></sup></h4>
-
-<p>その資源に対して何%加速するか指定します。<br />
-ここに100を指定すると、その時に限りシヴィロペディアの表示が<br />
-「生産速度2倍」になります。<br />
+<p>&lt;BonusProductionModifier&gt;は以下の2つのタグを含みます。</p>
+<h4 id="bonustype-2">&lt;BonusType&gt;</h4>
+<p>生産を加速する資源を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<h4 id="iproductonmodifierton">&lt;iProductonModifier&gt;<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup></h4>
+<p>その資源に対して何%加速するか指定します。<br>
+ここに100を指定すると、その時に限りシヴィロペディアの表示が<br>
+「生産速度2倍」になります。<br>
 値：整数</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:ton">iProduc<strong>ton</strong>Modifierです。誤字ではありません。<br />
- <a class="footnote-return" href="#fnref:ton"><sup>[return]</sup></a></li>
-</ol>
 </div>
-
-</div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BonusProductionModifiers /&gt;</p>
-
 <p>例２：石材があれば生産速度2倍</p>
-
-<pre><code class="language-plain">&lt;BonusProductionModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusProductionModifiers&gt;
     &lt;BonusProductionModifier&gt;
         &lt;BonusType&gt;BONUS_STONE&lt;/BonusType&gt;
         &lt;iProductonModifier&gt;100&lt;/iProductonModifier&gt;
     &lt;/BonusProductionModifier&gt;
 &lt;/BonusProductionModifiers&gt;
-</code></pre>
-
-<h3 id="unitcombatfreeexperiences">&lt;UnitCombatFreeExperiences&gt;</h3>
-
+</code></pre></div><h3 id="unitcombatfreeexperiences">&lt;UnitCombatFreeExperiences&gt;</h3>
 <p>この都市で生産されるユニットに対し、兵科ごとに無償の経験値を与えるよう指定します。</p>
-
 <p>値：&lt;UnitCombatFreeExperience&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitCombatFreeExperience&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitCombatFreeExperience&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitcombattype">&lt;UnitCombatType&gt;</h4>
-
-<p>兵科を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
-<h4 id="iexperience">&lt;iExperience&gt;</h4>
-
+<p>兵科を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
+<h4 id="iexperience-1">&lt;iExperience&gt;</h4>
 <p>その兵科に対して与える経験値の量を指定します。</p>
-
-<p>ここに負の値を指定することはできますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
 各要因からの無償の経験値の合計が負になった場合は0まで底上げされます。</p>
-
 <p>値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;UnitCombatFreeExperiences /&gt;</p>
-
 <p>例２：新しい騎乗ユニットが経験値+2ポイントを取得</p>
-
-<pre><code class="language-plain">&lt;UnitCombatFreeExperiences&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitCombatFreeExperiences&gt;
     &lt;UnitCombatFreeExperience&gt;
         &lt;UnitCombatType&gt;UNITCOMBAT_MOUNTED&lt;/UnitCombatType&gt;
         &lt;iExperience&gt;2&lt;/iExperience&gt;
     &lt;/UnitCombatFreeExperience&gt;
 &lt;/UnitCombatFreeExperiences&gt;
-</code></pre>
-
-<h3 id="domainfreeexperiences">&lt;DomainFreeExperiences&gt;</h3>
-
-<p>この都市で生産されるユニットに対し、<br />
+</code></pre></div><h3 id="domainfreeexperiences">&lt;DomainFreeExperiences&gt;</h3>
+<p>この都市で生産されるユニットに対し、<br>
 行動領域ごと(陸上・海洋・航空)に無償の経験値を与えるよう指定します。</p>
-
 <p>値：&lt;DomainFreeExperience&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;DomainFreeExperience&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;DomainFreeExperience&gt;は以下の2つのタグを含みます。</p>
 <h4 id="domaintype">&lt;DomainType&gt;</h4>
-
-<p>行動領域を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#行動領域">ユニット領域キー</a></p>
-
-<h4 id="iexperience">&lt;iExperience&gt;</h4>
-
+<p>行動領域を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%A1%8C%E5%8B%95%E9%A0%98%E5%9F%9F">ユニット領域キー</a></p>
+<h4 id="iexperience-2">&lt;iExperience&gt;</h4>
 <p>その行動領域に属するユニットに対して与える経験値の量を指定します。</p>
-
-<p>ここに負の値を指定することはできますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
 各要因からの無償の経験値の合計が負になった場合は0まで底上げされます。</p>
-
 <p>値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;DomainFreeExperiences&gt;</p>
-
 <p>例２：新しい海洋ユニットが経験値+4ポイントを取得</p>
-
-<pre><code class="language-plain">&lt;DomainFreeExperiences&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;DomainFreeExperiences&gt;
     &lt;DomainFreeExperience&gt;
         &lt;DomainType&gt;DOMAIN_SEA&lt;/DomainType&gt;
         &lt;iExperience&gt;4&lt;/iExperience&gt;
     &lt;/DomainFreeExperience&gt;
 &lt;/DomainFreeExperiences&gt;
-</code></pre>
-
-<h3 id="domainproductionmodifiers">&lt;DomainProductionModifiers&gt;</h3>
-
-<p>ここに指定した行動領域に属するユニットをこの都市で生産する際の<br />
+</code></pre></div><h3 id="domainproductionmodifiers">&lt;DomainProductionModifiers&gt;</h3>
+<p>ここに指定した行動領域に属するユニットをこの都市で生産する際の<br>
 〈ハンマー〉への修正率を指定します。</p>
-
 <p>値：&lt;DomainProductionModifier&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;DomainProductionModifier&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="domaintype">&lt;DomainType&gt;</h4>
-
-<p>行動領域を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#行動領域">ユニット領域キー</a></p>
-
+<p>&lt;DomainProductionModifier&gt;は以下の2つのタグを含みます。</p>
+<h4 id="domaintype-1">&lt;DomainType&gt;</h4>
+<p>行動領域を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%A1%8C%E5%8B%95%E9%A0%98%E5%9F%9F">ユニット領域キー</a></p>
 <h4 id="iproductonmodifier">&lt;iProductonModifier&gt;</h4>
-
-<p>その行動領域に属するユニットを生産する際の<br />
-〈ハンマー〉への修正率を指定します。<br />
+<p>その行動領域に属するユニットを生産する際の<br>
+〈ハンマー〉への修正率を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;DomainProductionModifiers&gt;</p>
-
 <p>例２：海洋ユニットの建設速度が+50%向上</p>
-
-<pre><code class="language-plain">&lt;DomainProductionModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;DomainProductionModifiers&gt;
     &lt;DomainProductionModifier&gt;
         &lt;DomainType&gt;DOMAIN_SEA&lt;/DomainType&gt;
         &lt;iProductionModifier&gt;50&lt;/iProductionModifier&gt;
     &lt;/DomainProductionModifier&gt;
 &lt;/DomainProductionModifiers&gt;
-</code></pre>
-
-<h3 id="buildinghappinesschanges">&lt;BuildingHappinessChanges&gt;</h3>
-
-<p>特定の建造物クラスを指定し、<br />
+</code></pre></div><h3 id="buildinghappinesschanges">&lt;BuildingHappinessChanges&gt;</h3>
+<p>特定の建造物クラスを指定し、<br>
 この建造物を所有している間その建造物クラスから追加の〈幸福〉を産出させます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ建造物はありません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BuildingHappinessChanges /&gt;</p>
-
 <p>例２：図書館により〈幸福〉+3</p>
-
-<pre><code class="language-plain">&lt;BuildingHappinessChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BuildingHappinessChanges&gt;
     &lt;BuildingHappinessChange&gt;
         &lt;BuildingType&gt;BUILDINGCLASS_LIBRARY&lt;/BuildingType&gt;
         &lt;iHappinessChange&gt;3&lt;/iHappinessChange&gt;
     &lt;/BuildingHappinessChange&gt;
 &lt;/BuildingHappinessChanges&gt;
-</code></pre>
-
-<h3 id="prereqbuildingclasses">&lt;PrereqBuildingClasses&gt;</h3>
-
-<p>この建造物を生産するための前提となる建造物クラスと数を指定します。<br />
-文明全体で指定した建造物クラスに属する建造物がそれぞれ指定した数建っているときに限り、<br />
-この建造物を生産できます。<br />
+</code></pre></div><h3 id="prereqbuildingclasses">&lt;PrereqBuildingClasses&gt;</h3>
+<p>この建造物を生産するための前提となる建造物クラスと数を指定します。<br>
+文明全体で指定した建造物クラスに属する建造物がそれぞれ指定した数建っているときに限り、<br>
+この建造物を生産できます。<br>
 もし生産し始めた後で前提を満たさなくなると、生産は強制的に中断されます。</p>
-
-<p><a href="#inumfreebonuses">&lt;iNumFreeBonuses&gt;</a>とは異なり、<br />
+<p><a href="#inumfreebonuses">&lt;iNumFreeBonuses&gt;</a>とは異なり、<br>
 この属性に指定した値は常にマップサイズの影響を受けます。</p>
-
-<p>この建造物自体に(国家遺産や世界遺産によるなどの)建造数制限がない限り、<br />
-もう一度前提を指定した数用意すればまたこの建造物を1つ生産できます。<br />
-BtSでの<a href="https://gforestshade.github.io/kujira/post/glossary/#大聖堂">大聖堂</a>がそのような挙動になっています。</p>
-
+<p>この建造物自体に(国家遺産や世界遺産によるなどの)建造数制限がない限り、<br>
+もう一度前提を指定した数用意すればまたこの建造物を1つ生産できます。<br>
+BtSでの<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%A4%A7%E8%81%96%E5%A0%82">大聖堂</a>がそのような挙動になっています。</p>
 <p>BtSでは、この属性を持つのは以下の建造物です。</p>
-
 <table>
 <thead>
 <tr>
@@ -6482,50 +5403,42 @@ BtSでの<a href="https://gforestshade.github.io/kujira/post/glossary/#大聖堂
 <th>数</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>紫禁城</td>
 <td>裁判所</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>各宗教の大聖堂</td>
 <td>対応した寺院</td>
 <td>2</td>
 </tr>
-
 <tr>
 <td>グローブ座</td>
 <td>劇場</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>オックスフォード大学</td>
 <td>大学</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>ウォール街</td>
 <td>銀行</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>製鉄所</td>
 <td>溶鉱炉</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>赤十字</td>
 <td>病院</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>ゼウス像</td>
 <td>モニュメント</td>
@@ -6533,9 +5446,7 @@ BtSでの<a href="https://gforestshade.github.io/kujira/post/glossary/#大聖堂
 </tr>
 </tbody>
 </table>
-
 <p>実際に必要な数は、マップサイズの&lt;iBuildingClassPrereqModifier&gt;により以下の修正を得ます。</p>
-
 <table>
 <thead>
 <tr>
@@ -6543,160 +5454,109 @@ BtSでの<a href="https://gforestshade.github.io/kujira/post/glossary/#大聖堂
 <th>修正率</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>最小</td>
 <td>+0%</td>
 </tr>
-
 <tr>
 <td>極小</td>
 <td>+0%</td>
 </tr>
-
 <tr>
 <td>小さい</td>
 <td>+25%</td>
 </tr>
-
 <tr>
 <td>標準</td>
 <td>+50%</td>
 </tr>
-
 <tr>
 <td>大きい</td>
 <td>+75%</td>
 </tr>
-
 <tr>
 <td>最大</td>
 <td>+100%</td>
 </tr>
 </tbody>
 </table>
-
 <p>値：&lt;PrereqBuildingClass&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;PrereqBuildingClass&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;PrereqBuildingClass&gt;は以下の2つのタグを含みます。</p>
 <h4 id="buildingclasstype">&lt;BuildingClassType&gt;</h4>
-
-<p>建造物クラスを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物クラスキー</a></p>
-
+<p>建造物クラスを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物クラスキー</a></p>
 <h4 id="inumbuildingneeded">&lt;iNumBuildingNeeded&gt;</h4>
-
-<p>その建造物クラスがいくつ必要かの基本値を指定します。<br />
+<p>その建造物クラスがいくつ必要かの基本値を指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>この機能を使わない場合、空タグにします。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;PrereqBuildingClasses /&gt;</p>
-
 <p>例２：</p>
-
-<pre><code class="language-plain">&lt;PrereqBuildingClasses&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PrereqBuildingClasses&gt;
     &lt;PrereqBuildingClass&gt;
         &lt;BuildingClassType&gt;BUILDINGCLASS_COURTHOUSE&lt;/BuildingClassType&gt;
         &lt;iNumBuildingNeeded&gt;4&lt;/iNumBuildingNeeded&gt;
     &lt;/PrereqBuildingClass&gt;
 &lt;/PrereqBuildingClasses&gt;
-</code></pre>
-
-<h3 id="buildingclassneededs">&lt;BuildingClassNeededs&gt;</h3>
-
-<p>この建造物を生産するための前提となる建造物クラスを指定します。<br />
-この都市にその前提建造物クラスが建っているときに限り、この建造物を生産できます。<br />
+</code></pre></div><h3 id="buildingclassneededs">&lt;BuildingClassNeededs&gt;</h3>
+<p>この建造物を生産するための前提となる建造物クラスを指定します。<br>
+この都市にその前提建造物クラスが建っているときに限り、この建造物を生産できます。<br>
 もし生産し始めた後で前提を満たさなくなると、生産は強制的に中断されます。</p>
-
-<p>ここに複数の建造物クラスを指定することもできます。<br />
-この建造物の生産をするには、<a href="#prereqbuildingclass">&lt;PrereqBuildingClasses&gt;</a>も含めて、<br />
+<p>ここに複数の建造物クラスを指定することもできます。<br>
+この建造物の生産をするには、<a href="#prereqbuildingclass">&lt;PrereqBuildingClasses&gt;</a>も含めて、<br>
 全ての前提を満たしている必要があります。</p>
-
-<p>&lt;PrereqBuildingClasses&gt;と同じ建造物クラスを指定する場合、<br />
-この都市の前提建造物も数の1つとして含まれます。<br />
-また、&lt;PrereqBuildingClasses&gt;と同じ建造物クラスを必ずしも指定する必要はありません。<br />
-ここには指定しなかった場合、文明全体で数が揃っていれば<br />
-この都市に前提建造物が建っている必要はなくなります。<br />
+<p>&lt;PrereqBuildingClasses&gt;と同じ建造物クラスを指定する場合、<br>
+この都市の前提建造物も数の1つとして含まれます。<br>
+また、&lt;PrereqBuildingClasses&gt;と同じ建造物クラスを必ずしも指定する必要はありません。<br>
+ここには指定しなかった場合、文明全体で数が揃っていれば<br>
+この都市に前提建造物が建っている必要はなくなります。<br>
 BtSでの大聖堂がそのような挙動になっています。</p>
-
 <p>値：&lt;BuildingClassNeeded&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BuildingClassNeeded&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="buildingclasstype">&lt;BuildingClassType&gt;</h4>
-
-<p>建造物クラスを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物クラスキー</a></p>
-
+<p>&lt;BuildingClassNeeded&gt;は以下の2つのタグを含みます。</p>
+<h4 id="buildingclasstype-1">&lt;BuildingClassType&gt;</h4>
+<p>建造物クラスを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物クラスキー</a></p>
 <h4 id="ineededincity">&lt;iNeededInCity&gt;</h4>
-
-<p>その建造物クラスがいくつ必要かを指定します。<br />
-通常、ここには1を指定することになるでしょう。<br />
+<p>その建造物クラスがいくつ必要かを指定します。<br>
+通常、ここには1を指定することになるでしょう。<br>
 値：1</p>
-
 </div>
-
-
 <p>前提建造物を設定しない建造物の場合、空タグにします。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BuildingClassNeededs /&gt;</p>
-
 <p>例２：裁判所が必要</p>
-
-<pre><code class="language-plain">&lt;BuildingClassNeededs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BuildingClassNeededs&gt;
     &lt;BuildingClassNeeded&gt;
         &lt;BuildingClassType&gt;BUILDINGCLASS_COURTHOUSE&lt;/BuildingClassType&gt;
         &lt;bNeededInCity&gt;1&lt;/bNeededInCity&gt;
     &lt;/BuildingClassNeeded&gt;
 &lt;/BuildingClassNeededs&gt;
-</code></pre>
-
-<h3 id="specialistyieldchanges">&lt;SpecialistYieldChanges&gt;</h3>
-
+</code></pre></div><h3 id="specialistyieldchanges">&lt;SpecialistYieldChanges&gt;</h3>
 <p>この文明の全都市で、指定した専門家が追加で〈パン〉・〈ハンマー〉・〈コイン〉を産出します。</p>
-
 <p>値：&lt;SpecialistYieldChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;SpecialistYieldChange&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="specialisttype">&lt;SpecialistType&gt;</h4>
-
-<p>専門家の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#専門家">専門家キー</a></p>
-
-<h4 id="yieldchanges">&lt;YieldChanges&gt;</h4>
-
-<p>その専門家が追加で産出する、<br />
+<p>&lt;SpecialistYieldChange&gt;は以下の2つのタグを含みます。</p>
+<h4 id="specialisttype-2">&lt;SpecialistType&gt;</h4>
+<p>専門家の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%B0%82%E9%96%80%E5%AE%B6">専門家キー</a></p>
+<h4 id="yieldchanges-1">&lt;YieldChanges&gt;</h4>
+<p>その専門家が追加で産出する、<br>
 〈パン〉・〈ハンマー〉・〈コイン〉への加減値を指定します。</p>
-
-<p>値は&lt;iYield&gt;のリストで、<br />
-上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br />
-&lt;iYield&gt;を1個や2個で止めることもできます。<br />
+<p>値は&lt;iYield&gt;のリストで、<br>
+上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br>
+&lt;iYield&gt;を1個や2個で止めることもできます。<br>
 その場合、指定しなかった分は0とみなされます。</p>
-
 </div>
-
-
-<p>とくに専門家に追加の出力を与えない普通の建造物の場合、空タグにします。<br />
+<p>とくに専門家に追加の出力を与えない普通の建造物の場合、空タグにします。<br>
 BtSでは、この属性を持つのはアンコールワットのみです。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialistYieldChanges /&gt;</p>
-
 <p>例２：+1〈ハンマー〉を全都市の聖職者から取得</p>
-
-<pre><code class="language-plain">&lt;SpecialistYieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;SpecialistYieldChanges&gt;
     &lt;SpecialistYieldChange&gt;
         &lt;SpecialistType&gt;SPECIALIST_PRIEST&lt;/SpecialistType&gt;
         &lt;YieldChanges&gt;
@@ -6706,45 +5566,29 @@ BtSでは、この属性を持つのはアンコールワットのみです。</
         &lt;/YieldChanges&gt;
     &lt;/SpecialistYieldChange&gt;
 &lt;/SpecialistYieldChanges&gt;
-</code></pre>
-
-<h3 id="bonusyieldmodifiers">&lt;BonusYieldModifiers&gt;</h3>
-
-<p>この都市に指定した資源があるときに発生する、<br />
+</code></pre></div><h3 id="bonusyieldmodifiers">&lt;BonusYieldModifiers&gt;</h3>
+<p>この都市に指定した資源があるときに発生する、<br>
 〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
 <p>値：&lt;BonusYieldModifier&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BonusYieldModifier&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>資源を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<h4 id="yieldmodifiers">&lt;YieldModifiers&gt;</h4>
-
-<p>その資源があるときに発生する<br />
+<p>&lt;BonusYieldModifier&gt;は以下の2つのタグを含みます。</p>
+<h4 id="bonustype-3">&lt;BonusType&gt;</h4>
+<p>資源を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<h4 id="yieldmodifiers-1">&lt;YieldModifiers&gt;</h4>
+<p>その資源があるときに発生する<br>
 〈パン〉、〈ハンマー〉、〈コイン〉への修正率を指定します。</p>
-
-<p>値は&lt;iYield&gt;のリストで、<br />
-上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br />
-&lt;iYield&gt;を1個や2個で止めることもできます。<br />
+<p>値は&lt;iYield&gt;のリストで、<br>
+上から順に〈パン〉、〈ハンマー〉、〈コイン〉を表します。<br>
+&lt;iYield&gt;を1個や2個で止めることもできます。<br>
 その場合、指定しなかった分は0とみなされます。</p>
-
 </div>
-
-
-<p>資源による修正率を持たない場合、空タグにします。<br />
+<p>資源による修正率を持たない場合、空タグにします。<br>
 BtSでは、この属性を持つのは製鉄所のみです。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BonusYieldModifiers /&gt;</p>
-
 <p>例２：+50%〈ハンマー〉(石炭の保有時)、+50%〈ハンマー〉(鉄の保有時)</p>
-
-<pre><code class="language-plain">&lt;BonusYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusYieldModifiers&gt;
     &lt;BonusYieldModifier&gt;
         &lt;BonusType&gt;BONUS_COAL&lt;/BonusType&gt;
         &lt;YieldModifiers&gt;
@@ -6762,156 +5606,133 @@ BtSでは、この属性を持つのは製鉄所のみです。</p>
         &lt;/YieldModifiers&gt;
     &lt;/BonusYieldModifier&gt;
 &lt;/BonusYieldModifiers&gt;
-</code></pre>
-
-<h3 id="improvementfreespecialists">&lt;ImprovementFreeSpecialists&gt;</h3>
-
-<p>この都市の都市圏にある特定の地形改善のぶんだけ、この都市に無償の専門家を提供します。<br />
+</code></pre></div><h3 id="improvementfreespecialists">&lt;ImprovementFreeSpecialists&gt;</h3>
+<p>この都市の都市圏にある特定の地形改善のぶんだけ、この都市に無償の専門家を提供します。<br>
 この属性では、プレイヤーがどの専門家に割り当てるかを決定します。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つのは国立公園のみです。</p>
-
 <p>値：&lt;ImprovementFreeSpecialist&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ImprovementFreeSpecialist&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;ImprovementFreeSpecialist&gt;は以下の2つのタグを含みます。</p>
 <h4 id="improvementtype">&lt;ImprovementType&gt;</h4>
-
-<p>地形改善の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#地形改善">地形改善キー</a></p>
-
+<p>地形改善の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9C%B0%E5%BD%A2%E6%94%B9%E5%96%84">地形改善キー</a></p>
 <h4 id="ifreespecialistcount">&lt;iFreeSpecialistCount&gt;</h4>
-
-<p>その地形改善1つあたり、何人の無償の専門家を都市に提供するか指定します。<br />
+<p>その地形改善1つあたり、何人の無償の専門家を都市に提供するか指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ImprovementFreeSpecialists /&gt;</p>
-
 <p>例２：次のものごとに+1人の専門家を無償で取得:保安林</p>
-
-<pre><code class="language-plain">&lt;ImprovementFreeSpecialists&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ImprovementFreeSpecialists&gt;
     &lt;ImprovementFreeSpecialist&gt;
         &lt;ImprovementType&gt;IMPROVEMENT_FOREST_PRESERVE&lt;/ImprovementType&gt;
         &lt;iFreeSpecialistCount&gt;1&lt;/iFreeSpecialistCount&gt;
     &lt;/ImprovementFreeSpecialist&gt;
 &lt;/ImprovementFreeSpecialists&gt;
-</code></pre>
-
-<h3 id="flavors">&lt;Flavors&gt;</h3>
-
-<p>この建造物が持つフレーバーを指定します。<br />
-この指定と指導者の好むフレーバーが近いほど、<br />
+</code></pre></div><h3 id="flavors">&lt;Flavors&gt;</h3>
+<p>この建造物が持つフレーバーを指定します。<br>
+この指定と指導者の好むフレーバーが近いほど、<br>
 AI指導者はこの建造物を優先して生産します。</p>
-
 <p>例：</p>
-
-<pre><code class="language-plain">&lt;Flavors&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Flavors&gt;
     &lt;Flavor&gt;
         &lt;FlavorType&gt;FLAVOR_MILITARY&lt;/FlavorType&gt;
         &lt;iFlavor&gt;10&lt;/iFlavor&gt;
     &lt;/Flavor&gt;
 &lt;/Flavors&gt;
-</code></pre>
-
-<h3 id="baltdown">&lt;bAltDown&gt;</h3>
-
-<p>1を指定した場合、この建造物を生産するショートカットキーにAltキーを追加します。<br />
-ただし、Altキーは無限生産のショートカットと衝突してしまいます。<br />
+</code></pre></div><h3 id="baltdown">&lt;bAltDown&gt;</h3>
+<p>1を指定した場合、この建造物を生産するショートカットキーにAltキーを追加します。<br>
+ただし、Altキーは無限生産のショートカットと衝突してしまいます。<br>
 Altキーを足すのは推奨されません。</p>
-
 <p>値：0か1</p>
-
 <h3 id="bshiftdown">&lt;bShiftDown&gt;</h3>
-
-<p>1を指定した場合、この建造物を生産するショートカットキーにShiftキーを追加します。<br />
-ただし、Shiftキーは生産キューの最後に追加のショートカットと衝突してしまいます。<br />
+<p>1を指定した場合、この建造物を生産するショートカットキーにShiftキーを追加します。<br>
+ただし、Shiftキーは生産キューの最後に追加のショートカットと衝突してしまいます。<br>
 Shiftキーを足すのは推奨されません。</p>
-
 <p>値：0か1</p>
-
 <h3 id="bctrldown">&lt;bCtrlDown&gt;</h3>
-
-<p>1を指定した場合、この建造物を生産するショートカットキーにCtrlキーを追加します。<br />
-ただし、Ctrlキーは生産キューの先頭に追加のショートカットと衝突してしまいます。<br />
+<p>1を指定した場合、この建造物を生産するショートカットキーにCtrlキーを追加します。<br>
+ただし、Ctrlキーは生産キューの先頭に追加のショートカットと衝突してしまいます。<br>
 Ctrlキーを足すのは推奨されません。</p>
-
 <p>値：0か1</p>
-
 <h3 id="hotkey">&lt;HotKey&gt;</h3>
-
 <p>この建造物を生産するショートカットキーを定義します。</p>
-
 <p>BtSでは、この属性を持つ建造物はありません。</p>
-
 <p>値：キーボードキー</p>
-
-<p>例：ショートカットキーなし<br />
-&lt;HotKey /&gt;<br />
-&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br />
-&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br />
+<p>例：ショートカットキーなし<br>
+&lt;HotKey /&gt;<br>
+&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br>
+&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br>
 &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;</p>
-
-<p>例：&lt;W&gt;<br />
-&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br />
-&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br />
-&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br />
+<p>例：&lt;W&gt;<br>
+&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br>
+&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br>
+&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br>
 &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;</p>
-
 <h3 id="ihotkeypriority">&lt;iHotKeyPriority&gt;</h3>
-
-<p>ショートカットキーの優先度を指定します。<br />
-ショートカットキーが被ってしまったとき、<br />
+<p>ショートカットキーの優先度を指定します。<br>
+ショートカットキーが被ってしまったとき、<br>
 ここに指定した値が大きいほうが優先されます。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;</p>
-
 <p><br><br></p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:movie">この効果は、遺産に限定されません。<br />
- <a class="footnote-return" href="#fnref:movie"><sup>[return]</sup></a></li>
-<li id="fn:1">そうすることで、建造物リストが多くなりすぎないようにしていると思われます。<br />
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:technum">実際のところ、BtSでは前提技術2つ(メインとサブ1つずつ)の建造物が最大です。<br />
- <a class="footnote-return" href="#fnref:technum"><sup>[return]</sup></a></li>
-<li id="fn:bonusnum">実際のところ、BtSでは前提資源を要求する建造物はありません。<br />
- <a class="footnote-return" href="#fnref:bonusnum"><sup>[return]</sup></a></li>
-<li id="fn:uu">それらのUU群を含みます。<br />
- <a class="footnote-return" href="#fnref:uu"><sup>[return]</sup></a></li>
-<li id="fn:freebuil">この建造物を所有しなくなったり、陳腐化したりしたときは、即座に当該の無償建造物を失います。<br>指定は建造物クラスタイプです。実際には文明ごとに分岐した建造物タイプの建造物を得ます。<br />
- <a class="footnote-return" href="#fnref:freebuil"><sup>[return]</sup></a></li>
-<li id="fn:teamww">アポロ神殿のような、このリストとは関係ないような遺産までもがこの属性を持ちます。もちろんそのような場合、特に意味はありません。なぜかアルテミス神殿だけはこの属性を持っていません。謎です。<br />
- <a class="footnote-return" href="#fnref:teamww"><sup>[return]</sup></a></li>
-<li id="fn:waterriver">どちらかで構いません。<br />
- <a class="footnote-return" href="#fnref:waterriver"><sup>[return]</sup></a></li>
-<li id="fn:capcul">元の建造物には文化出力がなく、UUには文化出力があるような場合は指定されていません。<br>なので、棚畑やオデオンが破壊されず残ってしまう場合もあります。<br />
- <a class="footnote-return" href="#fnref:capcul"><sup>[return]</sup></a></li>
-<li id="fn:wwcm">ここに0を指定した遺産も当然MODでなら作ることができます。<br />
- <a class="footnote-return" href="#fnref:wwcm"><sup>[return]</sup></a></li>
-<li id="fn:hurrytype">人口でも、富でも<br />
- <a class="footnote-return" href="#fnref:hurrytype"><sup>[return]</sup></a></li>
-<li id="fn:nukeexplosion">核攻撃によるものと、メルトダウンによるものの両方に適用されます。<br />
- <a class="footnote-return" href="#fnref:nukeexplosion"><sup>[return]</sup></a></li>
-<li id="fn:foreigntr">他国の都市(属国でも可)との間の交易路のこと。シヴィロペディアには誤植があり、別の大陸の都市である必要はありません。<br />
- <a class="footnote-return" href="#fnref:foreigntr"><sup>[return]</sup></a></li>
-<li id="fn:year">ターン数ではなく、年です。ゲーム速度との関連に注意してください。<br />
- <a class="footnote-return" href="#fnref:year"><sup>[return]</sup></a></li>
-<li id="fn:religiondistance">交易路としての長さとは関係なく、2都市間の絶対距離で決まります。大陸の反対側の都市と長い道路でつながっていて、海を渡っていった方が距離が近い場合、天文学を持っているかどうかに関係なく、近い方の距離が使われます。<br>また、距離によってかなり急速に減衰し、星の反対側では確率1/1000になってしまいます。Pangaea大きさ標準マップにおいて圧力1で実用的に自然伝搬できる距離は、おおむね距離12程度のようです。<br />
- <a class="footnote-return" href="#fnref:religiondistance"><sup>[return]</sup></a></li>
-<li id="fn:ccoo">効果範囲はこの2つの属性だけです。ほかの属性の効果を抑制することはできないことに注意してください。<br />
- <a class="footnote-return" href="#fnref:ccoo"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>この効果は、遺産に限定されません。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>そうすることで、建造物リストが多くなりすぎないようにしていると思われます。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>実際のところ、BtSでは前提技術2つ(メインとサブ1つずつ)の建造物が最大です。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>実際のところ、BtSでは前提資源を要求する建造物はありません。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>それらのUU群を含みます。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>この建造物を所有しなくなったり、陳腐化したりしたときは、即座に当該の無償建造物を失います。<br>指定は建造物クラスタイプです。実際には文明ごとに分岐した建造物タイプの建造物を得ます。 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>アポロ神殿のような、このリストとは関係ないような遺産までもがこの属性を持ちます。もちろんそのような場合、特に意味はありません。なぜかアルテミス神殿だけはこの属性を持っていません。謎です。 <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>どちらかで構いません。 <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p>元の建造物には文化出力がなく、UUには文化出力があるような場合は指定されていません。<br>なので、棚畑やオデオンが破壊されず残ってしまう場合もあります。 <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p>ここに0を指定した遺産も当然MODでなら作ることができます。 <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11" role="doc-endnote">
+<p>人口でも、富でも <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12" role="doc-endnote">
+<p>核攻撃によるものと、メルトダウンによるものの両方に適用されます。 <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13" role="doc-endnote">
+<p>他国の都市(属国でも可)との間の交易路のこと。シヴィロペディアには誤植があり、別の大陸の都市である必要はありません。 <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14" role="doc-endnote">
+<p>ターン数ではなく、年です。ゲーム速度との関連に注意してください。 <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15" role="doc-endnote">
+<p>交易路としての長さとは関係なく、2都市間の絶対距離で決まります。大陸の反対側の都市と長い道路でつながっていて、海を渡っていった方が距離が近い場合、天文学を持っているかどうかに関係なく、近い方の距離が使われます。<br>また、距離によってかなり急速に減衰し、星の反対側では確率1/1000になってしまいます。Pangaea大きさ標準マップにおいて圧力1で実用的に自然伝搬できる距離は、おおむね距離12程度のようです。 <a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16" role="doc-endnote">
+<p>効果範囲はこの2つの属性だけです。ほかの属性の効果を抑制することはできないことに注意してください。 <a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:17" role="doc-endnote">
+<p>iProduc<strong>ton</strong>Modifierです。誤字ではありません。 <a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -6924,7 +5745,7 @@ Ctrlキーを足すのは推奨されません。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

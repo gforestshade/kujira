@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-29",
     "description": "",
-    "wordCount": 972
+    "wordCount":  972 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -364,112 +364,78 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="筆者の環境">筆者の環境</h1>
-
 <ul>
-<li>Windows 10 64bit<br /></li>
-<li>Civ4 BtS 3.19 パッケージ版<br />
-<br /></li>
+<li>Windows 10 64bit</li>
+<li>Civ4 BtS 3.19 パッケージ版</li>
 </ul>
-
 <h1 id="必要なもの">必要なもの</h1>
-
-<p>Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。<br />
-<a href="https://sourceforge.net/projects/beyond-the-sword-sdk/">https://sourceforge.net/projects/beyond-the-sword-sdk/</a><br />
-ここから<br />
-/VS2010Express1.iso と<br />
-/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を<br />
+<p>Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。<br>
+<a href="https://sourceforge.net/projects/beyond-the-sword-sdk/">https://sourceforge.net/projects/beyond-the-sword-sdk/</a><br>
+ここから<br>
+/VS2010Express1.iso と<br>
+/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を<br>
 両方ダウンロードします。</p>
-
-<p>Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは<br />
+<p>Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは<br>
 実行して指示に従いインストールします。</p>
-
-<p>VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。<br />
-(それ以外のプログラミング言語は不要です。)<br />
+<p>VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。<br>
+(それ以外のプログラミング言語は不要です。)<br>
 Setup.htaからVC++2010を選ぶか、<span class="path">
   \VCExpress\setup.exe
 </span>
 を直接実行します。</p>
-
 <h1 id="やってみる">やってみる</h1>
-
-<p></p>
-
 <h2 id="zipから">zipから</h2>
-
-<p>ソースファイルとMakefileもセットになって提供されています。<br />
+<p>ソースファイルとMakefileもセットになって提供されています。<br>
 <a href="https://github.com/dguenms/beyond-the-sword-sdk/archive/develop.zip">https://github.com/dguenms/beyond-the-sword-sdk/archive/develop.zip</a></p>
-
-<p>beyond-the-sword-sdk-develop を展開しMODフォルダに入れて、<br />
+<p>beyond-the-sword-sdk-develop を展開しMODフォルダに入れて、<br>
 お好きなフォルダ名にリネームしておきます。</p>
-
 <p>あらかじめAssetsという名前のフォルダを作っておきます。</p>
-
-<pre><code class="language-txt">└─(MOD名)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─(MOD名)
     │─Assets
     │
     └─CvGameCoreDLL
         └─いろいろ
         └─たくさん
-</code></pre>
-
-<h2 id="gitから">gitから</h2>
-
-<p>Githubで公開されているので、<code>git clone</code>してきてもよいです。<br />
+</code></pre></div><h2 id="gitから">gitから</h2>
+<p>Githubで公開されているので、<code>git clone</code>してきてもよいです。<br>
 Git Bashやcmdから、</p>
-
-<pre><code class="language-shell">$ git clone https://github.com/dguenms/beyond-the-sword-sdk.git mytestmod
-</code></pre>
-
-<p>とします。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/dguenms/beyond-the-sword-sdk.git mytestmod
+</code></pre></div><p>とします。</p>
 <p>Assetsという名前のディレクトリを作っておきます。</p>
-
-<pre><code class="language-shell">$ cd mytestmod
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd mytestmod
 $ mkdir Assets
-</code></pre>
-
-<h2 id="ビルド">ビルド</h2>
-
-<p>そのままでビルドできるようになっています。<br />
+</code></pre></div><h2 id="ビルド">ビルド</h2>
+<p>そのままでビルドできるようになっています。<br>
 <span class="path">
   CvgameCoreDLL\CvGameCoreDLL.sln
 </span>
-をダブルクリックして開きます。<sup class="footnote-ref" id="fnref:othervc"><a href="#fn:othervc">1</a></sup></p>
-
-<p>ビルド構成がDebugになっている場合はRelaseに変更します。<br />
-<img src="https://gforestshade.github.io/kujira/img/vcproject_release.png" alt="" /></p>
-
-<p><code>F7</code>を押します。<br />
-ビルドが始まります。<br />
-しばらく待ちます。<br />
+をダブルクリックして開きます。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>ビルド構成がDebugになっている場合はRelaseに変更します。<br>
+<img src="https://gforestshade.github.io/kujira/img/vcproject_release.png" alt=""></p>
+<p><code>F7</code>を押します。<br>
+ビルドが始まります。<br>
+しばらく待ちます。<br>
 Assetsの中にCvGameCoreDll.dllができているはずです。</p>
-
 <p>Enjoy!</p>
-
 <h1 id="もうソースファイル持ってる場合">もうソースファイル持ってる場合</h1>
-
-<p>コンパイルしたいソースファイル群をすでにお持ちの方は、<br />
-<strong><em>CvTextScreens.cpp以外の</em></strong> *.cppと*.hファイルをすべてこのプロジェクトフォルダに上書きコピーしてリビルドします。<br />
-SolutionExplorerのSolutionまたはProjectのコンテクストメニューからRebuild、<br />
+<p>コンパイルしたいソースファイル群をすでにお持ちの方は、<br>
+<em><strong>CvTextScreens.cpp以外の</strong></em> *.cppと*.hファイルをすべてこのプロジェクトフォルダに上書きコピーしてリビルドします。<br>
+SolutionExplorerのSolutionまたはProjectのコンテクストメニューからRebuild、<br>
 または<code>Ctrl+Alt+F7</code>でリビルドができます。</p>
-
-<p>MODによっては追加の#defineが必要になるかもしれません。<br />
-ProjectのPropatiesから&hellip;<br />
-<img src="https://gforestshade.github.io/kujira/img/vcproject_propaties.png" alt="" /></p>
-
-<p>Configuration Propaties -&gt; NMake -&gt; Additional Optionsに追加してください。<br />
-<img src="https://gforestshade.github.io/kujira/img/vcproject_preprocessor_define.png" alt="" /></p>
-
+<p>MODによっては追加の#defineが必要になるかもしれません。<br>
+ProjectのPropatiesから&hellip;<br>
+<img src="https://gforestshade.github.io/kujira/img/vcproject_propaties.png" alt=""></p>
+<p>Configuration Propaties -&gt; NMake -&gt; Additional Optionsに追加してください。<br>
+<img src="https://gforestshade.github.io/kujira/img/vcproject_preprocessor_define.png" alt=""></p>
 <div style="padding:5em"></div>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:othervc">ほかのバージョンのVC++もインストールしている方は、VC++2010でソリューションファイルを開いてください。<br />
- <a class="footnote-return" href="#fnref:othervc"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>ほかのバージョンのVC++もインストールしている方は、VC++2010でソリューションファイルを開いてください。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -497,7 +463,7 @@ ProjectのPropatiesから&hellip;<br />
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

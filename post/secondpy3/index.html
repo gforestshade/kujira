@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-21",
     "description": "",
-    "wordCount": 3217
+    "wordCount":  3214 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-21">2017-10-21 00:00</time></p>
           
-          <p>3217  Words</p>
+          <p>3214  Words</p>
           
           
 
@@ -374,34 +374,22 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき<br /></li>
-<li>クラス<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき</li>
+<li>クラス</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
 <p>kujira_classというMODを新しく作ります。</p>
-
 <h2 id="フォルダ構成">フォルダ構成</h2>
-
-<pre><code class="language-plain">└─kujira_class
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_class
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p></p>
-
-<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
-
+</code></pre></div><h2 id="kujiraeventmanagerpy">KujiraEventManager.py</h2>
 <p>これもリセットしておきます。</p>
-
 <pre><code>from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -418,37 +406,26 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         'Called at the start of the game'
         super(self.__class__, self).onGameStart(argsList)
         ##########
-</code></pre>
-
-<h1 id="型を作る">型を作る</h1>
-
-<p>今日は<strong>型</strong>を新しく自作します。<br />
+</code></pre><h1 id="型を作る">型を作る</h1>
+<p>今日は<strong>型</strong>を新しく自作します。<br>
 まずその部分のコードを見てみましょう&hellip;</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-class Hito:
-    def getAge(self):
-        return 18
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>これはHito型という型の定義です。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hito</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getAge</span>(self):
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">18</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これはHito型という型の定義です。<br>
 実際に使うところも見てみましょう&hellip;</p>
-
 <pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 a = Hito()
 age = a.getAge()
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>２つとも代入文ですね。<br />
-<code>a = Hito()</code>でHito型の値を作り<code>a</code>に代入しています。<br />
-<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<code>getAge()</code>を呼び出しています。<br />
+</code></pre><p>２つとも代入文ですね。<br>
+<code>a = Hito()</code>でHito型の値を作り<code>a</code>に代入しています。<br>
+<code>age = a.getAge()</code>では「Hito型の変数<code>a</code>の」関数である<code>getAge()</code>を呼び出しています。<br>
 <code>getAge()</code>はreturn文で<code>18</code>を返しますから、<code>age</code>には<code>18</code>が代入されます。</p>
-
-<p>変数の中身は直接見ることはできません。<br />
+<p>変数の中身は直接見ることはできません。<br>
 文字列に埋め込んで、表示してみましょう&hellip;</p>
-
 <pre><code>from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -472,308 +449,253 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         message = &quot;age=%d&quot; % age
         CyInterface().addImmediateMessage(message, &quot;&quot;)
 
-</code></pre>
-
-<p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_10.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_10.png"    /></a>
-<br />
+</code></pre><p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_10.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_10.png"    /></a>
+<br>
 いいですね！</p>
-
 <h1 id="クラス">クラス</h1>
-
-<p>今使ったのは<strong>クラス</strong>という仕組みです。<br />
-<code>class クラス名:</code>とすると、直後の<strong>ブロック</strong>の内容が<strong>クラス</strong>として定義されます。<br />
-クラス名は同時に型名にもなっていて、あとで<code>クラス名()</code>とするとその型の値を生成することができます。<br />
-クラス型の値ひとつひとつを特に<strong>インスタンス</strong>と呼びます。<br />
+<p>今使ったのは<strong>クラス</strong>という仕組みです。<br>
+<code>class クラス名:</code>とすると、直後の<strong>ブロック</strong>の内容が<strong>クラス</strong>として定義されます。<br>
+クラス名は同時に型名にもなっていて、あとで<code>クラス名()</code>とするとその型の値を生成することができます。<br>
+クラス型の値ひとつひとつを特に<strong>インスタンス</strong>と呼びます。<br>
 クラス→型、インスタンス→値、と対応しています。ついてきていますか？</p>
-
-<p>クラス定義に戻りまして、ブロックには関数の定義が並びます。<br />
-大体普通の関数と同じなのですが、<code>def getAge(self):</code>の行を見ると、<br />
-第1引数が<code>self</code>になっていることが見て取れます。<br />
+<p>クラス定義に戻りまして、ブロックには関数の定義が並びます。<br>
+大体普通の関数と同じなのですが、<code>def getAge(self):</code>の行を見ると、<br>
+第1引数が<code>self</code>になっていることが見て取れます。<br>
 この<code>self</code>の中身が、実はインスタンスになっています。</p>
-
-<p>&hellip;&hellip;&hellip;&hellip;どういうことでしょうか？<br />
-少し上で「<code>age = a.getAge()</code>では『Hito型の変数<code>a</code>の』関数である<code>getAge()</code>を呼び出しています。」と説明をしました。<br />
-意味合い的には「<code>a</code>の年齢を取得する」になるわけです。<br />
-なので、<code>getAge()</code>を処理するにあたって「自分は誰なのか？」に当たる情報、<br />
-自分の持ち主たるインスタンス<code>a</code>の情報を利用できるように、<br />
-<code>self</code>に<code>a</code>が代入された状態で<code>getAge()</code>が呼び出されるわけです。<br />
+<p>&hellip;&hellip;&hellip;&hellip;どういうことでしょうか？<br>
+少し上で「<code>age = a.getAge()</code>では『Hito型の変数<code>a</code>の』関数である<code>getAge()</code>を呼び出しています。」と説明をしました。<br>
+意味合い的には「<code>a</code>の年齢を取得する」になるわけです。<br>
+なので、<code>getAge()</code>を処理するにあたって「自分は誰なのか？」に当たる情報、<br>
+自分の持ち主たるインスタンス<code>a</code>の情報を利用できるように、<br>
+<code>self</code>に<code>a</code>が代入された状態で<code>getAge()</code>が呼び出されるわけです。<br>
 (わかりずらいでしょうか&hellip;わからなくてもとりあえず読み進めてください)</p>
-
-<p>クラス定義ブロックの中にある関数のことを特に<strong>メソッド</strong>とよびます。<br />
-普通にメソッドを定義するとインスタンスの所有物になり、<br />
-そのようなメソッドを<strong>インスタンスメソッド</strong>と呼びます。<br />
-<code>インスタンス.インスタンスメソッド名(追加の引数)</code>とすることで<br />
-インスタンスメソッドを呼び出すことができます。<br />
-インスタンスメソッドの第1引数<code>self</code>はインスタンスだというのは書いた通りですが、<br />
-ただのインスタンスではなく「この関数を呼び出した所有者たる」インスタンスなので、<br />
+<p>クラス定義ブロックの中にある関数のことを特に<strong>メソッド</strong>とよびます。<br>
+普通にメソッドを定義するとインスタンスの所有物になり、<br>
+そのようなメソッドを<strong>インスタンスメソッド</strong>と呼びます。<br>
+<code>インスタンス.インスタンスメソッド名(追加の引数)</code>とすることで<br>
+インスタンスメソッドを呼び出すことができます。<br>
+インスタンスメソッドの第1引数<code>self</code>はインスタンスだというのは書いた通りですが、<br>
+ただのインスタンスではなく「この関数を呼び出した所有者たる」インスタンスなので、<br>
 特に<strong>レシーバ</strong>と呼ぶこともあります。</p>
-
-<p>そして、civ4MODのやりたいことのほとんどが<br />
+<p>そして、civ4MODのやりたいことのほとんどが<br>
 このインスタンスメソッドの仕組みにより行われます。たとえば、</p>
-
 <ul>
-<li>都市<code>pCity</code>の人口を4にする<br /></li>
-<li>プレイヤー<code>pPlayer</code>の文明IDを取得する<br /></li>
-<li>ユニット<code>pUnit</code>に昇進<code>e</code>を持たせる<br />
-<br /></li>
+<li>都市<code>pCity</code>の人口を4にする</li>
+<li>プレイヤー<code>pPlayer</code>の文明IDを取得する</li>
+<li>ユニット<code>pUnit</code>に昇進<code>e</code>を持たせる</li>
 </ul>
-
 <p>これらはそれぞれ、</p>
-
 <ul>
-<li><code>pCity.setPopulation(4)</code><br /></li>
-<li><code>pPlayer.getCivilizationType()</code><br /></li>
-<li><code>pUnit.setHasPromotion(e, True)</code><br />
-<br /></li>
+<li><code>pCity.setPopulation(4)</code></li>
+<li><code>pPlayer.getCivilizationType()</code></li>
+<li><code>pUnit.setHasPromotion(e, True)</code></li>
 </ul>
-
 <p>このようなインスタンスメソッドの呼び出しになるわけです。</p>
-
 <h1 id="インスタンス変数">インスタンス変数</h1>
-
-<p>Hito型に戻りましょう。<br />
-Hitoクラスのインスタンスメソッド<code>getAge()</code>は、今のことろ<br />
-レシーバの<code>self</code>を無視して、常に<code>18</code>を返しています。<br />
-これではやや味気ないので、インスタンスの情報から年齢を読み取って<br />
+<p>Hito型に戻りましょう。<br>
+Hitoクラスのインスタンスメソッド<code>getAge()</code>は、今のことろ<br>
+レシーバの<code>self</code>を無視して、常に<code>18</code>を返しています。<br>
+これではやや味気ないので、インスタンスの情報から年齢を読み取って<br>
 返すようにしてみましょう。このようにします。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-     def getAge(self):
-         return self.age
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>インスタンスの所有するメソッドがインスタンスメソッドだったように、<br />
-インスタンスの所有する変数を<strong>インスタンス変数</strong>と呼びます。<br />
-<code>インスタンス.インスタンス変数名</code>で代入したり参照したりできます。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getAge</span>(self):
+         <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>age
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>インスタンスの所有するメソッドがインスタンスメソッドだったように、<br>
+インスタンスの所有する変数を<strong>インスタンス変数</strong>と呼びます。<br>
+<code>インスタンス.インスタンス変数名</code>で代入したり参照したりできます。<br>
 ここでは「インスタンス<code>self</code>の変数<code>age</code>」の値を戻り値として返しています。</p>
-
-<p><code>self.age</code>にはまだ値がありません。<br />
-そのまま読み出そうとするとエラーになってしまいますから、<br />
+<p><code>self.age</code>にはまだ値がありません。<br>
+そのまま読み出そうとするとエラーになってしまいますから、<br>
 代入して設定するためのメソッドを新しく作ります。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-     def setAge(self, age):
-         self.age = age
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>self</code>はレシーバです。そのほかに、<code>age</code>という引数をとって、<br />
-それを「<code>self</code>の<code>age</code>」に代入します。<br />
-<code>a</code>の<code>setAge()</code>を呼び出すには<code>a.setAge(25)</code>のようにします。<br />
-呼び出すときにはレシーバ<code>self</code>は自動的に設定されますので、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setAge</span>(self, age):
+         self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>self</code>はレシーバです。そのほかに、<code>age</code>という引数をとって、<br>
+それを「<code>self</code>の<code>age</code>」に代入します。<br>
+<code>a</code>の<code>setAge()</code>を呼び出すには<code>a.setAge(25)</code>のようにします。<br>
+呼び出すときにはレシーバ<code>self</code>は自動的に設定されますので、<br>
 <code>self</code>以外の引数を指定しましょう。</p>
-
 <p>ここまでをまとめてプログラムしてみましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
-
-class Hito:
-    def getAge(self):
-        return self.age
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hito</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getAge</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>age
     
-    def setAge(self, age):
-        self.age = age
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setAge</span>(self, age):
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
 
-        # aさんをつくる
-        a = Hito()
+        <span style="color:#75715e"># aさんをつくる</span>
+        a <span style="color:#f92672">=</span> Hito()
 
-        # aさんを25歳にする
-        a.setAge(25)
+        <span style="color:#75715e"># aさんを25歳にする</span>
+        a<span style="color:#f92672">.</span>setAge(<span style="color:#ae81ff">25</span>)
 
-        # aさんの年齢を聞いてageに代入する
-        age = a.getAge()
+        <span style="color:#75715e"># aさんの年齢を聞いてageに代入する</span>
+        age <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>getAge()
         
-        message = &quot;age=%d&quot; % age
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
-</code></pre>
-
-<p>ゲームを開始して&hellip;<br />
+        message <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">age=</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> age
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(message, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>ゲームを開始して&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_11.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_11.png"    /></a>
-<br />
+<br>
 できているようです。</p>
-
 <h1 id="自己紹介させる">自己紹介させる</h1>
-
-<p>インスタンス変数やインスタンスメソッドは同じ要領でいくつでも作ることができます。<br />
+<p>インスタンス変数やインスタンスメソッドは同じ要領でいくつでも作ることができます。<br>
 Hito型に名前を持たせてみましょう。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    def getName(self):
-        return self.name
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>name
     
-    def setName(self, name):
-        self.name = name
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>これで、<code>a.setName(&quot;Warrior&quot;)</code>や<code>a.getName()</code>などとできるようになりました。<br />
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setName</span>(self, name):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これで、<code>a.setName(&quot;Warrior&quot;)</code>や<code>a.getName()</code>などとできるようになりました。<br>
 もうすこし複雑な例として、名前と年齢から自己紹介っぽい文字列を作るメソッドを見てみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSelfIntro</span>(self):
+        s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">I</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> years old.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>age)
+        <span style="color:#66d9ef">return</span> s
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これらを使って&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    def getSelfIntro(self):
-        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
-        return s
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-<p>これらを使って&hellip;</p>
-
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
-
-gc = CyGlobalContext()
-
-class Hito:
-    def getAge(self):
-        return self.age
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hito</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getAge</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>age
     
-    def setAge(self, age):
-        self.age = age
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setAge</span>(self, age):
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
 
-    def getName(self):
-        return self.name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>name
     
-    def setName(self, name):
-        self.name = name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setName</span>(self, name):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
 
-    def getSelfIntro(self):
-        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
-        return s
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSelfIntro</span>(self):
+        s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">I</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> years old.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>age)
+        <span style="color:#66d9ef">return</span> s
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
 
-        # aさんをつくる
-        a = Hito()
+        <span style="color:#75715e"># aさんをつくる</span>
+        a <span style="color:#f92672">=</span> Hito()
 
-        # aさんを25歳にする
-        a.setAge(25)
+        <span style="color:#75715e"># aさんを25歳にする</span>
+        a<span style="color:#f92672">.</span>setAge(<span style="color:#ae81ff">25</span>)
 
-        # aさんをジョンにする
-        age = a.setName(&quot;John&quot;)
+        <span style="color:#75715e"># aさんをジョンにする</span>
+        age <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>setName(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">John</span><span style="color:#e6db74">&#34;</span>)
 
-        # 自己紹介を表示
-        message = a.getSelfIntro()
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
-</code></pre>
-
-<p>こんな感じでしょうか。</p>
-
-<p>ゲームを開始して&hellip;<br />
+        <span style="color:#75715e"># 自己紹介を表示</span>
+        message <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>getSelfIntro()
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(message, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>こんな感じでしょうか。</p>
+<p>ゲームを開始して&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_12.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_12.png"    /></a>
-<br />
+<br>
 いいですね！</p>
-
 <h1 id="コンストラクタ">コンストラクタ</h1>
-
-<p>いまのHito型は、年齢と名前をまず設定しないといけません。<br />
-設定しないまま年齢を取得しようとしたり自己紹介を生成しようとすれば<br />
-「値がないのに取り出そうとした」のエラーになってしまいます。<br />
-どうせ必ず設定しなければいけないのなら、最初にHito型のインスタンスを作るときに<br />
-<code>a = Hito(&quot;Emily&quot;, 35)</code>みたいにできれば忘れることもなく安心なような気がします。<br />
+<p>いまのHito型は、年齢と名前をまず設定しないといけません。<br>
+設定しないまま年齢を取得しようとしたり自己紹介を生成しようとすれば<br>
+「値がないのに取り出そうとした」のエラーになってしまいます。<br>
+どうせ必ず設定しなければいけないのなら、最初にHito型のインスタンスを作るときに<br>
+<code>a = Hito(&quot;Emily&quot;, 35)</code>みたいにできれば忘れることもなく安心なような気がします。<br>
 それを実現するには、<code>__init__()</code>( 前と後ろにアンダーバー(_)2つずつ )というメソッドを定義します。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>そうすると、<code>a = Hito(&quot;Emily&quot;, 35)</code>と書けるようになり、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> __init__(self, name, age):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>そうすると、<code>a = Hito(&quot;Emily&quot;, 35)</code>と書けるようになり、<br>
 逆に<code>a = Hito()</code>とは書けなくなります。</p>
-
-<p>インスタンスを作るときに呼び出されるメソッドを<strong>コンストラクタ</strong>と呼び、<br />
-コンストラクタが要求している(<code>self</code>以外の)引数をすべて与えないと<br />
+<p>インスタンスを作るときに呼び出されるメソッドを<strong>コンストラクタ</strong>と呼び、<br>
+コンストラクタが要求している(<code>self</code>以外の)引数をすべて与えないと<br>
 インスタンスを作ることができなくなります。</p>
-
-<p>この仕組みによって、インスタンスにとって必須なインスタンス変数を<br />
-設定し忘れるエラーを<strong><em>未然に防げる</em></strong>ため、べんりです。</p>
-
+<p>この仕組みによって、インスタンスにとって必須なインスタンス変数を<br>
+設定し忘れるエラーを<em><strong>未然に防げる</strong></em>ため、べんりです。</p>
 <h1 id="ふえるインスタンス">ふえるインスタンス</h1>
-
 <p>インスタンスは1つであるとは限りません。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        a = Hito(&quot;John&quot;, 25)
-        b = Hito(&quot;Emily&quot;, 35)
-        c = Hito(&quot;Montezuma&quot;, 7)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>むしろこのようにどんどん作っていく方が便利に使えます。<br />
-同じクラス(型)から複数の異なるインスタンス(値)が作れるので、<br />
-都市型のインスタンス、ユニット型のインスタンス、プレイヤー型のインスタンス<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        a <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">John</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">25</span>)
+        b <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Emily</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">35</span>)
+        c <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Montezuma</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">7</span>)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>むしろこのようにどんどん作っていく方が便利に使えます。<br>
+同じクラス(型)から複数の異なるインスタンス(値)が作れるので、<br>
+都市型のインスタンス、ユニット型のインスタンス、プレイヤー型のインスタンス<br>
 などなどに応用が利くのですね。</p>
-
 <p>Hito型のインスタンスも3人ほど作って、それぞれに自己紹介させてみましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
-
-class Hito:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hito</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, name, age):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
         
-    def getAge(self):
-        return self.age
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getAge</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>age
     
-    def setAge(self, age):
-        self.age = age
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setAge</span>(self, age):
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
 
-    def getName(self):
-        return self.name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>name
     
-    def setName(self, name):
-        self.name = name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setName</span>(self, name):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
 
-    def getSelfIntro(self):
-        s = &quot;I'm %s, %d years old.&quot; % (self.name, self.age)
-        return s
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSelfIntro</span>(self):
+        s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">I</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> years old.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>age)
+        <span style="color:#66d9ef">return</span> s
         
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
 
-        a = Hito(&quot;John&quot;, 25)
-        b = Hito(&quot;Emily&quot;, 35)
-        c = Hito(&quot;Montezuma&quot;, 7)
+        a <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">John</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">25</span>)
+        b <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Emily</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">35</span>)
+        c <span style="color:#f92672">=</span> Hito(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Montezuma</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">7</span>)
 
-        messageA = a.getSelfIntro()
-        CyInterface().addImmediateMessage(messageA, &quot;&quot;)
-        messageB = b.getSelfIntro()
-        CyInterface().addImmediateMessage(messageB, &quot;&quot;)
-        messageC = c.getSelfIntro()
-        CyInterface().addImmediateMessage(messageC, &quot;&quot;)
-</code></pre>
-
-<p>ゲームを起動して&hellip;<br />
+        messageA <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>getSelfIntro()
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(messageA, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+        messageB <span style="color:#f92672">=</span> b<span style="color:#f92672">.</span>getSelfIntro()
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(messageB, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+        messageC <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>getSelfIntro()
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(messageC, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>ゲームを起動して&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_13.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_13.png"    /></a>
-<br />
+<br>
 できました！</p>
         </div>
         <div class="col-12">
@@ -787,7 +709,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

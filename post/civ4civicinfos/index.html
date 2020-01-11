@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-16",
     "description": "",
-    "wordCount": 10450
+    "wordCount":  10458 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -1686,7 +1686,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-05-16">2018-05-16 01:16</time></p>
           
-          <p>10450  Words</p>
+          <p>10458  Words</p>
           
           
 
@@ -1703,1018 +1703,643 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>Civ4CivicInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4CivicInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="間違えやすい設定項目">間違えやすい設定項目</h1>
-
 <ul>
-<li>指導者の好む社会制度の設定は、各指導者のところにあります。<br />
-<br /></li>
+<li>指導者の好む社会制度の設定は、各指導者のところにあります。</li>
 </ul>
-
 <h1 id="解説">解説</h1>
-
 <h2 id="civ4civicinfos">&lt;Civ4CivicInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>&quot;x-schema:CIV4GameInfoSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="civicinfo">&lt;CivicInfo&gt;</h2>
-
 <p>このタグ1つが、社会制度の定義1つと対応しています。</p>
-
 <p>以下&lt;CivicInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="civicoptiontype">&lt;CivicOptionType&gt;</h3>
-
 <p>この社会制度が属する体制を指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#社会制度">体制キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E7%A4%BE%E4%BC%9A%E5%88%B6%E5%BA%A6">体制キー</a></p>
+<p>例：<br>
 &lt;CivicOptionType&gt;CIVICOPTION_GOVERNMENT&lt;/CivicOptionType&gt;</p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>この社会制度の社会制度キーを定義します。<br />
+<p>この社会制度の社会制度キーを定義します。<br>
 他と被らなければなんでも構いませんが、CIVIC_英語名 にするのが無難です。</p>
-
 <p>値：社会制度キー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;CIVIC_UNIVERSAL_SUFFRAGE&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>この社会制度の名称を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「普通選挙」<br />
+<p>例：「普通選挙」<br>
 &lt;Description&gt;TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE&lt;/Description&gt;</p>
-
 <h3 id="civilopedia">&lt;Civilopedia&gt;</h3>
-
 <p>この文明のシヴィロペディアに表示される文章を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Civilopedia&gt;TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE_PEDIA&lt;/Civilopedia&gt;</p>
-
 <h3 id="strategy">&lt;Strategy&gt;</h3>
-
-<p>この社会制度の短い説明文を指定します。<br />
+<p>この社会制度の短い説明文を指定します。<br>
 シドのヒントやシヴィロペディアに表示されます。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE_STRATEGY&lt;/Strategy&gt;</p>
-
 <h3 id="button">&lt;Button&gt;</h3>
-
-<p>この社会制度を表すボタン画像のファイル名を指定します。<br />
+<p>この社会制度を表すボタン画像のファイル名を指定します。<br>
 外交担当相や外交画面に表示されます。</p>
-
 <p>値：\Assets\ からの相対ファイルパス</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Button&gt;,Art/Interface/Buttons/Civics/Universal_Sufferage.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,3&lt;/Button&gt;</p>
-
 <h3 id="techprereq">&lt;TechPrereq&gt;</h3>
-
 <p>この社会制度を採用するために必要な技術を指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
+<p>例：<br>
 &lt;TechPrereq&gt;TECH_DEMOCRACY&lt;/TechPrereq&gt;</p>
-
 <h3 id="ianarchylength">&lt;iAnarchyLength&gt;</h3>
-
-<p>この社会制度に変更するときの変更コストを指定します。<br />
-この値が高いほど、<strong><em>他の制度からこの制度に</em></strong>変更するときの無政府状態が長くなります。</p>
-
+<p>この社会制度に変更するときの変更コストを指定します。<br>
+この値が高いほど、<em><strong>他の制度からこの制度に</strong></em>変更するときの無政府状態が長くなります。</p>
 <p>BtSでは、全ての社会制度で<code>1</code>です。</p>
-
 <p>値：正の整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAnarchyLength&gt;1&lt;/iAnarchyLength&gt;</p>
-
 <h3 id="upkeep">&lt;Upkeep&gt;</h3>
-
 <p>社会制度の維持維持費を指定します。</p>
-
-<p>値：次のいずれか<br />
-<p class="ml-4" markdown="1">なし：<code>NONE</code><br />
-低額：<code>UPKEEP_LOW</code><br />
-中程度：<code>UPKEEP_MEDIUM</code><br />
-高額：<code>UPKEEP_HIGH</code></p></p>
-
-<p>例：<br />
+<p>値：次のいずれか</p>
+<p class="ml-4" markdown="1">なし：`NONE`
+低額：`UPKEEP_LOW`
+中程度：`UPKEEP_MEDIUM`
+高額：`UPKEEP_HIGH`</p>
+<p>例：<br>
 &lt;Upkeep&gt;UPKEEP_MEDIUM&lt;/Upkeep&gt;</p>
-
 <h3 id="iaiweight">&lt;iAIWeight&gt;</h3>
-
-<p>AIの社会制度評価値に対して、この社会制度の評価値に修正を与えます。<br />
-正負どちらの値も指定でき、この社会制度に対する評価値が一律その分だけ加算されます。<br />
+<p>AIの社会制度評価値に対して、この社会制度の評価値に修正を与えます。<br>
+正負どちらの値も指定でき、この社会制度に対する評価値が一律その分だけ加算されます。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIWeight&gt;0&lt;/iAIWeight&gt;</p>
-
 <h3 id="igreatpeopleratemodifier">&lt;iGreatPeopleRateModifier&gt;</h3>
-
-<p>全都市の偉人ポイントへの修正率を指定します。<br />
-この社会制度を採用している文明では偉人ポイントの産出が+n%されます。<br />
+<p>全都市の偉人ポイントへの修正率を指定します。<br>
+この社会制度を採用している文明では偉人ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に偉人ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br />
+<p>特に偉人ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatPeopleRateModifier&gt;0&lt;/iGreatPeopleRateModifier&gt;</p>
-
 <h3 id="igreatgeneralratemodifier">&lt;iGreatGeneralRateModifier&gt;</h3>
-
-<p>大将軍ポイントへの修正率を指定します。<br />
-この社会制度を採用している文明では、<br />
-全ての戦闘において大将軍ポイントの産出が+n%されます。<br />
+<p>大将軍ポイントへの修正率を指定します。<br>
+この社会制度を採用している文明では、<br>
+全ての戦闘において大将軍ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatGeneralRateModifier&gt;0&lt;/iGreatGeneralRateModifier&gt;</p>
-
 <h3 id="idomesticgreatgeneralratemodifier">&lt;iDomesticGreatGeneralRateModifier&gt;</h3>
-
-<p>文化圏内の大将軍ポイントへの修正率を指定します。<br />
-この社会制度を採用している文明では、<br />
-自文化圏内で行われた戦闘において大将軍ポイントの産出が+n%されます。<br />
+<p>文化圏内の大将軍ポイントへの修正率を指定します。<br>
+この社会制度を採用している文明では、<br>
+自文化圏内で行われた戦闘において大将軍ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iDomesticGreatGeneralRateModifier&gt;0&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
-
 <h3 id="istatereligiongreatpeopleratemodifier">&lt;iStateReligionGreatPeopleRateModifier&gt;</h3>
-
-<p>国教が布教されている都市への偉人ポイント修正率を指定します。<br />
-この社会制度を採用している文明で、国教と同じ宗教が布教されている都市では、<br />
-偉人ポイントの産出が+n%されます。<br />
+<p>国教が布教されている都市への偉人ポイント修正率を指定します。<br>
+この社会制度を採用している文明で、国教と同じ宗教が布教されている都市では、<br>
+偉人ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に偉人ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br />
+<p>特に偉人ポイントを割合で増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は平和主義です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iStateReligionGreatPeopleRateModifier&gt;0&lt;/iStateReligionGreatPeopleRateModifier&gt;</p>
-
-<p>例２：国教をもつ都市で偉人の出生率+100%<br />
+<p>例２：国教をもつ都市で偉人の出生率+100%<br>
 &lt;iStateReligionGreatPeopleRateModifier&gt;100&lt;/iStateReligionGreatPeopleRateModifier&gt;</p>
-
 <h3 id="idistancemaintenancemodifier">&lt;iDistanceMaintenanceModifier&gt;</h3>
-
-<p>都市維持費のうち、距離由来の部分に対する修正率を指定します。<br />
+<p>都市維持費のうち、距離由来の部分に対する修正率を指定します。<br>
 この社会制度を採用している文明では、距離による都市維持費が+n%されます。</p>
-
-<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は国有化です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iDistanceMaintenanceModifier&gt;0&lt;/iDistanceMaintenanceModifier&gt;</p>
-
-<p>例２：地方維持費なし<br />
+<p>例２：地方維持費なし<br>
 &lt;iDistanceMaintenanceModifier&gt;-100&lt;/iDistanceMaintenanceModifier&gt;</p>
-
 <h3 id="inumcitiesmaintenancemodifier">&lt;iNumCitiesMaintenanceModifier&gt;</h3>
-
-<p>都市維持費のうち、都市数由来の部分に対する修正率を指定します。<br />
+<p>都市維持費のうち、都市数由来の部分に対する修正率を指定します。<br>
 この社会制度を採用している文明では、都市数による都市維持費が+n%されます。</p>
-
-<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iNumCitiesMaintenanceModifier&gt;0&lt;/iNumCitiesMaintenanceModifier&gt;</p>
-
 <h3 id="icorporationmaintenancemodifier">&lt;iCorporationMaintenanceModifier&gt;</h3>
-
-<p>都市維持費のうち、企業由来の部分に対する修正率を指定します。<br />
+<p>都市維持費のうち、企業由来の部分に対する修正率を指定します。<br>
 この社会制度を採用している文明では、企業による都市維持費が+n%されます。</p>
-
-<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに維持費を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は自由市場です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iCorporationMaintenanceModifier&gt;0&lt;/iCorporationMaintenanceModifier&gt;</p>
-
-<p>例２：企業の維持費-25%<br />
+<p>例２：企業の維持費-25%<br>
 &lt;iCorporationMaintenanceModifier&gt;-25&lt;/iCorporationMaintenanceModifier&gt;</p>
-
 <h3 id="iextrahealth">&lt;iExtraHealth&gt;</h3>
-
-<p>全都市に追加する衛生/不衛生を指定します。<br />
+<p>全都市に追加する衛生/不衛生を指定します。<br>
 この社会制度を採用している文明では、全都市で〈衛生〉が+nされます。</p>
-
-<p>負の値を指定することもでき、その場合は〈不衛生〉が加算されます。<br />
-とくに〈衛生〉も〈不衛生〉も増やさない普通の社会制度の場合、0を指定します。<br />
+<p>負の値を指定することもでき、その場合は〈不衛生〉が加算されます。<br>
+とくに〈衛生〉も〈不衛生〉も増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は環境保護主義です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iExtraHealth&gt;0&lt;/iExtraHealth&gt;</p>
-
-<p>例２：全ての都市で〈衛生〉+6<br />
+<p>例２：全ての都市で〈衛生〉+6<br>
 &lt;iExtraHealth&gt;6&lt;/iExtraHealth&gt;</p>
-
 <h3 id="ifreeexperience">&lt;iFreeExperience&gt;</h3>
-
-<p>追加の経験値を指定します。<br />
-この社会制度を採用している文明で生産されるユニットは、<br />
+<p>追加の経験値を指定します。<br>
+この社会制度を採用している文明で生産されるユニットは、<br>
 ここに指定された分の経験値を追加で得ます。</p>
-
-<p>とくに経験値を与えない普通の社会制度の場合、0を指定します。<br />
+<p>とくに経験値を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は主従制のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iFreeExperience&gt;0&lt;/iFreeExperience&gt;</p>
-
-<p>例２：新ユニットが経験値+2ポイントを取得<br />
+<p>例２：新ユニットが経験値+2ポイントを取得<br>
 &lt;iFreeExperience&gt;2&lt;/iFreeExperience&gt;</p>
-
 <h3 id="iworkerspeedmodifier">&lt;iWorkerSpeedModifier&gt;</h3>
-
-<p>労働効率の修正率を指定します。<br />
+<p>労働効率の修正率を指定します。<br>
 この社会制度を採用している間、労働者系のコマンドが+n%早く完了します。</p>
-
-<p>とくに労働効率を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに労働効率を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は農奴制です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iWorkerSpeedModifier&gt;0&lt;/iWorkerSpeedModifier&gt;</p>
-
-<p>例２：労働者の作業速度+50%<br />
+<p>例２：労働者の作業速度+50%<br>
 &lt;iWorkerSpeedModifier&gt;50&lt;/iWorkerSpeedModifier&gt;</p>
-
 <h3 id="iimprovementupgraderatemodifier">&lt;iImprovementUpgradeRateModifier&gt;</h3>
-
-<p>地形改善の成長率に対する修正率を指定します。<br />
-この社会制度を採用している間、すべての成長する地形改善は+n%早く成長します。<br />
-すべての成長する地形改善が対象であり、改善ごとに異なる成長率を<br />
+<p>地形改善の成長率に対する修正率を指定します。<br>
+この社会制度を採用している間、すべての成長する地形改善は+n%早く成長します。<br>
+すべての成長する地形改善が対象であり、改善ごとに異なる成長率を<br>
 設定することはできないことに注意してください。</p>
-
-<p>とくに改善の成長を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに改善の成長を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は奴隷解放です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iImprovementUpgradeRateModifier&gt;0&lt;/iImprovementUpgradeRateModifier&gt;</p>
-
-<p>例２：成長率増加+100%<br />
+<p>例２：成長率増加+100%<br>
 &lt;iImprovementUpgradeRateModifier&gt;100&lt;/iImprovementUpgradeRateModifier&gt;</p>
-
 <h3 id="imilitaryproductionmodifier">&lt;iMilitaryProductionModifier&gt;</h3>
-
 <p><a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#bmilitaryproduction">軍事ユニット</a>を生産するときの〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>とくに軍事ユニット生産に修正を与えない普通の社会制度の場合、0を指定します。<br />
+<p>とくに軍事ユニット生産に修正を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は警察国家のみです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMilitaryProductionModifier&gt;0&lt;/iMilitaryProductionModifier&gt;</p>
-
-<p>例２：軍事ユニット生産+25%<br />
+<p>例２：軍事ユニット生産+25%<br>
 &lt;iMilitaryProductionModifier&gt;25&lt;/iMilitaryProductionModifier&gt;</p>
-
 <h3 id="ibasefreeunits">&lt;iBaseFreeUnits&gt;</h3>
-
-<p>追加のユニット無料枠(加算分)を指定します。<br />
+<p>追加のユニット無料枠(加算分)を指定します。<br>
 この値が高いほど、ユニット維持費が安くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくにユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくにユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は主従制です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBaseFreeUnits&gt;0&lt;/iBaseFreeUnits&gt;</p>
-
 <h3 id="ibasefreemilitaryunits">&lt;iBaseFreeMilitaryUnits&gt;</h3>
-
-<p>追加の軍事ユニット無料枠(加算分)を指定します。<br />
+<p>追加の軍事ユニット無料枠(加算分)を指定します。<br>
 この値が高いほど、ユニット維持費が安くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくに軍事ユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくに軍事ユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBaseFreeMilitaryUnits&gt;0&lt;/iBaseFreeMilitaryUnits&gt;</p>
-
 <h3 id="ifreeunitspopulationpercent">&lt;iFreeUnitsPopulationPercent&gt;</h3>
-
-<p>ユニット無料枠の人口係数を指定します。<br />
+<p>ユニット無料枠の人口係数を指定します。<br>
 この値が高いほど、大国においてユニット維持費が安くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくにユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくにユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は主従制です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeUnitsPopulationPercent&gt;0&lt;/iFreeUnitsPopulationPercent&gt;</p>
-
 <h3 id="ifreemilitaryunitspopulationpercent">&lt;iFreeMilitaryUnitsPopulationPercent&gt;</h3>
-
-<p>軍事ユニット無料枠の人口係数を指定します。<br />
+<p>軍事ユニット無料枠の人口係数を指定します。<br>
 この値が高いほど、大国においてユニット維持費が安くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくに軍事ユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくに軍事ユニット無料枠を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeMilitaryUnitsPopulationPercent&gt;0&lt;/iFreeMilitaryUnitsPopulationPercent&gt;</p>
-
 <h3 id="igoldperunit">&lt;iGoldPerUnit&gt;</h3>
-
-<p>ユニット維持費係数を指定します。<br />
+<p>ユニット維持費係数を指定します。<br>
 この値が高いほど、ユニット維持費が高くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくにユニット維持費を重くしない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくにユニット維持費を重くしない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGoldPerUnit&gt;0&lt;/iGoldPerUnit&gt;</p>
-
 <h3 id="igoldpermilitaryunit">&lt;iGoldPerMilitaryUnit&gt;</h3>
-
-<p>軍事ユニット維持費係数を指定します。<br />
+<p>軍事ユニット維持費係数を指定します。<br>
 この値が高いほど、ユニット維持費が高くなります。</p>
-
-<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#ユニット維持費">こちら</a>を参照してください。</p>
-
-<p>とくにユニット維持費を重くしない普通の社会制度の場合、0を指定します。<br />
+<p>計算式のどこに算入されるかについては、<a href="https://gforestshade.github.io/kujira/post/glossary/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E7%B6%AD%E6%8C%81%E8%B2%BB">こちら</a>を参照してください。</p>
+<p>とくにユニット維持費を重くしない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は平和主義です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGoldPerMilitaryUnit&gt;0&lt;/iGoldPerMilitaryUnit&gt;</p>
-
 <h3 id="ihappypermilitaryunit">&lt;iHappyPerMilitaryUnit&gt;</h3>
-
-<p>都市に駐留する軍事ユニットから〈幸福〉を発生させます。<br />
+<p>都市に駐留する軍事ユニットから〈幸福〉を発生させます。<br>
 この社会制度を採用している間、都市に駐留する軍事ユニット1つにつき〈幸福〉+nを得ます。</p>
-
-<p>この効果を使わない場合、0を指定します。<br />
+<p>この効果を使わない場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は世襲政治です。</p>
-
 <p>負の値を指定することもできます。その場合、〈不幸〉を産出します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHappyPerMilitaryUnit&gt;0&lt;/iHappyPerMilitaryUnit&gt;</p>
-
-<p>例２：都市に駐留する軍事ユニット1つにつき、〈幸福〉+1<br />
+<p>例２：都市に駐留する軍事ユニット1つにつき、〈幸福〉+1<br>
 &lt;iHappyPerMilitaryUnit&gt;1&lt;/iHappyPerMilitaryUnit&gt;</p>
-
 <h3 id="bmilitaryfoodproduction">&lt;bMilitaryFoodProduction&gt;</h3>
-
 <p>軍事ユニット生産時に余剰食料を用います。</p>
-
-<p>通常、余った〈パン〉は都市に蓄積され、人口増加に使用されます。<br />
-労働者と開拓者の生産時は例外で、余った〈パン〉も〈ハンマー〉に変換されて<br />
+<p>通常、余った〈パン〉は都市に蓄積され、人口増加に使用されます。<br>
+労働者と開拓者の生産時は例外で、余った〈パン〉も〈ハンマー〉に変換されて<br>
 生産に使用されるようになります。</p>
-
-<p>ここに1を指定すると、その対象が軍事ユニット全体まで広がります。<br />
+<p>ここに1を指定すると、その対象が軍事ユニット全体まで広がります。<br>
 通常より早く軍事ユニットを生産することができますが、その間都市は成長できなくなります。</p>
-
-<p>この効果を使わない場合、0を指定します。<br />
+<p>この効果を使わない場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：0か1</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;bMilitaryFoodProduction&gt;0&lt;/bMilitaryFoodProduction&gt;</p>
-
-<p>例２：〈パン〉によって生産される軍事ユニット<br />
+<p>例２：〈パン〉によって生産される軍事ユニット<br>
 &lt;bMilitaryFoodProduction&gt;1&lt;/bMilitaryFoodProduction&gt;</p>
-
 <h3 id="imaxconscript">&lt;iMaxConscript&gt;</h3>
-
-<p>徴兵を有効化します。<br />
-この社会制度を採用している文明では、1ターンに追加でn回の徴兵ができるようになります。<br />
+<p>徴兵を有効化します。<br>
+この社会制度を採用している文明では、1ターンに追加でn回の徴兵ができるようになります。<br>
 実際の徴兵回数はマップサイズの影響を受けます。</p>
-
-<p>とくに徴兵回数を増やさない普通の社会制度の場合、0を指定します。<br />
+<p>とくに徴兵回数を増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxConscript&gt;0&lt;/iMaxConscript&gt;</p>
-
-<p>例２：1ターンにつき3ユニットを各都市で徴兵可能<br />
+<p>例２：1ターンにつき3ユニットを各都市で徴兵可能<br>
 &lt;iMaxConscript&gt;3&lt;/iMaxConscript&gt;</p>
-
 <h3 id="bnounhealthypopulation">&lt;bNoUnhealthyPopulation&gt;</h3>
-
 <p>ここに1を指定する場合、全都市で人口による不衛生がなくなります。</p>
-
 <p>BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoUnhealthyPopulation&gt;0&lt;/bNoUnhealthyPopulation&gt;</p>
-
 <h3 id="iexpinbordermodifier">&lt;iExpInBorderModifier&gt;</h3>
-
-<p>自文化圏内で戦闘をしたときの経験値に対する修正率を指定します。<br />
-この社会制度を採用していて、自文化圏内の戦闘により経験値を獲得する場合、<br />
+<p>自文化圏内で戦闘をしたときの経験値に対する修正率を指定します。<br>
+この社会制度を採用していて、自文化圏内の戦闘により経験値を獲得する場合、<br>
 経験値に+n%の補正を得ます。</p>
-
 <p>BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iExpInBorderModifier&gt;0&lt;/iExpInBorderModifier&gt;</p>
-
 <h3 id="bbuildingonlyhealthy">&lt;bBuildingOnlyHealthy&gt;</h3>
-
 <p>ここに1を指定する場合、全都市で建造物による不衛生がなくなります。</p>
-
 <p>BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bBuildingOnlyHealthy&gt;0&lt;/bBuildingOnlyHealthy&gt;</p>
-
 <h3 id="ilargestcityhappiness">&lt;iLargestCityHappiness&gt;</h3>
-
-<p>大都市に〈幸福〉を与えます。<br />
-この社会制度を採用している間、人口の多い方から5都市<sup class="footnote-ref" id="fnref:worldlargest"><a href="#fn:worldlargest">1</a></sup>に〈幸福〉+nします。</p>
-
-<p>負の値を指定することもでき、その場合〈不幸〉を産出します。<br />
-とくに大都市の幸福を増やさない普通の社会制度の場合、0を指定します。<br />
+<p>大都市に〈幸福〉を与えます。<br>
+この社会制度を採用している間、人口の多い方から5都市<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>に〈幸福〉+nします。</p>
+<p>負の値を指定することもでき、その場合〈不幸〉を産出します。<br>
+とくに大都市の幸福を増やさない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は代議制です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iLargestCityHappiness&gt;0&lt;/iLargestCityHappiness&gt;</p>
-
-<p>例２：大きさで上位5都市の〈幸福〉+3<br />
+<p>例２：大きさで上位5都市の〈幸福〉+3<br>
 &lt;iLargestCityHappiness&gt;3&lt;/iLargestCityHappiness&gt;</p>
-
 <h3 id="iwarwearinessmodifier">&lt;iWarWearinessModifier&gt;</h3>
-
-<p>厭戦感情に対する修正率を指定します。<br />
-この社会制度を採用している間、厭戦感情が+n%されます。<br />
+<p>厭戦感情に対する修正率を指定します。<br>
+この社会制度を採用している間、厭戦感情が+n%されます。<br>
 負の値を指定することもできます。</p>
-
-<p>とくに厭戦感情を補正しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに厭戦感情を補正しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は警察国家です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iWarWearinessModifier&gt;0&lt;/iWarWearinessModifier&gt;</p>
-
-<p>例２：厭戦感情-50%<br />
+<p>例２：厭戦感情-50%<br>
 &lt;iWarWearinessModifier&gt;-50%&lt;/iWarWearinessModifier&gt;</p>
-
 <h3 id="ifreespecialist">&lt;iFreeSpecialist&gt;</h3>
-
-<p>無償の専門家を与えます。<br />
-この社会制度を採用している間、全都市にn人の無償の専門家が与えられます。<br />
+<p>無償の専門家を与えます。<br>
+この社会制度を採用している間、全都市にn人の無償の専門家が与えられます。<br>
 この属性では、プレイヤーがどの専門家に割り当てるかを決定します。</p>
-
-<p>とくに無償の専門家を提供しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに無償の専門家を提供しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は重商主義です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeSpecialist&gt;0&lt;/iFreeSpecialist&gt;</p>
-
 <h3 id="itraderoutes">&lt;iTradeRoutes&gt;</h3>
-
-<p>追加の交易路の本数を指定します。<br />
+<p>追加の交易路の本数を指定します。<br>
 この社会制度を採用している間、全都市にn本の追加の交易路が与えられます。</p>
-
-<p>ここに負の値を指定することはできますが、<br />
-交易路の総本数が負の値になることは想定されていないため、<br />
-そうならないように注意を払うべきです。<br />
-実験したところでは、総本数が負の値になっても0本であるかのようにふるまいますが、<br />
+<p>ここに負の値を指定することはできますが、<br>
+交易路の総本数が負の値になることは想定されていないため、<br>
+そうならないように注意を払うべきです。<br>
+実験したところでは、総本数が負の値になっても0本であるかのようにふるまいますが、<br>
 想定外の動作であることに注意してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iTradeRoutes&gt;0&lt;/iTradeRoutes&gt;</p>
-
 <h3 id="bnoforeigntrade">&lt;bNoForeignTrade&gt;</h3>
-
-<p>他文明との交易路収入を無効にします。<br />
-ここに1を指定する場合、この社会制度を採用している間、<br />
-属国でない他文明との交易路収入が無効になります。<br />
+<p>他文明との交易路収入を無効にします。<br>
+ここに1を指定する場合、この社会制度を採用している間、<br>
+属国でない他文明との交易路収入が無効になります。<br>
 (自国同士か属国の都市の交易路収入のみが有効になります)</p>
-
-<p>とくに対外交易路を制限しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに対外交易路を制限しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は重商主義です。</p>
-
 <p>値：0か1</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;bNoForeignTrade&gt;0&lt;/bNoForeignTrade&gt;</p>
-
-<p>例２：対外交易路なし<br />
+<p>例２：対外交易路なし<br>
 &lt;bNoForeignTrade&gt;1&lt;/bNoForeignTrade&gt;</p>
-
 <h3 id="bnocorporations">&lt;bNoCorporations&gt;</h3>
-
-<p>企業を無効化します。<br />
-ここに1を指定する場合、この社会制度を採用している間、<br />
-本社の創始、支店の出店ができなくなり、<br />
+<p>企業を無効化します。<br>
+ここに1を指定する場合、この社会制度を採用している間、<br>
+本社の創始、支店の出店ができなくなり、<br>
 本社と支店の産出と維持費がなくなります。</p>
-
-<p>とくに企業を無効化しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに企業を無効化しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は国有化です。</p>
-
 <p>値：0か1</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;bNoCorporations&gt;0&lt;/bNoCorporations&gt;</p>
-
-<p>例２：企業の無効化<br />
+<p>例２：企業の無効化<br>
 &lt;bNoCorporations&gt;1&lt;/bNoCorporations&gt;</p>
-
 <h3 id="bnoforeigncorporations">&lt;bNoForeignCorporations&gt;</h3>
-
-<p>外国企業を無効化します。<br />
-ここに1を指定する場合、この社会制度を採用している間、<br />
-外国に本社を持つ支店の出店ができなくなり、<br />
+<p>外国企業を無効化します。<br>
+ここに1を指定する場合、この社会制度を採用している間、<br>
+外国に本社を持つ支店の出店ができなくなり、<br>
 すでにある支店も産出と維持費がなくなります。</p>
-
-<p>とくに外国企業を無効化しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに外国企業を無効化しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は重商主義です。</p>
-
 <p>値：0か1</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;bNoForeignCorporations&gt;0&lt;/bNoForeignCorporations&gt;</p>
-
-<p>例１：外国企業の無効化<br />
+<p>例１：外国企業の無効化<br>
 &lt;bNoForeignCorporations&gt;1&lt;/bNoForeignCorporations&gt;</p>
-
 <h3 id="icivicpercentanger">&lt;iCivicPercentAnger&gt;</h3>
-
-<p>この社会制度を採用していない文明に〈不満〉をもたらします。<br />
-この値が高いほど、より大きな〈不満〉が発生します。<br />
+<p>この社会制度を採用していない文明に〈不満〉をもたらします。<br>
+この値が高いほど、より大きな〈不満〉が発生します。<br>
 この社会制度を採用していない文明は、全都市に以下の〈不満〉が発生します。</p>
-
 <p><strong>不満</strong> = &lt;iCivicPercentAnger&gt; * [各都市の人口] * [世界中でこの社会制度を採用している文明の数] / 1000</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCivicPercentAnger&gt;0&lt;/iCivicPercentAnger&gt;</p>
-
-<p>例：1人口・採用1文明あたり〈不満〉+0.4<br />
+<p>例：1人口・採用1文明あたり〈不満〉+0.4<br>
 &lt;iCivicPercentAnger&gt;400&lt;/iCivicPercentAnger&gt;</p>
-
 <h3 id="bstatereligion">&lt;bStateReligion&gt;</h3>
-
-<p>国教の制定を許可します。<br />
+<p>国教の制定を許可します。<br>
 ここに1を指定した社会制度を採用している間のみ、プレイヤーは国教を制定することができます。</p>
-
-<p>BtSでは、宗教制度に属する社会制度のうち、信教の自由を除いた残り4つの社会制度がこの属性を持ちます。<br />
-プレイヤーは同じ体制のうちのいずれかの社会制度は採用しなければなりませんから、<br />
+<p>BtSでは、宗教制度に属する社会制度のうち、信教の自由を除いた残り4つの社会制度がこの属性を持ちます。<br>
+プレイヤーは同じ体制のうちのいずれかの社会制度は採用しなければなりませんから、<br>
 結果として信教の自由以外を採用している間は国教が制定できることになります。</p>
-
-<p>同じ体制の中に1を指定している社会制度があるにもかかわらず、ここに０を指定した場合、<br />
+<p>同じ体制の中に1を指定している社会制度があるにもかかわらず、ここに０を指定した場合、<br>
 シヴィロペディアなどの説明文に「国教なし」と表示されます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bStateReligion&gt;0&lt;/bStateReligion&gt;</p>
-
 <h3 id="bnononstatereligionspread">&lt;bNoNonStateReligionSpread&gt;</h3>
-
-<p>国教でない宗教の布教を禁止します。<br />
-ここに1を指定した場合、この社会制度を採用している文明の都市には<br />
-採用している国教と同じ宗教のみが布教でき、<br />
+<p>国教でない宗教の布教を禁止します。<br>
+ここに1を指定した場合、この社会制度を採用している文明の都市には<br>
+採用している国教と同じ宗教のみが布教でき、<br>
 それ以外の宗教は自然伝搬・宣教師・イベントを問わず布教できなくなります。</p>
-
 <p>BtSでは、この属性を持つ社会制度は神権政治です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoNonStateReligionSpread&gt;0&lt;/bNoNonStateReligionSpread&gt;</p>
-
 <h3 id="istatereligionhappiness">&lt;iStateReligionHappiness&gt;</h3>
-
-<p>国教からの追加の〈幸福〉を指定します。<br />
-この社会制度を採用している文明の都市に国教が布教されているなら、<br />
+<p>国教からの追加の〈幸福〉を指定します。<br>
+この社会制度を採用している文明の都市に国教が布教されているなら、<br>
 その宗教は追加で〈幸福〉を<code>+n</code>産出します。</p>
-
-<p>負の数を指定でき、その場合は〈不満〉を産出します。<br />
+<p>負の数を指定でき、その場合は〈不満〉を産出します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iStateReligionHappiness&gt;0&lt;/iStateReligionHappiness&gt;</p>
-
-<p>例２：国教から〈幸福〉+2<br />
+<p>例２：国教から〈幸福〉+2<br>
 &lt;iStateReligionHappiness&gt;2&lt;/iStateReligionHappiness&gt;</p>
-
 <h3 id="inonstatereligionhappiness">&lt;iNonStateReligionHappiness&gt;</h3>
-
-<p>国教でない宗教からの追加の〈幸福〉を指定します。<br />
-この社会制度を採用している文明の都市に布教されている宗教は、<br />
+<p>国教でない宗教からの追加の〈幸福〉を指定します。<br>
+この社会制度を採用している文明の都市に布教されている宗教は、<br>
 それが国教でないなら、追加で〈幸福〉を<code>+n</code>産出します。</p>
-
-<p>負の数を指定でき、その場合は〈不満〉を産出します。<br />
+<p>負の数を指定でき、その場合は〈不満〉を産出します。<br>
 BtSでは、この属性を持つ社会制度は信教の自由です。</p>
-
-<p>同じ社会制度の中で<a href="#bstatereligion">&lt;bStateReligion&gt;</a>により国教の制定を許可した場合の表示にはバグがあり、<br />
+<p>同じ社会制度の中で<a href="#bstatereligion">&lt;bStateReligion&gt;</a>により国教の制定を許可した場合の表示にはバグがあり、<br>
 社会制度の欄にはめちゃくちゃな値が表示されますが、実際の〈幸福〉は正常に処理されます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iNonStateReligionHappiness&gt;0&lt;/iNonStateReligionHappiness&gt;</p>
-
-<p>例２：国教でない宗教1つにつき〈幸福〉+1<br />
+<p>例２：国教でない宗教1つにつき〈幸福〉+1<br>
 &lt;iNonStateReligionHappiness&gt;1&lt;/iNonStateReligionHappiness&gt;</p>
-
 <h3 id="istatereligionunitproductionmodifier">&lt;iStateReligionUnitProductionModifier&gt;</h3>
-
-<p>国教からのユニット生産修正率を指定します。<br />
-この社会制度を採用している文明の都市に国教が布教されているなら、<br />
+<p>国教からのユニット生産修正率を指定します。<br>
+この社会制度を採用している文明の都市に国教が布教されているなら、<br>
 ユニットを生産するための〈ハンマー〉が<code>+n%</code>されます。</p>
-
-<p>とくにユニットを加速しない普通の社会制度の場合、0を指定します。<br />
+<p>とくにユニットを加速しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iStateReligionUnitProductionModifier&gt;0&lt;/iStateReligionUnitProductionModifier&gt;</p>
-
-<p>例２：国教を持つ都市で、ユニットの生産速度が+50%向上<br />
+<p>例２：国教を持つ都市で、ユニットの生産速度が+50%向上<br>
 &lt;iStateReligionUnitProductionModifier&gt;50&lt;/iStateReligionUnitProductionModifier&gt;</p>
-
 <h3 id="istatereligionbuildingproductionmodifier">&lt;iStateReligionBuildingProductionModifier&gt;</h3>
-
-<p>国教からの建造物生産修正率を指定します。<br />
-この社会制度を採用している文明の都市に国教が布教されているなら、<br />
+<p>国教からの建造物生産修正率を指定します。<br>
+この社会制度を採用している文明の都市に国教が布教されているなら、<br>
 建造物を生産するための〈ハンマー〉が<code>+n%</code>されます。</p>
-
-<p>とくに建造物を加速しない普通の社会制度の場合、0を指定します。<br />
+<p>とくに建造物を加速しない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は宗教の組織化です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iStateReligionBuildingProductionModifier&gt;0&lt;/iStateReligionBuildingProductionModifier&gt;</p>
-
-<p>例２：国教を持つ都市で、建造物の建設速度が+25%向上<br />
+<p>例２：国教を持つ都市で、建造物の建設速度が+25%向上<br>
 &lt;iStateReligionBuildingProductionModifier&gt;25&lt;/iStateReligionBuildingProductionModifier&gt;</p>
-
 <h3 id="istatereligionfreeexperience">&lt;iStateReligionFreeExperience&gt;</h3>
-
-<p>国教からの追加の経験値を指定します。<br />
-この社会制度を採用している文明の都市に国教が布教されているなら、<br />
+<p>国教からの追加の経験値を指定します。<br>
+この社会制度を採用している文明の都市に国教が布教されているなら、<br>
 その都市で新しく生産されたユニットに追加で経験値が<code>n</code>与えられます。</p>
-
-<p>とくに経験値を与えない普通の社会制度の場合、0を指定します。<br />
+<p>とくに経験値を与えない普通の社会制度の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度は神権政治です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iStateReligionFreeExperience&gt;0&lt;/iStateReligionFreeExperience&gt;</p>
-
-<p>例２：国教を持つ都市で経験値+2ポイント<br />
+<p>例２：国教を持つ都市で経験値+2ポイント<br>
 &lt;iStateReligionFreeExperience&gt;2&lt;/iStateReligionFreeExperience&gt;</p>
-
 <h3 id="yieldmodifiers">&lt;YieldModifiers&gt;</h3>
-
 <p>全都市の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は国有化です。</p>
-
-<p>値：&lt;iYield&gt;のリスト<br />
-　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+<p>値：&lt;iYield&gt;のリスト<br>
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;YieldModifiers /&gt;</p>
-
 <p>例２：+10%〈パン〉, +25%〈ハンマー〉, +50%〈コイン〉 (全都市で)</p>
-
-<pre><code class="language-txt">&lt;YieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;YieldModifiers&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
     &lt;iYield&gt;25&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
 &lt;/YieldModifiers&gt;
-</code></pre>
-
-<h3 id="capitalyieldmodifiers">&lt;CapitalYieldModifiers&gt;</h3>
-
+</code></pre></div><h3 id="capitalyieldmodifiers">&lt;CapitalYieldModifiers&gt;</h3>
 <p>首都の〈パン〉・〈ハンマー〉・〈コイン〉への修正率を指定します。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は官僚制です。</p>
-
-<p>値：&lt;iYield&gt;のリスト<br />
-　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+<p>値：&lt;iYield&gt;のリスト<br>
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CapitalYieldModifiers /&gt;</p>
-
 <p>例２：+50%〈ハンマー〉, +50%〈コイン〉 (首都で)</p>
-
-<pre><code class="language-txt">&lt;CapitalYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CapitalYieldModifiers&gt;
     &lt;iYield&gt;0&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
     &lt;iYield&gt;50&lt;/iYield&gt;
 &lt;/CapitalYieldModifiers&gt;
-</code></pre>
-
-<h3 id="tradeyieldmodifiers">&lt;TradeYieldModifiers&gt;</h3>
-
+</code></pre></div><h3 id="tradeyieldmodifiers">&lt;TradeYieldModifiers&gt;</h3>
 <p>交易路収入の〈パン〉・〈ハンマー〉・〈コイン〉への変化率を指定します。</p>
-
-<p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br />
-BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br />
-ここの指定によって〈コイン〉を増やしたり、<br />
+<p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br>
+BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br>
+ここの指定によって〈コイン〉を増やしたり、<br>
 〈パン〉や〈ハンマー〉を産出させたりできます。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
-<p>値：&lt;iYield&gt;のリスト<br />
-　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+<p>値：&lt;iYield&gt;のリスト<br>
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TradeYieldModifiers /&gt;</p>
-
 <p>例２：交易路により〈パン〉+10%, 〈ハンマー〉+10%, 〈コイン〉+30%</p>
-
-<pre><code class="language-txt">&lt;TradeYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;TradeYieldModifiers&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
     &lt;iYield&gt;30&lt;/iYield&gt;
 &lt;/TradeYieldModifiers&gt;
-</code></pre>
-
-<p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
-
+</code></pre></div><p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
 <h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
-
 <p>全都市の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は国民国家(諜報+25%)・表現の自由(文化+100%)・信教の自由(ビーカー+10%)です。</p>
-
-<p>値：&lt;iCommerce&gt;のリスト<br />
-　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値：&lt;iCommerce&gt;のリスト<br>
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceModifiers /&gt;</p>
-
 <p>例２：+25%〈諜報〉 (全都市で)</p>
-
-<pre><code class="language-txt">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;25&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<p>例３：+100%〈文化〉 (全都市で)</p>
-
-<pre><code class="language-txt">&lt;CommerceModifiers&gt;
+</code></pre></div><p>例３：+100%〈文化〉 (全都市で)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;100&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<h3 id="capitalcommercemodifiers">&lt;CapitalCommerceModifiers&gt;</h3>
-
+</code></pre></div><h3 id="capitalcommercemodifiers">&lt;CapitalCommerceModifiers&gt;</h3>
 <p>首都の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
-<p>値：&lt;iCommerce&gt;のリスト<br />
-　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値：&lt;iCommerce&gt;のリスト<br>
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CapitalCommerceModifiers /&gt;</p>
-
 <p>例２：+10%〈ゴールド〉, +20%〈ビーカー〉, +30%〈文化〉, +40%〈諜報〉 (首都で)</p>
-
-<pre><code class="language-txt">&lt;CapitalCommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CapitalCommerceModifiers&gt;
     &lt;iCommerce&gt;10&lt;/iCommerce&gt;
     &lt;iCommerce&gt;20&lt;/iCommerce&gt;
     &lt;iCommerce&gt;30&lt;/iCommerce&gt;
     &lt;iCommerce&gt;40&lt;/iCommerce&gt;
 &lt;/CapitalCommerceModifiers&gt;
-</code></pre>
-
-<h3 id="specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</h3>
-
+</code></pre></div><h3 id="specialistextracommerces">&lt;SpecialistExtraCommerces&gt;</h3>
 <p>専門家の出力に、一律で〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を加えます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は代議制です。</p>
-
-<p>値：&lt;iCommerce&gt;のリスト<br />
-　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値：&lt;iCommerce&gt;のリスト<br>
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialistExtraCommerces /&gt;</p>
-
 <p>例２：+3〈ビーカー〉 (専門家1人につき)</p>
-
-<pre><code class="language-txt">&lt;SpecialistExtraCommerces&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;SpecialistExtraCommerces&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;3&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
 &lt;/SpecialistExtraCommerces&gt;
-</code></pre>
-
-<h3 id="hurrys">&lt;Hurrys&gt;</h3>
-
-<p>緊急生産を解禁します。<br />
+</code></pre></div><h3 id="hurrys">&lt;Hurrys&gt;</h3>
+<p>緊急生産を解禁します。<br>
 この社会制度を採用している間、ここに指定した種類の各緊急生産を都市で実行できるようになります。</p>
-
 <p>値：&lt;Hurry&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;Hurry&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;Hurry&gt;は以下の2つのタグを含みます。</p>
 <h4 id="hurrytype">&lt;HurryType&gt;</h4>
-
 <p>解禁する緊急生産の種類を指定します。</p>
-
 <p>値：次のいずれか</p>
-
 <ul>
-<li>人口消費：<code>HURRY_POPULATION</code><br /></li>
-<li>金銭消費：<code>HURRY_GOLD</code><br />
-<br /></li>
+<li>人口消費：<code>HURRY_POPULATION</code></li>
+<li>金銭消費：<code>HURRY_GOLD</code></li>
 </ul>
-
 <h4 id="bhurry">&lt;bHurry&gt;</h4>
-
 <p>1を指定します。</p>
-
 </div>
-
-
-<p>特に緊急生産を解禁しない普通の社会制度の場合、空タグにします。<br />
+<p>特に緊急生産を解禁しない普通の社会制度の場合、空タグにします。<br>
 BtSでは、この属性を持つのは奴隷制と普通選挙です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;Hurrys /&gt;</p>
-
 <p>例２：ゴールド消費と引き換えに緊急生産が可能</p>
-
-<pre><code class="language-txt">&lt;Hurrys&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;Hurrys&gt;
     &lt;Hurry&gt;
         &lt;HurryType&gt;HURRY_GOLD&lt;/HurryType&gt;
         &lt;bHurry&gt;1&lt;/bHurry&gt;
     &lt;/Hurry&gt;
 &lt;/Hurrys&gt;
-</code></pre>
-
-<h3 id="specialbuildingnotrequireds">&lt;SpecialBuildingNotRequireds&gt;</h3>
-
-<p>僧院がなくても宣教師を生産できるようにします。<br />
-ここに指定した特定の特殊建造物タイプに属する建造物が、<br />
-ユニットの前提建造物として指定されている場合、<br />
+</code></pre></div><h3 id="specialbuildingnotrequireds">&lt;SpecialBuildingNotRequireds&gt;</h3>
+<p>僧院がなくても宣教師を生産できるようにします。<br>
+ここに指定した特定の特殊建造物タイプに属する建造物が、<br>
+ユニットの前提建造物として指定されている場合、<br>
 この社会制度を採用している間は前者の建造物がなくても後者のユニットを作成することが可能になります。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つのは宗教の組織化です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialBuildingNotRequireds /&gt;</p>
-
 <p>例２：「特殊建造物タイプ『僧院』に属する建造物」を前提とするユニットについて、建造物なしでユニットを生産できる</p>
-
-<pre><code class="language-txt">&lt;SpecialBuildingNotRequireds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;SpecialBuildingNotRequireds&gt;
     &lt;SpecialBuildingNotRequired&gt;
         &lt;SpecialBuildingType&gt;SPECIALBUILDING_MONASTERY&lt;/SpecialBuildingType&gt;
         &lt;bNotRequired&gt;1&lt;/bNotRequired&gt;
     &lt;/SpecialBuildingNotRequired&gt;
 &lt;/SpecialBuildingNotRequireds&gt;
-</code></pre>
-
-<h3 id="specialistvalids">&lt;SpecialistValids&gt;</h3>
-
-<p>専門家の雇用枠を解放します。<br />
+</code></pre></div><h3 id="specialistvalids">&lt;SpecialistValids&gt;</h3>
+<p>専門家の雇用枠を解放します。<br>
 この社会制度を採用している間、ここに指定した各専門家を全都市で無制限に雇用することができるようになります。</p>
-
 <p>値：&lt;SpecialistValid&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;SpecialistValid&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;SpecialistValid&gt;は以下の2つのタグを含みます。</p>
 <h4 id="specialisttype">&lt;SpecialistType&gt;</h4>
-
 <p>雇用枠を解放する専門家の種類を指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#専門家">専門家キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%B0%82%E9%96%80%E5%AE%B6">専門家キー</a></p>
 <h4 id="bvaild">&lt;bVaild&gt;</h4>
-
 <p>1を指定します。</p>
-
 </div>
-
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度はカースト制です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;SpecialistValids /&gt;</p>
-
 <p>例２：制限なし - 芸術家,科学者,商人</p>
-
-<pre><code class="language-txt">&lt;SpecialistValids&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;SpecialistValids&gt;
     &lt;SpecialistValid&gt;
         &lt;SpecialistType&gt;SPECIALIST_ARTIST&lt;/SpecialistType&gt;
         &lt;bValid&gt;1&lt;/bValid&gt;
@@ -2728,159 +2353,99 @@ BtSでは、この属性を持つ社会制度はカースト制です。</p>
         &lt;bValid&gt;1&lt;/bValid&gt;
     &lt;/SpecialistValid&gt;
 &lt;/SpecialistValids&gt;
-</code></pre>
-
-<h3 id="buildinghappinesschanges">&lt;BuildingHappinessChanges&gt;</h3>
-
+</code></pre></div><h3 id="buildinghappinesschanges">&lt;BuildingHappinessChanges&gt;</h3>
 <p>建造物から追加の〈幸福〉を発生させます。</p>
-
 <p>値：&lt;BuildingHappinessChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BuildingHappinessChange&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;BuildingHappinessChange&gt;は以下の2つのタグを含みます。</p>
 <h4 id="buildingtype">&lt;BuildingType&gt;</h4>
-
-<p>追加の〈幸福〉を産出させる建造物の種類をクラスで指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物クラスキー</a></p>
-
+<p>追加の〈幸福〉を産出させる建造物の種類をクラスで指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物クラスキー</a></p>
 <h4 id="ihappinesschange">&lt;iHappinessChange&gt;</h4>
-
-<p>追加する〈幸福〉の数を指定します。<br />
-負の数も指定でき、その場合は〈不満〉を産出します。<br />
+<p>追加する〈幸福〉の数を指定します。<br>
+負の数も指定でき、その場合は〈不満〉を産出します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は国民国家です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BuildingHappinessChanges /&gt;</p>
-
 <p>例２：兵舎により〈幸福〉+2</p>
-
-<pre><code class="language-txt">&lt;BuildingHappinessChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;BuildingHappinessChanges&gt;
     &lt;BuildingHappinessChange&gt;
         &lt;BuildingType&gt;BUILDINGCLASS_BARRACKS&lt;/BuildingType&gt;
         &lt;iHappinessChange&gt;2&lt;/iHappinessChange&gt;
     &lt;/BuildingHappinessChange&gt;
 &lt;/BuildingHappinessChanges&gt;
-</code></pre>
-
-<h3 id="buildinghealthchanges">&lt;BuildingHealthChanges&gt;</h3>
-
+</code></pre></div><h3 id="buildinghealthchanges">&lt;BuildingHealthChanges&gt;</h3>
 <p>建造物から追加の〈不衛生〉を発生させます。</p>
-
 <p>値：&lt;BuildingHealthChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BuildingHealthChange&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="buildingtype">&lt;BuildingType&gt;</h4>
-
-<p>追加の〈衛生〉を産出させる建造物の種類をクラスで指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物クラスキー</a></p>
-
+<p>&lt;BuildingHealthChange&gt;は以下の2つのタグを含みます。</p>
+<h4 id="buildingtype-1">&lt;BuildingType&gt;</h4>
+<p>追加の〈衛生〉を産出させる建造物の種類をクラスで指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物クラスキー</a></p>
 <h4 id="ihealthchange">&lt;iHealthChange&gt;</h4>
-
-<p>追加する〈衛生〉の数を指定します。<br />
-負の数も指定でき、その場合は〈不衛生〉を産出します。<br />
+<p>追加する〈衛生〉の数を指定します。<br>
+負の数も指定でき、その場合は〈不衛生〉を産出します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は環境保護主義です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BuildingHealthChanges /&gt;</p>
-
 <p>例２：公共交通機関により〈衛生〉+2</p>
-
-<pre><code class="language-txt">&lt;BuildingHealthChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;BuildingHealthChanges&gt;
     &lt;BuildingHealthChange&gt;
         &lt;BuildingType&gt;BUILDINGCLASS_PUBLIC_TRANSPORTATION&lt;/BuildingType&gt;
         &lt;iHealthChange&gt;2&lt;/iHealthChange&gt;
     &lt;/BuildingHealthChange&gt;
 &lt;/BuildingHealthChanges&gt;
-</code></pre>
-
-<h3 id="featurehappinesschanges">&lt;FeatureHappinessChanges&gt;</h3>
-
-<p>追加地形から追加の〈幸福〉を発生させます。<br />
-この社会制度を採用している間、ここに指定した追加地形のタイルを都市圏内にもつ都市は、<br />
+</code></pre></div><h3 id="featurehappinesschanges">&lt;FeatureHappinessChanges&gt;</h3>
+<p>追加地形から追加の〈幸福〉を発生させます。<br>
+この社会制度を採用している間、ここに指定した追加地形のタイルを都市圏内にもつ都市は、<br>
 その種類のタイル1つにつき〈幸福〉を追加で<code>+n</code>だけ得ます。</p>
-
 <p>値：&lt;FeatureHappinessChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeatureHappinessChange&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FeatureHappinessChange&gt;は以下の2つのタグを含みます。</p>
 <h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>追加の〈幸福〉を産出させる追加地形の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
-<h4 id="ihappinesschange">&lt;iHappinessChange&gt;</h4>
-
-<p>追加する〈幸福〉の数を指定します。<br />
-負の数も指定でき、その場合は〈不満〉を産出します。<br />
+<p>追加の〈幸福〉を産出させる追加地形の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
+<h4 id="ihappinesschange-1">&lt;iHappinessChange&gt;</h4>
+<p>追加する〈幸福〉の数を指定します。<br>
+負の数も指定でき、その場合は〈不満〉を産出します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeatureHappinessChanges /&gt;</p>
-
 <p>例２：次の場所で〈幸福〉+3: オアシス</p>
-
-<pre><code class="language-txt">&lt;FeatureHappinessChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;FeatureHappinessChanges&gt;
     &lt;FeatureHappinessChange&gt;
         &lt;FeatureType&gt;FEATURE_OASIS&lt;/FeatureType&gt;
         &lt;iHappinessChange&gt;3&lt;/iHappinessChange&gt;
     &lt;/FeatureHappinessChange&gt;
 &lt;/FeatureHappinessChanges&gt;
-</code></pre>
-
-<h3 id="improvementyieldchanges">&lt;ImprovementYieldChanges&gt;</h3>
-
+</code></pre></div><h3 id="improvementyieldchanges">&lt;ImprovementYieldChanges&gt;</h3>
 <p>地形改善から追加の〈パン〉・〈ハンマー〉・〈コイン〉を得ます。</p>
-
 <p>値：&lt;ImprovementYieldChange&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ImprovementYieldChange&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;ImprovementYieldChange&gt;は以下の2つのタグを含みます。</p>
 <h4 id="improvementtype">&lt;ImprovementType&gt;</h4>
-
-<p>追加の産出を得させる地形改善の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#地形改善">地形改善キー</a></p>
-
-<h4 id="ihappinesschange">&lt;iHappinessChange&gt;</h4>
-
-<p>値：&lt;iYield&gt;のリスト<br />
-　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+<p>追加の産出を得させる地形改善の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9C%B0%E5%BD%A2%E6%94%B9%E5%96%84">地形改善キー</a></p>
+<h4 id="ihappinesschange-2">&lt;iHappinessChange&gt;</h4>
+<p>値：&lt;iYield&gt;のリスト<br>
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
 </div>
-
-
-<p>改善にとくに追加しない普通の社会制度の場合、空タグにします。<br />
+<p>改善にとくに追加しない普通の社会制度の場合、空タグにします。<br>
 BtSでは、この属性を持つ社会制度は普通選挙・表現の自由・カースト制・国有化・環境保護主義です。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ImprovementYieldChanges /&gt;</p>
-
 <p>例２：次のものより〈ハンマー〉+1: 町</p>
-
-<pre><code class="language-txt">&lt;ImprovementYieldChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;ImprovementYieldChanges&gt;
     &lt;ImprovementYieldChange&gt;
         &lt;ImprovementType&gt;IMPROVEMENT_TOWN&lt;/ImprovementType&gt;
         &lt;ImprovementYields&gt;
@@ -2890,26 +2455,20 @@ BtSでは、この属性を持つ社会制度は普通選挙・表現の自由�
         &lt;/ImprovementYields&gt;
     &lt;/ImprovementYieldChange&gt;
 &lt;/ImprovementYieldChanges&gt;
-</code></pre>
-
-<h3 id="welovetheking">&lt;WeLoveTheKing&gt;</h3>
-
-<p>感謝祭のテキストを指定します。<br />
+</code></pre></div><h3 id="welovetheking">&lt;WeLoveTheKing&gt;</h3>
+<p>感謝祭のテキストを指定します。<br>
 BtSでは政治体制に属する社会制度に設定されていますが、MODではそれに限りません。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「大統領感謝祭」<br />
+<p>例：「大統領感謝祭」<br>
 &lt;WeLoveTheKing&gt;TXT_KEY_CIVIC_WE_LOVE_PRESIDENT&lt;/WeLoveTheKing&gt;</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:worldlargest">マップサイズ標準の場合。マップサイズにより変動します。<br />
- <a class="footnote-return" href="#fnref:worldlargest"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>マップサイズ標準の場合。マップサイズにより変動します。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -2922,7 +2481,7 @@ BtSでは政治体制に属する社会制度に設定されていますが、MO
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

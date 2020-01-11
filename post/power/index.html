@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-08",
     "description": "",
-    "wordCount": 982
+    "wordCount":  975 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -340,7 +340,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2018-03-08">2018-03-08 00:00</time></p>
           
-          <p>982  Words</p>
+          <p>975  Words</p>
           
           
 
@@ -357,16 +357,11 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
-<p>みなさん、工業化は好きですか？<br />
-工場に発電所、ハンマーがいっぱい&hellip;&hellip;何をしようか、夢が広がりますね。<br />
+<p>みなさん、工業化は好きですか？<br>
+工場に発電所、ハンマーがいっぱい&hellip;&hellip;何をしようか、夢が広がりますね。<br>
 今回は不衛生と引き換えに圧倒的修正率をもたらす工業化の主役、電力のお話です。</p>
-
-<p>そう、&#x26A1;マークのあれです。CyberFront公式訳では「エネルギー」と訳されていますが、<br />
+<p>そう、⚡マークのあれです。CyberFront公式訳では「エネルギー」と訳されていますが、<br>
 ここでは「電力」で統一します。指しているものは同じものです。</p>
-
-<p></p>
-
 <style>
 em.dirty {
   color: #663300;
@@ -375,43 +370,29 @@ em.clean {
   color: #003399;
 }
 </style>
-
 <h1 id="電力とは">電力とは</h1>
-
-<p>電力とは、都市の状態の一つです。<br />
-すべての都市は 電力なし・<em class="clean">通常電力が有効</em>・<em class="dirty">きたない電力が有効</em><br />
+<p>電力とは、都市の状態の一つです。<br>
+すべての都市は 電力なし・<em class="clean">通常電力が有効</em>・<em class="dirty">きたない電力が有効</em><br>
 のうちのいずれかの状態を必ずとります。</p>
-
 <h2 id="電力なし">電力なし</h2>
-
-<p>普通の状態です。とくに特別なことはありません。<br />
+<p>普通の状態です。とくに特別なことはありません。<br>
 この状態の都市に工場が建っていても、素のハンマー+25%ボーナスしか受けられません。</p>
-
-<h2 id="em-class-clean-通常電力が有効-em"><em class="clean">通常電力が有効</em></h2>
-
-<p>この状態の都市は、不衛生+2のペナルティを受けます。<br />
+<h2 id="em-classclean通常電力が有効em"><em class="clean">通常電力が有効</em></h2>
+<p>この状態の都市は、不衛生+2のペナルティを受けます。<br>
 この状態の都市に工場が建っていれば、追加のハンマー+50%ボーナスを受けることができます。</p>
-
-<h2 id="em-class-dirty-きたない電力が有効-em"><em class="dirty">きたない電力が有効</em></h2>
-
-<p>この状態の都市は、不衛生+4のペナルティを受けます。<br />
+<h2 id="em-classdirtyきたない電力が有効em"><em class="dirty">きたない電力が有効</em></h2>
+<p>この状態の都市は、不衛生+4のペナルティを受けます。<br>
 この状態の都市に工場が建っていれば、追加のハンマー+50%ボーナスを受けることができます。</p>
-
 <div class="p-3"></div>
-
-<p>これらの不衛生は、発電所から発生しているのでは<strong><em>ありません</em></strong>。<br />
-あくまで、<strong><em>都市がその状態であることによるペナルティ</em></strong>です。<br />
-工場が建っているかどうかとは関係ないのはもちろん、<br />
-リサイクル施設で消すこともできません。<br />
-<img src="https://gforestshade.github.io/kujira/img/power_dirty.svg" alt="きたない電力から不衛生+4" /><br />
+<p>これらの不衛生は、発電所から発生しているのでは<em><strong>ありません</strong></em>。<br>
+あくまで、<em><strong>都市がその状態であることによるペナルティ</strong></em>です。<br>
+工場が建っているかどうかとは関係ないのはもちろん、<br>
+リサイクル施設で消すこともできません。<br>
+<img src="https://gforestshade.github.io/kujira/img/power_dirty.svg" alt="きたない電力から不衛生+4"><br>
 (WB再現/リサイクル施設の効力は電力には及ばない)</p>
-
 <h1 id="電力カウント">電力カウント</h1>
-
 <p>では、都市がどの状態であるかはどのようにして決まるのでしょうか。</p>
-
 <p>発電所は、その種類によって<em class="clean">通常電力</em>か<em class="dirty">きたない電力</em>のどちらかを+1します。</p>
-
 <table>
 <thead>
 <tr>
@@ -419,52 +400,38 @@ em.clean {
 <th>効果</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>火力発電所</td>
 <td>石炭があれば <em class="dirty">きたない電力</em>+1</td>
 </tr>
-
 <tr>
 <td>シェール油精製施設</td>
 <td><em class="dirty">きたない電力</em>+1</td>
 </tr>
-
 <tr>
 <td>水力発電所</td>
 <td><em class="clean">通常電力</em>+1</td>
 </tr>
-
 <tr>
 <td>原子力発電所</td>
 <td>ウランがあれば <em class="clean">通常電力</em>+1</td>
 </tr>
-
 <tr>
 <td>三峡ダム</td>
 <td>同じ大陸の全都市に <em class="clean">通常電力</em>+1</td>
 </tr>
 </tbody>
 </table>
-
 <div class="p-3"></div>
-
-<h2 id="都市に-em-class-clean-通常電力-em-と-em-class-dirty-きたない電力-em-のどちらもないとき">都市に<em class="clean">通常電力</em>と<em class="dirty">きたない電力</em>のどちらもないとき</h2>
-
+<h2 id="都市にem-classclean通常電力emとem-classdirtyきたない電力emのどちらもないとき">都市に<em class="clean">通常電力</em>と<em class="dirty">きたない電力</em>のどちらもないとき</h2>
 <p>その都市は「電力なし」状態になります。<br><br></p>
-
-<h2 id="都市に-em-class-dirty-きたない電力-em-のみがあるとき">都市に<em class="dirty">きたない電力</em>のみがあるとき</h2>
-
+<h2 id="都市にem-classdirtyきたない電力emのみがあるとき">都市に<em class="dirty">きたない電力</em>のみがあるとき</h2>
 <p>その都市は<em class="dirty">「きたない電力が有効」</em>状態になります。<br><br></p>
-
-<h2 id="都市に-em-class-clean-通常電力-em-が1つでもあるとき">都市に<em class="clean">通常電力</em>が1つでもあるとき</h2>
-
+<h2 id="都市にem-classclean通常電力emが1つでもあるとき">都市に<em class="clean">通常電力</em>が1つでもあるとき</h2>
 <p>その都市は<em class="clean">「通常電力が有効」</em>状態になります。<br><br></p>
-
-<p>何らかの要因で発電所が建ったり壊れたり、発電のための資源を得たり失ったりすると、<br />
+<p>何らかの要因で発電所が建ったり壊れたり、発電のための資源を得たり失ったりすると、<br>
 即座に都市の状態は再計算されます。</p>
-
 <p>電力をうまく使って、たのしい工業化ライフを！</p>
         </div>
         <div class="col-12">
@@ -478,7 +445,7 @@ em.clean {
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

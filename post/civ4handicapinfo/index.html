@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-06-03",
     "description": "",
-    "wordCount": 6982
+    "wordCount":  6982 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -1583,775 +1583,498 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4HandicapInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4HandicapInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="難易度の影響範囲">難易度の影響範囲</h1>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-実は、難易度は人間・AI問わずすべてのプレイヤーに設定されています。<br />
-初期〈幸福〉や〈衛生〉などは、すべてのプレイヤーが、自分自身に設定されている難易度を参照します。<br />
-通常、AIプレイヤーの難易度は貴族で固定です。(これはGlobalDefines.xmlのSTANDARD_HANDICAPで変更可能です)<br />
-例：<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+実は、難易度は人間・AI問わずすべてのプレイヤーに設定されています。<br>
+初期〈幸福〉や〈衛生〉などは、すべてのプレイヤーが、自分自身に設定されている難易度を参照します。<br>
+通常、AIプレイヤーの難易度は貴族で固定です。(これはGlobalDefines.xmlのSTANDARD_HANDICAPで変更可能です)<br>
+例：<br>
 難易度が高いほど自分の維持費が上昇する</p>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-すべての人間プレイヤーの難易度を平均したものが「ゲーム全体の難易度」として設定されます。<br />
-(通常、「ゲーム全体の難易度」を直接確認することはできませんが、<br />
- シングルゲームなら人間プレイヤーが1人なので、<br />
- その人間プレイヤーが選んだ難易度がゲーム全体の難易度と一致します。)</p>
-
-<p>AIプレイヤーや蛮族に作用する設定は、この「ゲーム全体の難易度」の設定値を参照します。<br />
-例：<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+すべての人間プレイヤーの難易度を平均したものが「ゲーム全体の難易度」として設定されます。<br>
+(通常、「ゲーム全体の難易度」を直接確認することはできませんが、<br>
+シングルゲームなら人間プレイヤーが1人なので、<br>
+その人間プレイヤーが選んだ難易度がゲーム全体の難易度と一致します。)</p>
+<p>AIプレイヤーや蛮族に作用する設定は、この「ゲーム全体の難易度」の設定値を参照します。<br>
+例：<br>
 ゲーム全体の難易度(=人間が選択した難易度)が高いほどAIがユニット作成コストに割引を得る</p>
-
 <h1 id="各タグの説明">各タグの説明</h1>
-
 <h2 id="civ4handicapinfos">&lt;Civ4HandicapInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4GameInfoSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="handicapinfo">&lt;HandicapInfo&gt;</h2>
-
 <p>このタグ1つが、難易度の定義1つと対応しています。</p>
-
 <p>以下&lt;HandicapInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>この難易度の難易度キーを定義します。<br />
+<p>この難易度の難易度キーを定義します。<br>
 他と被らなければなんでも構いませんが、HANDICAP_英語名 にするのが無難です。</p>
-
 <p>値：プロジェクトキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;HANDICAP_DEITY&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>この難易度の名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「天帝」<br />
+<p>例：「天帝」<br>
 &lt;Description&gt;TXT_KEY_HANDICAP_DEITY&lt;/Description&gt;</p>
-
 <h3 id="help">&lt;Help&gt;</h3>
-
 <p>この難易度の説明を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「フハハハ!　せいぜい頑張るんだな！」<br />
+<p>例：「フハハハ!　せいぜい頑張るんだな！」<br>
 &lt;Help&gt;TXT_KEY_HANDICAP_DEITY_HELP&lt;/Help&gt;</p>
-
 <h3 id="ifreewinsvsbarbs">&lt;iFreeWinsVsBarbs&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーが蛮族<sup class="footnote-ref" id="fnref:barb"><a href="#fn:barb">1</a></sup>に無条件に勝利できる回数を指定します。</p>
-
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーが蛮族<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>に無条件に勝利できる回数を指定します。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeWinsVsBarbs&gt;0&lt;/iFreeWinsVsBarbs&gt;</p>
-
 <h3 id="ianimalattackprob">&lt;iAnimalAttackProb&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
 隣接した野生動物がこの難易度を選択したプレイヤーのユニットに攻撃してくる確率を指定します。(単位:%)</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAnimalAttackProb&gt;90&lt;/iAnimalAttackProb&gt;</p>
-
 <h3 id="istartinglocpercent">&lt;iStartingLocPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、初期位置決定処理で人間プレイヤーの順番がいつ回ってくるかを指定します。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、初期位置決定処理で人間プレイヤーの順番がいつ回ってくるかを指定します。<br>
 この値が高いほど、順番が後に回ることになり、AIに神立地を取られる確率がほんの少し上がります。</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iStartingLocPercent&gt;90&lt;/iStartingLocPercent&gt;</p>
-
 <h3 id="iadvancedstartpointsmod">&lt;iAdvancedStartPointsMod&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
 この難易度を選択したプレイヤーが成長済みスタートで受け取るポイントの倍率を指定します。</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例：(本来の75%になる)<br />
+<p>例：(本来の75%になる)<br>
 &lt;iAdvancedStartPointsMod&gt;75&lt;/iAdvancedStartPointsMod&gt;</p>
-
 <h3 id="igold">&lt;iGold&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
 この難易度を選択したプレイヤーが受け取る初期〈ゴールド〉の量を指定します。</p>
-
 <p>BtSでは、全難易度で<code>0</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGold&gt;0&lt;/iGold&gt;</p>
-
 <h3 id="ifreeunits">&lt;iFreeUnits&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーが支払う、ユニット維持費の無料枠を指定します。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーが支払う、ユニット維持費の無料枠を指定します。<br>
 この値が高いほど、ユニット維持費が減ります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFreeUnits&gt;1&lt;/iFreeUnits&gt;</p>
-
 <h3 id="iunitcostpercent">&lt;iUnitCostPercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、ユニット維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、ユニット維持費がn%になります。<br>
 この値が高いほど、ユニット維持費が増えます。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の100%になる)<br />
+<p>例：(本来の100%になる)<br>
 &lt;iUnitCostPercent&gt;100&lt;/iUnitCostPercent&gt;</p>
-
 <h3 id="iresearchpercent">&lt;iResearchPercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーが、技術を取得するために必要なビーカーの倍率を指定します。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーが、技術を取得するために必要なビーカーの倍率を指定します。<br>
 この値が高いほど、研究が重くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の130%になる)<br />
+<p>例：(本来の130%になる)<br>
 &lt;iResearchPercent&gt;130&lt;/iResearchPercent&gt;</p>
-
 <h3 id="idistancemaintenancepercent">&lt;iDistanceMaintenancePercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、距離維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、距離維持費がn%になります。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の100%になる)<br />
+<p>例：(本来の100%になる)<br>
 &lt;iDistanceMaintenancePercent&gt;100&lt;/iDistanceMaintenancePercent&gt;</p>
-
 <h3 id="inumcitiesmaintenancepercent">&lt;iNumCitiesMaintenancePercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、都市数維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、都市数維持費がn%になります。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の100%になる)<br />
+<p>例：(本来の100%になる)<br>
 &lt;iNumCitiesMaintenancePercent&gt;100&lt;/iNumCitiesMaintenancePercent&gt;</p>
-
 <h3 id="imaxnumcitiesmaintenance">&lt;iMaxNumCitiesMaintenance&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーが支払う、都市数維持費の上限を指定します。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーが支払う、都市数維持費の上限を指定します。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMaxNumCitiesMaintenance&gt;8&lt;/iMaxNumCitiesMaintenance&gt;</p>
-
 <h3 id="icolonymaintenancepercent">&lt;iColonyMaintenancePercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、植民地維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、植民地維持費がn%になります。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の150%になる)<br />
+<p>例：(本来の150%になる)<br>
 &lt;iColonyMaintenancePercent&gt;150&lt;/iColonyMaintenancePercent&gt;</p>
-
 <h3 id="imaxcolonymaintenance">&lt;iMaxColonyMaintenance&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-植民地維持費の上限割合を指定します。<br />
-ここに正の整数nを指定した場合、この難易度を選択したプレイヤーが支払う植民地維持費は、<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+植民地維持費の上限割合を指定します。<br>
+ここに正の整数nを指定した場合、この難易度を選択したプレイヤーが支払う植民地維持費は、<br>
 距離維持費のn%を上限とするようになります。</p>
-
-<p>この値が高いほど、維持費が高くなります。<br />
+<p>この値が高いほど、維持費が高くなります。<br>
 BtSでは、全難易度で<code>200</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：(距離維持費の200%を上限とする)<br />
+<p>例：(距離維持費の200%を上限とする)<br>
 &lt;iMaxColonyMaintenance&gt;200&lt;/iMaxColonyMaintenance&gt;</p>
-
 <h3 id="icorporationmaintenancepercent">&lt;iCorporationMaintenancePercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、企業維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、企業維持費がn%になります。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の150%になる)<br />
+<p>例：(本来の150%になる)<br>
 &lt;iCorporationMaintenancePercent&gt;150&lt;/iCorporationMaintenancePercent&gt;</p>
-
 <h3 id="icivicupkeeppercent">&lt;iCivicUpkeepPercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、社会制度維持費がn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、社会制度維持費がn%になります。<br>
 この値が高いほど、維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(本来の100%になる)<br />
+<p>例：(本来の100%になる)<br>
 &lt;iCivicUpkeepPercent&gt;100&lt;/iCivicUpkeepPercent&gt;</p>
-
 <h3 id="iinflationpercent">&lt;iInflationPercent&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、インフレーションがn%になります。<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、インフレーションがn%になります。<br>
 この値が高いほど、時代が下るほど加速度的に維持費が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：(維持費のインフレが本来の100%になる)<br />
+<p>例：(維持費のインフレが本来の100%になる)<br>
 &lt;iInflationPercent&gt;100&lt;/iInflationPercent&gt;</p>
-
 <h3 id="ihealthbonus">&lt;iHealthBonus&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
 この難易度を選択したプレイヤーが得る、初期〈衛生〉の量を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：初期〈衛生〉+2<br />
+<p>例：初期〈衛生〉+2<br>
 &lt;iHealthBonus&gt;2&lt;/iHealthBonus&gt;</p>
-
 <h3 id="ihappybonus">&lt;iHappyBonus&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
 この難易度を選択したプレイヤーが得る、初期〈幸福〉の量を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：初期〈幸福〉+4<br />
+<p>例：初期〈幸福〉+4<br>
 &lt;iHappyBonus&gt;4&lt;/iHappyBonus&gt;</p>
-
 <h3 id="iattitudechange">&lt;iAttitudeChange&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-すべてのプレイヤーは、他のすべてのプレイヤーに対する外交態度に、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+すべてのプレイヤーは、他のすべてのプレイヤーに対する外交態度に、<br>
 この値だけ修正を得ます。(この態度補正は非表示です)</p>
-
 <p>この値が低いほど、人間-AI・AI-AI間を問わず一律で機嫌を取りにくくなります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAttitudeChange&gt;-1&lt;/iAttitudeChange&gt;</p>
-
 <h3 id="inotechtrademodifier">&lt;iNoTechTradeModifier&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 すべてのAIプレイヤーは、<a href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/#inotechtradethreshold">進みすぎ制限数</a>にこの倍率だけ修正を得ます。</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例：(本来の20%の個数で進みすぎに引っかかる)<br />
+<p>例：(本来の20%の個数で進みすぎに引っかかる)<br>
 &lt;iNoTechTradeModifier&gt;20&lt;/iNoTechTradeModifier&gt;</p>
-
 <h3 id="itechtradeknownmodifier">&lt;iTechTradeKnownModifier&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 すべてのAIプレイヤーは、<a href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/#itechtradeknownpercent">秘密主義度</a>に+n%だけ修正を受けます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iTechTradeKnownModifier&gt;0&lt;/iTechTradeKnownModifier&gt;</p>
-
 <h3 id="iunownedtilespergameanimal">&lt;iUnownedTilesPerGameAnimal&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-誰の視界にも入っていない陸タイルnマスごとに1体の野生動物が自然沸きします。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+誰の視界にも入っていない陸タイルnマスごとに1体の野生動物が自然沸きします。<br>
 この値が低いほど、野生動物が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnownedTilesPerGameAnimal&gt;20&lt;/iUnownedTilesPerGameAnimal&gt;</p>
-
 <h3 id="iunownedtilesperbarbarianunit">&lt;iUnownedTilesPerBarbarianUnit&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-誰の視界にも入っていない陸タイルnマスごとに1体の蛮族ユニットが自然沸きします。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+誰の視界にも入っていない陸タイルnマスごとに1体の蛮族ユニットが自然沸きします。<br>
 この値が低いほど、蛮族が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnownedTilesPerBarbarianUnit&gt;25&lt;/iUnownedTilesPerBarbarianUnit&gt;</p>
-
 <h3 id="iunownedwatertilesperbarbarianunit">&lt;iUnownedWaterTilesPerBarbarianUnit&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-誰の視界にも入っていない水タイルnマスごとに1つの蛮族船が自然沸きします。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+誰の視界にも入っていない水タイルnマスごとに1つの蛮族船が自然沸きします。<br>
 この値が低いほど、蛮族船が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnownedWaterTilesPerBarbarianUnit&gt;250&lt;/iUnownedWaterTilesPerBarbarianUnit&gt;</p>
-
 <h3 id="iunownedtilesperbarbariancity">&lt;iUnownedTilesPerBarbarianCity&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-誰の視界にも入っていない陸タイルnマスごとに1つの蛮族都市が自然建設されます。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+誰の視界にも入っていない陸タイルnマスごとに1つの蛮族都市が自然建設されます。<br>
 この値が低いほど、蛮族都市が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iUnownedTilesPerBarbarianCity&gt;80&lt;/iUnownedTilesPerBarbarianCity&gt;</p>
-
 <h3 id="ibarbariancreationturnselapsed">&lt;iBarbarianCreationTurnsElapsed&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-ゲーム開始からnターンが経過するまでは、蛮族は自然沸きしません。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+ゲーム開始からnターンが経過するまでは、蛮族は自然沸きしません。<br>
 この値が低いほど、蛮族が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBarbarianCreationTurnsElapsed&gt;10&lt;/iBarbarianCreationTurnsElapsed&gt;</p>
-
 <h3 id="ibarbariancitycreationturnselapsed">&lt;iBarbarianCityCreationTurnsElapsed&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-ゲーム開始からnターンが経過するまでは、蛮族都市は自然建設されません。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+ゲーム開始からnターンが経過するまでは、蛮族都市は自然建設されません。<br>
 この値が低いほど、蛮族都市が多く沸きます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBarbarianCityCreationTurnsElapsed&gt;15&lt;/iBarbarianCityCreationTurnsElapsed&gt;</p>
-
 <h3 id="ibarbariancitycreationprob">&lt;iBarbarianCityCreationProb&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-蛮族都市の自然建設判定では、最後にn%のダイスロールをして、<br />
-成功したときのみ蛮族都市が実際に自然建設されますが、<br />
-ここでその確率を指定します。<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+蛮族都市の自然建設判定では、最後にn%のダイスロールをして、<br>
+成功したときのみ蛮族都市が実際に自然建設されますが、<br>
+ここでその確率を指定します。<br>
 この値が高いほど、蛮族都市が多く沸きます。</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBarbarianCityCreationProb&gt;8&lt;/iBarbarianCityCreationProb&gt;</p>
-
 <h3 id="ianimalbonus">&lt;iAnimalBonus&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 動物ユニットは、人間プレイヤー配下のユニットとの戦闘で+n%の修正を受けます。</p>
-
-<p>この修正は動物ユニットの方に与えられます。<br />
+<p>この修正は動物ユニットの方に与えられます。<br>
 したがって、BtSでは0または負の数です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAnimalBonus&gt;0&lt;/iAnimalBonus&gt;</p>
-
 <h3 id="ibarbarianbonus">&lt;iBarbarianBonus&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 蛮族ユニットは、人間プレイヤー配下のユニットとの戦闘で+n%の修正を受けます。</p>
-
-<p>この修正は蛮族ユニットの方に与えられます。<br />
+<p>この修正は蛮族ユニットの方に与えられます。<br>
 したがって、BtSでは0または負の数です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBarbarianBonus&gt;0&lt;/iBarbarianBonus&gt;</p>
-
 <h3 id="iaianimalbonus">&lt;iAIAnimalBonus&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 動物ユニットは、AIプレイヤー配下のユニットとの戦闘で+n%の修正を受けます。</p>
-
-<p>この修正は動物ユニットの方に与えられます。<br />
+<p>この修正は動物ユニットの方に与えられます。<br>
 BtSでは、全難易度で<code>-40</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIAnimalBonus&gt;-40&lt;/iAIAnimalBonus&gt;</p>
-
 <h3 id="iaibarbarianbonus">&lt;iAIBarbarianBonus&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 蛮族ユニットは、AIプレイヤー配下のユニットとの戦闘で+n%の修正を受けます。</p>
-
-<p>この修正は蛮族ユニットの方に与えられます。<br />
+<p>この修正は蛮族ユニットの方に与えられます。<br>
 BtSでは、全難易度で<code>-25</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIBarbarianBonus&gt;-25&lt;/iAIBarbarianBonus&gt;</p>
-
 <h3 id="istartingdefenseunits">&lt;iStartingDefenseUnits&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、<br />
-ゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#初期防衛兵種">初期防衛兵種</a>のユニットをここに指定した数だけ受けとります。</p>
-
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、<br>
+ゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%88%9D%E6%9C%9F%E9%98%B2%E8%A1%9B%E5%85%B5%E7%A8%AE">初期防衛兵種</a>のユニットをここに指定した数だけ受けとります。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iStartingDefenseUnits&gt;0&lt;/iStartingDefenseUnits&gt;</p>
-
 <h3 id="istartingworkerunits">&lt;iStartingWorkerUnits&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、<br />
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、<br>
 ゲーム開始時に労働者ユニットをここに指定した数だけ受けとります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iStartingWorkerUnits&gt;0&lt;/iStartingWorkerUnits&gt;</p>
-
 <h3 id="istartingexploreunits">&lt;iStartingExploreUnits&gt;</h3>
-
-<p><em class="handicap-player">各プレイヤー向け設定値</em><br />
-この難易度を選択したプレイヤーは、<br />
-ゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#初期探索兵種">初期探索兵種</a>のユニットをここに指定した数だけ受けとります。</p>
-
+<p><em class="handicap-player">各プレイヤー向け設定値</em><br>
+この難易度を選択したプレイヤーは、<br>
+ゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%88%9D%E6%9C%9F%E6%8E%A2%E7%B4%A2%E5%85%B5%E7%A8%AE">初期探索兵種</a>のユニットをここに指定した数だけ受けとります。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iStartingExploreUnits&gt;0&lt;/iStartingExploreUnits&gt;</p>
-
 <h3 id="iaistartingunitmultiplier">&lt;iAIStartingUnitMultiplier&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-AIに追加で与えられる開拓者の数を指定します。<br />
-全てのプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/#freeunitclasses">文明ごとに規定された初期ユニットセット</a>を1セット受け取りますが、<br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+AIに追加で与えられる開拓者の数を指定します。<br>
+全てのプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/civ4civilizationinfos/#freeunitclasses">文明ごとに規定された初期ユニットセット</a>を1セット受け取りますが、<br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは初期ユニットセットをさらに追加でnセット受け取ります。</p>
-
 <p>BtSでは、文明固有の初期ユニットセットは全文明共通で開拓者1体です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIStartingUnitMultiplier&gt;1&lt;/iAIStartingUnitMultiplier&gt;</p>
-
 <h3 id="iaistartingdefenseunits">&lt;iAIStartingDefenseUnits&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-AIプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#初期防衛兵種">初期防衛兵種</a>のユニットをさらに追加でn体受けとります。</p>
-
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+AIプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%88%9D%E6%9C%9F%E9%98%B2%E8%A1%9B%E5%85%B5%E7%A8%AE">初期防衛兵種</a>のユニットをさらに追加でn体受けとります。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIStartingDefenseUnits&gt;4&lt;/iAIStartingDefenseUnits&gt;</p>
-
 <h3 id="iaistartingworkerunits">&lt;iAIStartingWorkerUnits&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーはゲーム開始時に労働者ユニットをここに指定した数だけ受けとります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIStartingWorkerUnits&gt;1&lt;/iAIStartingWorkerUnits&gt;</p>
-
 <h3 id="iaistartingexploreunits">&lt;iAIStartingExploreUnits&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-AIプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#初期探索兵種">初期探索兵種</a>のユニットをさらに追加でn体受けとります。</p>
-
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+AIプレイヤーはゲーム開始時に<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%88%9D%E6%9C%9F%E6%8E%A2%E7%B4%A2%E5%85%B5%E7%A8%AE">初期探索兵種</a>のユニットをさらに追加でn体受けとります。</p>
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIStartingExploreUnits&gt;1&lt;/iAIStartingExploreUnits&gt;</p>
-
 <h3 id="ibarbariandefenders">&lt;iBarbarianDefenders&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
-蛮族都市が自然建設された際に<a href="https://gforestshade.github.io/kujira/post/glossary/#初期防衛兵種">初期防衛兵種</a>のユニットがn体生成されるようになります。</p>
-
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
+蛮族都市が自然建設された際に<a href="https://gforestshade.github.io/kujira/post/glossary/#%E5%88%9D%E6%9C%9F%E9%98%B2%E8%A1%9B%E5%85%B5%E7%A8%AE">初期防衛兵種</a>のユニットがn体生成されるようになります。</p>
 <p>値：整数</p>
-
-<p>例：(新しい蛮族都市に4体の弓兵を無償で提供)<br />
+<p>例：(新しい蛮族都市に4体の弓兵を無償で提供)<br>
 &lt;iBarbarianDefenders&gt;4&lt;/iBarbarianDefenders&gt;</p>
-
 <h3 id="iaideclarewarprob">&lt;iAIDeclareWarProb&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のときの、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のときの、<br>
 AIプレイヤーの戦争準備判定倍率を指定します。</p>
-
 <p>BtSでは、貴族以上の全難易度で<code>100</code>です。</p>
-
 <p>値：0~100までの整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAIDeclareWarProb&gt;100&lt;/iAIDeclareWarProb&gt;</p>
-
-<p>例２：(戦争を企図する確率が本来の25%になる=75%の確率でAIは無条件に戦争を思いとどまる)<br />
+<p>例２：(戦争を企図する確率が本来の25%になる=75%の確率でAIは無条件に戦争を思いとどまる)<br>
 &lt;iAIDeclareWarProb&gt;25&lt;/iAIDeclareWarProb&gt;</p>
-
 <h3 id="iaiworkratemodifier">&lt;iAIWorkRateModifier&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは配下の労働者の作業効率に+n%の修正を得ます。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの労働効率+100%)<br />
+<p>例：(AIの労働効率+100%)<br>
 &lt;iAIWorkRateModifier&gt;100&lt;/iAIWorkRateModifier&gt;</p>
-
 <h3 id="iaigrowthpercent">&lt;iAIGrowthPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーの都市が次の人口に成長するまでに必要な貯蔵食糧数の倍率を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの都市の成長に必要な食料が本来の80%になる)<br />
+<p>例：(AIの都市の成長に必要な食料が本来の80%になる)<br>
 &lt;iAIGrowthPercent&gt;80&lt;/iAIGrowthPercent&gt;</p>
-
 <h3 id="iaitrainpercent">&lt;iAITrainPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界ユニット以外のユニットを作成するための〈ハンマー〉がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIのユニット作成コストが本来の60%になる)<br />
+<p>例：(AIのユニット作成コストが本来の60%になる)<br>
 &lt;iAITrainPercent&gt;60&lt;/iAITrainPercent&gt;</p>
-
 <h3 id="iaiworldtrainpercent">&lt;iAIWorldTrainPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界ユニットを作成するための〈ハンマー〉がn%になります。</p>
-
 <p>BtSでは、貴族以上の全難易度で<code>100</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの世界ユニット作成コストが本来の100%になる)<br />
+<p>例：(AIの世界ユニット作成コストが本来の100%になる)<br>
 &lt;iAIWorldTrainPercent&gt;100&lt;/iAIWorldTrainPercent&gt;</p>
-
 <h3 id="iaiconstructpercent">&lt;iAIConstructPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界遺産以外の建造物を作成するための〈ハンマー〉がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの建造物作成コストが本来の60%になる)<br />
+<p>例：(AIの建造物作成コストが本来の60%になる)<br>
 &lt;iAIConstructPercent&gt;60&lt;/iAIConstructPercent&gt;</p>
-
 <h3 id="iaiworldconstructpercent">&lt;iAIWorldConstructPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界遺産を作成するための〈ハンマー〉がn%になります。</p>
-
 <p>BtSでは、貴族以上の全難易度で<code>100</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの世界遺産作成コストが本来の100%になる)<br />
+<p>例：(AIの世界遺産作成コストが本来の100%になる)<br>
 &lt;iAIWorldConstructPercent&gt;100&lt;/iAIWorldConstructPercent&gt;</p>
-
 <h3 id="iaicreatepercent">&lt;iAICreatePercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界プロジェクト以外のプロジェクトを作成するための〈ハンマー〉がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIのプロジェクト作成コストが本来の60%になる)<br />
+<p>例：(AIのプロジェクト作成コストが本来の60%になる)<br>
 &lt;iAICreatePercent&gt;60&lt;/iAICreatePercent&gt;</p>
-
 <h3 id="iaiworldcreatepercent">&lt;iAIWorldCreatePercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは世界プロジェクトを作成するための〈ハンマー〉がn%になります。</p>
-
 <p>BtSでは、貴族以上の全難易度で<code>100</code>です。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの世界プロジェクト作成コストが本来の100%になる)<br />
+<p>例：(AIの世界プロジェクト作成コストが本来の100%になる)<br>
 &lt;iAIWorldCreatePercent&gt;100&lt;/iAIWorldCreatePercent&gt;</p>
-
 <h3 id="iaicivicupkeeppercent">&lt;iAICivicUpkeepPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーが支払う社会制度維持費がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの社会制度維持費が本来の60%になる)<br />
+<p>例：(AIの社会制度維持費が本来の60%になる)<br>
 &lt;iAICivicUpkeepPercent&gt;60&lt;/iAICivicUpkeepPercent&gt;</p>
-
 <h3 id="iaiunitcostpercent">&lt;iAIUnitCostPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーが支払うユニット維持費がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIのユニット維持費が本来の60%になる)<br />
+<p>例：(AIのユニット維持費が本来の60%になる)<br>
 &lt;iAIUnitCostPercent&gt;60&lt;/iAIUnitCostPercent&gt;</p>
-
 <h3 id="iaiunitsupplypercent">&lt;iAIUnitSupplyPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーが支払うユニット補給費がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIのユニット補給費が本来の50%になる)<br />
+<p>例：(AIのユニット補給費が本来の50%になる)<br>
 &lt;iAIUnitSupplyPercent&gt;50&lt;/iAIUnitSupplyPercent&gt;</p>
-
 <h3 id="iaiunitupgradepercent">&lt;iAIUnitUpgradePercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーが支払うアップグレード費がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIのアップグレード費が本来の50%になる)<br />
+<p>例：(AIのアップグレード費が本来の50%になる)<br>
 &lt;iAIUnitUpgradePercent&gt;50&lt;/iAIUnitUpgradePercent&gt;</p>
-
 <h3 id="iaiinflationpercent">&lt;iAIInflationPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーのインフレーションがn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの維持費のインフレが本来の80%になる)<br />
+<p>例：(AIの維持費のインフレが本来の80%になる)<br>
 &lt;iAIInflationPercent&gt;80&lt;/iAIInflationPercent&gt;</p>
-
 <h3 id="iaiwarwearinesspercent">&lt;iAIWarWearinessPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーの厭戦感情がn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(AIの厭戦感情が本来の80%になる)<br />
+<p>例：(AIの厭戦感情が本来の80%になる)<br>
 &lt;iAIWarWearinessPercent&gt;50&lt;/iAIWarWearinessPercent&gt;</p>
-
 <h3 id="iaipereramodifier">&lt;iAIPerEraModifier&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーは1つ時代が進むごとに以下のコストに(乗算で)n%の修正を受けます。</p>
-
 <ul>
-<li>ユニット生産コスト<br /></li>
-<li>建造物生産コスト<br /></li>
-<li>プロジェクト生産コスト<br /></li>
-<li>ユニット維持費<br /></li>
-<li>ユニット補給費<br /></li>
-<li>インフレーション<br /></li>
-<li>厭戦感情<br /></li>
-<li>公民維持費<br /></li>
-<li>人口増加効率<br /></li>
-<li>アップグレード費<br />
-<br /></li>
+<li>ユニット生産コスト</li>
+<li>建造物生産コスト</li>
+<li>プロジェクト生産コスト</li>
+<li>ユニット維持費</li>
+<li>ユニット補給費</li>
+<li>インフレーション</li>
+<li>厭戦感情</li>
+<li>公民維持費</li>
+<li>人口増加効率</li>
+<li>アップグレード費</li>
 </ul>
-
-<p>たとえば、天帝AI(設定値:-5)がルネサンス時代(4番目の時代)にいるとき、<br />
-上の全てのコストが-20%の修正を受けます。<br />
+<p>たとえば、天帝AI(設定値:-5)がルネサンス時代(4番目の時代)にいるとき、<br>
+上の全てのコストが-20%の修正を受けます。<br>
 なお、世界遺産・世界プロジェクト・世界ユニットのコストもこの属性の影響を受けます。</p>
-
 <p>値：整数</p>
-
-<p>例：(1つ時代が進むごとにいろいろなコストが-5%)<br />
+<p>例：(1つ時代が進むごとにいろいろなコストが-5%)<br>
 &lt;iAIPerEraModifier&gt;-5&lt;/iAIPerEraModifier&gt;</p>
-
 <h3 id="iaiadvancedstartpercent">&lt;iAIAdvancedStartPercent&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーが成長済みスタート時に受け取るポイントがn%になります。</p>
-
 <p>値：整数</p>
-
-<p>例：(初期ポイントが本来の170%になる)<br />
+<p>例：(初期ポイントが本来の170%になる)<br>
 &lt;iAIAdvancedStartPercent&gt;170&lt;/iAIAdvancedStartPercent&gt;</p>
-
 <h3 id="goodies">&lt;Goodies&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-部族集落のイベント振り分けを指定します。<br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+部族集落のイベント振り分けを指定します。<br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 部族集落の結果イベントはここに列挙されている中から等確率で選ばれます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#部族集落">部族集落タイプキー</a>のリスト</p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E9%83%A8%E6%97%8F%E9%9B%86%E8%90%BD">部族集落タイプキー</a>のリスト</p>
 <p>例：</p>
-
-<pre><code class="language-txt">&lt;Goodies&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;Goodies&gt;
     &lt;GoodyType&gt;GOODY_LOW_GOLD&lt;/GoodyType&gt;
     &lt;GoodyType&gt;GOODY_LOW_GOLD&lt;/GoodyType&gt;
     &lt;GoodyType&gt;GOODY_LOW_GOLD&lt;/GoodyType&gt;
@@ -2373,37 +2096,23 @@ AIプレイヤーが成長済みスタート時に受け取るポイントがn%�
     &lt;GoodyType&gt;GOODY_BARBARIANS_STRONG&lt;/GoodyType&gt;
     &lt;GoodyType&gt;GOODY_BARBARIANS_STRONG&lt;/GoodyType&gt;
 &lt;/Goodies&gt;
-</code></pre>
-
-<h3 id="freetechs">&lt;FreeTechs&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+</code></pre></div><h3 id="freetechs">&lt;FreeTechs&gt;</h3>
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 人間・AI問わず全てのプレイヤーはここに指定された技術を初期技術として獲得します。</p>
-
 <p>値：&lt;FreeTech&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FreeTech&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FreeTech&gt;は以下の2つのタグを含みます。</p>
 <h4 id="techtype">&lt;TechType&gt;</h4>
-
-<p>全員に持たせる初期技術を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
+<p>全員に持たせる初期技術を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
 <h4 id="bfreetech">&lt;bFreeTech&gt;</h4>
-
 <p>1を指定します。</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FreeTechs /&gt;</p>
-
 <p>例２：(全員に初期技術:車輪・農業・採鉱)</p>
-
-<pre><code class="language-txt">&lt;FreeTechs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;FreeTechs&gt;
     &lt;FreeTech&gt;
         &lt;TechType&gt;TECH_THE_WHEEL&lt;/TechType&gt;
         &lt;bFreeTech&gt;1&lt;/bFreeTech&gt;
@@ -2417,37 +2126,23 @@ AIプレイヤーが成長済みスタート時に受け取るポイントがn%�
         &lt;bFreeTech&gt;1&lt;/bFreeTech&gt;
     &lt;/FreeTech&gt;
 &lt;/FreeTechs&gt;
-</code></pre>
-
-<h3 id="aifreetechs">&lt;AIFreeTechs&gt;</h3>
-
-<p><em class="handicap-game">ゲーム全体向け設定値</em><br />
-ゲーム全体の難易度がこの難易度のとき、<br />
+</code></pre></div><h3 id="aifreetechs">&lt;AIFreeTechs&gt;</h3>
+<p><em class="handicap-game">ゲーム全体向け設定値</em><br>
+ゲーム全体の難易度がこの難易度のとき、<br>
 AIプレイヤーはここに指定された技術を初期技術として獲得します。</p>
-
 <p>値：&lt;FreeTech&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FreeTech&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="techtype">&lt;TechType&gt;</h4>
-
-<p>AIに持たせる初期技術を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
-<h4 id="bfreetech">&lt;bFreeTech&gt;</h4>
-
+<p>&lt;FreeTech&gt;は以下の2つのタグを含みます。</p>
+<h4 id="techtype-1">&lt;TechType&gt;</h4>
+<p>AIに持たせる初期技術を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
+<h4 id="bfreetech-1">&lt;bFreeTech&gt;</h4>
 <p>1を指定します。</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;AIFreeTechs /&gt;</p>
-
 <p>例２：(AIに初期技術:車輪・農業・狩猟・弓術)</p>
-
-<pre><code class="language-txt">&lt;AIFreeTechs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;AIFreeTechs&gt;
     &lt;FreeTech&gt;
         &lt;TechType&gt;TECH_THE_WHEEL&lt;/TechType&gt;
         &lt;bFreeTech&gt;1&lt;/bFreeTech&gt;
@@ -2465,18 +2160,15 @@ AIプレイヤーはここに指定された技術を初期技術として獲得
         &lt;bFreeTech&gt;1&lt;/bFreeTech&gt;
     &lt;/FreeTech&gt;
 &lt;/AIFreeTechs&gt;
-</code></pre>
-
-<div style="padding:5em"></div>
-<div class="footnotes">
-
-<hr />
-
+</code></pre></div><div style="padding:5em"></div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:barb">蛮族文明に所属しているすべてのユニットが対象になります。蛮族ユニットのほか、野生動物も対象となることに注意してください。<br />
- <a class="footnote-return" href="#fnref:barb"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>蛮族文明に所属しているすべてのユニットが対象になります。蛮族ユニットのほか、野生動物も対象となることに注意してください。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -2489,7 +2181,7 @@ AIプレイヤーはここに指定された技術を初期技術として獲得
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

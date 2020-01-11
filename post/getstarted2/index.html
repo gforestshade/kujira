@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-12",
     "description": "",
-    "wordCount": 3992
+    "wordCount":  3985 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-12">2017-07-12 00:00</time></p>
           
-          <p>3992  Words</p>
+          <p>3985  Words</p>
           
           
 
@@ -374,316 +374,235 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a>のつづき<br /></li>
-<li>条件分岐を使ってみる<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a>のつづき</li>
+<li>条件分岐を使ってみる</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
 <p>前回の<code>kujira</code>MODをフォルダごとコピーしてリネーム、<code>kujira_if</code>というMODを作ります。</p>
-
-<pre><code class="language-txt">└─kujira_if
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_if
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p>このようにフォルダごとコピーすることで、<br />
+</code></pre></div><p>このようにフォルダごとコピーすることで、<br>
 あるMODをもとにした派生MODを作成することができます。</p>
-
 <h1 id="選り好みする図書館">選り好みする図書館</h1>
-
-<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br />
-しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br />
-などを区別せず、全都市に無差別に図書館を建設します。<br />
-それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br />
-これだと創造志向があまりにもかわいそうですし、<br />
+<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br>
+しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br>
+などを区別せず、全都市に無差別に図書館を建設します。<br>
+それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br>
+これだと創造志向があまりにもかわいそうですし、<br>
 せめて自動建設は首都だけにして少しマイルドにできないでしょうか。</p>
-
-<p>この制限を考慮に入れて、<br />
-《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br />
+<p>この制限を考慮に入れて、<br>
+《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br>
 をつくっていきます。</p>
-
-<p></p>
-
 <h1 id="文">文</h1>
-
-<p>Pythonのプログラムは1行で1つの処理を表すことになっています。<br />
-そのひとつひとつの処理を<strong>文</strong>(statement)と呼びます。<br />
-基本的に１行で文になるので、<code>pCity = argsList[0]</code>や<br />
-<code>iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')</code>も文です。<br />
+<p>Pythonのプログラムは1行で1つの処理を表すことになっています。<br>
+そのひとつひとつの処理を<strong>文</strong>(statement)と呼びます。<br>
+基本的に１行で文になるので、<code>pCity = argsList[0]</code>や<br>
+<code>iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')</code>も文です。<br>
 複数の処理を記述するときは、上から順番に文を並べます。</p>
-
-<pre><code class="language-python">a = 4       # aを4にする
-b = 8       # bを8にする
-c = a + b   # cをa+bの計算結果の値にする
-print c     # cの値を出力する
-# 12が出力される
-</code></pre>
-
-<h2 id="if文">if文</h2>
-
-<p>ただ順番に実行するだけではない特殊な文がいくつかあります。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>       <span style="color:#75715e"># aを4にする</span>
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>       <span style="color:#75715e"># bを8にする</span>
+c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b   <span style="color:#75715e"># cをa+bの計算結果の値にする</span>
+<span style="color:#66d9ef">print</span> c     <span style="color:#75715e"># cの値を出力する</span>
+<span style="color:#75715e"># 12が出力される</span>
+</code></pre></div><h2 id="if文">if文</h2>
+<p>ただ順番に実行するだけではない特殊な文がいくつかあります。<br>
 そのうちのひとつがif文です。</p>
-
-<pre><code class="language-python">if 条件:
-    中身の文1
-    中身の文2
-    中身の文3
-    ...
-</code></pre>
-
-<p>条件を満たした場合に限り、&rdquo;中身&rdquo;が上から順番に実行されます。<br />
-この&rdquo;中身&rdquo;のことを<strong>ブロック</strong>(block)と呼びます。</p>
-
-<pre><code class="language-python">a = 2           # aを2にする
-b = 3           # bを3にする
-c = a * b       # cをa*bの計算結果の値にする
-if c &gt; 20:      # cが20より大き...くないので中身は実行されない
-    a = 4
-    b = 5
-    c = a * b
-print c         # cの値を出力する
-# 6が出力される
-</code></pre>
-
-<p>if文は自分が従えているブロックを含めて大きいひとつの<strong>文</strong>です。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>:
+    <span style="color:#960050;background-color:#1e0010">中</span><span style="color:#960050;background-color:#1e0010">身</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">文</span><span style="color:#ae81ff">1</span>
+    <span style="color:#960050;background-color:#1e0010">中</span><span style="color:#960050;background-color:#1e0010">身</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">文</span><span style="color:#ae81ff">2</span>
+    <span style="color:#960050;background-color:#1e0010">中</span><span style="color:#960050;background-color:#1e0010">身</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">文</span><span style="color:#ae81ff">3</span>
+    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+</code></pre></div><p>条件を満たした場合に限り、&ldquo;中身&quot;が上から順番に実行されます。<br>
+この&quot;中身&quot;のことを<strong>ブロック</strong>(block)と呼びます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>           <span style="color:#75715e"># aを2にする</span>
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>           <span style="color:#75715e"># bを3にする</span>
+c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b       <span style="color:#75715e"># cをa*bの計算結果の値にする</span>
+<span style="color:#66d9ef">if</span> c <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>:      <span style="color:#75715e"># cが20より大き...くないので中身は実行されない</span>
+    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
+<span style="color:#66d9ef">print</span> c         <span style="color:#75715e"># cの値を出力する</span>
+<span style="color:#75715e"># 6が出力される</span>
+</code></pre></div><p>if文は自分が従えているブロックを含めて大きいひとつの<strong>文</strong>です。<br>
 他の文と混ぜることができ、順番通りに実行されます。</p>
-
-<p>どこからどこまでが<strong>ブロック</strong>なのかは、<br />
-<strong>空白文字</strong>を使って<strong>字下げ</strong>(indent)することで表します。<br />
+<p>どこからどこまでが<strong>ブロック</strong>なのかは、<br>
+<strong>空白文字</strong>を使って<strong>字下げ</strong>(indent)することで表します。<br>
 書き出しが揃えられている行どうしが同じブロックとして認識されます。</p>
-
-<p>ブロック内の文どうしで揃ってさえいればいいので、<br />
-Pythonのルールとしては何文字分字下げしても構いません。<br />
-ただ、基本的には自分ルールで何文字分インデントするか<br />
-あらかじめ決めておくのがよいでしょう。<br />
-「半角スペース4つ」が一般的に推奨されており、<br />
-Kujiraでも半角スペース4つで統一しています。<sup class="footnote-ref" id="fnref:tabindent"><a href="#fn:tabindent">1</a></sup></p>
-
-<p>なお、<strong>空白文字</strong>として認識されるのは半角スペースまたはタブ文字です。<br />
+<p>ブロック内の文どうしで揃ってさえいればいいので、<br>
+Pythonのルールとしては何文字分字下げしても構いません。<br>
+ただ、基本的には自分ルールで何文字分インデントするか<br>
+あらかじめ決めておくのがよいでしょう。<br>
+「半角スペース4つ」が一般的に推奨されており、<br>
+Kujiraでも半角スペース4つで統一しています。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>なお、<strong>空白文字</strong>として認識されるのは半角スペースまたはタブ文字です。<br>
 全角スペースではだめなことにだけ注意しておきましょう。</p>
-
-<h1 id="kujiraeventmanager-py">KujiraEventManager.py</h1>
-
+<h1 id="kujiraeventmanagerpy">KujiraEventManager.py</h1>
 <p>というわけで、<code>KujiraEventManager.py</code>をこうしてみました&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        <span style="color:#66d9ef">if</span> pCity<span style="color:#f92672">.</span>isCapital():
+            iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>)
+            pCity<span style="color:#f92672">.</span>setNumRealBuilding(iLib, <span style="color:#ae81ff">1</span>)
 
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        if pCity.isCapital():
-            iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')
-            pCity.setNumRealBuilding(iLib, 1)
-
-</code></pre>
-
-<p>前回から変わったのはこの部分ですね。</p>
-
-<pre><code class="language-python">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-        if pCity.isCapital():
-            iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')
-            pCity.setNumRealBuilding(iLib, 1)
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-</code></pre>
-
-<p><code>BUILDING_LIBRARY</code>の内部数値を取得して/それを建設する<br />
-という処理をまるごとブロックにして、<br />
-<code>pCity.isCapital()</code>(pCityは首都か？)の答えが「はい」であるときに限り、<br />
+</code></pre></div><p>前回から変わったのはこの部分ですね。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+        <span style="color:#66d9ef">if</span> pCity<span style="color:#f92672">.</span>isCapital():
+            iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>)
+            pCity<span style="color:#f92672">.</span>setNumRealBuilding(iLib, <span style="color:#ae81ff">1</span>)
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+</code></pre></div><p><code>BUILDING_LIBRARY</code>の内部数値を取得して/それを建設する<br>
+という処理をまるごとブロックにして、<br>
+<code>pCity.isCapital()</code>(pCityは首都か？)の答えが「はい」であるときに限り、<br>
 実行されるようにしています。</p>
-
 <h2 id="ためす">ためす</h2>
-
 <p>これで《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》になったはずです。</p>
-
 <p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_if_10.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_if_10.png"    /></a>
-<br />
+<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_if_11.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_if_11.png"    /></a>
-<br />
+<br>
 できました！</p>
-
 <h1 id="もう少し進める">もう少し進める</h1>
-
-<p>これまでは図書館は公平に与えられてきましたが、<br />
-対象を限定するこの力を使えばちょっとずるしたバージョンもつくれます。<br />
-《都市が建設されたとき、その都市の所有者の文明がマリならば、その都市に図書館を建設するMOD》<br />
+<p>これまでは図書館は公平に与えられてきましたが、<br>
+対象を限定するこの力を使えばちょっとずるしたバージョンもつくれます。<br>
+《都市が建設されたとき、その都市の所有者の文明がマリならば、その都市に図書館を建設するMOD》<br>
 を目指してみましょう。</p>
-
 <h2 id="その都市の所有者">その都市の所有者</h2>
-
-<p><strong>Player</strong>という概念があります。<br />
-これは、<strong><em>実際にシド星に登場している</em></strong>指導者ひとりひとりのことです。<br />
-このとき、操作しているのが<strong><em>人間であるかAIであるかは問いません。</em></strong><br />
-もちろん、<strong>Player</strong>の状態(ビーカーはどれだけ出ているか・国庫はどれくらいあるか・どんな技術を持っているか・などなど他にもたくさん)は<br />
-ターンごとに刻々と変わっていきます。こういった変わっていくものにも干渉できるというのが<br />
+<p><strong>Player</strong>という概念があります。<br>
+これは、<em><strong>実際にシド星に登場している</strong></em>指導者ひとりひとりのことです。<br>
+このとき、操作しているのが<em><strong>人間であるかAIであるかは問いません。</strong></em><br>
+もちろん、<strong>Player</strong>の状態(ビーカーはどれだけ出ているか・国庫はどれくらいあるか・どんな技術を持っているか・などなど他にもたくさん)は<br>
+ターンごとに刻々と変わっていきます。こういった変わっていくものにも干渉できるというのが<br>
 XMLではできないPythonでのMODの楽しみのひとつです。</p>
-
-<h2 id="所有者-都市">所有者←都市</h2>
-
-<p><a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyCityをクリックしてから&rdquo;player&rdquo;で検索すると&hellip;</p>
-
+<h2 id="所有者都市">所有者←都市</h2>
+<p><a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyCityをクリックしてから&quot;player&quot;で検索すると&hellip;</p>
 <blockquote>
-<pre><code class="language-nohighlight">243. PlayerType getOwner()
+</blockquote>
+<pre><code class="language-nohighlight" data-lang="nohighlight">243. PlayerType getOwner()
      int /* PlayerTypes*/ ()
-</code></pre>
-</blockquote>
-
-<p>それっぽいのがありました。<br />
-<code>PlayerType</code>とあるので、<code>ip = pCity.getOwner()</code>とすると<br />
-<code>ip</code>にはPlayerを表す数値が入ります。<br />
-(<a href="https://gforestshade.github.io/kujira/post/getstarted1/#図書館を建設する-とは">覚えていますか</a>？Typeとあるときはその種類に対応する数値を表すのでした)<br />
-私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので<br />
-Player本体が欲しいです。<br />
+</code></pre><p>それっぽいのがありました。<br>
+<code>PlayerType</code>とあるので、<code>ip = pCity.getOwner()</code>とすると<br>
+<code>ip</code>にはPlayerを表す数値が入ります。<br>
+(<a href="https://gforestshade.github.io/kujira/post/getstarted1/#%E5%9B%B3%E6%9B%B8%E9%A4%A8%E3%82%92%E5%BB%BA%E8%A8%AD%E3%81%99%E3%82%8B-%E3%81%A8%E3%81%AF">覚えていますか</a>？Typeとあるときはその種類に対応する数値を表すのでした)<br>
+私たちはこのPlayerに対してさらに操作(今回は所属文明という情報の取得)したいので<br>
+Player本体が欲しいです。<br>
 そこで、<code>pPlayer = gc.getPlayer(ip)</code>とすると、<code>pPlayer</code>にPlayer本体がぎゅっと入ります。</p>
-
-<pre><code class="language-python">ip = pCity.getOwner()
-pPlayer = gc.getPlayer(ip)
-</code></pre>
-
-<p><code>pCity.getOwner()</code>で取れた数値をいったん<code>ip</code>に代入していますが、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ip <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getOwner()
+pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(ip)
+</code></pre></div><p><code>pCity.getOwner()</code>で取れた数値をいったん<code>ip</code>に代入していますが、<br>
 直接その番号を<code>gc.getPlayer()</code>することもできます。</p>
-
 <p>そうする場合はこうなります。</p>
-
-<pre><code class="language-python">pPlayer = gc.getPlayer( pCity.getOwner() )
-</code></pre>
-
-<h2 id="所有者-文明">所有者→文明</h2>
-
-<p>あらためて<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyPlayerの中から&rdquo;Civilization&rdquo;で探すと&hellip;</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
+</code></pre></div><h2 id="所有者文明">所有者→文明</h2>
+<p>あらためて<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>でCyPlayerの中から&quot;Civilization&quot;で探すと&hellip;</p>
 <blockquote>
-<pre><code class="language-nohighlight">161. CivilizationType getCivilizationType ()
-     int ()
-</code></pre>
 </blockquote>
-
-<p>ありました。これで<code>ic = pPlayer.getCivilizationType()</code>とすれば、<br />
-<code>ic</code>に文明の種類に対応する数値が代入できるのですが、<br />
-ここでいう「文明の種類」とは、マリとは何か、カルタゴとは何か、という定義です。<br />
+<pre><code class="language-nohighlight" data-lang="nohighlight">161. CivilizationType getCivilizationType ()
+     int ()
+</code></pre><p>ありました。これで<code>ic = pPlayer.getCivilizationType()</code>とすれば、<br>
+<code>ic</code>に文明の種類に対応する数値が代入できるのですが、<br>
+ここでいう「文明の種類」とは、マリとは何か、カルタゴとは何か、という定義です。<br>
 MODではXMLであってもPythonであっても、そのような定義を<strong>Info</strong>と呼びます。</p>
-
-<p><strong>文明</strong>は<strong>Player</strong>や<strong>都市</strong>とちがい、ゲーム中に状態が変化したりはしません。<br />
-(私たちがプレイしてるときによく言う「プレイヤー文明」や「AI文明」という概念は<br />
-ここでは<strong>Player</strong>になることに注意してください。)<br />
-都市の出力や建造物なんかはどんどん増えていきますが、<br />
-ゲーム中にマリの指導者が突然徳川家康になったり<br />
-マリのUBがヒッポドロームになったりはしません。<br />
-もしそうなるようなMODを(XMLで)作るのだとしても、<br />
-マリのUBが最初からヒッポドロームになるのであって、<br />
+<p><strong>文明</strong>は<strong>Player</strong>や<strong>都市</strong>とちがい、ゲーム中に状態が変化したりはしません。<br>
+(私たちがプレイしてるときによく言う「プレイヤー文明」や「AI文明」という概念は<br>
+ここでは<strong>Player</strong>になることに注意してください。)<br>
+都市の出力や建造物なんかはどんどん増えていきますが、<br>
+ゲーム中にマリの指導者が突然徳川家康になったり<br>
+マリのUBがヒッポドロームになったりはしません。<br>
+もしそうなるようなMODを(XMLで)作るのだとしても、<br>
+マリのUBが最初からヒッポドロームになるのであって、<br>
 マリのUBがゲームの途中でヒッポドロームに変わるのではないはずです。</p>
-
-<p>ですから、この数値によって取得できるのは「文明のInfo」、<br />
-すなわち<code>CivilizationInfo</code>です。<br />
-(ここでいうCivilizationInfoというのはXML編集した時の<br />
-&lt;CivilizationInfo&gt;タグと同じものです！世界がつながってきました。)<br />
-というわけで<code>civinfo = gc.getCivilizationInfo(ic)</code>として<br />
+<p>ですから、この数値によって取得できるのは「文明のInfo」、<br>
+すなわち<code>CivilizationInfo</code>です。<br>
+(ここでいうCivilizationInfoというのはXML編集した時の<br>
+&lt;CivilizationInfo&gt;タグと同じものです！世界がつながってきました。)<br>
+というわけで<code>civinfo = gc.getCivilizationInfo(ic)</code>として<br>
 <code>pPlayer</code>が所属している文明の<strong>Info</strong>になったはずです。</p>
-
-<p>長かった道のりもそろそろ終わり、<br />
-知りたいのはその文明がマリかどうか、なのでした。<br />
-<code>civinfo.getType()</code>として&lt;Type&gt;タグが<br />
+<p>長かった道のりもそろそろ終わり、<br>
+知りたいのはその文明がマリかどうか、なのでした。<br>
+<code>civinfo.getType()</code>として&lt;Type&gt;タグが<br>
 <code>CIVILIZATION_MALI</code>になっているかどうかで判断しましょう。</p>
-
-<pre><code class="language-python">ip = pCity.getOwner()
-pPlayer = gc.getPlayer(ip)
-ic = pPlayer.getCivilizationType()
-civinfo = gc.getCivilizationInfo(ic)
-if civinfo.getType() == 'CIVILIZATION_MALI':
-    # 図書館を建設する
-</code></pre>
-
-<p>まとめてこうなります。<br />
-Pythonを含め、多くのプログラミング言語では<br />
-<code>=</code>は右辺を左辺に代入する機能しかありません。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ip <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getOwner()
+pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(ip)
+ic <span style="color:#f92672">=</span> pPlayer<span style="color:#f92672">.</span>getCivilizationType()
+civinfo <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getCivilizationInfo(ic)
+<span style="color:#66d9ef">if</span> civinfo<span style="color:#f92672">.</span>getType() <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CIVILIZATION_MALI</span><span style="color:#e6db74">&#39;</span>:
+    <span style="color:#75715e"># 図書館を建設する</span>
+</code></pre></div><p>まとめてこうなります。<br>
+Pythonを含め、多くのプログラミング言語では<br>
+<code>=</code>は右辺を左辺に代入する機能しかありません。<br>
 「等しいかどうかの比較」には<code>==</code>を使います。</p>
-
 <h2 id="あるいは">あるいは</h2>
-
-<p>CyCity-&gt;PlayerType-&gt;CyPlayer-&gt;CivilizatonType-&gt;CivilizationInfo-&gt;キー<br />
-と一直線につないでいってキーで比較する方法を見てきましたが、<br />
-マリのXMLキー<code>CIVILIZATION_MALI</code>からマリを表す数値はたしか<br />
-<code>gc.getInfoTypeForString('CIVILIZATION_MALI')</code>で取得できたはず、<br />
-数値同士が等しいかどうかで判断してはどうか？<br />
+<p>CyCity-&gt;PlayerType-&gt;CyPlayer-&gt;CivilizatonType-&gt;CivilizationInfo-&gt;キー<br>
+と一直線につないでいってキーで比較する方法を見てきましたが、<br>
+マリのXMLキー<code>CIVILIZATION_MALI</code>からマリを表す数値はたしか<br>
+<code>gc.getInfoTypeForString('CIVILIZATION_MALI')</code>で取得できたはず、<br>
+数値同士が等しいかどうかで判断してはどうか？<br>
 という発想を試すこともできます。その場合こうなります&hellip;</p>
-
-<pre><code class="language-python">if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
-    # 図書館を建設する
-</code></pre>
-
-<p>if文の条件式の左辺はpCityから直接文明IDを取得しています。<br />
-じつはこのような方法もあるのでした。<br />
-右辺はマリの文明IDになっていますから、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> pCity<span style="color:#f92672">.</span>getCivilizationType() <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CIVILIZATION_MALI</span><span style="color:#e6db74">&#39;</span>):
+    <span style="color:#75715e"># 図書館を建設する</span>
+</code></pre></div><p>if文の条件式の左辺はpCityから直接文明IDを取得しています。<br>
+じつはこのような方法もあるのでした。<br>
+右辺はマリの文明IDになっていますから、<br>
 もしこれらが等しければ<code>pCity</code>はマリ所属のはずです。</p>
-
 <h2 id="くみこむ">くみこむ</h2>
-
-<p>どちらの書き方でも意味は同じなのですが、後者の方が短くすっきり書けるので、<br />
+<p>どちらの書き方でも意味は同じなのですが、後者の方が短くすっきり書けるので、<br>
 その方式を<code>KujiraEventManager.py</code>の<code>onCityBuilt()</code>に組み込むと、</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        <span style="color:#66d9ef">if</span> pCity<span style="color:#f92672">.</span>getCivilizationType() <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CIVILIZATION_MALI</span><span style="color:#e6db74">&#39;</span>):
+            iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>)
+            pCity<span style="color:#f92672">.</span>setNumRealBuilding(iLib, <span style="color:#ae81ff">1</span>)
 
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        if pCity.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALI'):
-            iLib = gc.getInfoTypeForString('BUILDING_LIBRARY')
-            pCity.setNumRealBuilding(iLib, 1)
-
-</code></pre>
-
-<p>こうなります。</p>
-
+</code></pre></div><p>こうなります。</p>
 <h2 id="ためす-1">ためす</h2>
-
 <p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_if_12.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_if_12.png"    /></a>
-<br />
-AIマリの都市には最初から図書館が建っていて、<br />
+<br>
+AIマリの都市には最初から図書館が建っていて、<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_if_13.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_if_13.png"    /></a>
-<br />
+<br>
 ケルトの都市にはありません。</p>
-
 <p>動きました！</p>
-
 <p><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３へ続く</a></p>
-
 <h2 id="余談">余談</h2>
-
-<p>今回は結局<strong>Player</strong>も<strong>Info</strong>も使わずに書ける例も紹介してしまいましたが、<br />
-どちらの概念も<strong><em>極めて重要</em></strong>なので、ぜひ使わなかった方でも書いて試してみてください。<br />
+<p>今回は結局<strong>Player</strong>も<strong>Info</strong>も使わずに書ける例も紹介してしまいましたが、<br>
+どちらの概念も<em><strong>極めて重要</strong></em>なので、ぜひ使わなかった方でも書いて試してみてください。<br>
 後の理解度が違ってくるはずです。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:tabindent">Civ4のAssetsにあるPythonファイルの多くは「タブ文字1つ」でインデントしてあります。どうしてもPythonファイルを改変する場合は、郷に入っては郷に従いましょう。<br />
- <a class="footnote-return" href="#fnref:tabindent"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Civ4のAssetsにあるPythonファイルの多くは「タブ文字1つ」でインデントしてあります。どうしてもPythonファイルを改変する場合は、郷に入っては郷に従いましょう。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -696,7 +615,7 @@ AIマリの都市には最初から図書館が建っていて、<br />
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

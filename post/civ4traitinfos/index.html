@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-21",
     "description": "",
-    "wordCount": 3617
+    "wordCount":  3617 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -852,425 +852,263 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>Civ4TraitInfos.xmlの各項目について説明しています。</p>
-
 <p>このファイルはBtSでは更新されていません。BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Warlords(J)\Assets\XML\Civilizations\CIV4TraitInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="間違えやすい項目">間違えやすい項目</h1>
-
-<p>建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。<br />
+<p>建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。<br>
 建造物のページの<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#productiontraits">&lt;ProductionTraits&gt;</a>と<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#happinesstraits">&lt;HappinessTraits&gt;</a>も参照してください。</p>
-
 <h1 id="内容">内容</h1>
-
 <h2 id="civ4traitinfos">&lt;Civ4TraitInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>&quot;x-schema:CIV4CivilizationsSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="traitinfo">&lt;TraitInfo&gt;</h2>
-
 <p>このタグ1つが、文明の定義1つと対応しています。</p>
-
 <p>以下&lt;TraitInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>この志向の志向キーを定義します。<br />
+<p>この志向の志向キーを定義します。<br>
 他と被らなければなんでも構いませんが、TRAIT_英語名 にするのが無難です。</p>
-
 <p>値：志向キー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;TRAIT_PROTECTIVE&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>この志向の名称を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「防衛志向」<br />
+<p>例：「防衛志向」<br>
 &lt;Description&gt;TXT_KEY_TRAIT_PROTECTIVE&lt;/Description&gt;</p>
-
 <h3 id="shortdescription">&lt;ShortDescription&gt;</h3>
-
-<p>この文明の略称を指定します。<br />
+<p>この文明の略称を指定します。<br>
 英語版では3文字、日本語版では1文字の略称を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：(日)「防」 (英)&ldquo;Pro&rdquo;<br />
+<p>例：(日)「防」 (英)&ldquo;Pro&rdquo;<br>
 &lt;ShortDescription&gt;TXT_KEY_TRAIT_PROTECTIVE_SHORT&lt;/ShortDescription&gt;</p>
-
 <h3 id="ihealth">&lt;iHealth&gt;</h3>
-
 <p>この志向を持つ指導者は、全都市に追加の〈衛生〉+nを得ます。</p>
-
-<p>負の数を指定することもでき、その場合〈不衛生〉が追加されます。<br />
+<p>負の数を指定することもでき、その場合〈不衛生〉が追加されます。<br>
 BtSでは、この属性を持つのは拡張志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHealth&gt;0&lt;/iHealth&gt;</p>
-
-<p>例２：全都市に〈衛生〉+2<br />
+<p>例２：全都市に〈衛生〉+2<br>
 &lt;iHealth&gt;2&lt;/iHealth&gt;</p>
-
 <h3 id="ihappiness">&lt;iHappiness&gt;</h3>
-
 <p>この志向を持つ指導者は、全都市に追加の〈満足〉+nを得ます。</p>
-
-<p>負の数を指定することもでき、その場合〈不満〉が追加されます。<br />
+<p>負の数を指定することもでき、その場合〈不満〉が追加されます。<br>
 BtSでは、この属性を持つのはカリスマ志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHappiness&gt;0&lt;/iHappiness&gt;</p>
-
-<p>例２：全都市に〈満足〉+1<br />
+<p>例２：全都市に〈満足〉+1<br>
 &lt;iHappiness&gt;1&lt;/iHappiness&gt;</p>
-
 <h3 id="imaxanarchy">&lt;iMaxAnarchy&gt;</h3>
-
-<p>革命にかかるターン数を制限します。<br />
-ここに0以上の整数nを指定した場合、<br />
-この志向を持つ指導者は、無政府状態のターン数上限がnターンになります。<br />
+<p>革命にかかるターン数を制限します。<br>
+ここに0以上の整数nを指定した場合、<br>
+この志向を持つ指導者は、無政府状態のターン数上限がnターンになります。<br>
 とくに<code>0</code>を指定したとき、無政府状態がなくなります。</p>
-
 <p>無政府状態ターンに影響を及ぼさない普通の志向の場合、負の整数を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxAnarchy&gt;-1&lt;/iMaxAnarchy&gt;</p>
-
-<p>例２：無政府状態0ターン<br />
+<p>例２：無政府状態0ターン<br>
 &lt;iMaxAnarchy&gt;0&lt;/iMaxAnarchy&gt;</p>
-
 <h3 id="iupkeepmodifier">&lt;iUpkeepModifier&gt;</h3>
-
-<p>社会制度の維持費に対する修正率を指定します。<br />
+<p>社会制度の維持費に対する修正率を指定します。<br>
 この志向を持つ指導者は、社会制度の維持費が+n%されます。</p>
-
 <p>BtSでは、この志向を持つのは組織志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iUpkeepModifier&gt;0&lt;/iUpkeepModifier&gt;</p>
-
-<p>例２：社会制度の維持管理費-50%<br />
+<p>例２：社会制度の維持管理費-50%<br>
 &lt;iUpkeepModifier&gt;-50&lt;/iUpkeepModifier&gt;</p>
-
 <h3 id="ilevelexperiencemodifier">&lt;iLevelExperienceModifier&gt;</h3>
-
-<p>ユニットのレベルアップに必要な経験値に対する修正率を指定します。<br />
-必要経験値については<a href="https://gforestshade.github.io/kujira/post/glossary/#経験値">用語集</a>も参照してください。</p>
-
+<p>ユニットのレベルアップに必要な経験値に対する修正率を指定します。<br>
+必要経験値については<a href="https://gforestshade.github.io/kujira/post/glossary/#%E7%B5%8C%E9%A8%93%E5%80%A4">用語集</a>も参照してください。</p>
 <p>BtSでは、この志向を持つのはカリスマ志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iLevelExperienceModifier&gt;0&lt;/iLevelExperienceModifier&gt;</p>
-
-<p>例２：レベルアップに必要な経験値-25%<br />
+<p>例２：レベルアップに必要な経験値-25%<br>
 &lt;iLevelExperienceModifier&gt;-25&lt;/iLevelExperienceModifier&gt;</p>
-
 <h3 id="igreatpeopleratemodifier">&lt;iGreatPeopleRateModifier&gt;</h3>
-
-<p>全都市の偉人ポイントへの修正率を指定します。<br />
-この志向を持つ指導者の都市では偉人ポイントの産出が+n%されます。<br />
+<p>全都市の偉人ポイントへの修正率を指定します。<br>
+この志向を持つ指導者の都市では偉人ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に偉人ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+<p>特に偉人ポイントを割合で増やさない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つのは哲学志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGreatPeopleRateModifier&gt;0&lt;/iGreatPeopleRateModifier&gt;</p>
-
-<p>例２：偉人出生率+100%<br />
+<p>例２：偉人出生率+100%<br>
 &lt;iGreatPeopleRateModifier&gt;100&lt;/iGreatPeopleRateModifier&gt;</p>
-
 <h3 id="igreatgeneralratemodifier">&lt;iGreatGeneralRateModifier&gt;</h3>
-
-<p>大将軍ポイントへの修正率を指定します。<br />
-この志向を持つ指導者の都市では、<br />
-全ての戦闘において大将軍ポイントの産出が+n%されます。<br />
+<p>大将軍ポイントへの修正率を指定します。<br>
+この志向を持つ指導者の都市では、<br>
+全ての戦闘において大将軍ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つのは帝国主義志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iGreatGeneralRateModifier&gt;0&lt;/iGreatGeneralRateModifier&gt;</p>
-
-<p>例２：大将軍出現確率+100%<br />
+<p>例２：大将軍出現確率+100%<br>
 &lt;iGreatGeneralRateModifier&gt;100&lt;/iGreatGeneralRateModifier&gt;</p>
-
 <h3 id="idomesticgreatgeneralratemodifier">&lt;iDomesticGreatGeneralRateModifier&gt;</h3>
-
-<p>文化圏内の大将軍ポイントへの修正率を指定します。<br />
-この社会制度を採用している文明では、<br />
-自文化圏内で行われた戦闘において大将軍ポイントの産出が+n%されます。<br />
+<p>文化圏内の大将軍ポイントへの修正率を指定します。<br>
+この社会制度を採用している文明では、<br>
+自文化圏内で行われた戦闘において大将軍ポイントの産出が+n%されます。<br>
 負の値も指定できます。</p>
-
-<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br />
+<p>特に大将軍ポイントを割合で増やさない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つ社会制度はありません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iDomesticGreatGeneralRateModifier&gt;0&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
-
-<p>例２：文化圏内に大将軍が出現する確率+50%<br />
+<p>例２：文化圏内に大将軍が出現する確率+50%<br>
 &lt;iDomesticGreatGeneralRateModifier&gt;50&lt;/iDomesticGreatGeneralRateModifier&gt;</p>
-
 <h3 id="imaxglobalbuildingproductionmodifier">&lt;iMaxGlobalBuildingProductionModifier&gt;</h3>
-
 <p>世界遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つのは勤労志向です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxGlobalBuildingProductionModifier&gt;0&lt;/iMaxGlobalBuildingProductionModifier&gt;</p>
-
-<p>例２：文化遺産の生産+50%<br />
+<p>例２：文化遺産の生産+50%<br>
 &lt;iMaxGlobalBuildingProductionModifier&gt;50&lt;/iMaxGlobalBuildingProductionModifier&gt;</p>
-
 <h3 id="imaxteambuildingproductionmodifier">&lt;iMaxTeamBuildingProductionModifier&gt;</h3>
-
 <p>チーム遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つのは勤労志向です。</p>
-
 <p>遺産関係の3つの属性にすべて同じ値が指定されているときに限り、説明文から効果が省略されます。(文化遺産の生産+n%に統一されます)</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxTeamBuildingProductionModifier&gt;0&lt;/iMaxTeamBuildingProductionModifier&gt;</p>
-
-<p>例２：チームの文化遺産の生産+50%<br />
+<p>例２：チームの文化遺産の生産+50%<br>
 &lt;iMaxTeamBuildingProductionModifier&gt;50&lt;/iMaxTeamBuildingProductionModifier&gt;</p>
-
 <h3 id="imaxplayerbuildingproductionmodifier">&lt;iMaxPlayerBuildingProductionModifier&gt;</h3>
-
 <p>国家遺産の建設〈ハンマー〉に対する修正率を指定します。</p>
-
-<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br />
+<p>特に遺産を加速しない普通の志向の場合、0を指定します。<br>
 BtSでは、この属性を持つのは勤労志向です。</p>
-
 <p>遺産関係の3つの属性にすべて同じ値が指定されているときに限り、説明文から効果が省略されます。(文化遺産の生産+n%に統一されます)</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxPlayerBuildingProductionModifier&gt;0&lt;/iMaxPlayerBuildingProductionModifier&gt;</p>
-
-<p>例２：国家遺産の生産+50%<br />
+<p>例２：国家遺産の生産+50%<br>
 &lt;iMaxPlayerBuildingProductionModifier&gt;50&lt;/iMaxPlayerBuildingProductionModifier&gt;</p>
-
 <h3 id="extrayieldthresholds">&lt;ExtraYieldThresholds&gt;</h3>
-
-<p>〈パン〉・〈ハンマー〉・〈コイン〉の生産を+1します。<br />
-〈パン〉・〈ハンマー〉・〈コイン〉のそれぞれに、<br />
+<p>〈パン〉・〈ハンマー〉・〈コイン〉の生産を+1します。<br>
+〈パン〉・〈ハンマー〉・〈コイン〉のそれぞれに、<br>
 ここに指定した閾値以上を産出するタイルに対して、その産出値が+1されます。</p>
-
-<p>値：&lt;iExtraYieldThreshold&gt;のリスト<br />
+<p>値：&lt;iExtraYieldThreshold&gt;のリスト<br>
 　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。</p>
-
-<hr />
-
-<p>例１：<br />
+<hr>
+<p>例１：<br>
 &lt;ExtraYieldThresholds /&gt;</p>
-
-<hr />
-
+<hr>
 <p>例２：〈コイン〉2を産出するスクエアで〈コイン〉+1</p>
-
-<pre><code class="language-txt">&lt;ExtraYieldThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;ExtraYieldThresholds&gt;
     &lt;iExtraYieldThreshold&gt;0&lt;/iExtraYieldThreshold&gt;
     &lt;iExtraYieldThreshold&gt;0&lt;/iExtraYieldThreshold&gt;
     &lt;iExtraYieldThreshold&gt;2&lt;/iExtraYieldThreshold&gt;
 &lt;/ExtraYieldThresholds&gt;
-</code></pre>
-
-<hr />
-
-<p>例３：<br />
-〈パン〉5を産出するスクエアで〈パン〉+1<br />
-〈ハンマー〉4を産出するスクエアで〈ハンマー〉+1<br />
+</code></pre></div><hr>
+<p>例３：<br>
+〈パン〉5を産出するスクエアで〈パン〉+1<br>
+〈ハンマー〉4を産出するスクエアで〈ハンマー〉+1<br>
 〈コイン〉3を産出するスクエアで〈コイン〉+1</p>
-
-<pre><code class="language-txt">&lt;ExtraYieldThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;ExtraYieldThresholds&gt;
     &lt;iExtraYieldThreshold&gt;5&lt;/iExtraYieldThreshold&gt;
     &lt;iExtraYieldThreshold&gt;4&lt;/iExtraYieldThreshold&gt;
     &lt;iExtraYieldThreshold&gt;3&lt;/iExtraYieldThreshold&gt;
 &lt;/ExtraYieldThresholds&gt;
-</code></pre>
-
-<hr />
-
-<p>なお、指定できるのは閾値のみです。+1の部分を変更することはできませんし、<br />
+</code></pre></div><hr>
+<p>なお、指定できるのは閾値のみです。+1の部分を変更することはできませんし、<br>
 +1させる回数を変更することもできません。</p>
-
 <h3 id="tradeyieldmodifiers">&lt;TradeYieldModifiers&gt;</h3>
-
 <p>交易路収入の〈パン〉・〈ハンマー〉・〈コイン〉への変化率を指定します。</p>
-
-<p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br />
-BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br />
-ここの指定によって〈コイン〉を増やしたり、<br />
+<p>都市にある各交易路はそれぞれ内部に交易路収入値をもちます。<br>
+BtSでは、交易路収入が産出するのは通常〈コイン〉の100%だけです。<br>
+ここの指定によって〈コイン〉を増やしたり、<br>
 〈パン〉や〈ハンマー〉を産出させたりできます。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ志向はありません。</p>
-
-<p>値：&lt;iYield&gt;のリスト<br />
-　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br />
+<p>値：&lt;iYield&gt;のリスト<br>
+　　上から〈パン〉・〈ハンマー〉・〈コイン〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TradeYieldModifiers /&gt;</p>
-
 <p>例２：交易路により〈パン〉+10%, 〈ハンマー〉+10%, 〈コイン〉+30%</p>
-
-<pre><code class="language-txt">&lt;TradeYieldModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;TradeYieldModifiers&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
     &lt;iYield&gt;10&lt;/iYield&gt;
     &lt;iYield&gt;30&lt;/iYield&gt;
 &lt;/TradeYieldModifiers&gt;
-</code></pre>
-
-<p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
-
+</code></pre></div><p>なお、BtSでは表示にバグがあり、+10%と表示されるべきところで+10と表示されてしまいます。注意してください。</p>
 <h3 id="commercechanges">&lt;CommerceChanges&gt;</h3>
-
 <p>全都市の出力に、一律で〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を加えます。</p>
-
-<p>どれも追加しない場合、空タグにします。<br />
+<p>どれも追加しない場合、空タグにします。<br>
 BtSでは、この属性を持つのは創造志向です。</p>
-
-<p>値：&lt;iCommerce&gt;のリスト<br />
-　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値：&lt;iCommerce&gt;のリスト<br>
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceChanges /&gt;</p>
-
 <p>例２：〈文化〉+2/都市</p>
-
-<pre><code class="language-txt">&lt;CommerceChanges&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CommerceChanges&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;2&lt;/iCommerce&gt;
 &lt;/CommerceChanges&gt;
-</code></pre>
-
-<p>なお、BtSではバグがあり、都市から〈ゴールド〉を産出させる志向を持った状態で都市を建設し「マップを再生成」すると〈ゴールド〉が積算してしまいます。注意してください。</p>
-
+</code></pre></div><p>なお、BtSではバグがあり、都市から〈ゴールド〉を産出させる志向を持った状態で都市を建設し「マップを再生成」すると〈ゴールド〉が積算してしまいます。注意してください。</p>
 <h3 id="commercemodifiers">&lt;CommerceModifiers&gt;</h3>
-
 <p>全都市の〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉への修正率を指定します。</p>
-
-<p>どれも修正しない場合、空タグにします。<br />
+<p>どれも修正しない場合、空タグにします。<br>
 BtSでは、この属性を持つ志向はありません。</p>
-
-<p>値：&lt;iCommerce&gt;のリスト<br />
-　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br />
+<p>値：&lt;iCommerce&gt;のリスト<br>
+　　上から〈ゴールド〉・〈ビーカー〉・〈文化〉・〈諜報〉を表します。<br>
 　　後ろの要素が必要なければ、省略しても構いません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;CommerceModifiers /&gt;</p>
-
 <p>例２：〈諜報〉+25%</p>
-
-<pre><code class="language-txt">&lt;CommerceModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;CommerceModifiers&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;0&lt;/iCommerce&gt;
     &lt;iCommerce&gt;25&lt;/iCommerce&gt;
 &lt;/CommerceModifiers&gt;
-</code></pre>
-
-<h3 id="freepromotions">&lt;FreePromotions&gt;</h3>
-
-<p>無償の昇進の種類を指定します。<br />
+</code></pre></div><h3 id="freepromotions">&lt;FreePromotions&gt;</h3>
+<p>無償の昇進の種類を指定します。<br>
 ここでは、昇進の種類のみを指定します。<a href="#freepromotionunitcombats">&lt;FreePromotionUnitCombats&gt;</a>で昇進を与える対象も併せて指定してください。</p>
-
 <p>値：&lt;FreePromotion&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FreePromotion&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FreePromotion&gt;は以下の2つのタグを含みます。</p>
 <h4 id="promotiontype">&lt;PromotionType&gt;</h4>
-
-<p>無償の昇進の種類を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#昇進">昇進キー</a></p>
-
+<p>無償の昇進の種類を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%98%87%E9%80%B2">昇進キー</a></p>
 <h4 id="bfreepromotion">&lt;bFreePromotion&gt;</h4>
-
 <p>1を指定します。</p>
-
 </div>
-
-
 <p>無償の昇進を与えない志向の場合、空タグにします。</p>
-
 <p>例：あとで</p>
-
 <h3 id="freepromotionunitcombats">&lt;FreePromotionUnitCombats&gt;</h3>
-
-<p>無償の昇進を与えるユニットの種類を指定します。<br />
+<p>無償の昇進を与えるユニットの種類を指定します。<br>
 ここでは、昇進を与える対象のみを指定します。<a href="#freepromotions">&lt;FreePromotions&gt;</a>で昇進の種類も併せて指定してください。</p>
-
 <p>値：&lt;FreePromotionUnitCombat&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FreePromotionUnitCombat&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FreePromotionUnitCombat&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitcombattype">&lt;UnitCombatType&gt;</h4>
-
-<p>昇進を与える兵科を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
+<p>昇進を与える兵科を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
 <h4 id="bfreepromotionunitcombat">&lt;bFreePromotionUnitCombat&gt;</h4>
-
 <p>1を指定します。</p>
-
 </div>
-
-
 <p>無償の昇進を与えない志向の場合、空タグにします。</p>
-
-<p>例１：<br />
-&lt;FreePromotions /&gt;<br />
+<p>例１：<br>
+&lt;FreePromotions /&gt;<br>
 &lt;FreePromotionUnitCombats /&gt;</p>
-
 <p>例２：無償でスキルを供与(都市駐留Ⅰ, 教練Ⅰ):弓兵ユニット, 火器ユニット</p>
-
-<pre><code class="language-txt">&lt;FreePromotions&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;FreePromotions&gt;
     &lt;FreePromotion&gt;
         &lt;PromotionType&gt;PROMOTION_CITY_GARRISON1&lt;/PromotionType&gt;
         &lt;bFreePromotion&gt;1&lt;/bFreePromotion&gt;
@@ -1290,9 +1128,7 @@ BtSでは、この属性を持つ志向はありません。</p>
         &lt;bFreePromotionUnitCombat&gt;1&lt;/bFreePromotionUnitCombat&gt;
     &lt;/FreePromotionUnitCombat&gt;
 &lt;/FreePromotionUnitCombats&gt;
-</code></pre>
-
-<div style="margin:5em"></div>
+</code></pre></div><div style="margin:5em"></div>
         </div>
         <div class="col-12">
   
@@ -1305,7 +1141,7 @@ BtSでは、この属性を持つ志向はありません。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-17",
     "description": "",
-    "wordCount": 3522
+    "wordCount":  3694 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-17">2017-10-17 00:00</time></p>
           
-          <p>3522  Words</p>
+          <p>3694  Words</p>
           
           
 
@@ -374,93 +374,271 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <h2 id="これは何か">これは何か</h2>
-
-<p>これは、<br />
-「はじめてのPythonMOD」シリーズの続きです。<br />
-もうちょっとPythonの書き方について勉強して、<br />
+<p>これは、<br>
+「はじめてのPythonMOD」シリーズの続きです。<br>
+もうちょっとPythonの書き方について勉強して、<br>
 より思い通りに記述できるようになろう、というのが大きな目的です。</p>
-
 <h2 id="これは何でないか">これは何でないか</h2>
-
-<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br />
-また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。<br />
+<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br>
+また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。<br>
 コピペですぐ動くコードはあまりないかもしれません。</p>
-
-<p></p>
-
 <h1 id="準備">準備</h1>
-
 <p>最小構成からスタートしましょう。</p>
+<h2 id="civilizationivini">CivilizationIV.ini</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span style="color:#75715e">; Enable the logging system</span>
+<span style="color:#75715e">; Documents\My Games\Beyond the Sword(J)\Logs</span>
+<span style="color:#a6e22e">LoggingEnabled</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
 
-<h2 id="civilizationiv-ini">CivilizationIV.ini</h2>
+<span style="color:#75715e">; Enable synchronization logging</span>
+<span style="color:#a6e22e">SynchLog</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
 
-<pre><code class="language-ini">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-; Enable the logging system
-; Documents\My Games\Beyond the Sword(J)\Logs
-LoggingEnabled = 1
-
-; Enable synchronization logging
-SynchLog = 1
-
-; Overwrite old network and message logs
-OverwriteLogs = 1
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-</code></pre>
-
-<p>ログファイルが出力されるようにしておきます。</p>
-
+<span style="color:#75715e">; Overwrite old network and message logs</span>
+<span style="color:#a6e22e">OverwriteLogs</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
+<span style="color:#a6e22e">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</code></pre></div><p>ログファイルが出力されるようにしておきます。</p>
 <h2 id="フォルダ構成">フォルダ構成</h2>
-
-<pre><code class="language-plain">└─kujira_var
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_var
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
+</code></pre></div><h2 id="cveventinterfacepy">CvEventInterface.py</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Sid Meier&#39;s Civilization 4</span>
+<span style="color:#75715e"># Copyright Firaxis Games 2005</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># CvEventInterface.py</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># These functions are App Entry Points from C++</span>
+<span style="color:#75715e"># WARNING: These function names should not be changed</span>
+<span style="color:#75715e"># WARNING: These functions can not be placed into a class</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># No other modules should import this</span>
+<span style="color:#75715e">#</span>
+<span style="color:#f92672">import</span> CvUtil
+<span style="color:#75715e"># import CvEventManager</span>
+<span style="color:#f92672">import</span> KujiraEventManager
+<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 
-<h2 id="cveventinterface-py">CvEventInterface.py</h2>
+<span style="color:#75715e"># normalEventManager = CvEventManager.CvEventManager()</span>
+myEventManager <span style="color:#f92672">=</span> KujiraEventManager<span style="color:#f92672">.</span>MyEventManager()
 
-<pre><code class="language-python"># Sid Meier's Civilization 4
-# Copyright Firaxis Games 2005
-#
-# CvEventInterface.py
-#
-# These functions are App Entry Points from C++
-# WARNING: These function names should not be changed
-# WARNING: These functions can not be placed into a class
-#
-# No other modules should import this
-#
-import CvUtil
-# import CvEventManager
-import KujiraEventManager
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getEventManager</span>():
+	<span style="color:#66d9ef">return</span> myEventManager
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onEvent</span>(argsList):
+	<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a game event happens - return 1 if the event was consumed</span><span style="color:#e6db74">&#39;</span>
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>handleEvent(argsList)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">applyEvent</span>(argsList):
+	context, playerID, netUserData, popupReturn <span style="color:#f92672">=</span> argsList
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>applyEvent(argsList)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">beginEvent</span>(context, argsList<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>beginEvent(context, argsList)
+</code></pre></div><h2 id="kujiraeventmanagerpy">KujiraEventManager.py</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Python!</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><h2 id="ためす">ためす</h2>
+<p>実行してゲームを開始し(開始さえすればそのあとすぐに終了して構いません)、<br>
+PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the Sword(J)\Logs にあります)に<br>
+ちゃんと出力されているか確認しましょう。<br>
+<a href="https://gforestshade.github.io/kujira/img/kujira_var_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_10.png"    /></a>
+<br>
+いいですね。</p>
+<h1 id="変数">変数</h1>
+<p>いきなりですが、ちょっと変えてゲームを開始してみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        a <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Python!</span><span style="color:#e6db74">&#34;</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(a)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>さっきと同じく、PythonDbg.logに<code>PY:Hello, Python!</code>と出力されています。</p>
+<p>このように、プログラムではデータに名前を付けてとっておいて、<br>
+後からその名前で中のデータを参照できるのですが、<br>
+そのうちの<code>a</code>を<strong>変数</strong>、その中に納まっているデータを<strong>値</strong>と呼びます。<br>
+そして<code>a = &quot;Hello, Python!&quot;</code>のように、<code>変数名 = 値</code>の形になっている<strong>文</strong>を<strong>代入</strong>と呼びます。<br>
+この場合「<code>a</code>という名前の変数に<code>&quot;Hello, Python!&quot;</code>という値を代入している」ということになります。</p>
+<p>代入以外の場所に書かれている変数は中身の値を表します。<br>
+いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、<br>
+<code>CvUtil.pyPrint(a)</code>は<code>CvUtil.pyPrint(&quot;Hello, Python!&quot;)</code>と同じ意味を表すことになります。</p>
+<h2 id="型">型</h2>
+<p><strong>値</strong>にはデータの性質によって種類があります。<br>
+たとえば&hellip;</p>
+<ul>
+<li>数値型 <code>a = 123</code></li>
+<li>文字列型 <code>a = &quot;123&quot;</code></li>
+<li>リスト型 <code>a = [1,2,3]</code></li>
+<li>ブール型 <code>a = True</code></li>
+</ul>
+<p>&hellip;&hellip;&hellip;&hellip;などなど、いろいろあります。</p>
+<h2 id="型の一致">型の一致</h2>
+<p><strong>型</strong>の話で大事なのは、<em><strong>型の種類があっていないと関数は基本的に失敗する</strong></em>ということです。</p>
+<p>試してみましょう。文字列型の代わりに数値型を使って<code>CvUtil.pyPrint(a)</code>してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(a) <span style="color:#75715e"># 数値型で呼び出す</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これでゲームを開始してみてください。</p>
+<p>PythonDbg.logをいくら眺めてみても、「1234」が出力されている様子はありません。<br>
+かわりにPythonErr.logを見てみると、&ldquo;KujiraEventManager&quot;の12行目、<br>
+すなわち<code>CvUtil.pyPrint(a)</code>と呼び出したところで<br>
+エラーになってしまっていることがわかります。</p>
+<p>かわりにこうすべきです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        a <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1234</span><span style="color:#e6db74">&#34;</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(a) <span style="color:#75715e"># 文字列型で呼び出す</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>ゲームを開始して、どういう動作になるか自分で確かめてみましょう。</p>
+<h2 id="例外もある">例外もある</h2>
+<p>先に<em><strong>基本的に</strong></em>と書いたのは、まれに融通が利く場面もあるからです。<br>
+その筆頭がprint文です。どんな型の変数を指定しても、ある程度はいい感じに出力してくれます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        var1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234</span>
+        var2 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1234</span><span style="color:#e6db74">&#34;</span>
+        var3 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
+        <span style="color:#66d9ef">print</span> var1
+        <span style="color:#66d9ef">print</span> var2
+        <span style="color:#66d9ef">print</span> var3
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>ゲームを開始して、どういう動作になるか確かめましょう。</p>
+<h2 id="でも基本はだめ">でも基本はだめ</h2>
+<p>しかし、融通が利くことはまれです。<br>
+基本的には型があっていないとだめです。<br>
+例えば、同じようなプログラムでも、片方はOKでもう片方はエラーです。</p>
+<p>数値型同士でないと自由に計算はできません。<br>
+どちらがエラーになるか、予想して確かめましょう。<br>
+(エラーになったことを確認するにはどうすればよかったでしょうか？)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        tokugawa <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+        saradin <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+        answer <span style="color:#f92672">=</span> tokugawa <span style="color:#f92672">*</span> saradin
+        <span style="color:#66d9ef">print</span> answer
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        ragunaru <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12</span><span style="color:#e6db74">&#34;</span>
+        monte <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">34</span><span style="color:#e6db74">&#34;</span>
+        answer <span style="color:#f92672">=</span> ragunaru <span style="color:#f92672">*</span> monte
+        <span style="color:#66d9ef">print</span> answer
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><br>
+<p>あるいは、ややこしいことに、同じ書き方でも動作が違ってくるような場合もあります。<br>
+下の2つはどちらもエラーにはなりません。<br>
+両方実行してみて、出力結果を見比べ、どうなっているか考えてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        tokugawa <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+        saradin <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+        answer <span style="color:#f92672">=</span> tokugawa <span style="color:#f92672">+</span> saradin
+        <span style="color:#66d9ef">print</span> answer
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        ragunaru <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12</span><span style="color:#e6db74">&#34;</span>
+        monte <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">34</span><span style="color:#e6db74">&#34;</span>
+        answer <span style="color:#f92672">=</span> ragunaru <span style="color:#f92672">+</span> monte
+        <span style="color:#66d9ef">print</span> answer
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><br>
+<p>そして、違う型同士の値を足し算することはできません。<br>
+エラーになることを確かめてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        pakaru <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12</span><span style="color:#e6db74">&#34;</span>
+        ramusesu <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+        answer <span style="color:#f92672">=</span> pakaru <span style="color:#f92672">+</span> ramusesu <span style="color:#75715e"># エラー！</span>
+        <span style="color:#66d9ef">print</span> answer
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><h1 id="文字列と数値と">文字列と、数値と。</h1>
+<p>でも、作っているMODによっては、数値型で計算した後、<br>
+計算結果を文字列に混ぜて表示したいこともあるかもしれません。<br>
+そこでこのようにしてしましたが、うまくいきません&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        message1 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ato </span><span style="color:#e6db74">&#34;</span>
+        turnleft <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># 全部で10ターンあるうちの2ターン消化した</span>
+        message2 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> ta-n desu!</span><span style="color:#e6db74">&#34;</span>
+        
+        <span style="color:#75715e"># &#34;ato 8 ta-n desu!&#34;という文字列の値をつくりたい！</span>
+        message <span style="color:#f92672">=</span> message1 <span style="color:#f92672">+</span> turnleft <span style="color:#f92672">+</span> message2 <span style="color:#75715e"># でも型があってないからエラー。</span>
+        <span style="color:#66d9ef">print</span> message
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>文字列を足し算して連結しようとしたところで、<code>turnleft</code>の値が数値型のため失敗してしまいます。<br>
+そこで、文字列型へと変換してあげましょう。<code>str()</code>という関数があり、<br>
+引数を文字列型に変換したものを返してくれます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        message1 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ato </span><span style="color:#e6db74">&#34;</span>
+        turnleft <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># 全部で10ターンあるうちの2ターン消化した</span>
+        message2 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> ta-n desu!</span><span style="color:#e6db74">&#34;</span>
+        
+        <span style="color:#75715e"># &#34;ato 8 ta-n desu!&#34;という文字列の値をつくりたい！</span>
+        message <span style="color:#f92672">=</span> message1 <span style="color:#f92672">+</span> str(turnleft) <span style="color:#f92672">+</span> message2 <span style="color:#75715e"># 文字列型の値に変換してから足し算。</span>
+        <span style="color:#66d9ef">print</span> message
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>起動して、PythonDbg.logに<code>ato 8 ta-n desu!</code>と書き込まれていることを確認しましょう。</p>
+<h1 id="ゲーム画面に表示してみる">ゲーム画面に表示してみる</h1>
+<p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。<br>
+<code>CyInterface().addImmediateMessage(表示したい文字列の値, &quot;&quot;)</code>です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        message1 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ato </span><span style="color:#e6db74">&#34;</span>
+        turnleft <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
+        message2 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> ta-n desu!</span><span style="color:#e6db74">&#34;</span>
+        
+        message <span style="color:#f92672">=</span> message1 <span style="color:#f92672">+</span> str(turnleft) <span style="color:#f92672">+</span> message2
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(message, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>ゲームを開始して&hellip;<br>
+<a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_20.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_20.png"    /></a>
+<br>
+いいですね！</p>
+<h1 id="フォーマット文字列">フォーマット文字列</h1>
+<p>足し算で連結する方法がうまくいきましたが、ややコードが見づらいですしわかりづらいです。<br>
+&ldquo;ato (turnleftの値) ta-n desu!&ldquo;みたいにかけたらいいのに&hellip;&hellip;&hellip;&hellip;<br>
+というわけで、<strong>フォーマット文字列</strong>という機能がそれを実現してくれます。<br>
+<code>%d</code>と<code>%</code>を使って<code>message = &quot;ato %d ta-n desu!&quot; % turnleft</code>のように書くと、<br>
+<code>%d</code>のある位置に数値型の変数、つまり<code>turnleft</code>の値が文字列の一部として埋め込まれます。</p>
+<p>これを用いると、前後の文字列を一旦ためておく必要もなくなり、次のようにすっきりします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        turnleft <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
+        message <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ato </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> ta-n desu!</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> turnleft
+        CyInterface()<span style="color:#f92672">.</span>addImmediateMessage(message, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><h1 id="文字列と数値とそれから日本語と">文字列と、数値と、それから日本語と</h1>
+<p>ここまでわかると、どうせなら「あと8ターンです！」と日本語で表示したくなるのですが、<br>
+今までの方法をそのまま流用してもうまくいきません。<br>
+それもそのはず、日本語の文字列は型が違うのです。</p>
+<p>日本語の文字列は<strong>Unicode文字列型</strong>という型になり、<code>u&quot;日本語&quot;</code>と書きます。<br>
+ただひとつ注意点があり、この書き方でソースコード中に日本語を書き込むとき、<br>
+「その.pyファイルはどの文字コードで保存されているか」を1行目に明示的に示す必要があります。<br>
+普通にしていればおそらくshift_jisという文字コードになりますから、<br>
+(もちろん、わかっている方で、euc_jpやutf-8をお使いの方は読み替えてください)<br>
+1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。</p>
+<p>そのうえで、フォーマット文字列の仕組みを使い、<br>
+<code>message = u&quot;あと%dターンです！&quot; % turnleft</code>とすればよいです。</p>
+<p>ファイル全体で&hellip;</p>
+<pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
-
-# normalEventManager = CvEventManager.CvEventManager()
-myEventManager = KujiraEventManager.MyEventManager()
-
-def getEventManager():
-    return myEventManager
-
-def onEvent(argsList):
-    'Called when a game event happens - return 1 if the event was consumed'
-    return getEventManager().handleEvent(argsList)
-
-def applyEvent(argsList):
-    context, playerID, netUserData, popupReturn = argsList
-    return getEventManager().applyEvent(argsList)
-
-def beginEvent(context, argsList=-1):
-    return getEventManager().beginEvent(context, argsList)
-</code></pre>
-
-<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
-
-<pre><code class="language-python">from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
 
@@ -471,290 +649,18 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         super(self.__class__, self).onGameStart(argsList)
         ##########
         # ログファイルに出力する
-        CvUtil.pyPrint(&quot;Hello, Python!&quot;)
-</code></pre>
-
-<h2 id="ためす">ためす</h2>
-
-<p>実行してゲームを開始し(開始さえすればそのあとすぐに終了して構いません)、<br />
-PythonDbg.log(日本語パッケージ版の場合Documents\My Games\Beyond the Sword(J)\Logs にあります)に<br />
-ちゃんと出力されているか確認しましょう。<br />
-<a href="https://gforestshade.github.io/kujira/img/kujira_var_10.png"><img src="https://gforestshade.github.io/kujira/img/kujira_var_10.png"    /></a>
-<br />
-いいですね。</p>
-
-<h1 id="変数">変数</h1>
-
-<p>いきなりですが、ちょっと変えてゲームを開始してみましょう。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        a = &quot;Hello, Python!&quot;
-        CvUtil.pyPrint(a)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>さっきと同じく、PythonDbg.logに<code>PY:Hello, Python!</code>と出力されています。</p>
-
-<p>このように、プログラムではデータに名前を付けてとっておいて、<br />
-後からその名前で中のデータを参照できるのですが、<br />
-そのうちの<code>a</code>を<strong>変数</strong>、その中に納まっているデータを<strong>値</strong>と呼びます。<br />
-そして<code>a = &quot;Hello, Python!&quot;</code>のように、<code>変数名 = 値</code>の形になっている<strong>文</strong>を<strong>代入</strong>と呼びます。<br />
-この場合「<code>a</code>という名前の変数に<code>&quot;Hello, Python!&quot;</code>という値を代入している」ということになります。</p>
-
-<p>代入以外の場所に書かれている変数は中身の値を表します。<br />
-いま<code>a</code>の中身は代入によって<code>&quot;Hello, Python!&quot;</code>ですから、</p>
-
-<pre><code class="language-CvUtil.pyPrint(a)```は```CvUtil.pyPrint(&quot;Hello,">
-## 型
-**値**にはデータの性質によって種類があります。
-たとえば...
-
-+ 数値型 ```a = 123```
-+ 文字列型 ```a = &quot;123&quot;```
-+ リスト型 ```a = [1,2,3]```
-+ ブール型 ```a = True```
-
-............などなど、いろいろあります。
-
-## 型の一致
-**型**の話で大事なのは、***型の種類があっていないと関数は基本的に失敗する***ということです。
-
-試してみましょう。文字列型の代わりに数値型を使って```CvUtil.pyPrint(a)```してみます。
-``` python
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        a = 1234
-        CvUtil.pyPrint(a) # 数値型で呼び出す
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>これでゲームを開始してみてください。</p>
-
-<p>PythonDbg.logをいくら眺めてみても、「1234」が出力されている様子はありません。<br />
-かわりにPythonErr.logを見てみると、&rdquo;KujiraEventManager&rdquo;の12行目、<br />
-すなわち<code>CvUtil.pyPrint(a)</code>と呼び出したところで<br />
-エラーになってしまっていることがわかります。</p>
-
-<p>かわりにこうすべきです。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        a = &quot;1234&quot;
-        CvUtil.pyPrint(a) # 文字列型で呼び出す
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>ゲームを開始して、どういう動作になるか自分で確かめてみましょう。</p>
-
-<h2 id="例外もある">例外もある</h2>
-
-<p>先に<strong><em>基本的に</em></strong>と書いたのは、まれに融通が利く場面もあるからです。<br />
-その筆頭がprint文です。どんな型の変数を指定しても、ある程度はいい感じに出力してくれます。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        var1 = 1234
-        var2 = &quot;1234&quot;
-        var3 = [1,2,3,4]
-        print var1
-        print var2
-        print var3
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>ゲームを開始して、どういう動作になるか確かめましょう。</p>
-
-<h2 id="でも基本はだめ">でも基本はだめ</h2>
-
-<p>しかし、融通が利くことはまれです。<br />
-基本的には型があっていないとだめです。<br />
-例えば、同じようなプログラムでも、片方はOKでもう片方はエラーです。</p>
-
-<p>数値型同士でないと自由に計算はできません。<br />
-どちらがエラーになるか、予想して確かめましょう。<br />
-(エラーになったことを確認するにはどうすればよかったでしょうか？)</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        tokugawa = 12
-        saradin = 34
-        answer = tokugawa * saradin
-        print answer
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        ragunaru = &quot;12&quot;
-        monte = &quot;34&quot;
-        answer = ragunaru * monte
-        print answer
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><br></p>
-
-<p>あるいは、ややこしいことに、同じ書き方でも動作が違ってくるような場合もあります。<br />
-下の2つはどちらもエラーにはなりません。<br />
-両方実行してみて、出力結果を見比べ、どうなっているか考えてみましょう。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        tokugawa = 12
-        saradin = 34
-        answer = tokugawa + saradin
-        print answer
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        ragunaru = &quot;12&quot;
-        monte = &quot;34&quot;
-        answer = ragunaru + monte
-        print answer
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><br></p>
-
-<p>そして、違う型同士の値を足し算することはできません。<br />
-エラーになることを確かめてみましょう。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        pakaru = &quot;12&quot;
-        ramusesu = 34
-        answer = pakaru + ramusesu # エラー！
-        print answer
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<h1 id="文字列と-数値と">文字列と、数値と。</h1>
-
-<p>でも、作っているMODによっては、数値型で計算した後、<br />
-計算結果を文字列に混ぜて表示したいこともあるかもしれません。<br />
-そこでこのようにしてしましたが、うまくいきません&hellip;</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        message1 = &quot;ato &quot;
-        turnleft = 10 - 2  # 全部で10ターンあるうちの2ターン消化した
-        message2 = &quot; ta-n desu!&quot;
-        
-        # &quot;ato 8 ta-n desu!&quot;という文字列の値をつくりたい！
-        message = message1 + turnleft + message2 # でも型があってないからエラー。
-        print message
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>文字列を足し算して連結しようとしたところで、<code>turnleft</code>の値が数値型のため失敗してしまいます。<br />
-そこで、文字列型へと変換してあげましょう。<code>str()</code>という関数があり、<br />
-引数を文字列型に変換したものを返してくれます。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        message1 = &quot;ato &quot;
-        turnleft = 10 - 2  # 全部で10ターンあるうちの2ターン消化した
-        message2 = &quot; ta-n desu!&quot;
-        
-        # &quot;ato 8 ta-n desu!&quot;という文字列の値をつくりたい！
-        message = message1 + str(turnleft) + message2 # 文字列型の値に変換してから足し算。
-        print message
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>起動して、PythonDbg.logに<code>ato 8 ta-n desu!</code>と書き込まれていることを確認しましょう。</p>
-
-<h1 id="ゲーム画面に表示してみる">ゲーム画面に表示してみる</h1>
-
-<p>文字列の値が用意できれば、画面上にメッセージとして出すことができるようになります。</p>
-
-<pre><code class="language-CyInterface().addImmediateMessage(表示したい文字列の値,">
-``` python
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        message1 = &quot;ato &quot;
         turnleft = 10 - 2
-        message2 = &quot; ta-n desu!&quot;
         
-        message = message1 + str(turnleft) + message2
+        message = u&quot;あと%dターンです！&quot; % turnleft
+        print message
+        
         CyInterface().addImmediateMessage(message, &quot;&quot;)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>ゲームを開始して&hellip;<br />
-<a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_20.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_20.png"    /></a>
-<br />
-いいですね！</p>
-
-<h1 id="フォーマット文字列">フォーマット文字列</h1>
-
-<p>足し算で連結する方法がうまくいきましたが、ややコードが見づらいですしわかりづらいです。<br />
-&ldquo;ato (turnleftの値) ta-n desu!&ldquo;みたいにかけたらいいのに&hellip;&hellip;&hellip;&hellip;<br />
-というわけで、<strong>フォーマット文字列</strong>という機能がそれを実現してくれます。<br />
-<code>%d</code>と<code>%</code>を使って<code>message = &quot;ato %d ta-n desu!&quot; % turnleft</code>のように書くと、<br />
-<code>%d</code>のある位置に数値型の変数、つまり<code>turnleft</code>の値が文字列の一部として埋め込まれます。</p>
-
-<p>これを用いると、前後の文字列を一旦ためておく必要もなくなり、次のようにすっきりします。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        # ログファイルに出力する
-        turnleft = 10 - 2
-        message = &quot;ato %d ta-n desu!&quot; % turnleft
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<h1 id="文字列と-数値と-それから日本語と">文字列と、数値と、それから日本語と</h1>
-
-<p>ここまでわかると、どうせなら「あと8ターンです！」と日本語で表示したくなるのですが、<br />
-今までの方法をそのまま流用してもうまくいきません。<br />
-それもそのはず、日本語の文字列は型が違うのです。</p>
-
-<p>日本語の文字列は<strong>Unicode文字列型</strong>という型になり、<code>u&quot;日本語&quot;</code>と書きます。<br />
-ただひとつ注意点があり、この書き方でソースコード中に日本語を書き込むとき、<br />
-「その.pyファイルはどの文字コードで保存されているか」を1行目に明示的に示す必要があります。<br />
-普通にしていればおそらくshift_jisという文字コードになりますから、<br />
-(もちろん、わかっている方で、euc_jpやutf-8をお使いの方は読み替えてください)<br />
-1行目に<code># -*- coding: shift_jis -*-</code>と書き込みます。</p>
-
-<p>そのうえで、フォーマット文字列の仕組みを使い、</p>
-
-<pre><code class="language-message">
-ファイル全体で...
-</code></pre>
-
-<h1 id="coding-shift-jis">-<em>- coding: shift_jis -</em>-</h1>
-
-<p>from CvPythonExtensions import *<br />
-import CvEventManager<br />
-import CvUtil</p>
-
-<p>class MyEventManager(CvEventManager.CvEventManager, object):</p>
-
-<pre><code>def onGameStart(self, argsList):
-    'Called at the start of the game'
-    super(self.__class__, self).onGameStart(argsList)
-    ##########
-    # ログファイルに出力する
-    turnleft = 10 - 2
-
-    message = u&quot;あと%dターンです！&quot; % turnleft
-    print message
-
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
-</code></pre>
-
-<p>```<br />
-こうなります。<br />
-このコードではUnicode文字列に対してprint文を使っていますが、その場合もよしなにやってくれて<br />
+</code></pre><p>こうなります。<br>
+このコードではUnicode文字列に対してprint文を使っていますが、その場合もよしなにやってくれて<br>
 正しくPythonDbg.logに日本語が書き込まれるので、覗いてみてください。</p>
-
-<p>さて、ゲームを開始して&hellip;<br />
+<p>さて、ゲームを開始して&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_21.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_21.png"    /></a>
-<br />
+<br>
 できました！</p>
         </div>
         <div class="col-12">
@@ -768,7 +674,7 @@ import CvUtil</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

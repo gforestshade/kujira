@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-05",
     "description": "",
-    "wordCount": 1884
+    "wordCount":  1884 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -571,167 +571,107 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4ClassUnitInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitClassInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="ユニットクラス">ユニットクラス</h1>
-
-<p>ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、<br />
-UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。<br />
-雰囲気で察している方も多いのではないでしょうか。<br />
-Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。<br />
+<p>ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、<br>
+UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。<br>
+雰囲気で察している方も多いのではないでしょうか。<br>
+Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。<br>
 どうなっているのか、図にしてみました。</p>
-
-<p></p>
-
-<p><img src="https://gforestshade.github.io/kujira/img/UnitClassType.png" alt="ユニットクラスタイプ→ユニットタイプ→個々のユニット" /></p>
-
-<p>まず、個々のユニットがあります。内部では<strong>Unit</strong>と呼びます。<br />
+<p><img src="https://gforestshade.github.io/kujira/img/UnitClassType.png" alt="ユニットクラスタイプ→ユニットタイプ→個々のユニット"></p>
+<p>まず、個々のユニットがあります。内部では<strong>Unit</strong>と呼びます。<br>
 斧兵が1体、斧兵が2体、&hellip;&hellip;などという場合、個々のユニットを指していますね。</p>
-
-<p>それを取りまとめる存在として、<strong>UnitType</strong>というものがあります。<br />
-斧兵を生産できるようになった、斧兵が陳腐化した、などという場合、<br />
+<p>それを取りまとめる存在として、<strong>UnitType</strong>というものがあります。<br>
+斧兵を生産できるようになった、斧兵が陳腐化した、などという場合、<br>
 斧兵という種類を指していますね。</p>
-
-<p>文明によっては、斧兵のかわりにファランクスや死鳥隊や犬戦士が生産できることもあります。<br />
-これらは、<strong><em>すべて別々のユニットタイプです。</em></strong><br />
-というのも、同じユニットタイプを持つユニットはすべて同じ性能を持つからです。<br />
+<p>文明によっては、斧兵のかわりにファランクスや死鳥隊や犬戦士が生産できることもあります。<br>
+これらは、<em><strong>すべて別々のユニットタイプです。</strong></em><br>
+というのも、同じユニットタイプを持つユニットはすべて同じ性能を持つからです。<br>
 ですから、UUの性能を元の斧兵から変えたい場合、ユニットクラスを分けなくてはなりません。</p>
-
-<p>ですがゲーム中、私たちはUU同士の区別をあまり意識していません。<br />
-例えば、チャリオット兵の「斧兵に対する攻撃+100%」という能力は、<br />
-ファランクスにも死鳥隊にも犬戦士にもちゃんと適用されます。<br />
+<p>ですがゲーム中、私たちはUU同士の区別をあまり意識していません。<br>
+例えば、チャリオット兵の「斧兵に対する攻撃+100%」という能力は、<br>
+ファランクスにも死鳥隊にも犬戦士にもちゃんと適用されます。<br>
 ユニットクラスが違うにも関わらず、です。</p>
-
-<p>つまり、斧兵とそのUU群、図に載っているもののすべての親、<br />
-「斧兵という概念」とでも呼ぶべきものが存在しているのです。<br />
-内部ではそれを<strong>UnitClassType</strong>と呼びます。<br />
-斧兵に対する攻撃+100%、戦士は斧兵にアップグレード可能、<br />
+<p>つまり、斧兵とそのUU群、図に載っているもののすべての親、<br>
+「斧兵という概念」とでも呼ぶべきものが存在しているのです。<br>
+内部ではそれを<strong>UnitClassType</strong>と呼びます。<br>
+斧兵に対する攻撃+100%、戦士は斧兵にアップグレード可能、<br>
 などという場合の「斧兵」はこれを指しています。</p>
-
-<p>ユニットクラスタイプは概念なので、それ自体はゲーム上の何とも対応していません。<br />
-子どもとしてユニットタイプを1つ以上持ち、<br />
+<p>ユニットクラスタイプは概念なので、それ自体はゲーム上の何とも対応していません。<br>
+子どもとしてユニットタイプを1つ以上持ち、<br>
 文明によって適したユニットタイプに分岐させるだけの存在です。</p>
-
-<p>なお、各子どもの立場はすべて対等です。<br />
-ユニットタイプ斧兵は「その他の文明」という分岐条件を持つだけの、<br />
+<p>なお、各子どもの立場はすべて対等です。<br>
+ユニットタイプ斧兵は「その他の文明」という分岐条件を持つだけの、<br>
 ただの1つの子にすぎません。</p>
-
-<p>XMLのModdingにおいて、ユニット種の指定を求められる場合、<br />
-ユニットクラスタイプを指定します。<br />
+<p>XMLのModdingにおいて、ユニット種の指定を求められる場合、<br>
+ユニットクラスタイプを指定します。<br>
 そうすることで、UUも含めて包括的に扱うことができるようになっているのです。</p>
-
 <h1 id="各タグの説明">各タグの説明</h1>
-
 <h2 id="civ4unitclassinfos">&lt;Civ4UnitClassInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4UnitSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="unitclassinfo">&lt;UnitClassInfo&gt;</h2>
-
 <p>このタグ1つが、ユニットクラスの定義1つと対応しています。</p>
-
 <p>以下&lt;UnitClassInfo&gt;の中身です。</p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>このユニットクラスのユニットクラスキーを定義します。<br />
+<p>このユニットクラスのユニットクラスキーを定義します。<br>
 他と被らなければなんでも構いませんが、UNITCLASS_英語名 にするのが無難です。</p>
-
 <p>値：ユニットクラスキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;UNITCLASS_WARRIOR&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>このユニットクラスの名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Description&gt;TXT_KEY_UNIT_WARRIOR&lt;/Description&gt;</p>
-
 <h3 id="imaxglobalinstances">&lt;iMaxGlobalInstances&gt;</h3>
-
 <p>世界ユニットとしての生産制限数を指定します。</p>
-
-<p>これは世界遺産のユニット版です。<br />
-ここに正の値nを指定する場合、<br />
-このユニットクラスに属するユニットは<br />
+<p>これは世界遺産のユニット版です。<br>
+ここに正の値nを指定する場合、<br>
+このユニットクラスに属するユニットは<br>
 ゲーム全体で(子UU合計で)n体までしか生産できません。</p>
-
-<p>生産は早い者勝ちで、間に合わなかった文明が注いだハンマーは換金されます。<br />
+<p>生産は早い者勝ちで、間に合わなかった文明が注いだハンマーは換金されます。<br>
 ユニットが撃破されることによって生産数が回復することはありません。</p>
-
 <p>特に生産制限のない普通のユニットの場合、-1を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMaxGlobalInstances&gt;-1&lt;/iMaxGlobalInstances&gt;</p>
-
 <h3 id="imaxteaminstances">&lt;iMaxTeamInstances&gt;</h3>
-
 <p>チームユニットとしての生産数制限を指定します。</p>
-
-<p>ここに正の値nを指定する場合、<br />
-このユニットクラスに属するユニットは<br />
+<p>ここに正の値nを指定する場合、<br>
+このユニットクラスに属するユニットは<br>
 チーム全体で(子UU合計で)一度にn体までしか所持できません。</p>
-
 <p>特に生産制限のない普通のユニットの場合、-1を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMaxTeamInstances&gt;-1&lt;/iMaxTeamInstances&gt;</p>
-
 <h3 id="imaxplayerinstances">&lt;iMaxPlayerInstances&gt;</h3>
-
 <p>国家ユニットとしての生産数制限を指定します。</p>
-
-<p>ここに正の値nを指定する場合、<br />
-このユニットクラスに属するユニットは<br />
+<p>ここに正の値nを指定する場合、<br>
+このユニットクラスに属するユニットは<br>
 一度にn体までしか所持できません。</p>
-
 <p>特に生産制限のない普通のユニットの場合、-1を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMaxPlayerInstances&gt;-1&lt;/iMaxPlayerInstances&gt;</p>
-
 <h3 id="iinstancecostmodifier">&lt;iInstanceCostModifier&gt;</h3>
-
 <p>所持数による生産コスト上昇を指定します。</p>
-
-<p>ここに正の値nを指定する場合、<br />
-このユニットクラスに属するユニットを生産する際、<br />
+<p>ここに正の値nを指定する場合、<br>
+このユニットクラスに属するユニットを生産する際、<br>
 (所持数 * n)%だけ生産コストが上昇します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iInstanceCostModifier&gt;0&lt;/iInstanceCostModifier&gt;</p>
-
 <h3 id="defaultunit">&lt;DefaultUnit&gt;</h3>
-
 <p>デフォルトの子ユニットタイプを指定します。</p>
-
-<p>文明による指定がなければ、その文明においては<br />
+<p>文明による指定がなければ、その文明においては<br>
 このユニットクラスタイプはこのユニットタイプに分岐します。</p>
-
 <p>&lt;DefaultUnit&gt;UNIT_WARRIOR&lt;/DefaultUnit&gt;</p>
-
 <p><br><br></p>
         </div>
         <div class="col-12">
@@ -745,7 +685,7 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-05",
     "description": "",
-    "wordCount": 5382
+    "wordCount":  5367 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -346,7 +346,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-05">2017-12-05 00:00</time></p>
           
-          <p>5382  Words</p>
+          <p>5367  Words</p>
           
           
 
@@ -364,449 +364,378 @@ if (!doNotTrack) {
           
         </div>
         <div class="article">
-          
-
-<h1 id="はじめに">はじめに</h1>
-
+          <h1 id="はじめに">はじめに</h1>
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/">付録：継承１</a>のつづき<br /></li>
-<li>続・継承について<br /></li>
-<li>今回は理論回です。この回に出てくるコードはすべてMODではなく<br />
-ただのPythonプログラムになっていますので、<a href="https://paiza.io/ja">paiza.io</a>などでためしましょう。<br />
-(Python2を選ぶことを忘れずに。)<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy_ex2/">付録：継承１</a>のつづき</li>
+<li>続・継承について</li>
+<li>今回は理論回です。この回に出てくるコードはすべてMODではなく<br>
+ただのPythonプログラムになっていますので、<a href="https://paiza.io/ja">paiza.io</a>などでためしましょう。<br>
+(Python2を選ぶことを忘れずに。)</li>
 </ul>
-
 <h1 id="前回のあらすじ">前回のあらすじ</h1>
-
-<p>「継承」という仕組みを使って、<br />
-既存のクラスを拡張した新しいクラスをつくれることを<br />
+<p>「継承」という仕組みを使って、<br>
+既存のクラスを拡張した新しいクラスをつくれることを<br>
 RPGっぽい世界をつくって勉強しました。</p>
-
 <h1 id="上書き">上書き</h1>
-
 <h2 id="不満">不満</h2>
-
-<p>魔法使いクラスを無事追加できましたが、不満があります。<br />
+<p>魔法使いクラスを無事追加できましたが、不満があります。<br>
 メインプログラムを再掲しましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+a <span style="color:#f92672">=</span> Unit(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span>)
+b <span style="color:#f92672">=</span> Wizard(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>)
+b<span style="color:#f92672">.</span>magic_attack <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-a = Unit(20,10,3)
-b = Wizard(12,3,3)
-b.magic_attack = 13
-
-for i in range(5):
-    print b.magicalAttackTo(a)
-    print a.attackTo(b)
-    print &quot;a | %s&quot; % a.getStatus()
-    print &quot;b | %s&quot; % b.getStatus()
-    print
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>Unit</code>のすべてをそのまま受け継ぐ、という性質から、コンストラクタもそのまま受け継いでしまい、<br />
-<code>Wizard</code>のインスタンス生成時には魔法攻撃力を設定できません。<br />
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+    <span style="color:#66d9ef">print</span> b<span style="color:#f92672">.</span>magicalAttackTo(a)
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">.</span>attackTo(b)
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> a<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> b<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>Unit</code>のすべてをそのまま受け継ぐ、という性質から、コンストラクタもそのまま受け継いでしまい、<br>
+<code>Wizard</code>のインスタンス生成時には魔法攻撃力を設定できません。<br>
 なので、後で個別に代入していますが、これではやや不満です。</p>
-
-<p>また、<code>getStatus()</code>もそのまま受け継いでいるので、<br />
-ステータス画面に魔法攻撃力が表示されません。<br />
+<p>また、<code>getStatus()</code>もそのまま受け継いでいるので、<br>
+ステータス画面に魔法攻撃力が表示されません。<br>
 これもやや不満です。</p>
-
 <h2 id="オーバーライド">オーバーライド</h2>
-
-<p>派生クラスの定義中で基底クラスから受け継いだものと同名のメソッドを定義すると、<br />
-上書きしてしまうことができます。<br />
+<p>派生クラスの定義中で基底クラスから受け継いだものと同名のメソッドを定義すると、<br>
+上書きしてしまうことができます。<br>
 これを「オーバーライド」(override)と呼びます。</p>
-
 <p>コンストラクタと<code>getStatus()</code>をじっさいに<code>Wizard</code>用のもので上書きしてみましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> __init__(self, hp, attack, defence, magic_attack):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        self<span style="color:#f92672">.</span>hp <span style="color:#f92672">=</span> hp
+        self<span style="color:#f92672">.</span>attack <span style="color:#f92672">=</span> attack
+        self<span style="color:#f92672">.</span>defence <span style="color:#f92672">=</span> defence
+        self<span style="color:#f92672">.</span>magic_attack <span style="color:#f92672">=</span> magic_attack
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    def __init__(self, hp, attack, defence, magic_attack):
-        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する&quot;&quot;&quot;
-        self.hp = hp
-        self.attack = attack
-        self.defence = defence
-        self.magic_attack = magic_attack
-
-    def getStatus(self):
-        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
-        return &quot;HP: %d | Atk %d | Def %d | MAtk %d&quot; % (self.hp, self.attack, self.defence, self.magic_attack)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>これで、</p>
-
-<pre><code class="language-python">b = Wizard(12,3,3,13) #上書きしたほうのコンストラクタが呼ばれる
-print b.getStatus() #上書きしたほうのgetStatus()が呼ばれる
-</code></pre>
-
-<p>などと書くことができるようになります。<br />
-これでいいのですが、途中までは元の<code>Unit</code>のメソッドと同じ処理なのでだぶってしまっているのが気になります。<br />
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getStatus</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ステータス画面的なもの</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">HP: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> | Atk </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> | Def </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> | MAtk </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>hp, self<span style="color:#f92672">.</span>attack, self<span style="color:#f92672">.</span>defence, self<span style="color:#f92672">.</span>magic_attack)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これで、</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> Wizard(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">13</span>) <span style="color:#75715e">#上書きしたほうのコンストラクタが呼ばれる</span>
+<span style="color:#66d9ef">print</span> b<span style="color:#f92672">.</span>getStatus() <span style="color:#75715e">#上書きしたほうのgetStatus()が呼ばれる</span>
+</code></pre></div><p>などと書くことができるようになります。<br>
+これでいいのですが、途中までは元の<code>Unit</code>のメソッドと同じ処理なのでだぶってしまっているのが気になります。<br>
 完全な上書きではなく、もとのメソッドを利用して「ちょい足し」できればもっとよいですね。</p>
-
-<p>そこで、<code>Unit.メソッド名(self, 他の引数)</code>とすることで、<code>Unit</code>のメソッドを直接指定して呼び出すことができます。<br />
+<p>そこで、<code>Unit.メソッド名(self, 他の引数)</code>とすることで、<code>Unit</code>のメソッドを直接指定して呼び出すことができます。<br>
 これを使って、次のようにできます&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> __init__(self, hp, attack, defence, magic_attack):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    def __init__(self, hp, attack, defence, magic_attack):
-        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する&quot;&quot;&quot;
+        <span style="color:#75715e"># もとのコンストラクタにも投げつつ</span>
+        Unit<span style="color:#f92672">.</span>__init__(self, hp, attack, defence)
 
-        # もとのコンストラクタにも投げつつ
-        Unit.__init__(self, hp, attack, defence)
+        <span style="color:#75715e"># 処理を追加する</span>
+        self<span style="color:#f92672">.</span>magic_attack <span style="color:#f92672">=</span> magic_attack
 
-        # 処理を追加する
-        self.magic_attack = magic_attack
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getStatus</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ステータス画面的なもの</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-    def getStatus(self):
-        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
+        <span style="color:#75715e"># もとのメソッドから帰ってくる文字列に</span>
+        ss <span style="color:#f92672">=</span> Unit<span style="color:#f92672">.</span>getStatus(self)
 
-        # もとのメソッドから帰ってくる文字列に
-        ss = Unit.getStatus(self)
-
-        # 追加する
-        return &quot;%s | MAtk %d&quot; % (ss, self.magic_attack)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>getStatus()</code>では、<code>Unit.getStatus(self)</code>として<br />
-「<code>Unit</code>の<code>getStatus()</code>」を直接指定して呼び出しています。<br />
-そもそも今まさに「<code>Unit</code>の<code>getStatus()</code>」を<code>Wizard</code>で上書きしている最中なのですが、<br />
-こうすることで完全な上書きではなく、もとの処理も行ったうえで拡張することができるようになります。<br />
-ここでは、いったん戻り値を変数<code>ss</code>で受けて、<br />
+        <span style="color:#75715e"># 追加する</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> | MAtk </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (ss, self<span style="color:#f92672">.</span>magic_attack)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>getStatus()</code>では、<code>Unit.getStatus(self)</code>として<br>
+「<code>Unit</code>の<code>getStatus()</code>」を直接指定して呼び出しています。<br>
+そもそも今まさに「<code>Unit</code>の<code>getStatus()</code>」を<code>Wizard</code>で上書きしている最中なのですが、<br>
+こうすることで完全な上書きではなく、もとの処理も行ったうえで拡張することができるようになります。<br>
+ここでは、いったん戻り値を変数<code>ss</code>で受けて、<br>
 <code>&quot;%s | MAtk %d&quot; % (ss, self.magic_attack)</code>と埋め込んでいます。</p>
-
-<p><code>__init__()</code>でも同じことをやっています。<br />
-メソッド名が<code>__init__</code>なこと、<code>self</code>を第1引数に持ってきていることで<br />
+<p><code>__init__()</code>でも同じことをやっています。<br>
+メソッド名が<code>__init__</code>なこと、<code>self</code>を第1引数に持ってきていることで<br>
 すこし読みづらく感じますが、よく読めば大丈夫なはずです。</p>
-
 <h2 id="こうなった">こうなった</h2>
-
 <p>プログラム全体はこうなりました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 
-<pre><code class="language-python"># -*- coding: utf-8 -*-
-
-class Unit:
-    &quot;&quot;&quot;RPGのキャラっぽいなにか&quot;&quot;&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span>:
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">RPGのキャラっぽいなにか</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def __init__(self, hp, attack, defence):
-        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力を設定する&quot;&quot;&quot;
-        self.hp = hp
-        self.attack = attack
-        self.defence = defence
+    <span style="color:#66d9ef">def</span> __init__(self, hp, attack, defence):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">初期化時にHP,攻撃力,防御力を設定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        self<span style="color:#f92672">.</span>hp <span style="color:#f92672">=</span> hp
+        self<span style="color:#f92672">.</span>attack <span style="color:#f92672">=</span> attack
+        self<span style="color:#f92672">.</span>defence <span style="color:#f92672">=</span> defence
 
-    def getStatus(self):
-        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
-        return &quot;HP: %d | Atk %d | Def %d&quot; % (self.hp, self.attack, self.defence)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getStatus</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ステータス画面的なもの</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">HP: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> | Atk </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> | Def </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>hp, self<span style="color:#f92672">.</span>attack, self<span style="color:#f92672">.</span>defence)
 
-    def dealDamage(self, damage):
-        &quot;&quot;&quot;
-        ダメージを受ける
-        damage - 受けるダメージ
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dealDamage</span>(self, damage):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        ダメージを受ける</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        damage - 受けるダメージ</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        # 実際のダメージは防御力のぶんだけ減算される
-        # ただし1を下限とする
-        damage = max(damage - self.defence, 1)
+        <span style="color:#75715e"># 実際のダメージは防御力のぶんだけ減算される</span>
+        <span style="color:#75715e"># ただし1を下限とする</span>
+        damage <span style="color:#f92672">=</span> max(damage <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>defence, <span style="color:#ae81ff">1</span>)
 
-        # HPからダメージを減らす
-        self.hp -= damage
+        <span style="color:#75715e"># HPからダメージを減らす</span>
+        self<span style="color:#f92672">.</span>hp <span style="color:#f92672">-</span><span style="color:#f92672">=</span> damage
 
-    def isDead(self):
-        &quot;&quot;&quot;自分はもう死んでいる、かどうか&quot;&quot;&quot;
-        return self.hp &lt;= 0
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isDead</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">自分はもう死んでいる、かどうか</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>hp <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 
-    def attackTo(self, enemy):
-        &quot;&quot;&quot;
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attackTo</span>(self, enemy):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        別のUnitインスタンスに攻撃を仕掛ける</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        勝ったら正の値,負けたら負の値,引き分けなら0を返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        enemy - 攻撃を仕掛けるUnitインスタンス</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
+        <span style="color:#75715e"># 自分が死んでいるなら即負け,</span>
+        <span style="color:#75715e"># 相手が死んでいるなら即勝ち</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 
-        # 攻撃側優先、攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.attack)
+        <span style="color:#75715e"># 攻撃側優先、攻撃力の分だけ相手にダメージを与える</span>
+        enemy<span style="color:#f92672">.</span>dealDamage(self<span style="color:#f92672">.</span>attack)
 
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
+        <span style="color:#75715e"># この時点で相手が死んでいるなら勝ち</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
 
-        # 相手が死んでいないなら反撃を受ける
-        # 相手の攻撃力ぶんだけ自分にダメージを与える
-        self.dealDamage(enemy.attack)
+        <span style="color:#75715e"># 相手が死んでいないなら反撃を受ける</span>
+        <span style="color:#75715e"># 相手の攻撃力ぶんだけ自分にダメージを与える</span>
+        self<span style="color:#f92672">.</span>dealDamage(enemy<span style="color:#f92672">.</span>attack)
 
-        # この時点で自分が死んでしまったら負け
-        if self.isDead():
-            return -2
+        <span style="color:#75715e"># この時点で自分が死んでしまったら負け</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
 
-        # 自分も相手も死ななかったら引き分け判定
-        return 0
+        <span style="color:#75715e"># 自分も相手も死ななかったら引き分け判定</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
 
 
-class Wizard(Unit):
-    &quot;&quot;&quot;魔法使い&quot;&quot;&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wizard</span>(Unit):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">魔法使い</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-    def __init__(self, hp, attack, defence, magic_attack):
-        &quot;&quot;&quot;初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する&quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> __init__(self, hp, attack, defence, magic_attack):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">初期化時にHP,攻撃力,防御力,魔法攻撃力を設定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        # もとのコンストラクタにも投げつつ
-        Unit.__init__(self, hp, attack, defence)
+        <span style="color:#75715e"># もとのコンストラクタにも投げつつ</span>
+        Unit<span style="color:#f92672">.</span>__init__(self, hp, attack, defence)
 
-        # 処理を追加する
-        self.magic_attack = magic_attack
+        <span style="color:#75715e"># 処理を追加する</span>
+        self<span style="color:#f92672">.</span>magic_attack <span style="color:#f92672">=</span> magic_attack
 
-    def getStatus(self):
-        &quot;&quot;&quot;ステータス画面的なもの&quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getStatus</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ステータス画面的なもの</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        # もとのメソッドから帰ってくる文字列に
-        ss = Unit.getStatus(self)
+        <span style="color:#75715e"># もとのメソッドから帰ってくる文字列に</span>
+        ss <span style="color:#f92672">=</span> Unit<span style="color:#f92672">.</span>getStatus(self)
 
-        # 追加する
-        return &quot;%s | MAtk %d&quot; % (ss, self.magic_attack)
+        <span style="color:#75715e"># 追加する</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> | MAtk </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (ss, self<span style="color:#f92672">.</span>magic_attack)
 
-    def magicalAttackTo(self, enemy):
-        &quot;&quot;&quot;
-        別のUnitインスタンスに魔法攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">magicalAttackTo</span>(self, enemy):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        別のUnitインスタンスに魔法攻撃を仕掛ける</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        勝ったら正の値,負けたら負の値,引き分けなら0を返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        enemy - 攻撃を仕掛けるUnitインスタンス</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
+        <span style="color:#75715e"># 自分が死んでいるなら即負け,</span>
+        <span style="color:#75715e"># 相手が死んでいるなら即勝ち</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 
-        # 魔法攻撃力の分だけ相手にダメージを与える
-        enemy.dealDamage(self.magic_attack)
+        <span style="color:#75715e"># 魔法攻撃力の分だけ相手にダメージを与える</span>
+        enemy<span style="color:#f92672">.</span>dealDamage(self<span style="color:#f92672">.</span>magic_attack)
 
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
+        <span style="color:#75715e"># この時点で相手が死んでいるなら勝ち</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
 
-        # 魔法なので反撃なし、死ななかったら引き分け判定
-        return 0
+        <span style="color:#75715e"># 魔法なので反撃なし、死ななかったら引き分け判定</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
         
     
 
-a = Unit(20,10,3)
-b = Wizard(12,3,3,13)
+a <span style="color:#f92672">=</span> Unit(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span>)
+b <span style="color:#f92672">=</span> Wizard(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">13</span>)
 
-for i in range(5):
-    print b.magicalAttackTo(a)
-    print a.attackTo(b)
-    print &quot;a | %s&quot; % a.getStatus()
-    print &quot;b | %s&quot; % b.getStatus()
-    print
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+    <span style="color:#66d9ef">print</span> b<span style="color:#f92672">.</span>magicalAttackTo(a)
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">.</span>attackTo(b)
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> a<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> b<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span>
     
-</code></pre>
-
-<p>だいぶメインプログラムがすっきりしました。<br />
+</code></pre></div><p>だいぶメインプログラムがすっきりしました。<br>
 各自実行して結果を確かめましょう。</p>
-
 <h1 id="継承のもうひとつの顔">継承のもうひとつの顔</h1>
-
-<p>メソッドの上書きができるのであれば、<br />
-最初から新しいメソッドなど追加せず、<br />
-ただ既存のメソッドを上書きすることを目的に<br />
+<p>メソッドの上書きができるのであれば、<br>
+最初から新しいメソッドなど追加せず、<br>
+ただ既存のメソッドを上書きすることを目的に<br>
 継承して派生クラスをつくることもできるはずです。</p>
-
-<p>「攻撃時に攻撃力を2倍で計算するが、反撃時に相手の攻撃力を3倍で計算する」<br />
-狂戦士クラスを考えてみましょう。<br />
-この構想は戦闘のルールそのものを変更してしまっています。<br />
-が、派生クラスではメソッドのオーバーライドができるのでした。<br />
-<code>attackTo()</code>を狂戦士用に書き換えてしまえば実現できそうです。<br />
+<p>「攻撃時に攻撃力を2倍で計算するが、反撃時に相手の攻撃力を3倍で計算する」<br>
+狂戦士クラスを考えてみましょう。<br>
+この構想は戦闘のルールそのものを変更してしまっています。<br>
+が、派生クラスではメソッドのオーバーライドができるのでした。<br>
+<code>attackTo()</code>を狂戦士用に書き換えてしまえば実現できそうです。<br>
 やってみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Berserker</span>(Unit):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">狂戦士</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-<pre><code class="language-python">class Berserker(Unit):
-    &quot;&quot;&quot;狂戦士&quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attackTo</span>(self, enemy):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        別のUnitインスタンスに攻撃を仕掛ける</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        勝ったら正の値,負けたら負の値,引き分けなら0を返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        狂戦士特性：狂戦士から攻撃するとき攻撃力2倍・反撃時相手攻撃力3倍</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        enemy - 攻撃を仕掛けるUnitインスタンス</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-    def attackTo(self, enemy):
-        &quot;&quot;&quot;
-        別のUnitインスタンスに攻撃を仕掛ける
-        勝ったら正の値,負けたら負の値,引き分けなら0を返す
-        狂戦士特性：狂戦士から攻撃するとき攻撃力2倍・反撃時相手攻撃力3倍
-        enemy - 攻撃を仕掛けるUnitインスタンス
-        &quot;&quot;&quot;
+        <span style="color:#75715e"># 自分が死んでいるなら即負け,</span>
+        <span style="color:#75715e"># 相手が死んでいるなら即勝ち</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 
-        # 自分が死んでいるなら即負け,
-        # 相手が死んでいるなら即勝ち
-        if self.isDead():
-            return -1
-        if enemy.isDead():
-            return 1
+        <span style="color:#75715e"># 攻撃側優先、攻撃力*2の分だけ相手にダメージを与える</span>
+        enemy<span style="color:#f92672">.</span>dealDamage(self<span style="color:#f92672">.</span>attack <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
 
-        # 攻撃側優先、攻撃力*2の分だけ相手にダメージを与える
-        enemy.dealDamage(self.attack * 2)
+        <span style="color:#75715e"># この時点で相手が死んでいるなら勝ち</span>
+        <span style="color:#66d9ef">if</span> enemy<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
 
-        # この時点で相手が死んでいるなら勝ち
-        if enemy.isDead():
-            return 2
+        <span style="color:#75715e"># 相手が死んでいないなら反撃を受ける</span>
+        <span style="color:#75715e"># 相手の攻撃力*3のぶんだけ自分にダメージを与える</span>
+        self<span style="color:#f92672">.</span>dealDamage(enemy<span style="color:#f92672">.</span>attack <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>)
 
-        # 相手が死んでいないなら反撃を受ける
-        # 相手の攻撃力*3のぶんだけ自分にダメージを与える
-        self.dealDamage(enemy.attack * 3)
+        <span style="color:#75715e"># この時点で自分が死んでしまったら負け</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isDead():
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
 
-        # この時点で自分が死んでしまったら負け
-        if self.isDead():
-            return -2
-
-        # 自分も相手も死ななかったら引き分け判定
-        return 0
-</code></pre>
-
-<p>これで<code>Berserker</code>クラスの定義はすべてです。<br />
-残りのものは(記述していないが)基底クラスである<br />
-<code>Unit</code>クラスから受け継いでいるのでしたね。<br />
-つまりこれで、ほぼ<code>Unit</code>と同じだけれど、<br />
+        <span style="color:#75715e"># 自分も相手も死ななかったら引き分け判定</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><p>これで<code>Berserker</code>クラスの定義はすべてです。<br>
+残りのものは(記述していないが)基底クラスである<br>
+<code>Unit</code>クラスから受け継いでいるのでしたね。<br>
+つまりこれで、ほぼ<code>Unit</code>と同じだけれど、<br>
 <code>attackTo()</code>の動作のみが異なる<code>Berserker</code>クラスができました。</p>
-
-<p>はい、変わったのは<code>attackTo()</code>の内部動作だけです。<br />
+<p>はい、変わったのは<code>attackTo()</code>の内部動作だけです。<br>
 普通の<code>Unit</code>を扱う要領でメインプログラムを書けば&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> Berserker(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span>)
+b <span style="color:#f92672">=</span> Unit(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span>)
 
-<pre><code class="language-python">a = Berserker(20,10,3)
-b = Unit(20,10,3)
-
-for i in range(3):
-    print a.attackTo(b)
-    print &quot;a | %s&quot; % a.getStatus()
-    print &quot;b | %s&quot; % b.getStatus()
-    print
-</code></pre>
-
-<p>&hellip;自動的に<code>Berserker</code>の<code>attackTo()</code>が呼ばれるようになりました。</p>
-
-<h1 id="もっとコンパクトに-もっと大胆に">もっとコンパクトに、もっと大胆に</h1>
-
-<p>もっと変更を小さくして、<br />
-「<code>isDead()</code>で常に<code>False</code>を返す<code>Zombie</code>クラス」を<br />
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">.</span>attackTo(b)
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> a<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> b<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span>
+</code></pre></div><p>&hellip;自動的に<code>Berserker</code>の<code>attackTo()</code>が呼ばれるようになりました。</p>
+<h1 id="もっとコンパクトにもっと大胆に">もっとコンパクトに、もっと大胆に</h1>
+<p>もっと変更を小さくして、<br>
+「<code>isDead()</code>で常に<code>False</code>を返す<code>Zombie</code>クラス」を<br>
 つくってみたらどうなるでしょうか。</p>
-
-<pre><code class="language-python">class Zombie(Unit):
-    &quot;&quot;&quot;ゾンビ&quot;&quot;&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Zombie</span>(Unit):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ゾンビ</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def isDead(self):
-        &quot;&quot;&quot;
-        ゾンビ特性：死なない。
-        &quot;&quot;&quot;
-        return False
-</code></pre>
-
-<p>たったこれだけ、やったことは<code>isDead()</code>をオーバーライドしただけです。<br />
-が、このたった少しの変更で、<code>Unit</code>から受け継いだ他のメソッド――<code>attackTo()</code>など――が<br />
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isDead</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        ゾンビ特性：死なない。</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">return</span> False
+</code></pre></div><p>たったこれだけ、やったことは<code>isDead()</code>をオーバーライドしただけです。<br>
+が、このたった少しの変更で、<code>Unit</code>から受け継いだ他のメソッド――<code>attackTo()</code>など――が<br>
 <code>isDead()</code>を呼び出した際、必ず「死んでない」という答えを受け取ることになります。</p>
-
-<p>結果として&hellip;どうなるかは各自実行してみましょう。<br />
+<p>結果として&hellip;どうなるかは各自実行してみましょう。<br>
 メインプログラムはたとえばこうなります&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> Unit(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span>)
+b <span style="color:#f92672">=</span> Zombie(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1</span>)
 
-<pre><code class="language-python">a = Unit(20,10,3)
-b = Zombie(1,5,1)
-
-for i in range(10):
-    print a.attackTo(b)
-    print &quot;a | %s&quot; % a.getStatus()
-    print &quot;b | %s&quot; % b.getStatus()
-    print
-</code></pre>
-
-<h1 id="多態性">多態性</h1>
-
-<p>さらに注目すべきは、<code>Unit</code>版・<code>Berseker</code>版・<code>Zombie</code>版で<br />
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">.</span>attackTo(b)
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> a<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> b<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span>
+</code></pre></div><h1 id="多態性">多態性</h1>
+<p>さらに注目すべきは、<code>Unit</code>版・<code>Berseker</code>版・<code>Zombie</code>版で<br>
 メインプログラムの核心部分が完全に同じだということです。</p>
-
-<pre><code class="language-python">    print a.attackTo(b)
-    print &quot;a | %s&quot; % a.getStatus()
-    print &quot;b | %s&quot; % b.getStatus()
-    print
-</code></pre>
-
-<p>(↑この部分。)</p>
-
-<p>変わっているのは<code>a</code>や<code>b</code>の型(それからfor文の繰り返し回数)だけです。<br />
-それらに共通して実装されている<code>attackTo()</code>の動作<br />
-(あるいは<code>attackTo()</code>の内部で呼び出されているもっと深いメソッドの動作)<br />
-が型によって異なるのであって、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">.</span>attackTo(b)
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> a<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b | </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> b<span style="color:#f92672">.</span>getStatus()
+    <span style="color:#66d9ef">print</span>
+</code></pre></div><p>(↑この部分。)</p>
+<p>変わっているのは<code>a</code>や<code>b</code>の型(それからfor文の繰り返し回数)だけです。<br>
+それらに共通して実装されている<code>attackTo()</code>の動作<br>
+(あるいは<code>attackTo()</code>の内部で呼び出されているもっと深いメソッドの動作)<br>
+が型によって異なるのであって、<br>
 <code>a</code>や<code>b</code>を使う側はそれを意識せず、ただ「攻撃せよ」とだけ書けばよい状態になっています。</p>
-
-<p>このように、書き方が同じでも、インスタンスの型によって実際の動作が変わる性質のことを<br />
-「多態性」と呼びます。(ポリモルフィズム・ポリモーフィズム・polymorphismとも)<br />
-Pythonにおいてポリモーフィズムを実現する方法は継承でなくともよいのですが、<br />
-継承の「受け継ぐ」「上書きする」という性質は<br />
+<p>このように、書き方が同じでも、インスタンスの型によって実際の動作が変わる性質のことを<br>
+「多態性」と呼びます。(ポリモルフィズム・ポリモーフィズム・polymorphismとも)<br>
+Pythonにおいてポリモーフィズムを実現する方法は継承でなくともよいのですが、<br>
+継承の「受け継ぐ」「上書きする」という性質は<br>
 ポリモーフィズムを実現するのに都合がよい仕組みなのです。</p>
-
 <h1 id="おまたせ">おまたせ</h1>
-
-<p>そしてもちろん、この概念はCiv4のMODでも有用です。<br />
-ポリモーフィズムを、<br />
-「メインプログラムは変更できないが内部動作だけ変更する」<br />
+<p>そしてもちろん、この概念はCiv4のMODでも有用です。<br>
+ポリモーフィズムを、<br>
+「メインプログラムは変更できないが内部動作だけ変更する」<br>
 ための手段として用いることができるのです。</p>
-
 <p>&hellip;といいますか、実はもうすでに充分活用していました。</p>
-
 <p>(<a href="https://gforestshade.github.io/kujira/post/getstarted1/">はじめてのPythonEventManager.py その1</a>より)</p>
-
 <blockquote>
-<pre><code class="language-python">import CvEventManager
-import CvUtil
-
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
-        # ログファイルに出力する
-        CvUtil.pyPrint(&quot;Hello, Python!&quot;)
-</code></pre>
-
-<p>こうしてみました。元のCvEventManagerを継承して、onGameStartメソッドをオーバーライドします。<br />
-気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<p>「CvEventManagerを継承して、onGameStartメソッドをオーバーライド」しています。<br />
-(<code>CvEventManager.CvEventManager</code>の部分は<code>パッケージ名.クラス名</code>ですね。<br />
-<code>CvEventManager</code>クラスは別ファイルにあるのでこういう書き方になります)<br />
-これで、「ほとんど<code>CvEventManager</code>クラスと同じだけれども、<br />
-<code>onGameStart()</code>メソッドだけがオーバーライドされて上書きされた<br />
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Python!</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><blockquote>
+</blockquote>
+<p>こうしてみました。元のCvEventManagerを継承して、onGameStartメソッドをオーバーライドします。<br>
+気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。</p>
+<p>「CvEventManagerを継承して、onGameStartメソッドをオーバーライド」しています。<br>
+(<code>CvEventManager.CvEventManager</code>の部分は<code>パッケージ名.クラス名</code>ですね。<br>
+<code>CvEventManager</code>クラスは別ファイルにあるのでこういう書き方になります)<br>
+これで、「ほとんど<code>CvEventManager</code>クラスと同じだけれども、<br>
+<code>onGameStart()</code>メソッドだけがオーバーライドされて上書きされた<br>
 新しいクラス<code>MyEventManager</code>」をつくったことになるわけです。</p>
-
-<p>このことは、<code>MyEventManager</code>に対して<code>onGameStart()</code>以外のメソッドが呼び出されても、<br />
-<code>CvEventManager</code>から受け継いだメソッドがうまくやってくれる、ということを意味します。<br />
+<p>このことは、<code>MyEventManager</code>に対して<code>onGameStart()</code>以外のメソッドが呼び出されても、<br>
+<code>CvEventManager</code>から受け継いだメソッドがうまくやってくれる、ということを意味します。<br>
 変えたい部分だけをオーバーライドして書けばよいのです。</p>
-
-<p>とくに<code>CvEventManager</code>は<code>handleEvent()</code>というメソッドでイベントを一括して受け取り、<br />
-そこから各メソッドに処理を振り分けています。<br />
-もちろん、<code>MyEventManager</code>はこのメソッドも自動的に受け継いでいますから、<br />
+<p>とくに<code>CvEventManager</code>は<code>handleEvent()</code>というメソッドでイベントを一括して受け取り、<br>
+そこから各メソッドに処理を振り分けています。<br>
+もちろん、<code>MyEventManager</code>はこのメソッドも自動的に受け継いでいますから、<br>
 何も考えなくとも正常に動きます。</p>
-
-<p>これであとは<code>CvEventManager</code>インスタンスを実際に作成している行を探し出して、<br />
-<code>CvEventManager</code>インスタンスの代わりに<br />
-<code>MyEventManager</code>インスタンスをつくるようにすれば<br />
-<code>CvEventManager.onGameStart()</code>ではなく<br />
+<p>これであとは<code>CvEventManager</code>インスタンスを実際に作成している行を探し出して、<br>
+<code>CvEventManager</code>インスタンスの代わりに<br>
+<code>MyEventManager</code>インスタンスをつくるようにすれば<br>
+<code>CvEventManager.onGameStart()</code>ではなく<br>
 <code>MyEventManager.onGameStart()</code>が呼ばれるようになりそうです。</p>
-
 <p>それをやっているのが、CvEventInterface.pyのこの部分です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+<span style="color:#75715e"># normalEventManager = CvEventManager.CvEventManager()</span>
+myEventManager <span style="color:#f92672">=</span> KujiraEventManager<span style="color:#f92672">.</span>MyEventManager()
 
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-# normalEventManager = CvEventManager.CvEventManager()
-myEventManager = KujiraEventManager.MyEventManager()
-
-def getEventManager():
-    return myEventManager
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>getEventManager()</code>関数の戻り値として、もとの<code>CvEventManager</code>型ではなく、<br />
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getEventManager</span>():
+	<span style="color:#66d9ef">return</span> myEventManager
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>getEventManager()</code>関数の戻り値として、もとの<code>CvEventManager</code>型ではなく、<br>
 (KujiraEventManager.pyにある)<code>MyEventManager</code>型のインスタンスを返すようにしています。</p>
-
-<p>これで、ゲーム開始時の処理を書き換えたことになるわけです。<br />
-XMLのように巨大なファイルをコピーしてきて、該当箇所を頑張って探して&hellip;&hellip;<br />
+<p>これで、ゲーム開始時の処理を書き換えたことになるわけです。<br>
+XMLのように巨大なファイルをコピーしてきて、該当箇所を頑張って探して&hellip;&hellip;<br>
 としなくてもよいのは、まさに「継承」の機能のおかげなのでした。</p>
 
         </div>
@@ -821,7 +750,7 @@ XMLのように巨大なファイルをコピーしてきて、該当箇所を�
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

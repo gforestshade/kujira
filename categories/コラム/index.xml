@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コラム on Kujira, Civ4 Mod Blog</title>
@@ -19,13 +19,10 @@
       
       <guid>https://gforestshade.github.io/kujira/post/irrigation/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
-&lt;p&gt;みなさん、農場は好きですか？&lt;br /&gt;
-なんだかんだ言って、やはり人口維持のために農場はなくてはならない存在ではあります。&lt;br /&gt;
-ですが、灌漑というシステムの存在で、置ける場所や出力が大きく変わってしまいます。&lt;br /&gt;
-それらの仕様についてみていきましょう。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;みなさん、農場は好きですか？&lt;br&gt;
+なんだかんだ言って、やはり人口維持のために農場はなくてはならない存在ではあります。&lt;br&gt;
+ですが、灌漑というシステムの存在で、置ける場所や出力が大きく変わってしまいます。&lt;br&gt;
+それらの仕様についてみていきましょう。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,14 +32,11 @@
       
       <guid>https://gforestshade.github.io/kujira/post/movement/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
-&lt;p&gt;みなさん、斥候は好きですか？&lt;br /&gt;
-移動力2の彼らは、迅速な探索に、偵察に、となくてはならない存在ですよね。&lt;br /&gt;
-でも、丘・森・道路・ヘリコプターなどが複雑に絡んでくると&lt;br /&gt;
-いったいユニットってどこまで移動できるのかよくわからなくなりがちです。&lt;br /&gt;
-今回はそんなユニットの移動についてのお話です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;みなさん、斥候は好きですか？&lt;br&gt;
+移動力2の彼らは、迅速な探索に、偵察に、となくてはならない存在ですよね。&lt;br&gt;
+でも、丘・森・道路・ヘリコプターなどが複雑に絡んでくると&lt;br&gt;
+いったいユニットってどこまで移動できるのかよくわからなくなりがちです。&lt;br&gt;
+今回はそんなユニットの移動についてのお話です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,15 +46,11 @@
       
       <guid>https://gforestshade.github.io/kujira/post/power/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
-&lt;p&gt;みなさん、工業化は好きですか？&lt;br /&gt;
-工場に発電所、ハンマーがいっぱい&amp;hellip;&amp;hellip;何をしようか、夢が広がりますね。&lt;br /&gt;
+&lt;p&gt;みなさん、工業化は好きですか？&lt;br&gt;
+工場に発電所、ハンマーがいっぱい&amp;hellip;&amp;hellip;何をしようか、夢が広がりますね。&lt;br&gt;
 今回は不衛生と引き換えに圧倒的修正率をもたらす工業化の主役、電力のお話です。&lt;/p&gt;
-
-&lt;p&gt;そう、&amp;#x26A1;マークのあれです。CyberFront公式訳では「エネルギー」と訳されていますが、&lt;br /&gt;
-ここでは「電力」で統一します。指しているものは同じものです。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;そう、⚡マークのあれです。CyberFront公式訳では「エネルギー」と訳されていますが、&lt;br&gt;
+ここでは「電力」で統一します。指しているものは同じものです。&lt;/p&gt;</description>
     </item>
     
   </channel>

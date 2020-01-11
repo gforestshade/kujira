@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 3849
+    "wordCount":  3847 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:01</time></p>
           
-          <p>3849  Words</p>
+          <p>3847  Words</p>
           
           
 
@@ -374,218 +374,148 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの１回目・XML編<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの１回目・XML編</li>
 </ul>
-
 <h1 id="設計しよう">設計しよう</h1>
-
-<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br />
+<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br>
 簡単のために、以下の仕様でつくることにします。</p>
-
 <ul>
-<li>スペルと昇進を1対1で対応させる<br /></li>
-<li>発動条件は昇進を取得したとき一回きりとする<br /></li>
-<li>スペル昇進を取れるのは火器ユニットとする<br /></li>
-<li>具体的なスペル効果は以下の3種類とする<br /></li>
-<li>湧き水：砂漠が平原に変化する<br /></li>
-<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
-<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br />
-ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
-<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
-<br /></li>
+<li>スペルと昇進を1対1で対応させる</li>
+<li>発動条件は昇進を取得したとき一回きりとする</li>
+<li>スペル昇進を取れるのは火器ユニットとする</li>
+<li>具体的なスペル効果は以下の3種類とする</li>
+<li>湧き水：砂漠が平原に変化する</li>
+<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える</li>
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br>
+ただしこれによって最大HPの60%を切ることはないようにする</li>
+<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする</li>
 </ul>
-
-<p></p>
-
 <h1 id="新しい昇進を作る">新しい昇進を作る</h1>
-
-<p>「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、<br />
-毒散布で付与する用の「毒」の昇進をXMLで追加していきます。<br />
+<p>「湧き水」・「毒散布」・「火炎幕」の発動用の独自昇進と、<br>
+毒散布で付与する用の「毒」の昇進をXMLで追加していきます。<br>
 編集するのは<span class="path">
   \Assets\XML\Units\CIV4PromotionInfos.xml
 </span>
 です。</p>
-
 <p>元のファイルはパッケージ日本語版の場合</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\Civ4PromotionInfos.xml
 </p>
 
-
-<p>にあります。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
-
-<p>今回のMOD名は<code>kujira_promospell</code>にするので、<br />
+<p>にあります。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>今回のMOD名は<code>kujira_promospell</code>にするので、<br>
 フォルダ階層を作ってxmlファイルをコピーし、下のようにします。</p>
-
-<pre><code class="language-plain">└─kujira_promospell
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_promospell
     └─Assets
         └─XML
             └─Units
                  └─CIV4PromotionInfos.xml
-</code></pre>
-
-<p>CIV4PromotionInfos.xmlの中身を編集していきます。<br />
-&lt;PromotionInfo&gt;から&lt;/PromotionInfo&gt;までの100行弱が昇進1つ分になっています。<br />
-ものすごくたくさん設定項目がありますが、<br />
-今回は「それ自体は全く何の効果もない」昇進をつくります。<br />
-それでもまだ１から作成するのは分量的に大変ですので、<br />
-戦闘術Ⅰ:&ldquo;PROMOTION_COMBAT1&rdquo;をベースにして、戦闘力+10%を取り除く方法を採ります。</p>
-
-<p>↓ここから<br />
+</code></pre></div><p>CIV4PromotionInfos.xmlの中身を編集していきます。<br>
+&lt;PromotionInfo&gt;から&lt;/PromotionInfo&gt;までの100行弱が昇進1つ分になっています。<br>
+ものすごくたくさん設定項目がありますが、<br>
+今回は「それ自体は全く何の効果もない」昇進をつくります。<br>
+それでもまだ１から作成するのは分量的に大変ですので、<br>
+戦闘術Ⅰ:&ldquo;PROMOTION_COMBAT1&quot;をベースにして、戦闘力+10%を取り除く方法を採ります。</p>
+<p>↓ここから<br>
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion1.png"  width="400" height="1600" /></a>
-<br />
+<br>
 ↑ここまでを選択・コピーして&hellip;</p>
-
-<p>↓一番下に貼り付けます。<br />
+<p>↓一番下に貼り付けます。<br>
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion2.png"  width="400" height="700" /></a>
 </p>
-
-<p>↓こうなります。<br />
+<p>↓こうなります。<br>
 <a href="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"><img src="https://gforestshade.github.io/kujira/img/promospell_editpromotion3.png"  width="400" height="700" /></a>
 </p>
-
-<p>テキストエディタでXMLを編集する場合、適宜空行をつくっても構いません。<br />
+<p>テキストエディタでXMLを編集する場合、適宜空行をつくっても構いません。<br>
 むしろ空行があるほうが、オリジナルとMODの境目が分かりやすくなってよいでしょう。</p>
-
 <h2 id="湧き水">湧き水</h2>
-
 <p>&lt;Type&gt;と&lt;Discription&gt;を湧き水用のキーに変更します。</p>
-
-<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-</code></pre>
-
-<p>ついでに&lt;Help&gt;というタグを新しくつくっています。<br />
-このタグがあると、自動生成された説明文に追加の説明をつけることができます。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_WATER<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+</code></pre></div><p>ついでに&lt;Help&gt;というタグを新しくつくっています。<br>
+このタグがあると、自動生成された説明文に追加の説明をつけることができます。<br>
 (ここではキーをつくるだけです。あとでText\フォルダに文章を書き込みます)</p>
-
-<p>さらについでに、&lt;Sound&gt;をAS2D_POSITIVE_DINKに変更します。<br />
+<p>さらについでに、&lt;Sound&gt;をAS2D_POSITIVE_DINKに変更します。<br>
 昇進を取ったときの音を変更することで、スペルの発動音のかわりにします。</p>
-
-<hr />
-
+<hr>
 <p>&lt;iCombatPercent&gt;を0にして、戦闘力+10%をなかったことにします。</p>
-
-<pre><code class="language-xml">            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-</code></pre>
-
-<hr />
-
-<p>この昇進を火器ユニット専用にします。<br />
-&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までの38行分を消去して、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+</code></pre></div><hr>
+<p>この昇進を火器ユニット専用にします。<br>
+&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までの38行分を消去して、<br>
 かわりに下記のように火器ユニットのみにします。</p>
-
-<pre><code class="language-xml">            &lt;UnitCombats&gt;
-                &lt;UnitCombat&gt;
-                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-                &lt;/UnitCombat&gt;
-            &lt;/UnitCombats&gt;
-</code></pre>
-
-<hr />
-
-<p>このままでは昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;UnitCombats</span><span style="color:#f92672">&gt;</span>
+				<span style="color:#f92672">&lt;UnitCombat</span><span style="color:#f92672">&gt;</span>
+					<span style="color:#f92672">&lt;UnitCombatType</span><span style="color:#f92672">&gt;</span>UNITCOMBAT_GUN<span style="color:#f92672">&lt;/UnitCombatType&gt;</span>
+					<span style="color:#f92672">&lt;bUnitCombat</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/bUnitCombat&gt;</span>
+				<span style="color:#f92672">&lt;/UnitCombat&gt;</span>
+			<span style="color:#f92672">&lt;/UnitCombats&gt;</span>
+</code></pre></div><hr>
+<p>このままでは昇進のボタン画像が戦闘術Ⅰのものと同じままになってしまい紛らわしいので、<br>
 預言者のボタン画像に変更します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">
+			<span style="color:#f92672">&lt;Button</span><span style="color:#f92672">&gt;</span>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1<span style="color:#f92672">&lt;/Button&gt;</span>
 
-<pre><code class="language-xml">
-            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-
-</code></pre>
-
-<p>これで湧き水発動用の「何もしない」昇進は完成です。</p>
-
-<h2 id="毒散布-火炎幕">毒散布・火炎幕</h2>
-
-<p>この湧き水昇進をもう2つコピペして3つの「何もしない」昇進をつくりましょう。<br />
+</code></pre></div><p>これで湧き水発動用の「何もしない」昇進は完成です。</p>
+<h2 id="毒散布火炎幕">毒散布・火炎幕</h2>
+<p>この湧き水昇進をもう2つコピペして3つの「何もしない」昇進をつくりましょう。<br>
 2番目と3番目をそれぞれ毒散布と火炎幕にします。</p>
-
-<hr />
-
-<p>2番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を毒散布用にします。<br />
+<hr>
+<p>2番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を毒散布用にします。<br>
 WATERをPOISONに変えています。</p>
-
-<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-</code></pre>
-
-<hr />
-
-<p>3番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を火炎幕用にします。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_POISON<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+</code></pre></div><hr>
+<p>3番目のかたまりの&lt;Type&gt;&lt;Discription&gt;&lt;Help&gt;を火炎幕用にします。<br>
 WATERをFIREに変えています。</p>
-
-<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-</code></pre>
-
-<h2 id="毒">毒</h2>
-
-<p>毒散布によって相手に付与される「毒」の昇進も忘れずつくります。<br />
-何もしない3つの昇進のいずれかをもう1つコピペして、<br />
-&lt;Type&gt;と&lt;Description&gt;を変更し、<strong><em>&lt;Help&gt;を消します。</em></strong></p>
-
-<pre><code class="language-xml">            &lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-</code></pre>
-
-<hr />
-
-<p>「毒」には実際に戦闘力-20%の効果を持たせますから、<br />
-自動生成された説明文で十分だからです。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_FIRE<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+</code></pre></div><h2 id="毒">毒</h2>
+<p>毒散布によって相手に付与される「毒」の昇進も忘れずつくります。<br>
+何もしない3つの昇進のいずれかをもう1つコピペして、<br>
+&lt;Type&gt;と&lt;Description&gt;を変更し、<em><strong>&lt;Help&gt;を消します。</strong></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_POISONED<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_POISONED<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+</code></pre></div><hr>
+<p>「毒」には実際に戦闘力-20%の効果を持たせますから、<br>
+自動生成された説明文で十分だからです。<br>
 早速戦闘力-20%にします。</p>
-
-<pre><code class="language-xml">            &lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
-</code></pre>
-
-<hr />
-
-<p>この昇進を経験値で取得できないようにします。<br />
-方法はいろいろありますが、今回は&lt;UnitCombats&gt;を空にして、<br />
-昇進を取得できるユニット戦闘タイプをなくしてしまいます。<br />
-&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までを消去して、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>-20<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+</code></pre></div><hr>
+<p>この昇進を経験値で取得できないようにします。<br>
+方法はいろいろありますが、今回は&lt;UnitCombats&gt;を空にして、<br>
+昇進を取得できるユニット戦闘タイプをなくしてしまいます。<br>
+&lt;UnitCombats&gt;から&lt;/UnitCombats&gt;までを消去して、<br>
 かわりに下のように入力します。</p>
-
-<pre><code>            &lt;UnitCombats /&gt;
-</code></pre>
-
-<p>これはXMLの空タグといって、中身が空だということを表します。</p>
-
-<hr />
-
-<p>これで、毒ができました。<br />
-全部でどんな感じになったかは長いので章末に移動しました。<a href="#おまけ">おまけ</a>をご覧ください。</p>
-
-<p>この時点でとりあえず火器ユニットが発動用昇進を取得できるようになっているはずです。<br />
-ゲームを起動して適当な火器ユニットをワールドビルダーで作成し、経験値を与えて、<br />
-取得できるかどうか試してみましょう。<br />
-この時点でゲームの起動に失敗したり、発動用昇進が表示されなかったり、<br />
-逆に毒が表示されたりしてしまう場合にはCIV4PromotionInfos.xmlの<br />
+<pre><code>			&lt;UnitCombats /&gt;
+</code></pre><p>これはXMLの空タグといって、中身が空だということを表します。</p>
+<hr>
+<p>これで、毒ができました。<br>
+全部でどんな感じになったかは長いので章末に移動しました。<a href="#%E3%81%8A%E3%81%BE%E3%81%91">おまけ</a>をご覧ください。</p>
+<p>この時点でとりあえず火器ユニットが発動用昇進を取得できるようになっているはずです。<br>
+ゲームを起動して適当な火器ユニットをワールドビルダーで作成し、経験値を与えて、<br>
+取得できるかどうか試してみましょう。<br>
+この時点でゲームの起動に失敗したり、発動用昇進が表示されなかったり、<br>
+逆に毒が表示されたりしてしまう場合にはCIV4PromotionInfos.xmlの<br>
 記述が間違っています。もう一度見直してみましょう。</p>
-
 <h1 id="text">Text</h1>
-
-<p>動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが<br />
+<p>動作テストしたとき、TXT_KEY_PROMOTION_SPELL_WATERなどのキーが<br>
 そのまま表示されてしまっていたので、それに対応する日本語を埋めていきましょう。</p>
-
 <p><span class="path">
   Assets\XML\Text\Text_Kujira.xml
 </span>
 を作成します。</p>
-
-<pre><code class="language-plain">└─kujira_promospell
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_promospell
     └─Assets
         └─XML
             ├─Units
@@ -593,389 +523,375 @@ WATERをFIREに変えています。</p>
             │
             └─Text
                  └─Text_Kujira.xml
-</code></pre>
-
-<p>Text_Kujira.xmlの中身はこのようにします。</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;shift_jis&quot;?&gt;
-&lt;!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) --&gt;
-&lt;Civ4GameText xmlns=&quot;http://www.firaxis.com&quot;&gt;
+</code></pre></div><p>Text_Kujira.xmlの中身はこのようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;shift_jis&#34;?&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) </span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;Civ4GameText</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.firaxis.com&#34;</span><span style="color:#f92672">&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Tag&gt;
-    &lt;English&gt;Spring Water&lt;/English&gt;
-    &lt;French&gt;湧き水&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;湧き水&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>Spring Water<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>湧き水<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>湧き水<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Tag&gt;
-    &lt;English&gt;[ICON_BULLET]Change this tile into Plains if it is Desart&lt;/English&gt;
-    &lt;French&gt;[ICON_BULLET]自領土の砂漠で発動すると平原に変化する&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;[ICON_BULLET]自領土の砂漠で発動すると平原に変化する&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER_HELP<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]Change this tile into Plains if it is Desart<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]自領土の砂漠で発動すると平原に変化する<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]自領土の砂漠で発動すると平原に変化する<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Tag&gt;
-    &lt;English&gt;Spray Poison&lt;/English&gt;
-    &lt;French&gt;毒散布&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;毒散布&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>Spray Poison<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>毒散布<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>毒散布<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Tag&gt;
-    &lt;English&gt;[ICON_BULLET]Give a promotion &quot;Poisioned&quot; to enemy units around a tile&lt;/English&gt;
-    &lt;French&gt;[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON_HELP<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]Give a promotion &#34;Poisioned&#34; to enemy units around a tile<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]周囲1マスの敵対ユニットに 昇進：毒 を与える<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Tag&gt;
-    &lt;English&gt;Fire Curten&lt;/English&gt;
-    &lt;French&gt;火炎幕&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;火炎幕&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>Fire Curten<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>火炎幕<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>火炎幕<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Tag&gt;
-    &lt;English&gt;[ICON_BULLET]Inflict 20% damage to enemy units around a tile&lt;/English&gt;
-    &lt;French&gt;[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE_HELP<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]Inflict 20% damage to enemy units around a tile<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>[ICON_BULLET]周囲1マスの敵対ユニットに10%のダメージを与える<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-  &lt;TEXT&gt;
-    &lt;Tag&gt;TXT_KEY_PROMOTION_POISONED&lt;/Tag&gt;
-    &lt;English&gt;Poisoned&lt;/English&gt;
-    &lt;French&gt;毒&lt;/French&gt;
-    &lt;German /&gt;
-    &lt;Italian /&gt;
-    &lt;Spanish /&gt;
-    &lt;Japanese&gt;毒&lt;/Japanese&gt;
-  &lt;/TEXT&gt;
+  <span style="color:#f92672">&lt;TEXT</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Tag</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_POISONED<span style="color:#f92672">&lt;/Tag&gt;</span>
+    <span style="color:#f92672">&lt;English</span><span style="color:#f92672">&gt;</span>Poisoned<span style="color:#f92672">&lt;/English&gt;</span>
+    <span style="color:#f92672">&lt;French</span><span style="color:#f92672">&gt;</span>毒<span style="color:#f92672">&lt;/French&gt;</span>
+    <span style="color:#f92672">&lt;German</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Italian</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Spanish</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;Japanese</span><span style="color:#f92672">&gt;</span>毒<span style="color:#f92672">&lt;/Japanese&gt;</span>
+  <span style="color:#f92672">&lt;/TEXT&gt;</span>
   
-&lt;/Civ4GameText&gt;
-</code></pre>
-
-<p>&lt;Japanese&gt;タグで日本語パッケージ版、<br />
-&lt;French&gt;タグでSteam版＋日本語化パッチ、<br />
+<span style="color:#f92672">&lt;/Civ4GameText&gt;</span>
+</code></pre></div><p>&lt;Japanese&gt;タグで日本語パッケージ版、<br>
+&lt;French&gt;タグでSteam版＋日本語化パッチ、<br>
 その他の言語タグで各言語版で表示されるようになります。</p>
-
-<p>これで、「それっぽいことが書いてあるけれど、実際には何もしない昇進」が3つと、<br />
+<p>これで、「それっぽいことが書いてあるけれど、実際には何もしない昇進」が3つと、<br>
 戦闘力-20%の効果を持つ昇進ができました。</p>
-
-<p>ゲームを起動して、説明文が表示されるか確かめましょう。<br />
+<p>ゲームを起動して、説明文が表示されるか確かめましょう。<br>
 「毒」は取得する方法がまだないので、それ以外の3つに対して確かめます。</p>
-
 <p><a href="https://gforestshade.github.io/kujira/img/civss_promospell_test1.png"><img src="https://gforestshade.github.io/kujira/img/civss_promospell_test1.png"    /></a>
-<br />
+<br>
 いいですね！</p>
-
 <p><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８につづく</a></p>
-
 <h1 id="おまけ">おまけ</h1>
+<h2 id="civ4promotioninfosxmlの追加分の全文">CIV4PromotionInfos.xmlの追加分の全文</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">		<span style="color:#f92672">&lt;PromotionInfo</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_WATER<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_WATER_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+			<span style="color:#f92672">&lt;LayerAnimationPath</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/LayerAnimationPath&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr1</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr1&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr2</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr2&gt;</span>
+			<span style="color:#f92672">&lt;TechPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/TechPrereq&gt;</span>
+			<span style="color:#f92672">&lt;StateReligionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/StateReligionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;bLeader</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bLeader&gt;</span>
+			<span style="color:#f92672">&lt;bBlitz</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bBlitz&gt;</span>
+			<span style="color:#f92672">&lt;bAmphib</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAmphib&gt;</span>
+			<span style="color:#f92672">&lt;bRiver</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bRiver&gt;</span>
+			<span style="color:#f92672">&lt;bEnemyRoute</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bEnemyRoute&gt;</span>
+			<span style="color:#f92672">&lt;bAlwaysHeal</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAlwaysHeal&gt;</span>
+			<span style="color:#f92672">&lt;bHillsDoubleMove</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bHillsDoubleMove&gt;</span>
+			<span style="color:#f92672">&lt;bImmuneToFirstStrikes</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bImmuneToFirstStrikes&gt;</span>
+			<span style="color:#f92672">&lt;iVisibilityChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iVisibilityChange&gt;</span>
+			<span style="color:#f92672">&lt;iMovesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMovesChange&gt;</span>
+			<span style="color:#f92672">&lt;iMoveDiscountChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMoveDiscountChange&gt;</span>
+			<span style="color:#f92672">&lt;iAirRangeChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAirRangeChange&gt;</span>
+			<span style="color:#f92672">&lt;iInterceptChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iInterceptChange&gt;</span>
+			<span style="color:#f92672">&lt;iEvasionChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEvasionChange&gt;</span>
+			<span style="color:#f92672">&lt;iWithdrawalChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iWithdrawalChange&gt;</span>
+			<span style="color:#f92672">&lt;iCargoChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCargoChange&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageChange&gt;</span>
+			<span style="color:#f92672">&lt;iBombardRateChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iBombardRateChange&gt;</span>
+			<span style="color:#f92672">&lt;iFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iChanceFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iChanceFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iEnemyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEnemyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iNeutralHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iNeutralHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iFriendlyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFriendlyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iSameTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iSameTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iAdjacentTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAdjacentTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+			<span style="color:#f92672">&lt;iCityAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityAttack&gt;</span>
+			<span style="color:#f92672">&lt;iCityDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityDefense&gt;</span>
+			<span style="color:#f92672">&lt;iHillsAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsAttack&gt;</span>
+			<span style="color:#f92672">&lt;iHillsDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsDefense&gt;</span>
+			<span style="color:#f92672">&lt;iKamikazePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iKamikazePercent&gt;</span>
+			<span style="color:#f92672">&lt;iRevoltProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iRevoltProtection&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageProtection&gt;</span>
+			<span style="color:#f92672">&lt;iPillageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iPillageChange&gt;</span>
+			<span style="color:#f92672">&lt;iUpgradeDiscount</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iUpgradeDiscount&gt;</span>
+			<span style="color:#f92672">&lt;iExperiencePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iExperiencePercent&gt;</span>
+			<span style="color:#f92672">&lt;TerrainAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombatMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;DomainMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombats</span><span style="color:#f92672">&gt;</span>
+				<span style="color:#f92672">&lt;UnitCombat</span><span style="color:#f92672">&gt;</span>
+					<span style="color:#f92672">&lt;UnitCombatType</span><span style="color:#f92672">&gt;</span>UNITCOMBAT_GUN<span style="color:#f92672">&lt;/UnitCombatType&gt;</span>
+					<span style="color:#f92672">&lt;bUnitCombat</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/bUnitCombat&gt;</span>
+				<span style="color:#f92672">&lt;/UnitCombat&gt;</span>
+			<span style="color:#f92672">&lt;/UnitCombats&gt;</span>
+			<span style="color:#f92672">&lt;HotKey</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;bAltDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAltDown&gt;</span>
+			<span style="color:#f92672">&lt;bShiftDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bShiftDown&gt;</span>
+			<span style="color:#f92672">&lt;bCtrlDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bCtrlDown&gt;</span>
+			<span style="color:#f92672">&lt;iHotKeyPriority</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHotKeyPriority&gt;</span>
+			<span style="color:#f92672">&lt;Button</span><span style="color:#f92672">&gt;</span>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1<span style="color:#f92672">&lt;/Button&gt;</span>
+		<span style="color:#f92672">&lt;/PromotionInfo&gt;</span>
 
-<h2 id="civ4promotioninfos-xmlの追加分の全文">CIV4PromotionInfos.xmlの追加分の全文</h2>
+		<span style="color:#f92672">&lt;PromotionInfo</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_POISON<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_POISON_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+			<span style="color:#f92672">&lt;LayerAnimationPath</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/LayerAnimationPath&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr1</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr1&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr2</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr2&gt;</span>
+			<span style="color:#f92672">&lt;TechPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/TechPrereq&gt;</span>
+			<span style="color:#f92672">&lt;StateReligionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/StateReligionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;bLeader</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bLeader&gt;</span>
+			<span style="color:#f92672">&lt;bBlitz</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bBlitz&gt;</span>
+			<span style="color:#f92672">&lt;bAmphib</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAmphib&gt;</span>
+			<span style="color:#f92672">&lt;bRiver</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bRiver&gt;</span>
+			<span style="color:#f92672">&lt;bEnemyRoute</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bEnemyRoute&gt;</span>
+			<span style="color:#f92672">&lt;bAlwaysHeal</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAlwaysHeal&gt;</span>
+			<span style="color:#f92672">&lt;bHillsDoubleMove</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bHillsDoubleMove&gt;</span>
+			<span style="color:#f92672">&lt;bImmuneToFirstStrikes</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bImmuneToFirstStrikes&gt;</span>
+			<span style="color:#f92672">&lt;iVisibilityChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iVisibilityChange&gt;</span>
+			<span style="color:#f92672">&lt;iMovesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMovesChange&gt;</span>
+			<span style="color:#f92672">&lt;iMoveDiscountChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMoveDiscountChange&gt;</span>
+			<span style="color:#f92672">&lt;iAirRangeChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAirRangeChange&gt;</span>
+			<span style="color:#f92672">&lt;iInterceptChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iInterceptChange&gt;</span>
+			<span style="color:#f92672">&lt;iEvasionChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEvasionChange&gt;</span>
+			<span style="color:#f92672">&lt;iWithdrawalChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iWithdrawalChange&gt;</span>
+			<span style="color:#f92672">&lt;iCargoChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCargoChange&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageChange&gt;</span>
+			<span style="color:#f92672">&lt;iBombardRateChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iBombardRateChange&gt;</span>
+			<span style="color:#f92672">&lt;iFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iChanceFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iChanceFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iEnemyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEnemyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iNeutralHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iNeutralHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iFriendlyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFriendlyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iSameTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iSameTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iAdjacentTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAdjacentTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+			<span style="color:#f92672">&lt;iCityAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityAttack&gt;</span>
+			<span style="color:#f92672">&lt;iCityDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityDefense&gt;</span>
+			<span style="color:#f92672">&lt;iHillsAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsAttack&gt;</span>
+			<span style="color:#f92672">&lt;iHillsDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsDefense&gt;</span>
+			<span style="color:#f92672">&lt;iKamikazePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iKamikazePercent&gt;</span>
+			<span style="color:#f92672">&lt;iRevoltProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iRevoltProtection&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageProtection&gt;</span>
+			<span style="color:#f92672">&lt;iPillageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iPillageChange&gt;</span>
+			<span style="color:#f92672">&lt;iUpgradeDiscount</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iUpgradeDiscount&gt;</span>
+			<span style="color:#f92672">&lt;iExperiencePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iExperiencePercent&gt;</span>
+			<span style="color:#f92672">&lt;TerrainAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombatMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;DomainMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombats</span><span style="color:#f92672">&gt;</span>
+				<span style="color:#f92672">&lt;UnitCombat</span><span style="color:#f92672">&gt;</span>
+					<span style="color:#f92672">&lt;UnitCombatType</span><span style="color:#f92672">&gt;</span>UNITCOMBAT_GUN<span style="color:#f92672">&lt;/UnitCombatType&gt;</span>
+					<span style="color:#f92672">&lt;bUnitCombat</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/bUnitCombat&gt;</span>
+				<span style="color:#f92672">&lt;/UnitCombat&gt;</span>
+			<span style="color:#f92672">&lt;/UnitCombats&gt;</span>
+			<span style="color:#f92672">&lt;HotKey</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;bAltDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAltDown&gt;</span>
+			<span style="color:#f92672">&lt;bShiftDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bShiftDown&gt;</span>
+			<span style="color:#f92672">&lt;bCtrlDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bCtrlDown&gt;</span>
+			<span style="color:#f92672">&lt;iHotKeyPriority</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHotKeyPriority&gt;</span>
+			<span style="color:#f92672">&lt;Button</span><span style="color:#f92672">&gt;</span>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1<span style="color:#f92672">&lt;/Button&gt;</span>
+		<span style="color:#f92672">&lt;/PromotionInfo&gt;</span>
+		
+		<span style="color:#f92672">&lt;PromotionInfo</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_SPELL_FIRE<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Help</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_SPELL_FIRE_HELP<span style="color:#f92672">&lt;/Help&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+			<span style="color:#f92672">&lt;LayerAnimationPath</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/LayerAnimationPath&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr1</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr1&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr2</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr2&gt;</span>
+			<span style="color:#f92672">&lt;TechPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/TechPrereq&gt;</span>
+			<span style="color:#f92672">&lt;StateReligionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/StateReligionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;bLeader</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bLeader&gt;</span>
+			<span style="color:#f92672">&lt;bBlitz</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bBlitz&gt;</span>
+			<span style="color:#f92672">&lt;bAmphib</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAmphib&gt;</span>
+			<span style="color:#f92672">&lt;bRiver</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bRiver&gt;</span>
+			<span style="color:#f92672">&lt;bEnemyRoute</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bEnemyRoute&gt;</span>
+			<span style="color:#f92672">&lt;bAlwaysHeal</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAlwaysHeal&gt;</span>
+			<span style="color:#f92672">&lt;bHillsDoubleMove</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bHillsDoubleMove&gt;</span>
+			<span style="color:#f92672">&lt;bImmuneToFirstStrikes</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bImmuneToFirstStrikes&gt;</span>
+			<span style="color:#f92672">&lt;iVisibilityChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iVisibilityChange&gt;</span>
+			<span style="color:#f92672">&lt;iMovesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMovesChange&gt;</span>
+			<span style="color:#f92672">&lt;iMoveDiscountChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMoveDiscountChange&gt;</span>
+			<span style="color:#f92672">&lt;iAirRangeChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAirRangeChange&gt;</span>
+			<span style="color:#f92672">&lt;iInterceptChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iInterceptChange&gt;</span>
+			<span style="color:#f92672">&lt;iEvasionChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEvasionChange&gt;</span>
+			<span style="color:#f92672">&lt;iWithdrawalChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iWithdrawalChange&gt;</span>
+			<span style="color:#f92672">&lt;iCargoChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCargoChange&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageChange&gt;</span>
+			<span style="color:#f92672">&lt;iBombardRateChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iBombardRateChange&gt;</span>
+			<span style="color:#f92672">&lt;iFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iChanceFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iChanceFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iEnemyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEnemyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iNeutralHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iNeutralHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iFriendlyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFriendlyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iSameTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iSameTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iAdjacentTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAdjacentTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+			<span style="color:#f92672">&lt;iCityAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityAttack&gt;</span>
+			<span style="color:#f92672">&lt;iCityDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityDefense&gt;</span>
+			<span style="color:#f92672">&lt;iHillsAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsAttack&gt;</span>
+			<span style="color:#f92672">&lt;iHillsDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsDefense&gt;</span>
+			<span style="color:#f92672">&lt;iKamikazePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iKamikazePercent&gt;</span>
+			<span style="color:#f92672">&lt;iRevoltProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iRevoltProtection&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageProtection&gt;</span>
+			<span style="color:#f92672">&lt;iPillageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iPillageChange&gt;</span>
+			<span style="color:#f92672">&lt;iUpgradeDiscount</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iUpgradeDiscount&gt;</span>
+			<span style="color:#f92672">&lt;iExperiencePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iExperiencePercent&gt;</span>
+			<span style="color:#f92672">&lt;TerrainAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombatMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;DomainMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombats</span><span style="color:#f92672">&gt;</span>
+				<span style="color:#f92672">&lt;UnitCombat</span><span style="color:#f92672">&gt;</span>
+					<span style="color:#f92672">&lt;UnitCombatType</span><span style="color:#f92672">&gt;</span>UNITCOMBAT_GUN<span style="color:#f92672">&lt;/UnitCombatType&gt;</span>
+					<span style="color:#f92672">&lt;bUnitCombat</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/bUnitCombat&gt;</span>
+				<span style="color:#f92672">&lt;/UnitCombat&gt;</span>
+			<span style="color:#f92672">&lt;/UnitCombats&gt;</span>
+			<span style="color:#f92672">&lt;HotKey</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;bAltDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAltDown&gt;</span>
+			<span style="color:#f92672">&lt;bShiftDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bShiftDown&gt;</span>
+			<span style="color:#f92672">&lt;bCtrlDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bCtrlDown&gt;</span>
+			<span style="color:#f92672">&lt;iHotKeyPriority</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHotKeyPriority&gt;</span>
+			<span style="color:#f92672">&lt;Button</span><span style="color:#f92672">&gt;</span>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1<span style="color:#f92672">&lt;/Button&gt;</span>
+		<span style="color:#f92672">&lt;/PromotionInfo&gt;</span>
 
-<pre><code class="language-xml">        &lt;PromotionInfo&gt;
-            &lt;Type&gt;PROMOTION_SPELL_WATER&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_WATER&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_WATER_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-            &lt;bLeader&gt;0&lt;/bLeader&gt;
-            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
-            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
-            &lt;bRiver&gt;0&lt;/bRiver&gt;
-            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-            &lt;TerrainAttacks/&gt;
-            &lt;TerrainDefenses/&gt;
-            &lt;FeatureAttacks/&gt;
-            &lt;FeatureDefenses/&gt;
-            &lt;UnitCombatMods/&gt;
-            &lt;DomainMods/&gt;
-            &lt;TerrainDoubleMoves/&gt;
-            &lt;FeatureDoubleMoves/&gt;
-            &lt;UnitCombats&gt;
-                &lt;UnitCombat&gt;
-                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-                &lt;/UnitCombat&gt;
-            &lt;/UnitCombats&gt;
-            &lt;HotKey/&gt;
-            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
-            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-        &lt;/PromotionInfo&gt;
-
-        &lt;PromotionInfo&gt;
-            &lt;Type&gt;PROMOTION_SPELL_POISON&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_POISON&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_POISON_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-            &lt;bLeader&gt;0&lt;/bLeader&gt;
-            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
-            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
-            &lt;bRiver&gt;0&lt;/bRiver&gt;
-            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-            &lt;TerrainAttacks/&gt;
-            &lt;TerrainDefenses/&gt;
-            &lt;FeatureAttacks/&gt;
-            &lt;FeatureDefenses/&gt;
-            &lt;UnitCombatMods/&gt;
-            &lt;DomainMods/&gt;
-            &lt;TerrainDoubleMoves/&gt;
-            &lt;FeatureDoubleMoves/&gt;
-            &lt;UnitCombats&gt;
-                &lt;UnitCombat&gt;
-                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-                &lt;/UnitCombat&gt;
-            &lt;/UnitCombats&gt;
-            &lt;HotKey/&gt;
-            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
-            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-        &lt;/PromotionInfo&gt;
-        
-        &lt;PromotionInfo&gt;
-            &lt;Type&gt;PROMOTION_SPELL_FIRE&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_SPELL_FIRE&lt;/Description&gt;
-            &lt;Help&gt;TXT_KEY_PROMOTION_SPELL_FIRE_HELP&lt;/Help&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-            &lt;bLeader&gt;0&lt;/bLeader&gt;
-            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
-            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
-            &lt;bRiver&gt;0&lt;/bRiver&gt;
-            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-            &lt;iCombatPercent&gt;0&lt;/iCombatPercent&gt;
-            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-            &lt;TerrainAttacks/&gt;
-            &lt;TerrainDefenses/&gt;
-            &lt;FeatureAttacks/&gt;
-            &lt;FeatureDefenses/&gt;
-            &lt;UnitCombatMods/&gt;
-            &lt;DomainMods/&gt;
-            &lt;TerrainDoubleMoves/&gt;
-            &lt;FeatureDoubleMoves/&gt;
-            &lt;UnitCombats&gt;
-                &lt;UnitCombat&gt;
-                    &lt;UnitCombatType&gt;UNITCOMBAT_GUN&lt;/UnitCombatType&gt;
-                    &lt;bUnitCombat&gt;1&lt;/bUnitCombat&gt;
-                &lt;/UnitCombat&gt;
-            &lt;/UnitCombats&gt;
-            &lt;HotKey/&gt;
-            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
-            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-        &lt;/PromotionInfo&gt;
-
-        &lt;PromotionInfo&gt;
-            &lt;Type&gt;PROMOTION_POISONED&lt;/Type&gt;
-            &lt;Description&gt;TXT_KEY_PROMOTION_POISONED&lt;/Description&gt;
-            &lt;Sound&gt;AS2D_POSITIVE_DINK&lt;/Sound&gt;
-            &lt;LayerAnimationPath&gt;NONE&lt;/LayerAnimationPath&gt;
-            &lt;PromotionPrereq&gt;NONE&lt;/PromotionPrereq&gt;
-            &lt;PromotionPrereqOr1&gt;NONE&lt;/PromotionPrereqOr1&gt;
-            &lt;PromotionPrereqOr2&gt;NONE&lt;/PromotionPrereqOr2&gt;
-            &lt;TechPrereq&gt;NONE&lt;/TechPrereq&gt;
-            &lt;StateReligionPrereq&gt;NONE&lt;/StateReligionPrereq&gt;
-            &lt;bLeader&gt;0&lt;/bLeader&gt;
-            &lt;bBlitz&gt;0&lt;/bBlitz&gt;
-            &lt;bAmphib&gt;0&lt;/bAmphib&gt;
-            &lt;bRiver&gt;0&lt;/bRiver&gt;
-            &lt;bEnemyRoute&gt;0&lt;/bEnemyRoute&gt;
-            &lt;bAlwaysHeal&gt;0&lt;/bAlwaysHeal&gt;
-            &lt;bHillsDoubleMove&gt;0&lt;/bHillsDoubleMove&gt;
-            &lt;bImmuneToFirstStrikes&gt;0&lt;/bImmuneToFirstStrikes&gt;
-            &lt;iVisibilityChange&gt;0&lt;/iVisibilityChange&gt;
-            &lt;iMovesChange&gt;0&lt;/iMovesChange&gt;
-            &lt;iMoveDiscountChange&gt;0&lt;/iMoveDiscountChange&gt;
-            &lt;iAirRangeChange&gt;0&lt;/iAirRangeChange&gt;
-            &lt;iInterceptChange&gt;0&lt;/iInterceptChange&gt;
-            &lt;iEvasionChange&gt;0&lt;/iEvasionChange&gt;
-            &lt;iWithdrawalChange&gt;0&lt;/iWithdrawalChange&gt;
-            &lt;iCargoChange&gt;0&lt;/iCargoChange&gt;
-            &lt;iCollateralDamageChange&gt;0&lt;/iCollateralDamageChange&gt;
-            &lt;iBombardRateChange&gt;0&lt;/iBombardRateChange&gt;
-            &lt;iFirstStrikesChange&gt;0&lt;/iFirstStrikesChange&gt;
-            &lt;iChanceFirstStrikesChange&gt;0&lt;/iChanceFirstStrikesChange&gt;
-            &lt;iEnemyHealChange&gt;0&lt;/iEnemyHealChange&gt;
-            &lt;iNeutralHealChange&gt;0&lt;/iNeutralHealChange&gt;
-            &lt;iFriendlyHealChange&gt;0&lt;/iFriendlyHealChange&gt;
-            &lt;iSameTileHealChange&gt;0&lt;/iSameTileHealChange&gt;
-            &lt;iAdjacentTileHealChange&gt;0&lt;/iAdjacentTileHealChange&gt;
-            &lt;iCombatPercent&gt;-20&lt;/iCombatPercent&gt;
-            &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;
-            &lt;iCityDefense&gt;0&lt;/iCityDefense&gt;
-            &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;
-            &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;
-            &lt;iKamikazePercent&gt;0&lt;/iKamikazePercent&gt;
-            &lt;iRevoltProtection&gt;0&lt;/iRevoltProtection&gt;
-            &lt;iCollateralDamageProtection&gt;0&lt;/iCollateralDamageProtection&gt;
-            &lt;iPillageChange&gt;0&lt;/iPillageChange&gt;
-            &lt;iUpgradeDiscount&gt;0&lt;/iUpgradeDiscount&gt;
-            &lt;iExperiencePercent&gt;0&lt;/iExperiencePercent&gt;
-            &lt;TerrainAttacks/&gt;
-            &lt;TerrainDefenses/&gt;
-            &lt;FeatureAttacks/&gt;
-            &lt;FeatureDefenses/&gt;
-            &lt;UnitCombatMods/&gt;
-            &lt;DomainMods/&gt;
-            &lt;TerrainDoubleMoves/&gt;
-            &lt;FeatureDoubleMoves/&gt;
-            &lt;UnitCombats /&gt;
-            &lt;HotKey/&gt;
-            &lt;bAltDown&gt;0&lt;/bAltDown&gt;
-            &lt;bShiftDown&gt;0&lt;/bShiftDown&gt;
-            &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;
-            &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;
-            &lt;Button&gt;,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1&lt;/Button&gt;
-        &lt;/PromotionInfo&gt;
-</code></pre>
-<div class="footnotes">
-
-<hr />
-
+		<span style="color:#f92672">&lt;PromotionInfo</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;Type</span><span style="color:#f92672">&gt;</span>PROMOTION_POISONED<span style="color:#f92672">&lt;/Type&gt;</span>
+			<span style="color:#f92672">&lt;Description</span><span style="color:#f92672">&gt;</span>TXT_KEY_PROMOTION_POISONED<span style="color:#f92672">&lt;/Description&gt;</span>
+			<span style="color:#f92672">&lt;Sound</span><span style="color:#f92672">&gt;</span>AS2D_POSITIVE_DINK<span style="color:#f92672">&lt;/Sound&gt;</span>
+			<span style="color:#f92672">&lt;LayerAnimationPath</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/LayerAnimationPath&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr1</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr1&gt;</span>
+			<span style="color:#f92672">&lt;PromotionPrereqOr2</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/PromotionPrereqOr2&gt;</span>
+			<span style="color:#f92672">&lt;TechPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/TechPrereq&gt;</span>
+			<span style="color:#f92672">&lt;StateReligionPrereq</span><span style="color:#f92672">&gt;</span>NONE<span style="color:#f92672">&lt;/StateReligionPrereq&gt;</span>
+			<span style="color:#f92672">&lt;bLeader</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bLeader&gt;</span>
+			<span style="color:#f92672">&lt;bBlitz</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bBlitz&gt;</span>
+			<span style="color:#f92672">&lt;bAmphib</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAmphib&gt;</span>
+			<span style="color:#f92672">&lt;bRiver</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bRiver&gt;</span>
+			<span style="color:#f92672">&lt;bEnemyRoute</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bEnemyRoute&gt;</span>
+			<span style="color:#f92672">&lt;bAlwaysHeal</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAlwaysHeal&gt;</span>
+			<span style="color:#f92672">&lt;bHillsDoubleMove</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bHillsDoubleMove&gt;</span>
+			<span style="color:#f92672">&lt;bImmuneToFirstStrikes</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bImmuneToFirstStrikes&gt;</span>
+			<span style="color:#f92672">&lt;iVisibilityChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iVisibilityChange&gt;</span>
+			<span style="color:#f92672">&lt;iMovesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMovesChange&gt;</span>
+			<span style="color:#f92672">&lt;iMoveDiscountChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iMoveDiscountChange&gt;</span>
+			<span style="color:#f92672">&lt;iAirRangeChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAirRangeChange&gt;</span>
+			<span style="color:#f92672">&lt;iInterceptChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iInterceptChange&gt;</span>
+			<span style="color:#f92672">&lt;iEvasionChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEvasionChange&gt;</span>
+			<span style="color:#f92672">&lt;iWithdrawalChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iWithdrawalChange&gt;</span>
+			<span style="color:#f92672">&lt;iCargoChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCargoChange&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageChange&gt;</span>
+			<span style="color:#f92672">&lt;iBombardRateChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iBombardRateChange&gt;</span>
+			<span style="color:#f92672">&lt;iFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iChanceFirstStrikesChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iChanceFirstStrikesChange&gt;</span>
+			<span style="color:#f92672">&lt;iEnemyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iEnemyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iNeutralHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iNeutralHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iFriendlyHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iFriendlyHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iSameTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iSameTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iAdjacentTileHealChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iAdjacentTileHealChange&gt;</span>
+			<span style="color:#f92672">&lt;iCombatPercent</span><span style="color:#f92672">&gt;</span>-20<span style="color:#f92672">&lt;/iCombatPercent&gt;</span>
+			<span style="color:#f92672">&lt;iCityAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityAttack&gt;</span>
+			<span style="color:#f92672">&lt;iCityDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCityDefense&gt;</span>
+			<span style="color:#f92672">&lt;iHillsAttack</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsAttack&gt;</span>
+			<span style="color:#f92672">&lt;iHillsDefense</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHillsDefense&gt;</span>
+			<span style="color:#f92672">&lt;iKamikazePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iKamikazePercent&gt;</span>
+			<span style="color:#f92672">&lt;iRevoltProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iRevoltProtection&gt;</span>
+			<span style="color:#f92672">&lt;iCollateralDamageProtection</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iCollateralDamageProtection&gt;</span>
+			<span style="color:#f92672">&lt;iPillageChange</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iPillageChange&gt;</span>
+			<span style="color:#f92672">&lt;iUpgradeDiscount</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iUpgradeDiscount&gt;</span>
+			<span style="color:#f92672">&lt;iExperiencePercent</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iExperiencePercent&gt;</span>
+			<span style="color:#f92672">&lt;TerrainAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureAttacks</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDefenses</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombatMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;DomainMods</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;TerrainDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;FeatureDoubleMoves</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;UnitCombats</span> <span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;HotKey</span><span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;bAltDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bAltDown&gt;</span>
+			<span style="color:#f92672">&lt;bShiftDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bShiftDown&gt;</span>
+			<span style="color:#f92672">&lt;bCtrlDown</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/bCtrlDown&gt;</span>
+			<span style="color:#f92672">&lt;iHotKeyPriority</span><span style="color:#f92672">&gt;</span>0<span style="color:#f92672">&lt;/iHotKeyPriority&gt;</span>
+			<span style="color:#f92672">&lt;Button</span><span style="color:#f92672">&gt;</span>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1<span style="color:#f92672">&lt;/Button&gt;</span>
+		<span style="color:#f92672">&lt;/PromotionInfo&gt;</span>
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Steam版の場合<span class="path">
+<li id="fn:1" role="doc-endnote">
+<p>Steam版の場合<span class="path">
   C:\Program Files (x86)\Steam\SteamApps\common\Sid Meier's Civilization IV Beyond the Sword\Beyond the Sword\Assets\XML\Units\Civ4PromotionInfos.xml
 </span>
-<br />
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+ <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -988,7 +904,7 @@ WATERをFIREに変えています。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

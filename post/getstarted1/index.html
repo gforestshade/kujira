@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-03",
     "description": "",
-    "wordCount": 4504
+    "wordCount":  4502 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-03">2017-07-03 00:00</time></p>
           
-          <p>4504  Words</p>
+          <p>4502  Words</p>
           
           
 
@@ -374,203 +374,161 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <h2 id="これは何か">これは何か</h2>
-
-<p>これは、<br />
-「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br />
-という声にお応えして、CvEventManager.pyを編集して<br />
-XMLだけではできないちょっと面白いことをやってみようという企画です。<br />
+<p>これは、<br>
+「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br>
+という声にお応えして、CvEventManager.pyを編集して<br>
+XMLだけではできないちょっと面白いことをやってみようという企画です。<br>
 XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。</p>
-
 <h2 id="これは何でないか">これは何でないか</h2>
-
-<p>これは、技術的な解説、PythonによるModdingに親しむ、<br />
-という視点での説明に偏重しています。<br />
-あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは<br />
+<p>これは、技術的な解説、PythonによるModdingに親しむ、<br>
+という視点での説明に偏重しています。<br>
+あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは<br>
 あまりないかもしれません。</p>
+<h1 id="civilizationivini">CivilizationIV.ini</h1>
+<p>早速その<code>CvEventManager.py</code>がどこにあるのか&hellip;を見ていく前に、<br>
+PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span style="color:#75715e">; Enable the logging system</span>
+<span style="color:#75715e">; Documents\My Games\Beyond the Sword(J)\Logs</span>
+<span style="color:#a6e22e">LoggingEnabled</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
 
-<p></p>
+<span style="color:#75715e">; Enable synchronization logging</span>
+<span style="color:#a6e22e">SynchLog</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
 
-<h1 id="civilizationiv-ini">CivilizationIV.ini</h1>
-
-<p>早速その<code>CvEventManager.py</code>がどこにあるのか&hellip;を見ていく前に、<br />
-PythonのModdingをしていくにあたって<code>CivilizationIV.ini</code>を編集しましょう。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
-
-<pre><code class="language-ini">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-; Enable the logging system
-; Documents\My Games\Beyond the Sword(J)\Logs
-LoggingEnabled = 1
-
-; Enable synchronization logging
-SynchLog = 1
-
-; Overwrite old network and message logs
-OverwriteLogs = 1
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-</code></pre>
-
-<p>とりあえずこの３つを<code>0</code>から<code>1</code>に変えておきましょう。</p>
-
-<h1 id="cveventinterface-py">CvEventInterface.py</h1>
-
-<p>さて、<code>CvEventManager.py</code>&hellip;といいたいところなのですが、後々のことまで考えると、<br />
-もうちょっと準備が必要です。<br />
+<span style="color:#75715e">; Overwrite old network and message logs</span>
+<span style="color:#a6e22e">OverwriteLogs</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
+<span style="color:#a6e22e">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</code></pre></div><p>とりあえずこの３つを<code>0</code>から<code>1</code>に変えておきましょう。</p>
+<h1 id="cveventinterfacepy">CvEventInterface.py</h1>
+<p>さて、<code>CvEventManager.py</code>&hellip;といいたいところなのですが、後々のことまで考えると、<br>
+もうちょっと準備が必要です。<br>
 そこで、<code>CvEventManagerInterface.py</code>を編集します。</p>
-
 <p>さっそくBtSの元ファイル</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\Python\EntryPoints\CvEventManagerInterface.py
 </p>
 
-
 <p>…はなかったので</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Assets\Python\EntryPoints\CvEventInterface.py
 </p>
 
+<p><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>をみると、こうなっていました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Sid Meier&#39;s Civilization 4</span>
+<span style="color:#75715e"># Copyright Firaxis Games 2005</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># CvEventInterface.py</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># These functions are App Entry Points from C++</span>
+<span style="color:#75715e"># WARNING: These function names should not be changed</span>
+<span style="color:#75715e"># WARNING: These functions can not be placed into a class</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># No other modules should import this</span>
+<span style="color:#75715e">#</span>
+<span style="color:#f92672">import</span> CvUtil
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 
-<p><sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>をみると、こうなっていました。</p>
+normalEventManager <span style="color:#f92672">=</span> CvEventManager<span style="color:#f92672">.</span>CvEventManager()
 
-<pre><code class="language-python"># Sid Meier's Civilization 4
-# Copyright Firaxis Games 2005
-#
-# CvEventInterface.py
-#
-# These functions are App Entry Points from C++
-# WARNING: These function names should not be changed
-# WARNING: These functions can not be placed into a class
-#
-# No other modules should import this
-#
-import CvUtil
-import CvEventManager
-from CvPythonExtensions import *
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getEventManager</span>():
+	<span style="color:#66d9ef">return</span> normalEventManager
 
-normalEventManager = CvEventManager.CvEventManager()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onEvent</span>(argsList):
+	<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a game event happens - return 1 if the event was consumed</span><span style="color:#e6db74">&#39;</span>
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>handleEvent(argsList)
 
-def getEventManager():
-    return normalEventManager
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">applyEvent</span>(argsList):
+	context, playerID, netUserData, popupReturn <span style="color:#f92672">=</span> argsList
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>applyEvent(argsList)
 
-def onEvent(argsList):
-    'Called when a game event happens - return 1 if the event was consumed'
-    return getEventManager().handleEvent(argsList)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">beginEvent</span>(context, argsList<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>beginEvent(context, argsList)
 
-def applyEvent(argsList):
-    context, playerID, netUserData, popupReturn = argsList
-    return getEventManager().applyEvent(argsList)
-
-def beginEvent(context, argsList=-1):
-    return getEventManager().beginEvent(context, argsList)
-
-</code></pre>
-
-<p>これを<strong>どのフォルダに入っているかも含めて</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br />
+</code></pre></div><p>これを<strong>どのフォルダに入っているかも含めて</strong>コピーしてきて編集すると、該当ファイルが差し変わるのでした。<br>
 <strong>MODフォルダ</strong>に新しく<span class="path">
   kujira\Assets\Python\EntryPoints\
 </span>
 フォルダを作って、そこにコピーします。</p>
-
-<p>MOD開発中に使用するMODフォルダはユーザーの&rdquo;Documents&rdquo;にある方をおすすめします。</p>
-
+<p>MOD開発中に使用するMODフォルダはユーザーの&quot;Documents&quot;にある方をおすすめします。</p>
 <p>パッケージ版の場合</p>
-
 <p class="path">
   ドキュメント\My Games\Beyond the Sword (J)\Mods
 </p>
 
-
 <p>Steam版の場合</p>
-
 <p class="path">
   ドキュメント\My Games\Beyond the Sword\Mods
 </p>
 
-
 <p>です。</p>
-
-<pre><code class="language-txt">└─kujira
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira
     └─Assets
         └─Python
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
+</code></pre></div><p>コピーした<code>CvEventInterface.py</code>の中身をすこし編集します&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Sid Meier&#39;s Civilization 4</span>
+<span style="color:#75715e"># Copyright Firaxis Games 2005</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># CvEventInterface.py</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># These functions are App Entry Points from C++</span>
+<span style="color:#75715e"># WARNING: These function names should not be changed</span>
+<span style="color:#75715e"># WARNING: These functions can not be placed into a class</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># No other modules should import this</span>
+<span style="color:#75715e">#</span>
+<span style="color:#f92672">import</span> CvUtil
+<span style="color:#75715e"># ここと</span>
+<span style="color:#75715e"># import CvEventManager</span>
+<span style="color:#f92672">import</span> KujiraEventManager
+<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 
-<p>コピーした<code>CvEventInterface.py</code>の中身をすこし編集します&hellip;</p>
+<span style="color:#75715e"># ここ</span>
+<span style="color:#75715e"># normalEventManager = CvEventManager.CvEventManager()</span>
+myEventManager <span style="color:#f92672">=</span> KujiraEventManager<span style="color:#f92672">.</span>MyEventManager()
 
-<pre><code class="language-python"># Sid Meier's Civilization 4
-# Copyright Firaxis Games 2005
-#
-# CvEventInterface.py
-#
-# These functions are App Entry Points from C++
-# WARNING: These function names should not be changed
-# WARNING: These functions can not be placed into a class
-#
-# No other modules should import this
-#
-import CvUtil
-# ここと
-# import CvEventManager
-import KujiraEventManager
-from CvPythonExtensions import *
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getEventManager</span>():
+	<span style="color:#75715e"># ここも</span>
+	<span style="color:#66d9ef">return</span> myEventManager
 
-# ここ
-# normalEventManager = CvEventManager.CvEventManager()
-myEventManager = KujiraEventManager.MyEventManager()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onEvent</span>(argsList):
+	<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a game event happens - return 1 if the event was consumed</span><span style="color:#e6db74">&#39;</span>
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>handleEvent(argsList)
 
-def getEventManager():
-    # ここも
-    return myEventManager
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">applyEvent</span>(argsList):
+	context, playerID, netUserData, popupReturn <span style="color:#f92672">=</span> argsList
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>applyEvent(argsList)
 
-def onEvent(argsList):
-    'Called when a game event happens - return 1 if the event was consumed'
-    return getEventManager().handleEvent(argsList)
-
-def applyEvent(argsList):
-    context, playerID, netUserData, popupReturn = argsList
-    return getEventManager().applyEvent(argsList)
-
-def beginEvent(context, argsList=-1):
-    return getEventManager().beginEvent(context, argsList)
-</code></pre>
-
-<!-- `KujiraEventManager`というモジュール(あるいは`KujiraEventManager.py`というファイル)にある`MyEventManager`クラスを指定しています。 -->
-
-<p><code>CvEventManager.py</code>というファイルから<br />
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">beginEvent</span>(context, argsList<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+	<span style="color:#66d9ef">return</span> getEventManager()<span style="color:#f92672">.</span>beginEvent(context, argsList)
+</code></pre></div><!-- `KujiraEventManager`というモジュール(あるいは`KujiraEventManager.py`というファイル)にある`MyEventManager`クラスを指定しています。 -->
+<p><code>CvEventManager.py</code>というファイルから<br>
 <code>KujiraEventManager.py</code>というファイルに指定を変えています。</p>
-
 <h2 id="本命をつくる">本命をつくる</h2>
-
 <p>まだ指定した先である<code>KujiraEventManager.py</code>というファイルがないので、自分でつくります。</p>
-
-<pre><code class="language-plain">└─kujira
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
+</code></pre></div><p><code>KujiraEventManager.py</code>の中身はこのようにします&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<p><code>KujiraEventManager.py</code>の中身はこのようにします&hellip;</p>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-<pre><code class="language-python">import CvEventManager
-import CvUtil
-
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onGameStart(self, argsList):
-        'Called at the start of the game'
-        super(self.__class__, self).onGameStart(argsList)
-        ##########
-        # ログファイルに出力する
-        CvUtil.pyPrint(&quot;Hello, Python!&quot;)
-</code></pre>
-
-<!-- 難し過ぎたのでコメントアウト
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onGameStart</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called at the start of the game</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onGameStart(argsList)
+        <span style="color:#75715e">##########</span>
+        <span style="color:#75715e"># ログファイルに出力する</span>
+        CvUtil<span style="color:#f92672">.</span>pyPrint(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Python!</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><!-- 難し過ぎたのでコメントアウト
 こうしてみました。元のCvEventManagerを継承して、
 onGameStartメソッドをオーバーライドします。
 気持ち的には、ゲーム開始時に割って入って、独自の処理をするイメージです。
@@ -583,275 +541,218 @@ onEvent()はそのままCvEventManager.hundleEvent()を呼び出し、hundleEven
 hundleEvent()から振り分けられた各イベントハンドラをオーバーライドすることによって、
 各タイミングでの処理ができるようになります。
 -->
-
 <h2 id="ためす">ためす</h2>
-
-<p>MODをロードして起動してみましょう。<br />
-&hellip;&hellip;&hellip;&hellip;シド星に降り立ってみても、とくにバニラとなにも変わっていません。<br />
-それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。<br />
-それを確認するには、(ゲームをいちど始めたうえで、)<br />
-Documents\My Games\Beyond the Sword(J)\Logs<br />
-にある<code>PythonDbg.log</code>を開いてみます。<br />
+<p>MODをロードして起動してみましょう。<br>
+&hellip;&hellip;&hellip;&hellip;シド星に降り立ってみても、とくにバニラとなにも変わっていません。<br>
+それもそのはず、ログファイルに文字列を出力する処理しかまだ書いていません。<br>
+それを確認するには、(ゲームをいちど始めたうえで、)<br>
+Documents\My Games\Beyond the Sword(J)\Logs<br>
+にある<code>PythonDbg.log</code>を開いてみます。<br>
 (ファイルがありませんか？見るフォルダが間違っているか、冒頭のini編集ができていない可能性があります。確認してみましょう。)</p>
-
-<p>下に下にスクロールしていくと&hellip;<br />
+<p>下に下にスクロールしていくと&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/pyprint.png"><img src="https://gforestshade.github.io/kujira/img/pyprint.png"  width="572"  /></a>
-<br />
+<br>
 ありました。ちゃんと動いているようです！</p>
-
-<h1 id="結局-何ができるのか">結局、何ができるのか？</h1>
-
-<p>ともかく、特定のタイミングに割って入って、処理を書くことができるわけですが、<br />
+<h1 id="結局何ができるのか">結局、何ができるのか？</h1>
+<p>ともかく、特定のタイミングに割って入って、処理を書くことができるわけですが、<br>
 そうなってくると気になるのが</p>
-
 <ul>
-<li>どういうタイミングに割って入れるのか？<br /></li>
-<li>何ができるのか？<br />
-<br /></li>
+<li>どういうタイミングに割って入れるのか？</li>
+<li>何ができるのか？</li>
 </ul>
-
-<p>ということですね。<br />
-まずどういうタイミングがあるかですが、<a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">たくさんあります。</a><br />
-どういうことができるかについては、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">さらにたくさんあります。</a><br />
-すべてを覚える必要はもちろんありません。わかりやすいような処理から始めて、<br />
+<p>ということですね。<br>
+まずどういうタイミングがあるかですが、<a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">たくさんあります。</a><br>
+どういうことができるかについては、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">さらにたくさんあります。</a><br>
+すべてを覚える必要はもちろんありません。わかりやすいような処理から始めて、<br>
 自分の手で書いていくことを通して、少しずつ理解していくのがよいです。</p>
-
 <h1 id="結局こつこつとやっていくしかない">結局こつこつとやっていくしかない</h1>
-
 <p>というわけで、<code>KujiraEventManager.py</code>をこのように変えてみます&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">import CvEventManager
-import CvUtil
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        pCity<span style="color:#f92672">.</span>setPopulation(<span style="color:#ae81ff">4</span>)
 
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        pCity.setPopulation(4)
-
-</code></pre>
-
-<h2 id="くわしく">くわしく</h2>
-
+</code></pre></div><h2 id="くわしく">くわしく</h2>
 <p>捕まえるイベントを、onCityBuiltにしています。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;
-    def onCityBuilt(self, argsList): #ここと
-        'Called when a player builds a city' #これは特に意味のない飾り
-        super(self.__class__, self).onCityBuilt(argsList) #ここをonCityBuiltにする
-&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>独自処理部分では、まず<code>pCity = argsList[0]</code>として<br />
-イベントに付随してくる情報を取得しています。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList): <span style="color:#75715e">#ここと</span>
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e">#これは特に意味のない飾り</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList) <span style="color:#75715e">#ここをonCityBuiltにする</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>独自処理部分では、まず<code>pCity = argsList[0]</code>として<br>
+イベントに付随してくる情報を取得しています。<br>
 <a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">イベント一覧</a>からdef onCityBuiltをさがしてみると、</p>
-
 <ul>
-<li>Function: def onCityBuilt()<br /></li>
-<li>Parameters: self, argsList(city)<br /></li>
-<li>Description: Called when a player builds a city<br />
-<br /></li>
+<li>Function: def onCityBuilt()</li>
+<li>Parameters: self, argsList(city)</li>
+<li>Description: Called when a player builds a city</li>
 </ul>
-
-<p>とあります。「都市を建てたとき」というイベントのようですね。<br />
-つまり都市を建てたときに割り込んで何らかのプログラム的処理をしますよ、<br />
+<p>とあります。「都市を建てたとき」というイベントのようですね。<br>
+つまり都市を建てたときに割り込んで何らかのプログラム的処理をしますよ、<br>
 という意味になります。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/onCityBuilt.svg"><img src="https://gforestshade.github.io/kujira/img/onCityBuilt.svg"    /></a>
 
-
-<p>ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br />
-「ターン開始時」なら、誰のターン開始時で、いま何ターン目なのか、<br />
-「プロジェクトが完成したとき」なら、どの都市で、何のプロジェクトが完成したのか、<br />
-「ユニットが倒されたとき」なら、それはどのユニットで、またどのユニットに倒されたのか、<br />
-等等、そのイベントに関する情報が一緒に送られてくるので、<br />
+<p>ParametersのargsListのカッコ内にあるのがイベントについてくる情報です。<br>
+「ターン開始時」なら、誰のターン開始時で、いま何ターン目なのか、<br>
+「プロジェクトが完成したとき」なら、どの都市で、何のプロジェクトが完成したのか、<br>
+「ユニットが倒されたとき」なら、それはどのユニットで、またどのユニットに倒されたのか、<br>
+等等、そのイベントに関する情報が一緒に送られてくるので、<br>
 Pythonではそれらを利用することができます。</p>
-
-<p><code>pCity = argsList[0]</code>に戻ると、<code>argsList</code>の中身に<code>city</code>が入っているはずなので、<br />
-それをpCityに取り出しています。<br />
-この<code>pCity</code>はイメージとしてはいま立ったばかりの都市そのものが<br />
-ぎゅっと詰まっているイメージです。<br />
-<code>.</code>(ピリオド)をつけて命令を記述することで<br />
-都市の情報を取得したり、都市に操作を加えたりできます。<br />
+<p><code>pCity = argsList[0]</code>に戻ると、<code>argsList</code>の中身に<code>city</code>が入っているはずなので、<br>
+それをpCityに取り出しています。<br>
+この<code>pCity</code>はイメージとしてはいま立ったばかりの都市そのものが<br>
+ぎゅっと詰まっているイメージです。<br>
+<code>.</code>(ピリオド)をつけて命令を記述することで<br>
+都市の情報を取得したり、都市に操作を加えたりできます。<br>
 そこで、<code>pCity.setPopulation(4)</code>として、都市の人口を4にセットしています。</p>
-
 <p>つまりぜんぶまとめて、《都市が建設されたとき、その都市の人口を4にするMOD》ができたことになるはずです。</p>
-
 <h2 id="ためす-1">ためす</h2>
-
 <p>フォルダ構成がこうなっていることを確認して&hellip;</p>
-
-<pre><code class="language-txt">└─kujira
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p>起動してみると、<br />
+</code></pre></div><p>起動してみると、<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_population_4.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_population_4.png"    /></a>
-<br />
+<br>
 うまくいきました！</p>
-
 <h1 id="もう少し進める">もう少し進める</h1>
-
 <p>もう一歩進んで、《都市が建設されたとき、その都市に図書館を建設するMOD》を目指してみましょう。</p>
-
-<h2 id="図書館を建設する-とは">図書館を建設する、とは</h2>
-
-<p>さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。<br />
-探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、<br />
+<h2 id="図書館を建設するとは">図書館を建設する、とは</h2>
+<p>さて、「図書館を建設する」という「操作」をPythonコードに落とし込みたいです。<br>
+探し方はいろいろあります。他人のMODを参考にさせてもらってもよいでしょうし、<br>
 civfanaticsで漁るのもよいでしょう。英語でよろしければ、<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">一覧</a>を載せてくれているWebページもあります。</p>
-
-<p>今回は<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>から探してみましょう。<br />
-都市に対する操作なので、最初に<code>CyCity</code>をぽちっと押して、<br />
-都市に建物を与えるのですからgetというよりsetでしょうか、<br />
-その中からsetで始まっていてBuildingも含んでいるものを探していくと&hellip;<br />
+<p>今回は<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>から探してみましょう。<br>
+都市に対する操作なので、最初に<code>CyCity</code>をぽちっと押して、<br>
+都市に建物を与えるのですからgetというよりsetでしょうか、<br>
+その中からsetで始まっていてBuildingも含んでいるものを探していくと&hellip;<br>
 ありました。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/pythonapi_setNumRealBuilding.svg"><img src="https://gforestshade.github.io/kujira/img/pythonapi_setNumRealBuilding.svg"    /></a>
 
-
 <blockquote>
-<pre><code class="language-nohighlight">400. VOID setNumRealBuilding (BuildingType iIndex, INT iNewValue)
+</blockquote>
+<pre><code class="language-nohighlight" data-lang="nohighlight">400. VOID setNumRealBuilding (BuildingType iIndex, INT iNewValue)
 (BuildingID, iNum) - Sets number of buildings in this city of BuildingID type
-</code></pre>
-</blockquote>
-
-<p>建物の種類と、数値を指定して、その建物の数を設定する操作のようです。<br />
-数は1でよいのでしょうが、肝心の建物の種類を<br />
+</code></pre><p>建物の種類と、数値を指定して、その建物の数を設定する操作のようです。<br>
+数は1でよいのでしょうが、肝心の建物の種類を<br>
 どうやって指定するか学ばないといけないようです。</p>
-
-<p>そこで、<code>BuildingType iIndex</code>とあるところに注目します。<br />
-iはXMLの編集でおなじみのように数値を表します。<br />
-ですから、ここには図書館を表す数値を指定しなければなりません。<br />
-が、そんな数値はもちろん知りません。そこで調べて&hellip;くるのではなく、<br />
+<p>そこで、<code>BuildingType iIndex</code>とあるところに注目します。<br>
+iはXMLの編集でおなじみのように数値を表します。<br>
+ですから、ここには図書館を表す数値を指定しなければなりません。<br>
+が、そんな数値はもちろん知りません。そこで調べて&hellip;くるのではなく、<br>
 そこはPython自身に計算してもらえばよいのです。</p>
-
-<p>まず、図書館を表す「キー」を用意しましょう。<br />
-(これはどうにかして調べてください。<br />
-XML編集をしていた方なら、さほど難しくないと思います)<br />
-調べたところ、<code>BUILDING_LIBRARY</code>でした。<br />
-そこで<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>とすると、<br />
-図書館を表す数値を取得できます。<br />
-<code>gc</code>を使うのには少し準備がいるので、<br />
+<p>まず、図書館を表す「キー」を用意しましょう。<br>
+(これはどうにかして調べてください。<br>
+XML編集をしていた方なら、さほど難しくないと思います)<br>
+調べたところ、<code>BUILDING_LIBRARY</code>でした。<br>
+そこで<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>とすると、<br>
+図書館を表す数値を取得できます。<br>
+<code>gc</code>を使うのには少し準備がいるので、<br>
 それも含めた<code>KujiraEventManager.py</code>のリストはこうなります&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>)
+        pCity<span style="color:#f92672">.</span>setNumRealBuilding(iLib, <span style="color:#ae81ff">1</span>)
 
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        iLib = gc.getInfoTypeString('BUILDING_LIBRARY')
-        pCity.setNumRealBuilding(iLib, 1)
-
-# Something is wrong!
-</code></pre>
-
-<h2 id="まちがえた">まちがえた？</h2>
-
+<span style="color:#75715e"># Something is wrong!</span>
+</code></pre></div><h2 id="まちがえた">まちがえた？</h2>
 <p>さてこれで起動してみます。</p>
-
 <p>&hellip;&hellip;&hellip;しかし都市を覗いてみても、図書館は建っていないようです。</p>
-
-<p>どこかでミスっているのでしょうか。エラーを起こしたなら起こしたで<br />
-どの行で起こしたかの場所を知りたいものです。<br />
-このようなときDocuments\My Games\Beyond the Sword(J)\Logsにある<br />
+<p>どこかでミスっているのでしょうか。エラーを起こしたなら起こしたで<br>
+どの行で起こしたかの場所を知りたいものです。<br>
+このようなときDocuments\My Games\Beyond the Sword(J)\Logsにある<br>
 <code>PythonErr.log</code>が助けになってくれます。開いてみてみましょう&hellip;</p>
-
 <blockquote>
-<pre><code class="language-txt">Traceback (most recent call last):
-
-  File &quot;CvEventInterface&quot;, line 25, in onEvent
-
-  File &quot;CvEventManager&quot;, line 187, in handleEvent
-
-  File &quot;KujiraEventManager&quot;, line 14, in onCityBuilt
-
-AttributeError: 'CyGlobalContext' object has no attribute 'getInfoTypeString'
-ERR: Python function onEvent failed, module CvEventInterface
-</code></pre>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Traceback (most recent call last):
 
-<p>エラーが起こっていました。<br />
-ファイル名と行番号が並んでいるうちの一番下、この例では<br />
-<code>File &quot;KujiraEventManager&quot;, line 14, in onCityBuilt</code>が<br />
+  File &#34;CvEventInterface&#34;, line 25, in onEvent
+
+  File &#34;CvEventManager&#34;, line 187, in handleEvent
+
+  File &#34;KujiraEventManager&#34;, line 14, in onCityBuilt
+
+AttributeError: &#39;CyGlobalContext&#39; object has no attribute &#39;getInfoTypeString&#39;
+ERR: Python function onEvent failed, module CvEventInterface
+</code></pre></div><p>エラーが起こっていました。<br>
+ファイル名と行番号が並んでいるうちの一番下、この例では<br>
+<code>File &quot;KujiraEventManager&quot;, line 14, in onCityBuilt</code>が<br>
 エラーを起こした場所を示してくれています。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        iLib = gc.getInfoTypeString('BUILDING_LIBRARY')
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>この行ですね。お使いのテキストエディタで行番号の表示ができるのであれば、<br />
-すぐ見つかると思います。<br />
-エラー内容はこうです。<br />
-<code>AttributeError: 'CyGlobalContext' object has no attribute 'getInfoTypeString'</code><br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+        iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>この行ですね。お使いのテキストエディタで行番号の表示ができるのであれば、<br>
+すぐ見つかると思います。<br>
+エラー内容はこうです。<br>
+<code>AttributeError: 'CyGlobalContext' object has no attribute 'getInfoTypeString'</code><br>
 「CyGlobalContextのオブジェクトにgetInfoTypeStringなんて属性ないやで」</p>
-
-<p>objectやattributeという単語の意味がいまの時点でわからなくとも、<br />
-getInfoTypeStringっていう名前のものがない(探すのに失敗している)<br />
-ということはなんとなく感じ取れます。<br />
-そして、よくよく見直すと、たしかにgetInfoTypeStringって名前は間違いで、<br />
+<p>objectやattributeという単語の意味がいまの時点でわからなくとも、<br>
+getInfoTypeStringっていう名前のものがない(探すのに失敗している)<br>
+ということはなんとなく感じ取れます。<br>
+そして、よくよく見直すと、たしかにgetInfoTypeStringって名前は間違いで、<br>
 getInfoTypeForStringが正しいことが分かりました。直しましょう&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        iLib <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_LIBRARY</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e">#typo!</span>
+        pCity<span style="color:#f92672">.</span>setNumRealBuilding(iLib, <span style="color:#ae81ff">1</span>)
 
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        iLib = gc.getInfoTypeForString('BUILDING_LIBRARY') #typo!
-        pCity.setNumRealBuilding(iLib, 1)
-
-</code></pre>
-
-<h2 id="ためす-2">ためす</h2>
-
-<p>起動してみて&hellip;<br />
+</code></pre></div><h2 id="ためす-2">ためす</h2>
+<p>起動してみて&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_library.png"><img src="https://gforestshade.github.io/kujira/img/civss_library.png"    /></a>
-<br />
+<br>
 動きました！</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Windows10,パッケージ版の場合,<span class="path">
+<li id="fn:1" role="doc-endnote">
+<p>Windows10,パッケージ版の場合,<span class="path">
   ドキュメント\My Games\Beyond the Sword(J)
 </span>
 <br>Steam版の場合,<span class="path">
   ドキュメント\My Games\Beyond the Sword
 </span>
-にあります<br />
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">パッケージ版の場合。Steam版の場合は<span class="path">
+にあります <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>パッケージ版の場合。Steam版の場合は<span class="path">
   C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Sid Meier's Civilization IV Beyond the Sword\\Beyond the Sword\\Assets\\Python\\EntryPoints\\CvEventInterface.py
 </span>
-<br />
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+ <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -864,7 +765,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

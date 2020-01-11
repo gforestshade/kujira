@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 4126
+    "wordCount":  4140 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:03</time></p>
           
-          <p>4126  Words</p>
+          <p>4140  Words</p>
           
           
 
@@ -374,264 +374,215 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの３回目・Python共通編<br /></li>
-<li>クラスを活用する<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの３回目・Python共通編</li>
+<li>クラスを活用する</li>
 </ul>
-
 <h1 id="スペル情報クラス">スペル情報クラス</h1>
-
-<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br />
-このクラスを通してスペルのいろいろな情報を取得することができるようにします。<br />
-</p>
-
-<pre><code class="language-python">class SpellInfo:
+<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br>
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellInfo</span>:
     
-    def __init__(self, name, spell_class):
-        self._name = name
-        self._spell_class = spell_class
+    <span style="color:#66d9ef">def</span> __init__(self, name, spell_class):
+        self<span style="color:#f92672">.</span>_name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>_spell_class <span style="color:#f92672">=</span> spell_class
         
-    def getName(self):
-        return self._name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_name
 
-    def getPromotionName(self):
-        return &quot;PROMOTION_&quot; + self.getName()
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPromotionName</span>(self):
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>getName()
 
-    def getSpellClass(self):
-        return self._spell_class
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSpellClass</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_spell_class
 
-    spells = []
+    spells <span style="color:#f92672">=</span> []
 
-</code></pre>
-
-<p>&hellip;&hellip;&hellip;&hellip;のですが、今回は設計を簡単にしたので、<br />
-登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。<br />
-コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。<br />
-そして、<code>getName()</code>や<code>getSpellClass()</code>でそれらを取得できるようにしています。<br />
-<code>setName()</code>や<code>setSpellClass()</code>を作っていないことに注意してください。<br />
-名前やクラスオブジェクトは取得できるだけで、設定はできません。<br />
+</code></pre></div><p>&hellip;&hellip;&hellip;&hellip;のですが、今回は設計を簡単にしたので、<br>
+登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。<br>
+コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。<br>
+そして、<code>getName()</code>や<code>getSpellClass()</code>でそれらを取得できるようにしています。<br>
+<code>setName()</code>や<code>setSpellClass()</code>を作っていないことに注意してください。<br>
+名前やクラスオブジェクトは取得できるだけで、設定はできません。<br>
 これは「Info」を表すクラスであって、ゲーム中に変更されることはないからです。</p>
-
-<p>なお、ここでいう「名前」とは、内部処理に使う名前を指します。<br />
-具体的には、<code>SPELL_WATER</code>や<code>SPELL_POISON</code>といったXMLキーのようなものです。<br />
-今回は発動条件に昇進を使うため、<br />
-<code>SPELL_WATER</code>を発動させる昇進名は<code>PROMOTION_SPELL_WATER</code>、<br />
-<code>SPELL_POISON</code>を発動させる昇進名は<code>PROMOTION_SPELL_POISON</code>、<br />
-のように定めることにします。<br />
-自分のスペル名に<code>PROMOTION_</code>をつけた文字列を返す、<br />
+<p>なお、ここでいう「名前」とは、内部処理に使う名前を指します。<br>
+具体的には、<code>SPELL_WATER</code>や<code>SPELL_POISON</code>といったXMLキーのようなものです。<br>
+今回は発動条件に昇進を使うため、<br>
+<code>SPELL_WATER</code>を発動させる昇進名は<code>PROMOTION_SPELL_WATER</code>、<br>
+<code>SPELL_POISON</code>を発動させる昇進名は<code>PROMOTION_SPELL_POISON</code>、<br>
+のように定めることにします。<br>
+自分のスペル名に<code>PROMOTION_</code>をつけた文字列を返す、<br>
 <code>getPromotionName()</code>というインスタンスメソッドもつくっておきます。</p>
-
-<p>インスタンス変数の名前に<code>self._name</code>・<code>self._spell_class</code>のように<br />
-<code>_</code>をつけています。<code>_</code>1つで始まるインスタンス変数は、慣習として、<br />
-「どうか外部からいじらないでね」という意味を持ちます。<br />
-名前やクラスオブジェクトが知らないうちに変わってほしくはありませんので、<br />
-<code>_</code>をつけています。<br />
+<p>インスタンス変数の名前に<code>self._name</code>・<code>self._spell_class</code>のように<br>
+<code>_</code>をつけています。<code>_</code>1つで始まるインスタンス変数は、慣習として、<br>
+「どうか外部からいじらないでね」という意味を持ちます。<br>
+名前やクラスオブジェクトが知らないうちに変わってほしくはありませんので、<br>
+<code>_</code>をつけています。<br>
 (外部からの参照禁止を強制する効果はありません。あくまで慣習によるお願いです。)</p>
-
-<p>このクラスは<strong>型</strong>ですから、SpellInfo型の変数をつくることができます。<br />
-そのインスタンス1つが、スペル1種類を表します。<br />
+<p>このクラスは<strong>型</strong>ですから、SpellInfo型の変数をつくることができます。<br>
+そのインスタンス1つが、スペル1種類を表します。<br>
 今回はスペルの種類は3つですから、3つのSpellInfoインスタンスをつくることになります。</p>
-
-<p>そして、最後に<code>spell = []</code>という文が書いてあります。<br />
-これは代入文ですが、<code>self</code>がついていません。<br />
-クラス内・メソッド外に記述されている、このような変数を<br />
+<p>そして、最後に<code>spell = []</code>という文が書いてあります。<br>
+これは代入文ですが、<code>self</code>がついていません。<br>
+クラス内・メソッド外に記述されている、このような変数を<br>
 <strong>クラス変数</strong>(Class Variable)と呼びます。</p>
-
-<p>クラス変数の所属する先は、インスタンスではなくクラス全体になります。<br />
-このことは、すべてのインスタンス(今回は3つのインスタンス)で値が共有される、<br />
-ということを意味します。<br />
-<code>self</code>がついているインスタンス変数はインスタンスごとに値が違っていましたから、<br />
+<p>クラス変数の所属する先は、インスタンスではなくクラス全体になります。<br>
+このことは、すべてのインスタンス(今回は3つのインスタンス)で値が共有される、<br>
+ということを意味します。<br>
+<code>self</code>がついているインスタンス変数はインスタンスごとに値が違っていましたから、<br>
 この点がインスタンス変数との違いになります。</p>
-
-<p>今回は、このクラス変数<code>SpellInfo.spells</code>に3つのインスタンスをすべて登録します。<br />
+<p>今回は、このクラス変数<code>SpellInfo.spells</code>に3つのインスタンスをすべて登録します。<br>
 (これも後述します)</p>
-
 <h1 id="スペル用基底クラス">スペル用基底クラス</h1>
-
-<p>では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。<br />
+<p>では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。<br>
 まず、すべてのスペルで共通となる部分です。</p>
-
-<pre><code class="language-python">class Spell:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Spell</span>:
     
-    def __init__(self, caster):
-        self._caster = caster
-        self._myTeam = gc.getTeam(caster.getTeam())
+    <span style="color:#66d9ef">def</span> __init__(self, caster):
+        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
+        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
     
-    def cast(self):
-        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
-        r = self.execute()
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">スペル処理を呼び出し、成功したらエフェクトも出す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
 
-        if r:
-            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
-            point = self._caster.plot().getPoint()
-            CyEngine().triggerEffect(EFFECT, point)
+        <span style="color:#66d9ef">if</span> r:
+            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">EFFECT_PING</span><span style="color:#e6db74">&#39;</span>)
+            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
+            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
 
-    def isEnemy(self, pUnit):
-        return self._myTeam.isAtWar(pUnit.getTeam())
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
 
-    def selectEnemyUnits(self, i_range):
-        &quot;&quot;&quot;
-        範囲内の全敵対ユニットのリストを返す
-        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
-        &quot;&quot;&quot;
-        range_plots = getRangePlotList(self._caster, i_range, False)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, False)
         
-        re_units = []
-        for plot in range_plots:
-            re_units += filter(self.isEnemy, getPlotUnits(plot))
+        re_units <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
+            re_units <span style="color:#f92672">+</span><span style="color:#f92672">=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
 
-        return re_units
+        <span style="color:#66d9ef">return</span> re_units
 
-</code></pre>
-
-<p>スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を<br />
-インスタンス変数として保持します。<br />
-この&rdquo;詠唱者&rdquo;はゲーム中にいくらでも変わりうる、<br />
-あるいは複数存在しうるものですから、<br />
-(自分のユニットが発動するスペルとAIのユニットが発動するスペルは<br />
-別のインスタンスにしたいですよね？)<br />
+</code></pre></div><p>スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を<br>
+インスタンス変数として保持します。<br>
+この&quot;詠唱者&quot;はゲーム中にいくらでも変わりうる、<br>
+あるいは複数存在しうるものですから、<br>
+(自分のユニットが発動するスペルとAIのユニットが発動するスペルは<br>
+別のインスタンスにしたいですよね？)<br>
 Infoに入れることはできません。ここで保持します。</p>
-
-<p>その詠唱者インスタンスを利用して、スペルを実行します。<br />
-今回は設計を簡単にしたためやりませんが、<br />
-スペルに実行条件を付けて、スペル発動ボタンを非表示にしたり暗転表示にしたり<br />
-したい場合なども詠唱者の情報を利用するでしょうから、<br />
-(詠唱者が都市上にいるときだけ使えるスペルをつくりたい？<br />
-詠唱者がどのPlotにいるか、そのPlotに都市があるかの判定が必要ですね)<br />
+<p>その詠唱者インスタンスを利用して、スペルを実行します。<br>
+今回は設計を簡単にしたためやりませんが、<br>
+スペルに実行条件を付けて、スペル発動ボタンを非表示にしたり暗転表示にしたり<br>
+したい場合なども詠唱者の情報を利用するでしょうから、<br>
+(詠唱者が都市上にいるときだけ使えるスペルをつくりたい？<br>
+詠唱者がどのPlotにいるか、そのPlotに都市があるかの判定が必要ですね)<br>
 このクラスのメソッドとして書くことになるでしょう。</p>
-
-<p>ともあれ、今回このクラスにはスペルを実際に詠唱する<code>cast()</code>と、<br />
-いろんなスペルで共同利用するためのメソッドが定義されます。<br />
-(今回は毒でも炎でも使う「1マス圏内にいる敵ユニットを列挙する」<br />
+<p>ともあれ、今回このクラスにはスペルを実際に詠唱する<code>cast()</code>と、<br>
+いろんなスペルで共同利用するためのメソッドが定義されます。<br>
+(今回は毒でも炎でも使う「1マス圏内にいる敵ユニットを列挙する」<br>
 メソッドを定義しています)</p>
-
 <h2 id="共通メソッド">共通メソッド</h2>
-
 <p>メソッドを順番に見ていきましょう。まずは<code>__init__()</code>です。</p>
-
-<pre><code class="language-python">    def __init__(self, caster):
-        self._caster = caster
-        self._myTeam = gc.getTeam(caster.getTeam())
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> __init__(self, caster):
+        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
+        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
     
-</code></pre>
-
-<p>詠唱者を引数に取ってインスタンス変数に代入するほか、<br />
-そのユニットが所属しているチームのCyTeamインスタンスも<br />
-インスタンス変数としてつくっています。<br />
-これはあとで戦争相手のユニットを識別したり、<br />
-自領土であるかどうかを調べたりするのに使います。<br />
-なにかと使い道が多いので、いちいちその場でつくるよりは、<br />
-ここで最初に作っておいて使いまわしする作戦です。<br />
-ほかにも、ほとんどのスペルで必要になるような値があるなら、<br />
+</code></pre></div><p>詠唱者を引数に取ってインスタンス変数に代入するほか、<br>
+そのユニットが所属しているチームのCyTeamインスタンスも<br>
+インスタンス変数としてつくっています。<br>
+これはあとで戦争相手のユニットを識別したり、<br>
+自領土であるかどうかを調べたりするのに使います。<br>
+なにかと使い道が多いので、いちいちその場でつくるよりは、<br>
+ここで最初に作っておいて使いまわしする作戦です。<br>
+ほかにも、ほとんどのスペルで必要になるような値があるなら、<br>
 ここで設定することになるでしょう。</p>
-
-<hr />
-
+<hr>
 <p><code>cast()</code>です。スペル処理の本体になります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">スペル処理を呼び出し、成功したらエフェクトも出す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
 
-<pre><code class="language-python">    def cast(self):
-        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
-        r = self.execute()
+        <span style="color:#66d9ef">if</span> r:
+            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">EFFECT_PING</span><span style="color:#e6db74">&#39;</span>)
+            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
+            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
 
-        if r:
-            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
-            point = self._caster.plot().getPoint()
-            CyEngine().triggerEffect(EFFECT, point)
-
-</code></pre>
-
-<p><code>execute()</code>という謎のインスタンスメソッドを呼び出しています。<br />
-これは、スペルごとに異なる部分をギリギリまで狭くして、<br />
-共通処理で済ませようとする工夫です。<br />
-どこまでが共通で、どこからが個別なのか切り分けるのは、<br />
+</code></pre></div><p><code>execute()</code>という謎のインスタンスメソッドを呼び出しています。<br>
+これは、スペルごとに異なる部分をギリギリまで狭くして、<br>
+共通処理で済ませようとする工夫です。<br>
+どこまでが共通で、どこからが個別なのか切り分けるのは、<br>
 バグの少ないプログラムを書く上では重要になってきます。</p>
-
-<p>ここでは、本当に個別の処理の部分だけをあとで個別に<code>execute()</code>という<br />
-メソッドとして書くことで、共通な部分――スペル発動のエフェクトなど――<br />
-を共通としてまとめておくことを意図しています。<br />
-こうして外側をしっかり書いておくことで、<br />
+<p>ここでは、本当に個別の処理の部分だけをあとで個別に<code>execute()</code>という<br>
+メソッドとして書くことで、共通な部分――スペル発動のエフェクトなど――<br>
+を共通としてまとめておくことを意図しています。<br>
+こうして外側をしっかり書いておくことで、<br>
 実際のスペル処理を書くことに集中できるようになります。</p>
-
-<p>あるいは、共通処理に追加したくなったときにも拡張が簡単になります。<br />
-スペル発動後移動を強制終了したいとか、特定の昇進をつけたいとか、<br />
-そういった場合にまとまっていれば1か所の追加で済みますが、<br />
-共通で同じ処理だからといって安易にコピペしていると<br />
-スペル3個でもう3か所、スペルを増やしていって100種類くらいになってから<br />
-仕様変更したくなってしまった場合は&hellip;&hellip;？<br />
-最悪の場合すべてを書き直す羽目になってしまうかもしれません。<br />
-<strong><em>事前の準備が大切なのです。</em></strong></p>
-
-<p><code>execute()</code>は成功で真、失敗で偽を返すようにするので、<br />
-成功したら<code>EFFECT_PING</code>というアニメーションを詠唱者と同じ画面座標で再生します。<br />
-これはチーム戦などで座標をチームメイトに伝えるときのアニメーションを流用しています。<br />
-今回はやりませんが、発動成功したときに上にメッセージを出したい、というときも<br />
+<p>あるいは、共通処理に追加したくなったときにも拡張が簡単になります。<br>
+スペル発動後移動を強制終了したいとか、特定の昇進をつけたいとか、<br>
+そういった場合にまとまっていれば1か所の追加で済みますが、<br>
+共通で同じ処理だからといって安易にコピペしていると<br>
+スペル3個でもう3か所、スペルを増やしていって100種類くらいになってから<br>
+仕様変更したくなってしまった場合は&hellip;&hellip;？<br>
+最悪の場合すべてを書き直す羽目になってしまうかもしれません。<br>
+<em><strong>事前の準備が大切なのです。</strong></em></p>
+<p><code>execute()</code>は成功で真、失敗で偽を返すようにするので、<br>
+成功したら<code>EFFECT_PING</code>というアニメーションを詠唱者と同じ画面座標で再生します。<br>
+これはチーム戦などで座標をチームメイトに伝えるときのアニメーションを流用しています。<br>
+今回はやりませんが、発動成功したときに上にメッセージを出したい、というときも<br>
 ここに書くことになるでしょう。</p>
-
-<hr />
-
-<p><code>isEnemy()</code>です。ユニットの引数を1つ取り、<br />
+<hr>
+<p><code>isEnemy()</code>です。ユニットの引数を1つ取り、<br>
 そのユニットの所属と詠唱者の文明とが戦争状態にあるかを判定します。</p>
-
-<pre><code class="language-python">    def isEnemy(self, pUnit):
-        return self._myTeam.isAtWar(pUnit.getTeam())
-</code></pre>
-
-<p>外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。</p>
-
-<hr />
-
-<p><code>selectEnemyUnits()</code>です。範囲内にいる敵対ユニットを集めてリストにして返します。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
+</code></pre></div><p>外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。</p>
+<hr>
+<p><code>selectEnemyUnits()</code>です。範囲内にいる敵対ユニットを集めてリストにして返します。<br>
 攻撃系のスペルではよく使うので、共通処理に入れておきます。</p>
-
-<pre><code class="language-python">    def selectEnemyUnits(self, i_range):
-        &quot;&quot;&quot;
-        範囲内の全敵対ユニットのリストを返す
-        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
-        &quot;&quot;&quot;
-        range_plots = getRangePlotList(self._caster, i_range, False)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, False)
         
-        re_units = []
-        for plot in range_plots:
-            re_units += filter(self.isEnemy, getPlotUnits(plot))
+        re_units <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
+            re_units <span style="color:#f92672">+</span><span style="color:#f92672">=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
 
-        return re_units
+        <span style="color:#66d9ef">return</span> re_units
 
-</code></pre>
-
-<p><code>range_plots = getRangePlotList(self._caster, i_range, False)</code><br />
-まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。<br />
+</code></pre></div><p><code>range_plots = getRangePlotList(self._caster, i_range, False)</code><br>
+まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。<br>
 詠唱者を中心に、周囲<code>i_range</code>マス、詠唱者自身のマスは含めません。</p>
-
-<p><code>range_plots</code>の中の各Plotに対して、<br />
-<code>re_units += filter(self.isEnemy, getPlotUnits(plot))</code><br />
+<p><code>range_plots</code>の中の各Plotに対して、<br>
+<code>re_units += filter(self.isEnemy, getPlotUnits(plot))</code><br>
 という文を実行しています。</p>
-
-<p>2つのリストを<code>+</code>すると、そのリストが1つに連結された新しいリストを得ます。<br />
-あるリストに別のリストを<code>+=</code>すると、そのリストの末尾に別のリストの内容がくっつきます。<br />
-メソッド全体の目的と、ここがfor文の中でPlotを列挙中であることを考えると、<br />
-右辺の<code>filter(self.isEnemy, getPlotUnits(plot))</code>は<br />
-「<code>plot</code>の上にいる敵対ユニットのリスト」になっているはずです。<br />
+<p>2つのリストを<code>+</code>すると、そのリストが1つに連結された新しいリストを得ます。<br>
+あるリストに別のリストを<code>+=</code>すると、そのリストの末尾に別のリストの内容がくっつきます。<br>
+メソッド全体の目的と、ここがfor文の中でPlotを列挙中であることを考えると、<br>
+右辺の<code>filter(self.isEnemy, getPlotUnits(plot))</code>は<br>
+「<code>plot</code>の上にいる敵対ユニットのリスト」になっているはずです。<br>
 それを後ろにどんどん連結していけば範囲内の全敵対ユニットを求めたことになりますね。</p>
-
-<p>さて、この<code>filter()</code>という関数は、リストを加工する関数です。<br />
-第１引数に条件、第２引数にリストを入れると、<br />
-条件を満たした要素だけを残した新しいリストを得ます。<br />
-第２引数として指定している<code>getPlotUnits(plot)</code>というのは<br />
-さっきつくった関数で<code>plot</code>上にいる全ユニットのリスト<br />
-&hellip;ではなくジェネレーターを得るのでした。<br />
-ただ直接出力しようとしない限りだいたい扱いは同じでしたので、<br />
+<p>さて、この<code>filter()</code>という関数は、リストを加工する関数です。<br>
+第１引数に条件、第２引数にリストを入れると、<br>
+条件を満たした要素だけを残した新しいリストを得ます。<br>
+第２引数として指定している<code>getPlotUnits(plot)</code>というのは<br>
+さっきつくった関数で<code>plot</code>上にいる全ユニットのリスト<br>
+&hellip;ではなくジェネレーターを得るのでした。<br>
+ただ直接出力しようとしない限りだいたい扱いは同じでしたので、<br>
 ここに<code>plot</code>上にいる全ユニットのジェネレータを指定します。</p>
-
-<p>条件は、関数で指定します。<br />
-<code>self.isEnemy</code>という関数オブジェクトです。呼び出しのための<code>()</code>をまだつけていません。<br />
-<code>filter()</code>関数の中で、関数オブジェクトが呼び出され、要素を残すかどうか判定がされます。<br />
-結局、<code>isEnemy()</code>――詠唱者と敵対しているかどうか――を満たすユニットのみが残され、<br />
+<p>条件は、関数で指定します。<br>
+<code>self.isEnemy</code>という関数オブジェクトです。呼び出しのための<code>()</code>をまだつけていません。<br>
+<code>filter()</code>関数の中で、関数オブジェクトが呼び出され、要素を残すかどうか判定がされます。<br>
+結局、<code>isEnemy()</code>――詠唱者と敵対しているかどうか――を満たすユニットのみが残され、<br>
 <code>re_units</code>に連結されていきます。</p>
-
 <p><a href="https://gforestshade.github.io/kujira/post/secondpy10/">その１０につづく</a></p>
         </div>
         <div class="col-12">
@@ -645,7 +596,7 @@ Infoに入れることはできません。ここで保持します。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

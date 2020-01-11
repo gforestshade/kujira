@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-02-04",
     "description": "",
-    "wordCount": 811
+    "wordCount":  811 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -357,128 +357,85 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <div class="alert alert-danger">
-  <p>より簡単な方法が公開されました。このページに従ってもできますが、<br />
+<p>より簡単な方法が公開されました。このページに従ってもできますが、<br>
 <a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">DoC全部入りパッケージ版</a>も参照してください。</p>
-
 </div>
-
-
 <h1 id="筆者の環境">筆者の環境</h1>
-
 <ul>
-<li>Windows 10 64bit<br /></li>
-<li>Civ4 BtS 3.19 パッケージ版<br />
-<br /></li>
+<li>Windows 10 64bit</li>
+<li>Civ4 BtS 3.19 パッケージ版</li>
 </ul>
-
 <h1 id="必要なもの">必要なもの</h1>
-
 <h2 id="microsoft-visual-c-toolkit-2003">Microsoft Visual C++ Toolkit 2003</h2>
-
 <p><a href="http://kael.civfanatics.net/files/VCToolkitSetup.exe">http://kael.civfanatics.net/files/VCToolkitSetup.exe</a></p>
-
 <h2 id="multi-threading-librarires">Multi Threading Librarires</h2>
-
-<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br />
-<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br />
+<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br>
+<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br>
 C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーします。</p>
-
 <h2 id="windows-7-sdk">Windows 7 SDK</h2>
-
-<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br />
-古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
-新し目のSDKを<strong><em>ISOから</em></strong>インストールします。<br />
-64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br />
-マウントして、<strong><em>\Setup\SDKsetup.exeを</em></strong>実行します。<br />
+<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br>
+古いPSDK-x86.exeがWindows10でインストールできないようなので<br>
+新し目のSDKを<em><strong>ISOから</strong></em>インストールします。<br>
+64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br>
+マウントして、<em><strong>\Setup\SDKsetup.exeを</strong></em>実行します。<br>
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。</p>
-
-<h2 id="makefile-2-3">MakeFile 2.3</h2>
-
+<h2 id="makefile-23">MakeFile 2.3</h2>
 <p><a href="https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/">https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/</a></p>
-
 <h1 id="やってみる">やってみる</h1>
-
-<p></p>
-
 <p>MODSフォルダにsdk_testというフォルダを作ります。</p>
-
 <p>sdk_testの中にsdkというフォルダとAssetsというフォルダを作ります。</p>
-
 <p><p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\CvGameCoreDLL\
 </p>
-<br />
+<br>
 の中にあるファイルとフォルダをsdkの中にコピーします。</p>
-
 <p>Makefileもsdkの中にコピーします。</p>
-
 <h2 id="かきかえる">かきかえる</h2>
-
 <p>MakeFileを編集します。</p>
-
 <p>(30行目くらい)</p>
-
-<pre><code class="language-makefile">TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-PSDK=C:\Program Files\Microsoft SDKs\Windows\v7.1
-PATH=$(PATH);C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
-## Uncomment to have newly compiled dlls copied to your mod's Assets directory
-YOURMOD=..
-</code></pre>
-
-<p>(123行目くらい)</p>
-
-<pre><code class="language-makefile">#### INCLUDES ####
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-GLOBAL_INCS=/I&quot;$(TOOLKIT)/include&quot; /I&quot;$(PSDK)/Include&quot; /I&quot;$(PSDK)/Include/mfc&quot; /I&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&quot;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
-</code></pre>
-
-<p>CvGameCoreDLL.rcを編集します。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">TOOLKIT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>PROGRAMFILES<span style="color:#66d9ef">)</span><span style="color:#ae81ff">\M</span>icrosoft Visual C++ Toolkit 2003
+<span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">か</span><span style="color:#960050;background-color:#1e0010">ら</span>
+PSDK<span style="color:#f92672">=</span>C:<span style="color:#ae81ff">\P</span>rogram Files<span style="color:#ae81ff">\M</span>icrosoft SDKs<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\v</span>7.1
+PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>PATH<span style="color:#66d9ef">)</span>;C:<span style="color:#ae81ff">\P</span>rogram Files <span style="color:#f92672">(</span>x86<span style="color:#f92672">)</span><span style="color:#ae81ff">\M</span>icrosoft Visual Studio 10.0<span style="color:#ae81ff">\V</span>C<span style="color:#ae81ff">\b</span>in
+<span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">で</span>
+<span style="color:#75715e">## Uncomment to have newly compiled dlls copied to your mod&#39;s Assets directory
+</span><span style="color:#75715e"></span>YOURMOD<span style="color:#f92672">=</span>..
+</code></pre></div><p>(123行目くらい)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">#### INCLUDES ####
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">か</span><span style="color:#960050;background-color:#1e0010">ら</span>
+GLOBAL_INCS<span style="color:#f92672">=</span>/I<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>TOOLKIT<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include</span><span style="color:#e6db74">&#34;</span> /I<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>PSDK<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Include</span><span style="color:#e6db74">&#34;</span> /I<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>PSDK<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Include/mfc</span><span style="color:#e6db74">&#34;</span> /I<span style="color:#e6db74">&#34;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include&#34;</span>
+<span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">で</span>
+</code></pre></div><p>CvGameCoreDLL.rcを編集します。<br>
 10行目をコメントアウトして2行分書き加えます。</p>
-
-<pre><code class="language-c">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ここから
-/////////////////////////////////////////////////////////////////////////////
-//
-// Generated from the TEXTINCLUDE 2 resource.
-//
-// #include &quot;afxres.h&quot;
-#include &lt;windows.h&gt;
-#define IDC_STATIC -1
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ここまで
-</code></pre>
-
-<p>次の内容でbuild.batをつくり、sdkフォルダに入れます。</p>
-
-<pre><code class="language-shell">@echo off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">か</span><span style="color:#960050;background-color:#1e0010">ら</span>
+<span style="color:#75715e">/////////////////////////////////////////////////////////////////////////////
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">// Generated from the TEXTINCLUDE 2 resource.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">// #include &#34;afxres.h&#34;
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;windows.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define IDC_STATIC -1</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">こ</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">で</span>
+</code></pre></div><p>次の内容でbuild.batをつくり、sdkフォルダに入れます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">@echo off
 rem Microsoft SDK 7.1の場合
-set NMAKE_BIN=&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&quot;
+set NMAKE_BIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin&#34;</span>
 cd /d %~dp0
 
-set TARGET=Release
-%NMAKE_BIN%\nmake
+set TARGET<span style="color:#f92672">=</span>Release
+%NMAKE_BIN%<span style="color:#ae81ff">\n</span>make
 
 pause
-</code></pre>
-
-<h2 id="実行">実行</h2>
-
+</code></pre></div><h2 id="実行">実行</h2>
 <p>build.batをダブルクリックして実行します。</p>
-
 <p>Assetsの中にCvGameCoreDll.dllができているはずです。</p>
-
 <p>Enjoy!</p>
-
 <h1 id="付録">付録</h1>
-
 <p>今回変更したファイルの<a href="https://gforestshade.github.io/kujira/src/howtocompile_diff.zip">差分</a></p>
-
 <h1 id="エラーが出た">エラーが出た</h1>
-
-<p>Microsoft Visual C++ 2010 再頒布可能パッケージがインストール済みだと、<br />
-SDKのインストールに失敗するようです。<br />
-参考：<br />
+<p>Microsoft Visual C++ 2010 再頒布可能パッケージがインストール済みだと、<br>
+SDKのインストールに失敗するようです。<br>
+参考：<br>
 <a href="https://support.microsoft.com/ja-jp/help/2934068/error-occurs-when-you-install-windows-sdk-for-windows-7-and-the-net-fr">https://support.microsoft.com/ja-jp/help/2934068/error-occurs-when-you-install-windows-sdk-for-windows-7-and-the-net-fr</a></p>
         </div>
         <div class="col-12">
@@ -492,7 +449,7 @@ SDKのインストールに失敗するようです。<br />
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

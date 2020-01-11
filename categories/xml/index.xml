@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>XML on Kujira, Civ4 Mod Blog</title>
@@ -19,29 +19,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4gamespeedinfo/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4GameSpeedInfo.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4GameSpeedInfo.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4gamespeedinfo&#34;&gt;&amp;lt;Civ4GameSpeedInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4GameInfoSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;gamespeedinfo&#34;&gt;&amp;lt;GameSpeedInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、ゲーム速度の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;GameSpeedInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;GameSpeedInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,29 +40,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4improvementinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4ImprovementInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Terrain\CIV4ImprovementInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4improvementinfos&#34;&gt;&amp;lt;Civ4ImprovementInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4TerrainSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;improvementinfo&#34;&gt;&amp;lt;ImprovementInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、地形改善の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;ImprovementInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;ImprovementInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,29 +61,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4bonusinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4BonusInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Warlords(J)\Assets\XML\Terrain\CIV4BonusInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4bonusinfos&#34;&gt;&amp;lt;Civ4BonusInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4TerrainSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;bonusinfo&#34;&gt;&amp;lt;BonusInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、資源の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;BonusInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;BonusInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -115,50 +82,34 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4handicapinfo/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4HandicapInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4HandicapInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;難易度の影響範囲&#34;&gt;難易度の影響範囲&lt;/h1&gt;
-
-&lt;p&gt;&lt;em class=&#34;handicap-player&#34;&gt;各プレイヤー向け設定値&lt;/em&gt;&lt;br /&gt;
-実は、難易度は人間・AI問わずすべてのプレイヤーに設定されています。&lt;br /&gt;
-初期〈幸福〉や〈衛生〉などは、すべてのプレイヤーが、自分自身に設定されている難易度を参照します。&lt;br /&gt;
-通常、AIプレイヤーの難易度は貴族で固定です。(これはGlobalDefines.xmlのSTANDARD_HANDICAPで変更可能です)&lt;br /&gt;
-例：&lt;br /&gt;
+&lt;p&gt;&lt;em class=&#34;handicap-player&#34;&gt;各プレイヤー向け設定値&lt;/em&gt;&lt;br&gt;
+実は、難易度は人間・AI問わずすべてのプレイヤーに設定されています。&lt;br&gt;
+初期〈幸福〉や〈衛生〉などは、すべてのプレイヤーが、自分自身に設定されている難易度を参照します。&lt;br&gt;
+通常、AIプレイヤーの難易度は貴族で固定です。(これはGlobalDefines.xmlのSTANDARD_HANDICAPで変更可能です)&lt;br&gt;
+例：&lt;br&gt;
 難易度が高いほど自分の維持費が上昇する&lt;/p&gt;
-
-&lt;p&gt;&lt;em class=&#34;handicap-game&#34;&gt;ゲーム全体向け設定値&lt;/em&gt;&lt;br /&gt;
-すべての人間プレイヤーの難易度を平均したものが「ゲーム全体の難易度」として設定されます。&lt;br /&gt;
-(通常、「ゲーム全体の難易度」を直接確認することはできませんが、&lt;br /&gt;
- シングルゲームなら人間プレイヤーが1人なので、&lt;br /&gt;
- その人間プレイヤーが選んだ難易度がゲーム全体の難易度と一致します。)&lt;/p&gt;
-
-&lt;p&gt;AIプレイヤーや蛮族に作用する設定は、この「ゲーム全体の難易度」の設定値を参照します。&lt;br /&gt;
-例：&lt;br /&gt;
+&lt;p&gt;&lt;em class=&#34;handicap-game&#34;&gt;ゲーム全体向け設定値&lt;/em&gt;&lt;br&gt;
+すべての人間プレイヤーの難易度を平均したものが「ゲーム全体の難易度」として設定されます。&lt;br&gt;
+(通常、「ゲーム全体の難易度」を直接確認することはできませんが、&lt;br&gt;
+シングルゲームなら人間プレイヤーが1人なので、&lt;br&gt;
+その人間プレイヤーが選んだ難易度がゲーム全体の難易度と一致します。)&lt;/p&gt;
+&lt;p&gt;AIプレイヤーや蛮族に作用する設定は、この「ゲーム全体の難易度」の設定値を参照します。&lt;br&gt;
+例：&lt;br&gt;
 ゲーム全体の難易度(=人間が選択した難易度)が高いほどAIがユニット作成コストに割引を得る&lt;/p&gt;
-
 &lt;h1 id=&#34;各タグの説明&#34;&gt;各タグの説明&lt;/h1&gt;
-
 &lt;h2 id=&#34;civ4handicapinfos&#34;&gt;&amp;lt;Civ4HandicapInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4GameInfoSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;handicapinfo&#34;&gt;&amp;lt;HandicapInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、難易度の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;HandicapInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;HandicapInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -168,29 +119,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4projectinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4ProjectInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4ProjectInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4projectinfos&#34;&gt;&amp;lt;Civ4ProjectInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4GameInfoSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;projectinfo&#34;&gt;&amp;lt;ProjectInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、プロジェクトの定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;ProjectInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;ProjectInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -200,29 +140,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4promotioninfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4PromotionInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4PromotionInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4promotioninfos&#34;&gt;&amp;lt;Civ4PromotionInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4UnitSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;promotioninfo&#34;&gt;&amp;lt;PromotionInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、昇進の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;PromotionInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;PromotionInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -232,40 +161,26 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4buildingclassinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4BuildingClassInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingClassInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;遺産と建造物&#34;&gt;遺産と建造物&lt;/h1&gt;
-
-&lt;p&gt;遺産も一般建造物も、XML上ではどちらも建造物です。&lt;br /&gt;
-違うのは、このファイルで指定する建造数制限だけで、&lt;br /&gt;
-遺産ができることは一般建造物でもできますし、&lt;br /&gt;
-(遺産並みの強力な効果を持ち、完成ムービーを持つ一般建造物をつくる など)　&lt;br /&gt;
-逆に一般建造物ができることは遺産にもできます。&lt;br /&gt;
+&lt;p&gt;遺産も一般建造物も、XML上ではどちらも建造物です。&lt;br&gt;
+違うのは、このファイルで指定する建造数制限だけで、&lt;br&gt;
+遺産ができることは一般建造物でもできますし、&lt;br&gt;
+(遺産並みの強力な効果を持ち、完成ムービーを持つ一般建造物をつくる など)　&lt;br&gt;
+逆に一般建造物ができることは遺産にもできます。&lt;br&gt;
 (遺産のUBをつくる など)　&lt;/p&gt;
-
 &lt;h1 id=&#34;各タグの説明&#34;&gt;各タグの説明&lt;/h1&gt;
-
 &lt;h2 id=&#34;civ4buildingclassinfos&#34;&gt;&amp;lt;Civ4BuildingClassInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4BuildingsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;buildingclassinfo&#34;&gt;&amp;lt;BuildingClassInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、建造物クラスの定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;BuildingClassInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;BuildingClassInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -275,36 +190,22 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4traitinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;Civ4TraitInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;このファイルはBtSでは更新されていません。BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Warlords(J)\Assets\XML\Civilizations\CIV4TraitInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;間違えやすい項目&#34;&gt;間違えやすい項目&lt;/h1&gt;
-
-&lt;p&gt;建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。&lt;br /&gt;
+&lt;p&gt;建造物の倍速・建造物からの〈幸福〉は建造物のほうで指定します。&lt;br&gt;
 建造物のページの&lt;a href=&#34;https://gforestshade.github.io/kujira/post/civ4buildinginfos/#productiontraits&#34;&gt;&amp;lt;ProductionTraits&amp;gt;&lt;/a&gt;と&lt;a href=&#34;https://gforestshade.github.io/kujira/post/civ4buildinginfos/#happinesstraits&#34;&gt;&amp;lt;HappinessTraits&amp;gt;&lt;/a&gt;も参照してください。&lt;/p&gt;
-
 &lt;h1 id=&#34;内容&#34;&gt;内容&lt;/h1&gt;
-
 &lt;h2 id=&#34;civ4traitinfos&#34;&gt;&amp;lt;Civ4TraitInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;traitinfo&#34;&gt;&amp;lt;TraitInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、文明の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;TraitInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;TraitInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -314,36 +215,22 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4techinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;Civ4TechInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Technologies\CIV4TechInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;一方向性&#34;&gt;一方向性&lt;/h1&gt;
-
-&lt;p&gt;技術は放棄を選択できないという特性があります。&lt;br /&gt;
+&lt;p&gt;技術は放棄を選択できないという特性があります。&lt;br&gt;
 技術で設定した事項は文明全体に恒久的な影響を及ぼすことに注意してください。&lt;/p&gt;
-
 &lt;h1 id=&#34;各タグの説明&#34;&gt;各タグの説明&lt;/h1&gt;
-
 &lt;h2 id=&#34;civ4techinfos&#34;&gt;&amp;lt;Civ4TechInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4TechnologiesSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;techinfo&#34;&gt;&amp;lt;TechInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、技術の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;TechInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;TechInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -362,38 +249,23 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4civicinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;Civ4CivicInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4CivicInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;間違えやすい設定項目&#34;&gt;間違えやすい設定項目&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;指導者の好む社会制度の設定は、各指導者のところにあります。&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;指導者の好む社会制度の設定は、各指導者のところにあります。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;解説&#34;&gt;解説&lt;/h1&gt;
-
 &lt;h2 id=&#34;civ4civicinfos&#34;&gt;&amp;lt;Civ4CivicInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4GameInfoSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;civicinfo&#34;&gt;&amp;lt;CivicInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、社会制度の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;CivicInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;CivicInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -403,29 +275,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4civilizationinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;Civ4CivilizationInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Civilizations\CIV4CivilizationInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4civilizationinfos&#34;&gt;&amp;lt;Civ4CivilizationInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;civilizationinfo&#34;&gt;&amp;lt;CivilizationInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、文明の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;CivilizationInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;CivilizationInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -435,33 +296,22 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4LeaderHeadInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Civilizations\CIV4LeaderHeadInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4leaderheadinfos&#34;&gt;&amp;lt;Civ4LeaderHeadInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4CivilizationsSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;leaderheadinfo&#34;&gt;&amp;lt;LeaderHeadInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、指導者の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;LeaderHeadInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;LeaderHeadInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>XMLキー一覧</title>
+      <title>XMLキー一覧_new</title>
       <link>https://gforestshade.github.io/kujira/post/keyichiran/</link>
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -476,29 +326,18 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4buildinginfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4BuildingInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4buildinginfos&#34;&gt;&amp;lt;Civ4BuildingInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4BuildingSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;buildinginfo&#34;&gt;&amp;lt;BuildingInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、建造物の定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;BuildingInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;BuildingInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -508,27 +347,19 @@
       
       <guid>https://gforestshade.github.io/kujira/post/civ4unitclassinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4ClassUnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitClassInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h1 id=&#34;ユニットクラス&#34;&gt;ユニットクラス&lt;/h1&gt;
-
-&lt;p&gt;ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、&lt;br /&gt;
-UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。&lt;br /&gt;
-雰囲気で察している方も多いのではないでしょうか。&lt;br /&gt;
-Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。&lt;br /&gt;
-どうなっているのか、図にしてみました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、&lt;br&gt;
+UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。&lt;br&gt;
+雰囲気で察している方も多いのではないでしょうか。&lt;br&gt;
+Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。&lt;br&gt;
+どうなっているのか、図にしてみました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -538,29 +369,18 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
       
       <guid>https://gforestshade.github.io/kujira/post/civ4unitinfos/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;p&gt;CIV4UnitInfos.xmlの各項目について説明しています。&lt;/p&gt;
-
 &lt;p&gt;BtSパッケージ版では&lt;/p&gt;
-
 &lt;p class=&#34;path&#34;&gt;
   C:\Program Files (x86)\CYBERFRONT\Sid Meier&#39;s Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitInfos.xml
 &lt;/p&gt;
 
-
 &lt;p&gt;にあります。&lt;/p&gt;
-
 &lt;h2 id=&#34;civ4unitinfos&#34;&gt;&amp;lt;Civ4UnitInfos&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;ルートタグです。名前空間として、&lt;code&gt;xmlns=&amp;quot;x-schema:CIV4UnitSchema.xml&amp;quot;&lt;/code&gt;を指定します。&lt;/p&gt;
-
 &lt;h2 id=&#34;unitinfo&#34;&gt;&amp;lt;UnitInfo&amp;gt;&lt;/h2&gt;
-
 &lt;p&gt;このタグ1つが、ユニットの定義1つと対応しています。&lt;/p&gt;
-
-&lt;p&gt;以下&amp;lt;UnitInfo&amp;gt;の中身です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以下&amp;lt;UnitInfo&amp;gt;の中身です。&lt;/p&gt;</description>
     </item>
     
   </channel>

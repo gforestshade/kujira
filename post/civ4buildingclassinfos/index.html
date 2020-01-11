@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-25",
     "description": "",
-    "wordCount": 1629
+    "wordCount":  1629 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -652,190 +652,120 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4BuildingClassInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Buildings\CIV4BuildingClassInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="遺産と建造物">遺産と建造物</h1>
-
-<p>遺産も一般建造物も、XML上ではどちらも建造物です。<br />
-違うのは、このファイルで指定する建造数制限だけで、<br />
-遺産ができることは一般建造物でもできますし、<br />
-(遺産並みの強力な効果を持ち、完成ムービーを持つ一般建造物をつくる など)　<br />
-逆に一般建造物ができることは遺産にもできます。<br />
+<p>遺産も一般建造物も、XML上ではどちらも建造物です。<br>
+違うのは、このファイルで指定する建造数制限だけで、<br>
+遺産ができることは一般建造物でもできますし、<br>
+(遺産並みの強力な効果を持ち、完成ムービーを持つ一般建造物をつくる など)　<br>
+逆に一般建造物ができることは遺産にもできます。<br>
 (遺産のUBをつくる など)　</p>
-
 <h1 id="各タグの説明">各タグの説明</h1>
-
 <h2 id="civ4buildingclassinfos">&lt;Civ4BuildingClassInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4BuildingsSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="buildingclassinfo">&lt;BuildingClassInfo&gt;</h2>
-
 <p>このタグ1つが、建造物クラスの定義1つと対応しています。</p>
-
 <p>以下&lt;BuildingClassInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>この建造物クラスの建造物クラスキーを定義します。<br />
+<p>この建造物クラスの建造物クラスキーを定義します。<br>
 他と被らなければなんでも構いませんが、BUILDINGCLASS_英語名 にするのが無難です。</p>
-
 <p>値：建造物クラスキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;BUILDINGCLASS_CASTLE&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>この建造物クラスの名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「城」<br />
+<p>例：「城」<br>
 &lt;Description&gt;TXT_KEY_BUILDING_CASTLE&lt;/Description&gt;</p>
-
 <h3 id="imaxglobalinstances">&lt;iMaxGlobalInstances&gt;</h3>
-
-<p>この建造物クラスを世界遺産として指定します。<br />
+<p>この建造物クラスを世界遺産として指定します。<br>
 ここに正の整数nを指定した場合、この建造物クラスは(UBも含めて)全世界合計でn個まで建設することができます。</p>
-
 <p>この建造物クラスが世界遺産ではない場合、<code>-1</code>を指定します。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxGlobalInstances&gt;-1&lt;/iMaxGlobalInstances&gt;</p>
-
-<p>例２：世界遺産(1個まで)<br />
+<p>例２：世界遺産(1個まで)<br>
 &lt;iMaxGlobalInstances&gt;1&lt;/iMaxGlobalInstances&gt;</p>
-
 <h3 id="imaxteaminstances">&lt;iMaxTeamInstances&gt;</h3>
-
-<p>この建造物クラスをチーム遺産として指定します。<br />
+<p>この建造物クラスをチーム遺産として指定します。<br>
 ここに正の整数nを指定した場合、この建造物クラスは(UBも含めて)同じチーム内で合計n個まで建設することができます。</p>
-
-<p>この建造物クラスがチーム遺産ではない場合、<code>-1</code>を指定します。<br />
+<p>この建造物クラスがチーム遺産ではない場合、<code>-1</code>を指定します。<br>
 BtSには、チーム遺産として指定されている建造物クラスはありません。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxTeamInstances&gt;-1&lt;/iMaxTeamInstances&gt;</p>
-
-<p>例２：チーム遺産(1個まで)<br />
+<p>例２：チーム遺産(1個まで)<br>
 &lt;iMaxTeamInstances&gt;1&lt;/iMaxTeamInstances&gt;</p>
-
 <h3 id="imaxplayerinstances">&lt;iMaxPlayerInstances&gt;</h3>
-
-<p>この建造物クラスを国家遺産として指定します。<br />
+<p>この建造物クラスを国家遺産として指定します。<br>
 ここに正の整数nを指定した場合、この建造物クラスはひとつの文明の中で合計n個まで建設することができます。</p>
-
 <p>この建造物クラスが国家遺産ではない場合、<code>-1</code>を指定します。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxPlayerInstances&gt;-1&lt;/iMaxPlayerInstances&gt;</p>
-
-<p>例２：国家遺産(1個まで)<br />
+<p>例２：国家遺産(1個まで)<br>
 &lt;iMaxPlayerInstances&gt;1&lt;/iMaxPlayerInstances&gt;</p>
-
 <h3 id="iextraplayerinstances">&lt;iExtraPlayerInstances&gt;</h3>
-
-<p>遺産を建て替えられるようにします。<br />
-ここに正の整数nを指定した場合、建造数上限に達していても、<br />
-さらにn個の都市でこの建造物クラスの生産をすることができるようになり、<br />
+<p>遺産を建て替えられるようにします。<br>
+ここに正の整数nを指定した場合、建造数上限に達していても、<br>
+さらにn個の都市でこの建造物クラスの生産をすることができるようになり、<br>
 生産完了時に文明内にある同じクラスの遺産は除去されます。</p>
-
-<p>この機能を使わない場合、0を指定します。<br />
-この機能を使う場合、通常は国家遺産の建造数上限を設定したうえで、ここに1を指定します。<br />
+<p>この機能を使わない場合、0を指定します。<br>
+この機能を使う場合、通常は国家遺産の建造数上限を設定したうえで、ここに1を指定します。<br>
 BtSでは、この属性を持つ建造物クラスは宮殿です。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iExtraPlayerInstances&gt;0&lt;/iExtraPlayerInstances&gt;</p>
-
-<p>例２：(宮殿のように建て替え可能にする)<br />
+<p>例２：(宮殿のように建て替え可能にする)<br>
 &lt;iExtraPlayerInstances&gt;1&lt;/iExtraPlayerInstances&gt;</p>
-
 <h3 id="bnolimit">&lt;bNoLimit&gt;</h3>
-
-<p>1都市に建てられる遺産の数にカウントされないようにします。<br />
-たとえばBtSでは非OCC時に1都市に建てられる国家遺産の数は2までですが、<br />
+<p>1都市に建てられる遺産の数にカウントされないようにします。<br>
+たとえばBtSでは非OCC時に1都市に建てられる国家遺産の数は2までですが、<br>
 ここに1が指定された国家遺産はその数にカウントされなくなります。</p>
-
-<p>この機能を使わない場合、0を指定します。<br />
+<p>この機能を使わない場合、0を指定します。<br>
 BtSでは、この属性を持つの建造物クラスは宮殿です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoLimit&gt;0&lt;/bNoLimit&gt;</p>
-
 <h3 id="bmonument">&lt;bMonument&gt;</h3>
-
-<p>そのままでは特に効果はありません。<br />
+<p>そのままでは特に効果はありません。<br>
 あとでPythonにおいて、ここにどちらが指定されているか読み取ることはできます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMonument&gt;0&lt;/bMonument&gt;</p>
-
 <h3 id="defaultbuilding">&lt;DefaultBuilding&gt;</h3>
-
 <p>この建造物クラスのデフォルトの分岐先である建造物を指定します。</p>
-
 <p>値：建造物キー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;DefaultBuilding&gt;BUILDING_CASTLE&lt;/DefaultBuilding&gt;</p>
-
 <h3 id="victorythresholds">&lt;VictoryThresholds&gt;</h3>
-
-<p>ゲームの勝利に貢献する建造物クラスとして指定します。<br />
-その勝利を達成するための条件の1つとして、<br />
+<p>ゲームの勝利に貢献する建造物クラスとして指定します。<br>
+その勝利を達成するための条件の1つとして、<br>
 この建造物クラスに属する建造物をn個保有することが必要になります。</p>
-
 <p>値：&lt;VictoryThreshold&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;VictoryThreshold&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;VictoryThreshold&gt;は以下の2つのタグを含みます。</p>
 <h4 id="victorytype">&lt;VictoryType&gt;</h4>
-
-<p>この建造物クラスが貢献する勝利条件です。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#勝利条件">勝利条件キー</a></p>
-
+<p>この建造物クラスが貢献する勝利条件です。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%8B%9D%E5%88%A9%E6%9D%A1%E4%BB%B6">勝利条件キー</a></p>
 <h4 id="ithreshold">&lt;iThreshold&gt;</h4>
-
-<p>必要数を指定します。<br />
+<p>必要数を指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>普通の建造物の場合、空タグにします。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;VictoryThresholds&gt;</p>
-
 <p>例２：宇宙勝利のためにこの建造物クラスが1つ必要</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
     &lt;VictoryThreshold&gt;
         &lt;VictoryType&gt;VICTORY_SPACE_RACE&lt;/VictoryType&gt;
         &lt;iThreshold&gt;1&lt;/iThreshold&gt;
     &lt;/VictoryThreshold&gt;
 &lt;/VictoryThresholds&gt;
-</code></pre>
+</code></pre></div>
         </div>
         <div class="col-12">
   
@@ -848,7 +778,7 @@ BtSでは、この属性を持つの建造物クラスは宮殿です。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

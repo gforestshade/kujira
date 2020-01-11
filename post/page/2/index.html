@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -176,7 +176,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -339,27 +339,19 @@ if (!doNotTrack) {
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4ClassUnitInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitClassInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h1 id="ユニットクラス">ユニットクラス</h1>
-
-<p>ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、<br />
-UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。<br />
-雰囲気で察している方も多いのではないでしょうか。<br />
-Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。<br />
+<p>ただ一口に「斧兵」といっても、個々の斧兵のことなのか、斧兵という種類のことなのか、<br>
+UUを含むのか含まないのか、どれのことなのか、いまいちよくわかりません。<br>
+雰囲気で察している方も多いのではないでしょうか。<br>
+Civ4はプログラムですから、内部ではもちろんきっちりと区別しています。<br>
 どうなっているのか、図にしてみました。</p>
-
-<p></p>
             
           
         </div>
@@ -422,29 +414,18 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4UnitInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h2 id="civ4unitinfos">&lt;Civ4UnitInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4UnitSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="unitinfo">&lt;UnitInfo&gt;</h2>
-
 <p>このタグ1つが、ユニットの定義1つと対応しています。</p>
-
 <p>以下&lt;UnitInfo&gt;の中身です。</p>
-
-<p></p>
             
           
         </div>
@@ -505,48 +486,31 @@ Civ4はプログラムですから、内部ではもちろんきっちりと区�
           
             
               <div class="alert alert-danger">
-  <p>より簡単な方法が公開されました。このページに従ってもできますが、<br />
+<p>より簡単な方法が公開されました。このページに従ってもできますが、<br>
 <a href="https://gforestshade.github.io/kujira/post/howtocompiledoc/">DoC全部入りパッケージ版</a>も参照してください。</p>
-
 </div>
-
-
 <h1 id="筆者の環境">筆者の環境</h1>
-
 <ul>
-<li>Windows 10 64bit<br /></li>
-<li>Civ4 BtS 3.19 パッケージ版<br />
-<br /></li>
+<li>Windows 10 64bit</li>
+<li>Civ4 BtS 3.19 パッケージ版</li>
 </ul>
-
 <h1 id="必要なもの">必要なもの</h1>
-
 <h2 id="microsoft-visual-c-toolkit-2003">Microsoft Visual C++ Toolkit 2003</h2>
-
 <p><a href="http://kael.civfanatics.net/files/VCToolkitSetup.exe">http://kael.civfanatics.net/files/VCToolkitSetup.exe</a></p>
-
 <h2 id="multi-threading-librarires">Multi Threading Librarires</h2>
-
-<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br />
-<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br />
+<p><a href="http://kael.civfanatics.net/files/msvcrt.lib">http://kael.civfanatics.net/files/msvcrt.lib</a><br>
+<a href="http://kael.civfanatics.net/files/msvcprt.lib">http://kael.civfanatics.net/files/msvcprt.lib</a><br>
 C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーします。</p>
-
 <h2 id="windows-7-sdk">Windows 7 SDK</h2>
-
-<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br />
-古いPSDK-x86.exeがWindows10でインストールできないようなので<br />
-新し目のSDKを<strong><em>ISOから</em></strong>インストールします。<br />
-64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br />
-マウントして、<strong><em>\Setup\SDKsetup.exeを</em></strong>実行します。<br />
+<p><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso">http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso</a><br>
+古いPSDK-x86.exeがWindows10でインストールできないようなので<br>
+新し目のSDKを<em><strong>ISOから</strong></em>インストールします。<br>
+64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。<br>
+マウントして、<em><strong>\Setup\SDKsetup.exeを</strong></em>実行します。<br>
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。</p>
-
-<h2 id="makefile-2-3">MakeFile 2.3</h2>
-
+<h2 id="makefile-23">MakeFile 2.3</h2>
 <p><a href="https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/">https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/</a></p>
-
 <h1 id="やってみる">やってみる</h1>
-
-<p></p>
             
           
         </div>
@@ -591,7 +555,7 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:04</time></p>
           
-          <p>4217  Words</p>
+          <p>4222  Words</p>
 
           
           <p>
@@ -618,19 +582,14 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの４回目<br /></li>
-<li>ついに各スペルの実装へ<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの４回目</li>
+<li>ついに各スペルの実装へ</li>
 </ul>
-
 <h1 id="湧き水">湧き水</h1>
-
-<p>お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。<br />
-</p>
+<p>お待たせしました！個別のスペル処理です。まず湧き水を見てみましょう。</p>
             
           
         </div>
@@ -675,7 +634,7 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:03</time></p>
           
-          <p>4126  Words</p>
+          <p>4140  Words</p>
 
           
           <p>
@@ -702,20 +661,15 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの３回目・Python共通編<br /></li>
-<li>クラスを活用する<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy8/">その８</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの３回目・Python共通編</li>
+<li>クラスを活用する</li>
 </ul>
-
 <h1 id="スペル情報クラス">スペル情報クラス</h1>
-
-<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br />
-このクラスを通してスペルのいろいろな情報を取得することができるようにします。<br />
-</p>
+<p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br>
+このクラスを通してスペルのいろいろな情報を取得することができるようにします。</p>
             
           
         </div>
@@ -760,7 +714,7 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:02</time></p>
           
-          <p>5652  Words</p>
+          <p>5683  Words</p>
 
           
           <p>
@@ -787,23 +741,18 @@ C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーしま�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの２回目・Python準備編<br /></li>
-<li>オブジェクト<br /></li>
-<li>リスト操作<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの２回目・Python準備編</li>
+<li>オブジェクト</li>
+<li>リスト操作</li>
 </ul>
-
 <h1 id="pythonファイル">Pythonファイル</h1>
-
-<p>Python側のファイル構成はいつもの感じです。<br />
-EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br />
+<p>Python側のファイル構成はいつもの感じです。<br>
+EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br>
 忘れてしまった方は<a href="https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py">こちら</a>にも置いてあります。</p>
-
-<pre><code class="language-plain">└─kujira_promospell
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_promospell
     └─Assets
         ├─Python
         │  ├─KujiraEventManager.py
@@ -817,9 +766,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
             │
             └─Units
                 └─CIV4PromotionInfos.xml
-</code></pre>
-
-<p></p>
+</code></pre></div>
             
           
         </div>
@@ -864,7 +811,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:01</time></p>
           
-          <p>3849  Words</p>
+          <p>3847  Words</p>
 
           
           <p>
@@ -891,33 +838,25 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの１回目・XML編<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy6/">その６</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの１回目・XML編</li>
 </ul>
-
 <h1 id="設計しよう">設計しよう</h1>
-
-<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br />
+<p>実際のMODの例として、簡単なスペルをつくっていきたいと思います。<br>
 簡単のために、以下の仕様でつくることにします。</p>
-
 <ul>
-<li>スペルと昇進を1対1で対応させる<br /></li>
-<li>発動条件は昇進を取得したとき一回きりとする<br /></li>
-<li>スペル昇進を取れるのは火器ユニットとする<br /></li>
-<li>具体的なスペル効果は以下の3種類とする<br /></li>
-<li>湧き水：砂漠が平原に変化する<br /></li>
-<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える<br /></li>
-<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br />
-ただしこれによって最大HPの60%を切ることはないようにする<br /></li>
-<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする<br />
-<br /></li>
+<li>スペルと昇進を1対1で対応させる</li>
+<li>発動条件は昇進を取得したとき一回きりとする</li>
+<li>スペル昇進を取れるのは火器ユニットとする</li>
+<li>具体的なスペル効果は以下の3種類とする</li>
+<li>湧き水：砂漠が平原に変化する</li>
+<li>毒散布：周囲1マスの敵対ユニットに弱体化昇進『毒』(戦闘力-20%)を与える</li>
+<li>火炎幕：周囲1マスの敵対ユニットに最大HPの10%のダメージを与える<br>
+ただしこれによって最大HPの60%を切ることはないようにする</li>
+<li>湧き水において砂漠以外で発動したときは不発になるが、昇進は戻ってこないようにする</li>
 </ul>
-
-<p></p>
             
           
         </div>
@@ -960,7 +899,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-05">2017-12-05 00:00</time></p>
           
-          <p>5382  Words</p>
+          <p>5367  Words</p>
 
           
 
@@ -1022,7 +961,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-04">2017-12-04 00:00</time></p>
           
-          <p>5588  Words</p>
+          <p>5619  Words</p>
 
           
 
@@ -1086,7 +1025,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-11-17">2017-11-17 00:00</time></p>
           
-          <p>4538  Words</p>
+          <p>4527  Words</p>
 
           
           <p>
@@ -1113,20 +1052,15 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy5/">その５</a>のつづき<br /></li>
-<li>もっともっとクラスをつかう<br /></li>
-<li>別ファイルからもつかう<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy5/">その５</a>のつづき</li>
+<li>もっともっとクラスをつかう</li>
+<li>別ファイルからもつかう</li>
 </ul>
-
 <h1 id="コードを読む">コードを読む</h1>
-
-<p>Civ4からあらかじめ提供されているクラスはまだまだあります。<br />
-今回はその中から比較的簡単で読みやすいクラスを例に<br />
-実際にコードを読み解いてみたいと思います。<br />
-</p>
+<p>Civ4からあらかじめ提供されているクラスはまだまだあります。<br>
+今回はその中から比較的簡単で読みやすいクラスを例に<br>
+実際にコードを読み解いてみたいと思います。</p>
             
           
         </div>
@@ -1169,7 +1103,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-11-16">2017-11-16 00:00</time></p>
           
-          <p>2042  Words</p>
+          <p>2041  Words</p>
 
           
 
@@ -1260,24 +1194,18 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき<br /></li>
-<li>もっとクラスをつかう<br /></li>
-<li>変数のスコープ<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy4/">その４</a>のつづき</li>
+<li>もっとクラスをつかう</li>
+<li>変数のスコープ</li>
 </ul>
-
 <h1 id="インスタンスの中のインスタンス">インスタンスの中のインスタンス</h1>
-
 <p>インスタンス変数にクラス型の変数を使う例を見てみましょう。</p>
-
-<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br />
-それを用いて<br />
-《建造された都市で生産されたユニットだけでなく、<br />
-その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br />
-をつくることです。<br />
-</p>
+<p>題材は、ちょっと賢い建造物クラス<code>KujiraBuilding</code>と、<br>
+それを用いて<br>
+《建造された都市で生産されたユニットだけでなく、<br>
+その都市で立ち止まったユニットにも衛生兵Ⅰを付与する赤十字》<br>
+をつくることです。</p>
             
           
         </div>
@@ -1322,7 +1250,7 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-23">2017-10-23 00:00</time></p>
           
-          <p>4306  Words</p>
+          <p>4293  Words</p>
 
           
           <p>
@@ -1349,33 +1277,26 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき<br /></li>
-<li>クラス巡り<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき</li>
+<li>クラス巡り</li>
 </ul>
-
 <h1 id="提供されているクラスを探訪してみる">提供されているクラスを探訪してみる</h1>
-
-<p>新しいクラスをつくる体験をしたところで、<br />
-既存のクラスを使ってみる体験もしてみます。<br />
+<p>新しいクラスをつくる体験をしたところで、<br>
+既存のクラスを使ってみる体験もしてみます。<br>
 <a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、すすめていきましょう。</p>
-
-<p>左上フレームにリストされているのが、クラス名(型名)です。<br />
-ためしにCyCityをクリックしてみましょう。<br />
-すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br />
-CyCity型のメソッドだけでもずいぶん数があります。<br />
+<p>左上フレームにリストされているのが、クラス名(型名)です。<br>
+ためしにCyCityをクリックしてみましょう。<br>
+すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br>
+CyCity型のメソッドだけでもずいぶん数があります。<br>
 流し読みしつつ、気になったのを見ていきましょう。</p>
-
-<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br />
-<span style="color:orange">BOOL</span> - ブール型(真と偽の2択)<br />
-<span style="color:red">INT</span> - 数値型<br />
-<span style="color:blue">VOID</span> - なし(戻り値を返さないもの)<br />
-<span style="color:maroon">茶色</span> - なにかのID(基本的なふるまいはINTと同じ)<br />
-<span style="color:green">緑色</span> - クラス型<br />
-こんな具合です。<br />
-</p>
+<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br>
+<span style="color:orange">BOOL</span> - ブール型(真と偽の2択)<br>
+<span style="color:red">INT</span> - 数値型<br>
+<span style="color:blue">VOID</span> - なし(戻り値を返さないもの)<br>
+<span style="color:maroon">茶色</span> - なにかのID(基本的なふるまいはINTと同じ)<br>
+<span style="color:green">緑色</span> - クラス型<br>
+こんな具合です。</p>
             
           
         </div>
@@ -1420,7 +1341,7 @@ CyCity型のメソッドだけでもずいぶん数があります。<br />
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-21">2017-10-21 00:00</time></p>
           
-          <p>3217  Words</p>
+          <p>3214  Words</p>
 
           
           <p>
@@ -1447,29 +1368,21 @@ CyCity型のメソッドだけでもずいぶん数があります。<br />
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき<br /></li>
-<li>クラス<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy2/">その２</a>のつづき</li>
+<li>クラス</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
 <p>kujira_classというMODを新しく作ります。</p>
-
 <h2 id="フォルダ構成">フォルダ構成</h2>
-
-<pre><code class="language-plain">└─kujira_class
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_class
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p></p>
+</code></pre></div>
             
           
         </div>
@@ -1541,21 +1454,15 @@ CyCity型のメソッドだけでもずいぶん数があります。<br />
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy1/">その１</a>のつづき<br /></li>
-<li>いろいろ表示してみる<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy1/">その１</a>のつづき</li>
+<li>いろいろ表示してみる</li>
 </ul>
-
-<h1 id="4000年">-4000年</h1>
-
-<p><code>gc.getGame().getGameTurnYear()</code>により現在の年を取得します。<br />
-これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで<br />
+<h1 id="-4000年">-4000年</h1>
+<p><code>gc.getGame().getGameTurnYear()</code>により現在の年を取得します。<br>
+これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで<br>
 Unicode文字列を作り、表示してあげます。</p>
-
-<p>コードはこうなります&hellip;<br />
-</p>
+<p>コードはこうなります&hellip;</p>
             
           
         </div>
@@ -1600,7 +1507,7 @@ Unicode文字列を作り、表示してあげます。</p>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-17">2017-10-17 00:00</time></p>
           
-          <p>3522  Words</p>
+          <p>3694  Words</p>
 
           
           <p>
@@ -1627,21 +1534,15 @@ Unicode文字列を作り、表示してあげます。</p>
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <h2 id="これは何か">これは何か</h2>
-
-<p>これは、<br />
-「はじめてのPythonMOD」シリーズの続きです。<br />
-もうちょっとPythonの書き方について勉強して、<br />
+<p>これは、<br>
+「はじめてのPythonMOD」シリーズの続きです。<br>
+もうちょっとPythonの書き方について勉強して、<br>
 より思い通りに記述できるようになろう、というのが大きな目的です。</p>
-
 <h2 id="これは何でないか">これは何でないか</h2>
-
-<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br />
-また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。<br />
+<p>これは、前シリーズよりもさらに技術的な解説、Pythonの文法の解説に偏重しています。<br>
+また、「はじめてのPythonMOD」程度のMOD制作経験を前提としています。<br>
 コピペですぐ動くコードはあまりないかもしれません。</p>
-
-<p></p>
             
           
         </div>
@@ -1686,7 +1587,7 @@ Unicode文字列を作り、表示してあげます。</p>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-08-07">2017-08-07 00:00</time></p>
           
-          <p>6736  Words</p>
+          <p>6729  Words</p>
 
           
           <p>
@@ -1713,25 +1614,17 @@ Unicode文字列を作り、表示してあげます。</p>
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted6/">その６</a>のつづき<br /></li>
-<li>XMLとPythonの合わせ技・Python編<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted6/">その６</a>のつづき</li>
+<li>XMLとPythonの合わせ技・Python編</li>
 </ul>
-
 <h1 id="python">Python</h1>
-
-<p>残った効果「都市圏内をすべて草原化する」なんてことは<br />
+<p>残った効果「都市圏内をすべて草原化する」なんてことは<br>
 XMLではできません。Pythonで実装していきましょう。</p>
-
 <h2 id="構想">構想</h2>
-
-<p>いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。<br />
-「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。<br />
+<p>いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。<br>
+「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。<br>
 「都市圏内を草原化する」&hellip;&hellip;都市圏内とは何でしょうか？</p>
-
-<p></p>
             
           
         </div>
@@ -1776,7 +1669,7 @@ XMLではできません。Pythonで実装していきましょう。</p>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-08-06">2017-08-06 00:00</time></p>
           
-          <p>3058  Words</p>
+          <p>3056  Words</p>
 
           
           <p>
@@ -1803,30 +1696,23 @@ XMLではできません。Pythonで実装していきましょう。</p>
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a>のつづき<br /></li>
-<li>XMLとPythonの合わせ技・XML編<br /></li>
-<li>あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a>のつづき</li>
+<li>XMLとPythonの合わせ技・XML編</li>
+<li>あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません</li>
 </ul>
-
 <h1 id="構想">構想</h1>
-
-<p>これまでは既存の動作を変更してばかりでした。<br />
-Pythonでしかできない効果を持った新しい建造物を作りましょう！<br />
-とりあえず&rdquo;いつもの&rdquo;を作ります。</p>
-
-<pre><code class="language-txt">└─kujira_fert
+<p>これまでは既存の動作を変更してばかりでした。<br>
+Pythonでしかできない効果を持った新しい建造物を作りましょう！<br>
+とりあえず&quot;いつもの&quot;を作ります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_fert
     └─Assets
         └─Python
             ├─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p></p>
+</code></pre></div>
             
           
         </div>
@@ -1871,7 +1757,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-30">2017-07-30 00:00</time></p>
           
-          <p>3333  Words</p>
+          <p>3331  Words</p>
 
           
           <p>
@@ -1898,44 +1784,32 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき<br /></li>
-<li>リストと繰り返し<br /></li>
-<li>他のイベント<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき</li>
+<li>リストと繰り返し</li>
+<li>他のイベント</li>
 </ul>
-
 <h1 id="今日のmod">今日のMOD</h1>
-
 <h2 id="準備">準備</h2>
-
-<p>例によって<code>kujira_for</code>というMODを作ります。<br />
+<p>例によって<code>kujira_for</code>というMODを作ります。<br>
 <code>kujira_if</code>をフォルダごとコピーして、フォルダ名をリネームしましょう。</p>
-
-<pre><code class="language-txt">└─kujira_for
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_for
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<h2 id="構想">構想</h2>
-
-<p>《建造物が建設されたとき、その建造物がダンならば、<br />
-　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br />
-を作りましょう。<br />
+</code></pre></div><h2 id="構想">構想</h2>
+<p>《建造物が建設されたとき、その建造物がダンならば、<br>
+　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br>
+を作りましょう。<br>
 捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。</p>
-
-<p>バニラの建造物によくある<br />
-「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br />
-との違いに注意してください。<br />
-今作ろうとしているのはダンが建設完了したその瞬間に<br />
+<p>バニラの建造物によくある<br>
+「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br>
+との違いに注意してください。<br>
+今作ろうとしているのはダンが建設完了したその瞬間に<br>
 都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
-
-<p></p>
             
           
         </div>
@@ -2009,24 +1883,21 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
               <h1 id="はじめに">はじめに</h1>
 
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき<br></li>
-<li>その３でMODひとつしか作れなかったので応用編の別立て<br>
-<br></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき</li>
+<li>その３でMODひとつしか作れなかったので応用編の別立て</li>
 </ul>
 
 <h1 id="もう少し先へ">もう少し先へ</h1>
 
-<p>前半戦たるその３では<br>
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br>
+<p>前半戦たるその３では
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》
 を作りました。少し拡張してみましょう。</p>
 
 <p>「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」</p>
 
-<p>と思ったとします。が、少々厄介です。<br>
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。<br>
+<p>と思ったとします。が、少々厄介です。
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。</p>
-
-<p></p>
             
           
         </div>
@@ -2065,7 +1936,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

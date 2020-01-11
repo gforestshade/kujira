@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-05",
     "description": "",
-    "wordCount": 2113
+    "wordCount":  2113 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -357,145 +357,104 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
-<p>みなさん、農場は好きですか？<br />
-なんだかんだ言って、やはり人口維持のために農場はなくてはならない存在ではあります。<br />
-ですが、灌漑というシステムの存在で、置ける場所や出力が大きく変わってしまいます。<br />
+<p>みなさん、農場は好きですか？<br>
+なんだかんだ言って、やはり人口維持のために農場はなくてはならない存在ではあります。<br>
+ですが、灌漑というシステムの存在で、置ける場所や出力が大きく変わってしまいます。<br>
 それらの仕様についてみていきましょう。</p>
-
-<p></p>
-
 <h1 id="きれいな水">きれいな水</h1>
-
-<p><strong>きれいな水</strong>というのは、タイルに与えられる属性です。<br />
-川・湖・オアシスのいずれかに隣接している陸タイルには、きれいな水属性が与えられます。<br />
+<p><strong>きれいな水</strong>というのは、タイルに与えられる属性です。<br>
+川・湖・オアシスのいずれかに隣接している陸タイルには、きれいな水属性が与えられます。<br>
 (湖タイル・オアシスタイルそのものは、きれいな水属性ではありません)</p>
-
 <p>初期の文明は、「きれいな水タイル」「穀物資源のタイル」のいずれかにのみ農場をつくることができます。</p>
-
 <h1 id="灌漑通行可能">灌漑通行可能</h1>
-
-<p><strong>灌漑通行可能</strong>とは、タイルに与えられる属性です(ただし非表示です)。<br />
-初期状態では灌漑通行可能なタイルは存在しませんが、<br />
-官吏<small>(※)</small>を取得した文明圏の中にあるタイルであって、<br />
-「平地に建設されている都市タイル」「農場<small>(※)</small>」が<br />
+<p><strong>灌漑通行可能</strong>とは、タイルに与えられる属性です(ただし非表示です)。<br>
+初期状態では灌漑通行可能なタイルは存在しませんが、<br>
+官吏<small>(※)</small>を取得した文明圏の中にあるタイルであって、<br>
+「平地に建設されている都市タイル」「農場<small>(※)</small>」が<br>
 灌漑通行可能なタイルになります。</p>
-
 <p>つまり、灌漑通行可能タイルになるためには、「官吏の取得」と「農場を張る」の両方が必要です。</p>
-
 <h1 id="灌漑済み">灌漑済み</h1>
-
-<p><strong>灌漑済み</strong>とは、タイルに与えられる属性です。すべてのタイルに与えられうる属性ですが、<br />
+<p><strong>灌漑済み</strong>とは、タイルに与えられる属性です。すべてのタイルに与えられうる属性ですが、<br>
 農場と同時に建っている場合にのみ明示的に表示されます。</p>
-
 <ul>
-<li>きれいな水タイルは自動的に灌漑済みタイルでもあります。<br /></li>
-<li>灌漑済みのタイルが灌漑通行可能でもあるようになると、周囲1マスを灌漑済みにします。<br />
-<br /></li>
+<li>きれいな水タイルは自動的に灌漑済みタイルでもあります。</li>
+<li>灌漑済みのタイルが灌漑通行可能でもあるようになると、周囲1マスを灌漑済みにします。</li>
 </ul>
-
-<p>官吏以前の文明では、灌漑通行可能タイルが存在しないので、<br />
-必然的にきれいな水タイルのみが灌漑済みタイルになりますが、<br />
-官吏を取得すると農場や都市が灌漑通行可能タイルになるので、<br />
+<p>官吏以前の文明では、灌漑通行可能タイルが存在しないので、<br>
+必然的にきれいな水タイルのみが灌漑済みタイルになりますが、<br>
+官吏を取得すると農場や都市が灌漑通行可能タイルになるので、<br>
 灌漑を広げていくことができるようになります。</p>
-
 <h1 id="農場の建設条件">農場の建設条件</h1>
-
-<h2 id="生物学-small-small-以前">生物学<small>(※)</small>以前</h2>
-
+<h2 id="生物学smallsmall以前">生物学<small>(※)</small>以前</h2>
 <p>以下の条件をすべて満たすことが必要です。</p>
-
 <ul>
-<li>灌漑済みである<small>(※)</small><br /></li>
-<li>平地である<small>(※)</small><br /></li>
-<li>〈パン〉が1以上ある<small>(※)</small><br />
-<br /></li>
+<li>灌漑済みである<small>(※)</small></li>
+<li>平地である<small>(※)</small></li>
+<li>〈パン〉が1以上ある<small>(※)</small></li>
 </ul>
-
-<h2 id="生物学-small-small-以後">生物学<small>(※)</small>以後</h2>
-
+<h2 id="生物学smallsmall以後">生物学<small>(※)</small>以後</h2>
 <p>灌漑済み条件が外され、以下の条件をすべて満たすことが必要です。</p>
-
 <ul>
-<li>平地である<small>(※)</small><br /></li>
-<li>〈パン〉が1以上ある<small>(※)</small><br />
-<br /></li>
+<li>平地である<small>(※)</small></li>
+<li>〈パン〉が1以上ある<small>(※)</small></li>
 </ul>
-
-<p>ただし、「農場で改善可能な資源がある」ならば、これらの条件を無視して必ず建設できます。<br />
+<p>ただし、「農場で改善可能な資源がある」ならば、これらの条件を無視して必ず建設できます。<br>
 (そのタイルがたまたま灌漑済みでもあるならば、灌漑済みボーナスが受けられます)</p>
-
 <h1 id="農場の出力">農場の出力</h1>
-
 <ul>
-<li>農場には素の出力増加はありません。<small>(※)</small><br /></li>
-<li>灌漑済みタイルならば、+1〈パン〉<small>(※)</small><br /></li>
-<li>生物学を取得済みならば、+1〈パン〉<small>(※)</small><br /></li>
-<li>小麦・トウモロコシへの改善ならば+2〈パン〉、米への改善ならば+1〈パン〉<small>(※)</small><br />
-<br /></li>
+<li>農場には素の出力増加はありません。<small>(※)</small></li>
+<li>灌漑済みタイルならば、+1〈パン〉<small>(※)</small></li>
+<li>生物学を取得済みならば、+1〈パン〉<small>(※)</small></li>
+<li>小麦・トウモロコシへの改善ならば+2〈パン〉、米への改善ならば+1〈パン〉<small>(※)</small></li>
 </ul>
-
 <h1 id="まとめ">まとめ</h1>
-
-<p>必要分は絶対に必要だけれど、ただ大量にあればいいというわけでもないのが食料。<br />
+<p>必要分は絶対に必要だけれど、ただ大量にあればいいというわけでもないのが食料。<br>
 農場のご利用は計画的に！</p>
-
 <h1 id="ところで">ところで</h1>
-
-<p>(※)で示した事項は、すべて個別にXMLでカスタマイズできます。<br />
-とくに、「灌漑通行可能な改善」と「灌漑済みであることにより恩恵を受ける改善」は<br />
-内部では別であることに注意してください。<br />
-「灌漑を通さないが灌漑から恩恵を受ける改善」や<br />
-「灌漑により恩恵を受けるわけではないが灌漑は通す改善」を<br />
+<p>(※)で示した事項は、すべて個別にXMLでカスタマイズできます。<br>
+とくに、「灌漑通行可能な改善」と「灌漑済みであることにより恩恵を受ける改善」は<br>
+内部では別であることに注意してください。<br>
+「灌漑を通さないが灌漑から恩恵を受ける改善」や<br>
+「灌漑により恩恵を受けるわけではないが灌漑は通す改善」を<br>
 つくることができます。</p>
-
 <h1 id="コーナーケース集">コーナーケース集</h1>
-
-<p><img src="https://gforestshade.github.io/kujira/img/irrigation_precivilservice_1.png" alt="" /><br />
-農場が置かれているかどうかと、灌漑済みであるかどうかには直接関係がありません。<br />
-左上のタイルには鉱山が置かれていますが、<br />
-依然としてそのタイルはきれいな水タイルであり、灌漑済みタイルでもあります。<br />
-鉱山という改善は灌漑からのボーナスが設定されていないだけです。<br />
-WBで全土に農場が置いてありますが、官吏がないので、灌漑通行可能タイルが存在せず、<br />
+<p><img src="https://gforestshade.github.io/kujira/img/irrigation_precivilservice_1.png" alt=""><br>
+農場が置かれているかどうかと、灌漑済みであるかどうかには直接関係がありません。<br>
+左上のタイルには鉱山が置かれていますが、<br>
+依然としてそのタイルはきれいな水タイルであり、灌漑済みタイルでもあります。<br>
+鉱山という改善は灌漑からのボーナスが設定されていないだけです。<br>
+WBで全土に農場が置いてありますが、官吏がないので、灌漑通行可能タイルが存在せず、<br>
 きれいな水タイルだけが灌漑済みタイルになります。</p>
-
-<hr />
-
-<p><img src="https://gforestshade.github.io/kujira/img/irrigation_postcivilservice_1.png" alt="" /><br />
-官吏を取得済みの文化圏内にある農場は灌漑通行可能タイルになります。<br />
-都市は平地にあるならば灌漑通行可能タイルになりますが、<br />
-この例では丘上にあるので灌漑通行可能タイルにはなりません。<br />
-灌漑済みのタイルが灌漑通行可能でもあるようになると、周囲1マスを灌漑済みにします。<br />
-この効果は連鎖し、どんどん灌漑が広がります。<br />
-さらにこの際の灌漑の広がりは、タイルの種類を問いません。<br />
-山岳や海洋タイルであっても容赦なく灌漑済みになります。<br />
+<hr>
+<p><img src="https://gforestshade.github.io/kujira/img/irrigation_postcivilservice_1.png" alt=""><br>
+官吏を取得済みの文化圏内にある農場は灌漑通行可能タイルになります。<br>
+都市は平地にあるならば灌漑通行可能タイルになりますが、<br>
+この例では丘上にあるので灌漑通行可能タイルにはなりません。<br>
+灌漑済みのタイルが灌漑通行可能でもあるようになると、周囲1マスを灌漑済みにします。<br>
+この効果は連鎖し、どんどん灌漑が広がります。<br>
+さらにこの際の灌漑の広がりは、タイルの種類を問いません。<br>
+山岳や海洋タイルであっても容赦なく灌漑済みになります。<br>
 (もちろん、山や海が灌漑されていても、農場が置けないので、通常は意味がありません)</p>
-
-<hr />
-
-<p><img src="https://gforestshade.github.io/kujira/img/irrigation_postcivilservice_2.png" alt="" /><br />
-というわけで、海上に無理やり農場を置いてみました。<br />
-海上にも灌漑が通っていて、下の農場は灌漑済みボーナスを受け取っていること、<br />
+<hr>
+<p><img src="https://gforestshade.github.io/kujira/img/irrigation_postcivilservice_2.png" alt=""><br>
+というわけで、海上に無理やり農場を置いてみました。<br>
+海上にも灌漑が通っていて、下の農場は灌漑済みボーナスを受け取っていること、<br>
 上の農場は灌漑済みではないので出力上昇がないことがわかります。</p>
-
-<hr />
-
-<p><img src="https://gforestshade.github.io/kujira/img/irrigation_betweencivic_1.png" alt="" /><br />
-農場が灌漑通行可能タイルになるのは、官吏を持っている文明の文化圏内だけです。<br />
-官吏ありのマヤの領土内(右側)では、農場と都市が灌漑通行可能タイルとなり、灌漑を広げます。<br />
-この灌漑の広がりは、国境線をも越えます。<br />
-官吏なしのインドの領土内(左側)では灌漑通行可能タイルが存在できませんが、<br />
+<hr>
+<p><img src="https://gforestshade.github.io/kujira/img/irrigation_betweencivic_1.png" alt=""><br>
+農場が灌漑通行可能タイルになるのは、官吏を持っている文明の文化圏内だけです。<br>
+官吏ありのマヤの領土内(右側)では、農場と都市が灌漑通行可能タイルとなり、灌漑を広げます。<br>
+この灌漑の広がりは、国境線をも越えます。<br>
+官吏なしのインドの領土内(左側)では灌漑通行可能タイルが存在できませんが、<br>
 マヤのおこぼれで灌漑済みタイルをいくつか得ています。</p>
-
-<hr />
-
-<p><img src="https://gforestshade.github.io/kujira/img/irrigation_betweencivic_2.png" alt="" /><br />
-官吏のあるなしを逆転してみたら、こうなります。<br />
-官吏なしのマヤの領土内(右側)から灌漑通行可能タイルが消えます。<br />
-灌漑は広がりません。<br />
-いっぽう官吏ありのインドの領土内(左側)の農場はすべて灌漑通行可能タイルになります。<br />
-が、きれいな水が存在せず、灌漑済み＆通行可能タイルも近くに存在しないので、<br />
-灌漑済みタイルを得ることができません。<br />
+<hr>
+<p><img src="https://gforestshade.github.io/kujira/img/irrigation_betweencivic_2.png" alt=""><br>
+官吏のあるなしを逆転してみたら、こうなります。<br>
+官吏なしのマヤの領土内(右側)から灌漑通行可能タイルが消えます。<br>
+灌漑は広がりません。<br>
+いっぽう官吏ありのインドの領土内(左側)の農場はすべて灌漑通行可能タイルになります。<br>
+が、きれいな水が存在せず、灌漑済み＆通行可能タイルも近くに存在しないので、<br>
+灌漑済みタイルを得ることができません。<br>
 農場は追加の出力を何も生み出さなくなります。</p>
         </div>
         <div class="col-12">
@@ -509,7 +468,7 @@ WBで全土に農場が置いてありますが、官吏がないので、灌漑
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

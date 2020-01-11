@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,7 +8,27 @@
   </url>
   
   <url>
+    <loc>https://gforestshade.github.io/kujira/categories/</loc>
+    <lastmod>2018-10-29T05:45:30+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gforestshade.github.io/kujira/post/civ4gamespeedinfo/</loc>
+    <lastmod>2018-10-29T05:45:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/</loc>
+    <lastmod>2018-10-29T05:45:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/post/</loc>
+    <lastmod>2018-10-29T05:45:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/xml/</loc>
     <lastmod>2018-10-29T05:45:30+09:00</lastmod>
   </url>
   
@@ -30,6 +50,11 @@
   <url>
     <loc>https://gforestshade.github.io/kujira/post/civ4projectinfos/</loc>
     <lastmod>2018-05-29T18:58:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</loc>
+    <lastmod>2018-05-29T16:22:20+09:00</lastmod>
   </url>
   
   <url>
@@ -69,6 +94,11 @@
   
   <url>
     <loc>https://gforestshade.github.io/kujira/post/civ4civilizationinfos/</loc>
+    <lastmod>2018-05-05T17:56:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/%E3%82%B3%E3%83%A9%E3%83%A0/</loc>
     <lastmod>2018-05-05T17:56:30+09:00</lastmod>
   </url>
   
@@ -118,7 +148,37 @@
   </url>
   
   <url>
+    <loc>https://gforestshade.github.io/kujira/tags/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/%E7%9B%AE%E6%AC%A1/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/python/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gforestshade.github.io/kujira/post/secondpy10/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E8%AC%9B%E5%BA%A7/</loc>
     <lastmod>2018-01-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -135,6 +195,11 @@
   <url>
     <loc>https://gforestshade.github.io/kujira/post/secondpy7/</loc>
     <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E4%BB%98%E9%8C%B2/</loc>
+    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -183,6 +248,11 @@
   </url>
   
   <url>
+    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEpythonmod/</loc>
+    <lastmod>2018-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gforestshade.github.io/kujira/post/getstarted7/</loc>
     <lastmod>2018-01-29T00:00:00+00:00</lastmod>
   </url>
@@ -218,8 +288,18 @@
   </url>
   
   <url>
+    <loc>https://gforestshade.github.io/kujira/page/</loc>
+    <lastmod>2017-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gforestshade.github.io/kujira/post/getstarted1/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</loc>
+    <lastmod>2017-05-15T12:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -240,100 +320,6 @@
   <url>
     <loc>https://gforestshade.github.io/kujira/page/about-me/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</loc>
-    <lastmod>2018-05-29T16:22:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/</loc>
-    <lastmod>2018-05-29T16:22:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</loc>
-    <lastmod>2017-05-15T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/page/</loc>
-    <lastmod>2017-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/post/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/python/</loc>
-    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/xml/</loc>
-    <lastmod>2018-10-29T05:45:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/</loc>
-    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEpythonmod/</loc>
-    <lastmod>2018-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/%E3%82%B3%E3%83%A9%E3%83%A0/</loc>
-    <lastmod>2018-05-05T17:56:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E4%BB%98%E9%8C%B2/</loc>
-    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/categories/%E7%9B%AE%E6%AC%A1/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gforestshade.github.io/kujira/tags/%E8%AC%9B%E5%BA%A7/</loc>
-    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

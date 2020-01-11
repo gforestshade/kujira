@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-03-04",
     "description": "",
-    "wordCount": 21852
+    "wordCount":  21852 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -3515,7 +3515,7 @@ if (!doNotTrack) {
                 
                 
                   
-                    iProductonModifier1
+                    iProductonModifier6
                   
               </div>
             
@@ -3966,620 +3966,380 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4UnitInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\Units\CIV4UnitInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h2 id="civ4unitinfos">&lt;Civ4UnitInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4UnitSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="unitinfo">&lt;UnitInfo&gt;</h2>
-
 <p>このタグ1つが、ユニットの定義1つと対応しています。</p>
-
 <p>以下&lt;UnitInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="class">&lt;Class&gt;</h3>
-
 <p>このユニットが属する親ユニットクラスを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
+<p>例：<br>
 &lt;Class&gt;UNITCLASS_WARRIOR&lt;/Class&gt;</p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>このユニットのユニットキーを定義します。<br />
+<p>このユニットのユニットキーを定義します。<br>
 他と被らなければなんでも構いませんが、UNIT_英語名 にするのが無難です。</p>
-
 <p>値：ユニットキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;UNIT_WARRIOR&lt;/Type&gt;</p>
-
 <h3 id="uniquenames">&lt;UniqueNames&gt;</h3>
-
-<p>ユニット一体一体にこの中からランダムで名前がつきます。BtSでは偉人で利用されています。<br />
+<p>ユニット一体一体にこの中からランダムで名前がつきます。BtSでは偉人で利用されています。<br>
 この機能を利用しないなら空タグにします。</p>
-
 <p>値：テキストキーの配列</p>
-
 <p>例：</p>
-
-<pre><code class="language-plain">&lt;UniqueNames&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UniqueNames&gt;
     &lt;UniqueName&gt;TXT_KEY_UNITNAME_WARRIOR_1&lt;/UniqueName&gt;
     &lt;UniqueName&gt;TXT_KEY_UNITNAME_WARRIOR_2&lt;/UniqueName&gt;
     &lt;UniqueName&gt;TXT_KEY_UNITNAME_WARRIOR_3&lt;/UniqueName&gt;
 &lt;/UniqueNames&gt;
-</code></pre>
-
-<h3 id="special">&lt;Special&gt;</h3>
-
-<p>このユニットの搭乗タイプを指定します。<br />
-船の方の<a href="#specialcargo">&lt;SpecialCargo&gt;</a>で同じ値を設定すると、<br />
+</code></pre></div><h3 id="special">&lt;Special&gt;</h3>
+<p>このユニットの搭乗タイプを指定します。<br>
+船の方の<a href="#specialcargo">&lt;SpecialCargo&gt;</a>で同じ値を設定すると、<br>
 その船に搭乗できるようになります。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#搭載分類">搭乗タイプキー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%90%AD%E8%BC%89%E5%88%86%E9%A1%9E">搭乗タイプキー</a></p>
+<p>例１：<br>
 &lt;Special&gt;NONE&lt;/Special&gt;</p>
-
-<p>例２：<br />
-&lt;Special&gt;SPECIALUNIT_PEOPLE&lt;/Special&gt;<br />
-→ キャラベル船や攻撃型潜水艦の&lt;SpecialCargo&gt;にも同じ値が設定されているため、<br />
+<p>例２：<br>
+&lt;Special&gt;SPECIALUNIT_PEOPLE&lt;/Special&gt;<br>
+→ キャラベル船や攻撃型潜水艦の&lt;SpecialCargo&gt;にも同じ値が設定されているため、<br>
 キャラベル船や攻撃型潜水艦に搭乗可能になる(斥候・宣教師 など)</p>
-
 <h3 id="capture">&lt;Capture&gt;</h3>
-
-<p>このユニットが捕獲可能か、捕獲可能ならどのユニットとして捕獲されるかを指定します。<br />
-ここにキーを指定した場合、このユニットが何であるかには関係なく、<br />
-戦闘時必ず敗北し、指定したユニットとして敵側に加入します。(開拓者→労働者 など)<br />
-ユニットの種類が変わってほしくない場合は、<a href="#class">&lt;Class&gt;</a>と同じ値を指定します。<br />
+<p>このユニットが捕獲可能か、捕獲可能ならどのユニットとして捕獲されるかを指定します。<br>
+ここにキーを指定した場合、このユニットが何であるかには関係なく、<br>
+戦闘時必ず敗北し、指定したユニットとして敵側に加入します。(開拓者→労働者 など)<br>
+ユニットの種類が変わってほしくない場合は、<a href="#class">&lt;Class&gt;</a>と同じ値を指定します。<br>
 このユニットが捕獲不能な普通のユニットならば、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
+<p>例１：<br>
 &lt;Capture&gt;NONE&lt;/Capture&gt;</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;Capture&gt;UNITCLASS_WORKER&lt;/Capture&gt;</p>
-
 <h3 id="combat">&lt;Combat&gt;</h3>
-
 <p>このユニットがどの兵科であるか指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
+<p>例：<br>
 &lt;Combat&gt;UNITCOMBAT_MELEE&lt;/Combat&gt;</p>
-
 <h3 id="domain">&lt;Domain&gt;</h3>
-
-<p>このユニットの行動領域を指定します。<br />
+<p>このユニットの行動領域を指定します。<br>
 海洋ユニット・陸上ユニット・航空ユニットの別がここで決まります。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#行動領域">ユニット領域キー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%A1%8C%E5%8B%95%E9%A0%98%E5%9F%9F">ユニット領域キー</a></p>
+<p>例：<br>
 &lt;Domain&gt;DOMAIN_LAND&lt;/Domain&gt;</p>
-
 <h3 id="defaultunitai">&lt;DefaultUnitAI&gt;</h3>
-
 <p>このユニットの既定の行動タイプを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニットai">ユニットAIタイプキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88ai">ユニットAIタイプキー</a></p>
+<p>例：<br>
 &lt;DefaultUnitAI&gt;UNITAI_ATTACK&lt;/DefaultUnitAI&gt;</p>
-
 <h3 id="invisible">&lt;Invisible&gt;</h3>
-
-<p>このユニットが他の文明からどのように不可視であるか指定します。<br />
-ここにキーを指定した場合、他の文明視点から見えなくなり攻撃も受けなくなりますが、<br />
-<a href="#seeinvisible">&lt;SeeInvisible&gt;</a>に同じ値が指定されているユニットの視界に入ると発見され、<br />
-発見されている間は見えるようになり攻撃も受けるようになります。<br />
-(潜水艦→駆逐艦によって発見される など)<br />
+<p>このユニットが他の文明からどのように不可視であるか指定します。<br>
+ここにキーを指定した場合、他の文明視点から見えなくなり攻撃も受けなくなりますが、<br>
+<a href="#seeinvisible">&lt;SeeInvisible&gt;</a>に同じ値が指定されているユニットの視界に入ると発見され、<br>
+発見されている間は見えるようになり攻撃も受けるようになります。<br>
+(潜水艦→駆逐艦によって発見される など)<br>
 このユニットが普通に見えるユニットの場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#不可視グループ">不可視タイプキー</a></p>
-
-<p>例１：<br />
-&lt;Invisible&gt;NONE&lt;/Invisible&gt;</p>
-
-<p>例２：潜水艦を発見するユニットが近くにいない限り不可視<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%B8%8D%E5%8F%AF%E8%A6%96%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">不可視タイプキー</a></p>
+<p>例１：<br>
+&lt;Invisible&gt;NONE&lt;/Invisible&gt;\</p>
+<p>例２：潜水艦を発見するユニットが近くにいない限り不可視<br>
 &lt;Invisible&gt;INVISIBLE_SUBMARINE&lt;/Invisible&gt;</p>
-
 <h3 id="seeinvisible">&lt;SeeInvisible&gt;</h3>
-
-<p>このユニットがどの不可視属性を発見できるかを指定します。<br />
+<p>このユニットがどの不可視属性を発見できるかを指定します。<br>
 このユニットが特に何も発見しない普通のユニットである場合、NONEを指定します。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#不可視グループ">不可視タイプキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%B8%8D%E5%8F%AF%E8%A6%96%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">不可視タイプキー</a></p>
+<p>例：<br>
 &lt;SeeInvisible&gt;NONE&lt;/SeeInvisible&gt;</p>
-
-<p>例２：潜水艦を発見<br />
+<p>例２：潜水艦を発見<br>
 &lt;SeeInvisible&gt;INVISIBLE_SUBMARINE&lt;/SeeInvisible&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>このユニットの名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
-&lt;Description&gt;TXT_KEY_UNIT_WARRIOR&lt;/Description&gt;<br />
+<p>例：<br>
+&lt;Description&gt;TXT_KEY_UNIT_WARRIOR&lt;/Description&gt;<br>
 →「戦士」</p>
-
 <h3 id="civilopedia">&lt;Civilopedia&gt;</h3>
-
 <p>このユニットのシヴィロペディアに表示される文章を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Civilopedia&gt;TXT_KEY_UNIT_WARRIOR_PEDIA&lt;/Civilopedia&gt;</p>
-
 <h3 id="strategy">&lt;Strategy&gt;</h3>
-
-<p>このユニットの短い説明文を指定します。<br />
+<p>このユニットの短い説明文を指定します。<br>
 シドのヒントやシヴィロペディアに表示されます。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_UNIT_WARRIOR_STRATEGY&lt;/Strategy&gt;</p>
-
 <h3 id="help">&lt;Help&gt;</h3>
-
-<p>このユニットの追加の説明文を指定します。<br />
-XMLに指定した要素については、説明文はある程度自動生成されますが、<br />
+<p>このユニットの追加の説明文を指定します。<br>
+XMLに指定した要素については、説明文はある程度自動生成されますが、<br>
 PythonやDLLにおいて直接拡張したときなどに利用します。</p>
-
 <p>利用しない場合は、タグごと省略します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_UNIT_WARRIOR_HELP&lt;/Strategy&gt;</p>
-
 <h3 id="advisor">&lt;Advisor&gt;</h3>
-
-<p>生産物を決めるポップアップにおいて、どの分類になるかを指定します。<br />
+<p>生産物を決めるポップアップにおいて、どの分類になるかを指定します。<br>
 推奨生産物に選ばれたときや、担当相の表示をオンにしているときなどに表示されます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#担当相">アドバイザーキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8B%85%E5%BD%93%E7%9B%B8">アドバイザーキー</a></p>
+<p>例：<br>
 &lt;Advisor&gt;ADVISOR_MILITARY&lt;/Advisor&gt;</p>
-
 <h3 id="banimal">&lt;bAnimal&gt;</h3>
-
 <p>1を指定した場合、このユニットは動物です。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bAnimal&gt;0&lt;/bAnimal&gt;</p>
-
 <h3 id="bfood">&lt;bFood&gt;</h3>
-
-<p>1を指定した場合、このユニットを生産する際、ハンマーに加えてパンを用いるようになります。<br />
+<p>1を指定した場合、このユニットを生産する際、ハンマーに加えてパンを用いるようになります。<br>
 (労働者・開拓者 など)</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bFood&gt;0&lt;/bFood&gt;</p>
-
 <h3 id="bnobadgoodies">&lt;bNoBadGoodies&gt;</h3>
-
 <p>1を指定した場合、このユニットは部族集落から敵対的な結果を引きません。</p>
-
 <p>BtSでは、斥候と探検家がこの属性を持ちます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoBadGoodies&gt;0&lt;/bNoBadGoodies&gt;</p>
-
 <h3 id="bonlydefensive">&lt;bOnlyDefensive&gt;</h3>
-
 <p>1を指定した場合、このユニットは自分から攻撃を仕掛けることができません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bOnlyDefensive&gt;0&lt;/bOnlyDefensive&gt;</p>
-
 <h3 id="bnocapture">&lt;bNoCapture&gt;</h3>
-
-<p>1を指定した場合、このユニットは捕獲・占領ができません。<br />
-1が指定されたユニットは、<a href="#capture">&lt;Capture&gt;</a>が指定されているユニットに<br />
-攻撃を仕掛けることはできますが、捕獲ユニットは入手できません。<br />
-また、都市上のユニットに攻撃を仕掛けることはできますが、<br />
+<p>1を指定した場合、このユニットは捕獲・占領ができません。<br>
+1が指定されたユニットは、<a href="#capture">&lt;Capture&gt;</a>が指定されているユニットに<br>
+攻撃を仕掛けることはできますが、捕獲ユニットは入手できません。<br>
+また、都市上のユニットに攻撃を仕掛けることはできますが、<br>
 ユニットのいない敵対都市に侵入することはできず、占領できません。</p>
-
 <p>BtSでは、この属性を持つのはガンシップです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoCapture&gt;0&lt;/bNoCapture&gt;</p>
-
 <h3 id="bquickcombat">&lt;bQuickCombat&gt;</h3>
-
 <p>1を指定した場合、このユニットの戦闘アニメーションは強制的にスキップされます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bQuickCombat&gt;0&lt;/bQuickCombat&gt;</p>
-
 <h3 id="brivalterritory">&lt;bRivalTerritory&gt;</h3>
-
 <p>1を指定した場合、このユニットは相互通商条約が無くてもライバル領土に侵入可能になります。</p>
-
 <p>BtSでは、この属性を持つのはキャラベル船や大商人などです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bRivalTerritory&gt;0&lt;/bRivalTerritory&gt;</p>
-
 <h3 id="bmilitaryhappiness">&lt;bMilitaryHappiness&gt;</h3>
-
-<p>1を指定した場合、このユニットは都市の治安に貢献します。<br />
-1が指定されたユニットが1体もいない都市からは、<br />
-「身の危険を感じる。軍の保護を求めたい！」の不満が発生します。<br />
+<p>1を指定した場合、このユニットは都市の治安に貢献します。<br>
+1が指定されたユニットが1体もいない都市からは、<br>
+「身の危険を感じる。軍の保護を求めたい！」の不満が発生します。<br>
 1が指定されたユニットは、「軍は本当に頼もしい」の満足(君主政治の効果)の対象としてカウントされます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMilitaryHappiness&gt;1&lt;/bMilitaryHappiness&gt;</p>
-
 <h3 id="bmilitarysupport">&lt;bMilitarySupport&gt;</h3>
-
-<p>1を指定した場合、このユニットは社会制度による追加の軍事ユニット維持費において(平和主義の効果)、<br />
+<p>1を指定した場合、このユニットは社会制度による追加の軍事ユニット維持費において(平和主義の効果)、<br>
 軍事ユニットとしてカウントされます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMilitarySupport&gt;1&lt;/bMilitarySupport&gt;</p>
-
 <h3 id="bmilitaryproduction">&lt;bMilitaryProduction&gt;</h3>
-
-<p>1を指定した場合、このユニットを生産する際に「軍事ユニット生産+〇〇%」の効果<br />
-(英雄叙事詩・警察国家 など)を受けることができます。<br />
-0を指定した場合、たとえこのユニットが戦闘力をもっていたとしても、<br />
+<p>1を指定した場合、このユニットを生産する際に「軍事ユニット生産+〇〇%」の効果<br>
+(英雄叙事詩・警察国家 など)を受けることができます。<br>
+0を指定した場合、たとえこのユニットが戦闘力をもっていたとしても、<br>
 このユニットは軍事ユニット生産ボーナスの対象になりません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMilitaryProduction&gt;1&lt;/bMilitaryProduction&gt;</p>
-
 <h3 id="bpillage">&lt;bPillage&gt;</h3>
-
 <p>1を指定した場合、このユニットはタイルを略奪できます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bPillage&gt;1&lt;/bPillage&gt;</p>
-
 <h3 id="bspy">&lt;bSpy&gt;</h3>
-
 <p>1を指定した場合、このユニットはライバル都市でスパイ活動ミッションを行うことができます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bSpy&gt;0&lt;/bSpy&gt;</p>
-
 <h3 id="bsabotage">&lt;bSabotage&gt;</h3>
-
 <p>WLのスパイシステム用です。BtSでは陳腐化しました。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bSabotage&gt;0&lt;/bSabotage&gt;</p>
-
 <h3 id="bdestroy">&lt;bDestroy&gt;</h3>
-
 <p>WLのスパイシステム用です。BtSでは陳腐化しました。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bDestroy&gt;0&lt;/bDestroy&gt;</p>
-
 <h3 id="bstealplans">&lt;bStealPlans&gt;</h3>
-
 <p>WLのスパイシステム用です。BtSでは陳腐化しました。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bStealPlans&gt;0&lt;/bStealPlans&gt;</p>
-
 <h3 id="binvestigate">&lt;bInvestigate&gt;</h3>
-
 <p>WLのスパイシステム用です。BtSでは陳腐化しました。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bInvestigate&gt;0&lt;/bInvestigate&gt;</p>
-
 <h3 id="bcounterspy">&lt;bCounterSpy&gt;</h3>
-
-<p>1を指定した場合、このユニットは防諜能力を持ちます。<br />
+<p>1を指定した場合、このユニットは防諜能力を持ちます。<br>
 同じタイルにいる敵スパイのミッション成功率が下がり、捕獲確率が上がります。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bCounterSpy&gt;0&lt;/bCounterSpy&gt;</p>
-
 <h3 id="bfound">&lt;bFound&gt;</h3>
-
-<p>1を指定した場合、このユニットは「都市の建設」コマンドを実行できます。<br />
+<p>1を指定した場合、このユニットは「都市の建設」コマンドを実行できます。<br>
 BtSでは、この属性を持つのは開拓者のみです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bFound&gt;0&lt;/bFound&gt;</p>
-
 <h3 id="bgoldenage">&lt;bGoldenAge&gt;</h3>
-
-<p>1を指定した場合、このユニットは黄金期を発動できます。<br />
+<p>1を指定した場合、このユニットは黄金期を発動できます。<br>
 BtSでは、この属性を持つのは大将軍以外の偉人ユニットです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bGoldenAge&gt;0&lt;/bGoldenAge&gt;</p>
-
 <h3 id="binvisible">&lt;bInvisible&gt;</h3>
-
-<p>1を指定した場合、このユニットは他の文明から完全に不可視になります。<br />
-<a href="#invisible">&lt;Invisible&gt;</a>とは異なり、決して発見されません。<br />
+<p>1を指定した場合、このユニットは他の文明から完全に不可視になります。<br>
+<a href="#invisible">&lt;Invisible&gt;</a>とは異なり、決して発見されません。<br>
 BtSでは、この属性を持つのはスパイと大スパイです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bInvisible&gt;0&lt;/bInvisible&gt;</p>
-
 <h3 id="bfirststrikeimmune">&lt;bFirstStrikeImmune&gt;</h3>
-
 <p>1を指定した場合、このユニットは相手の先制攻撃を無効化します。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bFirstStrikeImmune&gt;0&lt;/bFirstStrikeImmune&gt;</p>
-
 <h3 id="bnodefensivebonus">&lt;bNoDefensiveBonus&gt;</h3>
-
 <p>1を指定した場合、このユニットは防御ボーナスを受けられません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoDefensiveBonus&gt;0&lt;/bNoDefensiveBonus&gt;</p>
-
 <h3 id="bignorebuildingdefense">&lt;bIgnoreBuildingDefense&gt;</h3>
-
-<p>1を指定した場合、このユニットは攻撃時、建造物による都市防御ボーナスを無効化します。<br />
+<p>1を指定した場合、このユニットは攻撃時、建造物による都市防御ボーナスを無効化します。<br>
 BtSでは、火薬以降のユニットがこの属性を持ちます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bIgnoreBuildingDefense&gt;0&lt;/bIgnoreBuildingDefense&gt;</p>
-
 <h3 id="bcanmoveimpassable">&lt;bCanMoveImpassable&gt;</h3>
-
-<p>1を指定した場合、このユニットは通行不能な地形を通過できます。<br />
-ここで対象となるのは山岳や氷河といった純粋に通行不能な地形であり、<br />
-陸上⇔海上を行き来できるのではないことに注意してください。<br />
+<p>1を指定した場合、このユニットは通行不能な地形を通過できます。<br>
+ここで対象となるのは山岳や氷河といった純粋に通行不能な地形であり、<br>
+陸上⇔海上を行き来できるのではないことに注意してください。<br>
 BtSでは、この属性を持つのは潜水艦系統のみです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bCanMoveImpassable&gt;0&lt;/bCanMoveImpassable&gt;</p>
-
 <h3 id="bcanmoveallterrain">&lt;bCanMoveAllTerrain&gt;</h3>
-
-<p>1を指定した場合、このユニットは陸タイルと水タイルの両方に侵入可能になります。<br />
+<p>1を指定した場合、このユニットは陸タイルと水タイルの両方に侵入可能になります。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bCanMoveAllTerrain&gt;0&lt;/bCanMoveAllTerrain&gt;</p>
-
 <h3 id="bflatmovementcost">&lt;bFlatMovementCost&gt;</h3>
-
-<p>1を指定した場合、このユニットはタイルによる移動コスト修正を増減共に無視します。<br />
-この属性を持つユニットは、1マス進むのに必要な移動力が1に固定されます。<br />
-たとえ丘陵や死の灰があっても、逆に道路や鉄道があっても、<br />
-1マス進むのに移動力1で固定になります。<br />
+<p>1を指定した場合、このユニットはタイルによる移動コスト修正を増減共に無視します。<br>
+この属性を持つユニットは、1マス進むのに必要な移動力が1に固定されます。<br>
+たとえ丘陵や死の灰があっても、逆に道路や鉄道があっても、<br>
+1マス進むのに移動力1で固定になります。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bFlatMovementCost&gt;0&lt;/bFlatMovementCost&gt;</p>
-
 <h3 id="bignoreterraincost">&lt;bIgnoreTerrainCost&gt;</h3>
-
-<p>1を指定した場合、このユニットはタイルによる移動コスト増加修正を無視します。<br />
-この属性を持つユニットは、1マス進むのに必要な移動力が1を超えません。<br />
-たとえ丘陵や死の灰があっても、移動力1の消費で通過できます。<br />
-道路(コスト0.5)や鉄道(コスト0.1)があって消費移動力が1を下回る場合、<br />
-それをそのまま利用できます。<br />
+<p>1を指定した場合、このユニットはタイルによる移動コスト増加修正を無視します。<br>
+この属性を持つユニットは、1マス進むのに必要な移動力が1を超えません。<br>
+たとえ丘陵や死の灰があっても、移動力1の消費で通過できます。<br>
+道路(コスト0.5)や鉄道(コスト0.1)があって消費移動力が1を下回る場合、<br>
+それをそのまま利用できます。<br>
 BtSでは、この属性を持つのは探検家・ケシク・ガンシップです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bIgnoreTerrainCost&gt;0&lt;/bIgnoreTerrainCost&gt;</p>
-
 <h3 id="bnukeimmune">&lt;bNukeImmune&gt;</h3>
-
 <p>1を指定した場合、このユニットは核攻撃からの被害を受けません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNukeImmune&gt;0&lt;/bNukeImmune&gt;</p>
-
 <h3 id="bprereqbonuses">&lt;bPrereqBonuses&gt;</h3>
-
-<p>このユニットが陸上ユニットなら、1を指定した場合、<br />
-同じ大陸に可視状態の資源(なんでもよい)が<br />
+<p>このユニットが陸上ユニットなら、1を指定した場合、<br>
+同じ大陸に可視状態の資源(なんでもよい)が<br>
 1つ以上あるときにのみこのユニットを生産できます。</p>
-
-<p>このユニットが海洋ユニットなら、1を指定した場合、<br />
-都市が面しているひとつながりの水タイル群(海や湖)の中に<br />
-可視状態の資源(なんでもよい)が<br />
+<p>このユニットが海洋ユニットなら、1を指定した場合、<br>
+都市が面しているひとつながりの水タイル群(海や湖)の中に<br>
+可視状態の資源(なんでもよい)が<br>
 1つ以上あるときにのみこのユニットを生産できます。</p>
-
 <p>BtSでは、この属性を持つのは作業船のみです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bPrereqBonuses&gt;0&lt;/bPrereqBonuses&gt;</p>
-
 <h3 id="bprereqreligion">&lt;bPrereqReligion&gt;</h3>
-
-<p>1を指定した場合、このユニットは何らかの宗教(なんでもよい)が<br />
-布教されている都市でのみ生産できます。<br />
+<p>1を指定した場合、このユニットは何らかの宗教(なんでもよい)が<br>
+布教されている都市でのみ生産できます。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bPrereqReligion&gt;0&lt;/bPrereqReligion&gt;</p>
-
 <h3 id="bmechanized">&lt;bMechanized&gt;</h3>
-
-<p>1を指定した場合、このユニットは無生物ユニットです。<br />
-BtSでは、兵器や乗り物に該当するユニットがこの属性を持ちますが、<br />
+<p>1を指定した場合、このユニットは無生物ユニットです。<br>
+BtSでは、兵器や乗り物に該当するユニットがこの属性を持ちますが、<br>
 それを利用した効果は実装されていません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bMechanized&gt;0&lt;/bMechanized&gt;</p>
-
 <h3 id="brenderbelowwater">&lt;bRenderBelowWater&gt;</h3>
-
-<p>1を指定した場合、このユニットのグラフィックが<br />
-シヴィロペディアに表示される際水辺が背景に描写されます。<br />
+<p>1を指定した場合、このユニットのグラフィックが<br>
+シヴィロペディアに表示される際水辺が背景に描写されます。<br>
 このタグをタグごと省略した場合、陸上の背景になります。</p>
-
 <p>値：1か省略</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bRenderBelowWater&gt;1&lt;/bRenderBelowWater&gt;</p>
-
 <h3 id="bsuicide">&lt;bSuicide&gt;</h3>
-
-<p>1を指定した場合、このユニットは攻撃後に消滅します。<br />
+<p>1を指定した場合、このユニットは攻撃後に消滅します。<br>
 BtSでは、ミサイルに該当するユニットがこの属性を持ちます。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bSuicide&gt;0&lt;/bSuicide&gt;</p>
-
 <h3 id="blineofsight">&lt;bLineOfSight&gt;</h3>
-
-<p>1を指定した場合、プレイヤーはこのユニットが得る視界に関して、<br />
-このユニットが向いている方向のみの視界を得ます。<br />
-このタグをタグごと省略した場合、通常通り全方向の視界を得ます。<br />
+<p>1を指定した場合、プレイヤーはこのユニットが得る視界に関して、<br>
+このユニットが向いている方向のみの視界を得ます。<br>
+このタグをタグごと省略した場合、通常通り全方向の視界を得ます。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：1か省略</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bLineOfSight&gt;1&lt;/bLineOfSight&gt;</p>
-
 <h3 id="bhiddennationality">&lt;bHiddenNationality&gt;</h3>
-
-<p>1を指定した場合、このユニットは他の文明視点から国籍が蛮族であるかのように見えるようになります。<br />
-この属性単体では、国籍を秘匿する効果のみであり、<br />
-領土侵入能力や宣戦なし戦闘能力は得られないことに注意してください。<br />
+<p>1を指定した場合、このユニットは他の文明視点から国籍が蛮族であるかのように見えるようになります。<br>
+この属性単体では、国籍を秘匿する効果のみであり、<br>
+領土侵入能力や宣戦なし戦闘能力は得られないことに注意してください。<br>
 BtSでは、この属性を持つユニットは私掠船のみです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bHiddenNationality&gt;0&lt;/bHiddenNationality&gt;</p>
-
 <h3 id="balwayshostile">&lt;bAlwaysHostile&gt;</h3>
-
-<p>1を指定した場合、このユニットは他文明と敵対扱いになり、戦闘や略奪を実行できます。<br />
+<p>1を指定した場合、このユニットは他文明と敵対扱いになり、戦闘や略奪を実行できます。<br>
 BtSでは、この属性を持つユニットは私掠船のみです。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bAlwaysHostile&gt;0&lt;/bAlwaysHostile&gt;</p>
-
 <h3 id="unitclassupgrades">&lt;UnitClassUpgrades&gt;</h3>
-
-<p>このユニットのアップグレード先を指定します。<br />
-ここにリストされているユニット種がすべて生産可能になると、<br />
+<p>このユニットのアップグレード先を指定します。<br>
+ここにリストされているユニット種がすべて生産可能になると、<br>
 このユニットは陳腐化し、生産できなくなります。</p>
-
 <p>アップグレード先を指定したくない場合、空タグにします。</p>
-
 <p>値：&lt;UnitClassUpgrade&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitClassUpgrade&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitClassUpgrade&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitclassupgradetype">&lt;UnitClassUpgradeType&gt;</h4>
-
-<p>アップグレード先のユニットクラスです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>アップグレード先のユニットクラスです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <h4 id="bunitclassupgrade">&lt;bUnitClassUpgrade&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：斧兵と槍兵にアップグレード可能</p>
-
-<pre><code class="language-plain">&lt;UnitClassUpgrades&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitClassUpgrades&gt;
     &lt;UnitClassUpgrade&gt;
         &lt;UnitClassUpgradeType&gt;UNITCLASS_AXEMAN&lt;/UnitClassUpgradeType&gt;
         &lt;bUnitClassUpgrade&gt;1&lt;/bUnitClassUpgrade&gt;
@@ -4589,38 +4349,24 @@ BtSでは、この属性を持つユニットは私掠船のみです。</p>
         &lt;bUnitClassUpgrade&gt;1&lt;/bUnitClassUpgrade&gt;
     &lt;/UnitClassUpgrade&gt;
 &lt;/UnitClassUpgrades&gt;
-</code></pre>
-
-<h3 id="unitclasstargets">&lt;UnitClassTargets&gt;</h3>
-
-<p>このユニットはこのリストにあるユニット種を優先して攻撃します。<br />
-この属性は都市上にないスタックへの攻撃において防御ユニットの選択ルールを変更し、<br />
+</code></pre></div><h3 id="unitclasstargets">&lt;UnitClassTargets&gt;</h3>
+<p>このユニットはこのリストにあるユニット種を優先して攻撃します。<br>
+この属性は都市上にないスタックへの攻撃において防御ユニットの選択ルールを変更し、<br>
 指定したユニット種クラスが優先して選ばれるようにします。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;UnitClassTarget&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitClassTarget&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitClassTarget&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitclasstargettype">&lt;UnitClassTargetType&gt;</h4>
-
-<p>優先攻撃対象のユニットクラスです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>優先攻撃対象のユニットクラスです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <h4 id="bunitclasstarget">&lt;bUnitClassTarget&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：野戦でカノン砲と長距離砲を優先して攻撃する</p>
-
-<pre><code class="language-plain">&lt;UnitClassTargets&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitClassTargets&gt;
     &lt;UnitClassTarget&gt;
         &lt;UnitClassTargetType&gt;UNITCLASS_CANNON&lt;/UnitClassTargetType&gt;
         &lt;bUnitClassTarget&gt;1&lt;/bUnitClassTarget&gt;
@@ -4630,75 +4376,47 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;bUnitClassTarget&gt;1&lt;/bUnitClassTarget&gt;
     &lt;/UnitClassTarget&gt;
 &lt;/UnitClassTargets&gt;
-</code></pre>
-
-<h3 id="unitcombattargets">&lt;UnitCombatTargets&gt;</h3>
-
-<p>このユニットはこのリストにある兵科を持つユニットを優先して攻撃します。<br />
-この属性は都市上にないスタックへの攻撃において<br />
+</code></pre></div><h3 id="unitcombattargets">&lt;UnitCombatTargets&gt;</h3>
+<p>このユニットはこのリストにある兵科を持つユニットを優先して攻撃します。<br>
+この属性は都市上にないスタックへの攻撃において<br>
 防御ユニットの選択ルールを変更し、指定した兵科が優先して選ばれるようにします。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはクメール戦象のみです。</p>
-
 <p>値：&lt;UnitCombatTarget&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitCombatTarget&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitCombatTarget&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitcombattargettype">&lt;UnitCombatTargetType&gt;</h4>
-
-<p>優先攻撃対象のユニット戦闘タイプです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
+<p>優先攻撃対象のユニット戦闘タイプです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
 <h4 id="bunitcombattarget">&lt;bUnitCombatTarget&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：野戦で騎乗ユニットを優先して攻撃する</p>
-
-<pre><code class="language-plain">&lt;UnitCombatTargets&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitCombatTargets&gt;
     &lt;UnitCombatTarget&gt;
         &lt;UnitCombatTargetType&gt;UNITCOMBAT_MOUNTED&lt;/UnitCombatTargetType&gt;
         &lt;bUnitCombatTarget&gt;1&lt;/bUnitCombatTarget&gt;
     &lt;/UnitCombatTarget&gt;
 &lt;/UnitCombatTargets&gt;
-</code></pre>
-
-<h3 id="unitclassdefenders">&lt;UnitClassDefenders&gt;</h3>
-
-<p><a href="#unitclasstargets">&lt;UnitClassTargets&gt;</a>の防御版です。<br />
-この属性は、このユニットを含むスタックが指定したユニット種から攻撃されたとき、<br />
+</code></pre></div><h3 id="unitclassdefenders">&lt;UnitClassDefenders&gt;</h3>
+<p><a href="#unitclasstargets">&lt;UnitClassTargets&gt;</a>の防御版です。<br>
+この属性は、このユニットを含むスタックが指定したユニット種から攻撃されたとき、<br>
 防御ユニットの選択ルールを変更し、このユニットが優先して選ばれるようにします。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;UnitClassDefender&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitClassDefender&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitClassDefender&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitclassdefendertype">&lt;UnitClassDefenderType&gt;</h4>
-
-<p>優先防御対象のユニットクラスです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>優先防御対象のユニットクラスです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <h4 id="bunitclassdefender">&lt;bUnitClassDefender&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：まずは胸甲騎兵と騎兵隊に対して防戦を展開する</p>
-
-<pre><code class="language-plain">&lt;UnitClassDefenders&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitClassDefenders&gt;
     &lt;UnitClassDefender&gt;
         &lt;UnitClassDefenderType&gt;UNIT_CUIRASSIER&lt;/UnitClassDefenderType&gt;
         &lt;bUnitClassDefender&gt;1&lt;/bUnitClassDefender&gt;
@@ -4708,71 +4426,44 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;bUnitClassDefender&gt;1&lt;/bUnitClassDefender&gt;
     &lt;/UnitClassDefender&gt;
 &lt;/UnitClassDefenders&gt;
-</code></pre>
-
-<h3 id="unitcombatdefenders">&lt;UnitCombatDefenders&gt;</h3>
-
-<p><a href="#unitcombattargets">&lt;UnitCombatTargets&gt;</a>の防御版です。<br />
-この属性は、このユニットを含むスタックが指定した兵科から攻撃されたとき、<br />
+</code></pre></div><h3 id="unitcombatdefenders">&lt;UnitCombatDefenders&gt;</h3>
+<p><a href="#unitcombattargets">&lt;UnitCombatTargets&gt;</a>の防御版です。<br>
+この属性は、このユニットを含むスタックが指定した兵科から攻撃されたとき、<br>
 防御ユニットの選択ルールを変更し、このユニットが優先して選ばれるようにします。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;UnitCombatDefender&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitCombatDefender&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitCombatDefender&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitcombatdefendertype">&lt;UnitCombatDefenderType&gt;</h4>
-
-<p>優先防御対象のユニット戦闘タイプです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
+<p>優先防御対象のユニット戦闘タイプです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
 <h4 id="bunitcombatdefender">&lt;bUnitCombatDefender&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：まずは騎乗ユニットに対して防戦を展開する</p>
-
-<pre><code class="language-plain">&lt;UnitCombatDefenders&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitCombatDefenders&gt;
     &lt;UnitCombatDefender&gt;
         &lt;UnitCombatDefenderType&gt;UNITCOMBAT_MOUNTED&lt;/UnitCombatDefenderType&gt;
         &lt;bUnitCombatDefender&gt;1&lt;/bUnitCombatDefender&gt;
     &lt;/UnitCombatDefender&gt;
 &lt;/UnitCombatDefenders&gt;
-</code></pre>
-
-<h3 id="flankingstrikes">&lt;FlankingStrikes&gt;</h3>
-
-<p>このユニットの側面攻撃の対象となるユニット種のリストを指定します。<br />
+</code></pre></div><h3 id="flankingstrikes">&lt;FlankingStrikes&gt;</h3>
+<p>このユニットの側面攻撃の対象となるユニット種のリストを指定します。<br>
 側面攻撃を行わない場合、空タグにします。</p>
-
 <p>値：&lt;FlankingStrike&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FlankingStrike&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FlankingStrike&gt;は以下の2つのタグを含みます。</p>
 <h4 id="flankingstrikeunitclass">&lt;FlankingStrikeUnitClass&gt;</h4>
-
-<p>側面攻撃対象のユニットクラスです。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>側面攻撃対象のユニットクラスです。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <h4 id="iflankingstrength">&lt;iFlankingStrength&gt;</h4>
-
-<p>側面攻撃ダメージの修正値です。単位は%で、デフォルトは100です。<br />
+<p>側面攻撃ダメージの修正値です。単位は%で、デフォルトは100です。<br>
 値：整数</p>
-
 </div>
-
-
 <p>例：カタパルトとトレビュシェットへの側面攻撃</p>
-
-<pre><code class="language-plain">&lt;FlankingStrikes&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FlankingStrikes&gt;
     &lt;FlankingStrike&gt;
         &lt;FlankingStrikeUnitClass&gt;UNITCLASS_CATAPULT&lt;/FlankingStrikeUnitClass&gt;
         &lt;iFlankingStrength&gt;100&lt;/iFlankingStrength&gt;
@@ -4782,86 +4473,55 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;iFlankingStrength&gt;100&lt;/iFlankingStrength&gt;
     &lt;/FlankingStrike&gt;
 &lt;/FlankingStrikes&gt;
-</code></pre>
-
-<h3 id="unitais">&lt;UnitAIs&gt;</h3>
-
-<p>AI文明に対して、このユニットに指定したユニットAIを持たせることを強制的に許可します。<br />
-AI文明は、物理的に行動可能なユニットAIに<br />
-(例えば陸上ユニットには航空偵察は物理的にできないので排除します)、<br />
-<a href="#defaultunitai">&lt;DefaultUnitAI&gt;</a>と<a href="#unitais">&lt;UnitAIs&gt;</a>で指定されているものを加え、<br />
-その中から<a href="#notunitais">&lt;NotUnitAIs&gt;</a>に指定されているものを外した中から、<br />
+</code></pre></div><h3 id="unitais">&lt;UnitAIs&gt;</h3>
+<p>AI文明に対して、このユニットに指定したユニットAIを持たせることを強制的に許可します。<br>
+AI文明は、物理的に行動可能なユニットAIに<br>
+(例えば陸上ユニットには航空偵察は物理的にできないので排除します)、<br>
+<a href="#defaultunitai">&lt;DefaultUnitAI&gt;</a>と<a href="#unitais">&lt;UnitAIs&gt;</a>で指定されているものを加え、<br>
+その中から<a href="#notunitais">&lt;NotUnitAIs&gt;</a>に指定されているものを外した中から、<br>
 最も評価値が高いものをユニットAIとして選びます。</p>
-
 <p>値：&lt;UnitAI&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitAI&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitAI&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitaitype">&lt;UnitAIType&gt;</h4>
-
-<p>許可するユニットAIタイプを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニットAI">ユニットAIタイプキー</a></p>
-
+<p>許可するユニットAIタイプを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88AI">ユニットAIタイプキー</a></p>
 <h4 id="bunitai">&lt;bUnitAI&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：攻撃AIを許可する</p>
-
-<pre><code class="language-plain">&lt;UnitAIs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitAIs&gt;
     &lt;UnitAI&gt;
         &lt;UnitAIType&gt;UNITAI_ATTACK&lt;/UnitAIType&gt;
         &lt;bUnitAI&gt;1&lt;/bUnitAI&gt;
     &lt;/UnitAI&gt;
 &lt;/UnitAIs&gt;
-</code></pre>
-
-<h3 id="notunitais">&lt;NotUnitAIs&gt;</h3>
-
-<p>AI文明に対して、このユニットに指定したユニットAIを持たせることを禁止します。<br />
+</code></pre></div><h3 id="notunitais">&lt;NotUnitAIs&gt;</h3>
+<p>AI文明に対して、このユニットに指定したユニットAIを持たせることを禁止します。<br>
 リストの指定方法は<a href="#unitais">&lt;UnitAIs&gt;</a>と同じです。</p>
-
 <p>例：防御AIを禁止する</p>
-
-<pre><code class="language-plains">&lt;NotUnitAIs&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;NotUnitAIs&gt;
     &lt;UnitAI&gt;
         &lt;UnitAIType&gt;UNITAI_CITY_DEFENSE&lt;/UnitAIType&gt;
         &lt;bUnitAI&gt;1&lt;/bUnitAI&gt;
     &lt;/UnitAI&gt;
 &lt;/NotUnitAIs&gt;
-</code></pre>
-
-<h3 id="builds">&lt;Builds&gt;</h3>
-
-<p>このユニットは、ここに指定したタイル整備命令を実行できます。<br />
+</code></pre><h3 id="builds">&lt;Builds&gt;</h3>
+<p>このユニットは、ここに指定したタイル整備命令を実行できます。<br>
 タイル整備の速さについては、<a href="#iworkrate">&lt;iWorkRate&gt;</a>も参照してください。</p>
-
 <p>値：&lt;Build&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;Build&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;Build&gt;は以下の2つのタグを含みます。</p>
 <h4 id="buildtype">&lt;BuildType&gt;</h4>
-
-<p>許可する整備命令を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#整備命令">整備タイプキー</a></p>
-
+<p>許可する整備命令を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%95%B4%E5%82%99%E5%91%BD%E4%BB%A4">整備タイプキー</a></p>
 <h4 id="bbuild">&lt;bBuild&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：「道路の施設」コマンドと「鉄道の施設」コマンドを使用可能にする</p>
-
-<pre><code class="language-plains">&lt;Builds&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;Builds&gt;
     &lt;Build&gt;
         &lt;BuildType&gt;BUILD_ROAD&lt;/BuildType&gt;
         &lt;bBuild&gt;1&lt;/bBuild&gt;
@@ -4871,158 +4531,98 @@ AI文明は、物理的に行動可能なユニットAIに<br />
         &lt;bBuild&gt;1&lt;/bBuild&gt;
     &lt;/Build&gt;
 &lt;/Builds&gt;
-</code></pre>
-
-<h3 id="religionspreads">&lt;ReligionSpreads&gt;</h3>
-
+</code></pre><h3 id="religionspreads">&lt;ReligionSpreads&gt;</h3>
 <p>このユニットが布教できる宗教を指定します。</p>
-
-<p>布教力を指定した場合、<br />
+<p>布教力を指定した場合、<br>
 この値が自チームの都市への布教成功率の最低確率になります。</p>
-
-<p>都市にすでに布教されている宗教の数が多いほど、<br />
-布教成功率が100%から最低確率まで下がります。<br />
+<p>都市にすでに布教されている宗教の数が多いほど、<br>
+布教成功率が100%から最低確率まで下がります。<br>
 他チームの都市への布教では、最高確率は100%のままですが、最低確率が半減します。</p>
-
 <p>BtSの宣教師の布教力は40です。</p>
-
 <p>値：&lt;ReligionSpread&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ReligionSpread&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;ReligionSpread&gt;は以下の2つのタグを含みます。</p>
 <h4 id="religiontype">&lt;ReligionType&gt;</h4>
-
-<p>布教できる宗教を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
+<p>布教できる宗教を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
 <h4 id="ireligionspread">&lt;iReligionSpread&gt;</h4>
-
-<p>布教力を指定します。<br />
+<p>布教力を指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>例：ユダヤ教を布教可能にする</p>
-
-<pre><code class="language-plain">&lt;ReligionSpreads&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ReligionSpreads&gt;
     &lt;ReligionSpread&gt;
         &lt;ReligionType&gt;RELIGION_JUDAISM&lt;/ReligionType&gt;
         &lt;iReligionSpread&gt;40&lt;/iReligionSpread&gt;
     &lt;/ReligionSpread&gt;
 &lt;/ReligionSpreads&gt;
-</code></pre>
-
-<h3 id="corporationspreads">&lt;CorporationSpreads&gt;</h3>
-
+</code></pre></div><h3 id="corporationspreads">&lt;CorporationSpreads&gt;</h3>
 <p>このユニットが出店できる企業を指定します。</p>
-
-<p>出店力を指定した場合、<br />
+<p>出店力を指定した場合、<br>
 この値が自チームの都市への出店成功率の最低確率になります。</p>
-
-<p>都市にすでに出店されている企業の数が多いほど、<br />
-出店成功率が100%から最低確率まで下がります。<br />
-(企業の場合、競合の関係で全種類が出店されることはないため、<br />
+<p>都市にすでに出店されている企業の数が多いほど、<br>
+出店成功率が100%から最低確率まで下がります。<br>
+(企業の場合、競合の関係で全種類が出店されることはないため、<br>
 最低確率まで下がることはありません)</p>
-
 <p>他チームの都市への出店では、最高確率は100%のままですが、最低確率が半減します。</p>
-
 <p>BtSの重役の出店力は40です。</p>
-
 <p>値：&lt;CorporationSpread&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;CorporationSpread&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;CorporationSpread&gt;は以下の2つのタグを含みます。</p>
 <h4 id="corporationtype">&lt;CorporationType&gt;</h4>
-
-<p>出店できる企業を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#企業">企業キー</a></p>
-
+<p>出店できる企業を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%BC%81%E6%A5%AD">企業キー</a></p>
 <h4 id="icorporationspread">&lt;iCorporationSpread&gt;</h4>
-
-<p>出店力を指定します。<br />
+<p>出店力を指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>例：シリアル・ミルを出店可能にする</p>
-
-<pre><code class="language-plain">&lt;CorporationSpreads&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;CorporationSpreads&gt;
     &lt;CorporationSpread&gt;
         &lt;CorporationType&gt;CORPORATION_1&lt;/CorporationType&gt;
         &lt;iCorporationSpread&gt;40&lt;/iCorporationSpread&gt;
     &lt;/CorporationSpread&gt;
 &lt;/CorporationSpreads&gt;
-</code></pre>
-
-<h3 id="greatpeoples">&lt;GreatPeoples&gt;</h3>
-
+</code></pre></div><h3 id="greatpeoples">&lt;GreatPeoples&gt;</h3>
 <p>このユニットはここに指定された専門家として定住できます。</p>
-
-<p>特に定住できない普通のユニットの場合は空タグにします。<br />
+<p>特に定住できない普通のユニットの場合は空タグにします。<br>
 BtSでは偉人ユニットがこの属性を持ちます。</p>
-
 <p>値：&lt;GreatPeople&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;GreatPeople&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;GreatPeople&gt;は以下の2つのタグを含みます。</p>
 <h4 id="greatpeopletype">&lt;GreatPeopleType&gt;</h4>
-
-<p>どの専門家として定住を許可するか指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#専門家">専門家キー</a></p>
-
+<p>どの専門家として定住を許可するか指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%B0%82%E9%96%80%E5%AE%B6">専門家キー</a></p>
 <h4 id="bgreatpeople">&lt;bGreatPeople&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
 <p>例：偉大な科学者として都市に定住できる</p>
-
-<pre><code class="language-plain">&lt;GreatPeoples&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;GreatPeoples&gt;
     &lt;GreatPeople&gt;
         &lt;GreatPeopleType&gt;SPECIALIST_GREAT_SCIENTIST&lt;/GreatPeopleType&gt;
         &lt;bGreatPeople&gt;1&lt;/bGreatPeople&gt;
     &lt;/GreatPeople&gt;
 &lt;/GreatPeoples&gt;
-</code></pre>
-
-<h3 id="buildings">&lt;Buildings&gt;</h3>
-
-<p>このユニットを消費して、ここに指定した建造物を建設できます。<br />
-建造コマンドを実行するには、建造物のほうに設定されている建造条件を<br />
-満たしていなければなりません。<br />
-(士官学校を建設するには軍事科学の技術が必要となる など)<br />
+</code></pre></div><h3 id="buildings">&lt;Buildings&gt;</h3>
+<p>このユニットを消費して、ここに指定した建造物を建設できます。<br>
+建造コマンドを実行するには、建造物のほうに設定されている建造条件を<br>
+満たしていなければなりません。<br>
+(士官学校を建設するには軍事科学の技術が必要となる など)<br>
 建造コマンドを持たない普通のユニットの場合、空タグにします。</p>
-
 <p>値：&lt;Building&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;Building&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;Building&gt;は以下の2つのタグを含みます。</p>
 <h4 id="buildingtype">&lt;BuildingType&gt;</h4>
-
-<p>どの建造物を建設できるか指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物キー</a></p>
-
+<p>どの建造物を建設できるか指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物キー</a></p>
 <h4 id="bbuilding">&lt;bBuilding&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例：このユニットを消費して、&rdquo;スタンダード・エタノール本社&rdquo;・アルミニウム本社・アカデミーを建設できる<br />
+<p>例：このユニットを消費して、&ldquo;スタンダード・エタノール本社&rdquo;・アルミニウム本社・アカデミーを建設できる<br>
 (建造物ごとの前提条件を満たしていることが必要)</p>
-
-<pre><code class="language-plain">&lt;Buildings&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Buildings&gt;
     &lt;Building&gt;
         &lt;BuildingType&gt;BUILDING_CORPORATION_3&lt;/BuildingType&gt;
         &lt;bBuilding&gt;1&lt;/bBuilding&gt;
@@ -5036,955 +4636,597 @@ BtSでは偉人ユニットがこの属性を持ちます。</p>
         &lt;bBuilding&gt;1&lt;/bBuilding&gt;
     &lt;/Building&gt;
 &lt;/Buildings&gt;
-</code></pre>
-
-<h3 id="forcebuildings">&lt;ForceBuildings&gt;</h3>
-
-<p>このユニットを消費して、ここに指定した建造物を建設できます。<br />
+</code></pre></div><h3 id="forcebuildings">&lt;ForceBuildings&gt;</h3>
+<p>このユニットを消費して、ここに指定した建造物を建設できます。<br>
 <a href="#buildings">&lt;Buildings&gt;</a>とは異なり、建造物のほうに設定されている建造条件を無視します。</p>
-
-<p>リストの記述方法は<a href="#buildings">&lt;Buildings&gt;</a>と同じです。<br />
+<p>リストの記述方法は<a href="#buildings">&lt;Buildings&gt;</a>と同じです。<br>
 建造コマンドを持たない普通のユニットの場合、空タグにします。</p>
-
-<p>例：このユニットを消費して、総合組立工場を建設できる<br />
+<p>例：このユニットを消費して、総合組立工場を建設できる<br>
 (建造条件を無視し、必ず建設できる)</p>
-
-<pre><code class="language-plain">&lt;Buildings&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Buildings&gt;
     &lt;Building&gt;
         &lt;BuildingType&gt;BUILDING_GERMAN_ASSEMBLY_PLANT&lt;/BuildingType&gt;
         &lt;bBuilding&gt;1&lt;/bBuilding&gt;
     &lt;/Building&gt;
 &lt;/Buildings&gt;
-</code></pre>
-
-<h3 id="holycity">&lt;HolyCity&gt;</h3>
-
-<p>このユニットは指定した宗教の聖都でのみ生産できます。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+</code></pre></div><h3 id="holycity">&lt;HolyCity&gt;</h3>
+<p>このユニットは指定した宗教の聖都でのみ生産できます。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;HolyCity&gt;NONE&lt;/HolyCity&gt;</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;HolyCity&gt;RELIGION_JUDAISM&lt;/HolyCity&gt;</p>
-
-<h3 id="religiontype">&lt;ReligionType&gt;</h3>
-
-<p>このユニットは指定した宗教が布教されている都市を(どこかに)もつ文明でのみ生産できます。<br />
-&hellip;&hellip;という触れ込みですが、BtSではこの制限は実装されていません。<br />
-ここに何かを指定してもしなくても、追加の制限はとくにかかりません。<br />
+<h3 id="religiontype-1">&lt;ReligionType&gt;</h3>
+<p>このユニットは指定した宗教が布教されている都市を(どこかに)もつ文明でのみ生産できます。<br>
+&hellip;&hellip;という触れ込みですが、BtSではこの制限は実装されていません。<br>
+ここに何かを指定してもしなくても、追加の制限はとくにかかりません。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー？</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー？</a></p>
+<p>例：<br>
 &lt;ReligionType&gt;NONE&lt;/ReligionType&gt;</p>
-
 <h3 id="statereligion">&lt;StateReligion&gt;</h3>
-
-<p>このユニットは指定した宗教を国教に制定している文明の都市でのみ生産できます。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+<p>このユニットは指定した宗教を国教に制定している文明の都市でのみ生産できます。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;StateReligion&gt;NONE&lt;/StateReligion&gt;</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;StateReligion&gt;RELIGION_JUDAISM&lt;/StateReligion&gt;</p>
-
 <h3 id="prereqreligion">&lt;PrereqReligion&gt;</h3>
-
-<p>このユニットは指定した宗教が布教されている都市でのみ生産できます。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+<p>このユニットは指定した宗教が布教されている都市でのみ生産できます。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、各宣教師がこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#宗教">宗教キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%AE%97%E6%95%99">宗教キー</a></p>
+<p>例１：<br>
 &lt;PrereqReligion&gt;NONE&lt;/PrereqReligion&gt;</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;PrereqReligion&gt;RELIGION_JUDAISM&lt;/PrereqReligion&gt;</p>
-
 <h3 id="prereqcorporation">&lt;PrereqCorporation&gt;</h3>
-
-<p>このユニットは指定した企業が出店されている都市でのみ生産できます。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+<p>このユニットは指定した企業が出店されている都市でのみ生産できます。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、各重役がこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#企業">企業キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E4%BC%81%E6%A5%AD">企業キー</a></p>
+<p>例１：<br>
 &lt;PrereqCorporation&gt;NONE&lt;/PrereqCorporation&gt;</p>
-
-<p>例２：<br />
+<p>例２：<br>
 &lt;PrereqCorporation&gt;CORPORATION_1&lt;/PrereqCorporation&gt;</p>
-
 <h3 id="prereqbuilding">&lt;PrereqBuilding&gt;</h3>
-
-<p>このユニットは指定した建造物が建設されている都市でのみ生産できます。<br />
-そのような制限を設けない場合、NONEを指定します。<br />
+<p>このユニットは指定した建造物が建設されている都市でのみ生産できます。<br>
+そのような制限を設けない場合、NONEを指定します。<br>
 BtSでは、各宣教師がこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#建造物">建造物キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BB%BA%E9%80%A0%E7%89%A9">建造物キー</a></p>
+<p>例１：<br>
 &lt;PrereqBuilding&gt;NONE&lt;/PrereqBuilding&gt;</p>
-
-<p>例２：図書館が建設されている都市でのみ生産できる<br />
+<p>例２：図書館が建設されている都市でのみ生産できる<br>
 &lt;PrereqBuilding&gt;BUILDING_LIBRARY&lt;/PrereqBuilding&gt;</p>
-
 <h3 id="prereqtech">&lt;PrereqTech&gt;</h3>
-
-<p>このユニットは指定した技術を取得済みの文明でのみ生産できます。<br />
-前提技術を設定しない場合、NONEを指定します。<br />
-設定しない場合、他の前提条件が無ければ、いつでも生産可能になります。<br />
+<p>このユニットは指定した技術を取得済みの文明でのみ生産できます。<br>
+前提技術を設定しない場合、NONEを指定します。<br>
+設定しない場合、他の前提条件が無ければ、いつでも生産可能になります。<br>
 (戦士など)</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
 <p>例：あとで</p>
-
 <h3 id="techtypes">&lt;TechTypes&gt;</h3>
-
-<p>2つ以上の前提技術を指定したい場合、<br />
-<a href="#prereqtech">&lt;PrereqTech&gt;</a>に加えて、2つ目以降の追加の前提をここに記述します。<br />
-<a href="#prereqtech">&lt;PrereqTech&gt;</a>も含め、すべての技術を取得済みのときのみ<br />
+<p>2つ以上の前提技術を指定したい場合、<br>
+<a href="#prereqtech">&lt;PrereqTech&gt;</a>に加えて、2つ目以降の追加の前提をここに記述します。<br>
+<a href="#prereqtech">&lt;PrereqTech&gt;</a>も含め、すべての技術を取得済みのときのみ<br>
 このユニットを生産できます。</p>
-
-<p>ここでは最大で3つまでの技術キーを指定することができます。<br />
-メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br />
-最大4つの前提技術を指定できます。<br />
+<p>ここでは最大で3つまでの技術キーを指定することができます。<br>
+メインの<a href="#prereqtech">&lt;PrereqTech&gt;</a>とあわせて<br>
+最大4つの前提技術を指定できます。<br>
 (この数は GlobalDefines.xml の NUM_UNIT_AND_TECH_PREREQS で変更できます)</p>
-
 <p>追加の前提が必要ない場合は空タグにします。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a>のリスト</p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a>のリスト</p>
 <p>例１：メインの前提技術を青銅器にする</p>
-
-<pre><code class="language-plain">&lt;PrereqTech&gt;TECH_BRONZE_WORKING&lt;/PrereqTech&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PrereqTech&gt;TECH_BRONZE_WORKING&lt;/PrereqTech&gt;
 &lt;TechTypes /&gt;
-</code></pre>
-
-<p>例２：メインの前提技術を職業軍人・追加の前提技術をライフリング・騎乗にする<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
-
-<pre><code class="language-plain">&lt;PrereqTech&gt;TECH_MILITARY_TRADITION&lt;/PrereqTech&gt;
+</code></pre></div><p>例２：メインの前提技術を職業軍人・追加の前提技術をライフリング・騎乗にする<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;PrereqTech&gt;TECH_MILITARY_TRADITION&lt;/PrereqTech&gt;
 &lt;TechTypes&gt;
     &lt;PrereqTech&gt;TECH_RIFLING&lt;/PrereqTech&gt;
     &lt;PrereqTech&gt;TECH_HORSEBACK_RIDING&lt;/PrereqTech&gt;
     &lt;PrereqTech&gt;NONE&lt;/PrereqTech&gt;
 &lt;/TechTypes&gt;
-</code></pre>
-
-<h3 id="bonustype">&lt;BonusType&gt;</h3>
-
+</code></pre></div><h3 id="bonustype">&lt;BonusType&gt;</h3>
 <p>このユニットはここに指定した資源がある都市でのみ生産できます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
 <p>例：あとで</p>
-
 <h3 id="prereqbonuses">&lt;PrereqBonuses&gt;</h3>
-
-<p>2つ以上の前提資源を設定したい場合、ここに資源キーのリストを指定します。<br />
-&lt;BonusType&gt;の資源があって、&lt;PrereqBonuses&gt;のうちのいずれかの資源がある都市で、<br />
-このユニットは生産可能になります。<br />
+<p>2つ以上の前提資源を設定したい場合、ここに資源キーのリストを指定します。<br>
+&lt;BonusType&gt;の資源があって、&lt;PrereqBonuses&gt;のうちのいずれかの資源がある都市で、<br>
+このユニットは生産可能になります。<br>
 &lt;BonusType&gt;と&lt;PrereqBonuses&gt;の指定の仕方で資源の要求の仕方が変わってきます。</p>
-
 <dl>
-<dt>&lt;BonusType&gt;指定なし、&lt;PrereqBonuses&gt;指定なし の場合<br /></dt>
-<dd>このユニットは資源なしで生産できます。<br />
-<br /></dd>
-<dt>&lt;BonusType&gt;指定あり、&lt;PrereqBonuses&gt;指定なし の場合<br /></dt>
-<dd>このユニットは&lt;BonusType&gt;の資源がある都市で生産できます。<br />
-<br /></dd>
-<dt>&lt;BonusType&gt;指定なし、&lt;PrereqBonuses&gt;複数指定 の場合<br /></dt>
-<dd>このユニットは&lt;PrereqBonuses&gt;のうちの<strong><em>いずれか</em></strong>の資源がある都市で生産できます。<br />
-<br /></dd>
-<dt>&lt;BonusType&gt;指定あり、&lt;PrereqBonuses&gt;1つ指定 の場合<br /></dt>
-<dd>このユニットは&lt;BonusType&gt;と&lt;PrereqBonuses&gt;に<br />
-指定された<strong><em>両方</em></strong>の資源がある都市で生産できます。<br />
-<br /></dd>
+<dt>&lt;BonusType&gt;指定なし、&lt;PrereqBonuses&gt;指定なし の場合</dt>
+<dd>このユニットは資源なしで生産できます。</dd>
+<dt>&lt;BonusType&gt;指定あり、&lt;PrereqBonuses&gt;指定なし の場合</dt>
+<dd>このユニットは&lt;BonusType&gt;の資源がある都市で生産できます。</dd>
+<dt>&lt;BonusType&gt;指定なし、&lt;PrereqBonuses&gt;複数指定 の場合</dt>
+<dd>このユニットは&lt;PrereqBonuses&gt;のうちの<em><strong>いずれか</strong></em>の資源がある都市で生産できます。</dd>
+<dt>&lt;BonusType&gt;指定あり、&lt;PrereqBonuses&gt;1つ指定 の場合</dt>
+<dd>このユニットは&lt;BonusType&gt;と&lt;PrereqBonuses&gt;に<br>
+指定された<em><strong>両方</strong></em>の資源がある都市で生産できます。</dd>
 </dl>
-
-<p>ここには最大で NUM_UNIT_PREREQ_OR_BONUSES 個の資源キーを指定できます。<br />
-BtSではこの変数の値は4です。<br />
+<p>ここには最大で NUM_UNIT_PREREQ_OR_BONUSES 個の資源キーを指定できます。<br>
+BtSではこの変数の値は4です。<br>
 (この数は GlobalDefines.xml で変更できます)</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a>のリスト</p>
-
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a>のリスト</p>
 <p>例１：資源の制限をつけない</p>
-
-<pre><code class="language-plain">&lt;BonusType&gt;NONE&lt;/BonusType&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusType&gt;NONE&lt;/BonusType&gt;
 &lt;PrereqBonuses /&gt;
-</code></pre>
-
-<p>例２：銅または鉄があれば生産可能</p>
-
-<pre><code class="language-plain">&lt;BonusType&gt;NONE&lt;/BonusType&gt;
+</code></pre></div><p>例２：銅または鉄があれば生産可能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusType&gt;NONE&lt;/BonusType&gt;
 &lt;PrereqBonuses&gt;
     &lt;BonusType&gt;BONUS_COPPER&lt;/BonusType&gt;
     &lt;BonusType&gt;BONUS_IRON&lt;/BonusType&gt;
     &lt;BonusType&gt;NONE&lt;/BonusType&gt;
     &lt;BonusType&gt;NONE&lt;/BonusType&gt;
 &lt;/PrereqBonuses&gt;
-</code></pre>
-
-<p>例３：石油とアルミニウムの両方があれば生産可能</p>
-
-<pre><code class="language-plain">&lt;BonusType&gt;BONUS_OIL&lt;/BonusType&gt;
+</code></pre></div><p>例３：石油とアルミニウムの両方があれば生産可能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusType&gt;BONUS_OIL&lt;/BonusType&gt;
 &lt;PrereqBonuses&gt;
     &lt;BonusType&gt;BONUS_ALUMINUM&lt;/BonusType&gt;
     &lt;BonusType&gt;NONE&lt;/BonusType&gt;
     &lt;BonusType&gt;NONE&lt;/BonusType&gt;
     &lt;BonusType&gt;NONE&lt;/BonusType&gt;
 &lt;/PrereqBonuses&gt;
-</code></pre>
-
-<h3 id="productiontraits">&lt;ProductionTraits&gt;</h3>
-
+</code></pre></div><h3 id="productiontraits">&lt;ProductionTraits&gt;</h3>
 <p>このユニットの生産を加速する志向を指定します。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つのは開拓者と労働者です。</p>
-
 <p>値：&lt;ProductionTrait&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;ProductionTrait&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;ProductionTrait&gt;は以下の2つのタグを含みます。</p>
 <h4 id="productiontraittype">&lt;ProductionTraitType&gt;</h4>
-
-<p>志向を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#志向">志向キー</a></p>
-
+<p>志向を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BF%97%E5%90%91">志向キー</a></p>
 <h4 id="iproductiontrait">&lt;iProductionTrait&gt;</h4>
-
-<p>ハンマーへの修正値(単位：%)を指定します。<br />
+<p>ハンマーへの修正値(単位：%)を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;ProductionTraits /&gt;</p>
-
 <p>例２：拡張志向によって生産+25%</p>
-
-<pre><code class="language-plain">&lt;ProductionTraits&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;ProductionTraits&gt;
     &lt;ProductionTrait&gt;
         &lt;ProductionTraitType&gt;TRAIT_EXPANSIVE&lt;/ProductionTraitType&gt;
         &lt;iProductionTrait&gt;25&lt;/iProductionTrait&gt;
     &lt;/ProductionTrait&gt;
 &lt;/ProductionTraits&gt;
-</code></pre>
-
-<h3 id="flavors">&lt;Flavors&gt;</h3>
-
-<p><a href="#ibasediscover">&lt;iBaseDiscover&gt;</a>や<a href="#idiscovermultiplier">&lt;iDiscoverMultiplier&gt;</a>といっしょに指定することで、<br />
-このユニットは「テクノロジーを獲得」コマンド(電球消費)を実行することが可能になります。<br />
-ここでは、獲得/加速できる技術の種類をフレーバーで指定します。<br />
-現在研究可能な技術の中から、ここで指定したフレイバーを最も多く持つ技術が<br />
-電球の対象として選ばれます。<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
-
+</code></pre></div><h3 id="flavors">&lt;Flavors&gt;</h3>
+<p><a href="#ibasediscover">&lt;iBaseDiscover&gt;</a>や<a href="#idiscovermultiplier">&lt;iDiscoverMultiplier&gt;</a>といっしょに指定することで、<br>
+このユニットは「テクノロジーを獲得」コマンド(電球消費)を実行することが可能になります。<br>
+ここでは、獲得/加速できる技術の種類をフレーバーで指定します。<br>
+現在研究可能な技術の中から、ここで指定したフレイバーを最も多く持つ技術が<br>
+電球の対象として選ばれます。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>値：&lt;Flavor&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;Flavor&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;Flavor&gt;は以下の2つのタグを含みます。</p>
 <h4 id="flavortype">&lt;FlavorType&gt;</h4>
-
-<p>フレーバーを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#フレーバー">フレーバーキー</a></p>
-
+<p>フレーバーを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%95%E3%83%AC%E3%83%BC%E3%83%90%E3%83%BC">フレーバーキー</a></p>
 <h4 id="iflavor">&lt;iFlavor&gt;</h4>
-
-<p>そのフレーバーの重み値を指定します。<br />
+<p>そのフレーバーの重み値を指定します。<br>
 値：整数</p>
-
 </div>
-
-
 <p>例：電球コマンド発動時、科学フレーバーを多く持つ技術を選ぶようにする</p>
-
-<pre><code class="language-plain">&lt;Flavors&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;Flavors&gt;
     &lt;Flavor&gt;
         &lt;FlavorType&gt;FLAVOR_SCIENCE&lt;/FlavorType&gt;
         &lt;iFlavor&gt;1&lt;/iFlavor&gt;
     &lt;/Flavor&gt;
 &lt;/Flavors&gt;
-</code></pre>
-
-<h3 id="iaiweight">&lt;iAIWeight&gt;</h3>
-
-<p>AIの生産物評価値に対して、このユニットの評価値に修正を与えます。<br />
-正負どちらの値も指定でき、このユニットに対する評価値が一律その分だけ加算されます。<br />
+</code></pre></div><h3 id="iaiweight">&lt;iAIWeight&gt;</h3>
+<p>AIの生産物評価値に対して、このユニットの評価値に修正を与えます。<br>
+正負どちらの値も指定でき、このユニットに対する評価値が一律その分だけ加算されます。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAIWeight&gt;0&lt;/iAIWeight&gt;</p>
-
 <h3 id="icost">&lt;iCost&gt;</h3>
-
-<p>このユニットを生産するのに必要なハンマー数です。<br />
+<p>このユニットを生産するのに必要なハンマー数です。<br>
 -1を指定した場合、都市では生産できなくなります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCost&gt;15&lt;/iCost&gt;</p>
-
 <h3 id="ihurrycostmodifier">&lt;iHurryCostModifier&gt;</h3>
-
-<p>このユニットの緊急生産を行う際、ここに指定した数(単位：%)だけコストの修正を受けます。<br />
+<p>このユニットの緊急生産を行う際、ここに指定した数(単位：%)だけコストの修正を受けます。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iHurryCostModifier&gt;0&lt;/iHurryCostModifier&gt;</p>
-
-<p>例２：緊急生産コスト-50%<br />
+<p>例２：緊急生産コスト-50%<br>
 &lt;iHurryCostModifier&gt;-50&lt;/iHurryCostModifier&gt;</p>
-
 <h3 id="iadvancedstartcost">&lt;iAdvancedStartCost&gt;</h3>
-
-<p>先行スタートにおいて、このユニットは本来の購入コストから<br />
-ここに指定した割合(単位：%)を掛けた金額で購入できます。<br />
+<p>先行スタートにおいて、このユニットは本来の購入コストから<br>
+ここに指定した割合(単位：%)を掛けた金額で購入できます。<br>
 -1を指定した場合、このユニットは先行スタートで購入できません。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAdvancedStartCost&gt;100&lt;/iAdvancedStartCost&gt;</p>
-
-<p>例２：先行スタート時、本来の60%の価格で購入可能<br />
+<p>例２：先行スタート時、本来の60%の価格で購入可能<br>
 &lt;iAdvancedStartCost&gt;60&lt;/iAdvancedStartCost&gt;</p>
-
 <h3 id="iadvancedstartcostincrease">&lt;iAdvancedStartCostIncrease&gt;</h3>
-
-<p>先行スタートにおいて、このユニットは購入するごとに<br />
+<p>先行スタートにおいて、このユニットは購入するごとに<br>
 ここに指定した割合で(単位：%)購入コストが増加していきます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iAdvancedStartCostIncrease&gt;0&lt;/iAdvancedStartCostIncrease&gt;</p>
-
-<p>例２：先行スタート時、1体購入するごとに50%ずつ購入コスト増加<br />
+<p>例２：先行スタート時、1体購入するごとに50%ずつ購入コスト増加<br>
 &lt;iAdvancedStartCostIncrease&gt;50&lt;/iAdvancedStartCostIncrease&gt;</p>
-
 <h3 id="iminareasize">&lt;iMinAreaSize&gt;</h3>
-
-<p>都市が面している<a href="https://gforestshade.github.io/kujira/post/glossary/#水域">水域</a>の大きさがここで指定した数以上のときのみ、<br />
-このユニットを生産できます。<br />
+<p>都市が面している<a href="https://gforestshade.github.io/kujira/post/glossary/#%E6%B0%B4%E5%9F%9F">水域</a>の大きさがここで指定した数以上のときのみ、<br>
+このユニットを生産できます。<br>
 この機能を使わない場合、-1を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMinAreaSize&gt;-1&lt;/iMinAreaSize&gt;</p>
-
 <h3 id="imoves">&lt;iMoves&gt;</h3>
-
 <p>このユニットの移動力です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iMoves&gt;1&lt;/iMoves&gt;</p>
-
 <h3 id="bnorevealmap">&lt;bNoRevealMap&gt;</h3>
-
-<p>1を指定した場合、このユニットは未踏タイル<sup class="footnote-ref" id="fnref:unknown"><a href="#fn:unknown">3</a></sup>を視界に入れるようには移動できません。<br />
-結果として、このユニットは未踏タイルを明らかにできません。<br />
+<p>1を指定した場合、このユニットは未踏タイル<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>を視界に入れるようには移動できません。<br>
+結果として、このユニットは未踏タイルを明らかにできません。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bNoRevealMap&gt;0&lt;/bNoRevealMap&gt;</p>
-
 <h3 id="iairrange">&lt;iAirRange&gt;</h3>
-
-<p>このユニットの航空射程(行動範囲)です。<br />
+<p>このユニットの航空射程(行動範囲)です。<br>
 この範囲内で、爆撃、偵察、迎撃などを行うことができます。</p>
-
-<p>この属性は、間接攻撃範囲との兼用です。<br />
-このユニットが航空ユニットでなく、間接攻撃範囲と間接攻撃力の両方が正の値をとる場合、<br />
-このユニットはその範囲に間接攻撃が可能になります。<br />
+<p>この属性は、間接攻撃範囲との兼用です。<br>
+このユニットが航空ユニットでなく、間接攻撃範囲と間接攻撃力の両方が正の値をとる場合、<br>
+このユニットはその範囲に間接攻撃が可能になります。<br>
 <a href="#iaircombat">&lt;iAirCombat&gt;</a>と<a href="#iaircombatlimit">&lt;iAirCombatLimit&gt;</a>も参照してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAirRange&gt;0&lt;/iAirRange&gt;</p>
-
 <h3 id="iairunitcap">&lt;iAirUnitCap&gt;</h3>
-
-<p>このユニットはここに指定した分だけ都市の配備枠を占有します。<br />
-例えば空港のない都市には配備枠が4あり、<br />
-占有値が1のユニットを4機配備できます。<br />
-このユニットが航空ユニットであるにもかかわらずこの値を0に設定する場合、<br />
-このユニットは枠を占有しません。<br />
+<p>このユニットはここに指定した分だけ都市の配備枠を占有します。<br>
+例えば空港のない都市には配備枠が4あり、<br>
+占有値が1のユニットを4機配備できます。<br>
+このユニットが航空ユニットであるにもかかわらずこの値を0に設定する場合、<br>
+このユニットは枠を占有しません。<br>
 結果として、配備数に制限がなくなります。(ミサイルなど)</p>
-
-<p>この属性は、都市や要塞の配備数にのみ影響します。<br />
+<p>この属性は、都市や要塞の配備数にのみ影響します。<br>
 艦載数には影響しないことに注意してください。</p>
-
 <p>都市の配備枠については、建造物の<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#iairunitcapacity">&lt;iAirUnitCapacity&gt;</a>も参照してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAirUnitCap&gt;0&lt;/iAirUnitCap&gt;</p>
-
 <h3 id="idroprange">&lt;iDropRange&gt;</h3>
-
-<p>このユニットの空挺降下可能範囲です。<br />
+<p>このユニットの空挺降下可能範囲です。<br>
 ここに正の値を指定する場合、このユニットは空挺降下コマンドが実行可能になります。</p>
-
 <p>値：整数</p>
-
 <p>&lt;iDropRange&gt;0&lt;/iDropRange&gt;</p>
-
 <h3 id="inukerange">&lt;iNukeRange&gt;</h3>
-
-<p>このユニットが起こす核爆発の半径を指定します。<br />
-0以上の値nを指定した場合、このユニットは核攻撃コマンドを使用できるようになり、<br />
-着弾地点の周囲nマスに核爆発を起こします。<br />
+<p>このユニットが起こす核爆発の半径を指定します。<br>
+0以上の値nを指定した場合、このユニットは核攻撃コマンドを使用できるようになり、<br>
+着弾地点の周囲nマスに核爆発を起こします。<br>
 n=0のとき、着弾地点だけに被害を及ぼします。</p>
-
 <p>-1を指定した場合、このユニットは核攻撃コマンドを使用できません。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iNukeRange&gt;-1&lt;/iNukeRange&gt;</p>
-
 <h3 id="iworkrate">&lt;iWorkRate&gt;</h3>
-
-<p>このユニットの労働効率を指定します。<br />
-この値(単位：%)が高いほどタイル整備コマンドが早く終了します。<br />
-BtSの労働者は100%です。<br />
+<p>このユニットの労働効率を指定します。<br>
+この値(単位：%)が高いほどタイル整備コマンドが早く終了します。<br>
+BtSの労働者は100%です。<br>
 タイル整備の種類については、<a href="#builds">&lt;Builds&gt;</a>も参照してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iWorkRate&gt;100&lt;/iWorkRate&gt;</p>
-
 <h3 id="ibasediscover">&lt;iBaseDiscover&gt;</h3>
-
-<p>このユニットが「テクノロジーを獲得」コマンド(電球消費)を実行する際、<br />
+<p>このユニットが「テクノロジーを獲得」コマンド(電球消費)を実行する際、<br>
 得られるビーカーの基本値を指定します。</p>
-
 <p>値：整数</p>
-
 <p>例：あとで</p>
-
 <h3 id="idiscovermultiplier">&lt;iDiscoverMultiplier&gt;</h3>
-
-<p>このユニットが「テクノロジーを獲得」コマンド(電球消費)を実行する際、<br />
+<p>このユニットが「テクノロジーを獲得」コマンド(電球消費)を実行する際、<br>
 得られるビーカーの人口に対する係数を指定します。</p>
-
-<p>電球による獲得研究力は以下の式によります。<br />
-獲得研究力 = &lt;iBaseDiscover&gt; + [文明の総人口] * &lt;iDiscoverMultiplier&gt;<br />
-これにゲーム速度・既知率ボーナスなどの影響を加味したものが、<br />
+<p>電球による獲得研究力は以下の式によります。<br>
+獲得研究力 = &lt;iBaseDiscover&gt; + [文明の総人口] * &lt;iDiscoverMultiplier&gt;<br>
+これにゲーム速度・既知率ボーナスなどの影響を加味したものが、<br>
 最終的に得られるビーカーになります。</p>
-
-<p><a href="#flavors">&lt;Flavors&gt;</a>で種類が指定されていて、獲得研究力が正の値になる場合、<br />
-このユニットは「テクノロジーを獲得」コマンドを実行できます。<br />
+<p><a href="#flavors">&lt;Flavors&gt;</a>で種類が指定されていて、獲得研究力が正の値になる場合、<br>
+このユニットは「テクノロジーを獲得」コマンドを実行できます。<br>
 片方だけでは実行できないことに注意してください。</p>
-
-<p>例１：<br />
-&lt;iBaseDiscover&gt;0&lt;/iBaseDiscover&gt;<br />
+<p>例１：<br>
+&lt;iBaseDiscover&gt;0&lt;/iBaseDiscover&gt;<br>
 &lt;iDiscoverMultiplier&gt;0&lt;/iDiscoverMultiplier&gt;</p>
-
-<p>例２：偉大な科学者の場合<br />
-&lt;iBaseDiscover&gt;1500&lt;/iBaseDiscover&gt;<br />
+<p>例２：偉大な科学者の場合<br>
+&lt;iBaseDiscover&gt;1500&lt;/iBaseDiscover&gt;<br>
 &lt;iDiscoverMultiplier&gt;3&lt;/iDiscoverMultiplier&gt;</p>
-
-<p>例３：科学者以外の偉人の場合<br />
-&lt;iBaseDiscover&gt;1000&lt;/iBaseDiscover&gt;<br />
+<p>例３：科学者以外の偉人の場合<br>
+&lt;iBaseDiscover&gt;1000&lt;/iBaseDiscover&gt;<br>
 &lt;iDiscoverMultiplier&gt;2&lt;/iDiscoverMultiplier&gt;</p>
-
 <h3 id="ibasehurry">&lt;iBaseHurry&gt;</h3>
-
-<p>このユニットが「都市の生産を加速」コマンドを実行する際、<br />
+<p>このユニットが「都市の生産を加速」コマンドを実行する際、<br>
 得られるハンマーの基本値を指定します。</p>
-
 <p>値：整数</p>
-
 <p>例：あとで</p>
-
 <h3 id="ihurrymultiplier">&lt;iHurryMultiplier&gt;</h3>
-
-<p>このユニットが「都市の生産を加速」コマンドを実行する際、<br />
+<p>このユニットが「都市の生産を加速」コマンドを実行する際、<br>
 得られるハンマーの、人口に対する係数を指定します。</p>
-
-<p>獲得する生産力は次の式によります。<br />
-獲得生産力 = &lt;iBaseHurry&gt; + [文明の総人口] * &lt;iHurryMultiplier&gt;<br />
-これにゲーム速度の影響を加味したものが、<br />
+<p>獲得する生産力は次の式によります。<br>
+獲得生産力 = &lt;iBaseHurry&gt; + [文明の総人口] * &lt;iHurryMultiplier&gt;<br>
+これにゲーム速度の影響を加味したものが、<br>
 最終的に得られるハンマーになります。</p>
-
-<p>獲得生産力が正の値になる場合、<br />
+<p>獲得生産力が正の値になる場合、<br>
 このユニットは生産加速コマンドを実行可能できます。</p>
-
-<p>例１：<br />
-&lt;iBaseHurry&gt;0&lt;/iBaseHurry&gt;<br />
+<p>例１：<br>
+&lt;iBaseHurry&gt;0&lt;/iBaseHurry&gt;<br>
 &lt;iHurryMultiplier&gt;0&lt;/iHurryMultiplier&gt;</p>
-
-<p>例２：偉大な技術者の場合<br />
-&lt;iBaseHurry&gt;500&lt;/iBaseHurry&gt;<br />
+<p>例２：偉大な技術者の場合<br>
+&lt;iBaseHurry&gt;500&lt;/iBaseHurry&gt;<br>
 &lt;iHurryMultiplier&gt;20&lt;/iHurryMultiplier&gt;</p>
-
 <h3 id="ibasetrade">&lt;iBaseTrade&gt;</h3>
-
-<p>このユニットが通商任務コマンドを実行する際、<br />
+<p>このユニットが通商任務コマンドを実行する際、<br>
 得られるゴールドの基本値を指定します。</p>
-
 <p>値：整数</p>
-
 <p>例：あとで</p>
-
 <h3 id="itrademultiplier">&lt;iTradeMultiplier&gt;</h3>
-
-<p>このユニットが通商任務コマンドを実行する際、<br />
+<p>このユニットが通商任務コマンドを実行する際、<br>
 得られるゴールドの交易路に対する係数を指定します。</p>
-
-<p>仮想交易路収益 = [このユニットの足元にある都市が、自文明の首都との間にもし交易路が開設されたとしたときの、<strong><em>相手側都市の</em></strong>交易路収益]<br />
+<p>仮想交易路収益 = [このユニットの足元にある都市が、自文明の首都との間にもし交易路が開設されたとしたときの、<em><strong>相手側都市の</strong></em>交易路収益]<br>
 獲得ゴールド = &lt;iBaseTrade&gt; + 仮想交易路収益 * &lt;iTradeMultiplier&gt;</p>
-
-<p>獲得ゴールドが正の値になる場合、<br />
+<p>獲得ゴールドが正の値になる場合、<br>
 このユニットは通商任務コマンドを実行できます。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
-&lt;iBaseTrade&gt;0&lt;/iBaseTrade&gt;<br />
+<p>例１：<br>
+&lt;iBaseTrade&gt;0&lt;/iBaseTrade&gt;<br>
 &lt;iTradeMultiplier&gt;0&lt;/iTradeMultiplier&gt;</p>
-
-<p>例２：偉大な商人の場合<br />
-&lt;iBaseTrade&gt;500&lt;/iBaseTrade&gt;<br />
+<p>例２：偉大な商人の場合<br>
+&lt;iBaseTrade&gt;500&lt;/iBaseTrade&gt;<br>
 &lt;iTradeMultiplier&gt;200&lt;/iTradeMultiplier&gt;</p>
-
 <h3 id="igreatworkculture">&lt;iGreatWorkCulture&gt;</h3>
-
-<p>このユニットが「大作を制作」コマンドを使用した際、<br />
+<p>このユニットが「大作を制作」コマンドを使用した際、<br>
 獲得する文化力を指定します。</p>
-
-<p>この値が正の場合、このユニットは「大作を制作」コマンドを実行できます。<br />
+<p>この値が正の場合、このユニットは「大作を制作」コマンドを実行できます。<br>
 BtSでは、この属性を持つユニットは大芸術家です。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iGreatWorkCulture&gt;0&lt;/iGreatWorkCulture&gt;</p>
-
 <h3 id="iespionagepoints">&lt;iEspionagePoints&gt;</h3>
-
-<p>このユニットが都市潜入コマンドを使用した際、<br />
+<p>このユニットが都市潜入コマンドを使用した際、<br>
 獲得するスパイポイントを指定します。</p>
-
-<p>この値が正の場合、このユニットは都市潜入コマンドを実行できます。<br />
+<p>この値が正の場合、このユニットは都市潜入コマンドを実行できます。<br>
 BtSでは、この属性を持つユニットは大スパイです。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iEspionagePoints&gt;0&lt;/iEspionagePoints&gt;</p>
-
 <h3 id="terrainimpassables">&lt;TerrainImpassables&gt;</h3>
-
-<p>このユニットは、ここに指定された<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">基本地形</a>に侵入することができません。<br />
+<p>このユニットは、ここに指定された<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">基本地形</a>に侵入することができません。<br>
 この禁止指定は、技術取得により解禁できます。<a href="#terrainpassabletechs">&lt;TerrainPassableTechs&gt;</a>を参照してください。</p>
-
 <p>値：&lt;TerrainImpassable&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;TerrainImpassable&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;TerrainImpassable&gt;は以下の2つのタグを含みます。</p>
 <h4 id="terraintype">&lt;TerrainType&gt;</h4>
-
-<p>侵入を禁止する基本地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">地形キー</a></p>
-
+<p>侵入を禁止する基本地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">地形キー</a></p>
 <h4 id="bterrainimpassable">&lt;bTerrainImpassable&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TerrainImpassables /&gt;</p>
-
 <p>例２：外洋への進入禁止</p>
-
-<pre><code class="language-plain">&lt;TerrainImpassables&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;TerrainImpassables&gt;
     &lt;TerrainImpassable&gt;
         &lt;TerrainType&gt;TERRAIN_OCEAN&lt;/TerrainType&gt;
         &lt;bTerrainImpassable&gt;1&lt;/bTerrainImpassable&gt;
     &lt;/TerrainImpassable&gt;
 &lt;/TerrainImpassables&gt;
-</code></pre>
-
-<h3 id="featureimpassables">&lt;FeatureImpassables&gt;</h3>
-
-<p>このユニットは、ここに指定された<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形</a>に侵入することができません。<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">4</a></sup><br />
-この禁止指定は、技術取得により解禁できます。<a href="#featurepassabletechs">&lt;FeaturePassableTechs&gt;</a>を参照してください。<br />
+</code></pre></div><h3 id="featureimpassables">&lt;FeatureImpassables&gt;</h3>
+<p>このユニットは、ここに指定された<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形</a>に侵入することができません。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><br>
+この禁止指定は、技術取得により解禁できます。<a href="#featurepassabletechs">&lt;FeaturePassableTechs&gt;</a>を参照してください。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;FeatureImpassable&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeatureImpassable&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;FeatureImpassable&gt;は以下の2つのタグを含みます。</p>
 <h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>侵入を禁止する追加地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
+<p>侵入を禁止する追加地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
 <h4 id="bfeatureimpassable">&lt;bFeatureImpassable&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeatureImpassables /&gt;</p>
-
 <p>例２：ジャングルへの侵入を禁止</p>
-
-<pre><code class="language-plain">&lt;FeatureImpassables&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FeatureImpassables&gt;
     &lt;FeatureImpassable&gt;
         &lt;FeatureType&gt;FEATURE_JUNGLE&lt;/FeatureType&gt;
         &lt;bFeatureImpassable&gt;1&lt;/bFeatureImpassable&gt;
     &lt;/FeatureImpassable&gt;
 &lt;/FeatureImpassables&gt;
-</code></pre>
-
-<h3 id="terrainpassabletechs">&lt;TerrainPassableTechs&gt;</h3>
-
+</code></pre></div><h3 id="terrainpassabletechs">&lt;TerrainPassableTechs&gt;</h3>
 <p><a href="#terrainimpassables">&lt;TerrainImpassables&gt;</a>の禁止指定を無効化して、通行できるように解禁する技術を指定します。</p>
-
 <p>値：&lt;TerrainPassableTech&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;TerrainPassableTech&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="terraintype">&lt;TerrainType&gt;</h4>
-
-<p>侵入を解禁する基本地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">地形キー</a></p>
-
+<p>&lt;TerrainPassableTech&gt;は以下の2つのタグを含みます。</p>
+<h4 id="terraintype-1">&lt;TerrainType&gt;</h4>
+<p>侵入を解禁する基本地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">地形キー</a></p>
 <h4 id="passabletech">&lt;PassableTech&gt;</h4>
-
-<p>その基本地形の侵入を解禁する技術を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
+<p>その基本地形の侵入を解禁する技術を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TerrainPassableTechs /&gt;</p>
-
 <p>例２：外洋への進入禁止を天文学取得で無効化する</p>
-
-<pre><code class="language-plain">&lt;TerrainPassableTechs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;TerrainPassableTechs&gt;
     &lt;TerrainPassableTech&gt;
         &lt;TerrainType&gt;TERRAIN_OCEAN&lt;/TerrainType&gt;
         &lt;PassableTech&gt;TECH_ASTRONOMY&lt;/PassableTech&gt;
     &lt;/TerrainPassableTech&gt;
 &lt;/TerrainPassableTechs&gt;
-</code></pre>
-
-<h3 id="featurepassabletechs">&lt;FeaturePassableTechs&gt;</h3>
-
+</code></pre></div><h3 id="featurepassabletechs">&lt;FeaturePassableTechs&gt;</h3>
 <p><a href="#featureimpassables">&lt;FeatureImpassables&gt;</a>の禁止指定を無効化して、通行できるように解禁する技術を指定します。</p>
-
 <p>値：&lt;FeaturePassableTech&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeaturePassableTech&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>侵入を解禁する追加地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
-<h4 id="passabletech">&lt;PassableTech&gt;</h4>
-
-<p>その追加地形の侵入を解禁する技術を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
+<p>&lt;FeaturePassableTech&gt;は以下の2つのタグを含みます。</p>
+<h4 id="featuretype-1">&lt;FeatureType&gt;</h4>
+<p>侵入を解禁する追加地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
+<h4 id="passabletech-1">&lt;PassableTech&gt;</h4>
+<p>その追加地形の侵入を解禁する技術を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeaturePassableTechs /&gt;</p>
-
 <p>例２：ジャングルへの進入禁止を鉄器取得で無効化する</p>
-
-<pre><code class="language-plain">&lt;FeaturePassableTechs&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FeaturePassableTechs&gt;
     &lt;FeaturePassableTech&gt;
         &lt;FeatureType&gt;FEATURE_JUNGLE&lt;/FeatureType&gt;
         &lt;PassableTech&gt;TECH_IRON_WORKING&lt;/PassableTech&gt;
     &lt;/FeaturePassableTech&gt;
 &lt;/FeaturePassableTechs&gt;
-</code></pre>
-
-<h3 id="icombat">&lt;iCombat&gt;</h3>
-
+</code></pre></div><h3 id="icombat">&lt;iCombat&gt;</h3>
 <p>このユニットの戦闘力を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCombat&gt;2&lt;/iCombat&gt;</p>
-
 <h3 id="icombatlimit">&lt;iCombatLimit&gt;</h3>
-
-<p>このユニットが戦闘で与えることができるダメージ値の上限を指定します。<br />
-この値が100未満の場合、このユニットはその分だけダメージを与えると撤退します。<br />
+<p>このユニットが戦闘で与えることができるダメージ値の上限を指定します。<br>
+この値が100未満の場合、このユニットはその分だけダメージを与えると撤退します。<br>
 その場合敵ユニットを撃破することはできません。</p>
-
 <p>値：整数</p>
-
 <p>&lt;iCombatLimit&gt;100&lt;/iCombatLimit&gt;</p>
-
 <h3 id="iaircombat">&lt;iAirCombat&gt;</h3>
-
 <p>このユニットの航空戦闘力を指定します。</p>
-
-<p>この属性は、間接攻撃力との兼用です。<br />
-このユニットが航空ユニットでなく、間接攻撃範囲と間接攻撃力の両方が正の値をとる場合、<br />
-このユニットはその範囲に間接攻撃が可能になります。<br />
+<p>この属性は、間接攻撃力との兼用です。<br>
+このユニットが航空ユニットでなく、間接攻撃範囲と間接攻撃力の両方が正の値をとる場合、<br>
+このユニットはその範囲に間接攻撃が可能になります。<br>
 <a href="#iairrange">&lt;iAirRange&gt;</a>と<a href="#iaircombatlimit">&lt;iAirCombatLimit&gt;</a>も参照してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAirCombat&gt;10&lt;/iAirCombat&gt;</p>
-
 <h3 id="iaircombatlimit">&lt;iAirCombatLimit&gt;</h3>
-
 <p>このユニットが空爆で敵ユニットに与えることができるダメージ値の上限を指定します。</p>
-
-<p>この属性は、間接攻撃ダメージ上限との兼用です。<br />
+<p>この属性は、間接攻撃ダメージ上限との兼用です。<br>
 この値が0のままだと、間接攻撃はダメージを与えられないことに注意してください。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAirCombatLimit&gt;50&lt;/iAirCombatLimit&gt;</p>
-
 <h3 id="ixpvalueattack">&lt;iXPValueAttack&gt;</h3>
-
-<p>敵ユニットが攻撃してこのユニットを撃破したとき、<br />
+<p>敵ユニットが攻撃してこのユニットを撃破したとき、<br>
 勝利した敵ユニットが得る経験値の基礎値を指定します。</p>
-
-<p>実際に勝者が得る経験値は、下の式によります。<br />
+<p>実際に勝者が得る経験値は、下の式によります。<br>
 経験値 = [敗者の基礎経験値] * [勝者の戦闘力] / [敗者の戦闘力]</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iXPValueAttack&gt;4&lt;/iXPValueAttack&gt;</p>
-
 <h3 id="ixpvaluedefense">&lt;iXPValueDefense&gt;</h3>
-
-<p>敵ユニットが防衛時、攻撃してきたこのユニットを撃破したとき、<br />
+<p>敵ユニットが防衛時、攻撃してきたこのユニットを撃破したとき、<br>
 勝利した敵ユニットが得る経験値の基礎値を指定します。</p>
-
-<p>実際に勝者が得る経験値は、下の式によります。<br />
+<p>実際に勝者が得る経験値は、下の式によります。<br>
 経験値 = [敗者の基礎経験値] * [勝者の戦闘力] / [敗者の戦闘力]</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iXPValueDefense&gt;2&lt;/iXPValueDefense&gt;</p>
-
 <h3 id="ifirststrikes">&lt;iFirstStrikes&gt;</h3>
-
 <p>このユニットが先制攻撃する回数を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iFirstStrikes&gt;0&lt;/iFirstStrikes&gt;</p>
-
 <h3 id="ichancefirststrikes">&lt;iChanceFirstStrikes&gt;</h3>
-
-<p>このユニットが持つ先制攻撃の機会の回数を指定します。<br />
-ここに正の値nを指定する場合、このユニットは各戦闘で<br />
+<p>このユニットが持つ先制攻撃の機会の回数を指定します。<br>
+ここに正の値nを指定する場合、このユニットは各戦闘で<br>
 0-nの範囲でランダムに追加の先制攻撃回数を得ます。</p>
-
 <p>値：整数</p>
-
 <p>&lt;iChanceFirstStrikes&gt;0&lt;/iChanceFirstStrikes&gt;</p>
-
 <h3 id="iinterceptionprobability">&lt;iInterceptionProbability&gt;</h3>
-
 <p>このユニットの迎撃成功率を指定します。(単位：%)</p>
-
-<p>このユニットが航空ユニットで、ここに正の値を指定する場合、<br />
+<p>このユニットが航空ユニットで、ここに正の値を指定する場合、<br>
 このユニットは迎撃任務を実行可能になります。</p>
-
-<p>このユニットが航空ユニットでなく、ここに正の値を指定する場合、<br />
+<p>このユニットが航空ユニットでなく、ここに正の値を指定する場合、<br>
 このユニットは地対空迎撃が可能なユニットになります。</p>
-
-<p>この属性は空戦のダメージ係数兼用です。<br />
+<p>この属性は空戦のダメージ係数兼用です。<br>
 この値が高いほど、空戦が発生したとき敵に与えるダメージが増えます。</p>
-
 <p>総合的に、この値が高いほど戦闘機としての性能が高くなります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iInterceptionProbability&gt;0&lt;/iInterceptionProbability&gt;</p>
-
 <h3 id="ievasionprobability">&lt;iEvasionProbability&gt;</h3>
-
 <p>このユニットの迎撃回避率を設定します。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iEvasionProbability&gt;0&lt;/iEvasionProbability&gt;</p>
-
 <h3 id="iwithdrawalprob">&lt;iWithdrawalProb&gt;</h3>
-
 <p>このユニットの退却成功率を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iWithdrawalProb&gt;0&lt;/iWithdrawalProb&gt;</p>
-
 <h3 id="icollateraldamage">&lt;iCollateralDamage&gt;</h3>
-
-<p>このユニットが与える副次的損害の威力係数を指定します。<br />
+<p>このユニットが与える副次的損害の威力係数を指定します。<br>
 この値が高いほど、一度の副次的損害で与えるダメージが増えます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCollateralDamage&gt;0&lt;/iCollateralDamage&gt;</p>
-
 <h3 id="icollateraldamagelimit">&lt;iCollateralDamageLimit&gt;</h3>
-
 <p>このユニットが副次的損害によって与えるダメージ値の上限を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCollateralDamageLimit&gt;0&lt;/iCollateralDamageLimit&gt;</p>
-
 <h3 id="icollateraldamagemaxunits">&lt;iCollateralDamageMaxUnits&gt;</h3>
-
 <p>このユニットが一度の攻撃で副次的損害を与えられるユニット数を指定します。</p>
-
-<p><a href="#icollateraldamage">&lt;iCollateralDamage&gt;</a>・<a href="#icollateraldamagelimit">&lt;iCollateralDamageLimit&gt;</a>・<a href="#icollateraldamagemaxunits">&lt;iCollateralDamageMaxUnits&gt;</a><br />
+<p><a href="#icollateraldamage">&lt;iCollateralDamage&gt;</a>・<a href="#icollateraldamagelimit">&lt;iCollateralDamageLimit&gt;</a>・<a href="#icollateraldamagemaxunits">&lt;iCollateralDamageMaxUnits&gt;</a><br>
 のすべてが正の値をとるとき、このユニットは副次的損害を与えることができます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCollateralDamageMaxUnits&gt;0&lt;/iCollateralDamageMaxUnits&gt;</p>
-
 <h3 id="icityattack">&lt;iCityAttack&gt;</h3>
-
 <p>このユニットが都市を攻撃するとき、戦闘力に対してこの値だけ修正を受けます。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCityAttack&gt;0&lt;/iCityAttack&gt;</p>
-
 <h3 id="icitydefense">&lt;iCityDefense&gt;</h3>
-
 <p>このユニットが都市を防衛するとき、戦闘力に対してこの値だけ修正を受けます。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCityDefense&gt;25&lt;/iCityDefense&gt;</p>
-
 <h3 id="ianimalcombat">&lt;iAnimalCombat&gt;</h3>
-
 <p>このユニットが動物と戦闘するとき、戦闘力に対してこの値だけ修正を受けます。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAnimalCombat&gt;0&lt;/iAnimalCombat&gt;</p>
-
 <h3 id="ihillsattack">&lt;iHillsAttack&gt;</h3>
-
 <p>このユニットが丘陵にいるユニットを攻撃するとき、戦闘力に対してこの値だけ修正を受けます。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHillsAttack&gt;0&lt;/iHillsAttack&gt;</p>
-
 <h3 id="ihillsdefense">&lt;iHillsDefense&gt;</h3>
-
 <p>このユニットが丘陵にいて攻撃を受けたとき、戦闘力に対してこの値だけ修正を受けます。(単位：%)</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHillsDefense&gt;0&lt;/iHillsDefense&gt;</p>
-
 <h3 id="terrainnatives">&lt;TerrainNatives&gt;</h3>
-
-<p>動物として自然沸きできる<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">基本地形</a>を指定します。</p>
-
-<p>このユニットが<a href="#banimal">動物</a>であって、星としての動物発生条件を満たしているなら、<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">5</a></sup><br />
-ここに指定した基本地形であって、追加地形のない、<br />
-どのプレイヤーの視界にも入っていないタイルに、<br />
+<p>動物として自然沸きできる<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">基本地形</a>を指定します。</p>
+<p>このユニットが<a href="#banimal">動物</a>であって、星としての動物発生条件を満たしているなら、<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><br>
+ここに指定した基本地形であって、追加地形のない、<br>
+どのプレイヤーの視界にも入っていないタイルに、<br>
 このユニットは自然発生します。</p>
-
 <p>このユニットが動物でない場合、この指定は意味を持ちません。</p>
-
 <p>値：&lt;TerrainNative&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;TerrainNative&gt;は次の2つのタグを含みます。</p>
-
-<h4 id="terraintype">&lt;TerrainType&gt;</h4>
-
-<p>自然沸きできる基本地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">地形キー</a></p>
-
+<p>&lt;TerrainNative&gt;は次の2つのタグを含みます。</p>
+<h4 id="terraintype-2">&lt;TerrainType&gt;</h4>
+<p>自然沸きできる基本地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">地形キー</a></p>
 <h4 id="bterrainnative">&lt;bTerrainNative&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TerrainNatives /&gt;</p>
-
 <p>例２：(森林のない)ツンドラか雪原に沸くようにする</p>
-
-<pre><code class="language-plains">&lt;TerrainNatives&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;TerrainNatives&gt;
     &lt;TerrainNative&gt;
         &lt;TerrainType&gt;TERRAIN_TUNDRA&lt;/TerrainType&gt;
         &lt;bTerrainNative&gt;1&lt;/bTerrainNative&gt;
@@ -5994,244 +5236,153 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;bTerrainNative&gt;1&lt;/bTerrainNative&gt;
     &lt;/TerrainNative&gt;
 &lt;/TerrainNatives&gt;
-</code></pre>
-
-<h3 id="featurenatives">&lt;FeatureNatives&gt;</h3>
-
-<p>動物として自然沸きできる<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形</a>を指定します。</p>
-
-<p>このユニットが<a href="#banimal">動物</a>であって、星としての動物発生条件を満たしているなら、<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">5</a></sup><br />
-ここに指定した追加地形があって、どのプレイヤーの視界にも入っていないタイルに、<br />
+</code></pre><h3 id="featurenatives">&lt;FeatureNatives&gt;</h3>
+<p>動物として自然沸きできる<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形</a>を指定します。</p>
+<p>このユニットが<a href="#banimal">動物</a>であって、星としての動物発生条件を満たしているなら、<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><br>
+ここに指定した追加地形があって、どのプレイヤーの視界にも入っていないタイルに、<br>
 このユニットは自然発生します。</p>
-
 <p>このユニットが動物でない場合、この指定は意味を持ちません。</p>
-
 <p>値：&lt;FeatureNative&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeatureNative&gt;は次の2つのタグを含みます。</p>
-
-<h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>自然沸きできる追加地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
+<p>&lt;FeatureNative&gt;は次の2つのタグを含みます。</p>
+<h4 id="featuretype-2">&lt;FeatureType&gt;</h4>
+<p>自然沸きできる追加地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
 <h4 id="bfeaturenative">&lt;bFeatureNative&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeatureNatives /&gt;</p>
-
 <p>例２：森林のあるタイルに沸くようにする</p>
-
-<pre><code class="language-plains">&lt;FeatureNatives&gt;
+<pre><code class="language-plains" data-lang="plains">&lt;FeatureNatives&gt;
     &lt;FeatureNative&gt;
         &lt;FeatureType&gt;FEATURE_FOREST&lt;/FeatureType&gt;
         &lt;bFeatureNative&gt;1&lt;/bFeatureNative&gt;
     &lt;/FeatureNative&gt;
 &lt;/FeatureNatives&gt;
-</code></pre>
-
-<h3 id="terrainattacks">&lt;TerrainAttacks&gt;</h3>
-
-<p>対<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">基本地形</a>攻撃の戦闘力修正を指定します。<br />
-このユニットがここに指定した基本地形にいる敵ユニットを攻撃するとき、<br />
+</code></pre><h3 id="terrainattacks">&lt;TerrainAttacks&gt;</h3>
+<p>対<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">基本地形</a>攻撃の戦闘力修正を指定します。<br>
+このユニットがここに指定した基本地形にいる敵ユニットを攻撃するとき、<br>
 それぞれ指定してある戦闘力修正を受けます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;TerrainAttack&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;TerrainAttack&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="terraintype">&lt;TerrainType&gt;</h4>
-
-<p>修正を与える基本地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">地形キー</a></p>
-
+<p>&lt;TerrainAttack&gt;は以下の2つのタグを含みます。</p>
+<h4 id="terraintype-3">&lt;TerrainType&gt;</h4>
+<p>修正を与える基本地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">地形キー</a></p>
 <h4 id="iterrainattack">&lt;iTerrainAttack&gt;</h4>
-
-<p>その基本地形を攻撃するときの戦闘力修正値を指定します。(単位：%)<br />
+<p>その基本地形を攻撃するときの戦闘力修正値を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TerrainAttacks /&gt;</p>
-
 <p>例２：+100% 氷土攻撃</p>
-
-<pre><code class="language-plain">&lt;TerrainAttacks&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;TerrainAttacks&gt;
     &lt;TerrainAttack&gt;
         &lt;TerrainType&gt;TERRAIN_SNOW&lt;/TerrainType&gt;
         &lt;iTerrainAttack&gt;100&lt;/iTerrainAttack&gt;
     &lt;/TerrainAttack&gt;
 &lt;/TerrainAttacks&gt;
-</code></pre>
-
-<h3 id="terraindefenses">&lt;TerrainDefenses&gt;</h3>
-
-<p><a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">基本地形</a>防御の戦闘力修正を指定します。<br />
-このユニットがここに指定した基本地形にいる状態で敵ユニットから攻撃されるとき、<br />
+</code></pre></div><h3 id="terraindefenses">&lt;TerrainDefenses&gt;</h3>
+<p><a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">基本地形</a>防御の戦闘力修正を指定します。<br>
+このユニットがここに指定した基本地形にいる状態で敵ユニットから攻撃されるとき、<br>
 それぞれ指定してある戦闘力修正を受けます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;TerrainDefense&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;TerrainDefense&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="terraintype">&lt;TerrainType&gt;</h4>
-
-<p>修正を与える基本地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#基本地形">地形キー</a></p>
-
+<p>&lt;TerrainDefense&gt;は以下の2つのタグを含みます。</p>
+<h4 id="terraintype-4">&lt;TerrainType&gt;</h4>
+<p>修正を与える基本地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%BD%A2">地形キー</a></p>
 <h4 id="iterraindefense">&lt;iTerrainDefense&gt;</h4>
-
-<p>その基本地形で防御するときの戦闘力修正値を指定します。(単位：%)<br />
+<p>その基本地形で防御するときの戦闘力修正値を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;TerrainDefenses /&gt;</p>
-
 <p>例２：ツンドラによる防御力+50%</p>
-
-<pre><code class="language-plain">&lt;TerrainDefenses&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;TerrainDefenses&gt;
     &lt;TerrainDefense&gt;
         &lt;TerrainType&gt;TERRAIN_TUNDRA&lt;/TerrainType&gt;
         &lt;iTerrainDefense&gt;50&lt;/iTerrainDefense&gt;
     &lt;/TerrainDefense&gt;
 &lt;/TerrainDefenses&gt;
-</code></pre>
-
-<h3 id="featureattacks">&lt;FeatureAttacks&gt;</h3>
-
-<p>対<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形</a>攻撃の戦闘力修正を指定します。<br />
-このユニットがここに指定した追加地形にいる敵ユニットを攻撃するとき、<br />
+</code></pre></div><h3 id="featureattacks">&lt;FeatureAttacks&gt;</h3>
+<p>対<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形</a>攻撃の戦闘力修正を指定します。<br>
+このユニットがここに指定した追加地形にいる敵ユニットを攻撃するとき、<br>
 それぞれ指定してある戦闘力修正を受けます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;FeatureAttack&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeatureAttack&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>修正を与える追加地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
+<p>&lt;FeatureAttack&gt;は以下の2つのタグを含みます。</p>
+<h4 id="featuretype-3">&lt;FeatureType&gt;</h4>
+<p>修正を与える追加地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
 <h4 id="ifeatureattack">&lt;iFeatureAttack&gt;</h4>
-
-<p>その追加地形を攻撃するときの戦闘力修正値を指定します。(単位：%)<br />
+<p>その追加地形を攻撃するときの戦闘力修正値を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeatureAttacks /&gt;</p>
-
 <p>例２：+50% 森林攻撃</p>
-
-<pre><code class="language-plain">&lt;FeatureAttacks&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FeatureAttacks&gt;
     &lt;FeatureAttack&gt;
         &lt;FeatureType&gt;FEATURE_FOREST&lt;/FeatureType&gt;
         &lt;iFeatureAttack&gt;50&lt;/iFeatureAttack&gt;
     &lt;/FeatureAttack&gt;
 &lt;/FeatureAttacks&gt;
-</code></pre>
-
-<h3 id="featuredefenses">&lt;FeatureDefenses&gt;</h3>
-
-<p><a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形</a>防御の戦闘力修正を指定します。<br />
-このユニットがここに指定した追加地形にいる状態で<br />
-敵ユニットから攻撃されるとき、<br />
+</code></pre></div><h3 id="featuredefenses">&lt;FeatureDefenses&gt;</h3>
+<p><a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形</a>防御の戦闘力修正を指定します。<br>
+このユニットがここに指定した追加地形にいる状態で<br>
+敵ユニットから攻撃されるとき、<br>
 それぞれ指定してある戦闘力修正を受けます。</p>
-
-<p>この機能を使わない場合、空タグにします。<br />
+<p>この機能を使わない場合、空タグにします。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：&lt;FeatureDefense&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;FeatureDefense&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="featuretype">&lt;FeatureType&gt;</h4>
-
-<p>修正を与える追加地形を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#追加地形">追加地形キー</a></p>
-
+<p>&lt;FeatureDefense&gt;は以下の2つのタグを含みます。</p>
+<h4 id="featuretype-4">&lt;FeatureType&gt;</h4>
+<p>修正を与える追加地形を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%BF%BD%E5%8A%A0%E5%9C%B0%E5%BD%A2">追加地形キー</a></p>
 <h4 id="ifeaturedefense">&lt;iFeatureDefense&gt;</h4>
-
-<p>その追加地形で防御するときの戦闘力修正値を指定します。(単位：%)<br />
+<p>その追加地形で防御するときの戦闘力修正値を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FeatureDefenses /&gt;</p>
-
 <p>例２：ジャングルによる防御力-50%</p>
-
-<pre><code class="language-plain">&lt;FeatureDefenses&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FeatureDefenses&gt;
     &lt;FeatureDefense&gt;
         &lt;FeatureType&gt;FEATURE_JUNGLE&lt;/FeatureType&gt;
         &lt;iFeatureDefense&gt;-50&lt;/iFeatureDefense&gt;
     &lt;/FeatureDefense&gt;
 &lt;/FeatureDefenses&gt;
-</code></pre>
-
-<h3 id="unitclassattackmods">&lt;UnitClassAttackMods&gt;</h3>
-
-<p>特定のユニット種への攻撃修正を指定します。<br />
-このユニットは、指定されたユニットクラスを持つユニットに攻撃する際、<br />
+</code></pre></div><h3 id="unitclassattackmods">&lt;UnitClassAttackMods&gt;</h3>
+<p>特定のユニット種への攻撃修正を指定します。<br>
+このユニットは、指定されたユニットクラスを持つユニットに攻撃する際、<br>
 それぞれ指定されたぶんだけ戦闘力に修正を受けます。</p>
-
-<p><a href="#unitclassdefensemods">&lt;UnitClassDefenseMods&gt;</a>と同じ値を指定すると、<br />
-    シヴィロペディアでの表示が「対XX+○○%」のようになります。<br />
+<p><a href="#unitclassdefensemods">&lt;UnitClassDefenseMods&gt;</a>と同じ値を指定すると、<br>
+シヴィロペディアでの表示が「対XX+○○%」のようになります。<br>
 この属性を使用しない場合、空タグにします。</p>
-
 <p>値：&lt;UnitClassAttackMod&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitClassAttackMod&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitClassAttackMod&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitclasstype">&lt;UnitClassType&gt;</h4>
-
-<p>攻撃時に修正を与えるユニットクラスを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
+<p>攻撃時に修正を与えるユニットクラスを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
 <h4 id="iunitclassmod">&lt;iUnitClassMod&gt;</h4>
-
-<p>そのユニットクラスに攻撃するときの戦闘力修正を指定します。(単位：%)<br />
+<p>そのユニットクラスに攻撃するときの戦闘力修正を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;UnitClassAttackMods /&gt;</p>
-
 <p>例２：機関銃兵に対する攻撃+50%、長距離砲に対する攻撃+50%</p>
-
-<pre><code class="language-plain">&lt;UnitClassAttackMods&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitClassAttackMods&gt;
     &lt;UnitClassAttackMod&gt;
         &lt;UnitClassType&gt;UNITCLASS_MACHINE_GUN&lt;/UnitClassType&gt;
         &lt;iUnitClassMod&gt;50&lt;/iUnitClassMod&gt;
@@ -6241,282 +5392,174 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;iUnitClassMod&gt;50&lt;/iUnitClassMod&gt;
     &lt;/UnitClassAttackMod&gt;
 &lt;/UnitClassAttackMods&gt;
-</code></pre>
-
-<h3 id="unitclassdefensemods">&lt;UnitClassDefenseMods&gt;</h3>
-
-<p>特定のユニット種からの防御修正を指定します。<br />
-このユニットは、指定されたユニットクラスを持つユニットに攻撃する際、<br />
+</code></pre></div><h3 id="unitclassdefensemods">&lt;UnitClassDefenseMods&gt;</h3>
+<p>特定のユニット種からの防御修正を指定します。<br>
+このユニットは、指定されたユニットクラスを持つユニットに攻撃する際、<br>
 それぞれ指定されたぶんだけ戦闘力に修正を受けます。</p>
-
-<p><a href="#unitclassattackmods">&lt;UnitClassAttackMods&gt;</a>と同じ値を指定すると、<br />
-シヴィロペディアでの表示が「対XX+○○%」のようになります。<br />
+<p><a href="#unitclassattackmods">&lt;UnitClassAttackMods&gt;</a>と同じ値を指定すると、<br>
+シヴィロペディアでの表示が「対XX+○○%」のようになります。<br>
 この属性を使用しない場合、空タグにします。</p>
-
 <p>値：&lt;UnitClassDefenseMod&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitClassDefenseMod&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="unitclasstype">&lt;UnitClassType&gt;</h4>
-
-<p>防御時に修正を与えるユニットクラスを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#ユニット">ユニットクラスキー</a></p>
-
-<h4 id="iunitclassmod">&lt;iUnitClassMod&gt;</h4>
-
-<p>そのユニットクラスに攻撃されたときの戦闘力修正を指定します。(単位：%)<br />
+<p>&lt;UnitClassDefenseMod&gt;は以下の2つのタグを含みます。</p>
+<h4 id="unitclasstype-1">&lt;UnitClassType&gt;</h4>
+<p>防御時に修正を与えるユニットクラスを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88">ユニットクラスキー</a></p>
+<h4 id="iunitclassmod-1">&lt;iUnitClassMod&gt;</h4>
+<p>そのユニットクラスに攻撃されたときの戦闘力修正を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;UnitClassDefenseMods /&gt;</p>
-
 <p>例２：チャリオット兵に対する防御+100%</p>
-
-<pre><code class="language-plain">&lt;UnitClassDefenseMods&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitClassDefenseMods&gt;
     &lt;UnitClassDefenseMod&gt;
         &lt;UnitClassType&gt;UNITCLASS_CHARIOT&lt;/UnitClassType&gt;
         &lt;iUnitClassMod&gt;100&lt;/iUnitClassMod&gt;
     &lt;/UnitClassDefenseMod&gt;
 &lt;/UnitClassDefenseMods&gt;
-</code></pre>
-
-<h3 id="unitcombatmods">&lt;UnitCombatMods&gt;</h3>
-
-<p>兵科ごとの戦闘力修正を指定します。<br />
-このユニットは、指定された特定の兵科と戦闘する際、<br />
+</code></pre></div><h3 id="unitcombatmods">&lt;UnitCombatMods&gt;</h3>
+<p>兵科ごとの戦闘力修正を指定します。<br>
+このユニットは、指定された特定の兵科と戦闘する際、<br>
 それぞれここに指定されたぶんだけ戦闘力修正を受けます。</p>
-
 <p>値：&lt;UnitCombatMod&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitCombatMod&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;UnitCombatMod&gt;は以下の2つのタグを含みます。</p>
 <h4 id="unitcombattype">&lt;UnitCombatType&gt;</h4>
-
-<p>修正を与える兵科を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
+<p>修正を与える兵科を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
 <h4 id="iunitcombatmod">&lt;iUnitCombatMod&gt;</h4>
-
-<p>その兵科と戦闘するときの戦闘力修正を指定します。(単位：%)<br />
+<p>その兵科と戦闘するときの戦闘力修正を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;UnitCombatMods /&gt;</p>
-
 <p>例２：対白兵+50%</p>
-
-<pre><code class="language-plain">&lt;UnitCombatMods&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitCombatMods&gt;
     &lt;UnitCombatMod&gt;
         &lt;UnitCombatType&gt;UNITCOMBAT_MELEE&lt;/UnitCombatType&gt;
         &lt;iUnitCombatMod&gt;50&lt;/iUnitCombatMod&gt;
     &lt;/UnitCombatMod&gt;
 &lt;/UnitCombatMods&gt;
-</code></pre>
-
-<h3 id="unitcombatcollateralimmunes">&lt;UnitCombatCollateralImmunes&gt;</h3>
-
+</code></pre></div><h3 id="unitcombatcollateralimmunes">&lt;UnitCombatCollateralImmunes&gt;</h3>
 <p>このユニットは、指定された兵科から副次的損害を受けません。</p>
-
 <p>値：&lt;UnitCombatCollateralImmune&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;UnitCombatCollateralImmune&gt;は以下の2つのタグを含みます。</p>
-
-<h4 id="unitcombattype">&lt;UnitCombatType&gt;</h4>
-
-<p>この兵科からの副次的損害に耐性を得ます。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#兵科">ユニット戦闘タイプキー</a></p>
-
+<p>&lt;UnitCombatCollateralImmune&gt;は以下の2つのタグを含みます。</p>
+<h4 id="unitcombattype-1">&lt;UnitCombatType&gt;</h4>
+<p>この兵科からの副次的損害に耐性を得ます。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%85%B5%E7%A7%91">ユニット戦闘タイプキー</a></p>
 <h4 id="iunitcombatcollateralimmune">&lt;iUnitCombatCollateralImmune&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;UnitCombatCollateralImmunes /&gt;</p>
-
 <p>例２：攻城兵器からの副次的損害を受けない</p>
-
-<pre><code class="language-plain">&lt;UnitCombatCollateralImmunes&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitCombatCollateralImmunes&gt;
     &lt;UnitCombatCollateralImmune&gt;
         &lt;UnitCombatType&gt;UNITCOMBAT_SIEGE&lt;/UnitCombatType&gt;
         &lt;iUnitCombatCollateralImmune&gt;1&lt;/iUnitCombatCollateralImmune&gt;
     &lt;/UnitCombatCollateralImmune&gt;
 &lt;/UnitCombatCollateralImmunes&gt;
-</code></pre>
-
-<h3 id="domainmods">&lt;DomainMods&gt;</h3>
-
-<p>行動領域ごとの戦闘力修正を指定します。<br />
-このユニットが、指定された行動領域のユニットと戦闘する際、<br />
+</code></pre></div><h3 id="domainmods">&lt;DomainMods&gt;</h3>
+<p>行動領域ごとの戦闘力修正を指定します。<br>
+このユニットが、指定された行動領域のユニットと戦闘する際、<br>
 それぞれ指定されたぶんだけ戦闘力に修正を得ます。</p>
-
 <p>値：&lt;DomainMod&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;DomainMod&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;DomainMod&gt;は以下の2つのタグを含みます。</p>
 <h4 id="domaintype">&lt;DomainType&gt;</h4>
-
-<p>修正を与える行動領域を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#行動領域">ユニット領域キー</a></p>
-
+<p>修正を与える行動領域を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%A1%8C%E5%8B%95%E9%A0%98%E5%9F%9F">ユニット領域キー</a></p>
 <h4 id="idomainmod">&lt;iDomainMod&gt;</h4>
-
-<p>その行動領域を持つユニットに対しての戦闘力修正を指定します。(単位：%)<br />
+<p>その行動領域を持つユニットに対しての戦闘力修正を指定します。(単位：%)<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;DomainMods /&gt;</p>
-
 <p>例２：海洋ユニットに対して-50%</p>
-
-<pre><code class="language-plain">&lt;DomainMods&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;DomainMods&gt;
     &lt;DomainMod&gt;
         &lt;DomainType&gt;DOMAIN_SEA&lt;/DomainType&gt;
         &lt;iDomainMod&gt;-50&lt;/iDomainMod&gt;
     &lt;/DomainMod&gt;
 &lt;/DomainMods&gt;
-</code></pre>
-
-<h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
-
+</code></pre></div><h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
 <p>このユニットの生産を加速する資源を指定します。</p>
-
 <div class="subnote">
-  <h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>生産を加速する資源を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<h4 id="iproductonmodifier-ton">&lt;iProductonModifier&gt;<sup class="footnote-ref" id="fnref:ton"><a href="#fn:ton">1</a></sup></h4>
-
-<p>その資源に対して何%加速するか指定します。<br />
-ここに100を指定すると、その時に限りシヴィロペディアの表示が<br />
-「生産速度2倍」になります。<br />
+<h4 id="bonustype-1">&lt;BonusType&gt;</h4>
+<p>生産を加速する資源を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<h4 id="iproductonmodifierton">&lt;iProductonModifier&gt;<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></h4>
+<p>その資源に対して何%加速するか指定します。<br>
+ここに100を指定すると、その時に限りシヴィロペディアの表示が<br>
+「生産速度2倍」になります。<br>
 値：整数</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:ton">iProduc<strong>ton</strong>Modifierです。誤字ではありません。<br />
- <a class="footnote-return" href="#fnref:ton"><sup>[return]</sup></a></li>
-</ol>
 </div>
-
-</div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;BonusProductionModifiers /&gt;</p>
-
 <p>例２：銀があれば建設速度+50%</p>
-
-<pre><code class="language-plain">&lt;BonusProductionModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;BonusProductionModifiers&gt;
     &lt;BonusProductionModifier&gt;
         &lt;BonusType&gt;BONUS_SILVER&lt;/BonusType&gt;
         &lt;iProductonModifier&gt;50&lt;/iProductonModifier&gt;
     &lt;/BonusProductionModifier&gt;
 &lt;/BonusProductionModifiers&gt;
-</code></pre>
-
-<h3 id="ibombrate">&lt;iBombRate&gt;</h3>
-
-<p>このユニットが(HPが減っていない状態で)戦略爆撃コマンドを実行する際、<br />
+</code></pre></div><h3 id="ibombrate">&lt;iBombRate&gt;</h3>
+<p>このユニットが(HPが減っていない状態で)戦略爆撃コマンドを実行する際、<br>
 都市の文化防御をここに指定した値だけ削ります。</p>
-
-<p>このユニットが航空ユニットで、ここに正の値を指定する場合、<br />
+<p>このユニットが航空ユニットで、ここに正の値を指定する場合、<br>
 このユニットは戦略爆撃コマンドを実行できます。</p>
-
-<p>実際に文化防御を削る値は、下の式によります。<br />
+<p>実際に文化防御を削る値は、下の式によります。<br>
 文化防御ダメージ = &lt;iBombRate&gt; * [現在HP] / [最大HP]</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBombRate&gt;0&lt;/iBombRate&gt;</p>
-
 <h3 id="ibombardrate">&lt;iBombardRate&gt;</h3>
-
-<p>このユニットが「都市の砲撃」コマンドを実行する際、<br />
+<p>このユニットが「都市の砲撃」コマンドを実行する際、<br>
 都市の文化防御をここに指定した値だけ削ります。</p>
-
-<p>ここに正の値を指定し、周囲1マスに都市が存在して、乗船中でない場合、<br />
+<p>ここに正の値を指定し、周囲1マスに都市が存在して、乗船中でない場合、<br>
 このユニットは「都市の砲撃」コマンドが実行できます。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iBombardRate&gt;0&lt;/iBombardRate&gt;</p>
-
 <h3 id="specialcargo">&lt;SpecialCargo&gt;</h3>
-
-<p>このユニットが(輸送艦として)搭載できる搭乗タイプを指定します。<br />
-この属性は搭載できるユニットの種類についての制限です。<br />
+<p>このユニットが(輸送艦として)搭載できる搭乗タイプを指定します。<br>
+この属性は搭載できるユニットの種類についての制限です。<br>
 搭載数については<a href="#icargo">&lt;iCargo&gt;</a>も参照してください。</p>
-
-<p>ここでのNONEは制限なし、どのユニットでも搭載できることを表します。<br />
-ここにNONE以外の値を指定する場合、<br />
-このユニットはその搭乗タイプを持つユニットのみを搭載できます。<br />
-<a href="#domaincargo">&lt;DomainCargo&gt;</a>と同時に指定される場合、<br />
+<p>ここでのNONEは制限なし、どのユニットでも搭載できることを表します。<br>
+ここにNONE以外の値を指定する場合、<br>
+このユニットはその搭乗タイプを持つユニットのみを搭載できます。<br>
+<a href="#domaincargo">&lt;DomainCargo&gt;</a>と同時に指定される場合、<br>
 両方の条件を満たしているユニットのみを搭載できます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#搭載分類">搭乗タイプキー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%90%AD%E8%BC%89%E5%88%86%E9%A1%9E">搭乗タイプキー</a></p>
+<p>例１：<br>
 &lt;SpecialCargo&gt;NONE&lt;/SpecialCargo&gt;</p>
-
-<p>例２：斥候、探検家、宣教師、スパイ、偉人を搭載できる<br />
+<p>例２：斥候、探検家、宣教師、スパイ、偉人を搭載できる<br>
 &lt;Special&gt;SPECIALUNIT_PEOPLE&lt;/Special&gt;</p>
-
 <h3 id="domaincargo">&lt;DomainCargo&gt;</h3>
-
-<p>このユニットが(輸送艦として)搭載できるユニットの行動領域を指定します。<br />
-この属性は搭載できるユニットの種類についての制限です。<br />
+<p>このユニットが(輸送艦として)搭載できるユニットの行動領域を指定します。<br>
+この属性は搭載できるユニットの種類についての制限です。<br>
 搭載数については<a href="#icargo">&lt;iCargo&gt;</a>も参照してください。</p>
-
-<p>ここでのNONEは制限なし、どのユニットでも搭載できることを表します。<br />
-ここにNONE以外の値を指定する場合、<br />
-このユニットはその行動領域を持つユニットのみを搭載できます。<br />
-<a href="#specialcargo">&lt;SpecialCargo&gt;</a>と同時に指定される場合、<br />
+<p>ここでのNONEは制限なし、どのユニットでも搭載できることを表します。<br>
+ここにNONE以外の値を指定する場合、<br>
+このユニットはその行動領域を持つユニットのみを搭載できます。<br>
+<a href="#specialcargo">&lt;SpecialCargo&gt;</a>と同時に指定される場合、<br>
 両方の条件を満たしているユニットのみを搭載できます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#行動領域">ユニット領域キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%A1%8C%E5%8B%95%E9%A0%98%E5%9F%9F">ユニット領域キー</a></p>
+<p>例１：<br>
 &lt;DomainCargo&gt;NONE&lt;/DomainCargo&gt;</p>
-
-<p>例２：陸上ユニットのみを搭載できる<br />
+<p>例２：陸上ユニットのみを搭載できる<br>
 &lt;DomainCargo&gt;DOMAIN_LAND&lt;/DomainCargo&gt;</p>
-
 <h3 id="icargo">&lt;iCargo&gt;</h3>
-
 <p>このユニットが(輸送艦として)搭載できるユニットの搭載数を指定します。</p>
-
-<p>ここに正の値を指定する場合、このユニットは輸送艦としての性質を持ち、<br />
-乗船・下船などのコマンドを実行できます。<sup class="footnote-ref" id="fnref:7"><a href="#fn:7">6</a></sup></p>
-
-<p>例：<br />
+<p>ここに正の値を指定する場合、このユニットは輸送艦としての性質を持ち、<br>
+乗船・下船などのコマンドを実行できます。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
+<p>例：<br>
 &lt;iCargo&gt;0&lt;/iCargo&gt;</p>
-
 <h3 id="iconscription">&lt;iConscription&gt;</h3>
-
 <p>このユニットの徴兵優先度を指定します。</p>
-
-<p>都市で生産できる全ユニットの中で、ここに指定した値が一番高いユニットが<br />
+<p>都市で生産できる全ユニットの中で、ここに指定した値が一番高いユニットが<br>
 徴兵対象として自動的に選択されます。</p>
-
 <table>
 <thead>
 <tr>
@@ -6526,7 +5569,6 @@ BtSでは、この属性を持つユニットはありません。</p>
 <th>優先度</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>戦士</td>
@@ -6534,56 +5576,48 @@ BtSでは、この属性を持つユニットはありません。</p>
 <td>鎚鉾兵</td>
 <td>3</td>
 </tr>
-
 <tr>
 <td>剣士</td>
 <td>1</td>
 <td>長槍兵</td>
 <td>3</td>
 </tr>
-
 <tr>
 <td>擲弾兵</td>
 <td>1</td>
 <td>マスケット兵</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td>対戦車歩兵</td>
 <td>1</td>
 <td>ライフル兵</td>
 <td>5</td>
 </tr>
-
 <tr>
 <td>移動式SAM</td>
 <td>1</td>
 <td>SAM歩兵</td>
 <td>5</td>
 </tr>
-
 <tr>
 <td>海兵隊</td>
 <td>1</td>
 <td>歩兵</td>
 <td>6</td>
 </tr>
-
 <tr>
 <td>空挺部隊</td>
 <td>1</td>
 <td>機械化歩兵</td>
 <td>7</td>
 </tr>
-
 <tr>
 <td>斧兵</td>
 <td>2</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>槍兵</td>
 <td>2</td>
@@ -6592,71 +5626,43 @@ BtSでは、この属性を持つユニットはありません。</p>
 </tr>
 </tbody>
 </table>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iConscription&gt;1&lt;/iConscription&gt;</p>
-
 <h3 id="iculturegarrison">&lt;iCultureGarrison&gt;</h3>
-
 <p>自文化が弱い都市で、このユニットが反乱を抑える能力を指定します。</p>
-
 <p>反乱率は以下の式によります。</p>
-
 <p><strong>文化侵略攻撃力基礎値</strong> = [該当都市が到達したことのある最大人口] + [都市の1マス圏内で文化侵略側が所有しているタイル数] * [時代値(時代が1つ進むごとに+1)]</p>
-
-<p><strong>文化修正率</strong> = 2 - [都市所有者側蓄積文化値] / [文化侵略側蓄積文化値] <sup class="footnote-ref" id="fnref:8"><a href="#fn:8">7</a></sup></p>
-
+<p><strong>文化修正率</strong> = 2 - [都市所有者側蓄積文化値] / [文化侵略側蓄積文化値] <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
 <p><strong>国境修正</strong> = (該当都市が文化侵略側の国教を持つなら2倍) * (該当都市が都市所有者側の国教を持つなら半分)</p>
-
 <p><strong>文化侵略攻撃力</strong> = [文化侵略攻撃力基礎値] * [文化修正率] * [国境修正]</p>
-
 <p><strong>文化侵略防御力</strong> = [都市に駐留する&lt;iCultureGarrison&gt;の総和] * [戦時中修正(文化侵略側と戦争中なら2倍)]</p>
-
 <p><strong>反乱率</strong> = 1 - [文化侵略防御力] / [文化侵略攻撃力]</p>
-
-<p>自文明の文化蓄積値が最も多い場合や、<br />
-反乱率が0を下回る場合(文化侵略防御力 &gt; 文化侵略攻撃力の場合)、<br />
+<p>自文明の文化蓄積値が最も多い場合や、<br>
+反乱率が0を下回る場合(文化侵略防御力 &gt; 文化侵略攻撃力の場合)、<br>
 反乱は起きません。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCultureGarrison&gt;3&lt;/iCultureGarrison&gt;</p>
-
 <h3 id="iextracost">&lt;iExtraCost&gt;</h3>
-
-<p>追加のユニット維持費を指定します。<br />
-通常のユニット維持費や軍事ユニット維持費と異なり、<br />
+<p>追加のユニット維持費を指定します。<br>
+通常のユニット維持費や軍事ユニット維持費と異なり、<br>
 ここに指定した維持費はあらゆる無料枠の対象にならず、必ずかかります。</p>
-
 <p>BtSでは、この属性を持つユニットはありません。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iExtraCost&gt;0&lt;/iExtraCost&gt;</p>
-
 <h3 id="iasset">&lt;iAsset&gt;</h3>
-
 <p>このユニットは、ここに指定した値だけスコアを増やします。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iAsset&gt;1&lt;/iAsset&gt;</p>
-
 <h3 id="ipower">&lt;iPower&gt;</h3>
-
 <p>このユニットは、ここに指定した値だけ軍事力を増やします。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iPower&gt;2&lt;/iPower&gt;</p>
-
 <h3 id="unitmeshgroups">&lt;UnitMeshGroups&gt;</h3>
-
 <p>このユニットの見た目を定義します。</p>
-
 <p>例：</p>
-
-<pre><code class="language-plain">&lt;UnitMeshGroups&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;UnitMeshGroups&gt;
     &lt;iGroupSize&gt;3&lt;/iGroupSize&gt;
     &lt;fMaxSpeed&gt;1.75&lt;/fMaxSpeed&gt;
     &lt;fPadTime&gt;1&lt;/fPadTime&gt;
@@ -6667,16 +5673,10 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;EarlyArtDefineTag&gt;ART_DEF_UNIT_WARRIOR&lt;/EarlyArtDefineTag&gt;
     &lt;/UnitMeshGroup&gt;
 &lt;/UnitMeshGroups&gt;
-</code></pre>
-
-<h3 id="formationtype">&lt;FormationType&gt;</h3>
-
+</code></pre></div><h3 id="formationtype">&lt;FormationType&gt;</h3>
 <p>画面上に表示される際の隊列を指定します。</p>
-
 <p>値：隊形タイプキー</p>
-
 <p>BtSではおおむねこのようになっています。</p>
-
 <table>
 <thead>
 <tr>
@@ -6684,120 +5684,80 @@ BtSでは、この属性を持つユニットはありません。</p>
 <th>隊列タイプキー</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>動物</td>
 <td>FORMATION_TYPE_ANIMAL</td>
 </tr>
-
 <tr>
 <td>大砲・戦車・艦船など無機物</td>
 <td>FORMATION_TYPE_MACHINE</td>
 </tr>
-
 <tr>
 <td>弓・銃など飛び道具を使うユニット</td>
 <td>FORMATION_TYPE_RANGED</td>
 </tr>
-
 <tr>
 <td>その他</td>
 <td>FORMATION_TYPE_DEFAULT</td>
 </tr>
 </tbody>
 </table>
-
-<p>例：<br />
+<p>例：<br>
 &lt;FormationType&gt;FORMATION_TYPE_DEFAULT&lt;/FormationType&gt;</p>
-
 <h3 id="baltdown">&lt;bAltDown&gt;</h3>
-
 <p>1を指定した場合、このユニットにアップグレードするショートカットキーにAltキーを追加します。</p>
-
 <p>値：0か1</p>
-
 <p>例：あとで</p>
-
 <h3 id="bshiftdown">&lt;bShiftDown&gt;</h3>
-
 <p>1を指定した場合、このユニットにアップグレードするショートカットキーにShiftキーを追加します。</p>
-
 <p>値：0か1</p>
-
 <p>例：あとで</p>
-
 <h3 id="bctrldown">&lt;bCtrlDown&gt;</h3>
-
 <p>1を指定した場合、このユニットにアップグレードするショートカットキーにCtrlキーを追加します。</p>
-
 <p>値：0か1</p>
-
 <p>例：あとで</p>
-
 <h3 id="hotkey">&lt;HotKey&gt;</h3>
-
-<p>このユニット<strong><em>に</em></strong>アップグレードするショートカットキーを定義します。</p>
-
+<p>このユニット<em><strong>に</strong></em>アップグレードするショートカットキーを定義します。</p>
 <p>BtSでは、この属性を持つユニットはありません。</p>
-
 <p>値：キーボードキー</p>
-
-<p>例：ショートカットキーなし<br />
-&lt;HotKey /&gt;<br />
-&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br />
-&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br />
+<p>例：ショートカットキーなし<br>
+&lt;HotKey /&gt;<br>
+&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br>
+&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br>
 &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;</p>
-
-<p>例：&lt;W&gt;<br />
-&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br />
-&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br />
-&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br />
+<p>例：&lt;W&gt;<br>
+&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br>
+&lt;bAltDown&gt;0&lt;/bAltDown&gt;<br>
+&lt;bShiftDown&gt;0&lt;/bShiftDown&gt;<br>
 &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;</p>
-
-<p>例：&lt;Shift+Alt+W&gt;<br />
-&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br />
-&lt;bAltDown&gt;1&lt;/bAltDown&gt;<br />
-&lt;bShiftDown&gt;1&lt;/bShiftDown&gt;<br />
+<p>例：&lt;Shift+Alt+W&gt;<br>
+&lt;HotKey&gt;KB_W&lt;HotKey&gt;<br>
+&lt;bAltDown&gt;1&lt;/bAltDown&gt;<br>
+&lt;bShiftDown&gt;1&lt;/bShiftDown&gt;<br>
 &lt;bCtrlDown&gt;0&lt;/bCtrlDown&gt;</p>
-
 <h3 id="ihotkeypriority">&lt;iHotKeyPriority&gt;</h3>
-
-<p>ショートカットキーの優先度を指定します。<br />
-ショートカットキーが被ってしまったとき、<br />
+<p>ショートカットキーの優先度を指定します。<br>
+ショートカットキーが被ってしまったとき、<br>
 ここに指定した値が大きいほうが優先されます。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iHotKeyPriority&gt;0&lt;/iHotKeyPriority&gt;</p>
-
 <h3 id="freepromotions">&lt;FreePromotions&gt;</h3>
-
 <p>このユニットが得る無償の昇進を指定します。</p>
-
 <p>この機能を使わない場合、空タグにします。</p>
-
 <p>値： &lt;FreePromotion&gt;のリスト</p>
-
 <div class="subnote">
-  <h4 id="promotiontype">&lt;PromotionType&gt;</h4>
-
-<p>無償で得る昇進を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#昇進">昇進キー</a></p>
-
+<h4 id="promotiontype">&lt;PromotionType&gt;</h4>
+<p>無償で得る昇進を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%98%87%E9%80%B2">昇進キー</a></p>
 <h4 id="bfreepromotion">&lt;bFreePromotion&gt;</h4>
-
-<p>1を指定します。<br />
+<p>1を指定します。<br>
 値：1</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;FreePromotions /&gt;</p>
-
 <p>例２：無償の教練Ⅰ・教練Ⅱ</p>
-
-<pre><code class="language-plain">&lt;FreePromotions&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">&lt;FreePromotions&gt;
     &lt;FreePromotion&gt;
         &lt;PromotionType&gt;PROMOTION_DRILL1&lt;/PromotionType&gt;
         &lt;bFreePromotion&gt;1&lt;/bFreePromotion&gt;
@@ -6807,72 +5767,62 @@ BtSでは、この属性を持つユニットはありません。</p>
         &lt;bFreePromotion&gt;1&lt;/bFreePromotion&gt;
     &lt;/FreePromotion&gt;
 &lt;/FreePromotions&gt;
-</code></pre>
-
-<h3 id="leaderpromotion">&lt;LeaderPromotion&gt;</h3>
-
+</code></pre></div><h3 id="leaderpromotion">&lt;LeaderPromotion&gt;</h3>
 <p>ウォーロードを示す昇進を指定します。</p>
-
-<p>ここにNONE以外の値を指定する場合、指定した昇進が何であれ、<br />
-このユニットは大将軍としてユニットに合流するコマンドを実行できます。<br />
+<p>ここにNONE以外の値を指定する場合、指定した昇進が何であれ、<br>
+このユニットは大将軍としてユニットに合流するコマンドを実行できます。<br>
 ただし、合流能力を持つユニットはMOD内で1種しか存在できません。</p>
-
 <p>この属性は、実際に合流したときにユニットに与える昇進と兼用です。</p>
-
 <p>大将軍ではない普通のユニットの場合、NONEを指定します。</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;LeaderPromotion&gt;NONE&lt;/LeaderPromotion&gt;</p>
-
-<p>例２：このユニットを大将軍に設定し、合流時に与える昇進を「ウォーロードが指揮」にする<br />
+<p>例２：このユニットを大将軍に設定し、合流時に与える昇進を「ウォーロードが指揮」にする<br>
 &lt;LeaderPromotion&gt;PROMOTION_LEADER&lt;/LeaderPromotion&gt;</p>
-
 <h3 id="ileaderexperience">&lt;iLeaderExperience&gt;</h3>
-
 <p>ウォーロードとしてユニットに合流する際、ユニットに与える経験値を指定します。</p>
-
-<p>合流時、同じタイルに複数のユニットがいる場合、この値が合計となるように<br />
+<p>合流時、同じタイルに複数のユニットがいる場合、この値が合計となるように<br>
 各ユニットに経験値が配分されます。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iLeaderExperience&gt;0&lt;/iLeaderExperience&gt;</p>
-
 <h3 id="iorderpriority">&lt;iOrderPriority&gt;</h3>
-
-<p>このユニットへアップグレードするボタンの表示順を指定します。<br />
-まずこの値が小さいほうから大きいほうへと並び、<br />
+<p>このユニットへアップグレードするボタンの表示順を指定します。<br>
+まずこの値が小さいほうから大きいほうへと並び、<br>
 同じであればこのファイルの記述順に並びます。</p>
-
-<p>この機能を使わない場合、タグごと省略します。<br />
+<p>この機能を使わない場合、タグごと省略します。<br>
 BtSでは、この属性を持つユニットはありません。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iOrderPriority&gt;0&lt;/iOrderPriority&gt;</p>
-
 <div style="padding:5em"></div>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">BtSでは、このように3つすべてを埋めてありますが、必ずしも3つすべてを埋める必要はありません。<br />
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">各フレーバーには重み値をつけることができ、重み値 * フレーバー値 の合計が最も高い技術が対象として選ばれます。<br />
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:unknown">一度も視界に入れたことのない、マップ上で真っ黒に表示されるタイルのこと。<br />
- <a class="footnote-return" href="#fnref:unknown"><sup>[return]</sup></a></li>
-<li id="fn:3">地物・地形上の地物とも。森林・ジャングル・氾濫原などを指します。<br />
- <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-<li id="fn:4">古典に入ると動物が自然発生できなくなるほか、ゲーム開始直後は自然発生できない、難易度で指定される最大数を超えて自然発生できないなど、星の状況によって自然発生できるかどうかがまず決まります。<br />
- <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
-<li id="fn:7">その際、このユニットの行動圏は必ずしも海洋である必要はありません。陸海逆にして、船を運ぶトラックのようなユニットも設定できます。<br />
- <a class="footnote-return" href="#fnref:7"><sup>[return]</sup></a></li>
-<li id="fn:8">文化戦争が生じている時点で [都市所有者側蓄積文化値] &lt; [文化侵略側蓄積文化値] なので、この値は1倍～2倍の値をとります。<br />
- <a class="footnote-return" href="#fnref:8"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>BtSでは、このように3つすべてを埋めてありますが、必ずしも3つすべてを埋める必要はありません。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>各フレーバーには重み値をつけることができ、重み値 * フレーバー値 の合計が最も高い技術が対象として選ばれます。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>一度も視界に入れたことのない、マップ上で真っ黒に表示されるタイルのこと。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>地物・地形上の地物とも。森林・ジャングル・氾濫原などを指します。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>古典に入ると動物が自然発生できなくなるほか、ゲーム開始直後は自然発生できない、難易度で指定される最大数を超えて自然発生できないなど、星の状況によって自然発生できるかどうかがまず決まります。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>iProduc<strong>ton</strong>Modifierです。誤字ではありません。 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>その際、このユニットの行動圏は必ずしも海洋である必要はありません。陸海逆にして、船を運ぶトラックのようなユニットも設定できます。 <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>文化戦争が生じている時点で [都市所有者側蓄積文化値] &lt; [文化侵略側蓄積文化値] なので、この値は1倍～2倍の値をとります。 <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -6885,7 +5835,7 @@ BtSでは、この属性を持つユニットはありません。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

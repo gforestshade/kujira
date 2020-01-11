@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-10-23",
     "description": "",
-    "wordCount": 4306
+    "wordCount":  4293 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-23">2017-10-23 00:00</time></p>
           
-          <p>4306  Words</p>
+          <p>4293  Words</p>
           
           
 
@@ -374,193 +374,133 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき<br /></li>
-<li>クラス巡り<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy3/">その３</a>のつづき</li>
+<li>クラス巡り</li>
 </ul>
-
 <h1 id="提供されているクラスを探訪してみる">提供されているクラスを探訪してみる</h1>
-
-<p>新しいクラスをつくる体験をしたところで、<br />
-既存のクラスを使ってみる体験もしてみます。<br />
+<p>新しいクラスをつくる体験をしたところで、<br>
+既存のクラスを使ってみる体験もしてみます。<br>
 <a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">APIリファレンス</a>を見ながら、すすめていきましょう。</p>
-
-<p>左上フレームにリストされているのが、クラス名(型名)です。<br />
-ためしにCyCityをクリックしてみましょう。<br />
-すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br />
-CyCity型のメソッドだけでもずいぶん数があります。<br />
+<p>左上フレームにリストされているのが、クラス名(型名)です。<br>
+ためしにCyCityをクリックしてみましょう。<br>
+すると、右フレームにCyCity型のインスタンスメソッドがずらずらーっと出てきます。<br>
+CyCity型のメソッドだけでもずいぶん数があります。<br>
 流し読みしつつ、気になったのを見ていきましょう。</p>
-
-<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br />
-<span style="color:orange">BOOL</span> - ブール型(真と偽の2択)<br />
-<span style="color:red">INT</span> - 数値型<br />
-<span style="color:blue">VOID</span> - なし(戻り値を返さないもの)<br />
-<span style="color:maroon">茶色</span> - なにかのID(基本的なふるまいはINTと同じ)<br />
-<span style="color:green">緑色</span> - クラス型<br />
-こんな具合です。<br />
-</p>
-
-<hr />
-
+<p>なお、色付き文字になっているのは<strong>型</strong>です。例えば、<br>
+<span style="color:orange">BOOL</span> - ブール型(真と偽の2択)<br>
+<span style="color:red">INT</span> - 数値型<br>
+<span style="color:blue">VOID</span> - なし(戻り値を返さないもの)<br>
+<span style="color:maroon">茶色</span> - なにかのID(基本的なふるまいはINTと同じ)<br>
+<span style="color:green">緑色</span> - クラス型<br>
+こんな具合です。</p>
+<hr>
 <p>筆者が気になったのは、まずこれ。</p>
-
 <blockquote>
-<pre><code class="language-plain">19. INT calculateDistanceMaintenance ()
-</code></pre>
 </blockquote>
-
-<p>距離維持費を計算して返してくれるインスタンスメソッドですね。<br />
-最初に書いてあるINTが戻り値の型を表します。この場合は数値型です。<br />
-追加の引数がないメソッドは<code>c = pCity.calculateDistanceMaintenance()</code>のように<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">19. INT calculateDistanceMaintenance ()
+</code></pre></div><p>距離維持費を計算して返してくれるインスタンスメソッドですね。<br>
+最初に書いてあるINTが戻り値の型を表します。この場合は数値型です。<br>
+追加の引数がないメソッドは<code>c = pCity.calculateDistanceMaintenance()</code>のように<br>
 都市のインスタンスさえ用意できれば簡単に呼び出せるので練習台によいですね。</p>
-
-<hr />
-
+<hr>
 <p>次はこれ。</p>
-
 <blockquote>
-<pre><code class="language-plain">47. VOID changeExtraHappiness (INT iChange)
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">47. VOID changeExtraHappiness (INT iChange)
 48. VOID changeExtraHealth (INT iChange)
-</code></pre>
-</blockquote>
-
-<p>幸福や衛生を<code>iChange</code>ぶんだけ変えてしまうメソッドです。<br />
-「やったー！」や「文明により」で追加される幸福や衛生がこれに当たります。<br />
-<code>pCity.changeExtraHealth(3)</code>とすれば衛生+3にできますね。<br />
+</code></pre></div><p>幸福や衛生を<code>iChange</code>ぶんだけ変えてしまうメソッドです。<br>
+「やったー！」や「文明により」で追加される幸福や衛生がこれに当たります。<br>
+<code>pCity.changeExtraHealth(3)</code>とすれば衛生+3にできますね。<br>
 数値型の引数をひとつだけ取るメソッドも練習台にはよいです。</p>
-
-<hr />
-
+<hr>
 <p>どんどんいきましょう。</p>
-
 <blockquote>
-<pre><code class="language-plain">50. VOID changeFood (INT iChange)
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">50. VOID changeFood (INT iChange)
 63. VOID changeProduction (INT iChange)
-</code></pre>
-</blockquote>
-
-<p>食料やハンマーのたまり具合を直接増減させてしまいます。</p>
-
-<hr />
-
+</code></pre></div><p>食料やハンマーのたまり具合を直接増減させてしまいます。</p>
+<hr>
 <h2 id="commerceとyield">CommerceとYield</h2>
-
-<p>と、ここで、少し用語の説明をしましょう。<br />
+<p>と、ここで、少し用語の説明をしましょう。<br>
 <strong>Commerce</strong>と<strong>Yield</strong>についてです。</p>
-
-<p><strong>Yield</strong>とは<strong>Food</strong>(パン)・<strong>Production</strong>(ハンマー)・<strong>Commerce</strong>(コイン)の総称です。<br />
-内部ではこれらをひとまとめで扱い、個々の出力は<strong>YieldID</strong>によって区別します。<br />
-たとえばバニラでは、Yield0番が<strong>Food</strong>・Yield1番が<strong>Production</strong>・Yield2番が<strong>Commerce</strong>になっています。<br />
-何が何番なのかは<code>YieldTypes.YIELD_FOOD</code>などとしても求められるので、<br />
+<p><strong>Yield</strong>とは<strong>Food</strong>(パン)・<strong>Production</strong>(ハンマー)・<strong>Commerce</strong>(コイン)の総称です。<br>
+内部ではこれらをひとまとめで扱い、個々の出力は<strong>YieldID</strong>によって区別します。<br>
+たとえばバニラでは、Yield0番が<strong>Food</strong>・Yield1番が<strong>Production</strong>・Yield2番が<strong>Commerce</strong>になっています。<br>
+何が何番なのかは<code>YieldTypes.YIELD_FOOD</code>などとしても求められるので、<br>
 実際にMODを作る際はそちらを使うほうがよいでしょう。</p>
-
-<p><strong>Commerce</strong>とは<strong>Gold</strong>(ゴールド)・<strong>Research</strong>(ビーカー)・<strong>Culture</strong>(文化)・<strong>Espionage</strong>(スパイポイント)の総称です。<br />
-<strong>Commerce</strong>(コイン)と英名がまったく同じなのでものずごく紛らわしいですが、とにかくそうなっています。<br />
-コインをスライダーによって振り分けるこの4つの出力を<br />
-内部ではひとまとめで扱い、個々の出力は<strong>CommerceID</strong>によって区別します。<br />
-たとえばバニラでは、Commerce0番が<strong>Gold</strong>・Commerce1番が<strong>Research</strong>・Commerce2番が<strong>Culture</strong>・Commerce3番が<strong>Espionage</strong>になっています。<br />
-何が何番なのかは<code>CommerceTypes.COMMERCE_ESPIONAGE</code>などとしても求められるので、<br />
-実際にMODを作る際はそちらを使うほうがよいでしょう。<br />
-(もちろん、スパイなしのオプションを入れると、Commerce3番は全く出なくなり、<br />
-Commerce2番に振り分けられます。MODでもスパイなしオプションに対応する場合は<br />
+<p><strong>Commerce</strong>とは<strong>Gold</strong>(ゴールド)・<strong>Research</strong>(ビーカー)・<strong>Culture</strong>(文化)・<strong>Espionage</strong>(スパイポイント)の総称です。<br>
+<strong>Commerce</strong>(コイン)と英名がまったく同じなのでものずごく紛らわしいですが、とにかくそうなっています。<br>
+コインをスライダーによって振り分けるこの4つの出力を<br>
+内部ではひとまとめで扱い、個々の出力は<strong>CommerceID</strong>によって区別します。<br>
+たとえばバニラでは、Commerce0番が<strong>Gold</strong>・Commerce1番が<strong>Research</strong>・Commerce2番が<strong>Culture</strong>・Commerce3番が<strong>Espionage</strong>になっています。<br>
+何が何番なのかは<code>CommerceTypes.COMMERCE_ESPIONAGE</code>などとしても求められるので、<br>
+実際にMODを作る際はそちらを使うほうがよいでしょう。<br>
+(もちろん、スパイなしのオプションを入れると、Commerce3番は全く出なくなり、<br>
+Commerce2番に振り分けられます。MODでもスパイなしオプションに対応する場合は<br>
 考慮しなければならないため、いちおう覚えておきましょう。)</p>
-
-<hr />
-
-<p>したがって、CyCity型のインスタンスメソッドでも、<br />
+<hr>
+<p>したがって、CyCity型のインスタンスメソッドでも、<br>
 都市のインスタンスから毎ターン何ビーカー出ているか求めたいと思ったとき、</p>
-
 <blockquote>
-<pre><code class="language-plain">139. INT getCommerceRate (CommerceType eIndex)
-</code></pre>
 </blockquote>
-
-<p><code>iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)</code>とする必要があります。<br />
-なお、ここでのRateはPer Turn(ターンごと)のRateです。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">139. INT getCommerceRate (CommerceType eIndex)
+</code></pre></div><p><code>iResearch = pCity.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)</code>とする必要があります。<br>
+なお、ここでのRateはPer Turn(ターンごと)のRateです。<br>
 スライダーで決めるCommerceの割り振り割合ではありません。そちらはCommercePercentと呼ばれています。</p>
-
-<hr />
-
+<hr>
 <p>さらに、図書館などの効果でよくある「ビーカー+25%」のパーセントはCommerceRateModifierです。</p>
-
 <blockquote>
-<pre><code class="language-plain">140. INT getCommerceRateModifier (CommerceType eIndex)
-</code></pre>
 </blockquote>
-
-<p>こちらにより、その都市に合計で+何%の修正があるか取得できます。</p>
-
-<hr />
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">140. INT getCommerceRateModifier (CommerceType eIndex)
+</code></pre></div><p>こちらにより、その都市に合計で+何%の修正があるか取得できます。</p>
+<hr>
 <h2 id="id">ID</h2>
-
-<p>なにかのIDの指定を引数で要求してくるメソッドは他にもたくさんあります。<br />
+<p>なにかのIDの指定を引数で要求してくるメソッドは他にもたくさんあります。<br>
 たとえば建造物種IDでいえば、</p>
-
 <pre><code>229. INT getNumBuilding (BuildingType iIndex)
 </code></pre>
-
-<p>これは指定した建造物種IDに対応した建造物が都市内にいくつ建っているか<br />
+<p>これは指定した建造物種IDに対応した建造物が都市内にいくつ建っているか<br>
 (といっても通常0か1ですが)を取得してくるメソッドです。</p>
-
-<p>建造物種IDは<code>gc.getInfoTypeForString(XMLキーの文字列)</code>とすることで求められます。<br />
-<code>if pCity.getNumBuilding( gc.getInfoTypeForString('BUILDING_LIBRARY') ) &gt; 0:</code><br />
+<p>建造物種IDは<code>gc.getInfoTypeForString(XMLキーの文字列)</code>とすることで求められます。<br>
+<code>if pCity.getNumBuilding( gc.getInfoTypeForString('BUILDING_LIBRARY') ) &gt; 0:</code><br>
 などとすれば、都市インスタンスに図書館が建っているかどうかを判定できます。</p>
-
-<hr />
-
+<hr>
 <p>IDを要求するのではなく、戻り値として返してくれるメソッドもあります。</p>
-
 <pre><code>243. PlayerType getOwner ()
 </code></pre>
-
 <p>都市の所有者のPlayerIDを返してくれます。</p>
-
 <h1 id="あなたのインスタンスはどこから">あなたのインスタンスはどこから？</h1>
-
-<p>ところで、便利なメソッドがたくさんあるのはいいのですが、肝心のインスタンスは<br />
-どこから取得すればよいのでしょうか。<br />
+<p>ところで、便利なメソッドがたくさんあるのはいいのですが、肝心のインスタンスは<br>
+どこから取得すればよいのでしょうか。<br>
 方法は大きく分けて2つあります。</p>
-
 <ul>
-<li>関数の引数として渡ってきたものを利用する<br /></li>
-<li>CyGlobalContext型のメソッドにIDを渡して取得する<br />
-<br /></li>
+<li>関数の引数として渡ってきたものを利用する</li>
+<li>CyGlobalContext型のメソッドにIDを渡して取得する</li>
 </ul>
-
 <h2 id="関数の引数として渡ってきたものを利用する">関数の引数として渡ってきたものを利用する</h2>
-
-<p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントリスト</a>を見てみましょう。<br />
-たとえば、「建造物が都市で作成されたとき」を表すイベント、<br />
-<code>def onUnitBuilt()</code>を見てみます。<br />
-このイベントの主たる注目点は「どの都市で？」「どのユニットが？」作成されたのか、ということですが、<br />
-それらの情報は<code>argsList</code>にリストにされて送られてきています。<br />
+<p><a href="http://modiki.civfanatics.com/index.php?title=CvEventManager">イベントリスト</a>を見てみましょう。<br>
+たとえば、「建造物が都市で作成されたとき」を表すイベント、<br>
+<code>def onUnitBuilt() </code>を見てみます。<br>
+このイベントの主たる注目点は「どの都市で？」「どのユニットが？」作成されたのか、ということですが、<br>
+それらの情報は<code>argsList</code>にリストにされて送られてきています。<br>
 <a href="https://gforestshade.github.io/kujira/img/event_onunitbuilt.png"><img src="https://gforestshade.github.io/kujira/img/event_onunitbuilt.png"    /></a>
-<br />
+<br>
 表を見ると、<code>argsList</code>の中身は<code>city, unit, player</code>の3つだと書いてあります。</p>
-
 <p>なので、このようにしてみます。</p>
-
-<pre><code class="language-python">    def onUnitBuilt(self, argsList):
-        'Called when a unit is built in a city'
-        super(self.__class__, self).onUnitBuilt(argsList)
-        pCity, pUnit、pPlayer = argsList
-        ##########
-</code></pre>
-
-<p><code>pCity, pUnit, pPlayer = argsList</code>で<code>argsList</code>の中身を3つに分けて代入しています。<br />
-ここで代入した変数<code>pCity</code>の中身が「ユニットを作った都市」を表すインスタンスになっています。<br />
-例えばつづけて<code>cityname = pCity.getName()</code>と書けば、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onUnitBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a unit is built in a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onUnitBuilt(argsList)
+        pCity, pUnit<span style="color:#960050;background-color:#1e0010">、</span>pPlayer <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
+</code></pre></div><p><code>pCity, pUnit, pPlayer = argsList</code>で<code>argsList</code>の中身を3つに分けて代入しています。<br>
+ここで代入した変数<code>pCity</code>の中身が「ユニットを作った都市」を表すインスタンスになっています。<br>
+例えばつづけて<code>cityname = pCity.getName()</code>と書けば、<br>
 ユニットが作成されるたび、その都市の名前が<code>cityname</code>に代入されるようになります。</p>
-
-<p>どうせなので作成されたユニットのインスタンスからも名前を取得してみましょう。<br />
+<p>どうせなので作成されたユニットのインスタンスからも名前を取得してみましょう。<br>
 <code>unitname = pUnit.getName()</code>です。</p>
-
-<p>さらにさらにどうせですから<code>u&quot;%sで%sがつくられました。&quot; % (cityname, unitname)</code><br />
+<p>さらにさらにどうせですから<code>u&quot;%sで%sがつくられました。&quot; % (cityname, unitname)</code><br>
 というフォーマット文字列を作って表示してみましょう&hellip;</p>
-
 <pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
@@ -581,69 +521,43 @@ class MyEventManager(CvEventManager.CvEventManager, object):
         message = u&quot;%sで%sがつくられました。&quot; % (cityname, unitname)
         CyInterface().addImmediateMessage(message, &quot;&quot;)
 
-</code></pre>
-
-<p>が、ターンを進めてみても、メッセージが現れず、うまくいきません。<br />
-PythonErr.logをみると、13行目で&rdquo;more than 2 values to unpack.&ldquo;というエラーになっています。<br />
-『リストの中身が2個しかないから(3個の変数には)代入できないよ＞＜』ということです。<br />
-表を何度見ても3個なのですが&hellip;&hellip;ここは表の方が間違っていたということでしょう。<br />
+</code></pre><p>が、ターンを進めてみても、メッセージが現れず、うまくいきません。<br>
+PythonErr.logをみると、13行目で&quot;more than 2 values to unpack.&ldquo;というエラーになっています。<br>
+『リストの中身が2個しかないから(3個の変数には)代入できないよ＞＜』ということです。<br>
+表を何度見ても3個なのですが&hellip;&hellip;ここは表の方が間違っていたということでしょう。<br>
 <code>pPlayer</code>を諦めて、<code>pCity, pUnit = argsList</code>と書き直します。</p>
-
 <p>しばらくプレイして、ユニット作成報告を楽しみましょう。</p>
-
-<p>しばらく眺めていると、他国のユニットも流れてくることが分かります。<br />
-<code>onUnitBuilt()</code>は「ユニットが都市で作成されたとき」はいつでも呼び出され、<br />
+<p>しばらく眺めていると、他国のユニットも流れてくることが分かります。<br>
+<code>onUnitBuilt()</code>は「ユニットが都市で作成されたとき」はいつでも呼び出され、<br>
 それが人間プレイヤーの配下であるかどうかはとくに区別されないことがわかります。</p>
-
 <h1 id="cyglobalcontext型のメソッドにidを渡して取得する">CyGlobalContext型のメソッドにIDを渡して取得する</h1>
-
 <p>CyCity型のメソッド<code>getOwner()</code>で返ってくるのはPlayerIDでした。</p>
-
-<pre><code class="language-python">iPlayer = pCity.getOwner()
-</code></pre>
-
-<p>このIDを持っていったらCyPlayer型のインスタンスを返してくれる関数があったらいいのに&hellip;<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iPlayer <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getOwner()
+</code></pre></div><p>このIDを持っていったらCyPlayer型のインスタンスを返してくれる関数があったらいいのに&hellip;<br>
 と思うところですが、それはCyGlobalContext型のインスタンスメソッドとして用意されています。</p>
-
 <blockquote>
-<pre><code class="language-plain">208. CyPlayer getPlayer (INT idx)
-</code></pre>
 </blockquote>
-
-<p>まずCyGlobalContext型のインスタンスを作って、</p>
-
-<pre><code class="language-python">gc = CyGlobalContext()
-</code></pre>
-
-<p>インスタンスメソッド<code>getPlayer()</code>を呼び出します。</p>
-
-<pre><code class="language-python">pPlayer = gc.getPlayer(iPlayer)
-</code></pre>
-
-<p>そうすると、この返ってきた<code>pPlayer</code>はCyPlayer型のインスタンスです。</p>
-
-<p>CyGlobalContext型のインスタンスはひとつあれば十分なので、<br />
-ファイル冒頭に<code>gc = CyGlobalContext()</code>として作ってしまって、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">208. CyPlayer getPlayer (INT idx)
+</code></pre></div><p>まずCyGlobalContext型のインスタンスを作って、</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gc <span style="color:#f92672">=</span> CyGlobalContext()
+</code></pre></div><p>インスタンスメソッド<code>getPlayer()</code>を呼び出します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(iPlayer)
+</code></pre></div><p>そうすると、この返ってきた<code>pPlayer</code>はCyPlayer型のインスタンスです。</p>
+<p>CyGlobalContext型のインスタンスはひとつあれば十分なので、<br>
+ファイル冒頭に<code>gc = CyGlobalContext()</code>として作ってしまって、<br>
 以後<code>gc</code>を使いまわすようにしているMODが多いようです。</p>
-
-<p>CyPlayerのインスタンスメソッドでできることは本当に多岐にわたっていて、<br />
+<p>CyPlayerのインスタンスメソッドでできることは本当に多岐にわたっていて、<br>
 とてもここでは説明しつくせない量ですので各自<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>を見ていただくことにして、</p>
-
-<p>今回は例として「奴隷制」の社会制度を採用しているときにだけ<br />
-ユニット作成報告が上がるようにしてみましょう。<br />
-奴隷制のXMLキーは<code>&quot;CIVIC_SLAVERY&quot;</code>ですから、<br />
-<code>gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)</code>でCivicTypeを取得できます。<br />
+<p>今回は例として「奴隷制」の社会制度を採用しているときにだけ<br>
+ユニット作成報告が上がるようにしてみましょう。<br>
+奴隷制のXMLキーは<code>&quot;CIVIC_SLAVERY&quot;</code>ですから、<br>
+<code>gc.getInfoTypeForString(&quot;CIVIC_SLAVERY&quot;)</code>でCivicTypeを取得できます。<br>
 そのCivicTypeと、先に手に入れたCyPlayer型のインスタンスを使って、</p>
-
 <p>これを呼び出します。</p>
-
 <blockquote>
-<pre><code class="language-plain">328. BOOL isCivic (CivicType eCivic)
-</code></pre>
 </blockquote>
-
-<p>全部でこうなります&hellip;</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">328. BOOL isCivic (CivicType eCivic)
+</code></pre></div><p>全部でこうなります&hellip;</p>
 <pre><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
@@ -669,17 +583,14 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
             message = u&quot;奴隷制を採用する%sで%sがつくられました。&quot; % (cityname, unitname)
             CyInterface().addImmediateMessage(message, &quot;&quot;)
-</code></pre>
-
-<p><code>pCity</code>が人間プレイヤーの都市とは限らないことに注意してください。<br />
-したがって<code>pCity.getOwner()</code>で取得したPlayerIDも「そのユニットを作ったPlayer」であって、<br />
-必ずしも人間プレイヤーではありません。<br />
-そのPlayerのインスタンスが<code>pPlayer</code>になるので、それを使って<code>pPlayer.isCivic(eMan)</code>と判定すると<br />
+</code></pre><p><code>pCity</code>が人間プレイヤーの都市とは限らないことに注意してください。<br>
+したがって<code>pCity.getOwner()</code>で取得したPlayerIDも「そのユニットを作ったPlayer」であって、<br>
+必ずしも人間プレイヤーではありません。<br>
+そのPlayerのインスタンスが<code>pPlayer</code>になるので、それを使って<code>pPlayer.isCivic(eMan)</code>と判定すると<br>
 「ユニットを作ったPlayerが奴隷制を採用しているなら」を判定していることになります。</p>
-
-<p>それを踏まえて眺めていると&hellip;<br />
+<p>それを踏まえて眺めていると&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_20.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_20.png"    /></a>
-<br />
+<br>
 奴隷制を採用している文明だけダダ漏れになっています。いいですね。</p>
         </div>
         <div class="col-12">
@@ -693,7 +604,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Kujira, Civ4 Mod Blog</title>
@@ -7,37 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Tue, 29 May 2018 16:22:20 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Oct 2018 05:45:30 +0900</lastBuildDate>
     
 	<atom:link href="https://gforestshade.github.io/kujira/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</link>
-      <pubDate>Tue, 29 May 2018 16:22:20 +0900</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MMD_to_CIV4</title>
-      <link>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</link>
-      <pubDate>Mon, 15 May 2017 12:00:00 +0900</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://gforestshade.github.io/kujira/categories/python/</link>
-      <pubDate>Sat, 30 Dec 2017 12:04:00 +0000</pubDate>
-      
-      <guid>https://gforestshade.github.io/kujira/categories/python/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>XML</title>
@@ -45,6 +18,15 @@
       <pubDate>Mon, 29 Oct 2018 05:45:30 +0900</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/categories/xml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</link>
+      <pubDate>Tue, 29 May 2018 16:22:20 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/categories/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
@@ -63,6 +45,24 @@
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/categories/%E7%9B%AE%E6%AC%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://gforestshade.github.io/kujira/categories/python/</link>
+      <pubDate>Sat, 30 Dec 2017 12:04:00 +0000</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MMD_to_CIV4</title>
+      <link>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</link>
+      <pubDate>Mon, 15 May 2017 12:00:00 +0900</pubDate>
+      
+      <guid>https://gforestshade.github.io/kujira/categories/mmd_to_civ4/</guid>
       <description></description>
     </item>
     

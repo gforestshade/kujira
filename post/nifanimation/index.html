@@ -48,7 +48,7 @@
     },
     "datePublished": "2017-05-15",
     "description": "",
-    "wordCount": 8681
+    "wordCount":  8704 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -340,7 +340,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-05-15">2017-05-15 12:00</time></p>
           
-          <p>8681  Words</p>
+          <p>8704  Words</p>
           
           
 
@@ -356,429 +356,293 @@ if (!doNotTrack) {
           
         </div>
         <div class="article">
-          
-
-<h1 id="この文章について">この文章について</h1>
-
+          <h1 id="この文章について">この文章について</h1>
 <h2 id="これは何か">これは何か</h2>
-
 <ul>
-<li>Civ4上で動くユニットをちょっと作ってみようかと思った筆者の悪戦苦闘の記録第２章<br /></li>
-<li>Civ4のModdingをやったことある人向け、ではありますが、XMLもPythonもDLLも出てきませんから、経験の有無はあまり関係ないです<br /></li>
-<li>動かしたいnifファイルは入手済みの人向けです、必ずしもMMDから取ったものでなくともよいと思いますが、少なくともゲーム上で正しく読み込めるユニット用nifファイルが必要です<br /></li>
-<li>Blender・3Dモデリングの知識などない筆者の記録です、きっとみんなにもできるさ<br />
-<br /></li>
+<li>Civ4上で動くユニットをちょっと作ってみようかと思った筆者の悪戦苦闘の記録第２章</li>
+<li>Civ4のModdingをやったことある人向け、ではありますが、XMLもPythonもDLLも出てきませんから、経験の有無はあまり関係ないです</li>
+<li>動かしたいnifファイルは入手済みの人向けです、必ずしもMMDから取ったものでなくともよいと思いますが、少なくともゲーム上で正しく読み込めるユニット用nifファイルが必要です</li>
+<li>Blender・3Dモデリングの知識などない筆者の記録です、きっとみんなにもできるさ</li>
 </ul>
-
 <h2 id="これは何でないか">これは何でないか</h2>
-
 <ul>
-<li>ぐりぐり自由に動かせるわけではありません。既存のユニットと同じ動きができるようになるだけです<br /></li>
-<li>指導者画面/都市改善に使用される3Dモデルのことは未調査<br /></li>
-<li>筆者は3Dモデルに精通していません。Blenderの機能をほんとうに最低限しか使っていません<small>誰か教えてください</small><br /></li>
-<li>この章では<small>面倒なので</small>保存するタイミングを指定していません。適宜作業が失われないよう保存してください<br />
-<br /></li>
+<li>ぐりぐり自由に動かせるわけではありません。既存のユニットと同じ動きができるようになるだけです</li>
+<li>指導者画面/都市改善に使用される3Dモデルのことは未調査</li>
+<li>筆者は3Dモデルに精通していません。Blenderの機能をほんとうに最低限しか使っていません<small>誰か教えてください</small></li>
+<li>この章では<small>面倒なので</small>保存するタイミングを指定していません。適宜作業が失われないよう保存してください</li>
 </ul>
-
 <h1 id="用意するもの">用意するもの</h1>
-
-<h2 id="blender2-49b">Blender2.49b</h2>
-
-<p><a href="http://download.blender.org/release/Blender2.49b/">http://download.blender.org/release/Blender2.49b/</a><br />
-blender-2.49b-windows.exeを取ってきて、インストールします。<br />
-インストーラを使用して、<br />
-Please Specify where you wish to install Blender&rsquo;s user data files.<br />
-の質問に対して、<br />
-Use the instllation directory(ie. location chosen to install blender.exe).<br />
+<h2 id="blender249b">Blender2.49b</h2>
+<p><a href="http://download.blender.org/release/Blender2.49b/">http://download.blender.org/release/Blender2.49b/</a><br>
+blender-2.49b-windows.exeを取ってきて、インストールします。<br>
+インストーラを使用して、<br>
+Please Specify where you wish to install Blender's user data files.<br>
+の質問に対して、<br>
+Use the instllation directory(ie. location chosen to install blender.exe).<br>
 を選択する必要があります。(こうしないとPyFFIがBlenderを認識してくれないらしい)</p>
-
-<h2 id="python-2-6-6">Python 2.6.6</h2>
-
-<p><a href="http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi">http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi</a><br />
+<h2 id="python-266">Python 2.6.6</h2>
+<p><a href="http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi">http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi</a><br>
 指示通りでOKです。</p>
-
-<h2 id="pyffi2-1-11">PyFFI2.1.11</h2>
-
-<p><a href="http://sourceforge.net/projects/pyffi/files/pyffi/2.1.11/">http://sourceforge.net/projects/pyffi/files/pyffi/2.1.11/</a><br />
-PyFFI-2.1.11.cefd181.win32.exeを取ってきてインストールします。<br />
-PyFFIのインストールはBlender・Pythonの後でなければいけません。<br />
+<h2 id="pyffi2111">PyFFI2.1.11</h2>
+<p><a href="http://sourceforge.net/projects/pyffi/files/pyffi/2.1.11/">http://sourceforge.net/projects/pyffi/files/pyffi/2.1.11/</a><br>
+PyFFI-2.1.11.cefd181.win32.exeを取ってきてインストールします。<br>
+PyFFIのインストールはBlender・Pythonの後でなければいけません。<br>
 順番を守っていれば、インストールの途中でPython2.6とBlender2.4xが認識されているはずです。チェックが入っていることを確認して、次に進みます。</p>
-
-<p>Blender Nif Scripts 2.5.9<br />
-<a href="https://github.com/niftools/blender_nif_plugin/releases/tag/blender-2.5.9">https://github.com/niftools/blender_nif_plugin/releases/tag/blender-2.5.9</a><br />
+<p>Blender Nif Scripts 2.5.9<br>
+<a href="https://github.com/niftools/blender_nif_plugin/releases/tag/blender-2.5.9">https://github.com/niftools/blender_nif_plugin/releases/tag/blender-2.5.9</a><br>
 blender_nif_scripts-2.5.9.77b0815-windows.exeを取ってきて、普通にインストールします。</p>
-
 <h2 id="nifskope">NifSkope</h2>
-
-<p><a href="https://github.com/niftools/nifskope/releases">https://github.com/niftools/nifskope/releases</a><br />
+<p><a href="https://github.com/niftools/nifskope/releases">https://github.com/niftools/nifskope/releases</a><br>
 NifSkopeはCiv4に関してはどのバージョンを使ってもだいたい同じです。好きなのを使いましょう。安定を求めるなら枯れている1.1.3を使うのが良いでしょう。</p>
-
-<h2 id="モデル-元となるモデル">モデル・元となるモデル</h2>
-
-<p><a href="https://www6.atwiki.jp/vpvpwiki/pages/458.html#id_45cf69b1">https://www6.atwiki.jp/vpvpwiki/pages/458.html#id_45cf69b1</a><br />
-この章の方法では、お目当てのモデルのほかに、ベースとなる元モデルが必要です。<br />
-ベースモデルは、できるだけ形状が同じで、させたい待機モーションや攻撃モーションが<br />
-目当てのものに近くて、civ4modに組み込んで動作確認が取れているものが望ましいです。<br />
-BtSのモデルそのままではどうもうまくImportできないので、<br />
-できればMODで使用実績のあるものの方が良いです。<br />
-というわけで、この文章ではモンテコア式布都を<a href="mmd_to_nif.html">前章</a>にしたがってnif化したものを、<br />
+<h2 id="モデル元となるモデル">モデル・元となるモデル</h2>
+<p><a href="https://www6.atwiki.jp/vpvpwiki/pages/458.html#id_45cf69b1">https://www6.atwiki.jp/vpvpwiki/pages/458.html#id_45cf69b1</a><br>
+この章の方法では、お目当てのモデルのほかに、ベースとなる元モデルが必要です。<br>
+ベースモデルは、できるだけ形状が同じで、させたい待機モーションや攻撃モーションが<br>
+目当てのものに近くて、civ4modに組み込んで動作確認が取れているものが望ましいです。<br>
+BtSのモデルそのままではどうもうまくImportできないので、<br>
+できればMODで使用実績のあるものの方が良いです。<br>
+というわけで、この文章ではモンテコア式布都を<a href="mmd_to_nif.html">前章</a>にしたがってnif化したものを、<br>
 <a href="http://wikiwiki.jp/tohojojisi/?FrontPage">東方叙事詩</a>のライフル兵fairy01をベースにして当てはめてみることにします。</p>
-
 <h1 id="まずnifskope">まずNifSkope</h1>
-
 <p>NifSkope上である程度お膳立てが必要です。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/nifskope0.png"><img src="https://gforestshade.github.io/kujira/img/nifskope0.png"  width="450" height="400" /></a>
 
-
-<p>各NiTriShapeについて、選択状態であれば強調表示されますので大体どの部位を表しているのか名前をつけておきましょう。<br />
+<p>各NiTriShapeについて、選択状態であれば強調表示されますので大体どの部位を表しているのか名前をつけておきましょう。<br>
 目視ではわからなくても適当で構いません。日本語文字化け+連番のままですと後々どれがどれだかわからなくなって困るので、今のうちに準備しておくことが目的です。</p>
-
 <p>ベースモデルを一緒に開きます。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/nifskope1.png"><img src="https://gforestshade.github.io/kujira/img/nifskope1.png"  width="800" height="350" /></a>
 
-
 <p>ここのNiNodeをCopy Branchして、</p>
-
 <a href="https://gforestshade.github.io/kujira/img/nifskope2.png"><img src="https://gforestshade.github.io/kujira/img/nifskope2.png"  width="800" height="350" /></a>
 
-
-<p>ここのNiNodeにPaste Branchします。<br />
+<p>ここのNiNodeにPaste Branchします。<br>
 これだけだと大きさがあっていないので足元に小さく布都が見えていますが、気にしないことにして、これでNifSkope上の準備は終わりです。</p>
-
-<h1 id="blender2-49bの準備">Blender2.49bの準備</h1>
-
-<p>Blender2.49b(以下単にBlender)を起動すると、いつもの立方体が写っています。[X]で消してしまいます。(以下キーボード操作をこのように表記します。慣例に従って大文字で表記しますが、キーボードの刻印通りにキーを１回押すという意味です)<br />
+<h1 id="blender249bの準備">Blender2.49bの準備</h1>
+<p>Blender2.49b(以下単にBlender)を起動すると、いつもの立方体が写っています。[X]で消してしまいます。(以下キーボード操作をこのように表記します。慣例に従って大文字で表記しますが、キーボードの刻印通りにキーを１回押すという意味です)<br>
 まず画面を整えましょう。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_split_area.png"><img src="https://gforestshade.github.io/kujira/img/blender_split_area.png"  width="800" height="435" /></a>
 
-
 <p>境界を右クリックしてSplit Area</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_split_area2.png"><img src="https://gforestshade.github.io/kujira/img/blender_split_area2.png"  width="800" height="435" /></a>
 
-
 <p>左クリックで確定します。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_outliner.png"><img src="https://gforestshade.github.io/kujira/img/blender_outliner.png"  width="800" height="435" /></a>
 
-
 <p>Window TypeをOutlinerに変更します。</p>
-
 <h1 id="blenderにnifを取り込む">BlenderにNifを取り込む</h1>
-
 <p><a href="https://gforestshade.github.io/kujira/img/blender_import_nif.png"><img src="https://gforestshade.github.io/kujira/img/blender_import_nif.png"  width="800" height="435" /></a>
-<br />
-nifファイルをインポートします。<br />
-ファイル名を選択します。<br />
+<br>
+nifファイルをインポートします。<br>
+ファイル名を選択します。<br>
 <a href="https://gforestshade.github.io/kujira/img/blender_import_nif2.png"><img src="https://gforestshade.github.io/kujira/img/blender_import_nif2.png"  width="800" height="435" /></a>
 </p>
-
-<p>オプションはこんな感じです。<br />
+<p>オプションはこんな感じです。<br>
 とくに、</p>
-
-<p>Scale Correction: 10.00<br />
-Texture Search Paths: ddsのあるフォルダ<br />
-Merge Skelton Roots: on<br />
-Send Geometries To Bind Position: on<br />
-Send Detached Geometries To Node Position: on<br />
+<p>Scale Correction: 10.00<br>
+Texture Search Paths: ddsのあるフォルダ<br>
+Merge Skelton Roots: on<br>
+Send Geometries To Bind Position: on<br>
+Send Detached Geometries To Node Position: on<br>
 Send Bones To Bind Position: on</p>
-
 <p>を入れておくとよいと思います。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_scale.png"><img src="https://gforestshade.github.io/kujira/img/blender_scale.png"  width="800" height="435" /></a>
 
-
 <p>こんな感じになっていればOKです。</p>
-
 <h1 id="blender基本操作">Blender基本操作</h1>
-
 <p>この節ではBlender2.49bについて長々と説明しています。</p>
-
 <h2 id="ウィンドウ">ウィンドウ</h2>
-
-<p>Blender2.49bはマウスカーソルが乗っているウィンドウが自動的にアクティブになる仕組みです。<br />
-キーボードの命令も、マウスが乗っているウィンドウにしか効きません。<br />
-一時的に出てくるプルダウンメニューやその他のメニュー・確認メッセージといったものすら例外ではなく、<br />
-マウスが離れると自動的にキャンセルされて消えてしまいます。<br />
+<p>Blender2.49bはマウスカーソルが乗っているウィンドウが自動的にアクティブになる仕組みです。<br>
+キーボードの命令も、マウスが乗っているウィンドウにしか効きません。<br>
+一時的に出てくるプルダウンメニューやその他のメニュー・確認メッセージといったものすら例外ではなく、<br>
+マウスが離れると自動的にキャンセルされて消えてしまいます。<br>
 慣れていないとびっくりしますが、慌てずにコマンドを再実行しましょう。</p>
-
 <h2 id="視点移動と選択操作">視点移動と選択操作</h2>
-
 <p>マウスについて。3DView上では</p>
-
 <ul>
-<li>左クリックは空間上にカーソル(注目点)を打つ<strong>だけ</strong><br /></li>
-<li>中クリックやホイールコロコロは視点移動<br /></li>
-<li>右クリックは個別選択<br />
-<br /></li>
+<li>左クリックは空間上にカーソル(注目点)を打つ<strong>だけ</strong></li>
+<li>中クリックやホイールコロコロは視点移動</li>
+<li>右クリックは個別選択</li>
 </ul>
-
-<p>が基本です。何かを選択したいと思ったときは、Blenderでは右クリックしないといけません。またこの右クリックの仕様上、右クリックでコンテクストメニューが出てくるということはありません。選択した対象に何かしたい場合、たいていはキーボードのキーを使うことになります。<br />
-中ボタンコロコロで拡大縮小、Shift+コロコロで上下移動、Ctrl+コロコロで左右移動します。<br />
-中ボタンドラッグで視点が回転、Shift+中ボタンドラッグで視点が平行移動します。これがあるので、コロコロでの視点移動はあまり出番がありません。<br />
-3DView内の選択は右クリックですが、Outlinerでは左クリックで選択できます。紛らわしい。でも対応する3DView内の要素も選択表示されます。便利。<br />
-Outliner上で目的のものを選択するのはとても便利なのでどんどん使いましょう。以前わざわざわかりやすいよう改名したのはこのためです。<br />
+<p>が基本です。何かを選択したいと思ったときは、Blenderでは右クリックしないといけません。またこの右クリックの仕様上、右クリックでコンテクストメニューが出てくるということはありません。選択した対象に何かしたい場合、たいていはキーボードのキーを使うことになります。<br>
+中ボタンコロコロで拡大縮小、Shift+コロコロで上下移動、Ctrl+コロコロで左右移動します。<br>
+中ボタンドラッグで視点が回転、Shift+中ボタンドラッグで視点が平行移動します。これがあるので、コロコロでの視点移動はあまり出番がありません。<br>
+3DView内の選択は右クリックですが、Outlinerでは左クリックで選択できます。紛らわしい。でも対応する3DView内の要素も選択表示されます。便利。<br>
+Outliner上で目的のものを選択するのはとても便利なのでどんどん使いましょう。以前わざわざわかりやすいよう改名したのはこのためです。<br>
 どの選択方法でも、複数選択をするときはShiftを押しながらでできます。</p>
-
-<p>テンキーについて。<br />
+<p>テンキーについて。<br>
 テンキーではより精密な視点移動ができます。マウスでうまくいかないときはテンキーも使ってみましょう。</p>
-
-<pre><code class="language-plain">  [Num1]で正面、[Num3]で右側面、[Num7]で真上に視点を戻せます。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">  [Num1]で正面、[Num3]で右側面、[Num7]で真上に視点を戻せます。
   どこ見てるかわからなくなったとき特に有効ですのでこれで戻しましょう。
   [Num2][Num4][Num6][Num8]は上下左右に15°だけ視点を回転します。
   きっちり視点を合わせたいときにはマウス中ボタンよりこれらが便利で、例えば[Num3]→[Num6]6回で真後ろから見る、みたいなこともできます。
-</code></pre>
-
-<p>用語について。<br />
+</code></pre></div><p>用語について。<br>
 いくつか用語を説明しなければいけません。<small>間違ってたら誰か教えてください</small></p>
-
 <dl>
-<dt>Verticles: 頂点<br /></dt>
-<dd>すべては頂点から始まります。頂点がたくさん集まって立体をなしているのが3Dモデルなのです。<br />
-<br /></dd>
-<dt>Face: 面<br /></dt>
-<dd>頂点が3つ集まって、三角形の面を構成します。ポリゴンとも呼びます。一般的なモデリングでは三角形でない(多角形ですらない)こともありますが、Civ4が扱うnifのバージョンでは対応していません。<br />
-<br /></dd>
-<dt>Mesh: ひとまとまりの面<br /></dt>
-<dd>面を集めてある程度形ができたらそれをひとまとまりにして、メッシュと呼びます。メッシュはオブジェクトです。Object Modeで選択することができます。<br />
-<br /></dd>
-<dt>Vertex Group: 頂点の集まり<br /></dt>
-<dd>Meshとは異なり、こちらは単純な頂点の集まりです。BoneとVertex Groupを関連付けることで、骨への肉付けを実現します。<br />
-<br /></dd>
-<dt>Bone: 骨<br /></dt>
-<dd>動きを司る最小単位です。BoneにはVertex Groupを介してVerticlesが関連付けられていて、ちょうど肉付けされているような感覚で、骨を動かすと一緒に頂点や面がついてくる仕組みになっています。<br />
-<br /></dd>
-<dt>Armature: 骨格<br /></dt>
-<dd>ひとつづきのBonesをアーマチュアと呼びます。人型であれば骨格全体のようなイメージです。アーマチュアはオブジェクトです。Object Modeで選択することができます。<br />
-<br /></dd>
-<dt>Mode: モード<br /></dt>
+<dt>Verticles: 頂点</dt>
+<dd>すべては頂点から始まります。頂点がたくさん集まって立体をなしているのが3Dモデルなのです。</dd>
+<dt>Face: 面</dt>
+<dd>頂点が3つ集まって、三角形の面を構成します。ポリゴンとも呼びます。一般的なモデリングでは三角形でない(多角形ですらない)こともありますが、Civ4が扱うnifのバージョンでは対応していません。</dd>
+<dt>Mesh: ひとまとまりの面</dt>
+<dd>面を集めてある程度形ができたらそれをひとまとまりにして、メッシュと呼びます。メッシュはオブジェクトです。Object Modeで選択することができます。</dd>
+<dt>Vertex Group: 頂点の集まり</dt>
+<dd>Meshとは異なり、こちらは単純な頂点の集まりです。BoneとVertex Groupを関連付けることで、骨への肉付けを実現します。</dd>
+<dt>Bone: 骨</dt>
+<dd>動きを司る最小単位です。BoneにはVertex Groupを介してVerticlesが関連付けられていて、ちょうど肉付けされているような感覚で、骨を動かすと一緒に頂点や面がついてくる仕組みになっています。</dd>
+<dt>Armature: 骨格</dt>
+<dd>ひとつづきのBonesをアーマチュアと呼びます。人型であれば骨格全体のようなイメージです。アーマチュアはオブジェクトです。Object Modeで選択することができます。</dd>
+<dt>Mode: モード</dt>
 <dd><a href="https://gforestshade.github.io/kujira/img/blender_scale.png"><img src="https://gforestshade.github.io/kujira/img/blender_scale.png"  width="800" height="435" /></a>
-<br />
- 画像の青の部分で切り替えます。何を選択しているかによって入れるモードが違うので注意しましょう。<br />
-<br /></dd>
-<dt>Object Mode: オブジェクトのモード<br /></dt>
-<dd><small>そのままか！</small>オブジェクトを選択したり、選択したオブジェクト全体に何かしたりします。<br />
-<br /></dd>
-<dt>Edit Mode: 成形する<br /></dt>
-<dd>Meshを選択中、このモードに入ることができます。選択したMesh内の頂点・辺・面といったものに対して何かします。Vertex Groupに対する操作もここでできます。<br />
-<br /></dd>
-<dt>Pose Mode: 動かす<br /></dt>
-<dd>Armatureを選択中、このモードに入ることができます。各Boneを動かすことで、実際にポーズを取らせることができます。この章では、ちゃんと肉がついてきているか確認する作業が主です。<br />
-<br /></dd>
-<dt>Draw Type: 描画タイプ<br /></dt>
+<br>
+画像の青の部分で切り替えます。何を選択しているかによって入れるモードが違うので注意しましょう。</dd>
+<dt>Object Mode: オブジェクトのモード</dt>
+<dd><small>そのままか！</small>オブジェクトを選択したり、選択したオブジェクト全体に何かしたりします。</dd>
+<dt>Edit Mode: 成形する</dt>
+<dd>Meshを選択中、このモードに入ることができます。選択したMesh内の頂点・辺・面といったものに対して何かします。Vertex Groupに対する操作もここでできます。</dd>
+<dt>Pose Mode: 動かす</dt>
+<dd>Armatureを選択中、このモードに入ることができます。各Boneを動かすことで、実際にポーズを取らせることができます。この章では、ちゃんと肉がついてきているか確認する作業が主です。</dd>
+<dt>Draw Type: 描画タイプ</dt>
 <dd><a href="https://gforestshade.github.io/kujira/img/blender_scale.png"><img src="https://gforestshade.github.io/kujira/img/blender_scale.png"  width="800" height="435" /></a>
-<br />
- 画像の緑の部分で切り替えます。こちらは表示の仕方、あるいはいろんな要素がある3Dモデルの中で何を重視して表示するか、を切り替えます。<br />
-<br /></dd>
-<dt>Solid<br /></dt>
+<br>
+画像の緑の部分で切り替えます。こちらは表示の仕方、あるいはいろんな要素がある3Dモデルの中で何を重視して表示するか、を切り替えます。</dd>
+<dt>Solid</dt>
 <dd><a href="https://gforestshade.github.io/kujira/img/blender_solid.png"><img src="https://gforestshade.github.io/kujira/img/blender_solid.png"  width="800" height="435" /></a>
-<br />
- デフォルトはこのタイプです。張られている面をそのまま表示します。面そのものだけを表示するので、その面に貼られる画像は描画されませんが、その分形状を把握するのに向いています。この章での主力です。<br />
-<br /></dd>
-<dt>Textured<br /></dt>
+<br>
+デフォルトはこのタイプです。張られている面をそのまま表示します。面そのものだけを表示するので、その面に貼られる画像は描画されませんが、その分形状を把握するのに向いています。この章での主力です。</dd>
+<dt>Textured</dt>
 <dd><a href="https://gforestshade.github.io/kujira/img/blender_textured.png"><img src="https://gforestshade.github.io/kujira/img/blender_textured.png"  width="800" height="435" /></a>
-<br />
- 面に画像を貼った状態で表示されます。実際のゲームの表示と近いので、仕上げの調整に使えるかもしれません。細かい形状を把握するのに向いていないので、あまりこの章では出番がありません。<br />
-<br /></dd>
-<dt>Wireframe<br /></dt>
+<br>
+面に画像を貼った状態で表示されます。実際のゲームの表示と近いので、仕上げの調整に使えるかもしれません。細かい形状を把握するのに向いていないので、あまりこの章では出番がありません。</dd>
+<dt>Wireframe</dt>
 <dd><a href="https://gforestshade.github.io/kujira/img/blender_wireframe.png"><img src="https://gforestshade.github.io/kujira/img/blender_wireframe.png"  width="800" height="435" /></a>
-<br />
- 面を取り払って、辺と頂点だけを表示します。余計なものがないので、細かく操作をするのに向いているほか、面がないので、solidでは面の後ろに隠れて見えないうしろ側の頂点のことも気にした編集ができる利点があります。<br />
-<br />
-<br /></dd>
+<br>
+面を取り払って、辺と頂点だけを表示します。余計なものがないので、細かく操作をするのに向いているほか、面がないので、solidでは面の後ろに隠れて見えないうしろ側の頂点のことも気にした編集ができる利点があります。</dd>
 </dl>
-
 <h1 id="位置合わせ">位置合わせ</h1>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_scale.png"><img src="https://gforestshade.github.io/kujira/img/blender_scale.png"  width="800" height="435" /></a>
 
-
-<p>さて、デフォルトではモードはObject Modeです。この図のように、布都の分のMeshを全部選択した状態にします。(Outlinerでやるほうがやりやすいと思います)<br />
-[S](Scale:大きさ)を押します。拡大縮小しているのが分かります。このような動かしている途中の状態では、左クリックで確定、右クリックでキャンセルになります。<small>なかなかややこしいです。</small>だいたい重なるように大きさを合わせてください。この時点では大体で構いません。肩のあたりが重なるような感じでよいです。<br />
+<p>さて、デフォルトではモードはObject Modeです。この図のように、布都の分のMeshを全部選択した状態にします。(Outlinerでやるほうがやりやすいと思います)<br>
+[S](Scale:大きさ)を押します。拡大縮小しているのが分かります。このような動かしている途中の状態では、左クリックで確定、右クリックでキャンセルになります。<small>なかなかややこしいです。</small>だいたい重なるように大きさを合わせてください。この時点では大体で構いません。肩のあたりが重なるような感じでよいです。<br>
 妖精にはいったん退いておいてもらいます。妖精の方のMeshを全部選択して、</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_grab.png"><img src="https://gforestshade.github.io/kujira/img/blender_grab.png"  width="800" height="435" /></a>
 
-
 <p>[G](Grab/move:つかむ/移動)を押します。移動していくのが分かります。左クリックで確定、右クリックでキャンセルです。右上の方へ、さらに[Num3]の視点移動から奥の方に行かせます。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/blender_armature_view.png"><img src="https://gforestshade.github.io/kujira/img/blender_armature_view.png"  width="800" height="435" /></a>
 
-
-<p>Armatureの表示を調整します。Armatureを選択して、Buttons PanelをEditingに切り替えます。<br />
-&ldquo;Armature&rdquo;のタブで、X-Ray(Armatureを常に最前面に表示)・Envelope(筆者はこの形が一番見やすいと思いましたが、OctahedronやStickなどを試してもいいと思います)・Names(Bone名を表示、超捗る)をオンにしておきます。<br />
+<p>Armatureの表示を調整します。Armatureを選択して、Buttons PanelをEditingに切り替えます。<br>
+&ldquo;Armature&quot;のタブで、X-Ray(Armatureを常に最前面に表示)・Envelope(筆者はこの形が一番見やすいと思いましたが、OctahedronやStickなどを試してもいいと思います)・Names(Bone名を表示、超捗る)をオンにしておきます。<br>
 Outlinerの目のボタンでは、表示/非表示を切り替えることができます。これが邪魔で後ろにあるものがよく見えない！というときは遠慮なく視界から消えてもらいましょう。今回は弾エフェクト・羽のBoneには用がないので、最初から非表示にしています。</p>
-
 <p>最後に、大きさをちゃんと合わせましょう。布都のMeshをすべて選択して[S]、Neckという名前のBoneと首がちょうど重なるように大きさを合わせておきます。</p>
-
 <h1 id="armatureに割り当てる">Armatureに割り当てる</h1>
-
-<p>ArmatureとMeshの関係を設定します。<br />
-再び布都のMeshをすべて選択して、できたら次にArmatureを選択して(この例だとSoundを右クリックするのがやりやすかったです・<strong>またArmatureを選択するのは最後でなければいけません、注意</strong>)、<br />
+<p>ArmatureとMeshの関係を設定します。<br>
+再び布都のMeshをすべて選択して、できたら次にArmatureを選択して(この例だとSoundを右クリックするのがやりやすかったです・<strong>またArmatureを選択するのは最後でなければいけません、注意</strong>)、<br>
 Ctrl+[P]を押します。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_parentto.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_parentto.png"  width="800" height="435" /></a>
 
-
 <p>Armatureを選択します。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_nameg.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_nameg.png"  width="800" height="435" /></a>
 
-
 <p>Name Groupsを選択します。しつこく何回も聞いてくるので、しつこく何回もName Groupsを選びます。</p>
-
 <p>Meshがどこかに行ってしまいました。中ボタンドラッグで視点を回転して見てみると、</p>
-
 <p><a href="https://gforestshade.github.io/kujira/img/jma_blender_shita.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_shita.png"  width="800" height="435" /></a>
-<br />
-下を向いてしまったようです。改めて布都のMeshを選択して(そのままだとArmatureも選択してしまっています、Armatureの選択を外してください)、<br />
-[R][x][-90]の順に入力すると、x軸(赤軸)を回転軸として-90°回転されて立ち上がってくれます。<br />
+<br>
+下を向いてしまったようです。改めて布都のMeshを選択して(そのままだとArmatureも選択してしまっています、Armatureの選択を外してください)、<br>
+[R][x][-90]の順に入力すると、x軸(赤軸)を回転軸として-90°回転されて立ち上がってくれます。<br>
 視点を正面に戻せなくなったら、[Num1]のことを思い出してくださいね。</p>
-
 <h1 id="ウェイトを塗る">ウェイトを塗る</h1>
-
 <p>実際の肉付けです。</p>
-
 <h2 id="edit-mode">Edit Mode</h2>
-
-<p>Mesh1つだけを選択した状態でEdit Modeに入ってみましょう。(例ではBodyと名前を付けたMeshを選択しています)<br />
-そのMeshに属する頂点がすべて黄色く選択された状態になります。Edit Modeでは、ほかのMeshに属する頂点を操作することはできません。逆に、何か失敗しても影響はそのMesh内にとどまるということです。便利。<br />
+<p>Mesh1つだけを選択した状態でEdit Modeに入ってみましょう。(例ではBodyと名前を付けたMeshを選択しています)<br>
+そのMeshに属する頂点がすべて黄色く選択された状態になります。Edit Modeでは、ほかのMeshに属する頂点を操作することはできません。逆に、何か失敗しても影響はそのMesh内にとどまるということです。便利。<br>
 どこなのかわからない場合は、非表示を活用したり、Wireframeにしたりしてみましょう。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_bselect.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_bselect.png"  width="800" height="435" /></a>
 
-
 <p>例では、服やスカートのMeshを非表示にしてしまっています。</p>
-
 <p>Edit Modeでは、何か選択している状態で[A]で選択解除、何も選択していない状態で[A]で全選択になります。</p>
-
 <p>選択範囲が分からなくなってしまったり、最初から選択をやり直したくなったときは落ち着いて[A]しましょう。</p>
-
-<p>さて、頂点を選択してVertex Groupに割り当てたいのですが、1つ1つ選択していては大変すぎるので、範囲選択が欲しいところです。<br />
-というわけで、矩形選択は[B]です。さっきの画像は、それを使用して首の部分を選択しようとしている場面です。四角の枠の中に入っているすべての頂点を選択します。<br />
-もうひとつ、[B][B]と入力することで、丸型に選択する機能もあります。左ドラッグしている間、丸の中に入っているすべての頂点を選択します。中ドラッグしている間、丸の中に入っているすべての頂点を選択解除します。ホイールを回すことで、丸の大きさを自在に変えられるので、かなり便利です。<br />
+<p>さて、頂点を選択してVertex Groupに割り当てたいのですが、1つ1つ選択していては大変すぎるので、範囲選択が欲しいところです。<br>
+というわけで、矩形選択は[B]です。さっきの画像は、それを使用して首の部分を選択しようとしている場面です。四角の枠の中に入っているすべての頂点を選択します。<br>
+もうひとつ、[B][B]と入力することで、丸型に選択する機能もあります。左ドラッグしている間、丸の中に入っているすべての頂点を選択します。中ドラッグしている間、丸の中に入っているすべての頂点を選択解除します。ホイールを回すことで、丸の大きさを自在に変えられるので、かなり便利です。<br>
 [B]や[B][B]による選択は、デフォルトで継続選択です。複数選択のためにShiftを押したままにする必要はありませんから、落ち着いて選択しましょう。また、いったん選択モードを抜けたとしても継続選択になります。視点の関係でよく見えなくなったら、落ち着いて右クリックで一度抜けて、視点を調整しましょう。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_neck.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_neck.png"  width="800" height="435" /></a>
 
-
 <p>首の頂点が選択できたら、ここのメニューからNeckを選んで、こっちのAssignを押します。</p>
-
 <p>ただし、Assignやその横のRemoveを押すときはよく確認してください。とくに目的のもの以外をうっかり選択してしまっての誤Assignは修正作業で地味に面倒を引き起こしてしまいます。</p>
-
-<p>その下のSelectとDesel.(Deselect)は比較的安全です。NeckをSelectすると、Neckに割り当てられている頂点が追加で選択された状態になります。([A]を押してからでないと、Neckだけを選択した状態にはならないことに注意してください。SelectはNeckを「追加で」選択します。)<br />
-NeckをDeselectすると、Neckに割り当てられている頂点が選択範囲から外れます。SelectとDeselectを交互に押すと、Neckの部分が点いたり消えたりするのが分かると思います。<br />
-NeckにAssignすると、選択範囲の頂点がNeckに入ります。(選択範囲がNeckになるわけではないことに注意してください。あくまで選択範囲をNeckに追加するだけです。ほかの頂点もNeckに属していたなら、それらはそのまま残ります。)<br />
-NeckからRemoveすると、選択範囲の頂点がNeckから取り除かれます。(空っぽになるわけではないことに注意してください。あくまで今選択している頂点をNeckから取り除くだけです。)<br />
+<p>その下のSelectとDesel.(Deselect)は比較的安全です。NeckをSelectすると、Neckに割り当てられている頂点が追加で選択された状態になります。([A]を押してからでないと、Neckだけを選択した状態にはならないことに注意してください。SelectはNeckを「追加で」選択します。)<br>
+NeckをDeselectすると、Neckに割り当てられている頂点が選択範囲から外れます。SelectとDeselectを交互に押すと、Neckの部分が点いたり消えたりするのが分かると思います。<br>
+NeckにAssignすると、選択範囲の頂点がNeckに入ります。(選択範囲がNeckになるわけではないことに注意してください。あくまで選択範囲をNeckに追加するだけです。ほかの頂点もNeckに属していたなら、それらはそのまま残ります。)<br>
+NeckからRemoveすると、選択範囲の頂点がNeckから取り除かれます。(空っぽになるわけではないことに注意してください。あくまで今選択している頂点をNeckから取り除くだけです。)<br>
 SelectとDeselectはNeck→選択範囲への影響・AssignとRemoveは選択範囲→Neckへの影響だと考えましょう。</p>
-
 <p>基本的にはこの作業をどこにも割り当てていない頂点がなくなるまでMeshの各部を適切なBone(と同名のVertex Group)に割り当てていくだけです。</p>
-
-<p>fairy01では<br />
-- 顔・頭・髪→Head<br />
-- 首→Neck<br />
-- 上半身→Body<br />
-- 右肩～右ひじ→Rhand2<br />
-- 右ひじ～右手首→Rhand3<br />
-- 右手→Rhand4<br />
-- 腰→Weast<br />
-- 右下半身～右ひざ→Rleg2<br />
-- 右ひざ～右足首→Rleg3<br />
-- 右足→Rleg4</p>
-
+<p>fairy01では</p>
+<ul>
+<li>顔・頭・髪→Head</li>
+<li>首→Neck</li>
+<li>上半身→Body</li>
+<li>右肩～右ひじ→Rhand2</li>
+<li>右ひじ～右手首→Rhand3</li>
+<li>右手→Rhand4</li>
+<li>腰→Weast</li>
+<li>右下半身～右ひざ→Rleg2</li>
+<li>右ひざ～右足首→Rleg3</li>
+<li>右足→Rleg4</li>
+</ul>
 <p>という割り当てになっているようです。</p>
-
 <p>ベースが他の人型であったり、人型でなかったりして、どこをどう割り当ててよいか悩む場合、Pose ModeやWeight Paint Modeを使うとよいです。</p>
-
 <h2 id="pose-mode">Pose Mode</h2>
-
 <p>Armatureを選択中、Pose Modeに入れます。Pose Mode中は、Boneを個別に選択できるようになり、各Boneを[G]で動かしたり[R]で回転したりできるようになります。もちろん、肉付けされている場合は、一緒についてきます。視点を引いてfairy01も見える状態で動かしてみることで同じように動いているかどうか確認することができます。左クリックで確定、右クリックでキャンセルです。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_nurinokoshi.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_nurinokoshi.png"  width="800" height="435" /></a>
 
-
 <p>おっと！ついてくるはずの頂点がその場に居残っていますね。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_nokoshipoint.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_nokoshipoint.png"  width="800" height="435" /></a>
 
-
 <p>視点を調整してWireframeに切り替えつつ、一度左クリックで確定して、左クリックのカーソルで目印をつけておいてから<small>この章での数少ない左クリックの見せ所！</small>、Alt+[G]で移動をもとの位置に戻します。</p>
-
-<pre><code class="language-plain">    Pose Modeでの移動は、Alt+[G]でもとに戻せる。回転は、Alt+[R]でもとに戻せる。
-</code></pre>
-
-<p>Edit Modeに戻って、印のところにある頂点をLleg2にAssignしました。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">    Pose Modeでの移動は、Alt+[G]でもとに戻せる。回転は、Alt+[R]でもとに戻せる。
+</code></pre></div><p>Edit Modeに戻って、印のところにある頂点をLleg2にAssignしました。</p>
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_okleg.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_okleg.png"  width="800" height="435" /></a>
 
-
 <p>ついてくるようになりました。</p>
-
 <h2 id="weight-paint-mode">Weight Paint Mode</h2>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_wp1.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_wp1.png"  width="800" height="435" /></a>
 
-
-<p>Meshを選択してWeight Paintに入ると、Vertex Groupに割り当てられている部分を視覚的に見ることができます。<br><br />
-Vertex Groupを切り替えながら眺めれば、元モデルではどうやって塗っているかだいたいわかることでしょう。<br><br />
+<p>Meshを選択してWeight Paintに入ると、Vertex Groupに割り当てられている部分を視覚的に見ることができます。<br><br>
+Vertex Groupを切り替えながら眺めれば、元モデルではどうやって塗っているかだいたいわかることでしょう。<br><br>
 とくにfairy01は各hand1や各leg1に割り当てがないこともここでわかってきます。</p>
-
-<p>このモードで文字通り「塗る」こともできるのですが、結構塗り判定が雑で塗り残しを作りやすいうえ、「塗り」なので表面しか塗れず、うしろ側は回り込んで塗る必要があるなど、あまりうまくありません。それでも視認のしやすさは素晴らしいですし、逆に裏側は別のGroupで塗りたい、などの場合で逆に裏が塗れないことを利用できる場面もあります。<br />
+<p>このモードで文字通り「塗る」こともできるのですが、結構塗り判定が雑で塗り残しを作りやすいうえ、「塗り」なので表面しか塗れず、うしろ側は回り込んで塗る必要があるなど、あまりうまくありません。それでも視認のしやすさは素晴らしいですし、逆に裏側は別のGroupで塗りたい、などの場合で逆に裏が塗れないことを利用できる場面もあります。<br>
 塗る方の詳しい説明はここでは省略します。Addで塗る、Subで消す、と思っておけばよいでしょう。</p>
-
 <p>元がMMDモデルの場合、外から見えない部分まで作り込む目的でMeshが存在している場合があります。Texturedで確認して、完全に内側にあるようなら、Meshごと消してしまいましょう。例では、dorowaと命名したMeshは消してしまっています。</p>
-
 <h1 id="仕上げ">仕上げ</h1>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_deletef.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_deletef.png"  width="800" height="435" /></a>
 
-
 <p>全部塗れたと思ったら、お世話になったベースのメッシュを[X]して、</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_nifexport.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_nifexport.png"  width="800" height="435" /></a>
 
-
 <p>念のためObject Modeですべてのオブジェクトを表示状態にして[A]で全選択してから(しなくていいかも)、File-Export-NetImmerse/Gamebryo(.nif &amp; .kf &amp; .egm)から出力します。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_nifexport2.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_nifexport2.png"  width="800" height="435" /></a>
 
-
-<p>ファイル名を指定した後にオプションが出るので、こんな感じで。とくに、<br />
-- Scale Correction: 10.00 (Importしたときと同じになっているか)<br />
-- Export Geometry Only<br />
-- Flatten Skin: off<br />
-- Export Skin Partition: off<br />
-- Civillization IV</p>
-
+<p>ファイル名を指定した後にオプションが出るので、こんな感じで。とくに、</p>
+<ul>
+<li>Scale Correction: 10.00 (Importしたときと同じになっているか)</li>
+<li>Export Geometry Only</li>
+<li>Flatten Skin: off</li>
+<li>Export Skin Partition: off</li>
+<li>Civillization IV</li>
+</ul>
 <p>になっているか確認しておきましょう。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_blender_unweighted.png"><img src="https://gforestshade.github.io/kujira/img/jma_blender_unweighted.png"  width="800" height="435" /></a>
 
-
-<p>まだ塗り残しがあると怒られました。塗り残している頂点が自動で選択されているので、適切に修正しましょう。(ここで塗り残しが少なければ、そのままAssignすればよいですが、Meshのなかで複数箇所にわたっていると大変なので、Assignは慎重に。)<br />
+<p>まだ塗り残しがあると怒られました。塗り残している頂点が自動で選択されているので、適切に修正しましょう。(ここで塗り残しが少なければ、そのままAssignすればよいですが、Meshのなかで複数箇所にわたっていると大変なので、Assignは慎重に。)<br>
 何事もなくメイン画面に戻ってこられて、指定したファイル名ができていれば成功です。それを組み込めばそのまま動きます。</p>
-
 <h1 id="最後もnifskope">最後もNifSkope</h1>
-
 <p>いきなりゲームで確認してもよいですが、いちおうNifSkope上でも動きを確認したいですね。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_nifskope_attachkf.png"><img src="https://gforestshade.github.io/kujira/img/jma_nifskope_attachkf.png"  width="450" height="400" /></a>
 
-
-<p>ファイルを開いて、Spells-Animation-Attach.KF、fairy01で始まっているkfファイルをまとめて選択してしまいます。<br />
+<p>ファイルを開いて、Spells-Animation-Attach.KF、fairy01で始まっているkfファイルをまとめて選択してしまいます。<br>
 成功していれば、再生ボタンやシークバーの近くに動きの種類が表示されていますので、伸びたり捻れたりしていないかチェックできます。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/jma_nifskope_kfm.png"><img src="https://gforestshade.github.io/kujira/img/jma_nifskope_kfm.png"  width="450" height="400" /></a>
 
-
 <p>ファイル名を直したいなら、fairy01.kfmを開いて、KFMタブを出し、fairy01とある部分を片っ端からfutoに変えて、futo.kfmとして保存すればOKです。nifファイルや、kfファイルもその名前に合わせておくことを忘れずに。</p>
-
 <h1 id="あそぶ">あそぶ</h1>
-
-<p>Civ4ArtDefines_Unit.xmlの<NIF\>と<SHADERNIF\>にnifファイル、<KFM\>にkfmファイルを指定してください。<br />
+<p>Civ4ArtDefines_Unit.xmlの&lt;NIF&gt;と&lt;SHADERNIF&gt;にnifファイル、&lt;KFM&gt;にkfmファイルを指定してください。<br>
 Enjoy!</p>
 
         </div>
@@ -793,7 +657,7 @@ Enjoy!</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

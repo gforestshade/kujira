@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount": 5652
+    "wordCount":  5683 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:02</time></p>
           
-          <p>5652  Words</p>
+          <p>5683  Words</p>
           
           
 
@@ -374,23 +374,18 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき<br /></li>
-<li>簡単なスペルの仕組みをつくってみる<br /></li>
-<li>４部作のうちの２回目・Python準備編<br /></li>
-<li>オブジェクト<br /></li>
-<li>リスト操作<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/secondpy7/">その７</a>のつづき</li>
+<li>簡単なスペルの仕組みをつくってみる</li>
+<li>４部作のうちの２回目・Python準備編</li>
+<li>オブジェクト</li>
+<li>リスト操作</li>
 </ul>
-
 <h1 id="pythonファイル">Pythonファイル</h1>
-
-<p>Python側のファイル構成はいつもの感じです。<br />
-EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br />
+<p>Python側のファイル構成はいつもの感じです。<br>
+EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。<br>
 忘れてしまった方は<a href="https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py">こちら</a>にも置いてあります。</p>
-
-<pre><code class="language-plain">└─kujira_promospell
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">└─kujira_promospell
     └─Assets
         ├─Python
         │  ├─KujiraEventManager.py
@@ -404,604 +399,509 @@ EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわし
             │
             └─Units
                 └─CIV4PromotionInfos.xml
-</code></pre>
-
-<p></p>
-
-<h1 id="プログラムリスト">プログラムリスト</h1>
-
-<p>先にKujiraEventManager.pyの全容を見ておきましょう。<br />
+</code></pre></div><h1 id="プログラムリスト">プログラムリスト</h1>
+<p>先にKujiraEventManager.pyの全容を見ておきましょう。<br>
 このようなプログラムを作っていきます&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 
-<pre><code class="language-python"># -*- coding: utf-8 -*-
+<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
+<span style="color:#f92672">import</span> PyHelpers
 
-from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
-import PyHelpers
-
-gc = CyGlobalContext()
-git = gc.getInfoTypeForString
+gc <span style="color:#f92672">=</span> CyGlobalContext()
+git <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString
 
 
-### 関数
-########################
+<span style="color:#75715e">### 関数</span>
+<span style="color:#75715e">########################</span>
 
-def isValidPlot(x, y):
-    &quot;&quot;&quot;ラップを考慮して、有効な座標であるか判定する&quot;&quot;&quot;
-    pMap = gc.getMap()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ラップを考慮して、有効な座標であるか判定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
 
-    bx = pMap.isWrapX() or (0 &lt;= x and x &lt; pMap.getGridWidth())
-    by = pMap.isWrapY() or (0 &lt;= y and y &lt; pMap.getGridHeight())
-    return bx and by
+    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
 
-def getRangePlotList(center, i_range, include_center):
-    &quot;&quot;&quot;
-    中心から周囲nタイルのCyPlotのリストを返す
-    center - 中心タイル
-    i_range - 範囲
-    include_center - Trueならリストに中心タイルを含める
-    &quot;&quot;&quot;
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRangePlotList</span>(center, i_range, include_center):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    中心から周囲nタイルのCyPlotのリストを返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    center - 中心タイル</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    i_range - 範囲</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    include_center - Trueならリストに中心タイルを含める</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-    pMap = gc.getMap()
-    result = []
+    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
+    result <span style="color:#f92672">=</span> []
     
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-            x = xx + center.getX()
-            y = yy + center.getY()
+    <span style="color:#66d9ef">for</span> xx <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">for</span> yy <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+            x <span style="color:#f92672">=</span> xx <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getX()
+            y <span style="color:#f92672">=</span> yy <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getY()
             
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isValidPlot(x,y):
+                <span style="color:#66d9ef">continue</span>
+            <span style="color:#66d9ef">if</span> (xx <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> yy <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> include_center:
+                <span style="color:#66d9ef">continue</span>
 
-            result.append( pMap.plot(x,y) )
+            result<span style="color:#f92672">.</span>append( pMap<span style="color:#f92672">.</span>plot(x,y) )
 
-    return result
+    <span style="color:#66d9ef">return</span> result
 
-def getPlotUnits(plot):
-    &quot;&quot;&quot;plot上にいる全ユニットのジェネレータを返す&quot;&quot;&quot;
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPlotUnits</span>(plot):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">plot上にいる全ユニットのジェネレータを返す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> ( plot<span style="color:#f92672">.</span>getUnit(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(plot<span style="color:#f92672">.</span>getNumUnits()) )
 
 
-### スペル情報クラスとスペル用基底クラス
-########################
+<span style="color:#75715e">### スペル情報クラスとスペル用基底クラス</span>
+<span style="color:#75715e">########################</span>
 
-class SpellInfo:
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellInfo</span>:
     
-    def __init__(self, name, spell_class):
-        self._name = name
-        self._spell_class = spell_class
+    <span style="color:#66d9ef">def</span> __init__(self, name, spell_class):
+        self<span style="color:#f92672">.</span>_name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>_spell_class <span style="color:#f92672">=</span> spell_class
         
-    def getName(self):
-        return self._name
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_name
 
-    def getPromotionName(self):
-        return &quot;PROMOTION_&quot; + self.getName()
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPromotionName</span>(self):
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>getName()
 
-    def getSpellClass(self):
-        return self._spell_class
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSpellClass</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_spell_class
 
-    spells = []
+    spells <span style="color:#f92672">=</span> []
 
-class Spell:
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Spell</span>:
     
-    def __init__(self, caster):
-        self._caster = caster
-        self._myTeam = gc.getTeam(caster.getTeam())
+    <span style="color:#66d9ef">def</span> __init__(self, caster):
+        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
+        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
     
-    def cast(self):
-        &quot;&quot;&quot;スペル処理を呼び出し、成功したらエフェクトも出す&quot;&quot;&quot;
-        r = self.execute()
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">スペル処理を呼び出し、成功したらエフェクトも出す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
 
-        if r:
-            EFFECT = gc.getInfoTypeForString('EFFECT_PING')
-            point = self._caster.plot().getPoint()
-            CyEngine().triggerEffect(EFFECT, point)
+        <span style="color:#66d9ef">if</span> r:
+            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">EFFECT_PING</span><span style="color:#e6db74">&#39;</span>)
+            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
+            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
 
-    def isEnemy(self, pUnit):
-        return self._myTeam.isAtWar(pUnit.getTeam())
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
 
-    def selectEnemyUnits(self, i_range):
-        &quot;&quot;&quot;
-        範囲内の全敵対ユニットのリストを返す
-        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
-        &quot;&quot;&quot;
-        range_plots = getRangePlotList(self._caster, i_range, False)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, False)
         
-        re_units = []
-        for plot in range_plots:
-            re_units += filter(self.isEnemy, getPlotUnits(plot))
+        re_units <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
+            re_units <span style="color:#f92672">+</span><span style="color:#f92672">=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
 
-        return re_units
+        <span style="color:#66d9ef">return</span> re_units
 
 
-### 具体的なスペル
-########################
+<span style="color:#75715e">### 具体的なスペル</span>
+<span style="color:#75715e">########################</span>
 
-class SpellWater(Spell):
-    &quot;&quot;&quot;湧き水&quot;&quot;&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellWater</span>(Spell):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">湧き水</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def execute(self):
-        &quot;&quot;&quot;
-        直下のタイルが自チームの砂漠なら平原に変化させる
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        直下のタイルが自チームの砂漠なら平原に変化させる</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        caster_plot = self._caster.plot()
-        DESERT = git(&quot;TERRAIN_DESERT&quot;)
-        PLAINS = git(&quot;TERRAIN_PLAINS&quot;)
+        caster_plot <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()
+        DESERT <span style="color:#f92672">=</span> git(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">TERRAIN_DESERT</span><span style="color:#e6db74">&#34;</span>)
+        PLAINS <span style="color:#f92672">=</span> git(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">TERRAIN_PLAINS</span><span style="color:#e6db74">&#34;</span>)
         
-        if caster_plot.getTeam() == self._caster.getTeam() and caster_plot.getTerrainType() == DESERT:
-            caster_plot.setTerrainType(PLAINS, True, True)
-            return True
+        <span style="color:#66d9ef">if</span> caster_plot<span style="color:#f92672">.</span>getTeam() <span style="color:#f92672">==</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>getTeam() <span style="color:#f92672">and</span> caster_plot<span style="color:#f92672">.</span>getTerrainType() <span style="color:#f92672">==</span> DESERT:
+            caster_plot<span style="color:#f92672">.</span>setTerrainType(PLAINS, True, True)
+            <span style="color:#66d9ef">return</span> True
             
 
-# スペル一覧に追加
-SpellInfo.spells.append(SpellInfo(&quot;SPELL_WATER&quot;, SpellWater))
+<span style="color:#75715e"># スペル一覧に追加</span>
+SpellInfo<span style="color:#f92672">.</span>spells<span style="color:#f92672">.</span>append(SpellInfo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SPELL_WATER</span><span style="color:#e6db74">&#34;</span>, SpellWater))
 
 
-class SpellPoison(Spell):
-    &quot;&quot;&quot;毒散布&quot;&quot;&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellPoison</span>(Spell):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">毒散布</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def execute(self):
-        &quot;&quot;&quot;
-        周囲1マスの敵対ユニットに『毒』を与える
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        周囲1マスの敵対ユニットに『毒』を与える</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        POISONED = git(&quot;PROMOTION_POISONED&quot;)
-        units = self.selectEnemyUnits(1)
-        for unit in units:
-            unit.setHasPromotion(POISONED, True)
+        POISONED <span style="color:#f92672">=</span> git(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_POISONED</span><span style="color:#e6db74">&#34;</span>)
+        units <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>selectEnemyUnits(<span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">for</span> unit <span style="color:#f92672">in</span> units:
+            unit<span style="color:#f92672">.</span>setHasPromotion(POISONED, True)
 
-        return True
+        <span style="color:#66d9ef">return</span> True
 
-SpellInfo.spells.append(SpellInfo(&quot;SPELL_POISON&quot;, SpellPoison))
+SpellInfo<span style="color:#f92672">.</span>spells<span style="color:#f92672">.</span>append(SpellInfo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SPELL_POISON</span><span style="color:#e6db74">&#34;</span>, SpellPoison))
 
 
-class SpellFire(Spell):
-    &quot;&quot;&quot;火炎幕&quot;&quot;&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellFire</span>(Spell):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">火炎幕</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
     
-    def execute(self):
-        &quot;&quot;&quot;
-        周囲1マスの敵対ユニットに10%のダメージを与える
-        最大40%まで
-        &quot;&quot;&quot;
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        周囲1マスの敵対ユニットに10</span><span style="color:#e6db74">%</span><span style="color:#e6db74">のダメージを与える</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        最大40</span><span style="color:#e6db74">%</span><span style="color:#e6db74">まで</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-        i_damage = 10
-        max_damage = 40
-        caster_owner = self._caster.getOwner()
-        units = self.selectEnemyUnits(1)
+        i_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+        max_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>
+        caster_owner <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>getOwner()
+        units <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>selectEnemyUnits(<span style="color:#ae81ff">1</span>)
         
-        for unit in units:
-            if unit.getDamage() &gt;= max_damage:
-                continue
+        <span style="color:#66d9ef">for</span> unit <span style="color:#f92672">in</span> units:
+            <span style="color:#66d9ef">if</span> unit<span style="color:#f92672">.</span>getDamage() <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> max_damage:
+                <span style="color:#66d9ef">continue</span>
             
-            damage = min(unit.getDamage() + i_damage, max_damage)
-            unit.setDamage(damage, caster_owner)
+            damage <span style="color:#f92672">=</span> min(unit<span style="color:#f92672">.</span>getDamage() <span style="color:#f92672">+</span> i_damage, max_damage)
+            unit<span style="color:#f92672">.</span>setDamage(damage, caster_owner)
 
-        return True
+        <span style="color:#66d9ef">return</span> True
 
-SpellInfo.spells.append(SpellInfo(&quot;SPELL_FIRE&quot;, SpellFire))
+SpellInfo<span style="color:#f92672">.</span>spells<span style="color:#f92672">.</span>append(SpellInfo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SPELL_FIRE</span><span style="color:#e6db74">&#34;</span>, SpellFire))
 
 
-### EventManager
-########################
+<span style="color:#75715e">### EventManager</span>
+<span style="color:#75715e">########################</span>
 
-class MyEventManager(CvEventManager.CvEventManager, object):
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-    def onUnitPromoted(self, argsList):
-        'Called when a unit is promoted'
-        super(self.__class__, self).onUnitPromoted(argsList)
-        pUnit, iPromotion = argsList
-        ##########
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onUnitPromoted</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a unit is promoted</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onUnitPromoted(argsList)
+        pUnit, iPromotion <span style="color:#f92672">=</span> argsList
+        <span style="color:#75715e">##########</span>
 
-        for spellinfo in SpellInfo.spells:
-            iSpellPromo = git(spellinfo.getPromotionName())
-            if iPromotion == iSpellPromo:
-                SpellClass = spellinfo.getSpellClass()
-                spell = SpellClass(pUnit)
-                spell.cast()
-</code></pre>
-
-<h1 id="オブジェクト">オブジェクト</h1>
-
-<p>Pythonでは、ほとんどすべてのものが<strong>オブジェクト</strong>の値として変数に代入ができます。<br />
-その力は、関数やクラスにも及びます。<br />
-例えば、<code>git = gc.getInfoTypeForString</code>という文は、<br />
-<code>gc.getInfoTypeForString</code>という関数を変数に代入しています。<br />
+        <span style="color:#66d9ef">for</span> spellinfo <span style="color:#f92672">in</span> SpellInfo<span style="color:#f92672">.</span>spells:
+            iSpellPromo <span style="color:#f92672">=</span> git(spellinfo<span style="color:#f92672">.</span>getPromotionName())
+            <span style="color:#66d9ef">if</span> iPromotion <span style="color:#f92672">==</span> iSpellPromo:
+                SpellClass <span style="color:#f92672">=</span> spellinfo<span style="color:#f92672">.</span>getSpellClass()
+                spell <span style="color:#f92672">=</span> SpellClass(pUnit)
+                spell<span style="color:#f92672">.</span>cast()
+</code></pre></div><h1 id="オブジェクト">オブジェクト</h1>
+<p>Pythonでは、ほとんどすべてのものが<strong>オブジェクト</strong>の値として変数に代入ができます。<br>
+その力は、関数やクラスにも及びます。<br>
+例えば、<code>git = gc.getInfoTypeForString</code>という文は、<br>
+<code>gc.getInfoTypeForString</code>という関数を変数に代入しています。<br>
 (関数呼び出しを表す<code>()</code>をつけずに関数名だけを書いていることに注意してください)</p>
-
-<p>関数を変数に代入するとはどういうことなのでしょうか？<br />
-Pythonでは、変数や関数の名前は実体につけられたラベルのようなものだと考えます。<br />
-実体としてのオブジェクトはそのあたりに漂っていて、名前をつけることで<br />
-実体にアクセスすることができるようになります。<br />
-代入文というのは、その名前をつける行為に相当します。<br />
-まだ名前がないオブジェクトに対しては命名、(<code>a=42</code>)<br />
+<p>関数を変数に代入するとはどういうことなのでしょうか？<br>
+Pythonでは、変数や関数の名前は実体につけられたラベルのようなものだと考えます。<br>
+実体としてのオブジェクトはそのあたりに漂っていて、名前をつけることで<br>
+実体にアクセスすることができるようになります。<br>
+代入文というのは、その名前をつける行為に相当します。<br>
+まだ名前がないオブジェクトに対しては命名、(<code>a=42</code>)<br>
 もう名前があるオブジェクトに対しては別名をつけることに相当します。(<code>a=b</code>)</p>
-
-<p><code>git = gc.getInfoTypeForString</code>によって<code>git</code>は関数の別名になります。<br />
-あとで<code>git(&quot;PROMOTION_POISONED&quot;)</code>などとして「呼び出す」ことができます。<br />
+<p><code>git = gc.getInfoTypeForString</code>によって<code>git</code>は関数の別名になります。<br>
+あとで<code>git(&quot;PROMOTION_POISONED&quot;)</code>などとして「呼び出す」ことができます。<br>
 (関数オブジェクトに、呼び出しを表す<code>()</code>をつければ関数の呼び出しになります)</p>
-
-<p>あるいは、型もオブジェクトです。<br />
+<p>あるいは、型もオブジェクトです。<br>
 クラス名がクラスオブジェクトを指し示しています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(self):
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
 
-<pre><code class="language-python">class A:
-  def f(self):
-    return 0
+<span style="color:#75715e"># クラスオブジェクトの別名</span>
+class_a <span style="color:#f92672">=</span> A
 
-# クラスオブジェクトの別名
-class_a = A
+<span style="color:#75715e"># クラスオブジェクトの別名からインスタンス化</span>
+a <span style="color:#f92672">=</span> class_a()
 
-# クラスオブジェクトの別名からインスタンス化
-a = class_a()
+<span style="color:#75715e"># 関数オブジェクトの別名</span>
+method_f <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>f
 
-# 関数オブジェクトの別名
-method_f = a.f
-
-# 別名から関数を呼び出す
-print method_f()
-</code></pre>
-
-<p>上の例で、<code>a</code>は<code>A</code>のインスタンスになっています。<br />
-別名<code>class_a</code>を経由してインスタンス化していますが、<br />
+<span style="color:#75715e"># 別名から関数を呼び出す</span>
+<span style="color:#66d9ef">print</span> method_f()
+</code></pre></div><p>上の例で、<code>a</code>は<code>A</code>のインスタンスになっています。<br>
+別名<code>class_a</code>を経由してインスタンス化していますが、<br>
 指している実体は<code>A</code>に変わりないので、<code>A</code>のインスタンスができます。</p>
-
-<p>この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、<br />
-「関数のリスト」や「型のリスト」をつくることができます。<br />
+<p>この例では、ただ遠回りしているだけに見えますが、関数や型を変数に代入できるということは、<br>
+「関数のリスト」や「型のリスト」をつくることができます。<br>
 リスト内の関数を順番に呼び出すとか型のリストから1つずつインスタンスをつくるとかいうことが可能になります。</p>
-
 <h1 id="関数">関数</h1>
-
-<p>じっさいにプログラムリストを読み解いていきます。<br />
+<p>じっさいにプログラムリストを読み解いていきます。<br>
 最初の方は関数です&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">ラップを考慮して、有効な座標であるか判定する</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
 
-<pre><code class="language-python">def isValidPlot(x, y):
-    &quot;&quot;&quot;ラップを考慮して、有効な座標であるか判定する&quot;&quot;&quot;
-    pMap = gc.getMap()
-
-    bx = pMap.isWrapX() or (0 &lt;= x and x &lt; pMap.getGridWidth())
-    by = pMap.isWrapY() or (0 &lt;= y and y &lt; pMap.getGridHeight())
-    return bx and by
-</code></pre>
-
-<p>座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。<br />
-この関数は<a href="https://gforestshade.github.io/kujira/post/getstarted7/#座標の有効性を判定する">はじめてのPythonMODその７</a>で作ったものと同じものです。<br />
+    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
+</code></pre></div><p>座標に足し算や引き算をしたとき、その座標がマップからはみ出していないかチェックします。<br>
+この関数は<a href="https://gforestshade.github.io/kujira/post/getstarted7/#%E5%BA%A7%E6%A8%99%E3%81%AE%E6%9C%89%E5%8A%B9%E6%80%A7%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B">はじめてのPythonMODその７</a>で作ったものと同じものです。<br>
 「周囲nマス」を表現するためにはいつでも必要になる関数なので、使いまわしましょう。</p>
-
 <p>つぎは実際に周囲nタイルのCyPlotインスタンスを求めます&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRangePlotList</span>(center, i_range, include_center):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    中心から周囲nタイルのCyPlotのリストを返す</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    center - 中心タイル</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    i_range - 範囲</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    include_center - Trueならリストに中心タイルを含める</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 
-<pre><code class="language-python">def getRangePlotList(center, i_range, include_center):
-    &quot;&quot;&quot;
-    中心から周囲nタイルのCyPlotのリストを返す
-    center - 中心タイル
-    i_range - 範囲
-    include_center - Trueならリストに中心タイルを含める
-    &quot;&quot;&quot;
-
-    pMap = gc.getMap()
-    result = []
+    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
+    result <span style="color:#f92672">=</span> []
     
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-            x = xx + center.getX()
-            y = yy + center.getY()
+    <span style="color:#66d9ef">for</span> xx <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">for</span> yy <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+            x <span style="color:#f92672">=</span> xx <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getX()
+            y <span style="color:#f92672">=</span> yy <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getY()
             
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isValidPlot(x,y):
+                <span style="color:#66d9ef">continue</span>
+            <span style="color:#66d9ef">if</span> (xx <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> yy <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> include_center:
+                <span style="color:#66d9ef">continue</span>
 
-            result.append( pMap.plot(x,y) )
+            result<span style="color:#f92672">.</span>append( pMap<span style="color:#f92672">.</span>plot(x,y) )
 
-    return result
-</code></pre>
-
-<h2 id="多重ループ-ブロックのネスト">多重ループ・ブロックのネスト</h2>
-
+    <span style="color:#66d9ef">return</span> result
+</code></pre></div><h2 id="多重ループブロックのネスト">多重ループ・ブロックのネスト</h2>
 <p>目新しいのはこの部分です。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    for xx in range(-i_range, i_range+1):
-        for yy in range(-i_range, i_range+1):
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>for文の中にさらにfor文が2重になって入っています。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+    <span style="color:#66d9ef">for</span> xx <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">for</span> yy <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span>i_range, i_range<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>for文の中にさらにfor文が2重になって入っています。<br>
 ループ処理が2重になっているので<strong>2重ループ</strong>と呼びます。</p>
-
-<p><code>i_range</code>が変数なので少しわかりにくいですね。<br />
+<p><code>i_range</code>が変数なので少しわかりにくいですね。<br>
 <code>i_range = 1</code>だと仮定して書き直してみましょう。</p>
-
-<pre><code class="language-python">    for xx in range(-1, 2):
-        for yy in range(-1, 2):
-</code></pre>
-
-<p><code>range(-1, 2)</code>は-1 &lt;= x &lt; 2の範囲にある整数を順番に並べたリストを返します。<br />
-つまり<code>[-1,0,1]</code>になります。(<code>2</code>を含まないことに注意してください。)<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">for</span> xx <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>):
+        <span style="color:#66d9ef">for</span> yy <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>):
+</code></pre></div><p><code>range(-1, 2)</code>は-1 &lt;= x &lt; 2の範囲にある整数を順番に並べたリストを返します。<br>
+つまり<code>[-1,0,1]</code>になります。(<code>2</code>を含まないことに注意してください。)<br>
 さらに処理の流れをばらして図解すると、こうなります。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/sentence_for.png"><img src="https://gforestshade.github.io/kujira/img/sentence_for.png"    /></a>
 
-
-<p>こうして得た<code>xx</code>と<code>yy</code>で中身の処理をします。<br />
+<p>こうして得た<code>xx</code>と<code>yy</code>で中身の処理をします。<br>
 まずはこのような計算をします。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            x = xx + center.getX()
-            y = yy + center.getY()
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>中心座標からx方向に<code>xx</code>, y方向に<code>yy</code>ずらした座標を求めています。<br />
-これが<code>xx</code>について<code>-1,0,1</code> と<code>yy</code>について<code>-1,0,1</code> で合計で9回繰り返されますので、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+            x <span style="color:#f92672">=</span> xx <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getX()
+            y <span style="color:#f92672">=</span> yy <span style="color:#f92672">+</span> center<span style="color:#f92672">.</span>getY()
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>中心座標からx方向に<code>xx</code>, y方向に<code>yy</code>ずらした座標を求めています。<br>
+これが<code>xx</code>について<code>-1,0,1</code> と<code>yy</code>について<code>-1,0,1</code> で合計で9回繰り返されますので、<br>
 中心から周囲1マスの座標がそれぞれ計算できます。</p>
-
-<p>まだこの時点では座標の数字を計算しただけです。<br />
-そこに本当にタイルがあるかどうかはまだわかりません。<br />
-マップ端などの場合はそれ以上進めないこともあるのでした。<br />
-そのような範囲外の座標を使ってCyPlotインスタンスをつくろうとしても、<br />
+<p>まだこの時点では座標の数字を計算しただけです。<br>
+そこに本当にタイルがあるかどうかはまだわかりません。<br>
+マップ端などの場合はそれ以上進めないこともあるのでした。<br>
+そのような範囲外の座標を使ってCyPlotインスタンスをつくろうとしても、<br>
 そんなマスはないので作成できません。</p>
-
 <p>なので、まずはマップの範囲に収まっているか判定します。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            if not isValidPlot(x,y):
-                continue
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p><code>not</code>を使って結果を反転させています。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isValidPlot(x,y):
+                <span style="color:#66d9ef">continue</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p><code>not</code>を使って結果を反転させています。<br>
 <code>(x,y)</code>がマップ範囲内ではないとき、<code>continue</code>という文を実行します。</p>
-
 <p><code>continue</code>は最も内側のforループの次の繰り返しまで飛ぶ命令です。</p>
-
 <a href="https://gforestshade.github.io/kujira/img/sentence_continue.png"><img src="https://gforestshade.github.io/kujira/img/sentence_continue.png"    /></a>
 
-
-<p>このとき、現在の繰り返しの残りの処理は飛ばされます。<br />
-処理をする前に前提条件をチェックして、満たさない場合はさっさと次に行く、<br />
+<p>このとき、現在の繰り返しの残りの処理は飛ばされます。<br>
+処理をする前に前提条件をチェックして、満たさない場合はさっさと次に行く、<br>
 のような書き方ができます。</p>
-
 <p>実は、<code>continue</code>を使わなくても、if文だけで前提条件をチェックすることはできます。</p>
-
-<pre><code class="language-python">        # if文だけで
-        for i in list:
-                if 前提条件:
-                        if 前提条件2:
-                                if 前提条件3:
-                                        if 前提条件4:
-                                                処理...
-                                                処理...
-                                                処理...
-                                                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">        <span style="color:#75715e"># if文だけで</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list:
+                <span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>:
+                        <span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">2</span>:
+                                <span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">3</span>:
+                                        <span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">4</span>:
+                                                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                                                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                                                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                                                <span style="color:#960050;background-color:#1e0010">ち</span><span style="color:#960050;background-color:#1e0010">ょ</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">と</span><span style="color:#960050;background-color:#1e0010">長</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">メ</span><span style="color:#960050;background-color:#1e0010">ソ</span><span style="color:#960050;background-color:#1e0010">ッ</span><span style="color:#960050;background-color:#1e0010">ド</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">呼</span><span style="color:#960050;background-color:#1e0010">ん</span><span style="color:#960050;background-color:#1e0010">で</span><span style="color:#960050;background-color:#1e0010">し</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">て</span><span style="color:#960050;background-color:#1e0010">横</span><span style="color:#960050;background-color:#1e0010">に</span><span style="color:#960050;background-color:#1e0010">伸</span><span style="color:#960050;background-color:#1e0010">び</span><span style="color:#960050;background-color:#1e0010">て</span><span style="color:#960050;background-color:#1e0010">し</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
         
-        # continueで
-        for i in list:
-                if not 前提条件:
-                        continue
-                if not 前提条件2:
-                        continue
-                if not 前提条件3:
-                        continue
-                if not 前提条件4:
-                        continue
+        <span style="color:#75715e"># continueで</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list:
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>:
+                        <span style="color:#66d9ef">continue</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">2</span>:
+                        <span style="color:#66d9ef">continue</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">3</span>:
+                        <span style="color:#66d9ef">continue</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">提</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">4</span>:
+                        <span style="color:#66d9ef">continue</span>
             
-                処理...
-                処理...
-                処理...
-                ちょっと長い名前のメソッドを呼んでしまって横に伸びてしまった処理
-</code></pre>
-
-<p>が、見てわかるように、if文だけで制御すると前提条件があればあるほど<br />
-インデントが右へ右へと深くなっていきます。<br />
+                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                <span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                <span style="color:#960050;background-color:#1e0010">ち</span><span style="color:#960050;background-color:#1e0010">ょ</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">と</span><span style="color:#960050;background-color:#1e0010">長</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">前</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">メ</span><span style="color:#960050;background-color:#1e0010">ソ</span><span style="color:#960050;background-color:#1e0010">ッ</span><span style="color:#960050;background-color:#1e0010">ド</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">呼</span><span style="color:#960050;background-color:#1e0010">ん</span><span style="color:#960050;background-color:#1e0010">で</span><span style="color:#960050;background-color:#1e0010">し</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">て</span><span style="color:#960050;background-color:#1e0010">横</span><span style="color:#960050;background-color:#1e0010">に</span><span style="color:#960050;background-color:#1e0010">伸</span><span style="color:#960050;background-color:#1e0010">び</span><span style="color:#960050;background-color:#1e0010">て</span><span style="color:#960050;background-color:#1e0010">し</span><span style="color:#960050;background-color:#1e0010">ま</span><span style="color:#960050;background-color:#1e0010">っ</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
+</code></pre></div><p>が、見てわかるように、if文だけで制御すると前提条件があればあるほど<br>
+インデントが右へ右へと深くなっていきます。<br>
 コードが画面右からはみ出してしまい、読みにくくなるリスクも高くなってしまいます。</p>
-
-<p>for文の中のif文の中のif文の中の&hellip;という入れ子構造を<strong>ネスト</strong>と呼びますが、<br />
-一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。<br />
-なので、できるなら<code>continue</code>や<code>return</code>といった<br />
-残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、<br />
+<p>for文の中のif文の中のif文の中の&hellip;という入れ子構造を<strong>ネスト</strong>と呼びますが、<br>
+一般的にあまりネストを深くしすぎるとコードは読みにくくなってしまいます。<br>
+なので、できるなら<code>continue</code>や<code>return</code>といった<br>
+残りの文を飛ばす効果を持った文を使う、一部を関数として分離する、<br>
 など、深くなり過ぎないように努力すべきです。</p>
-
-<p>というわけで、マップ内にあるかの確認と、ついでに中心座標を含めるかどうかの判定を<br />
+<p>というわけで、マップ内にあるかの確認と、ついでに中心座標を含めるかどうかの判定を<br>
 ここでやっています。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            if not isValidPlot(x,y):
-                continue
-            if (xx == 0 and yy == 0) and not include_center:
-                continue
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>前提条件をクリアしたら、座標の数字からCyPlotのインスタンスをつくり、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isValidPlot(x,y):
+                <span style="color:#66d9ef">continue</span>
+            <span style="color:#66d9ef">if</span> (xx <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> yy <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> include_center:
+                <span style="color:#66d9ef">continue</span>
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>前提条件をクリアしたら、座標の数字からCyPlotのインスタンスをつくり、<br>
 リスト型の変数<code>result</code>に追加しています。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            result.append( pMap.plot(x,y) )
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>これで、周囲1マスのCyPlotインスタンスのリストを得ることができました。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+            result<span style="color:#f92672">.</span>append( pMap<span style="color:#f92672">.</span>plot(x,y) )
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>これで、周囲1マスのCyPlotインスタンスのリストを得ることができました。</p>
 <h1 id="リスト内包表記">リスト内包表記</h1>
-
-<p>Plot上には複数のユニットが存在できます。<br />
-Plot上にいる全ユニットのCyUnitインスタンスのリストを取得したくなります。<br />
+<p>Plot上には複数のユニットが存在できます。<br>
+Plot上にいる全ユニットのCyUnitインスタンスのリストを取得したくなります。<br>
 このようにします。</p>
-
-<pre><code class="language-python">def getPlotUnits(plot):
-    &quot;&quot;&quot;plot上にいる全ユニットのジェネレータを返す&quot;&quot;&quot;
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
-</code></pre>
-
-<p>Pythonでは「リストを作る」ことに特別な記法が用意されていて、<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPlotUnits</span>(plot):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">plot上にいる全ユニットのジェネレータを返す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> ( plot<span style="color:#f92672">.</span>getUnit(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(plot<span style="color:#f92672">.</span>getNumUnits()) )
+</code></pre></div><p>Pythonでは「リストを作る」ことに特別な記法が用意されていて、<br>
 このように短く書くことができるようになっています。</p>
-
-<p>素のPythonプログラムで、書き方を見ていきましょう。<br />
+<p>素のPythonプログラムで、書き方を見ていきましょう。<br>
 「リストを加工して新しくリストをつくる」ときはこのようにするのでした。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
+<span style="color:#75715e"># 加工後のリスト(の入れ物)</span>
+list2 <span style="color:#f92672">=</span> []
 
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
-# 加工後のリスト(の入れ物)
-list2 = []
+<span style="color:#75715e"># 元リストの各要素について</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1:
+    <span style="color:#75715e"># 2で割り切れるならば</span>
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#75715e"># 3倍して</span>
+        a <span style="color:#f92672">=</span> i <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+        <span style="color:#75715e"># 追加する</span>
+        list2<span style="color:#f92672">.</span>append(a)
 
-# 元リストの各要素について
-for i in list1:
-    # 2で割り切れるならば
-    if i % 2 == 0:
-        # 3倍して
-        a = i * 3
-        # 追加する
-        list2.append(a)
+<span style="color:#66d9ef">print</span> list2 <span style="color:#75715e"># [0, 6, 12, 18, 24]</span>
+</code></pre></div><p>これを、このように縮めることができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
+<span style="color:#75715e"># 2で割り切れる要素を選んで3倍して新しいリストをつくる</span>
+list2 <span style="color:#f92672">=</span> [i <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1 <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
 
-print list2 # [0, 6, 12, 18, 24]
-</code></pre>
-
-<p>これを、このように縮めることができます。</p>
-
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
-# 2で割り切れる要素を選んで3倍して新しいリストをつくる
-list2 = [i * 3 for i in list1 if i % 2 == 0]
-
-print list2 # [0, 6, 12, 18, 24]
-</code></pre>
-
-<p>上のループを１行にくっつけたような形をしています。<br />
-この書き方をPythonの<strong>リスト内包表記</strong>(List Comprehension)と呼びます。<br />
-これで、どちらも全く同じ処理になっています。<br />
-実行してみて、<code>[0, 6, 12, 18, 24]</code>が出力されるかどうか、試してみましょう。<br />
+<span style="color:#66d9ef">print</span> list2 <span style="color:#75715e"># [0, 6, 12, 18, 24]</span>
+</code></pre></div><p>上のループを１行にくっつけたような形をしています。<br>
+この書き方をPythonの<strong>リスト内包表記</strong>(List Comprehension)と呼びます。<br>
+これで、どちらも全く同じ処理になっています。<br>
+実行してみて、<code>[0, 6, 12, 18, 24]</code>が出力されるかどうか、試してみましょう。<br>
 (これらは素のPythonプログラムです。MODではないので、しかるべきところで実行しましょう。)</p>
-
 <p>条件式の部分は、必要なければ書かなくても構いません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
 
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
+<span style="color:#75715e"># 長い版</span>
+<span style="color:#75715e">##########</span>
+list2 <span style="color:#f92672">=</span> []
 
-# 長い版
-##########
-list2 = []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1:
+    <span style="color:#75715e"># 3倍して</span>
+    a <span style="color:#f92672">=</span> i <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+    <span style="color:#75715e"># 追加する</span>
+    list2<span style="color:#f92672">.</span>append(a)
 
-for i in list1:
-    # 3倍して
-    a = i * 3
-    # 追加する
-    list2.append(a)
+<span style="color:#66d9ef">print</span> list2
 
-print list2
+<span style="color:#75715e"># リスト内包表記版</span>
+<span style="color:#75715e">##########</span>
+list3 <span style="color:#f92672">=</span> [i <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1]
 
-# リスト内包表記版
-##########
-list3 = [i * 3 for i in list1]
+<span style="color:#66d9ef">print</span> list3
 
-print list3
-
-</code></pre>
-
-<p>実行して、どちらも同じリストが出力されることを確かめましょう。<br />
+</code></pre></div><p>実行して、どちらも同じリストが出力されることを確かめましょう。<br>
 「各要素を3倍する」という目的が、リスト内包表記版ではより分かりやすくなっています。</p>
-
 <p>逆に3倍する処理の方を削って、条件式は復活させてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
 
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
+<span style="color:#75715e"># 長い版</span>
+<span style="color:#75715e">##########</span>
+list2 <span style="color:#f92672">=</span> []
 
-# 長い版
-##########
-list2 = []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1:
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        list2<span style="color:#f92672">.</span>append(i)
 
-for i in list1:
-    if i % 2 == 0:
-        list2.append(i)
+<span style="color:#66d9ef">print</span> list2
 
-print list2
+<span style="color:#75715e"># リスト内包表記版</span>
+<span style="color:#75715e">##########</span>
+list3 <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1 <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
 
-# リスト内包表記版
-##########
-list3 = [i for i in list1 if i % 2 == 0]
+<span style="color:#66d9ef">print</span> list3
 
-print list3
-
-</code></pre>
-
-<p>どちらも同じリストが出力されるはずです。実行して確かめましょう。</p>
-
-<p>リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。<br />
-<code>[]</code>を<code>()</code>にしてみましょう。<br />
-<iframe src="https://paiza.io/projects/e/5fwoF0-xkGsu-ZdCYlQqdA?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe><br />
+</code></pre></div><p>どちらも同じリストが出力されるはずです。実行して確かめましょう。</p>
+<p>リスト内包表記では、囲む記号を変えるとすこし違ったものが出てきます。<br>
+<code>[]</code>を<code>()</code>にしてみましょう。</p>
+<iframe src="https://paiza.io/projects/e/5fwoF0-xkGsu-ZdCYlQqdA?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
 <!-- <a href="https://gforestshade.github.io/kujira/img/generator_expression.png"><img src="https://gforestshade.github.io/kujira/img/generator_expression.png"    /></a>
- --><br />
-<code>[0, 2, 4, 6, 8]</code>&hellip;&hellip;ではなく、よくわからないものが出力されました。<br />
-これは<strong>ジェネレーターオブジェクト</strong>(Generator Object)というもので、<br />
-それを生成した、内包表記を<code>()</code>で囲んだものを<strong>ジェネレーター式</strong>(Generator Expression)と呼びます。</p>
-
-<p><strong>ジェネレーター式</strong>によってつくられた<strong>ジェネレーターオブジェクト</strong>は、<br />
-いってみればリストを加工するレシピを予約したもの、です。<br />
-このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、<br />
-リストではないので、直接出力しようとしても<br />
+ -->
+`[0, 2, 4, 6, 8]`......ではなく、よくわからないものが出力されました。
+これは**ジェネレーターオブジェクト**(Generator Object)というもので、
+それを生成した、内包表記を`()`で囲んだものを**ジェネレーター式**(Generator Expression)と呼びます。
+<p><strong>ジェネレーター式</strong>によってつくられた<strong>ジェネレーターオブジェクト</strong>は、<br>
+いってみればリストを加工するレシピを予約したもの、です。<br>
+このオブジェクト自体はあくまでリストを加工する方法を記したレシピであって、<br>
+リストではないので、直接出力しようとしても<br>
 それが<strong>Generator Object</strong>であることしかわかりません。</p>
-
 <p>実際に料理をするには、for文を使います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
 
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
+<span style="color:#75715e"># ジェネレーター式</span>
+<span style="color:#75715e">##########</span>
+list2 <span style="color:#f92672">=</span> (i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1 <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
 
-# ジェネレーター式
-##########
-list2 = (i for i in list1 if i % 2 == 0)
+<span style="color:#66d9ef">print</span> list2
 
-print list2
+<span style="color:#75715e"># ジェネレーターから1要素ずつ取り出して、list3に追加する</span>
+list3 <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list2:
+    list3<span style="color:#f92672">.</span>append(i)
 
-# ジェネレーターから1要素ずつ取り出して、list3に追加する
-list3 = []
-for i in list2:
-    list3.append(i)
+<span style="color:#66d9ef">print</span> list3
 
-print list3
+</code></pre></div><p>リスト内包表記もforを使っていますので、後半をリスト内包表記で書き直すこともできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 元のリスト</span>
+list1 <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
 
-</code></pre>
+<span style="color:#75715e"># ジェネレーター式</span>
+<span style="color:#75715e">##########</span>
+list2 <span style="color:#f92672">=</span> (i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list1 <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
 
-<p>リスト内包表記もforを使っていますので、後半をリスト内包表記で書き直すこともできます。</p>
+<span style="color:#66d9ef">print</span> list2
 
-<pre><code class="language-python"># 元のリスト
-list1 = range(10)
+<span style="color:#75715e"># ジェネレーターから1要素ずつ取り出して、list3に追加する</span>
+list3 <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list2]
 
-# ジェネレーター式
-##########
-list2 = (i for i in list1 if i % 2 == 0)
+<span style="color:#66d9ef">print</span> list3
 
-print list2
-
-# ジェネレーターから1要素ずつ取り出して、list3に追加する
-list3 = [i for i in list2]
-
-print list3
-
-</code></pre>
-
-<p>それぞれ実行してみて動作を確かめましょう。<br />
-どのみちリストをつくるときはさらにfor文で回すことがほとんどですから、<br />
-<code>list2</code>を直接出力しようとしない限りジェネレーターと本物のリストは<br />
+</code></pre></div><p>それぞれ実行してみて動作を確かめましょう。<br>
+どのみちリストをつくるときはさらにfor文で回すことがほとんどですから、<br>
+<code>list2</code>を直接出力しようとしない限りジェネレーターと本物のリストは<br>
 大体区別せずに同じような感じで扱うことができます。</p>
-
 <p>というわけで、冒頭の関数はジェネレーター式を利用していました。</p>
-
-<pre><code class="language-python">def getPlotUnits(plot):
-    &quot;&quot;&quot;plot上にいる全ユニットのジェネレータを返す&quot;&quot;&quot;
-    return ( plot.getUnit(i) for i in range(plot.getNumUnits()) )
-</code></pre>
-
-<p>わかりにくいですか？<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPlotUnits</span>(plot):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">plot上にいる全ユニットのジェネレータを返す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> ( plot<span style="color:#f92672">.</span>getUnit(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(plot<span style="color:#f92672">.</span>getNumUnits()) )
+</code></pre></div><p>わかりにくいですか？<br>
 インデントをいつものPython風につけてみると少しわかりやすいかもしれません。</p>
-
-<pre><code class="language-python">for i in range(plot.getNumUnits()):
-    plot.getUnit(i)
-</code></pre>
-
-<p><code>i</code>番目のユニットを、そのプロットにいるユニットの数だけ取得していますね。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(plot<span style="color:#f92672">.</span>getNumUnits()):
+    plot<span style="color:#f92672">.</span>getUnit(i)
+</code></pre></div><p><code>i</code>番目のユニットを、そのプロットにいるユニットの数だけ取得していますね。</p>
 <p><a href="https://gforestshade.github.io/kujira/post/secondpy9/">その９につづく</a></p>
         </div>
         <div class="col-12">
@@ -1015,7 +915,7 @@ print list3
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

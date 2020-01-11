@@ -54,7 +54,7 @@
     },
     "datePublished": "2017-07-13",
     "description": "",
-    "wordCount": 4133
+    "wordCount":  4131 
   }
 </script>
 
@@ -65,7 +65,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -210,7 +210,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-13">2017-07-13 00:00</time></p>
           
-          <p>4133  Words</p>
+          <p>4131  Words</p>
           
           
 
@@ -374,364 +374,258 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a>のつづき<br /></li>
-<li>関数について<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a>のつづき</li>
+<li>関数について</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
-<p>Pythonそのものの文法を確かめるのにいちいちCiv4を起動するのでは面倒なので、<br />
-小さなPythonプログラムを試せる環境を用意しましょう。<br />
-あなたのコンピュータにPythonをインストールしてもよいですし、<br />
-現代ではオンライン上で小さなプログラムを試せるサイトもいろいろあるので、<br />
-利用させてもらってもよいでしょう。<br />
-この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br />
+<p>Pythonそのものの文法を確かめるのにいちいちCiv4を起動するのでは面倒なので、<br>
+小さなPythonプログラムを試せる環境を用意しましょう。<br>
+あなたのコンピュータにPythonをインストールしてもよいですし、<br>
+現代ではオンライン上で小さなプログラムを試せるサイトもいろいろあるので、<br>
+利用させてもらってもよいでしょう。<br>
+この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br>
 コード作成画面に入ったら、左上(緑)の言語選択ボタンから<code>Python2</code>を選択し、</p>
-
-<pre><code class="language-python">print 1129
-</code></pre>
-
-<p>と入力して、「実行」ボタンを押します。<br />
-「出力」のところに<code>1129</code>と出ていればOKです。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#ae81ff">1129</span>
+</code></pre></div><p>と入力して、「実行」ボタンを押します。<br>
+「出力」のところに<code>1129</code>と出ていればOKです。<br>
 <a href="https://gforestshade.github.io/kujira/img/paiza_0.png"><img src="https://gforestshade.github.io/kujira/img/paiza_0.png"    /></a>
 </p>
-
-<p></p>
-
 <h1 id="もしくは">もしくは</h1>
-
-<p>埋め込みを置いておくので、ご利用ください。<br />
-<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe></p>
-
+<p>埋め込みを置いておくので、ご利用ください。</p>
+<iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
 <h1 id="ちょっとあそぶ">ちょっとあそぶ</h1>
-
 <p>小さいプログラムを書いて遊んでみましょう。</p>
-
-<pre><code class="language-python">a = 5
-b = 2
-if a &gt; 3:
-    b = a * a - 5
-print b
-</code></pre>
-
-<p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
+    b <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> a <span style="color:#f92672">-</span> <span style="color:#ae81ff">5</span>
+<span style="color:#66d9ef">print</span> b
+</code></pre></div><p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br>
 予想ができたら、実行してみます。合っていたでしょうか。違っていたでしょうか。</p>
-
 <h1 id="関数">関数</h1>
-
-<p>Pythonでは、ブロックが上から下に順番に実行されるのは先述の通りですが、<br />
+<p>Pythonでは、ブロックが上から下に順番に実行されるのは先述の通りですが、<br>
 処理をまとめておく方法もあります。</p>
-
-<pre><code class="language-python">def doOreore():
-    print &quot;oreore,&quot;
-    print &quot;oredayo.&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore</span>():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
 
 doOreore()
-</code></pre>
-
-<p><code>def 関数名():</code>とその直下の<strong>ブロック</strong>が<strong>関数</strong>として<strong>定義</strong>されます。<br />
-あとで<code>関数名()</code>とすると関数を「呼び出し」ます。<br />
-関数名は(かぶらない限り)自由につけて構いませんが、<br />
-その処理のまとまりは要するに全体で何をするものなのか、<br />
+</code></pre></div><p><code>def 関数名():</code>とその直下の<strong>ブロック</strong>が<strong>関数</strong>として<strong>定義</strong>されます。<br>
+あとで<code>関数名()</code>とすると関数を「呼び出し」ます。<br>
+関数名は(かぶらない限り)自由につけて構いませんが、<br>
+その処理のまとまりは要するに全体で何をするものなのか、<br>
 動詞っぽいものをつけておく例が多いようです。</p>
-
 <p>関数の旨みのひとつは一度定義すれば何度呼び出しても構わないことにあります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore2</span>():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
 
-<pre><code class="language-python">def doOreore2():
-    print &quot;oreore,&quot;
-    print &quot;oredayo.&quot;
-
 doOreore2()
 doOreore2()
 doOreore2()
 doOreore2()
 doOreore2()
-</code></pre>
-
-<p>とすると、ひたすら5回もオレオレ詐欺を仕掛けてくるプログラムができるのです。</p>
-
+</code></pre></div><p>とすると、ひたすら5回もオレオレ詐欺を仕掛けてくるプログラムができるのです。</p>
 <h2 id="引数">引数</h2>
-
 <p>関数のさらに強力なところは、値を外から中に持ち込めるところにあります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore3</span>(son):
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">print</span> son
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dayo.</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">print</span> 
 
-<pre><code class="language-python">def doOreore3(son):
-    print &quot;oreore,&quot;
-    print &quot;oredayo.&quot;
-    print son
-    print &quot;dayo.&quot;
-    print 
-
-doOreore3(&quot;takashi&quot;)
-doOreore3(&quot;yuta&quot;)
-doOreore3(&quot;jiro&quot;)
-doOreore3(&quot;kazuma&quot;)
-</code></pre>
-
-<p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br />
-定義の時点では変数で記述しておいて、呼び出し時に実際の値を&rdquo;渡し&rdquo;ています。<br />
-受け渡しを担当している<code>son</code>のことを<br />
+doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">takashi</span><span style="color:#e6db74">&#34;</span>)
+doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yuta</span><span style="color:#e6db74">&#34;</span>)
+doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">jiro</span><span style="color:#e6db74">&#34;</span>)
+doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">kazuma</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br>
+定義の時点では変数で記述しておいて、呼び出し時に実際の値を&quot;渡し&quot;ています。<br>
+受け渡しを担当している<code>son</code>のことを<br>
 <strong>引数</strong>(ひきすう)あるいは<strong>仮引数</strong>(かりひきすう)と呼びます。</p>
-
-<p>息子の名前だけが違ってあとはほとんど同じ内容をしゃべっていますが、<br />
+<p>息子の名前だけが違ってあとはほとんど同じ内容をしゃべっていますが、<br>
 ほとんど同じな部分をいちいちコピペすることなくほかのお宅に移れるようになっています。</p>
-
-<p>「処理のまとまりに名前が付けられる」という点も強力で、<br />
-実際に実行されているのはただのprint文20回分、なのですが、名前があることで<br />
+<p>「処理のまとまりに名前が付けられる」という点も強力で、<br>
+実際に実行されているのはただのprint文20回分、なのですが、名前があることで<br>
 「オレオレ詐欺を4回している」ということが明確になっています。</p>
-
-<p>そういえば、第１回で出てきた<code>pCity.setPopulation(4)</code>と<br />
+<p>そういえば、第１回で出てきた<code>pCity.setPopulation(4)</code>と<br>
 今回の<code>doOreore3(&quot;takashi&quot;)</code>がすこし似ていますね。</p>
-
-<p>そうです。<code>pCity.setPopulation(4)</code>も関数呼び出しです。<br />
+<p>そうです。<code>pCity.setPopulation(4)</code>も関数呼び出しです。<br>
 引数に<code>4</code>を渡して呼び出しているのですね。</p>
-
-<p>市民を再配置したり、制覇条件を更新したり&hellip;とめんどくさい内部処理をすべて請け負って<br />
-「要するに何をするのか」わかりやすい名前がついていることで、<br />
+<p>市民を再配置したり、制覇条件を更新したり&hellip;とめんどくさい内部処理をすべて請け負って<br>
+「要するに何をするのか」わかりやすい名前がついていることで、<br>
 関数を使う側はやりたいことを素直に記述することに専念できるのです。</p>
-
 <h2 id="戻り値">戻り値</h2>
-
 <p>関数は、呼び出した側に値を投げ返すこともできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">three</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>
 
-<pre><code class="language-python">def three():
-    return 3
-
-a = three() * 4
-print a
-</code></pre>
-
-<p>関数内で<code>return 値</code>にたどり着くと、<strong><em>その関数の処理を中断して</em></strong>、<br />
-自分を呼び出したところまで戻ってきます。<br />
-その際、<code>関数名()</code>という呼び出し文字列全体がその<code>値</code>で置き換わります。<br />
-この場合の表記法は数式の関数表記法にならっていますので、<br />
-数式をご存知の方は馴染みやすいかもしれません。<br />
-このとき投げ返す値のことを<strong>戻り値</strong>と呼びます。<br />
+a <span style="color:#f92672">=</span> three() <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>
+<span style="color:#66d9ef">print</span> a
+</code></pre></div><p>関数内で<code>return 値</code>にたどり着くと、<em><strong>その関数の処理を中断して</strong></em>、<br>
+自分を呼び出したところまで戻ってきます。<br>
+その際、<code>関数名()</code>という呼び出し文字列全体がその<code>値</code>で置き換わります。<br>
+この場合の表記法は数式の関数表記法にならっていますので、<br>
+数式をご存知の方は馴染みやすいかもしれません。<br>
+このとき投げ返す値のことを<strong>戻り値</strong>と呼びます。<br>
 呼び出した側は、投げ返されてきた戻り値をさらに何かに活用することができます。</p>
-
 <p>引数を使って戻り値を計算することもできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">square</span>(x):
+    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x
 
-<pre><code class="language-python">def square(x):
-    return x * x
-
-a = square(5)
-print a
-</code></pre>
-
-<p>(実行してみながらついてきてくださいね)<br />
+a <span style="color:#f92672">=</span> square(<span style="color:#ae81ff">5</span>)
+<span style="color:#66d9ef">print</span> a
+</code></pre></div><p>(実行してみながらついてきてくださいね)<br>
 より数学の関数に近い感じになりました。</p>
-
-<p>ずっとお世話になっている<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>はこのタイプの関数です。<br />
-キーの文字列を引数に渡して、<br />
-それに対応するIDという数値が戻り値として投げ返されるのですね。<br />
-わたしたちはその戻り値を変数に代入したり、<br />
+<p>ずっとお世話になっている<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>はこのタイプの関数です。<br>
+キーの文字列を引数に渡して、<br>
+それに対応するIDという数値が戻り値として投げ返されるのですね。<br>
+わたしたちはその戻り値を変数に代入したり、<br>
 直接別の関数の引数として渡したりしていました。</p>
-
 <h1 id="やっとこmod">やっとこMOD</h1>
-
 <p>前回の<code>kujira_if</code>MODをフォルダごとコピーしてリネーム、<code>kujira_def</code>というMODを作ります。</p>
-
-<pre><code class="language-txt">└─kujira_def
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_def
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
-
-<p>前回は《都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD》を作りました。<br />
+</code></pre></div><h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
+<p>前回は《都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD》を作りました。<br>
 その際、要素をこのように分割しました。</p>
-
 <ul>
-<li>都市が建設されたとき<br /></li>
-<li>その都市の所有者の所属する文明がマリならば<br /></li>
-<li>その都市に図書館を建設する<br />
-<br /></li>
+<li>都市が建設されたとき</li>
+<li>その都市の所有者の所属する文明がマリならば</li>
+<li>その都市に図書館を建設する</li>
 </ul>
-
-<p>今回は少し難しくして、<br />
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br />
+<p>今回は少し難しくして、<br>
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br>
 を目指します。</p>
-
-<h2 id="kujiraeventmanager-py">KujiraEventManager.py</h2>
-
+<h2 id="kujiraeventmanagerpy">KujiraEventManager.py</h2>
 <p>というわけで、全体としてこのようなものを目指します&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> CvEventManager
+<span style="color:#f92672">import</span> CvUtil
 
-<pre><code class="language-python">from CvPythonExtensions import *
-import CvEventManager
-import CvUtil
+gc <span style="color:#f92672">=</span> CyGlobalContext()
 
-gc = CyGlobalContext()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
+    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
 
-def createUnit(pPlayer, unit, x, y):
-    pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
 
-class MyEventManager(CvEventManager.CvEventManager, object):
-
-    def onCityBuilt(self, argsList):
-        'Called when a player builds a city'
-        super(self.__class__, self).onCityBuilt(argsList)
-        ##########
-        pCity = argsList[0]
-        pPlayer = gc.getPlayer( pCity.getOwner() )
-        if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
-            archerUnit = gc.getInfoTypeForString('UNIT_ARCHER')
-            x = pCity.getX()
-            y = pCity.getY()
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
+        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+        <span style="color:#75715e">##########</span>
+        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+        pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
+        <span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>) ):
+            archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)
+            x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
+            y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
             createUnit(pPlayer, archerUnit, x, y)
             createUnit(pPlayer, archerUnit, x, y)
             createUnit(pPlayer, archerUnit, x, y)
-</code></pre>
-
-<h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
-
+</code></pre></div><h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからtraitを探すと、こうなっています。</p>
-
 <blockquote>
-<pre><code class="language-nohighlight">318. BOOL hasTrait (TraitType iIndex)
+</blockquote>
+<pre><code class="language-nohighlight" data-lang="nohighlight">318. BOOL hasTrait (TraitType iIndex)
      bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.
-</code></pre>
-</blockquote>
-
-<p>つまり、<code>pPlayer.hasTrait(志向の種類ID)</code>とすると、<br />
+</code></pre><p>つまり、<code>pPlayer.hasTrait(志向の種類ID)</code>とすると、<br>
 <strong>Player</strong>がその<strong>志向</strong>を持っているかどうか調べられそうです。</p>
-
-<p>防衛志向の<strong>キー</strong>を<a href="https://gforestshade.github.io/kujira/post/keyichiran/#志向">調べると</a>、<code>TRAIT_PROTECTIVE</code>であることが分かりました。<br />
+<p>防衛志向の<strong>キー</strong>を<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BF%97%E5%90%91">調べると</a>、<code>TRAIT_PROTECTIVE</code>であることが分かりました。<br>
 ↓とすると防衛志向のIDが戻るのでした。</p>
-
 <pre><code>gc.getInfoTypeForString('TRAIT_PROTECTIVE')
-</code></pre>
-
-<p>↓のように変数に代入しておくこともできますし、</p>
-
+</code></pre><p>↓のように変数に代入しておくこともできますし、</p>
 <pre><code>iProtec = gc.getInfoTypeForString('TRAIT_PROTECTIVE')
-</code></pre>
-
-<p>↓のように直接引数として渡すこともできます。</p>
-
+</code></pre><p>↓のように直接引数として渡すこともできます。</p>
 <pre><code>pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') )
-</code></pre>
-
-<p>↓下の２つのプログラムは同じ動作をします。</p>
-
-<pre><code class="language-python">if pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') ):
-    'something'
-</code></pre>
-
-<pre><code class="language-python">iProtective = gc.getInfoTypeForString('TRAIT_PROTECTIVE')
-if pPlayer.hasTrait(iProtective):
-    'something'
-</code></pre>
-
-<h2 id="弓兵を作成する">弓兵を作成する</h2>
-
+</code></pre><p>↓下の２つのプログラムは同じ動作をします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>) ):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">something</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iProtective <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait(iProtective):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">something</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><h2 id="弓兵を作成する">弓兵を作成する</h2>
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからinitUnitを探すと、こうなっています。</p>
-
 <blockquote>
-<pre><code class="language-nohighlight">321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
-     CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
-</code></pre>
 </blockquote>
-
-<p>前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。<br />
+<pre><code class="language-nohighlight" data-lang="nohighlight">321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
+     CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
+</code></pre><p>前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。<br>
 引数をひとつひとつ読んでいきましょう。</p>
-
 <dl>
-<dt>UnitType iIndex<br /></dt>
-<dd>UnitのTypeとあるのでユニットの種類IDですね。<br />
-作りたいユニットのXMLキーを<code>gc.getInfoTypeForString()</code>して<br />
-ここに指定すればよさそうです。<br />
-<br /></dd>
-<dt>INT iX<br /></dt>
-<dd>iとあるので数値だということはわかりますが&hellip;Xというのはx座標でしょうか。<br />
-これはPlayerに対する操作なのでした。Playerは都市と違い<br />
-シド星上に特定の位置を占めているわけではありませんから、<br />
-そのユニットがどこに降り立つのか教えてあげないといけないのですね。<br />
-<br /></dd>
-<dt>INT iY<br /></dt>
-<dd>同じくy座標です。今回は都市と同じタイル上に生成されてほしいので、<br />
-<code>PCity</code>の座標を取得する方法を探して<br />
-取得した座標をそのまま(同じ数値として)指定したらよさそうですね。<br />
-<br /></dd>
-<dt>UnitAIType eUnitAI<br /></dt>
-<dd>UnitAIのTypeなのでユニットAIの種類IDですね(そのまま)。下の行の注釈に<br />
-「どんなときでも<code>UnitAITypes.NO_UNITAI</code>を使ってね」<br />
-とあるので<code>UnitAITypes.NO_UNITAI</code>を指定しておきましょう。<br />
-<br /></dd>
-<dt>DirectionType eFacingDirection<br /></dt>
-<dd>FacingなDirectionですから「向いている方向」でしょうか。<br />
-&hellip;&hellip;&hellip;&hellip;ユニットの向いている方向ですね(そのまま)。<br />
-DirectionTypeとあるのでこれまた数値指定ですが、<br />
-<a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンスページ</a>上でDirectionTypeのリンクをクリックすると、<br />
-どのようなキーと数値の対応になっているかの一覧が表示されます。<br />
-今回はとくに方向を気にしないので、<br />
-<code>DirectionTypes.NO_DIRECTION</code>を指定しましょう。<br />
-<br /></dd>
+<dt>UnitType iIndex</dt>
+<dd>UnitのTypeとあるのでユニットの種類IDですね。<br>
+作りたいユニットのXMLキーを<code>gc.getInfoTypeForString()</code>して<br>
+ここに指定すればよさそうです。</dd>
+<dt>INT iX</dt>
+<dd>iとあるので数値だということはわかりますが&hellip;Xというのはx座標でしょうか。<br>
+これはPlayerに対する操作なのでした。Playerは都市と違い<br>
+シド星上に特定の位置を占めているわけではありませんから、<br>
+そのユニットがどこに降り立つのか教えてあげないといけないのですね。</dd>
+<dt>INT iY</dt>
+<dd>同じくy座標です。今回は都市と同じタイル上に生成されてほしいので、<br>
+<code>PCity</code>の座標を取得する方法を探して<br>
+取得した座標をそのまま(同じ数値として)指定したらよさそうですね。</dd>
+<dt>UnitAIType eUnitAI</dt>
+<dd>UnitAIのTypeなのでユニットAIの種類IDですね(そのまま)。下の行の注釈に<br>
+「どんなときでも<code>UnitAITypes.NO_UNITAI</code>を使ってね」<br>
+とあるので<code>UnitAITypes.NO_UNITAI</code>を指定しておきましょう。</dd>
+<dt>DirectionType eFacingDirection</dt>
+<dd>FacingなDirectionですから「向いている方向」でしょうか。<br>
+&hellip;&hellip;&hellip;&hellip;ユニットの向いている方向ですね(そのまま)。<br>
+DirectionTypeとあるのでこれまた数値指定ですが、<br>
+<a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンスページ</a>上でDirectionTypeのリンクをクリックすると、<br>
+どのようなキーと数値の対応になっているかの一覧が表示されます。<br>
+今回はとくに方向を気にしないので、<br>
+<code>DirectionTypes.NO_DIRECTION</code>を指定しましょう。</dd>
 </dl>
-
-<p>なお、<code>UnitAITypes.NO_UNITAI</code>や<code>DirectionTypes.NO_DIRECTION</code>は<br />
-<strong>関数</strong>ではなく<strong>変数</strong>です。わざわざキーから変換しなくても、<br />
-それに対応する数値があらかじめ代入されて提供されています。<br />
+<p>なお、<code>UnitAITypes.NO_UNITAI</code>や<code>DirectionTypes.NO_DIRECTION</code>は<br>
+<strong>関数</strong>ではなく<strong>変数</strong>です。わざわざキーから変換しなくても、<br>
+それに対応する数値があらかじめ代入されて提供されています。<br>
 ありがたく利用しましょう。</p>
-
 <h2 id="自分で関数を定義する">自分で関数を定義する</h2>
-
 <p><code>pPlayer.initUnit()</code>を呼び出すだけの関数<code>createUnit()</code>を定義してみましょう&hellip;</p>
-
-<pre><code class="language-python">def createUnit(pPlayer, unit, x, y):
-    pPlayer.initUnit(unit, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-</code></pre>
-
-<p>どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
+    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
+</code></pre></div><p>どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br>
 別の言い方をすれば、ここではそれらを決めずに、呼び出す側が決める、ということです。</p>
-
 <p>呼び出し側は、例えばこうなります&hellip;</p>
-
-<pre><code class="language-python">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-archerUnit = gc.getInfoTypeForString('UNIT_ARCHER')
-x = pCity.getX()
-y = pCity.getY()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
+archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)
+x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
+y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
 createUnit(pPlayer, archerUnit, x, y)
 createUnit(pPlayer, archerUnit, x, y)
 createUnit(pPlayer, archerUnit, x, y)
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-</code></pre>
-
-<p>さて、すこし想像力が必要かもしれません。<br />
-前半3行では弓兵のユニット種ID、都市のx座標、都市のy座標を変数に代入していますね。<br />
+<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
+</code></pre></div><p>さて、すこし想像力が必要かもしれません。<br>
+前半3行では弓兵のユニット種ID、都市のx座標、都市のy座標を変数に代入していますね。<br>
 それらの<strong>値</strong>をいまさっき<strong>定義</strong>した関数に引数として渡しています。</p>
-
-<p>そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br />
-に相当する<strong>値</strong>が入った状態で<code>createUnit()</code>(を定義したところ)の<br />
+<p>そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br>
+に相当する<strong>値</strong>が入った状態で<code>createUnit()</code>(を定義したところ)の<br>
 <strong>ブロック</strong>が実行されます。</p>
-
-<p><code>createUnit()</code>の中身に戻ってみてみると、<br />
-<strong>ブロック</strong>中では<code>Player.initUnit()</code>を呼び出していて、<br />
+<p><code>createUnit()</code>の中身に戻ってみてみると、<br>
+<strong>ブロック</strong>中では<code>Player.initUnit()</code>を呼び出していて、<br>
 都市と同じタイル上に弓兵が生成されますね。</p>
-
-<p><code>createUnit()</code>を3回同じ引数で呼び出していますから、<br />
+<p><code>createUnit()</code>を3回同じ引数で呼び出していますから、<br>
 処理も3回実行され、弓兵が3体できるはずです。</p>
-
 <h2 id="ためす">ためす</h2>
-
 <p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_def_10.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_def_10.png"    /></a>
-<br />
+<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_def_11.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_def_11.png"    /></a>
-<br />
+<br>
 できました！</p>
-
 <p><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４へ続く</a></p>
-
 <h2 id="余談">余談</h2>
-
-<p>このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、<br />
-防衛志向でない指導者には弓が来ないことをちゃんと確認したほうがよいと思います。<br />
-防衛志向のみならず金融/哲学に弓が来てしまったら、それはおそらくバグです。<br />
+<p>このようなMODを作ったときは、防衛志向に弓が来るかだけでなく、<br>
+防衛志向でない指導者には弓が来ないことをちゃんと確認したほうがよいと思います。<br>
+防衛志向のみならず金融/哲学に弓が来てしまったら、それはおそらくバグです。<br>
 『防衛志向かどうか』の判定がうまくいっていないことを疑う必要があるかもしれません。</p>
         </div>
         <div class="col-12">
@@ -745,7 +639,7 @@ createUnit(pPlayer, archerUnit, x, y)
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

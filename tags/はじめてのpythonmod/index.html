@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -176,7 +176,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -321,7 +321,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-08-07">2017-08-07 00:00</time></p>
           
-          <p>6736  Words</p>
+          <p>6729  Words</p>
 
           
           <p>
@@ -348,25 +348,17 @@ if (!doNotTrack) {
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted6/">その６</a>のつづき<br /></li>
-<li>XMLとPythonの合わせ技・Python編<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted6/">その６</a>のつづき</li>
+<li>XMLとPythonの合わせ技・Python編</li>
 </ul>
-
 <h1 id="python">Python</h1>
-
-<p>残った効果「都市圏内をすべて草原化する」なんてことは<br />
+<p>残った効果「都市圏内をすべて草原化する」なんてことは<br>
 XMLではできません。Pythonで実装していきましょう。</p>
-
 <h2 id="構想">構想</h2>
-
-<p>いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。<br />
-「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。<br />
+<p>いつもどおり、「いつ・どういう条件で・何をするか」を明らかにする必要があります。<br>
+「建造物が建ったとき」「それが肥沃化の神殿であれば」まではすぐにわかります。<br>
 「都市圏内を草原化する」&hellip;&hellip;都市圏内とは何でしょうか？</p>
-
-<p></p>
             
           
         </div>
@@ -411,7 +403,7 @@ XMLではできません。Pythonで実装していきましょう。</p>
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-08-06">2017-08-06 00:00</time></p>
           
-          <p>3058  Words</p>
+          <p>3056  Words</p>
 
           
           <p>
@@ -438,30 +430,23 @@ XMLではできません。Pythonで実装していきましょう。</p>
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a>のつづき<br /></li>
-<li>XMLとPythonの合わせ技・XML編<br /></li>
-<li>あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５</a>のつづき</li>
+<li>XMLとPythonの合わせ技・XML編</li>
+<li>あくまでPythonのチュートリアルなので、XMLの詳しい話にはあまり踏み入りません</li>
 </ul>
-
 <h1 id="構想">構想</h1>
-
-<p>これまでは既存の動作を変更してばかりでした。<br />
-Pythonでしかできない効果を持った新しい建造物を作りましょう！<br />
-とりあえず&rdquo;いつもの&rdquo;を作ります。</p>
-
-<pre><code class="language-txt">└─kujira_fert
+<p>これまでは既存の動作を変更してばかりでした。<br>
+Pythonでしかできない効果を持った新しい建造物を作りましょう！<br>
+とりあえず&quot;いつもの&quot;を作ります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_fert
     └─Assets
         └─Python
             ├─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p></p>
+</code></pre></div>
             
           
         </div>
@@ -506,7 +491,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-30">2017-07-30 00:00</time></p>
           
-          <p>3333  Words</p>
+          <p>3331  Words</p>
 
           
           <p>
@@ -533,44 +518,32 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき<br /></li>
-<li>リストと繰り返し<br /></li>
-<li>他のイベント<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted4/">その４</a>のつづき</li>
+<li>リストと繰り返し</li>
+<li>他のイベント</li>
 </ul>
-
 <h1 id="今日のmod">今日のMOD</h1>
-
 <h2 id="準備">準備</h2>
-
-<p>例によって<code>kujira_for</code>というMODを作ります。<br />
+<p>例によって<code>kujira_for</code>というMODを作ります。<br>
 <code>kujira_if</code>をフォルダごとコピーして、フォルダ名をリネームしましょう。</p>
-
-<pre><code class="language-txt">└─kujira_for
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_for
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<h2 id="構想">構想</h2>
-
-<p>《建造物が建設されたとき、その建造物がダンならば、<br />
-　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br />
-を作りましょう。<br />
+</code></pre></div><h2 id="構想">構想</h2>
+<p>《建造物が建設されたとき、その建造物がダンならば、<br>
+　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》<br>
+を作りましょう。<br>
 捕まえるイベントをいつもと変えているほか、ユニットへの操作を入れています。</p>
-
-<p>バニラの建造物によくある<br />
-「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br />
-との違いに注意してください。<br />
-今作ろうとしているのはダンが建設完了したその瞬間に<br />
+<p>バニラの建造物によくある<br>
+「この都市で生産されたユニットに教練Ⅰと教練Ⅱ」<br>
+との違いに注意してください。<br>
+今作ろうとしているのはダンが建設完了したその瞬間に<br>
 都市直上にいたユニットに影響を与える一回限りの即時的な効果です。</p>
-
-<p></p>
             
           
         </div>
@@ -644,24 +617,21 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
               <h1 id="はじめに">はじめに</h1>
 
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき<br></li>
-<li>その３でMODひとつしか作れなかったので応用編の別立て<br>
-<br></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき</li>
+<li>その３でMODひとつしか作れなかったので応用編の別立て</li>
 </ul>
 
 <h1 id="もう少し先へ">もう少し先へ</h1>
 
-<p>前半戦たるその３では<br>
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br>
+<p>前半戦たるその３では
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》
 を作りました。少し拡張してみましょう。</p>
 
 <p>「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」</p>
 
-<p>と思ったとします。が、少々厄介です。<br>
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。<br>
+<p>と思ったとします。が、少々厄介です。
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。</p>
-
-<p></p>
             
           
         </div>
@@ -706,7 +676,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-13">2017-07-13 00:00</time></p>
           
-          <p>4133  Words</p>
+          <p>4131  Words</p>
 
           
           <p>
@@ -733,32 +703,23 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a>のつづき<br /></li>
-<li>関数について<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted2/">その２</a>のつづき</li>
+<li>関数について</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
-<p>Pythonそのものの文法を確かめるのにいちいちCiv4を起動するのでは面倒なので、<br />
-小さなPythonプログラムを試せる環境を用意しましょう。<br />
-あなたのコンピュータにPythonをインストールしてもよいですし、<br />
-現代ではオンライン上で小さなプログラムを試せるサイトもいろいろあるので、<br />
-利用させてもらってもよいでしょう。<br />
-この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br />
+<p>Pythonそのものの文法を確かめるのにいちいちCiv4を起動するのでは面倒なので、<br>
+小さなPythonプログラムを試せる環境を用意しましょう。<br>
+あなたのコンピュータにPythonをインストールしてもよいですし、<br>
+現代ではオンライン上で小さなプログラムを試せるサイトもいろいろあるので、<br>
+利用させてもらってもよいでしょう。<br>
+この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br>
 コード作成画面に入ったら、左上(緑)の言語選択ボタンから<code>Python2</code>を選択し、</p>
-
-<pre><code class="language-python">print 1129
-</code></pre>
-
-<p>と入力して、「実行」ボタンを押します。<br />
-「出力」のところに<code>1129</code>と出ていればOKです。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#ae81ff">1129</span>
+</code></pre></div><p>と入力して、「実行」ボタンを押します。<br>
+「出力」のところに<code>1129</code>と出ていればOKです。<br>
 <a href="https://gforestshade.github.io/kujira/img/paiza_0.png"><img src="https://gforestshade.github.io/kujira/img/paiza_0.png"    /></a>
 </p>
-
-<p></p>
             
           
         </div>
@@ -803,7 +764,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-12">2017-07-12 00:00</time></p>
           
-          <p>3992  Words</p>
+          <p>3985  Words</p>
 
           
           <p>
@@ -830,43 +791,31 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <ul>
-<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a>のつづき<br /></li>
-<li>条件分岐を使ってみる<br />
-<br /></li>
+<li><a href="https://gforestshade.github.io/kujira/post/getstarted1/">その１</a>のつづき</li>
+<li>条件分岐を使ってみる</li>
 </ul>
-
 <h1 id="準備">準備</h1>
-
 <p>前回の<code>kujira</code>MODをフォルダごとコピーしてリネーム、<code>kujira_if</code>というMODを作ります。</p>
-
-<pre><code class="language-txt">└─kujira_if
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_if
     └─Assets
         └─Python
             │─KujiraEventManager.py
             │
             └─Entrypoints
                  └─CvEventInterface.py
-</code></pre>
-
-<p>このようにフォルダごとコピーすることで、<br />
+</code></pre></div><p>このようにフォルダごとコピーすることで、<br>
 あるMODをもとにした派生MODを作成することができます。</p>
-
 <h1 id="選り好みする図書館">選り好みする図書館</h1>
-
-<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br />
-しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br />
-などを区別せず、全都市に無差別に図書館を建設します。<br />
-それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br />
-これだと創造志向があまりにもかわいそうですし、<br />
+<p>前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。<br>
+しばらくプレイするとわかりますが、このMODは誰の都市か、首都かどうか、<br>
+などを区別せず、全都市に無差別に図書館を建設します。<br>
+それもそのはず、「都市が建設されたとき」以外の条件を付けていないからです。<br>
+これだと創造志向があまりにもかわいそうですし、<br>
 せめて自動建設は首都だけにして少しマイルドにできないでしょうか。</p>
-
-<p>この制限を考慮に入れて、<br />
-《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br />
+<p>この制限を考慮に入れて、<br>
+《都市が建設されたとき、その都市が首都であれば、その都市に図書館を建設するMOD》<br>
 をつくっていきます。</p>
-
-<p></p>
             
           
         </div>
@@ -911,7 +860,7 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-03">2017-07-03 00:00</time></p>
           
-          <p>4504  Words</p>
+          <p>4502  Words</p>
 
           
           <p>
@@ -938,23 +887,17 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
           
             
               <h1 id="はじめに">はじめに</h1>
-
 <h2 id="これは何か">これは何か</h2>
-
-<p>これは、<br />
-「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br />
-という声にお応えして、CvEventManager.pyを編集して<br />
-XMLだけではできないちょっと面白いことをやってみようという企画です。<br />
+<p>これは、<br>
+「PythonによるModding、やってみたいけどどこから手を付けたら&hellip;」<br>
+という声にお応えして、CvEventManager.pyを編集して<br>
+XMLだけではできないちょっと面白いことをやってみようという企画です。<br>
 XMLで文明やユニットをいじったことがあればよりすんなり入り込めます。</p>
-
 <h2 id="これは何でないか">これは何でないか</h2>
-
-<p>これは、技術的な解説、PythonによるModdingに親しむ、<br />
-という視点での説明に偏重しています。<br />
-あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは<br />
+<p>これは、技術的な解説、PythonによるModdingに親しむ、<br>
+という視点での説明に偏重しています。<br>
+あなたが作りたいMODへの直接的なヒントやコピペですぐ動くコードは<br>
 あまりないかもしれません。</p>
-
-<p></p>
             
           
         </div>
@@ -972,7 +915,7 @@ XMLで文明やユニットをいじったことがあればよりすんなり�
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

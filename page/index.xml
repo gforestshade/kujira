@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Kujira, Civ4 Mod Blog</title>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/page/disclaimer/</guid>
-      <description>Disclaimer  Your disclaimer text here NOTE:Some information in this website might be copied from other websites. If you see something is your copyright or something should not belong here, please feel free to contact me. I will remove necessary parts.     </description>
+      <description>DisclaimerYour disclaimer text here &amp;lt;p class=&amp;quot;card-text&amp;quot;&amp;gt;NOTE:Some information in this website might be copied from other websites.If you see something is your copyright or something should not belong here, please feel free to&amp;lt;a href=&amp;quot;mailto:murali@mmrath.com&amp;quot;&amp;gt;contact me&amp;lt;/a&amp;gt;. I will remove necessary parts.&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; </description>
     </item>
     
     <item>
@@ -39,15 +39,9 @@
       <description>You can see my custom about-me page here
 Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
- Cobra
- Viper
- J Walter Weatherman
- Cast
-  Learn more and contribute on GitHub.
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
 Setup Some fun facts about Hugo:
- Built in Go
- Loosely inspired by Jekyll
- Primarily developed by spf13 on the train while commuting to and from Manhattan.</description>
+ Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
     </item>
     
   </channel>

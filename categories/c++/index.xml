@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on Kujira, Civ4 Mod Blog</title>
@@ -19,35 +19,26 @@
       
       <guid>https://gforestshade.github.io/kujira/post/howtocompiledoc/</guid>
       <description>&lt;h1 id=&#34;筆者の環境&#34;&gt;筆者の環境&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Windows 10 64bit&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Civ4 BtS 3.19 パッケージ版&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Windows 10 64bit&lt;/li&gt;
+&lt;li&gt;Civ4 BtS 3.19 パッケージ版&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h1&gt;
-
-&lt;p&gt;Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。&lt;br /&gt;
-&lt;a href=&#34;https://sourceforge.net/projects/beyond-the-sword-sdk/&#34;&gt;https://sourceforge.net/projects/beyond-the-sword-sdk/&lt;/a&gt;&lt;br /&gt;
-ここから&lt;br /&gt;
-/VS2010Express1.iso と&lt;br /&gt;
-/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を&lt;br /&gt;
+&lt;p&gt;Dawn of Civilizationの作者さんが全部入りパッケージを公開されています。&lt;br&gt;
+&lt;a href=&#34;https://sourceforge.net/projects/beyond-the-sword-sdk/&#34;&gt;https://sourceforge.net/projects/beyond-the-sword-sdk/&lt;/a&gt;&lt;br&gt;
+ここから&lt;br&gt;
+/VS2010Express1.iso と&lt;br&gt;
+/Install Civ4 Microsoft Windows SDK Visual C Toolkit.exe を&lt;br&gt;
 両方ダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは&lt;br /&gt;
+&lt;p&gt;Install Civ4 Microsoft Windows SDK Visual C Toolkit.exeは&lt;br&gt;
 実行して指示に従いインストールします。&lt;/p&gt;
-
-&lt;p&gt;VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。&lt;br /&gt;
-(それ以外のプログラミング言語は不要です。)&lt;br /&gt;
+&lt;p&gt;VS2010Express1.isoはマウントしてVC++2010 Express Editionをインストールします。&lt;br&gt;
+(それ以外のプログラミング言語は不要です。)&lt;br&gt;
 Setup.htaからVC++2010を選ぶか、&lt;span class=&#34;path&#34;&gt;
   \VCExpress\setup.exe
 &lt;/span&gt;
 を直接実行します。&lt;/p&gt;
-
-&lt;h1 id=&#34;やってみる&#34;&gt;やってみる&lt;/h1&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h1 id=&#34;やってみる&#34;&gt;やってみる&lt;/h1&gt;</description>
     </item>
     
     <item>
@@ -57,48 +48,31 @@ Setup.htaからVC++2010を選ぶか、&lt;span class=&#34;path&#34;&gt;
       
       <guid>https://gforestshade.github.io/kujira/post/howtocompile/</guid>
       <description>&lt;div class=&#34;alert alert-danger&#34;&gt;
-  &lt;p&gt;より簡単な方法が公開されました。このページに従ってもできますが、&lt;br /&gt;
+&lt;p&gt;より簡単な方法が公開されました。このページに従ってもできますが、&lt;br&gt;
 &lt;a href=&#34;https://gforestshade.github.io/kujira/post/howtocompiledoc/&#34;&gt;DoC全部入りパッケージ版&lt;/a&gt;も参照してください。&lt;/p&gt;
-
 &lt;/div&gt;
-
-
 &lt;h1 id=&#34;筆者の環境&#34;&gt;筆者の環境&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Windows 10 64bit&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Civ4 BtS 3.19 パッケージ版&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Windows 10 64bit&lt;/li&gt;
+&lt;li&gt;Civ4 BtS 3.19 パッケージ版&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h1&gt;
-
 &lt;h2 id=&#34;microsoft-visual-c-toolkit-2003&#34;&gt;Microsoft Visual C++ Toolkit 2003&lt;/h2&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://kael.civfanatics.net/files/VCToolkitSetup.exe&#34;&gt;http://kael.civfanatics.net/files/VCToolkitSetup.exe&lt;/a&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;multi-threading-librarires&#34;&gt;Multi Threading Librarires&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://kael.civfanatics.net/files/msvcrt.lib&#34;&gt;http://kael.civfanatics.net/files/msvcrt.lib&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://kael.civfanatics.net/files/msvcprt.lib&#34;&gt;http://kael.civfanatics.net/files/msvcprt.lib&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;http://kael.civfanatics.net/files/msvcrt.lib&#34;&gt;http://kael.civfanatics.net/files/msvcrt.lib&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://kael.civfanatics.net/files/msvcprt.lib&#34;&gt;http://kael.civfanatics.net/files/msvcprt.lib&lt;/a&gt;&lt;br&gt;
 C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib にコピーします。&lt;/p&gt;
-
 &lt;h2 id=&#34;windows-7-sdk&#34;&gt;Windows 7 SDK&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso&#34;&gt;http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso&lt;/a&gt;&lt;br /&gt;
-古いPSDK-x86.exeがWindows10でインストールできないようなので&lt;br /&gt;
-新し目のSDKを&lt;strong&gt;&lt;em&gt;ISOから&lt;/em&gt;&lt;/strong&gt;インストールします。&lt;br /&gt;
-64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。&lt;br /&gt;
-マウントして、&lt;strong&gt;&lt;em&gt;\Setup\SDKsetup.exeを&lt;/em&gt;&lt;/strong&gt;実行します。&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso&#34;&gt;http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso&lt;/a&gt;&lt;br&gt;
+古いPSDK-x86.exeがWindows10でインストールできないようなので&lt;br&gt;
+新し目のSDKを&lt;em&gt;&lt;strong&gt;ISOから&lt;/strong&gt;&lt;/em&gt;インストールします。&lt;br&gt;
+64bit版はGRMSDKX_EN_DVD.isoです。名前が紛らわしいので注意しましょう。&lt;br&gt;
+マウントして、&lt;em&gt;&lt;strong&gt;\Setup\SDKsetup.exeを&lt;/strong&gt;&lt;/em&gt;実行します。&lt;br&gt;
 インストール中のInstllation Optionsで、Visual C++ Compilersにチェックを入れておきます。&lt;/p&gt;
-
-&lt;h2 id=&#34;makefile-2-3&#34;&gt;MakeFile 2.3&lt;/h2&gt;
-
+&lt;h2 id=&#34;makefile-23&#34;&gt;MakeFile 2.3&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/&#34;&gt;https://forums.civfanatics.com/attachments/makefile_2-3-zip.367602/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;やってみる&#34;&gt;やってみる&lt;/h1&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h1 id=&#34;やってみる&#34;&gt;やってみる&lt;/h1&gt;</description>
     </item>
     
   </channel>

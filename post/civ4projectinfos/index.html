@@ -48,7 +48,7 @@
     },
     "datePublished": "2018-05-29",
     "description": "",
-    "wordCount": 3522
+    "wordCount":  3522 
   }
 </script>
 
@@ -59,7 +59,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -204,7 +204,7 @@ if (!doNotTrack) {
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/">CIV4BuildingInfos.xml</a>
       
-      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧</a>
+      <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/keyichiran/">XMLキー一覧_new</a>
       
       <a class="list-group-item list-group-item-action" href="https://gforestshade.github.io/kujira/post/civ4leaderheadinfos/">CIV4LeaderHeadInfos.xml</a>
       
@@ -805,7 +805,7 @@ if (!doNotTrack) {
                 
                 
                   
-                    iProductonModifier1
+                    iProductonModifier2
                   
               </div>
             
@@ -903,343 +903,208 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <p>CIV4ProjectInfos.xmlの各項目について説明しています。</p>
-
 <p>BtSパッケージ版では</p>
-
 <p class="path">
   C:\Program Files (x86)\CYBERFRONT\Sid Meier's Civilization 4(J)\Beyond the Sword(J)\Assets\XML\GameInfo\CIV4ProjectInfos.xml
 </p>
 
-
 <p>にあります。</p>
-
 <h2 id="civ4projectinfos">&lt;Civ4ProjectInfos&gt;</h2>
-
 <p>ルートタグです。名前空間として、<code>xmlns=&quot;x-schema:CIV4GameInfoSchema.xml&quot;</code>を指定します。</p>
-
 <h2 id="projectinfo">&lt;ProjectInfo&gt;</h2>
-
 <p>このタグ1つが、プロジェクトの定義1つと対応しています。</p>
-
 <p>以下&lt;ProjectInfo&gt;の中身です。</p>
-
-<p></p>
-
 <h3 id="type">&lt;Type&gt;</h3>
-
-<p>このプロジェクトのプロジェクトキーを定義します。<br />
+<p>このプロジェクトのプロジェクトキーを定義します。<br>
 他と被らなければなんでも構いませんが、PROJECT_英語名 にするのが無難です。</p>
-
 <p>値：プロジェクトキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Type&gt;PROJECT_MANHATTAN_PROJECT&lt;/Type&gt;</p>
-
 <h3 id="description">&lt;Description&gt;</h3>
-
 <p>このプロジェクトの名前を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：「マンハッタン計画」<br />
+<p>例：「マンハッタン計画」<br>
 &lt;Description&gt;TXT_KEY_PROJECT_MANHATTAN_PROJECT&lt;/Description&gt;</p>
-
 <h3 id="civilopedia">&lt;Civilopedia&gt;</h3>
-
 <p>このプロジェクトのシヴィロペディアに表示される文章を指定します。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Civilopedia&gt;TXT_KEY_PROJECT_MANHATTAN_PROJECT_PEDIA&lt;/Civilopedia&gt;</p>
-
 <h3 id="strategy">&lt;Strategy&gt;</h3>
-
-<p>このプロジェクトの短い説明文を指定します。<br />
+<p>このプロジェクトの短い説明文を指定します。<br>
 シドのヒントやシヴィロペディアに表示されます。</p>
-
 <p>値：テキストキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Strategy&gt;TXT_KEY_PROJECT_MANHATTAN_PROJECT_STRATEGY&lt;/Strategy&gt;</p>
-
 <h3 id="victoryprereq">&lt;VictoryPrereq&gt;</h3>
-
 <p>このプロジェクトは、ここに指定した勝利条件が有効になっているときのみ生産できます。</p>
-
-<p>特に勝利条件による制限を設けない場合、NONEを指定します。<br />
+<p>特に勝利条件による制限を設けない場合、NONEを指定します。<br>
 BtSでは、アポロ計画と宇宙船の各パーツがこの属性を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#勝利条件">勝利条件キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%8B%9D%E5%88%A9%E6%9D%A1%E4%BB%B6">勝利条件キー</a></p>
+<p>例１：<br>
 &lt;VictoryPrereq&gt;NONE&lt;/VictoryPrereq&gt;</p>
-
-<p>例２：宇宙開発勝利が有効のときのみ建造可能<br />
+<p>例２：宇宙開発勝利が有効のときのみ建造可能<br>
 &lt;VictoryPrereq&gt;VICTORY_SPACE_RACE&lt;/VictoryPrereq&gt;</p>
-
 <h3 id="techprereq">&lt;TechPrereq&gt;</h3>
-
 <p>このプロジェクトは、ここに指定した技術を取得済みのときのみ生産できます。</p>
-
-<p>特に技術による制限を設けない場合、NONEを指定します。<br />
+<p>特に技術による制限を設けない場合、NONEを指定します。<br>
 BtSでは、すべてのプロジェクトがなんらかの前提技術を持ちます。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#技術">技術キー</a></p>
-
-<p>例：核分裂が必要<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%8A%80%E8%A1%93">技術キー</a></p>
+<p>例：核分裂が必要<br>
 &lt;TechPrereq&gt;TECH_FISSION&lt;/TechPrereq&gt;</p>
-
 <h3 id="anyoneprereqproject">&lt;AnyonePrereqProject&gt;</h3>
-
-<p>前提プロジェクトを指定します。<br />
-このプロジェクトを生産するには、ゲームに参加している誰かが<br />
-ここに指定したプロジェクトを完成させている必要があります。<br />
+<p>前提プロジェクトを指定します。<br>
+このプロジェクトを生産するには、ゲームに参加している誰かが<br>
+ここに指定したプロジェクトを完成させている必要があります。<br>
 自分で完成させる必要はありません。</p>
-
-<p>特にこの意味での前提を設けない場合、NONEを指定します。<br />
+<p>特にこの意味での前提を設けない場合、NONEを指定します。<br>
 BtSでは、この属性を持つのは戦略防衛構想です。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#プロジェクト">プロジェクトキー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクトキー</a></p>
+<p>例１：<br>
 &lt;AnyonePrereqProject&gt;NONE&lt;/AnyonePrereqProject&gt;</p>
-
-<p>例２：世界中で誰かがインターネットを完成させている必要がある<br />
+<p>例２：世界中で誰かがインターネットを完成させている必要がある<br>
 &lt;AnyonePrereqProject&gt;PROJECT_THE_INTERNET&lt;/AnyonePrereqProject&gt;</p>
-
 <h3 id="imaxglobalinstances">&lt;iMaxGlobalInstances&gt;</h3>
-
-<p>世界プロジェクトとして指定します。<br />
+<p>世界プロジェクトとして指定します。<br>
 ここに正の整数nを指定した場合、このプロジェクトは全世界合計でn個まで建設することができます。</p>
-
-<p>このプロジェクトが世界プロジェクトではない場合、<code>-1</code>を指定します。<br />
+<p>このプロジェクトが世界プロジェクトではない場合、<code>-1</code>を指定します。<br>
 BtSでは、世界プロジェクトはマンハッタン計画とインターネットです。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxGlobalInstances&gt;-1&lt;/iMaxGlobalInstances&gt;</p>
-
-<p>例２：世界プロジェクト(1個まで)<br />
+<p>例２：世界プロジェクト(1個まで)<br>
 &lt;iMaxGlobalInstances&gt;1&lt;/iMaxGlobalInstances&gt;</p>
-
 <h3 id="imaxteaminstances">&lt;iMaxTeamInstances&gt;</h3>
-
-<p>チームプロジェクトとして指定します。<br />
+<p>チームプロジェクトとして指定します。<br>
 ここに正の整数nを指定した場合、このプロジェクトはチーム内合計でn個まで建設することができます。</p>
-
-<p>このプロジェクトがチームプロジェクトではない場合、<code>-1</code>を指定します。<br />
+<p>このプロジェクトがチームプロジェクトではない場合、<code>-1</code>を指定します。<br>
 BtSでは、チームプロジェクトは戦略防衛構想・アポロ計画・宇宙船の各パーツです。</p>
-
-<p>なお、<a href="#imaxglobalinstances">&lt;iMaxGlobalInstances&gt;</a>と<a href="#imaxteaminstances">&lt;iMaxTeamInstances&gt;</a>の両方に<code>-1</code>を指定した場合、<br />
-このプロジェクトには一切の建造数制限がかからなくなります。<br />
+<p>なお、<a href="#imaxglobalinstances">&lt;iMaxGlobalInstances&gt;</a>と<a href="#imaxteaminstances">&lt;iMaxTeamInstances&gt;</a>の両方に<code>-1</code>を指定した場合、<br>
+このプロジェクトには一切の建造数制限がかからなくなります。<br>
 その場合、このプロジェクトは何度でも繰り返し生産することができるようになります。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iMaxTeamInstances&gt;-1&lt;/iMaxTeamInstances&gt;</p>
-
-<p>例２：チームプロジェクト(1個まで)<br />
+<p>例２：チームプロジェクト(1個まで)<br>
 &lt;iMaxTeamInstances&gt;1&lt;/iMaxTeamInstances&gt;</p>
-
 <h3 id="icost">&lt;iCost&gt;</h3>
-
 <p>この建造物の生産コストを指定します。(単位：〈ハンマー〉)</p>
-
 <p>ここに<code>-1</code>を指定した場合、このプロジェクトは都市で生産することができなくなります。</p>
-
 <p>値：整数</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;iCost&gt;1500&lt;/iCost&gt;</p>
-
 <h3 id="inukeinterception">&lt;iNukeInterception&gt;</h3>
-
-<p>核兵器の迎撃率を指定します。<br />
-このプロジェクトが完成したとき、その文明の核兵器迎撃率が+n%上昇します。<br />
+<p>核兵器の迎撃率を指定します。<br>
+このプロジェクトが完成したとき、その文明の核兵器迎撃率が+n%上昇します。<br>
 実際に核攻撃されたときの迎撃率は、チーム内で最も大きい迎撃率を持つ文明の値に合わせられます。</p>
-
 <p>核迎撃率を上げないプロジェクトの場合、0を指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iNukeInterception&gt;0&lt;/iNukeInterception&gt;</p>
-
-<p>例２：核兵器に対する迎撃のチャンス+75%<br />
+<p>例２：核兵器に対する迎撃のチャンス+75%<br>
 &lt;iNukeInterception&gt;75&lt;/iNukeInterception&gt;</p>
-
 <h3 id="itechshare">&lt;iTechShare&gt;</h3>
-
-<p>インターネット効果を持たせます。<br />
-ここに正の整数nを指定した場合、このプロジェクトが完成したとき、<br />
-その文明は「技術共有状態:n」になります。<br />
-文明が「技術共有状態:n」である間、その文明から見て既知の文明のうち、<br />
-n文明<sup class="footnote-ref" id="fnref:team"><a href="#fn:team">1</a></sup>に取得済みの技術を毎ターン無償で取得するようになります。</p>
-
-<p>文明が複数の「技術共有状態」を持つ場合は、最も小さい数字のものが常に優先されます。<br />
+<p>インターネット効果を持たせます。<br>
+ここに正の整数nを指定した場合、このプロジェクトが完成したとき、<br>
+その文明は「技術共有状態:n」になります。<br>
+文明が「技術共有状態:n」である間、その文明から見て既知の文明のうち、<br>
+n文明<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>に取得済みの技術を毎ターン無償で取得するようになります。</p>
+<p>文明が複数の「技術共有状態」を持つ場合は、最も小さい数字のものが常に優先されます。<br>
 文明が同じ「技術共有状態」を複数持っても、効果に変化はありません。</p>
-
 <p>この機能を使わないプロジェクトの場合、NONEを指定します。</p>
-
 <p>値：整数</p>
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;iTechShare&gt;0&lt;/iTechShare&gt;</p>
-
-<p>例２：既知の2文明が取得した全テクノロジーを共有<br />
+<p>例２：既知の2文明が取得した全テクノロジーを共有<br>
 &lt;iTechShare&gt;2&lt;/iTechShare&gt;</p>
-
 <h3 id="everyonespecialunit">&lt;EveryoneSpecialUnit&gt;</h3>
-
-<p>このプロジェクトで解禁されるユニットを指定します。<br />
+<p>このプロジェクトで解禁されるユニットを指定します。<br>
 ただし、<a href="https://gforestshade.github.io/kujira/post/civ4unitinfos/#special">搭乗タイプ</a>単位で1つしか指定できません。</p>
-
-<p>とくにユニットを解禁しないプロジェクトの場合、NONEを指定します。<br />
+<p>とくにユニットを解禁しないプロジェクトの場合、NONEを指定します。<br>
 BtSでは、この属性を持つプロジェクトはありません。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#搭載分類">搭乗タイプキー</a></p>
-
-<p>例：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E6%90%AD%E8%BC%89%E5%88%86%E9%A1%9E">搭乗タイプキー</a></p>
+<p>例：<br>
 &lt;EveryoneSpecialUnit&gt;NONE&lt;/EveryoneSpecialUnit&gt;</p>
-
 <h3 id="everyonespecialbuilding">&lt;EveryoneSpecialBuilding&gt;</h3>
-
-<p>このプロジェクトで解禁される建造物を指定します。<br />
+<p>このプロジェクトで解禁される建造物を指定します。<br>
 ただし、<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#specialbuildingtype">特殊建造物グループ</a>単位で1つしか指定できません。</p>
-
-<p>とくに建造物を解禁しないプロジェクトの場合、NONEを指定します。<br />
+<p>とくに建造物を解禁しないプロジェクトの場合、NONEを指定します。<br>
 BtSでは、この属性を持つプロジェクトはマンハッタン計画のみです。</p>
-
-<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#特殊建造物グループ">特殊建造物キー</a></p>
-
-<p>例１：<br />
+<p>値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E7%89%B9%E6%AE%8A%E5%BB%BA%E9%80%A0%E7%89%A9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">特殊建造物キー</a></p>
+<p>例１：<br>
 &lt;EveryoneSpecialBuilding&gt;NONE&lt;/EveryoneSpecialBuilding&gt;</p>
-
-<p>例２：核シェルターを解禁<br />
+<p>例２：核シェルターを解禁<br>
 &lt;EveryoneSpecialBuilding&gt;SPECIALBUILDING_BOMB_SHELTER&lt;/EveryoneSpecialBuilding&gt;</p>
-
 <h3 id="bspaceship">&lt;bSpaceship&gt;</h3>
-
-<p>宇宙船のパーツとして指定します。<br />
-ここに1を指定した場合、このプロジェクトは宇宙船のパーツになります。<br />
+<p>宇宙船のパーツとして指定します。<br>
+ここに1を指定した場合、このプロジェクトは宇宙船のパーツになります。<br>
 これにより、<a href="https://gforestshade.github.io/kujira/post/civ4buildinginfos/#ispaceproductionmodifier">建造物による宇宙船生産ボーナス</a>を受けることができます。</p>
-
 <p>とくに宇宙船のパーツとは関係ないプロジェクトの場合、0を指定します。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bSpaceship&gt;0&lt;/bSpaceship&gt;</p>
-
 <h3 id="ballowsnukes">&lt;bAllowsNukes&gt;</h3>
-
 <p>ここに1を指定した場合、全世界で核兵器の生産を解禁します。</p>
-
 <p>とくに核の解禁とは関係ないプロジェクトの場合、0を指定します。</p>
-
 <p>値：0か1</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;bAllowsNukes&gt;1&lt;/bAllowsNukes&gt;</p>
-
 <h3 id="button">&lt;Button&gt;</h3>
-
-<p>このプロジェクトを表すボタン画像のファイル名を指定します。<br />
+<p>このプロジェクトを表すボタン画像のファイル名を指定します。<br>
 プロジェクトのアイコンとして使用されます。</p>
-
 <p>値：\Assets\ からの相対ファイルパス</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;Button&gt;,Art/Interface/Buttons/Buildings/ManhattanProject.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,4&lt;/Button&gt;</p>
-
 <h3 id="prereqprojects">&lt;PrereqProjects&gt;</h3>
-
-<p>前提となるプロジェクトを指定します。<br />
-チーム全体で見てここに指定されたプロジェクトがすべて必要数完成している文明でのみ、<br />
+<p>前提となるプロジェクトを指定します。<br>
+チーム全体で見てここに指定されたプロジェクトがすべて必要数完成している文明でのみ、<br>
 このプロジェクトを生産することができます。</p>
-
 <p>値：&lt;PrereqProject&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;PrereqProject&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;PrereqProject&gt;は以下の2つのタグを含みます。</p>
 <h4 id="projecttype">&lt;ProjectType&gt;</h4>
-
-<p>前提となるプロジェクトを指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#プロジェクト">プロジェクトキー</a></p>
-
+<p>前提となるプロジェクトを指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクトキー</a></p>
 <h4 id="ineeded">&lt;iNeeded&gt;</h4>
-
-<p>そのプロジェクトの必要数を指定します。<br />
+<p>そのプロジェクトの必要数を指定します。<br>
 値：整数</p>
-
 </div>
-
-
-<p>例１：<br />
+<p>例１：<br>
 &lt;PrereqProjects /&gt;</p>
-
 <p>例２：アポロ計画が1つ必要</p>
-
-<pre><code class="language-txt">&lt;PrereqProjects&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;PrereqProjects&gt;
     &lt;PrereqProject&gt;
         &lt;ProjectType&gt;PROJECT_APOLLO_PROGRAM&lt;/ProjectType&gt;
         &lt;iNeeded&gt;1&lt;/iNeeded&gt;
     &lt;/PrereqProject&gt;
 &lt;/PrereqProjects&gt;
-</code></pre>
-
-<h3 id="victorythresholds">&lt;VictoryThresholds&gt;</h3>
-
+</code></pre></div><h3 id="victorythresholds">&lt;VictoryThresholds&gt;</h3>
 <p>勝利のために十分な最大必要数を指定します。</p>
-
 <p>例：あとで</p>
-
 <h3 id="victoryminthresholds">&lt;VictoryMinThresholds&gt;</h3>
-
 <p>勝利のために最低限必要な数を指定します。</p>
-
-<p><a href="#victorythresholds">&lt;VictoryThresholds&gt;</a>を指定していて、勝利必要数に幅をもたせたくないときに限り、空タグで指定を省略できます。<br />
+<p><a href="#victorythresholds">&lt;VictoryThresholds&gt;</a>を指定していて、勝利必要数に幅をもたせたくないときに限り、空タグで指定を省略できます。<br>
 その場合、<a href="#victorythresholds">&lt;VictoryThresholds&gt;</a>と同じ内容を指定したとみなされます。</p>
-
 <p>例：あとで</p>
-
 <h3 id="ivictorydelaypercent">&lt;iVictoryDelayPercent&gt;</h3>
-
-<p>追加で発生する勝利ターンへの待ち時間を指定します。<br />
-ここに正の整数nを指定した場合、このプロジェクトが最大必要数から1不足するごとに<br />
+<p>追加で発生する勝利ターンへの待ち時間を指定します。<br>
+ここに正の整数nを指定した場合、このプロジェクトが最大必要数から1不足するごとに<br>
 <code>n / [最大必要数]</code>%だけ勝利ターンへの待ち時間が延長されます。</p>
-
 <p>値：整数</p>
-
 <p>例：あとで</p>
-
 <h3 id="isuccessrate">&lt;iSuccessRate&gt;</h3>
-
 <p>&lt;VictoryThresholds&gt;に1不足するごとに減少する勝利確率を指定します。</p>
-
 <p>値：整数</p>
-
-<hr />
-
+<hr>
 <p>例１：(勝利に関係しない)</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
 &lt;VictoryMinThresholds/&gt;
 &lt;iVictoryDelayPercent&gt;0&lt;/iVictoryDelayPercent&gt;
 &lt;iSuccessRate&gt;0&lt;/iSuccessRate&gt;
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <p>例２：宇宙勝利のために1が必要</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
     &lt;VictoryThreshold&gt;
         &lt;VictoryType&gt;VICTORY_SPACE_RACE&lt;/VictoryType&gt;
         &lt;iThreshold&gt;1&lt;/iThreshold&gt;
@@ -1248,14 +1113,10 @@ BtSでは、この属性を持つプロジェクトはマンハッタン計画�
 &lt;VictoryMinThresholds/&gt;
 &lt;iVictoryDelayPercent&gt;0&lt;/iVictoryDelayPercent&gt;
 &lt;iSuccessRate&gt;0&lt;/iSuccessRate&gt;
-</code></pre>
-
-<hr />
-
-<p>例３：宇宙勝利のために1-2が必要<br />
+</code></pre></div><hr>
+<p>例３：宇宙勝利のために1-2が必要<br>
 　　　2から1減るごとに勝利に必要な時間+25% (50/2=25)</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
     &lt;VictoryThreshold&gt;
         &lt;VictoryType&gt;VICTORY_SPACE_RACE&lt;/VictoryType&gt;
         &lt;iThreshold&gt;2&lt;/iThreshold&gt;
@@ -1269,14 +1130,10 @@ BtSでは、この属性を持つプロジェクトはマンハッタン計画�
 &lt;/VictoryMinThresholds&gt;
 &lt;iVictoryDelayPercent&gt;50&lt;/iVictoryDelayPercent&gt;
 &lt;iSuccessRate&gt;0&lt;/iSuccessRate&gt;
-</code></pre>
-
-<hr />
-
-<p>例４：宇宙勝利のために1-5が必要<br />
+</code></pre></div><hr>
+<p>例４：宇宙勝利のために1-5が必要<br>
 　　　5から1減るごとに勝利確率-20%</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
     &lt;VictoryThreshold&gt;
         &lt;VictoryType&gt;VICTORY_SPACE_RACE&lt;/VictoryType&gt;
         &lt;iThreshold&gt;5&lt;/iThreshold&gt;
@@ -1290,14 +1147,10 @@ BtSでは、この属性を持つプロジェクトはマンハッタン計画�
 &lt;/VictoryMinThresholds&gt;
 &lt;iVictoryDelayPercent&gt;0&lt;/iVictoryDelayPercent&gt;
 &lt;iSuccessRate&gt;20&lt;/iSuccessRate&gt;
-</code></pre>
-
-<hr />
-
-<p>例５：宇宙勝利のために1-5が必要<br />
+</code></pre></div><hr>
+<p>例５：宇宙勝利のために1-5が必要<br>
 　　　5から1減るごとに勝利に必要な時間+20% (100/5=20)</p>
-
-<pre><code class="language-txt">&lt;VictoryThresholds&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;VictoryThresholds&gt;
     &lt;VictoryThreshold&gt;
         &lt;VictoryType&gt;VICTORY_SPACE_RACE&lt;/VictoryType&gt;
         &lt;iThreshold&gt;5&lt;/iThreshold&gt;
@@ -1311,83 +1164,53 @@ BtSでは、この属性を持つプロジェクトはマンハッタン計画�
 &lt;/VictoryMinThresholds&gt;
 &lt;iVictoryDelayPercent&gt;100&lt;/iVictoryDelayPercent&gt;
 &lt;iSuccessRate&gt;0&lt;/iSuccessRate&gt;
-</code></pre>
-
-<h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
-
+</code></pre></div><h3 id="bonusproductionmodifiers">&lt;BonusProductionModifiers&gt;</h3>
 <p>このプロジェクトの生産を加速する資源を指定します。</p>
-
 <p>値：&lt;BonusProductionModifier&gt;のリスト</p>
-
 <div class="subnote">
-  <p>&lt;BonusProductionModifier&gt;は以下の2つのタグを含みます。</p>
-
+<p>&lt;BonusProductionModifier&gt;は以下の2つのタグを含みます。</p>
 <h4 id="bonustype">&lt;BonusType&gt;</h4>
-
-<p>生産を加速する資源を指定します。<br />
-値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#資源">資源キー</a></p>
-
-<h4 id="iproductonmodifier-ton">&lt;iProductonModifier&gt;<sup class="footnote-ref" id="fnref:ton"><a href="#fn:ton">1</a></sup></h4>
-
-<p>その資源に対して何%加速するか指定します。<br />
-ここに100を指定すると、その時に限りシヴィロペディアの表示が<br />
-「生産速度2倍」になります。<br />
+<p>生産を加速する資源を指定します。<br>
+値：<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E8%B3%87%E6%BA%90">資源キー</a></p>
+<h4 id="iproductonmodifierton">&lt;iProductonModifier&gt;<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h4>
+<p>その資源に対して何%加速するか指定します。<br>
+ここに100を指定すると、その時に限りシヴィロペディアの表示が<br>
+「生産速度2倍」になります。<br>
 値：整数</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:ton">iProduc<strong>ton</strong>Modifierです。誤字ではありません。<br />
- <a class="footnote-return" href="#fnref:ton"><sup>[return]</sup></a></li>
-</ol>
 </div>
-
-</div>
-
-
 <p>例１：ウランがあれば生産速度2倍</p>
-
-<pre><code class="language-txt">&lt;BonusProductionModifiers&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;BonusProductionModifiers&gt;
     &lt;BonusProductionModifier&gt;
         &lt;BonusType&gt;BONUS_URANIUM&lt;/BonusType&gt;
         &lt;iProductonModifier&gt;100&lt;/iProductonModifier&gt;
     &lt;/BonusProductionModifier&gt;
 &lt;/BonusProductionModifiers&gt;
-</code></pre>
-
-<h3 id="createsound">&lt;CreateSound&gt;</h3>
-
+</code></pre></div><h3 id="createsound">&lt;CreateSound&gt;</h3>
 <p>このプロジェクトが完成したときに流れる効果音を指定します。</p>
-
 <p>値：2Dサウンドスクリプトキー</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;CreateSound /&gt;</p>
-
 <h3 id="moviedefinetag">&lt;MovieDefineTag&gt;</h3>
-
-<p>ムービーのグラフィックを指定します。キーの定義は<br />
+<p>ムービーのグラフィックを指定します。キーの定義は<br>
 <span class="path">
   \XML\Art\CIV4ArtDefines_Movie.xml
 </span>
 にあります。</p>
-
 <p>ここにNONE以外のキーを指定する場合、プロジェクト完成時にそのキーの内容に従ってムービーが再生されます。</p>
-
-<p>例：<br />
+<p>例：<br>
 &lt;MovieDefineTag&gt;ART_DEF_MOVIE_MANHATTAN_PROJECT&lt;/MovieDefineTag&gt;</p>
-
 <div style="padding:5em"></div>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:team">n文明と書いていますが、正確にはnチームです。<br />
- <a class="footnote-return" href="#fnref:team"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>n文明と書いていますが、正確にはnチームです。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>iProduc<strong>ton</strong>Modifierです。誤字ではありません。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
         </div>
         <div class="col-12">
   
@@ -1400,7 +1223,7 @@ BtSでは、この属性を持つプロジェクトはマンハッタン計画�
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2018 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 
