@@ -1233,8 +1233,9 @@ BtSでは：
 [^worstenemy]: ほかの要因によって取引が拒否されることはあり得ます。たとえば同時に最悪の敵でもあった場合は、一切の外交取引ができません。
 
 ### \<DemandTributeAttitudeThreshold\>
-プレイヤーから見て、AI文明の態度が***プレイヤー自身の***この値以上であれば、
-AI文明はそのプレイヤーに貢物の要求(Demand Tribute)をしなくなります。
+この指導者は、この態度以上である他のAI文明から
+貢物の要求(Demand Tribute)を受けなくなります。
+つまり、この項目はいわばこの指導者の舐められやすさを表します。
 
 BtSでは、全指導者で`ATTITUDE_CAUTIOUS`です。
 
@@ -1242,8 +1243,9 @@ BtSでは、全指導者で`ATTITUDE_CAUTIOUS`です。
 \<DemandTributeAttitudeThreshold\>ATTITUDE\_CAUTIOUS\</DemandTributeAttitudeThreshold\>
 
 ### \<NoGiveHelpAttitudeThreshold\>
-プレイヤーから見て、AI文明の態度が***プレイヤー自身の***この値以上であれば、
-AI文明はそのプレイヤーに援助の提供(Give Help)をしなくなります。
+この指導者は、この態度以下である他のAI文明から
+援助の提供(Give Help)を受けられなくなります。
+つまり、この項目はいわばこの指導者のプライドの高さを表します。
 
 BtSでは、全指導者で`ATTITUDE_CAUTIOUS`です。
 

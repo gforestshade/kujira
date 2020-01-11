@@ -68,7 +68,6 @@ googleAnalytics = "UA-111798374-1"
     name = "green"
     path = "/banner/green1024x200.png"
 
-
-[blackfriday]
-    extensions = ["hardLineBreak"]
-    fractions = false    
+[markup.goldmark.renderer]
+    hardWraps = true
+    unsafe = true

@@ -1,6 +1,6 @@
 +++
 date = "2018-04-16"
-title = "XMLキー一覧"
+title = "XMLキー一覧_new"
 banner = "photo_ice1"
 categories = ["XML"]
 customcss = "keyichiran.css"

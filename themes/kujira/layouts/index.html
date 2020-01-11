@@ -5,7 +5,7 @@
   </div>
   <div class="centerbar">
     <div class="container-fluid">
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        {{ $paginator := .Paginate (where (where .Site.Pages "Kind" "page" ) "Type" "post") }}
         {{ range $paginator.Pages }}
           {{ if gt .Params.weight 80}}
             {{ .Render "article" }}

@@ -10,7 +10,7 @@
   </div><!-- /.card-header -->
   <div role="tabpanel" id="collist_{{$.Scratch.Get "i"}}" class="collapse{{if  $open}} show{{end}}">
     <div class="list-group list-group-flush">
-      {{ range ($.Site.Taxonomies.categories.Get $name ).Pages.Reverse }}
+      {{ range ($.Site.Taxonomies.categories.Get (lower $name) ).Pages.Reverse }}
       <a class="list-group-item list-group-item-action" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
       {{ end }}
     </div>
