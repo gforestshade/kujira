@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>それからのPython 2  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>それからのPython 2  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -54,9 +66,10 @@
     },
     "datePublished": "2017-10-20",
     "description": "",
-    "wordCount":  5084 
+    "wordCount":  5150 
   }
 </script>
+
 
 
 
@@ -65,7 +78,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -348,7 +359,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-10-20">2017-10-20 00:00</time></p>
           
-          <p>5084  Words</p>
+          <p>5150  Words</p>
           
           
 
@@ -383,7 +394,7 @@ if (!doNotTrack) {
 これによって得られる値は数値型ですから、フォーマット文字列により埋め込んで<br>
 Unicode文字列を作り、表示してあげます。</p>
 <p>コードはこうなります&hellip;</p>
-<pre><code># -*- coding: shift_jis -*-
+<pre tabindex="0"><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -393,15 +404,14 @@ gc = CyGlobalContext()
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onGameStart(self, argsList):
-        'Called at the start of the game'
+        &#39;Called at the start of the game&#39;
         super(self.__class__, self).onGameStart(argsList)
         ##########
         
         year = gc.getGame().getGameTurnYear()
-        message = u&quot;ようこそ！現在%d年です。&quot; % year
+        message = u&#34;ようこそ！現在%d年です。&#34; % year
         
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
-
+        CyInterface().addImmediateMessage(message, &#34;&#34;)
 </code></pre><p>ゲーム開始してみましょう。<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_30.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_30.png"    /></a>
 </p>
@@ -411,16 +421,16 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 これでよいのですが&hellip;&hellip;&hellip;&hellip;贅沢を言うなら、ちゃんと「紀元前」と表示されてほしいところです。<br>
 さらにわがままを言うなら、プラスなら紀元後、マイナスなら紀元前、がついてくれると<br>
 なおうれしいです。if文を使って書いてみましょう。</p>
-<pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+<pre tabindex="0"><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         year = gc.getGame().getGameTurnYear()
         if year &gt;= 0:
-            ce = u&quot;紀元後&quot;
+            ce = u&#34;紀元後&#34;
         else:
-            ce = u&quot;紀元前&quot;
+            ce = u&#34;紀元前&#34;
         
-        message = u&quot;ようこそ！現在%s%d年です。&quot; % (ce, year)
+        message = u&#34;ようこそ！現在%s%d年です。&#34; % (ce, year)
     
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
+        CyInterface().addImmediateMessage(message, &#34;&#34;)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre><p>変数の埋め込みを２つにしています。<br>
 <code>message = u&quot;ようこそ！現在%s%d年です。&quot; % (ce, year)</code>とあるうちの、<br>
@@ -452,7 +462,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <code>year</code>は数値型ですから、ほかの数値と計算ができます。<br>
 それでなんとかならないでしょうか。</p>
 <p>そういうわけで、こう書いてみます。</p>
-<pre><code>year = -year
+<pre tabindex="0"><code>year = -year
 </code></pre><p>実は、変数は何回でも上書き代入ができます。<br>
 その上書きする値を計算するために、<em><strong>自分自身の元の中身を使うことができます</strong></em>。</p>
 <p>それを踏まえると、これも代入文(<code>変数名 = 値</code>)であることがわかります。<br>
@@ -468,7 +478,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 マイナスを取りたいのは<code>year</code>が元からマイナスだった時だけです。<br>
 したがって「yearが0以上でないとき」に実行されるelseブロックにだけこの文を書きます。</p>
 <p>全部でこうなります&hellip;</p>
-<pre><code># -*- coding: shift_jis -*-
+<pre tabindex="0"><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -478,20 +488,20 @@ gc = CyGlobalContext()
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onGameStart(self, argsList):
-        'Called at the start of the game'
+        &#39;Called at the start of the game&#39;
         super(self.__class__, self).onGameStart(argsList)
         ##########
         
         year = gc.getGame().getGameTurnYear()
         if year &gt;= 0:
-            ce = u&quot;紀元後&quot;
+            ce = u&#34;紀元後&#34;
         else:
-            ce = u&quot;紀元前&quot;
+            ce = u&#34;紀元前&#34;
             year = -year
         
-        message = u&quot;ようこそ！現在%s%d年です。&quot; % (ce, year)
+        message = u&#34;ようこそ！現在%s%d年です。&#34; % (ce, year)
     
-        CyInterface().addImmediateMessage(message, &quot;&quot;)
+        CyInterface().addImmediateMessage(message, &#34;&#34;)
 </code></pre><p>さんざん長々と説明しましたが、1行しか変わっていません。(どこかはわかりますね？)<br>
 どこが変わったのかわかったら、ゲームを開始してみましょう。<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_32.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_32.png"    /></a>
@@ -501,27 +511,27 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 <p>「現在年を上に表示する」というひとつの機能のかたまりが完成しました。<br>
 機能のかたまりができたので、名前をつけておきます。<br>
 「表示する」ですから<code>showGameTurnYear()</code>にしましょう。</p>
-<pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+<pre tabindex="0"><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 def showGameTurnYear():
-    '''現在年を上に表示する'''
+    &#39;&#39;&#39;現在年を上に表示する&#39;&#39;&#39;
 
     year = gc.getGame().getGameTurnYear()
     if year &gt;= 0:
-        ce = u&quot;紀元後&quot;
+        ce = u&#34;紀元後&#34;
     else:
-        ce = u&quot;紀元前&quot;
+        ce = u&#34;紀元前&#34;
         year = -year
         
-    message = u&quot;ようこそ！現在%s%d年です。&quot; % (ce, year)
+    message = u&#34;ようこそ！現在%s%d年です。&#34; % (ce, year)
     
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
+    CyInterface().addImmediateMessage(message, &#34;&#34;)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre><h1 id="毎ターン現在年を知らせてくる">毎ターン現在年を知らせてくる</h1>
 <p>この関数を、<code>onGameStart()</code>ではなく<code>onBeginPlayerTurn()</code>から呼び出してみます。<br>
 GameStartとある部分をBeginPlayerTurnに変えて、<br>
 そのブロックの中でshowGameTurnYear()を呼び出しましょう。<br>
 全体で&hellip;</p>
-<pre><code># -*- coding: shift_jis -*-
+<pre tabindex="0"><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -529,24 +539,24 @@ import CvUtil
 gc = CyGlobalContext()
 
 def showGameTurnYear():
-    '''現在年を上に表示する'''
+    &#39;&#39;&#39;現在年を上に表示する&#39;&#39;&#39;
 
     year = gc.getGame().getGameTurnYear()
     if year &gt;= 0:
-        ce = u&quot;紀元後&quot;
+        ce = u&#34;紀元後&#34;
     else:
-        ce = u&quot;紀元前&quot;
+        ce = u&#34;紀元前&#34;
         year = -year
         
-    message = u&quot;現在%s%d年です。&quot; % (ce, year)
+    message = u&#34;現在%s%d年です。&#34; % (ce, year)
     
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
+    CyInterface().addImmediateMessage(message, &#34;&#34;)
 
 
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onBeginPlayerTurn(self, argsList):
-        'Called at the beginning of a players turn'
+        &#39;Called at the beginning of a players turn&#39;
         super(self.__class__, self).onBeginPlayerTurn(argsList)
         ##########
         # 単に呼び出す
@@ -582,16 +592,16 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 と思ったとしても、<br>
 <code>CyInterface().addImmediateMessage(message, &quot;&quot;)</code>が書いてある<em><strong>一か所だけ</strong></em>を<br>
 <code>print message</code>に変えに変えれば済みます。</p>
-<pre><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+<pre tabindex="0"><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         year = gc.getGame().getGameTurnYear()
         if year &gt;= 0:
-            ce = u&quot;紀元後&quot;
+            ce = u&#34;紀元後&#34;
         else:
-            ce = u&quot;紀元前&quot;
+            ce = u&#34;紀元前&#34;
         
-        message = u&quot;ようこそ！現在%s%d年です。&quot; % (ce, year)
+        message = u&#34;ようこそ！現在%s%d年です。&#34; % (ce, year)
     
-        # CyInterface().addImmediateMessage(message, &quot;&quot;)
+        # CyInterface().addImmediateMessage(message, &#34;&#34;)
         print message
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 </code></pre><p>関数にまとめておいたことで、各地から同じ場所のコードを呼び出していますから、<br>
@@ -630,7 +640,7 @@ PlayerというのはAIのそれを含むのでしたから、人数分出てし
 こちらは、「このターンのPlayerが人間操作ならば」の条件を入れてあげることで<br>
 AIPlayerのターンでは出ないようにできます。<br>
 やってみましょう。</p>
-<pre><code># -*- coding: shift_jis -*-
+<pre tabindex="0"><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -638,24 +648,24 @@ import CvUtil
 gc = CyGlobalContext()
 
 def showGameTurnYear():
-    '''現在年を上に表示する'''
+    &#39;&#39;&#39;現在年を上に表示する&#39;&#39;&#39;
 
     year = gc.getGame().getGameTurnYear()
     if year &gt;= 0:
-        ce = u&quot;紀元後&quot;
+        ce = u&#34;紀元後&#34;
     else:
-        ce = u&quot;紀元前&quot;
+        ce = u&#34;紀元前&#34;
         year = -year
         
-    message = u&quot;現在%s%d年です。&quot; % (ce, year)
+    message = u&#34;現在%s%d年です。&#34; % (ce, year)
     
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
+    CyInterface().addImmediateMessage(message, &#34;&#34;)
 
 
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onBeginPlayerTurn(self, argsList):
-        'Called at the beginning of a players turn'
+        &#39;Called at the beginning of a players turn&#39;
         super(self.__class__, self).onBeginPlayerTurn(argsList)
         ##########
         iGameTurn, iPlayer = argsList
@@ -674,22 +684,22 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 そのあいさつの文字列はどこから取るのかというと&hellip;<br>
 関数の外から指定してもらうようにしてみましょう。<br>
 引数の仕組みを使って次のようにできます&hellip;</p>
-<pre><code>def showGameTurnYear(prefix):
-    '''現在年を上に表示する'''
+<pre tabindex="0"><code>def showGameTurnYear(prefix):
+    &#39;&#39;&#39;現在年を上に表示する&#39;&#39;&#39;
 
     year = gc.getGame().getGameTurnYear()
     if year &gt;= 0:
-        ce = u&quot;紀元後&quot;
+        ce = u&#34;紀元後&#34;
     else:
-        ce = u&quot;紀元前&quot;
+        ce = u&#34;紀元前&#34;
         year = -year
         
-    message = u&quot;%s現在%s%d年です。&quot; % (prefix, ce, year)
+    message = u&#34;%s現在%s%d年です。&#34; % (prefix, ce, year)
     
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
+    CyInterface().addImmediateMessage(message, &#34;&#34;)
 </code></pre><p>呼び出し側も書いていきますが、どうせなので引数を違えてゲーム開始時とターン処理開始時の<br>
 両方から呼び出してみましょう&hellip;</p>
-<pre><code># -*- coding: shift_jis -*-
+<pre tabindex="0"><code># -*- coding: shift_jis -*-
 from CvPythonExtensions import *
 import CvEventManager
 import CvUtil
@@ -697,31 +707,31 @@ import CvUtil
 gc = CyGlobalContext()
 
 def showGameTurnYear(prefix):
-    '''現在年を上に表示する'''
+    &#39;&#39;&#39;現在年を上に表示する&#39;&#39;&#39;
 
     year = gc.getGame().getGameTurnYear()
     if year &gt;= 0:
-        ce = u&quot;紀元後&quot;
+        ce = u&#34;紀元後&#34;
     else:
-        ce = u&quot;紀元前&quot;
+        ce = u&#34;紀元前&#34;
         year = -year
         
-    message = u&quot;%s現在%s%d年です。&quot; % (prefix, ce, year)
+    message = u&#34;%s現在%s%d年です。&#34; % (prefix, ce, year)
     
-    CyInterface().addImmediateMessage(message, &quot;&quot;)
+    CyInterface().addImmediateMessage(message, &#34;&#34;)
 
 
 class MyEventManager(CvEventManager.CvEventManager, object):
 
     def onGameStart(self, argsList):
-        'Called at the start of the game'
+        &#39;Called at the start of the game&#39;
         super(self.__class__, self).onGameStart(argsList)
         ##########
 
-        showGameTurnYear(u&quot;ようこそ！&quot;)
+        showGameTurnYear(u&#34;ようこそ！&#34;)
 
     def onBeginPlayerTurn(self, argsList):
-        'Called at the beginning of a players turn'
+        &#39;Called at the beginning of a players turn&#39;
         super(self.__class__, self).onBeginPlayerTurn(argsList)
         ##########
         iGameTurn, iPlayer = argsList
@@ -729,7 +739,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
         # 人間のターンなら
         if pPlayer.isHuman():
-            showGameTurnYear(u&quot;処理中...&quot;)
+            showGameTurnYear(u&#34;処理中...&#34;)
 </code></pre><p>ターンを進めて&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_var_36.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_var_36.png"    /></a>
 <br>
@@ -749,7 +759,7 @@ class MyEventManager(CvEventManager.CvEventManager, object):
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

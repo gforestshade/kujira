@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>それからのPython 9  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>それからのPython 9  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -54,9 +66,10 @@
     },
     "datePublished": "2017-12-30",
     "description": "",
-    "wordCount":  4140 
+    "wordCount":  4112 
   }
 </script>
+
 
 
 
@@ -65,7 +78,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -348,7 +359,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-12-30">2017-12-30 12:03</time></p>
           
-          <p>4140  Words</p>
+          <p>4112  Words</p>
           
           
 
@@ -383,24 +394,23 @@ if (!doNotTrack) {
 <h1 id="スペル情報クラス">スペル情報クラス</h1>
 <p>スペル情報クラスです。BuildingInfoやUnitInfoのスペル版のようなイメージで、<br>
 このクラスを通してスペルのいろいろな情報を取得することができるようにします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellInfo</span>:
-    
-    <span style="color:#66d9ef">def</span> __init__(self, name, spell_class):
-        self<span style="color:#f92672">.</span>_name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>_spell_class <span style="color:#f92672">=</span> spell_class
-        
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_name
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPromotionName</span>(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PROMOTION_</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>getName()
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSpellClass</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_spell_class
-
-    spells <span style="color:#f92672">=</span> []
-
-</code></pre></div><p>&hellip;&hellip;&hellip;&hellip;のですが、今回は設計を簡単にしたので、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpellInfo</span>:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, spell_class):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_spell_class <span style="color:#f92672">=</span> spell_class
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getPromotionName</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;PROMOTION_&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>getName()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSpellClass</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_spell_class
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    spells <span style="color:#f92672">=</span> []
+</span></span></code></pre></div><p>&hellip;&hellip;&hellip;&hellip;のですが、今回は設計を簡単にしたので、<br>
 登録される情報は「名前」と「クラスオブジェクト」(後述)だけです。<br>
 コンストラクタではこの2つを受け取り、インスタンス変数として代入しておきます。<br>
 そして、<code>getName()</code>や<code>getSpellClass()</code>でそれらを取得できるようにしています。<br>
@@ -438,38 +448,37 @@ if (!doNotTrack) {
 <h1 id="スペル用基底クラス">スペル用基底クラス</h1>
 <p>では、「クラスオブジェクト」のところに入れるクラスをこれから定義しましょう。<br>
 まず、すべてのスペルで共通となる部分です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Spell</span>:
-    
-    <span style="color:#66d9ef">def</span> __init__(self, caster):
-        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
-        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
-    
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">スペル処理を呼び出し、成功したらエフェクトも出す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
-
-        <span style="color:#66d9ef">if</span> r:
-            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">EFFECT_PING</span><span style="color:#e6db74">&#39;</span>)
-            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
-            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, False)
-        
-        re_units <span style="color:#f92672">=</span> []
-        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
-            re_units <span style="color:#f92672">+</span><span style="color:#f92672">=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
-
-        <span style="color:#66d9ef">return</span> re_units
-
-</code></pre></div><p>スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Spell</span>:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, caster):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;スペル処理を呼び出し、成功したらエフェクトも出す&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> r:
+</span></span><span style="display:flex;"><span>            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;EFFECT_PING&#39;</span>)
+</span></span><span style="display:flex;"><span>            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
+</span></span><span style="display:flex;"><span>            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, <span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        re_units <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
+</span></span><span style="display:flex;"><span>            re_units <span style="color:#f92672">+=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> re_units
+</span></span></code></pre></div><p>スペル用のクラスでは、「発動したユニットのCyUnitインスタンス」を<br>
 インスタンス変数として保持します。<br>
 この&quot;詠唱者&quot;はゲーム中にいくらでも変わりうる、<br>
 あるいは複数存在しうるものですから、<br>
@@ -489,11 +498,11 @@ Infoに入れることはできません。ここで保持します。</p>
 メソッドを定義しています)</p>
 <h2 id="共通メソッド">共通メソッド</h2>
 <p>メソッドを順番に見ていきましょう。まずは<code>__init__()</code>です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> __init__(self, caster):
-        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
-        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
-    
-</code></pre></div><p>詠唱者を引数に取ってインスタンス変数に代入するほか、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, caster):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_caster <span style="color:#f92672">=</span> caster
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_myTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam(caster<span style="color:#f92672">.</span>getTeam())
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div><p>詠唱者を引数に取ってインスタンス変数に代入するほか、<br>
 そのユニットが所属しているチームのCyTeamインスタンスも<br>
 インスタンス変数としてつくっています。<br>
 これはあとで戦争相手のユニットを識別したり、<br>
@@ -504,16 +513,15 @@ Infoに入れることはできません。ここで保持します。</p>
 ここで設定することになるでしょう。</p>
 <hr>
 <p><code>cast()</code>です。スペル処理の本体になります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">スペル処理を呼び出し、成功したらエフェクトも出す</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
-
-        <span style="color:#66d9ef">if</span> r:
-            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">EFFECT_PING</span><span style="color:#e6db74">&#39;</span>)
-            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
-            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
-
-</code></pre></div><p><code>execute()</code>という謎のインスタンスメソッドを呼び出しています。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cast</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;スペル処理を呼び出し、成功したらエフェクトも出す&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>execute()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> r:
+</span></span><span style="display:flex;"><span>            EFFECT <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;EFFECT_PING&#39;</span>)
+</span></span><span style="display:flex;"><span>            point <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_caster<span style="color:#f92672">.</span>plot()<span style="color:#f92672">.</span>getPoint()
+</span></span><span style="display:flex;"><span>            CyEngine()<span style="color:#f92672">.</span>triggerEffect(EFFECT, point)
+</span></span></code></pre></div><p><code>execute()</code>という謎のインスタンスメソッドを呼び出しています。<br>
 これは、スペルごとに異なる部分をギリギリまで狭くして、<br>
 共通処理で済ませようとする工夫です。<br>
 どこまでが共通で、どこからが個別なのか切り分けるのは、<br>
@@ -539,26 +547,25 @@ Infoに入れることはできません。ここで保持します。</p>
 <hr>
 <p><code>isEnemy()</code>です。ユニットの引数を1つ取り、<br>
 そのユニットの所属と詠唱者の文明とが戦争状態にあるかを判定します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
-</code></pre></div><p>外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isEnemy</span>(self, pUnit):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_myTeam<span style="color:#f92672">.</span>isAtWar(pUnit<span style="color:#f92672">.</span>getTeam())
+</span></span></code></pre></div><p>外交関係はチームごとに設定されますから、チームを求めておいたのが役に立っています。</p>
 <hr>
 <p><code>selectEnemyUnits()</code>です。範囲内にいる敵対ユニットを集めてリストにして返します。<br>
 攻撃系のスペルではよく使うので、共通処理に入れておきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, False)
-        
-        re_units <span style="color:#f92672">=</span> []
-        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
-            re_units <span style="color:#f92672">+</span><span style="color:#f92672">=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
-
-        <span style="color:#66d9ef">return</span> re_units
-
-</code></pre></div><p><code>range_plots = getRangePlotList(self._caster, i_range, False)</code><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selectEnemyUnits</span>(self, i_range):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        範囲内の全敵対ユニットのリストを返す
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        i_range - self.casterを中心として周囲i_rangeマスを範囲とする
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        range_plots <span style="color:#f92672">=</span> getRangePlotList(self<span style="color:#f92672">.</span>_caster, i_range, <span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        re_units <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> range_plots:
+</span></span><span style="display:flex;"><span>            re_units <span style="color:#f92672">+=</span> filter(self<span style="color:#f92672">.</span>isEnemy, getPlotUnits(plot))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> re_units
+</span></span></code></pre></div><p><code>range_plots = getRangePlotList(self._caster, i_range, False)</code><br>
 まずさっきつくっていた関数を呼び出して、範囲内のPlotのリストを取得します。<br>
 詠唱者を中心に、周囲<code>i_range</code>マス、詠唱者自身のマスは含めません。</p>
 <p><code>range_plots</code>の中の各Plotに対して、<br>
@@ -596,7 +603,7 @@ Infoに入れることはできません。ここで保持します。</p>
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

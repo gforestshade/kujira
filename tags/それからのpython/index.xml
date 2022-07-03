@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate><atom:link href="https://gforestshade.github.io/kujira/tags/%E3%81%9D%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEpython/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>それからのPython 10</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy10/</link>
@@ -65,21 +61,21 @@
 &lt;p&gt;Python側のファイル構成はいつもの感じです。&lt;br&gt;
 EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。&lt;br&gt;
 忘れてしまった方は&lt;a href=&#34;https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py&#34;&gt;こちら&lt;/a&gt;にも置いてあります。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_promospell
-    └─Assets
-        ├─Python
-        │  ├─KujiraEventManager.py
-        │  │
-        │  └─Entrypoints
-        │      └─CvEventInterface.py
-        │
-        └─XML
-            ├─Text
-            │  └─Text_Kujira.xml
-            │
-            └─Units
-                └─CIV4PromotionInfos.xml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_promospell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ├─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  ├─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │      └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─XML
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ├─Text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │  └─Text_Kujira.xml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Units
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                └─CIV4PromotionInfos.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -192,14 +188,14 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br&gt;
 &lt;h1 id=&#34;準備&#34;&gt;準備&lt;/h1&gt;
 &lt;p&gt;kujira_classというMODを新しく作ります。&lt;/p&gt;
 &lt;h2 id=&#34;フォルダ構成&#34;&gt;フォルダ構成&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_class
-    └─Assets
-        └─Python
-            │─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_class
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

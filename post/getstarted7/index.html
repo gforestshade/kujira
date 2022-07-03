@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>はじめてのPythonMOD 7  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>はじめてのPythonMOD 7  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -54,9 +66,10 @@
     },
     "datePublished": "2017-08-07",
     "description": "",
-    "wordCount":  6729 
+    "wordCount":  6728 
   }
 </script>
+
 
 
 
@@ -65,7 +78,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -348,7 +359,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-08-07">2017-08-07 00:00</time></p>
           
-          <p>6729  Words</p>
+          <p>6728  Words</p>
           
           
 
@@ -492,13 +503,13 @@ x座標をはみ出して指定しても、端から端へ飛ぶ計算をよし�
 <h1 id="実装">実装</h1>
 <h2 id="座標の有効性を判定する">座標の有効性を判定する</h2>
 <p>というわけで、こんな関数を作ります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
-    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
-
-    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
-    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
-    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
-</code></pre></div><p><code>gc.getMap()</code>で<strong>Map</strong>が取得できます。マップの大きさ、気候、大陸の情報などがここから取得できます。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
+</span></span><span style="display:flex;"><span>    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+</span></span><span style="display:flex;"><span>    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
+</span></span></code></pre></div><p><code>gc.getMap()</code>で<strong>Map</strong>が取得できます。マップの大きさ、気候、大陸の情報などがここから取得できます。<br>
 <code>pMap = gc.getMap()</code>と受けたとして、今回使うのはこれらです。</p>
 <dl>
 <dt><code>pMap.isWrapX()</code></dt>
@@ -515,23 +526,23 @@ x座標をはみ出して指定しても、端から端へ飛ぶ計算をよし�
 <p>また、「x座標が&quot;0～横幅&quot;までに収まっていてくれるならやはりOK」と言えそうです。<br>
 正確には左端のx座標が0、右端のx座標が(横幅-1)ですから、<br>
 (なぜそうなるか、余裕のある方は上の3x3の例を見て考えてみてください)<br>
-『「x座標が0以上」と「x座標が横幅&quot;未満&rdquo;」の両方』を満たした場合、<br>
+『「x座標が0以上」と「x座標が横幅&quot;未満&quot;」の両方』を満たした場合、<br>
 この場合もx軸方向についてOKを出します。</p>
 <p>あわせてこうなります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>どちらかが<code>True</code>ならx座標の有効性としても<code>True</code>にしたいので、<code>or</code>を使っていることに注意してください。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span>bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>どちらかが<code>True</code>ならx座標の有効性としても<code>True</code>にしたいので、<code>or</code>を使っていることに注意してください。</p>
 <p>まったく同様にy軸方向について&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>これが<code>True</code>なら、y座標として有効な座標であると判定できそうです。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span>by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>これが<code>True</code>なら、y座標として有効な座標であると判定できそうです。</p>
 <p>最後に、x座標とy座標の両方が有効な範囲にある必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-<span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>こうですね。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>こうですね。</p>
 <p>これで、<br>
 「x座標とy座標を引数にとって、それは有効な座標か？<br>
 　その座標のPlotを取得しようとしてもエラーにならないか？」<br>
@@ -558,31 +569,31 @@ by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>
 これは最初の図で(2,3)の左上のマスが(1,4)であることと一致しています。</p>
 <!-- これは要するに2次元ベクトルの加算です. -->
 <p>つまりこれらの座標の差分のリスト</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">range1 <span style="color:#f92672">=</span> [
- (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
- (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
- (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
- ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
- ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>),
- ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>),
- ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
- ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
- ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
- ]
-</code></pre></div><p>を逐次中心座標に足していくことで周囲1マスの全Plotを得ることができそうです。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>range1 <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span> ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span> ]
+</span></span></code></pre></div><p>を逐次中心座標に足していくことで周囲1マスの全Plotを得ることができそうです。<br>
 なお、リストの要素を書き並べている最中は改行しても文の終わりとはみなされません。<br>
 なので、このように各自で見やすいように整形して書くことができます。</p>
 <p>コードにするとこうなります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span>
-lPlot <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range1:
-    ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
-    iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
-
-    <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
-        lPlot<span style="color:#f92672">.</span>append( gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy) )
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;</span>
-</code></pre></div><p><code>lPlot = []</code>として空のリストを作ってから、<code>lPlot.append()</code>で要素を追加しています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>lPlot <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range1:
+</span></span><span style="display:flex;"><span>    ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
+</span></span><span style="display:flex;"><span>        lPlot<span style="color:#f92672">.</span>append( gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy) )
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p><code>lPlot = []</code>として空のリストを作ってから、<code>lPlot.append()</code>で要素を追加しています。</p>
 <p><code>range1</code>の各要素<code>li</code>について、<br>
 都市のx座標と<code>li</code>のx座標を足して<code>ix</code>に代入しています。<br>
 同様に、都市のy座標と<code>li</code>のy座標を足して<code>iy</code>に代入しています。<br>
@@ -595,9 +606,9 @@ lPlot <span style="color:#f92672">=</span> []
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyPlotからTerrainで探すと、</p>
 <blockquote>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">190. VOID setTerrainType (TerrainType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
-     void (TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
-</code></pre></div><p>が見つかりました。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>190. VOID setTerrainType (TerrainType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
+</span></span><span style="display:flex;"><span>     void (TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
+</span></span></code></pre></div><p>が見つかりました。</p>
 <dl>
 <dt>TerrainType eNewValue</dt>
 <dd>TerrainのTypeですから地形のIDですね。例によって<code>gc.getInfoTypeForString()</code>の戻り値を入れましょう。</dd>
@@ -609,52 +620,52 @@ lPlot <span style="color:#f92672">=</span> []
 やはりたいていはここにもTrueを指定することになるでしょう。</dd>
 </dl>
 <p>これをfor文とあわせて、こうなります&hellip;</p>
-<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+<pre tabindex="0"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 for plot in lPlot:
-    grassType = gc.getInfoTypeForString('TERRAIN_GRASS')
+    grassType = gc.getInfoTypeForString(&#39;TERRAIN_GRASS&#39;)
     plot.setTerrainType(grassType, True, True)
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 </code></pre><h1 id="kujiraeventmanagerpy">KujiraEventManager.py</h1>
 <p>これまでのことを一旦まとめて<code>KujiraEventManager.py</code>にぶつけます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-range1 <span style="color:#f92672">=</span> [(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),]
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
-    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
-
-    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
-    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
-    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
-        
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a building is built</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
-        <span style="color:#75715e">##########</span>
-        pCity, iBuildingType <span style="color:#f92672">=</span> argsList
-
-        <span style="color:#66d9ef">if</span> iBuildingType <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_FERTILIZE_SHRINE</span><span style="color:#e6db74">&#39;</span>):
-            lPlot <span style="color:#f92672">=</span> []
-            <span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range1:
-                ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
-                iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
-
-                <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
-                    lPlot<span style="color:#f92672">.</span>append( gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy) )
-
-            <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> lPlot:
-                grassType <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TERRAIN_GRASS</span><span style="color:#e6db74">&#39;</span>)
-                plot<span style="color:#f92672">.</span>setTerrainType(grassType, True, True)
-                
-</code></pre></div><p>リスト内では改行自由であることを利用して、<code>range1</code>の要素を書いている部分をさらに整形してみています。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>range1 <span style="color:#f92672">=</span> [(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
+</span></span><span style="display:flex;"><span>    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+</span></span><span style="display:flex;"><span>    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a building is built&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span>        pCity, iBuildingType <span style="color:#f92672">=</span> argsList
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> iBuildingType <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;BUILDING_FERTILIZE_SHRINE&#39;</span>):
+</span></span><span style="display:flex;"><span>            lPlot <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range1:
+</span></span><span style="display:flex;"><span>                ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>                iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
+</span></span><span style="display:flex;"><span>                    lPlot<span style="color:#f92672">.</span>append( gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy) )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> lPlot:
+</span></span><span style="display:flex;"><span>                grassType <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TERRAIN_GRASS&#39;</span>)
+</span></span><span style="display:flex;"><span>                plot<span style="color:#f92672">.</span>setTerrainType(grassType, <span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span></code></pre></div><p>リスト内では改行自由であることを利用して、<code>range1</code>の要素を書いている部分をさらに整形してみています。<br>
 2つのfor文が同列になっていることに注意してください。<br>
 for文を抜けて、lPlotへの追加がすべて終わってから、改めてfor文を回しています。</p>
 <h1 id="ためす">ためす</h1>
@@ -684,12 +695,12 @@ for文を抜けて、lPlotへの追加がすべて終わってから、改めて
 やっていきましょう。</p>
 <p>範囲を広げます。周囲1マスでやっていたことを2マスに広げましょう。<br>
 座標の差分のリストで利用していたのでしたね。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">range2 <span style="color:#f92672">=</span> [         (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
-                   (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>),         ]
-</code></pre></div><p>たとえば、こうなります。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>range2 <span style="color:#f92672">=</span> [         (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>                   (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>),         ]
+</span></span></code></pre></div><p>たとえば、こうなります。<br>
 (よーく自分で観察して、あっていることを確認してくださいね。どういう処理になるか予想できればなおGOODです。)</p>
 <p>水タイルを草原化の対象から外すためには、2つの考え方があります。</p>
 <ul>
@@ -715,60 +726,60 @@ for文を抜けて、lPlotへの追加がすべて終わってから、改めて
 とくに<code>if not 式:</code>と書いた場合、元の式がFalseなら<code>not</code>で反転してTrueに変わるので、<br>
 ifの条件を満たすことになります。<br>
 つまり&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-<span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
-    <span style="color:#75715e"># 座標が有効ならPlotを取得しても安全</span>
-    plot <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy)
-    <span style="color:#75715e"># そのPlotが水タイルで『ない』なら</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> plot<span style="color:#f92672">.</span>isWater():
-        lPlot<span style="color:#f92672">.</span>append(plot)
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>このようになります。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 座標が有効ならPlotを取得しても安全</span>
+</span></span><span style="display:flex;"><span>    plot <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># そのPlotが水タイルで『ない』なら</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> plot<span style="color:#f92672">.</span>isWater():
+</span></span><span style="display:flex;"><span>        lPlot<span style="color:#f92672">.</span>append(plot)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>このようになります。</p>
 <h1 id="kujiraeventmanagerpy-改">KujiraEventManager.py 改</h1>
 <p>2か所を書き直して、こうなります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-range2 <span style="color:#f92672">=</span> [         (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>),
-          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
-                   (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>),         ]
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
-    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
-
-    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
-    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
-    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
-        
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a building is built</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
-        <span style="color:#75715e">##########</span>
-        pCity, iBuildingType <span style="color:#f92672">=</span> argsList
-
-        <span style="color:#66d9ef">if</span> iBuildingType <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BUILDING_FERTILIZE_SHRINE</span><span style="color:#e6db74">&#39;</span>):
-            lPlot <span style="color:#f92672">=</span> []
-            <span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range2:
-                ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
-                iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
-
-                <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
-                    plot <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy)
-                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> plot<span style="color:#f92672">.</span>isWater():
-                        lPlot<span style="color:#f92672">.</span>append(plot)
-
-            <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> lPlot:
-                grassType <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TERRAIN_GRASS</span><span style="color:#e6db74">&#39;</span>)
-                plot<span style="color:#f92672">.</span>setTerrainType(grassType, True, True)
-                
-</code></pre></div><h2 id="ためす-1">ためす</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>range2 <span style="color:#f92672">=</span> [         (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), ( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>          (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), ( <span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>                   (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), ( <span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>),         ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidPlot</span>(x, y):
+</span></span><span style="display:flex;"><span>    pMap <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bx <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapX() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">and</span> x <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridWidth())
+</span></span><span style="display:flex;"><span>    by <span style="color:#f92672">=</span> pMap<span style="color:#f92672">.</span>isWrapY() <span style="color:#f92672">or</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">and</span> y <span style="color:#f92672">&lt;</span> pMap<span style="color:#f92672">.</span>getGridHeight())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bx <span style="color:#f92672">and</span> by
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a building is built&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span>        pCity, iBuildingType <span style="color:#f92672">=</span> argsList
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> iBuildingType <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;BUILDING_FERTILIZE_SHRINE&#39;</span>):
+</span></span><span style="display:flex;"><span>            lPlot <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> range2:
+</span></span><span style="display:flex;"><span>                ix <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>                iy <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY() <span style="color:#f92672">+</span> li[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> isValidPlot(ix, iy):
+</span></span><span style="display:flex;"><span>                    plot <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getMap()<span style="color:#f92672">.</span>plot(ix, iy)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> plot<span style="color:#f92672">.</span>isWater():
+</span></span><span style="display:flex;"><span>                        lPlot<span style="color:#f92672">.</span>append(plot)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> plot <span style="color:#f92672">in</span> lPlot:
+</span></span><span style="display:flex;"><span>                grassType <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TERRAIN_GRASS&#39;</span>)
+</span></span><span style="display:flex;"><span>                plot<span style="color:#f92672">.</span>setTerrainType(grassType, <span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span></code></pre></div><h2 id="ためす-1">ためす</h2>
 <p>わかりやすくするため今回もWBで極地かつ沿岸に都市を建てて&hellip;<br>
 <a href="https://gforestshade.github.io/kujira/img/civss_kujira_fert_30.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_fert_30.png"    /></a>
 <br>
@@ -804,7 +815,7 @@ range2 <span style="color:#f92672">=</span> [         (<span style="color:#f9267
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

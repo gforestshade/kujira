@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>はじめてのPythonMOD 3  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>はじめてのPythonMOD 3  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -60,12 +72,13 @@
 
 
 
+
 <link rel="canonical" href="https://gforestshade.github.io/kujira/post/getstarted3/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -386,8 +397,8 @@ if (!doNotTrack) {
 利用させてもらってもよいでしょう。<br>
 この記事では<a href="https://paiza.io/">paiza.io</a>を使うことにします。<br>
 コード作成画面に入ったら、左上(緑)の言語選択ボタンから<code>Python2</code>を選択し、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#ae81ff">1129</span>
-</code></pre></div><p>と入力して、「実行」ボタンを押します。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print <span style="color:#ae81ff">1129</span>
+</span></span></code></pre></div><p>と入力して、「実行」ボタンを押します。<br>
 「出力」のところに<code>1129</code>と出ていればOKです。<br>
 <a href="https://gforestshade.github.io/kujira/img/paiza_0.png"><img src="https://gforestshade.github.io/kujira/img/paiza_0.png"    /></a>
 </p>
@@ -396,51 +407,51 @@ if (!doNotTrack) {
 <iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
 <h1 id="ちょっとあそぶ">ちょっとあそぶ</h1>
 <p>小さいプログラムを書いて遊んでみましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
-    b <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> a <span style="color:#f92672">-</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span> b
-</code></pre></div><p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> a <span style="color:#f92672">-</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print b
+</span></span></code></pre></div><p>さて、なにが出力されるでしょうか。まず予想を立ててみてください。<br>
 予想ができたら、実行してみます。合っていたでしょうか。違っていたでしょうか。</p>
 <h1 id="関数">関数</h1>
 <p>Pythonでは、ブロックが上から下に順番に実行されるのは先述の通りですが、<br>
 処理をまとめておく方法もあります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore</span>():
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
-
-doOreore()
-</code></pre></div><p><code>def 関数名():</code>とその直下の<strong>ブロック</strong>が<strong>関数</strong>として<strong>定義</strong>されます。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore</span>():
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oreore,&#34;</span>
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oredayo.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>doOreore()
+</span></span></code></pre></div><p><code>def 関数名():</code>とその直下の<strong>ブロック</strong>が<strong>関数</strong>として<strong>定義</strong>されます。<br>
 あとで<code>関数名()</code>とすると関数を「呼び出し」ます。<br>
 関数名は(かぶらない限り)自由につけて構いませんが、<br>
 その処理のまとまりは要するに全体で何をするものなのか、<br>
 動詞っぽいものをつけておく例が多いようです。</p>
 <p>関数の旨みのひとつは一度定義すれば何度呼び出しても構わないことにあります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore2</span>():
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
-
-doOreore2()
-doOreore2()
-doOreore2()
-doOreore2()
-doOreore2()
-</code></pre></div><p>とすると、ひたすら5回もオレオレ詐欺を仕掛けてくるプログラムができるのです。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore2</span>():
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oreore,&#34;</span>
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oredayo.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>doOreore2()
+</span></span><span style="display:flex;"><span>doOreore2()
+</span></span><span style="display:flex;"><span>doOreore2()
+</span></span><span style="display:flex;"><span>doOreore2()
+</span></span><span style="display:flex;"><span>doOreore2()
+</span></span></code></pre></div><p>とすると、ひたすら5回もオレオレ詐欺を仕掛けてくるプログラムができるのです。</p>
 <h2 id="引数">引数</h2>
 <p>関数のさらに強力なところは、値を外から中に持ち込めるところにあります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore3</span>(son):
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oreore,</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">oredayo.</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">print</span> son
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dayo.</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">print</span> 
-
-doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">takashi</span><span style="color:#e6db74">&#34;</span>)
-doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yuta</span><span style="color:#e6db74">&#34;</span>)
-doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">jiro</span><span style="color:#e6db74">&#34;</span>)
-doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">kazuma</span><span style="color:#e6db74">&#34;</span>)
-</code></pre></div><p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doOreore3</span>(son):
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oreore,&#34;</span>
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;oredayo.&#34;</span>
+</span></span><span style="display:flex;"><span>    print son
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;dayo.&#34;</span>
+</span></span><span style="display:flex;"><span>    print 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>doOreore3(<span style="color:#e6db74">&#34;takashi&#34;</span>)
+</span></span><span style="display:flex;"><span>doOreore3(<span style="color:#e6db74">&#34;yuta&#34;</span>)
+</span></span><span style="display:flex;"><span>doOreore3(<span style="color:#e6db74">&#34;jiro&#34;</span>)
+</span></span><span style="display:flex;"><span>doOreore3(<span style="color:#e6db74">&#34;kazuma&#34;</span>)
+</span></span></code></pre></div><p>(ついてきていますか？焦らず実際に実行しながら進んでくださいね)<br>
 定義の時点では変数で記述しておいて、呼び出し時に実際の値を&quot;渡し&quot;ています。<br>
 受け渡しを担当している<code>son</code>のことを<br>
 <strong>引数</strong>(ひきすう)あるいは<strong>仮引数</strong>(かりひきすう)と呼びます。</p>
@@ -458,12 +469,12 @@ doOreore3(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</
 関数を使う側はやりたいことを素直に記述することに専念できるのです。</p>
 <h2 id="戻り値">戻り値</h2>
 <p>関数は、呼び出した側に値を投げ返すこともできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">three</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>
-
-a <span style="color:#f92672">=</span> three() <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>
-<span style="color:#66d9ef">print</span> a
-</code></pre></div><p>関数内で<code>return 値</code>にたどり着くと、<em><strong>その関数の処理を中断して</strong></em>、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">three</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> three() <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>print a
+</span></span></code></pre></div><p>関数内で<code>return 値</code>にたどり着くと、<em><strong>その関数の処理を中断して</strong></em>、<br>
 自分を呼び出したところまで戻ってきます。<br>
 その際、<code>関数名()</code>という呼び出し文字列全体がその<code>値</code>で置き換わります。<br>
 この場合の表記法は数式の関数表記法にならっていますので、<br>
@@ -471,12 +482,12 @@ a <span style="color:#f92672">=</span> three() <span style="color:#f92672">*</sp
 このとき投げ返す値のことを<strong>戻り値</strong>と呼びます。<br>
 呼び出した側は、投げ返されてきた戻り値をさらに何かに活用することができます。</p>
 <p>引数を使って戻り値を計算することもできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">square</span>(x):
-    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x
-
-a <span style="color:#f92672">=</span> square(<span style="color:#ae81ff">5</span>)
-<span style="color:#66d9ef">print</span> a
-</code></pre></div><p>(実行してみながらついてきてくださいね)<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">square</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> square(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>print a
+</span></span></code></pre></div><p>(実行してみながらついてきてくださいね)<br>
 より数学の関数に近い感じになりました。</p>
 <p>ずっとお世話になっている<code>gc.getInfoTypeForString('BUILDING_LIBRARY')</code>はこのタイプの関数です。<br>
 キーの文字列を引数に渡して、<br>
@@ -485,14 +496,14 @@ a <span style="color:#f92672">=</span> square(<span style="color:#ae81ff">5</spa
 直接別の関数の引数として渡したりしていました。</p>
 <h1 id="やっとこmod">やっとこMOD</h1>
 <p>前回の<code>kujira_if</code>MODをフォルダごとコピーしてリネーム、<code>kujira_def</code>というMODを作ります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">└─kujira_def
-    └─Assets
-        └─Python
-            │─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-</code></pre></div><h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>└─kujira_def
+</span></span><span style="display:flex;"><span>    └─Assets
+</span></span><span style="display:flex;"><span>        └─Python
+</span></span><span style="display:flex;"><span>            │─KujiraEventManager.py
+</span></span><span style="display:flex;"><span>            │
+</span></span><span style="display:flex;"><span>            └─Entrypoints
+</span></span><span style="display:flex;"><span>                 └─CvEventInterface.py
+</span></span></code></pre></div><h2 id="yet-another-防衛志向">Yet Another 防衛志向</h2>
 <p>前回は《都市が建設されたとき、その都市の所有者の所属する文明がマリならば、その都市に図書館を建設するMOD》を作りました。<br>
 その際、要素をこのように分割しました。</p>
 <ul>
@@ -505,56 +516,56 @@ a <span style="color:#f92672">=</span> square(<span style="color:#ae81ff">5</spa
 を目指します。</p>
 <h2 id="kujiraeventmanagerpy">KujiraEventManager.py</h2>
 <p>というわけで、全体としてこのようなものを目指します&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
-    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
-        <span style="color:#75715e">##########</span>
-        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
-        pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
-        <span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>) ):
-            archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)
-            x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
-            y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
-            createUnit(pPlayer, archerUnit, x, y)
-            createUnit(pPlayer, archerUnit, x, y)
-            createUnit(pPlayer, archerUnit, x, y)
-</code></pre></div><h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
+</span></span><span style="display:flex;"><span>    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a player builds a city&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span>        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TRAIT_PROTECTIVE&#39;</span>) ):
+</span></span><span style="display:flex;"><span>            archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;UNIT_ARCHER&#39;</span>)
+</span></span><span style="display:flex;"><span>            x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
+</span></span><span style="display:flex;"><span>            y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, archerUnit, x, y)
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, archerUnit, x, y)
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, archerUnit, x, y)
+</span></span></code></pre></div><h2 id="playerが防衛志向を持つなら">Playerが防衛志向を持つなら</h2>
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからtraitを探すと、こうなっています。</p>
 <blockquote>
 </blockquote>
-<pre><code class="language-nohighlight" data-lang="nohighlight">318. BOOL hasTrait (TraitType iIndex)
+<pre tabindex="0"><code class="language-nohighlight" data-lang="nohighlight">318. BOOL hasTrait (TraitType iIndex)
      bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.
 </code></pre><p>つまり、<code>pPlayer.hasTrait(志向の種類ID)</code>とすると、<br>
 <strong>Player</strong>がその<strong>志向</strong>を持っているかどうか調べられそうです。</p>
 <p>防衛志向の<strong>キー</strong>を<a href="https://gforestshade.github.io/kujira/post/keyichiran/#%E5%BF%97%E5%90%91">調べると</a>、<code>TRAIT_PROTECTIVE</code>であることが分かりました。<br>
 ↓とすると防衛志向のIDが戻るのでした。</p>
-<pre><code>gc.getInfoTypeForString('TRAIT_PROTECTIVE')
+<pre tabindex="0"><code>gc.getInfoTypeForString(&#39;TRAIT_PROTECTIVE&#39;)
 </code></pre><p>↓のように変数に代入しておくこともできますし、</p>
-<pre><code>iProtec = gc.getInfoTypeForString('TRAIT_PROTECTIVE')
+<pre tabindex="0"><code>iProtec = gc.getInfoTypeForString(&#39;TRAIT_PROTECTIVE&#39;)
 </code></pre><p>↓のように直接引数として渡すこともできます。</p>
-<pre><code>pPlayer.hasTrait( gc.getInfoTypeForString('TRAIT_PROTECTIVE') )
+<pre tabindex="0"><code>pPlayer.hasTrait( gc.getInfoTypeForString(&#39;TRAIT_PROTECTIVE&#39;) )
 </code></pre><p>↓下の２つのプログラムは同じ動作をします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>) ):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">something</span><span style="color:#e6db74">&#39;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iProtective <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait(iProtective):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">something</span><span style="color:#e6db74">&#39;</span>
-</code></pre></div><h2 id="弓兵を作成する">弓兵を作成する</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TRAIT_PROTECTIVE&#39;</span>) ):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;something&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iProtective <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TRAIT_PROTECTIVE&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait(iProtective):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;something&#39;</span>
+</span></span></code></pre></div><h2 id="弓兵を作成する">弓兵を作成する</h2>
 <p><a href="http://civ4bug.sourceforge.net/PythonAPI/">リファレンス</a>のCyPlayerからinitUnitを探すと、こうなっています。</p>
 <blockquote>
 </blockquote>
-<pre><code class="language-nohighlight" data-lang="nohighlight">321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
+<pre tabindex="0"><code class="language-nohighlight" data-lang="nohighlight">321. CyUnit initUnit (UnitType iIndex, INT iX, INT iY, UnitAIType eUnitAI, DirectionType eFacingDirection)
      CyUnit* initUnit(UnitTypes iIndex, plotX, plotY, UnitAITypes iIndex) - place Unit at X,Y NOTE: Always use UnitAITypes.NO_UNITAI
 </code></pre><p>前半でがんばって勉強したおかげで、これは引数がいっぱいある関数だ！とわかります。<br>
 引数をひとつひとつ読んでいきましょう。</p>
@@ -591,20 +602,20 @@ DirectionTypeとあるのでこれまた数値指定ですが、<br>
 ありがたく利用しましょう。</p>
 <h2 id="自分で関数を定義する">自分で関数を定義する</h2>
 <p><code>pPlayer.initUnit()</code>を呼び出すだけの関数<code>createUnit()</code>を定義してみましょう&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
-    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
-</code></pre></div><p>どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
+</span></span><span style="display:flex;"><span>    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
+</span></span></code></pre></div><p>どのPlayer、どのUnit、どこのx座標、どこのy座標 を引数として受け取っています。<br>
 別の言い方をすれば、ここではそれらを決めずに、呼び出す側が決める、ということです。</p>
 <p>呼び出し側は、例えばこうなります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)
-x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
-y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
-createUnit(pPlayer, archerUnit, x, y)
-createUnit(pPlayer, archerUnit, x, y)
-createUnit(pPlayer, archerUnit, x, y)
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>さて、すこし想像力が必要かもしれません。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>archerUnit <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;UNIT_ARCHER&#39;</span>)
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, archerUnit, x, y)
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, archerUnit, x, y)
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, archerUnit, x, y)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>さて、すこし想像力が必要かもしれません。<br>
 前半3行では弓兵のユニット種ID、都市のx座標、都市のy座標を変数に代入していますね。<br>
 それらの<strong>値</strong>をいまさっき<strong>定義</strong>した関数に引数として渡しています。</p>
 <p>そうすると、pPlayer=所有者, unit=弓兵のユニットID, x=都市のx座標, y=都市のy座標<br>
@@ -639,7 +650,7 @@ createUnit(pPlayer, archerUnit, x, y)
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

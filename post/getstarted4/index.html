@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>はじめてのPythonMOD 4  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>はじめてのPythonMOD 4  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -54,9 +66,10 @@
     },
     "datePublished": "2017-07-26",
     "description": "",
-    "wordCount":  4351 
+    "wordCount":  4401 
   }
 </script>
+
 
 
 
@@ -65,7 +78,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -348,7 +359,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-07-26">2017-07-26 00:00</time></p>
           
-          <p>4351  Words</p>
+          <p>4401  Words</p>
           
           
 
@@ -374,77 +385,60 @@ if (!doNotTrack) {
         </div>
         <div class="article">
           <h1 id="はじめに">はじめに</h1>
-
 <ul>
 <li><a href="https://gforestshade.github.io/kujira/post/getstarted3/">その３</a>のつづき</li>
 <li>その３でMODひとつしか作れなかったので応用編の別立て</li>
 </ul>
-
 <h1 id="もう少し先へ">もう少し先へ</h1>
-
-<p>前半戦たるその３では
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》
+<p>前半戦たるその３では<br>
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》<br>
 を作りました。少し拡張してみましょう。</p>
-
 <p>「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」</p>
-
-<p>と思ったとします。が、少々厄介です。
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。
+<p>と思ったとします。が、少々厄介です。<br>
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。<br>
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。</p>
-
 <h2 id="例えば">例えば</h2>
-
 <ul>
 <li>なにもなければ弓兵が3体出る</li>
 <li>封建制と弓術を取得済みなら長弓兵が3体出る</li>
 <li>鉄道を取得済みなら機関銃兵が3体出る</li>
 <li>ロボット工学とライフリングを取得済みなら機械化歩兵が3体出る</li>
 </ul>
-
-<p>このように、まず条件を具体的に書きだします。
-すこしプログラムっぽくなってきましたが、
+<p>このように、まず条件を具体的に書きだします。<br>
+すこしプログラムっぽくなってきましたが、<br>
 これをそのままif文で並べても以下の理由によりまだうまくいきません。</p>
-
 <ul>
-<li>封建制と弓術と鉄道をどれも取得済みのとき、
+<li>封建制と弓術と鉄道をどれも取得済みのとき、<br>
 ２つの条件を同時に満たしてしまい、両方が3体出てしまう</li>
-<li>弓兵の出る条件である「ほかの条件をどれも満たさないなら」は
+<li>弓兵の出る条件である「ほかの条件をどれも満たさないなら」は<br>
 今知っているif文では書けない</li>
 </ul>
-
 <h1 id="そして今日の理論編">そして今日の理論編</h1>
-
 <iframe src="https://paiza.io/projects/e/WmGaoo_zPs6GaaW9LGFx0A?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
-
 <h2 id="elifとelse">elifとelse</h2>
-
 <p>if文には条件を満たす場合と満たさない場合、両方の処理を書くことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">す</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
-<span style="color:#66d9ef">else</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">さ</span><span style="color:#960050;background-color:#1e0010">な</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span></code></pre></div>
-<p>また、複数の条件をつなげて書くこともできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">１</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">１</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">す</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
-<span style="color:#66d9ef">elif</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">２</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">１</span><span style="color:#960050;background-color:#1e0010">は</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">さ</span><span style="color:#960050;background-color:#1e0010">な</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">が</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">２</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">す</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
-<span style="color:#66d9ef">elif</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">３</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">１</span><span style="color:#960050;background-color:#1e0010">も</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">２</span><span style="color:#960050;background-color:#1e0010">も</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">さ</span><span style="color:#960050;background-color:#1e0010">な</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">が</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">３</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">す</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span>
-<span style="color:#66d9ef">else</span>:
-    <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">１</span><span style="color:#960050;background-color:#1e0010">も</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">２</span><span style="color:#960050;background-color:#1e0010">も</span><span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span><span style="color:#ae81ff">３</span><span style="color:#960050;background-color:#1e0010">も</span><span style="color:#960050;background-color:#1e0010">満</span><span style="color:#960050;background-color:#1e0010">た</span><span style="color:#960050;background-color:#1e0010">さ</span><span style="color:#960050;background-color:#1e0010">な</span><span style="color:#960050;background-color:#1e0010">い</span><span style="color:#960050;background-color:#1e0010">場</span><span style="color:#960050;background-color:#1e0010">合</span><span style="color:#960050;background-color:#1e0010">の</span><span style="color:#960050;background-color:#1e0010">処</span><span style="color:#960050;background-color:#1e0010">理</span></code></pre></div>
-<h2 id="真と偽">真と偽</h2>
-
-<p>if文は条件式が<strong>真</strong>と解釈される場合にブロックを実行し、<strong>偽</strong>と解釈される場合にはelseのブロックを実行します。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> 条件:
+</span></span><span style="display:flex;"><span>    条件を満たす場合の処理
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    条件を満たさない場合の処理
+</span></span></code></pre></div><p>また、複数の条件をつなげて書くこともできます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> 条件１:
+</span></span><span style="display:flex;"><span>    条件１を満たす場合の処理
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> 条件２:
+</span></span><span style="display:flex;"><span>    条件１は満たさないが条件２を満たす場合の処理
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> 条件３:
+</span></span><span style="display:flex;"><span>    条件１も条件２も満たさないが条件３を満たす場合の処理
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    条件１も条件２も条件３も満たさない場合の処理
+</span></span></code></pre></div><h2 id="真と偽">真と偽</h2>
+<p>if文は条件式が<strong>真</strong>と解釈される場合にブロックを実行し、<strong>偽</strong>と解釈される場合にはelseのブロックを実行します。<br>
 pythonにおいて<strong>真</strong>と解釈されるものは以下の通りです。</p>
-
 <ul>
 <li><code>True</code></li>
 <li>その他<strong>偽</strong>と解釈されるもの以外全部</li>
 </ul>
-
-<p>「えっ」と思われた方もいるかもしれませんが、そういうものなのです。
+<p>「えっ」と思われた方もいるかもしれませんが、そういうものなのです。<br>
 では肝心の<strong>偽</strong>と解釈されるものは以下の通りです。</p>
-
 <ul>
 <li><code>False</code></li>
 <li>数値の<code>0</code></li>
@@ -452,366 +446,317 @@ pythonにおいて<strong>真</strong>と解釈されるものは以下の通り
 <li>空のタプル<code>()</code>・空のリスト<code>[]</code>・空のディクショナリ<code>{}</code></li>
 <li><code>None</code></li>
 </ul>
-
-<p>知らない用語がいろいろ出てきましたが、
+<p>知らない用語がいろいろ出てきましたが、<br>
 とりあえず今回は<code>True</code>(<strong>真</strong>)と<code>False</code>(<strong>偽</strong>)について知っておけばよいです。</p>
-
-<p><code>==</code>, <code>&lt;</code>, <code>&gt;</code>といった左辺と右辺を比較する<strong>演算子</strong>は、
-比較した結果により<code>True</code>か<code>False</code>のどちらかに「置き換えられます」。
-<code>3 == 3</code>は<code>True</code>ですし、<code>3 == 5</code>は<code>False</code>です。
+<p><code>==</code>, <code>&lt;</code>, <code>&gt;</code>といった左辺と右辺を比較する<strong>演算子</strong>は、<br>
+比較した結果により<code>True</code>か<code>False</code>のどちらかに「置き換えられます」。<br>
+<code>3 == 3</code>は<code>True</code>ですし、<code>3 == 5</code>は<code>False</code>です。<br>
 (覚えていますか？<code>==</code>は左辺と右辺が等しいかどうかを比較してくれるのでした。)</p>
-
-<p>このあたりは、関数の呼び出し文字列が「戻り値」で置き換えられていたのと似ています。
-理論編はただ読んでいてもなかなか頭に入りません。実際に少し書いてみましょう。
-Python2の実行環境で...</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">==</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span> 
-
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">!=</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span>
-
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&lt;</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span>
-
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&gt;</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span>
-
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&lt;=</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span>
-
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&gt;=</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-<span style="color:#66d9ef">print</span></code></pre></div>
-<p>どういう出力になるか書きながら予想して、それから実行してみましょう。
-どうでしょうか。比較が正しいか正しくないかによって
+<p>このあたりは、関数の呼び出し文字列が「戻り値」で置き換えられていたのと似ています。<br>
+理論編はただ読んでいてもなかなか頭に入りません。実際に少し書いてみましょう。<br>
+Python2の実行環境で&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;==&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;!=&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;&lt;&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;&lt;=&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;&gt;=&#34;</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print <span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print
+</span></span></code></pre></div><p>どういう出力になるか書きながら予想して、それから実行してみましょう。<br>
+どうでしょうか。比較が正しいか正しくないかによって<br>
 <code>True</code>か<code>False</code>に「なって」いることがわかると思います。</p>
-
 <p>(あまり実用上の意味はありませんが)if文に<code>True</code>や<code>False</code>を直接書くこともできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> True:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">jikkou sareru kana?</span><span style="color:#e6db74">&#34;</span>
-
-<span style="color:#66d9ef">if</span> False:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">sarenai kana?</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<p>予想して、実行してみましょう。</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;jikkou sareru kana?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;sarenai kana?&#34;</span>
+</span></span></code></pre></div><p>予想して、実行してみましょう。</p>
 <p><code>True</code>も<code>False</code>も値なので、それら自体を変数に代入してしまうこともできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">if</span> a:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">itsumo jikkou sareru YO!</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zettai jikkou sarenai kamo</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<p>予想して、実行してみましょう。</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;itsumo jikkou sareru YO!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;zettai jikkou sarenai kamo&#34;</span>
+</span></span></code></pre></div><p>予想して、実行してみましょう。</p>
 <h2 id="andとor">andとor</h2>
-
-<p>もう少しだけ我慢しておつきあいください。
-例えば「<code>a</code>も<code>b</code>も3以上ならば」と書きたいときはどうすればよいでしょうか。
-少し解体して、<code>a&gt;=3</code>と<code>b&gt;=3</code>の「両方が<code>True</code>のときに限り<code>True</code>になる」表現が必要になります。
+<p>もう少しだけ我慢しておつきあいください。<br>
+例えば「<code>a</code>も<code>b</code>も3以上ならば」と書きたいときはどうすればよいでしょうか。<br>
+少し解体して、<code>a&gt;=3</code>と<code>b&gt;=3</code>の「両方が<code>True</code>のときに限り<code>True</code>になる」表現が必要になります。<br>
 つまり、それが、<code>and</code>です。書いてみましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hyoji sareru kana?</span><span style="color:#e6db74">&#34;</span>
-
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">koreha dou kana?</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<p>予想して、実行してみてください。</p>
-
-<p>対になる「どちらかが<code>True</code>なら<code>True</code>、どちらも<code>False</code>のときのみ<code>False</code>」もあります。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;hyoji sareru kana?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;koreha dou kana?&#34;</span>
+</span></span></code></pre></div><p>予想して、実行してみてください。</p>
+<p>対になる「どちらかが<code>True</code>なら<code>True</code>、どちらも<code>False</code>のときのみ<code>False</code>」もあります。<br>
 <code>or</code>です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dou kana?</span><span style="color:#e6db74">&#34;</span>
-
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">kou kana?</span><span style="color:#e6db74">&#34;</span>
-
-<span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span>:
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">kou kamo</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<p>表で見る <code>and</code>と<code>or</code></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;dou kana?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;kou kana?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span>:
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;kou kamo&#34;</span>
+</span></span></code></pre></div><p>表で見る <code>and</code>と<code>or</code></p>
 <div class="row justify-content-center">
   <div class="col-md-4">
   <table class="table table-bordered text-center">
 <thead>
 <tr>
-<th align="center">a</th>
-<th align="center">b</th>
-<th align="center">a and b</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">a and b</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">〇</td>
-<td align="center">〇</td>
-<td align="center">〇</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">〇</td>
 </tr>
-
 <tr>
-<td align="center">〇</td>
-<td align="center">×</td>
-<td align="center">×</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
 </tr>
-
 <tr>
-<td align="center">×</td>
-<td align="center">〇</td>
-<td align="center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">×</td>
 </tr>
-
 <tr>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
 </tr>
 </tbody>
 </table>
-
 </div>
 <div class="col-md-4">
   <table class="table table-bordered text-center">
 <thead>
 <tr>
-<th align="center">a</th>
-<th align="center">b</th>
-<th align="center">a or b</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">a or b</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">〇</td>
-<td align="center">〇</td>
-<td align="center">〇</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">〇</td>
 </tr>
-
 <tr>
-<td align="center">〇</td>
-<td align="center">×</td>
-<td align="center">〇</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">〇</td>
 </tr>
-
 <tr>
-<td align="center">×</td>
-<td align="center">〇</td>
-<td align="center">〇</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">〇</td>
+<td style="text-align:center">〇</td>
 </tr>
-
 <tr>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
 </tr>
 </tbody>
 </table>
-
 </div>
-
-<p></div></p>
-
+</div>
 <h1 id="とことこmod">とことこMOD</h1>
-
 <h2 id="条件の優先度を考える">条件の優先度を考える</h2>
-
 <p>さて、「複数条件を満たしたときに優先されてほしい順」に条件を並び替えましょう。</p>
-
 <ul>
 <li>なにもなければ弓兵が3体出る</li>
 <li>封建制と弓術を取得済みなら長弓兵が3体出る</li>
 <li>鉄道を取得済みなら機関銃兵が3体出る</li>
 <li>ロボット工学とライフリングを取得済みなら機械化歩兵が3体出る</li>
 </ul>
-
-<p>の例ですと、まるっと逆にして
-機械化歩兵→機関銃兵→長弓兵の順にしましょう。
-機関銃兵が出る条件と長弓兵が出る条件を
-両方満たしたときには機関銃兵が優先されてほしいですし、
-機関銃兵が出る条件を満たしてなくて、長弓兵が出る条件は満たしているときに限り、
+<p>の例ですと、まるっと逆にして<br>
+機械化歩兵→機関銃兵→長弓兵の順にしましょう。<br>
+機関銃兵が出る条件と長弓兵が出る条件を<br>
+両方満たしたときには機関銃兵が優先されてほしいですし、<br>
+機関銃兵が出る条件を満たしてなくて、長弓兵が出る条件は満たしているときに限り、<br>
 長弓兵が出てほしいのです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">ロ</span><span style="color:#960050;background-color:#1e0010">ボ</span><span style="color:#960050;background-color:#1e0010">ッ</span><span style="color:#960050;background-color:#1e0010">ト</span><span style="color:#960050;background-color:#1e0010">工</span><span style="color:#960050;background-color:#1e0010">学</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">取</span><span style="color:#960050;background-color:#1e0010">得</span><span style="color:#960050;background-color:#1e0010">済</span><span style="color:#960050;background-color:#1e0010">み</span> <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">ラ</span><span style="color:#960050;background-color:#1e0010">イ</span><span style="color:#960050;background-color:#1e0010">フ</span><span style="color:#960050;background-color:#1e0010">リ</span><span style="color:#960050;background-color:#1e0010">ン</span><span style="color:#960050;background-color:#1e0010">グ</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">取</span><span style="color:#960050;background-color:#1e0010">得</span><span style="color:#960050;background-color:#1e0010">済</span><span style="color:#960050;background-color:#1e0010">み</span>:
-    <span style="color:#960050;background-color:#1e0010">機</span><span style="color:#960050;background-color:#1e0010">械</span><span style="color:#960050;background-color:#1e0010">化</span><span style="color:#960050;background-color:#1e0010">歩</span><span style="color:#960050;background-color:#1e0010">兵</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">生</span><span style="color:#960050;background-color:#1e0010">成</span>
-<span style="color:#66d9ef">elif</span> <span style="color:#960050;background-color:#1e0010">鉄</span><span style="color:#960050;background-color:#1e0010">道</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">取</span><span style="color:#960050;background-color:#1e0010">得</span><span style="color:#960050;background-color:#1e0010">済</span><span style="color:#960050;background-color:#1e0010">み</span>: <span style="color:#75715e">#上は満たさず鉄道があるなら</span>
-    <span style="color:#960050;background-color:#1e0010">機</span><span style="color:#960050;background-color:#1e0010">関</span><span style="color:#960050;background-color:#1e0010">銃</span><span style="color:#960050;background-color:#1e0010">兵</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">生</span><span style="color:#960050;background-color:#1e0010">成</span>
-<span style="color:#66d9ef">elif</span> <span style="color:#960050;background-color:#1e0010">封</span><span style="color:#960050;background-color:#1e0010">建</span><span style="color:#960050;background-color:#1e0010">制</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">取</span><span style="color:#960050;background-color:#1e0010">得</span><span style="color:#960050;background-color:#1e0010">済</span><span style="color:#960050;background-color:#1e0010">み</span> <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">弓</span><span style="color:#960050;background-color:#1e0010">術</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">取</span><span style="color:#960050;background-color:#1e0010">得</span><span style="color:#960050;background-color:#1e0010">済</span><span style="color:#960050;background-color:#1e0010">み</span>: <span style="color:#75715e">#上のいずれも満たさず封建弓術があるなら</span>
-    <span style="color:#960050;background-color:#1e0010">長</span><span style="color:#960050;background-color:#1e0010">弓</span><span style="color:#960050;background-color:#1e0010">兵</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">生</span><span style="color:#960050;background-color:#1e0010">成</span>
-<span style="color:#66d9ef">else</span>: <span style="color:#75715e">#上のいずれでもないなら</span>
-    <span style="color:#960050;background-color:#1e0010">弓</span><span style="color:#960050;background-color:#1e0010">兵</span><span style="color:#960050;background-color:#1e0010">を</span><span style="color:#960050;background-color:#1e0010">生</span><span style="color:#960050;background-color:#1e0010">成</span></code></pre></div>
-<p>「両方を取得済み」をどう書くかの知識も利用して、
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ロボット工学を取得済み <span style="color:#f92672">and</span> ライフリングを取得済み:
+</span></span><span style="display:flex;"><span>    機械化歩兵を生成
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> 鉄道を取得済み: <span style="color:#75715e">#上は満たさず鉄道があるなら</span>
+</span></span><span style="display:flex;"><span>    機関銃兵を生成
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> 封建制を取得済み <span style="color:#f92672">and</span> 弓術を取得済み: <span style="color:#75715e">#上のいずれも満たさず封建弓術があるなら</span>
+</span></span><span style="display:flex;"><span>    長弓兵を生成
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>: <span style="color:#75715e">#上のいずれでもないなら</span>
+</span></span><span style="display:flex;"><span>    弓兵を生成
+</span></span></code></pre></div><p>「両方を取得済み」をどう書くかの知識も利用して、<br>
 こんな感じになることがわかります。</p>
-
 <h2 id="技術は誰のものか">技術は誰のものか</h2>
-
-<p>技術はPlayerが研究するわけですから取得済みの技術のリストもPlayerの元にある
-............わけではありません。
-そもそも実際のゲームでも、取得済み技術のリストはPlayerの占有財産ではありません。
-そう、チーム全体で共有しているのです。それはTeamの持ち物です。
+<p>技術はPlayerが研究するわけですから取得済みの技術のリストもPlayerの元にある<br>
+&hellip;&hellip;&hellip;&hellip;わけではありません。<br>
+そもそも実際のゲームでも、取得済み技術のリストはPlayerの占有財産ではありません。<br>
+そう、チーム全体で共有しているのです。それはTeamの持ち物です。<br>
 (通常のシングルプレイでは、Pleyer1人だけのTeamが仮想的につくられています)</p>
-
-<p>PythonでのMOD開発ではプログラムを記述するので、
-コンピュータが迷わないようにはっきりきっかり記述しなければなりません。
-PlayerとTeamのような通常の一人プレイではあまり意識しないような細かい違いであっても重要になってきます。
+<p>PythonでのMOD開発ではプログラムを記述するので、<br>
+コンピュータが迷わないようにはっきりきっかり記述しなければなりません。<br>
+PlayerとTeamのような通常の一人プレイではあまり意識しないような細かい違いであっても重要になってきます。<br>
 細かい仕様に一喜一憂するのもMOD開発の楽しみのひとつだと思って、ゆるゆるいきましょう。</p>
-
-<p>さて、そうなればPlayerが属するTeamを取得しましょう。
-<code>iTeam = pPlayer.getTeam()</code>です。これの戻り値は例によってチームIDです。
-チーム本体<!-- インスタンス -->を<code>gc</code>から取ってきましょう。 <code>pTeam = gc.getTeam(iTeam)</code>です。
+<p>さて、そうなればPlayerが属するTeamを取得しましょう。<br>
+<code>iTeam = pPlayer.getTeam()</code>です。これの戻り値は例によってチームIDです。<br>
+チーム本体<!-- インスタンス -->を<code>gc</code>から取ってきましょう。 <code>pTeam = gc.getTeam(iTeam)</code>です。<br>
 もちろん、直接<code>gc.getTeam( pPlayer.getTeam() )</code>としてもよいでしょう。</p>
-
 <h2 id="関数の名前">関数の名前</h2>
-
-<p>そして技術を持っているか判定です。
-<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyTeamをクリックしてTechで探すと...</p>
-
+<p>そして技術を持っているか判定です。<br>
+<a href="http://civ4bug.sourceforge.net/PythonAPI/index.html">リファレンス</a>のCyTeamをクリックしてTechで探すと&hellip;</p>
 <blockquote>
-<pre><code class="language-nohighlight" data-lang="nohighlight">134. BOOL isHasTech (TechType iIndex)
-     bool (TechID) - has the team researched techID</code></pre></blockquote>
-
-<p>それっぽいのがありました。
+</blockquote>
+<pre tabindex="0"><code class="language-nohighlight" data-lang="nohighlight">134. BOOL isHasTech (TechType iIndex)
+     bool (TechID) - has the team researched techID
+</code></pre><p>それっぽいのがありました。<br>
 だいぶ知識も蓄えたので、だんだん読めるようになってきました。</p>
-
 <blockquote>
-<pre><code class="language-nohighlight" data-lang="nohighlight">BOOL isHasTech (TechType iIndex)
-戻り値の種類 関数名(引数の種類 仮引数名)</code></pre></blockquote>
-
-<!-- 私は型についてちゃんと説明する驚くべき方法を発見したが、それを記すには余白が狭すぎる -->
-
-<p>上の行はこう読みます。
-(下の行は説明ですが、あったりなかったりで当てにならないことも多いので...)</p>
-
-<p>BOOLとあるのは要するに戻り値として<code>True</code>か<code>False</code>を返すよ、の意です。
-TechType、すなわち技術の種類IDを引数として渡せば、
+</blockquote>
+<pre tabindex="0"><code class="language-nohighlight" data-lang="nohighlight">BOOL isHasTech (TechType iIndex)
+戻り値の種類 関数名(引数の種類 仮引数名)
+</code></pre><!-- 私は型についてちゃんと説明する驚くべき方法を発見したが、それを記すには余白が狭すぎる -->
+<p>上の行はこう読みます。<br>
+(下の行は説明ですが、あったりなかったりで当てにならないことも多いので&hellip;)</p>
+<p>BOOLとあるのは要するに戻り値として<code>True</code>か<code>False</code>を返すよ、の意です。<br>
+TechType、すなわち技術の種類IDを引数として渡せば、<br>
 持ってるなら<code>True</code>、持ってないなら<code>False</code>を戻り値として返すよ、というわけですね。</p>
-
-<p>こうして<code>isHasTech</code>という名前から機能を推測したりできるのも、関数の強みなのでした。
-この場合、動作を表す一般動詞(～する)ではなく、
-状態を表すbe動詞(～である)で始まっているので、
-「～であるか？」という疑問形になっていてその情報を取得するのだろう
+<p>こうして<code>isHasTech</code>という名前から機能を推測したりできるのも、関数の強みなのでした。<br>
+この場合、動作を表す一般動詞(～する)ではなく、<br>
+状態を表すbe動詞(～である)で始まっているので、<br>
+「～であるか？」という疑問形になっていてその情報を取得するのだろう<br>
 ということが戻り値BOOLとの合わせ技でわかってきます。</p>
-
-<p>ほかにもCiv4の関数名はcan(～できるか？)で始まっている関数も
-戻り値BOOLであることが多いようですし、
-Yes/Noで答えられない戻り値はget(取得する)で始まっていることが多いようです。
+<p>ほかにもCiv4の関数名はcan(～できるか？)で始まっている関数も<br>
+戻り値BOOLであることが多いようですし、<br>
+Yes/Noで答えられない戻り値はget(取得する)で始まっていることが多いようです。<br>
 <code>pCity.getPlayer()</code>や<code>pPlayer.getTeam()</code>などがまさにその例ですね。</p>
-
-<p><strong><em>名前は大事です。</em></strong></p>
-
-<p>ともあれ、<code>pTeam.isHasTech( gc.getInfoTypeForString('TECH_ARCHERY') )</code>のようにすれば
-(XMLキー → 数値 が返る関数を介して<code>isHasTech()</code>に渡していますね)
+<p><em><strong>名前は大事です。</strong></em></p>
+<p>ともあれ、<code>pTeam.isHasTech( gc.getInfoTypeForString('TECH_ARCHERY') )</code>のようにすれば<br>
+(XMLキー → 数値 が返る関数を介して<code>isHasTech()</code>に渡していますね)<br>
 <code>True</code>か<code>False</code>かが返ってきますから、if文なりで分岐させればよいことがわかりました。</p>
-
 <h2 id="共通な部分をまとめる">共通な部分をまとめる</h2>
-
-<p>今回のMODでは、出るのはどの兵種であっても3体です。
-3体出す部分を共通化してしまって、こうしてしまいましょう...</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-<span style="color:#75715e"># 変数unitにユニットIDをどうにかして代入しておく</span>
-createUnit(pPlayer, unit, x, y)
-createUnit(pPlayer, unit, x, y)
-createUnit(pPlayer, unit, x, y)
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span></code></pre></div>
-<p>さらに言えば、<code>unit</code>には
-「Playerの(技術)状況に合わせた防衛ユニットの種類IDを取得して」
-それを代入するのですから、
-<strong><em>まとめて言い表せる処理のかたまりにはわかりやすい名前を付けて関数にしましょう。</em></strong></p>
-
-<p>このようにします...</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getDefensiveUnitType</span>(pPlayer):
-    pTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam( pPlayer<span style="color:#f92672">.</span>getTeam() )
-    t <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString
-    
-    <span style="color:#66d9ef">if</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_ROBOTICS</span><span style="color:#e6db74">&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_RIFLING</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_MECHANIZED_INFANTRY</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_RAILROAD</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_MACHINE_GUN</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_FEUDALISM</span><span style="color:#e6db74">&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_ARCHERY</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_LONGBOWMAN</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)</code></pre></div>
-<p><a href="https://gforestshade.github.io/kujira/post/getstarted3/#関数">関数の定義方法</a>は覚えていましたか？
-<code>pPlayer</code>の状況に左右される情報を使いたいので、
-どの<code>pPlayer</code>かを呼び出し側に指定してもらうことにします。
+<p>今回のMODでは、出るのはどの兵種であっても3体です。<br>
+3体出す部分を共通化してしまって、こうしてしまいましょう&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 変数unitにユニットIDをどうにかして代入しておく</span>
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, unit, x, y)
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, unit, x, y)
+</span></span><span style="display:flex;"><span>createUnit(pPlayer, unit, x, y)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>さらに言えば、<code>unit</code>には<br>
+「Playerの(技術)状況に合わせた防衛ユニットの種類IDを取得して」<br>
+それを代入するのですから、<br>
+<em><strong>まとめて言い表せる処理のかたまりにはわかりやすい名前を付けて関数にしましょう。</strong></em></p>
+<p>このようにします&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getDefensiveUnitType</span>(pPlayer):
+</span></span><span style="display:flex;"><span>    pTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam( pPlayer<span style="color:#f92672">.</span>getTeam() )
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_ROBOTICS&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_RIFLING&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_MECHANIZED_INFANTRY&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_RAILROAD&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_MACHINE_GUN&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_FEUDALISM&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_ARCHERY&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_LONGBOWMAN&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_ARCHER&#39;</span>)
+</span></span></code></pre></div><p><a href="https://gforestshade.github.io/kujira/post/getstarted3/#%E9%96%A2%E6%95%B0">関数の定義方法</a>は覚えていましたか？<br>
+<code>pPlayer</code>の状況に左右される情報を使いたいので、<br>
+どの<code>pPlayer</code>かを呼び出し側に指定してもらうことにします。<br>
 指定するのは呼び出し側なので、定義側では引数をつくるだけです。</p>
-
-<p>PlayerからチームID経由で<code>pTeam</code>を取得して...
-<code>t = gc.getInfoTypeForString</code>で関数に別名をつけています。
-せっかくちゃんとした名前がついている関数があるのに
-それを勝手に縮めてしまうなんて本来は重大な反逆行為ですが、
-<code>if pTeam.isHasTech( gc.getInfoTypeForString('TECH_ROBOTICS') ) and pTeam.isHasTech( gc.getInfoTypeForString('TECH_RIFLING') ):</code>
-のように多くの環境で折り返されて２行に渡ってしまい、ものすごく読み辛くなってしまうので
-(折り返さない環境であっても見切れてしまって読み辛いことには変わりないので)
-涙をのんでここで短縮しています。
-<!-- まあでも実際、gc.getInfoTypeForString()は呼び出す頻度のわりに長すぎる気はする --></p>
-
-<p>if-elif-elseの中で、ユニットの種類IDを<code>return</code>で返しています。
-この戻り値を<code>unit = getDefensiveUnitType(pPlayer)</code>として<code>unit</code>に代入して、
+<p>PlayerからチームID経由で<code>pTeam</code>を取得して&hellip;<br>
+<code>t = gc.getInfoTypeForString</code>で関数に別名をつけています。<br>
+せっかくちゃんとした名前がついている関数があるのに<br>
+それを勝手に縮めてしまうなんて本来は重大な反逆行為ですが、<br>
+<code>if pTeam.isHasTech( gc.getInfoTypeForString('TECH_ROBOTICS') ) and pTeam.isHasTech( gc.getInfoTypeForString('TECH_RIFLING') ):</code><br>
+のように多くの環境で折り返されて２行に渡ってしまい、ものすごく読み辛くなってしまうので<br>
+(折り返さない環境であっても見切れてしまって読み辛いことには変わりないので)<br>
+涙をのんでここで短縮しています。</p>
+<!-- まあでも実際、gc.getInfoTypeForString()は呼び出す頻度のわりに長すぎる気はする -->
+<p>if-elif-elseの中で、ユニットの種類IDを<code>return</code>で返しています。<br>
+この戻り値を<code>unit = getDefensiveUnitType(pPlayer)</code>として<code>unit</code>に代入して、<br>
 <code>createUnit(pPlayer, unit, x, y)</code>につなげていきます。</p>
-
 <h2 id="kujiraeventmanagerpy">KujiraEventManager.py</h2>
-
 <p>お待たせしました。全体像です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
-    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getDefensiveUnitType</span>(pPlayer):
-    pTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam( pPlayer<span style="color:#f92672">.</span>getTeam() )
-    t <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString
-    
-    <span style="color:#66d9ef">if</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_ROBOTICS</span><span style="color:#e6db74">&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_RIFLING</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_MECHANIZED_INFANTRY</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_RAILROAD</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_MACHINE_GUN</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_FEUDALISM</span><span style="color:#e6db74">&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TECH_ARCHERY</span><span style="color:#e6db74">&#39;</span>) ):
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_LONGBOWMAN</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UNIT_ARCHER</span><span style="color:#e6db74">&#39;</span>)
-
-    
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a player builds a city</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
-        <span style="color:#75715e">##########</span>
-        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
-        pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
-
-        <span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRAIT_PROTECTIVE</span><span style="color:#e6db74">&#39;</span>) ):
-            unit <span style="color:#f92672">=</span> getDefensiveUnitType(pPlayer)
-            x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
-            y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
-            
-            createUnit(pPlayer, unit, x, y)
-            createUnit(pPlayer, unit, x, y)
-            createUnit(pPlayer, unit, x, y)</code></pre></div>
-<!-- いろいろとまずいところがあります。こんなところを読んでいる暇な人は粗探ししてみるのも一興。 -->
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">createUnit</span>(pPlayer, unit, x, y):
+</span></span><span style="display:flex;"><span>    pPlayer<span style="color:#f92672">.</span>initUnit(unit, x, y, UnitAITypes<span style="color:#f92672">.</span>NO_UNITAI, DirectionTypes<span style="color:#f92672">.</span>DIRECTION_SOUTH)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getDefensiveUnitType</span>(pPlayer):
+</span></span><span style="display:flex;"><span>    pTeam <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getTeam( pPlayer<span style="color:#f92672">.</span>getTeam() )
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getInfoTypeForString
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_ROBOTICS&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_RIFLING&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_MECHANIZED_INFANTRY&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_RAILROAD&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_MACHINE_GUN&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_FEUDALISM&#39;</span>) ) <span style="color:#f92672">and</span> pTeam<span style="color:#f92672">.</span>isHasTech( t(<span style="color:#e6db74">&#39;TECH_ARCHERY&#39;</span>) ):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_LONGBOWMAN&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t(<span style="color:#e6db74">&#39;UNIT_ARCHER&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onCityBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a player builds a city&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onCityBuilt(argsList)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span>        pCity <span style="color:#f92672">=</span> argsList[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        pPlayer <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer( pCity<span style="color:#f92672">.</span>getOwner() )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> pPlayer<span style="color:#f92672">.</span>hasTrait( gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#39;TRAIT_PROTECTIVE&#39;</span>) ):
+</span></span><span style="display:flex;"><span>            unit <span style="color:#f92672">=</span> getDefensiveUnitType(pPlayer)
+</span></span><span style="display:flex;"><span>            x <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getX()
+</span></span><span style="display:flex;"><span>            y <span style="color:#f92672">=</span> pCity<span style="color:#f92672">.</span>getY()
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, unit, x, y)
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, unit, x, y)
+</span></span><span style="display:flex;"><span>            createUnit(pPlayer, unit, x, y)
+</span></span></code></pre></div><!-- いろいろとまずいところがあります。こんなところを読んでいる暇な人は粗探ししてみるのも一興。 -->
 <h2 id="ためす">ためす</h2>
-
 <p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_def_21.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_def_21.png"    /></a>
-
+<br>
 封建制取得後の都市建設ではちゃんと長弓兵が出ているようです。</p>
-
 <p><a href="https://gforestshade.github.io/kujira/post/getstarted5/">その５に続く</a></p>
         </div>
         <div class="col-12">
@@ -825,7 +770,7 @@ gc <span style="color:#f92672">=</span> CyGlobalContext()
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 

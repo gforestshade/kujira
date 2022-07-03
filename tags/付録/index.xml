@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://gforestshade.github.io/kujira/tags/%E4%BB%98%E9%8C%B2/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gforestshade.github.io/kujira/tags/%E4%BB%98%E9%8C%B2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>付録：継承２</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy_ex3/</link>

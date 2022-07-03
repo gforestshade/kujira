@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://gforestshade.github.io/kujira/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gforestshade.github.io/kujira/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>License</title>
       <link>https://gforestshade.github.io/kujira/page/license/</link>
@@ -27,7 +23,7 @@
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://gforestshade.github.io/kujira/page/disclaimer/</guid>
-      <description>DisclaimerYour disclaimer text here &amp;lt;p class=&amp;quot;card-text&amp;quot;&amp;gt;NOTE:Some information in this website might be copied from other websites.If you see something is your copyright or something should not belong here, please feel free to&amp;lt;a href=&amp;quot;mailto:murali@mmrath.com&amp;quot;&amp;gt;contact me&amp;lt;/a&amp;gt;. I will remove necessary parts.&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; </description>
+      <description>DisclaimerYour disclaimer text here&amp;lt;p class=&amp;quot;card-text&amp;quot;&amp;gt;NOTE:Some information in this website might be copied from other websites.If you see something is your copyright or something should not belong here, please feel free to&amp;lt;a href=&amp;quot;mailto:murali@mmrath.com&amp;quot;&amp;gt;contact me&amp;lt;/a&amp;gt;. I will remove necessary parts.&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -39,9 +35,9 @@
       <description>You can see my custom about-me page here
 Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
+Cobra Viper J Walter Weatherman Cast Learn more and contribute on GitHub.
 Setup Some fun facts about Hugo:
- Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
+Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim Have questions or suggestions?</description>
     </item>
     
   </channel>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://gforestshade.github.io/kujira/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 Dec 2017 12:04:00 +0000</lastBuildDate><atom:link href="https://gforestshade.github.io/kujira/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>それからのPython 10</title>
       <link>https://gforestshade.github.io/kujira/post/secondpy10/</link>
@@ -65,21 +61,21 @@
 &lt;p&gt;Python側のファイル構成はいつもの感じです。&lt;br&gt;
 EntryPoints\CvEventInterface.pyはいずれかのKujira MODから使いまわします。&lt;br&gt;
 忘れてしまった方は&lt;a href=&#34;https://gforestshade.github.io/kujira/src/prefab/CvEventInterface.py&#34;&gt;こちら&lt;/a&gt;にも置いてあります。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_promospell
-    └─Assets
-        ├─Python
-        │  ├─KujiraEventManager.py
-        │  │
-        │  └─Entrypoints
-        │      └─CvEventInterface.py
-        │
-        └─XML
-            ├─Text
-            │  └─Text_Kujira.xml
-            │
-            └─Units
-                └─CIV4PromotionInfos.xml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_promospell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ├─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  ├─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │  └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │      └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─XML
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ├─Text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │  └─Text_Kujira.xml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Units
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                └─CIV4PromotionInfos.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -192,14 +188,14 @@ CyCity型のメソッドだけでもずいぶん数があります。&lt;br&gt;
 &lt;h1 id=&#34;準備&#34;&gt;準備&lt;/h1&gt;
 &lt;p&gt;kujira_classというMODを新しく作ります。&lt;/p&gt;
 &lt;h2 id=&#34;フォルダ構成&#34;&gt;フォルダ構成&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;└─kujira_class
-    └─Assets
-        └─Python
-            │─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_class
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -274,14 +270,14 @@ XMLではできません。Pythonで実装していきましょう。&lt;/p&gt;
 &lt;p&gt;これまでは既存の動作を変更してばかりでした。&lt;br&gt;
 Pythonでしかできない効果を持った新しい建造物を作りましょう！&lt;br&gt;
 とりあえず&amp;quot;いつもの&amp;quot;を作ります。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;└─kujira_fert
-    └─Assets
-        └─Python
-            ├─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_fert
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ├─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -300,14 +296,14 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 &lt;h2 id=&#34;準備&#34;&gt;準備&lt;/h2&gt;
 &lt;p&gt;例によって&lt;code&gt;kujira_for&lt;/code&gt;というMODを作ります。&lt;br&gt;
 &lt;code&gt;kujira_if&lt;/code&gt;をフォルダごとコピーして、フォルダ名をリネームしましょう。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;└─kujira_for
-    └─Assets
-        └─Python
-            │─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;構想&#34;&gt;構想&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_for
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;構想&#34;&gt;構想&lt;/h2&gt;
 &lt;p&gt;《建造物が建設されたとき、その建造物がダンならば、&lt;br&gt;
 　都市と同じタイル上にいる全ユニットに教練Ⅰと教練Ⅱを与えるMOD》&lt;br&gt;
 を作りましょう。&lt;br&gt;
@@ -326,22 +322,17 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
       
       <guid>https://gforestshade.github.io/kujira/post/getstarted4/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gforestshade.github.io/kujira/post/getstarted3/&#34;&gt;その３&lt;/a&gt;のつづき&lt;/li&gt;
 &lt;li&gt;その３でMODひとつしか作れなかったので応用編の別立て&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;もう少し先へ&#34;&gt;もう少し先へ&lt;/h1&gt;
-
-&lt;p&gt;前半戦たるその３では
-《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》
+&lt;p&gt;前半戦たるその３では&lt;br&gt;
+《都市が建設されたとき、所有者の志向が防衛志向ならば、その都市のタイルに弓兵を３体即座に作成するMOD》&lt;br&gt;
 を作りました。少し拡張してみましょう。&lt;/p&gt;
-
 &lt;p&gt;「弓兵固定ではなく、時代に合わせた防衛ユニットが出るようにしたい」&lt;/p&gt;
-
-&lt;p&gt;と思ったとします。が、少々厄介です。
-というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。
+&lt;p&gt;と思ったとします。が、少々厄介です。&lt;br&gt;
+というのも、「時代に合わせた防衛ユニット」という表現があいまいなのです。&lt;br&gt;
 これをプログラムするには「どういう条件で」「何が起こるのか」を具体的に定めるところから始めないといけません。&lt;/p&gt;</description>
     </item>
     
@@ -364,8 +355,8 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 利用させてもらってもよいでしょう。&lt;br&gt;
 この記事では&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.io&lt;/a&gt;を使うことにします。&lt;br&gt;
 コード作成画面に入ったら、左上(緑)の言語選択ボタンから&lt;code&gt;Python2&lt;/code&gt;を選択し、&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1129&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;と入力して、「実行」ボタンを押します。&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print &lt;span style=&#34;color:#ae81ff&#34;&gt;1129&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;と入力して、「実行」ボタンを押します。&lt;br&gt;
 「出力」のところに&lt;code&gt;1129&lt;/code&gt;と出ていればOKです。&lt;br&gt;
 &lt;a href=&#34;https://gforestshade.github.io/kujira/img/paiza_0.png&#34;&gt;&lt;img src=&#34;https://gforestshade.github.io/kujira/img/paiza_0.png&#34;    /&gt;&lt;/a&gt;
 &lt;/p&gt;</description>
@@ -384,14 +375,14 @@ Pythonでしかできない効果を持った新しい建造物を作りまし�
 &lt;/ul&gt;
 &lt;h1 id=&#34;準備&#34;&gt;準備&lt;/h1&gt;
 &lt;p&gt;前回の&lt;code&gt;kujira&lt;/code&gt;MODをフォルダごとコピーしてリネーム、&lt;code&gt;kujira_if&lt;/code&gt;というMODを作ります。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;└─kujira_if
-    └─Assets
-        └─Python
-            │─KujiraEventManager.py
-            │
-            └─Entrypoints
-                 └─CvEventInterface.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このようにフォルダごとコピーすることで、&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─kujira_if
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └─Assets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │─KujiraEventManager.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            └─Entrypoints
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 └─CvEventInterface.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このようにフォルダごとコピーすることで、&lt;br&gt;
 あるMODをもとにした派生MODを作成することができます。&lt;/p&gt;
 &lt;h1 id=&#34;選り好みする図書館&#34;&gt;選り好みする図書館&lt;/h1&gt;
 &lt;p&gt;前回は《都市が建設されたとき、その都市に図書館を建設するMOD》をつくりました。&lt;br&gt;

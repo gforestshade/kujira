@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>gforest_shade; licenced by [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)</copyright>
-    <lastBuildDate>Mon, 15 May 2017 12:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://gforestshade.github.io/kujira/categories/mmd_to_civ4/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 May 2017 12:00:00 +0900</lastBuildDate><atom:link href="https://gforestshade.github.io/kujira/categories/mmd_to_civ4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MMDモデルをCiv4上で動かしたい</title>
       <link>https://gforestshade.github.io/kujira/post/nifanimation/</link>

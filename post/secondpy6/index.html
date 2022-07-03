@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>それからのPython 6  &middot; Kujira, Civ4 Mod Blog</title>
     <meta charset="utf-8" />
+    <title>それからのPython 6  &middot; Kujira, Civ4 Mod Blog</title>
+    
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V7SPDZ');</script>
+
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -54,9 +66,10 @@
     },
     "datePublished": "2017-11-17",
     "description": "",
-    "wordCount":  4527 
+    "wordCount":  4501 
   }
 </script>
+
 
 
 
@@ -65,7 +78,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://gforestshade.github.io/touch-icon-144-precomposed.png">
 <link href="https://gforestshade.github.io/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -81,20 +94,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111798374-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
 
     <body id="index" class="archive">
+      
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V7SPDZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -348,7 +359,7 @@ if (!doNotTrack) {
         <div class="article-info text-muted d-flex flex-wrap align-items-center align-items-end flex-row justify-content-end mt-1 mb-3">
           <p><time datetime="2017-11-17">2017-11-17 00:00</time></p>
           
-          <p>4527  Words</p>
+          <p>4501  Words</p>
           
           
 
@@ -391,72 +402,72 @@ if (!doNotTrack) {
 BtSのAssetsに元からあるファイルですね。<br>
 開いたウィンドウを横において読み進めてください。</p>
 <p>最初の20行ほどを引用します&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> CyPlayer Helper Functions - Requires Player ID to initialize instance </span><span style="color:#e6db74">&#39;</span>
-	
-	<span style="color:#66d9ef">def</span> __init__(self, iPlayer):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> Called whenever a new PyPlayer instance is created </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">if</span> iPlayer:
-			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(iPlayer)
-		<span style="color:#66d9ef">else</span>:
-			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(<span style="color:#ae81ff">0</span>)
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">CyGet</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> used to get the CyUnit instance for quick calls </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player
-
-<span style="color:#75715e"># ...他にもたくさんたくさん...</span>
-</code></pre></div><p>大量のコードが並んでいますが、落ち着いてよく見ると<code>PyPlayer</code>というクラスを定義し、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39; CyPlayer Helper Functions - Requires Player ID to initialize instance &#39;</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> __init__(self, iPlayer):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; Called whenever a new PyPlayer instance is created &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> iPlayer:
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(iPlayer)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">CyGet</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; used to get the CyUnit instance for quick calls &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ...他にもたくさんたくさん...</span>
+</span></span></code></pre></div><p>大量のコードが並んでいますが、落ち着いてよく見ると<code>PyPlayer</code>というクラスを定義し、<br>
 その中にインスタンスメソッドをいくつも定義しているのだとわかります。<br>
 ひとつひとつのインスタンスメソッドは短いので、比較的読み解きやすそうです。</p>
 <h2 id="__init__self-iplayer">__init__(self, iPlayer):</h2>
 <p>メソッドをみてみましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> CyPlayer Helper Functions - Requires Player ID to initialize instance </span><span style="color:#e6db74">&#39;</span>
-	
-	<span style="color:#66d9ef">def</span> __init__(self, iPlayer):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> Called whenever a new PyPlayer instance is created </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">if</span> iPlayer:
-			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(iPlayer)
-		<span style="color:#66d9ef">else</span>:
-			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(<span style="color:#ae81ff">0</span>)
-</code></pre></div><p>コンストラクタです。プレイヤーIDを受け取って、そのプレイヤーIDが0でないなら<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39; CyPlayer Helper Functions - Requires Player ID to initialize instance &#39;</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> __init__(self, iPlayer):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; Called whenever a new PyPlayer instance is created &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> iPlayer:
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(iPlayer)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>player <span style="color:#f92672">=</span> gc<span style="color:#f92672">.</span>getPlayer(<span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p>コンストラクタです。プレイヤーIDを受け取って、そのプレイヤーIDが0でないなら<br>
 <code>gc</code>にお願いして<code>CyPlayer</code>型のインスタンスに変えて、<br>
 インスタンス変数<code>self.player</code>として保持しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#75715e"># ...(中略)...</span>
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isAlive</span>(self):
-		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>isAlive()
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getID</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> int - ID # </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getID()
-
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
-		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getName()
-</code></pre></div><p>それぞれ、生存しているか、IDの取得、名前の取得のメソッドです。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ...(中略)...</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isAlive</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>isAlive()
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getID</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; int - ID # &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getID()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getName</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getName()
+</span></span></code></pre></div><p>それぞれ、生存しているか、IDの取得、名前の取得のメソッドです。<br>
 いずれも、<code>CyPlayer</code>型にある同名のメソッドに丸投げしてしまって、<br>
 その値をそのまま返しています。<br>
 よく見ると、<code>PyPlayer</code>クラスのメソッドはほとんどがこの形です。<br>
@@ -465,21 +476,21 @@ gc <span style="color:#f92672">=</span> CyGlobalContext()
 <code>CyPlayer</code>とだいたい同じように扱うことができるようになります。</p>
 <h2 id="hasresearchedtechself-itech">hasResearchedTech(self, iTech):</h2>
 <p>そのうえで、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#75715e"># ...(中略)...</span>
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hasResearchedTech</span>(self, iTech):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> bool - Has researched iTech </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>getTeam()<span style="color:#f92672">.</span>isHasTech( iTech ):
-			<span style="color:#66d9ef">return</span> True
-</code></pre></div><p><code>CyPlayer</code>にはない便利メソッドをこうして定義しています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ...(中略)...</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hasResearchedTech</span>(self, iTech):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; bool - Has researched iTech &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>getTeam()<span style="color:#f92672">.</span>isHasTech( iTech ):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p><code>CyPlayer</code>にはない便利メソッドをこうして定義しています。</p>
 <p>本来<code>isHasTech()</code>は<code>CyTeam</code>にしかありませんが<br>
 (技術はプレイヤー個人のものではなくチームの共有財産なのでした。)<br>
 所属チームを調べて、そのチームのインスタンスにお願いして技術を持っているか調べてもらう、<br>
@@ -494,24 +505,24 @@ gc <span style="color:#f92672">=</span> CyGlobalContext()
 同じクラスのメソッド同士であっても、できるだけ分業化をはかっていることが分かります。</p>
 <h2 id="getteamself">getTeam(self):</h2>
 <p>では、その<code>PyPlayer</code>版<code>getTeam()</code>を見てみましょう&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#75715e"># ...(中略)...</span>
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getTeamID</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> int - gets the players teamID </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getTeam()
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getTeam</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> obj - returns Team Instance </span><span style="color:#e6db74">&#39;</span>
-		<span style="color:#66d9ef">return</span> gc<span style="color:#f92672">.</span>getTeam( self<span style="color:#f92672">.</span>getTeamID() )
-</code></pre></div><p>2つメソッドが見えます。下のメソッドに注目すると、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ...(中略)...</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getTeamID</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; int - gets the players teamID &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>getTeam()
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getTeam</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; obj - returns Team Instance &#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> gc<span style="color:#f92672">.</span>getTeam( self<span style="color:#f92672">.</span>getTeamID() )
+</span></span></code></pre></div><p>2つメソッドが見えます。下のメソッドに注目すると、<br>
 <code>gc.getTeam()</code>が出てきました。このメソッドの戻り値は<code>CyTeam</code>ですから、<br>
 <code>PyPlayer</code>の<code>getTeam()</code>は所属チームのIDではなくインスタンスを返します。<br>
 実際その方が便利ですね。</p>
@@ -524,24 +535,24 @@ gc <span style="color:#f92672">=</span> CyGlobalContext()
 <code>CyPlayer</code>の<code>getTeam()</code>はチームIDを返しますから、これでうまくいっています。</p>
 <h2 id="getresearchedtechlistself">getResearchedTechList(self):</h2>
 <p><code>hasResearchedTech()</code>「この技術をすでに研究したか？」をさらに呼び出しているメソッドもあります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#75715e"># ...(中略)...</span>
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getResearchedTechList</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> intlist - list of researched techs </span><span style="color:#e6db74">&#39;</span>
-		lTechs <span style="color:#f92672">=</span> []
-		<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(gc<span style="color:#f92672">.</span>getNumTechInfos()):
-			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>hasResearchedTech(i):
-				lTechs<span style="color:#f92672">.</span>append(i)
-		<span style="color:#66d9ef">return</span> lTechs
-</code></pre></div><p><code>getResearchedTechList()</code>「そのプレイヤーが研究済みの全技術のリストを取得する」です。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ...(中略)...</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getResearchedTechList</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; intlist - list of researched techs &#39;</span>
+</span></span><span style="display:flex;"><span>		lTechs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(gc<span style="color:#f92672">.</span>getNumTechInfos()):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>hasResearchedTech(i):
+</span></span><span style="display:flex;"><span>				lTechs<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> lTechs
+</span></span></code></pre></div><p><code>getResearchedTechList()</code>「そのプレイヤーが研究済みの全技術のリストを取得する」です。<br>
 for文の回数のところに(<code>range()</code>でリスト化しているので、中身は回数だとわかります)、<br>
 <code>gc.getNumTechInfos()</code>という見慣れないメソッドがあります。<br>
 技術のInfoの数、すなわち全技術を順番に並べたときの総数です。</p>
@@ -564,26 +575,26 @@ Civ4ではIDは0からの連番になっているので、これでうまくい�
 <h2 id="getunitlistself">getUnitList(self):</h2>
 <p><code>PyPlayer</code>型のメソッドには「そのプレイヤーに属する全○○のリスト」のたぐいが<br>
 それなりに用意されていて、こういったものもあります&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
-<span style="color:#75715e">## Copyright Firaxis Games 2005</span>
-<span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#75715e">#import Info as PyInfo</span>
-<span style="color:#f92672">import</span> CvUtil
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
-	<span style="color:#75715e"># ...(中略)...</span>
-	
-	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getUnitList</span>(self):
-		<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> UnitList - All of the players alive units </span><span style="color:#e6db74">&#39;</span>
-		lUnit <span style="color:#f92672">=</span> []
-		(loopUnit, iter) <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>firstUnit(false)
-		<span style="color:#66d9ef">while</span>( loopUnit ):
-			<span style="color:#66d9ef">if</span> ( <span style="color:#f92672">not</span> loopUnit<span style="color:#f92672">.</span>isDead() ): <span style="color:#75715e">#is the unit alive and valid?</span>
-				lUnit<span style="color:#f92672">.</span>append(loopUnit) <span style="color:#75715e">#add unit instance to list</span>
-			(loopUnit, iter) <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>nextUnit(iter, false)
-		<span style="color:#66d9ef">return</span> lUnit
-</code></pre></div><p>「そのプレイヤーに属する全ユニットのリスト」です。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Sid Meier&#39;s Civilization 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Copyright Firaxis Games 2005</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import Info as PyInfo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PyPlayer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ...(中略)...</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getUnitList</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39; UnitList - All of the players alive units &#39;</span>
+</span></span><span style="display:flex;"><span>		lUnit <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>		(loopUnit, iter) <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>firstUnit(false)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>( loopUnit ):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> ( <span style="color:#f92672">not</span> loopUnit<span style="color:#f92672">.</span>isDead() ): <span style="color:#75715e">#is the unit alive and valid?</span>
+</span></span><span style="display:flex;"><span>				lUnit<span style="color:#f92672">.</span>append(loopUnit) <span style="color:#75715e">#add unit instance to list</span>
+</span></span><span style="display:flex;"><span>			(loopUnit, iter) <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>player<span style="color:#f92672">.</span>nextUnit(iter, false)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> lUnit
+</span></span></code></pre></div><p>「そのプレイヤーに属する全ユニットのリスト」です。<br>
 CyPlayerのインスタンスからユニットのリストを取り出す方法は(見てわかる通り)すこし難しいので、<br>
 まとめてメソッドにしてあるのは心強いですね。<br>
 中身の解説はすこし長くなってしまうので、<a href="https://gforestshade.github.io/kujira/post/readgetunitlist/">付録</a>としてまとめました。</p>
@@ -592,33 +603,33 @@ CyPlayerのインスタンスからユニットのリストを取り出す方法
 《チチェン・イッツァ完成時、自軍の全ユニットを首都に集めるMOD》<br>
 を作ってみましょう。</p>
 <p>いつものようにはじめて&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-        
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>世界遺産も建造物ですから建造物が完成したときのイベントを使って&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a building is built</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
-        pCity, iBuilding <span style="color:#f92672">=</span> argsList
-        <span style="color:#75715e">##########</span>
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>建てられたのがチチェン・イッツァだったとき、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-        <span style="color:#66d9ef">if</span> iBuilding <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_CHICHEN_ITZA</span><span style="color:#e6db74">&#34;</span>):
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>都市のオーナーに対して<code>PyPlayer</code>のインスタンスを作成し、<code>getUnitList()</code>を呼び出します。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>世界遺産も建造物ですから建造物が完成したときのイベントを使って&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a building is built&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
+</span></span><span style="display:flex;"><span>        pCity, iBuilding <span style="color:#f92672">=</span> argsList
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>建てられたのがチチェン・イッツァだったとき、</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> iBuilding <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#34;BUILDING_CHICHEN_ITZA&#34;</span>):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>都市のオーナーに対して<code>PyPlayer</code>のインスタンスを作成し、<code>getUnitList()</code>を呼び出します。<br>
 <code>クラス名(コンストラクタ引数)</code>でつくれるのでした。さっそくつくり&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-            pyPlayer <span style="color:#f92672">=</span> PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>&hellip;&hellip;&hellip;&hellip;つくりたかったのですが、これではうまくいきません。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span>            pyPlayer <span style="color:#f92672">=</span> PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>&hellip;&hellip;&hellip;&hellip;つくりたかったのですが、これではうまくいきません。<br>
 <code>PyPlayer</code>クラスを提供しているのが、Civ4本体ではなく、<br>
 AssetsフォルダにあるPythonファイルだからです。</p>
 <h1 id="他のファイルからクラスを使う">他のファイルからクラスを使う</h1>
@@ -630,8 +641,8 @@ Pythonで他のファイルのクラスや関数を使いたいときは、<br>
 この<strong>モジュール名</strong>を指定してまず読み込む必要があります。</p>
 <p>ファイル冒頭に<code>import ほにゃほにゃ</code>が並んでいるところに、<br>
 こうやって足してあげます&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">モ</span><span style="color:#960050;background-color:#1e0010">ジ</span><span style="color:#960050;background-color:#1e0010">ュ</span><span style="color:#960050;background-color:#1e0010">ー</span><span style="color:#960050;background-color:#1e0010">ル</span><span style="color:#960050;background-color:#1e0010">名</span>
-</code></pre></div><p>もうすでに書いてあるimport文がいくつか見えると思いますが、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> モジュール名
+</span></span></code></pre></div><p>もうすでに書いてあるimport文がいくつか見えると思いますが、<br>
 それらも実はモジュールの読み込み指定です。<br>
 同じフォルダか、あるいは元のBtsの<span class="path">
   Assets\Python
@@ -653,62 +664,62 @@ Pythonで他のファイルのクラスや関数を使いたいときは、<br>
 </span>
 フォルダにある<code>PyHelpers.py</code>をMODから使いたいのでした。<br>
 モジュール名は<code>PyHelpers</code>になりますから、ファイル冒頭付近で&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> PyHelpers
-</code></pre></div><p>とします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> PyHelpers
+</span></span></code></pre></div><p>とします。</p>
 <h1 id="モジュール内のクラス名">モジュール内のクラス名</h1>
 <p>import文を書き、あらためて&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-            pyPlayer <span style="color:#f92672">=</span> PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>&hellip;&hellip;&hellip;&hellip;これでもまだうまくいきません。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span>            pyPlayer <span style="color:#f92672">=</span> PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>&hellip;&hellip;&hellip;&hellip;これでもまだうまくいきません。<br>
 実際に使うところで、モジュール名とクラス名を<em><strong>両方</strong></em>明示するする必要があります。<br>
 すなわち、このようにします&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-            pyPlayer <span style="color:#f92672">=</span> PyHelpers<span style="color:#f92672">.</span>PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-</code></pre></div><p>不便に思えますが、このことは<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span>            pyPlayer <span style="color:#f92672">=</span> PyHelpers<span style="color:#f92672">.</span>PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>不便に思えますが、このことは<br>
 「モジュールをまたげば同じクラス名を使っても混ざらない」<br>
 ということを意味します。<br>
 変数のスコープで述べたように、気にしなければならない範囲が狭まるので、<br>
 うっかり被らせてしまうことがなくなる利点でもあるのです。</p>
 <p>ともかく、インスタンスを作ってしまえばあとは普通のインスタンスと同じです。<br>
 首都のインスタンス経由で移動先の座標を求めて、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-            pyCapital <span style="color:#f92672">=</span> pyPlayer<span style="color:#f92672">.</span>getCapitalCity()
-            toX <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getX()
-            toY <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getY()
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><p>全ユニットのリストからfor文で各ユニットに対し、<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>            pyCapital <span style="color:#f92672">=</span> pyPlayer<span style="color:#f92672">.</span>getCapitalCity()
+</span></span><span style="display:flex;"><span>            toX <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getX()
+</span></span><span style="display:flex;"><span>            toY <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getY()
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><p>全ユニットのリストからfor文で各ユニットに対し、<br>
 その座標に強制移動させます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;&gt;</span>
-            <span style="color:#66d9ef">for</span> pUnit <span style="color:#f92672">in</span> pyPlayer<span style="color:#f92672">.</span>getUnitList():
-                pUnit<span style="color:#f92672">.</span>setXY(toX, toY, False, True, True)
-<span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#f92672">&lt;&lt;</span>
-</code></pre></div><h1 id="ためす">ためす</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> pUnit <span style="color:#f92672">in</span> pyPlayer<span style="color:#f92672">.</span>getUnitList():
+</span></span><span style="display:flex;"><span>                pUnit<span style="color:#f92672">.</span>setXY(toX, toY, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+</span></span></code></pre></div><h1 id="ためす">ためす</h1>
 <p>ぜんぶでこうなりました&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">import</span> CvEventManager
-<span style="color:#f92672">import</span> CvUtil
-<span style="color:#f92672">import</span> PyHelpers
-
-gc <span style="color:#f92672">=</span> CyGlobalContext()
-        
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Called when a building is built</span><span style="color:#e6db74">&#39;</span>
-        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
-        pCity, iBuilding <span style="color:#f92672">=</span> argsList
-        <span style="color:#75715e">##########</span>
-
-        <span style="color:#66d9ef">if</span> iBuilding <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BUILDING_CHICHEN_ITZA</span><span style="color:#e6db74">&#34;</span>):
-            pyPlayer <span style="color:#f92672">=</span> PyHelpers<span style="color:#f92672">.</span>PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
-            pyCapital <span style="color:#f92672">=</span> pyPlayer<span style="color:#f92672">.</span>getCapitalCity()
-            toX <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getX()
-            toY <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getY()
-            <span style="color:#66d9ef">for</span> pUnit <span style="color:#f92672">in</span> pyPlayer<span style="color:#f92672">.</span>getUnitList():
-                pUnit<span style="color:#f92672">.</span>setXY(toX, toY, False, True, True)
-</code></pre></div><p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_30.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_30.png"    /></a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> CvPythonExtensions <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvEventManager
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> CvUtil
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> PyHelpers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#f92672">=</span> CyGlobalContext()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEventManager</span>(CvEventManager<span style="color:#f92672">.</span>CvEventManager, object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">onBuildingBuilt</span>(self, argsList):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Called when a building is built&#39;</span>
+</span></span><span style="display:flex;"><span>        super(self<span style="color:#f92672">.</span>__class__, self)<span style="color:#f92672">.</span>onBuildingBuilt(argsList)
+</span></span><span style="display:flex;"><span>        pCity, iBuilding <span style="color:#f92672">=</span> argsList
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">##########</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> iBuilding <span style="color:#f92672">==</span> gc<span style="color:#f92672">.</span>getInfoTypeForString(<span style="color:#e6db74">&#34;BUILDING_CHICHEN_ITZA&#34;</span>):
+</span></span><span style="display:flex;"><span>            pyPlayer <span style="color:#f92672">=</span> PyHelpers<span style="color:#f92672">.</span>PyPlayer(pCity<span style="color:#f92672">.</span>getOwner())
+</span></span><span style="display:flex;"><span>            pyCapital <span style="color:#f92672">=</span> pyPlayer<span style="color:#f92672">.</span>getCapitalCity()
+</span></span><span style="display:flex;"><span>            toX <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getX()
+</span></span><span style="display:flex;"><span>            toY <span style="color:#f92672">=</span> pyCapital<span style="color:#f92672">.</span>getY()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> pUnit <span style="color:#f92672">in</span> pyPlayer<span style="color:#f92672">.</span>getUnitList():
+</span></span><span style="display:flex;"><span>                pUnit<span style="color:#f92672">.</span>setXY(toX, toY, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p><a href="https://gforestshade.github.io/kujira/img/civss_kujira_class_30.png"><img src="https://gforestshade.github.io/kujira/img/civss_kujira_class_30.png"    /></a>
 <br>
 いいですね！</p>
         </div>
@@ -723,7 +734,7 @@ gc <span style="color:#f92672">=</span> CyGlobalContext()
 
 <footer id="contentinfo" class="footer">
   <address id="about" class="vcard body ml-2">
-     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2020 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
+     <a href="https://gforestshade.github.io/kujira/">Kujira, Civ4 Mod Blog</a>  &copy; 2022 gforest_shade; licenced by <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC-BY-4.0</a>
   </address>
 </footer>
 
