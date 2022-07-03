@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
     <meta charset="utf-8" />
+    <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+    {{ partial "gtm-header" . }}
     {{ partial "metas" . }}
     {{ partial "head_script" . }}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,6 +11,7 @@
     </head>
 
     <body id="index" class="archive">
+      {{ partial "gtm-body" . }}
       <nav class="navbar navbar-expand-md navbar-dark px-5 navbar-color">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"

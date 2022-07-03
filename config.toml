@@ -13,10 +13,10 @@ preserveTaxonomyNames = "True"
 theme = "kujira"
 
 disqusShortname = "kujira"
-googleAnalytics = "UA-111798374-1"
 
 [params]
     navCategories = ["目次", "Python", "XML", "C++", "コラム", "MMD_to_CIV4"]
+    googleTagManager = "GTM-5V7SPDZ"
 
 [[menu.main]]
     name = "はじめに"
@@ -71,3 +71,6 @@ googleAnalytics = "UA-111798374-1"
 [markup.goldmark.renderer]
     hardWraps = true
     unsafe = true
+
+[markup.goldmark.parser.attribute]
+  block = true
